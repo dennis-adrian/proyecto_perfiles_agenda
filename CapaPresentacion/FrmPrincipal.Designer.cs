@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FormPrincipal
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlPerfiles = new System.Windows.Forms.Panel();
@@ -45,9 +44,8 @@
             this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
             this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.timerPefiles = new System.Windows.Forms.Timer(this.components);
+            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.pnlCarrerasJuridicas = new System.Windows.Forms.Panel();
             this.btnPsicologia = new FontAwesome.Sharp.IconButton();
             this.btnRelInter = new FontAwesome.Sharp.IconButton();
@@ -75,7 +73,7 @@
             this.pnlAgenda.SuspendLayout();
             this.pnlNuevoPerfil.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
@@ -225,7 +223,6 @@
             this.btnPerfiles.IconSize = 32;
             this.btnPerfiles.Location = new System.Drawing.Point(0, 0);
             this.btnPerfiles.Name = "btnPerfiles";
-            this.btnPerfiles.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnPerfiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPerfiles.Rotation = 0D;
             this.btnPerfiles.Size = new System.Drawing.Size(340, 51);
@@ -356,7 +353,6 @@
             this.btnAgenda.IconSize = 32;
             this.btnAgenda.Location = new System.Drawing.Point(0, 0);
             this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAgenda.Rotation = 0D;
             this.btnAgenda.Size = new System.Drawing.Size(340, 51);
@@ -381,7 +377,7 @@
             this.btnNuevoPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNuevoPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevoPerfil.FlatAppearance.BorderSize = 2;
+            this.btnNuevoPerfil.FlatAppearance.BorderSize = 0;
             this.btnNuevoPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnNuevoPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnNuevoPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -391,7 +387,6 @@
             this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnNuevoPerfil.IconColor = System.Drawing.Color.White;
             this.btnNuevoPerfil.IconSize = 28;
-            this.btnNuevoPerfil.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
             this.btnNuevoPerfil.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevoPerfil.Name = "btnNuevoPerfil";
@@ -402,35 +397,39 @@
             this.btnNuevoPerfil.Text = "Nuevo Perfil";
             this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevoPerfil.UseVisualStyleBackColor = false;
+            this.btnNuevoPerfil.Click += new System.EventHandler(this.btnNuevoPerfil_Click);
             // 
             // pnlLogo
             // 
-            this.pnlLogo.Controls.Add(this.pictureBox1);
+            this.pnlLogo.Controls.Add(this.btnHome);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(343, 157);
             this.pnlLogo.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnHome
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 119);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Location = new System.Drawing.Point(42, 14);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(245, 119);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHome.TabIndex = 0;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // panel2
+            // pnlBarraTitulo
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(343, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1118, 37);
-            this.panel2.TabIndex = 0;
+            this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBarraTitulo.Location = new System.Drawing.Point(343, 0);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlBarraTitulo.Name = "pnlBarraTitulo";
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1118, 37);
+            this.pnlBarraTitulo.TabIndex = 0;
+            this.pnlBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseDown);
             // 
             // pnlCarrerasJuridicas
             // 
@@ -962,19 +961,20 @@
             this.btnAdminGral.UseVisualStyleBackColor = false;
             this.btnAdminGral.Visible = false;
             // 
-            // FormPrincipal
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1461, 773);
             this.Controls.Add(this.pnlCarrerasEmpresariales);
             this.Controls.Add(this.pnlCarrerasTenologia);
             this.Controls.Add(this.pnlCarrerasJuridicas);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormPrincipal";
+            this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UTEPSA";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -984,7 +984,7 @@
             this.pnlAgenda.ResumeLayout(false);
             this.pnlNuevoPerfil.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
@@ -995,18 +995,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlBarraTitulo;
         private System.Windows.Forms.Panel pnlNuevoPerfil;
         private FontAwesome.Sharp.IconButton btnNuevoPerfil;
         private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel pnlPerfiles;
         private FontAwesome.Sharp.IconButton btnPerfiles;
         private System.Windows.Forms.FlowLayoutPanel pnlMenu;
         private FontAwesome.Sharp.IconButton btnEmpresarialesPefiles;
         private FontAwesome.Sharp.IconButton btnJuridicasPerfiles;
         private FontAwesome.Sharp.IconButton btnTecnologiaPerfiles;
-        private System.Windows.Forms.Timer timerPefiles;
         private System.Windows.Forms.Panel pnlCarrerasJuridicas;
         private FontAwesome.Sharp.IconButton btnPsicologia;
         private FontAwesome.Sharp.IconButton btnRelInter;

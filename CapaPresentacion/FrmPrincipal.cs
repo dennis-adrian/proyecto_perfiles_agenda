@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
-    public partial class FormPrincipal : Form
+    public partial class FrmPrincipal : Form
     {
         //campos
         private bool esMinimizadoPerfiles = true;
@@ -19,12 +20,13 @@ namespace CapaPresentacion
         private bool facultadJuridicasClickeada;
         private bool facultadTecnologiaClickeada;
         private bool facultadEmpresarialesClickeada;
-        //guardamos el boton actual
         private IconButton btnActual;
-        private IconButton btnFacultadActual;
+        public static bool frmNuevoPerfilCerrado = false;
         private bool carrerasVisible;
+
+
         //constructor
-        public FormPrincipal()
+        public FrmPrincipal()
         {
             InitializeComponent();
 
@@ -38,20 +40,8 @@ namespace CapaPresentacion
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            timerPefiles.Start();
         }
         #region Expandir_Retraer_Facultades
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    if (esMinimizado)
-        //    {
-        //        mostrarFacultades();
-        //    }
-        //    else
-        //    {
-        //        ocultarFacultades();
-        //    }
-        //}
         private void mostrarFacultades(Panel panel, string nombrePanel)
         {
             panel.Height += 124;
@@ -70,7 +60,6 @@ namespace CapaPresentacion
                     default:
                         break;
                 }
-                //timerPefiles.Stop();
             }
         }
         private void ocultarFacultades(Panel panel, string nombrePanel)
@@ -78,7 +67,6 @@ namespace CapaPresentacion
             panel.Height -= 124;
             if (panel.Size == panel.MinimumSize)
             {
-                //timerPefiles.Stop();
                 switch (nombrePanel)
                 {
                     case "agenda":
@@ -112,14 +100,14 @@ namespace CapaPresentacion
                 //btnActual.IconColor = color;
                 btnActual.TextImageRelation = TextImageRelation.TextBeforeImage;
                 btnActual.ImageAlign = ContentAlignment.MiddleCenter;
-                btnActual.Padding = new Padding(40, 0, 0, 0);
+                //btnActual.Padding = new Padding(40, 0, 0, 0);
             }
         }
         private void deshabilitarResaltado()
         {
             if (btnActual != null)
             {
-                btnActual.Padding = new Padding(40, 0, 0, 0);
+                //btnActual.Padding = new Padding(40, 0, 0, 0);
                 btnActual.BackColor = Color.FromArgb(102, 102, 102);
                 btnActual.ForeColor = Color.White;
                 //btnActual.TextAlign = ContentAlignment.MiddleLeft;
@@ -130,7 +118,6 @@ namespace CapaPresentacion
         }
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            //timerPefiles.Start();
             if (esMinimizadoPerfiles)
             {
                 mostrarFacultades(pnlPerfiles, "perfiles");
@@ -144,7 +131,6 @@ namespace CapaPresentacion
         }
         private void btnAgenda_Click(object sender, EventArgs e)
         {
-            //timerPefiles.Start();
             if (esMinimizadoAgenda)
             {
                 mostrarFacultades(pnlAgenda, "agenda");
@@ -379,5 +365,29 @@ namespace CapaPresentacion
             btnActual = (IconButton)btnRemitente;
             return btnActual.Name;
         }
+
+        private void btnNuevoPerfil_Click(object sender, EventArgs e)
+        {
+            activarBoton(sender, ColoresRgb.rojoUtepsa);
+            Form frmNuevoPerfil = new FrmNuevoPerfil();
+            frmNuevoPerfil.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ReiniciarForm();
+        }
+        private void ReiniciarForm()
+        {
+            deshabilitarResaltado();
+        }
+        #region Arrastrar_Form
+        
+        private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ArrastrarForm.ReleaseCapture();
+            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
     }
 }
