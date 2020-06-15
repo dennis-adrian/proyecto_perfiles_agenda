@@ -23,6 +23,8 @@ namespace CapaPresentacion
         private IconButton btnActual;
         public static bool frmNuevoPerfilCerrado = false;
         private bool carrerasVisible;
+        //frm hijo
+        private Form frmHijoActual;
 
 
         //constructor
@@ -131,6 +133,7 @@ namespace CapaPresentacion
         }
         private void btnAgenda_Click(object sender, EventArgs e)
         {
+            abrirFrmHijo(new FrmAgenda());
             if (esMinimizadoAgenda)
             {
                 mostrarFacultades(pnlAgenda, "agenda");
@@ -375,10 +378,15 @@ namespace CapaPresentacion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            frmHijoActual.Close();
             ReiniciarForm();
         }
         private void ReiniciarForm()
         {
+            esMinimizadoAgenda = true;
+            pnlAgenda.Size = MinimumSize;
+            esMinimizadoPerfiles = true;
+            pnlPerfiles.Size= MinimumSize;
             deshabilitarResaltado();
         }
         #region Arrastrar_Form
@@ -389,5 +397,23 @@ namespace CapaPresentacion
             ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
+        #region Abriendo_Formularios
+        private void abrirFrmHijo(Form frmHijo)
+        {
+            if (frmHijoActual != null)
+            {
+                frmHijoActual.Close();
+            }
+            frmHijoActual = frmHijo;
+            frmHijo.TopLevel = false;
+            frmHijo.FormBorderStyle = FormBorderStyle.None;
+            frmHijo.Dock = DockStyle.Fill;
+            pnlFrmHijo.Controls.Add(frmHijo);
+            pnlFrmHijo.Tag = frmHijo;
+            //frmHijo.BringToFront();
+            frmHijo.Show();
+        }
+        #endregion
+
     }
 }
