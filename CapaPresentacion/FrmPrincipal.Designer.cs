@@ -52,16 +52,7 @@
             this.btnDerecho = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.pnlCarrerasTenologia = new System.Windows.Forms.Panel();
-            this.btnIndustrial = new FontAwesome.Sharp.IconButton();
-            this.btnElectrica = new FontAwesome.Sharp.IconButton();
-            this.btnRedes = new FontAwesome.Sharp.IconButton();
-            this.btnMecanica = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.btnElectronica = new FontAwesome.Sharp.IconButton();
-            this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
             this.btnContaduria = new FontAwesome.Sharp.IconButton();
@@ -69,6 +60,15 @@
             this.btnComInternacional = new FontAwesome.Sharp.IconButton();
             this.btnComercial = new FontAwesome.Sharp.IconButton();
             this.btnTurismo = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.pnlCarrerasTenologia = new System.Windows.Forms.Panel();
+            this.btnElectrica = new FontAwesome.Sharp.IconButton();
+            this.btnRedes = new FontAwesome.Sharp.IconButton();
+            this.btnMecanica = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.btnElectronica = new FontAwesome.Sharp.IconButton();
+            this.btnPetrolera = new FontAwesome.Sharp.IconButton();
+            this.btnIndustrial = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlPerfiles.SuspendLayout();
@@ -78,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
-            this.pnlCarrerasTenologia.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
+            this.pnlCarrerasTenologia.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -549,212 +549,6 @@
             this.pnlFrmHijo.Size = new System.Drawing.Size(1146, 648);
             this.pnlFrmHijo.TabIndex = 16;
             // 
-            // pnlCarrerasTenologia
-            // 
-            this.pnlCarrerasTenologia.Controls.Add(this.btnElectrica);
-            this.pnlCarrerasTenologia.Controls.Add(this.btnRedes);
-            this.pnlCarrerasTenologia.Controls.Add(this.btnMecanica);
-            this.pnlCarrerasTenologia.Controls.Add(this.iconButton5);
-            this.pnlCarrerasTenologia.Controls.Add(this.btnElectronica);
-            this.pnlCarrerasTenologia.Controls.Add(this.btnPetrolera);
-            this.pnlCarrerasTenologia.Controls.Add(this.btnIndustrial);
-            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(2, 182);
-            this.pnlCarrerasTenologia.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCarrerasTenologia.MaximumSize = new System.Drawing.Size(366, 238);
-            this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(366, 238);
-            this.pnlCarrerasTenologia.Name = "pnlCarrerasTenologia";
-            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(366, 238);
-            this.pnlCarrerasTenologia.TabIndex = 15;
-            this.pnlCarrerasTenologia.Visible = false;
-            // 
-            // btnIndustrial
-            // 
-            this.btnIndustrial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnIndustrial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIndustrial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnIndustrial.FlatAppearance.BorderSize = 0;
-            this.btnIndustrial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnIndustrial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnIndustrial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIndustrial.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnIndustrial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIndustrial.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnIndustrial.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnIndustrial.IconColor = System.Drawing.Color.White;
-            this.btnIndustrial.IconSize = 32;
-            this.btnIndustrial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIndustrial.Location = new System.Drawing.Point(0, 0);
-            this.btnIndustrial.Name = "btnIndustrial";
-            this.btnIndustrial.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnIndustrial.Rotation = 0D;
-            this.btnIndustrial.Size = new System.Drawing.Size(366, 34);
-            this.btnIndustrial.TabIndex = 14;
-            this.btnIndustrial.Text = "Ing. Industrial y Comercial";
-            this.btnIndustrial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIndustrial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIndustrial.UseVisualStyleBackColor = false;
-            // 
-            // btnElectrica
-            // 
-            this.btnElectrica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnElectrica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnElectrica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnElectrica.FlatAppearance.BorderSize = 0;
-            this.btnElectrica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnElectrica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnElectrica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElectrica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElectrica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnElectrica.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnElectrica.IconColor = System.Drawing.Color.White;
-            this.btnElectrica.IconSize = 32;
-            this.btnElectrica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectrica.Location = new System.Drawing.Point(0, 204);
-            this.btnElectrica.Name = "btnElectrica";
-            this.btnElectrica.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnElectrica.Rotation = 0D;
-            this.btnElectrica.Size = new System.Drawing.Size(366, 34);
-            this.btnElectrica.TabIndex = 20;
-            this.btnElectrica.Text = "Ing. Eléctrica";
-            this.btnElectrica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectrica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnElectrica.UseVisualStyleBackColor = false;
-            // 
-            // btnRedes
-            // 
-            this.btnRedes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRedes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRedes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRedes.FlatAppearance.BorderSize = 0;
-            this.btnRedes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnRedes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnRedes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRedes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnRedes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRedes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRedes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnRedes.IconColor = System.Drawing.Color.White;
-            this.btnRedes.IconSize = 32;
-            this.btnRedes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRedes.Location = new System.Drawing.Point(0, 170);
-            this.btnRedes.Name = "btnRedes";
-            this.btnRedes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRedes.Rotation = 0D;
-            this.btnRedes.Size = new System.Drawing.Size(366, 34);
-            this.btnRedes.TabIndex = 19;
-            this.btnRedes.Text = "Ing. en Redes y Telecomunicaciones";
-            this.btnRedes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRedes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRedes.UseVisualStyleBackColor = false;
-            // 
-            // btnMecanica
-            // 
-            this.btnMecanica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMecanica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMecanica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMecanica.FlatAppearance.BorderSize = 0;
-            this.btnMecanica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnMecanica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnMecanica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMecanica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnMecanica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMecanica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMecanica.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnMecanica.IconColor = System.Drawing.Color.White;
-            this.btnMecanica.IconSize = 32;
-            this.btnMecanica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMecanica.Location = new System.Drawing.Point(0, 136);
-            this.btnMecanica.Name = "btnMecanica";
-            this.btnMecanica.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnMecanica.Rotation = 0D;
-            this.btnMecanica.Size = new System.Drawing.Size(366, 34);
-            this.btnMecanica.TabIndex = 18;
-            this.btnMecanica.Text = "Ing. de Sistemas";
-            this.btnMecanica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMecanica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMecanica.UseVisualStyleBackColor = false;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconSize = 32;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 102);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(366, 34);
-            this.iconButton5.TabIndex = 17;
-            this.iconButton5.Text = "Ing. Mecánica Automotriz y Agroindustrial";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            // 
-            // btnElectronica
-            // 
-            this.btnElectronica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnElectronica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnElectronica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnElectronica.FlatAppearance.BorderSize = 0;
-            this.btnElectronica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnElectronica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnElectronica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElectronica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnElectronica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElectronica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnElectronica.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnElectronica.IconColor = System.Drawing.Color.White;
-            this.btnElectronica.IconSize = 32;
-            this.btnElectronica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectronica.Location = new System.Drawing.Point(0, 68);
-            this.btnElectronica.Name = "btnElectronica";
-            this.btnElectronica.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnElectronica.Rotation = 0D;
-            this.btnElectronica.Size = new System.Drawing.Size(366, 34);
-            this.btnElectronica.TabIndex = 16;
-            this.btnElectronica.Text = "Ing. Electrónica y Sistemas";
-            this.btnElectronica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnElectronica.UseVisualStyleBackColor = false;
-            // 
-            // btnPetrolera
-            // 
-            this.btnPetrolera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPetrolera.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPetrolera.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPetrolera.FlatAppearance.BorderSize = 0;
-            this.btnPetrolera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnPetrolera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnPetrolera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPetrolera.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPetrolera.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPetrolera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPetrolera.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnPetrolera.IconColor = System.Drawing.Color.White;
-            this.btnPetrolera.IconSize = 32;
-            this.btnPetrolera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPetrolera.Location = new System.Drawing.Point(0, 34);
-            this.btnPetrolera.Name = "btnPetrolera";
-            this.btnPetrolera.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPetrolera.Rotation = 0D;
-            this.btnPetrolera.Size = new System.Drawing.Size(366, 34);
-            this.btnPetrolera.TabIndex = 15;
-            this.btnPetrolera.Text = "Ing. en Administración Petrolera";
-            this.btnPetrolera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPetrolera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPetrolera.UseVisualStyleBackColor = false;
-            // 
             // pnlCarrerasEmpresariales
             // 
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnComunicacion);
@@ -765,39 +559,14 @@
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnComercial);
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnTurismo);
             this.pnlCarrerasEmpresariales.Controls.Add(this.iconButton1);
-            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(2, 123);
+            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(1, 122);
+            this.pnlCarrerasEmpresariales.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasEmpresariales.MaximumSize = new System.Drawing.Size(314, 272);
             this.pnlCarrerasEmpresariales.MinimumSize = new System.Drawing.Size(314, 272);
             this.pnlCarrerasEmpresariales.Name = "pnlCarrerasEmpresariales";
             this.pnlCarrerasEmpresariales.Size = new System.Drawing.Size(314, 272);
             this.pnlCarrerasEmpresariales.TabIndex = 16;
             this.pnlCarrerasEmpresariales.Visible = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(314, 34);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Administración General";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // btnComunicacion
             // 
@@ -988,6 +757,238 @@
             this.btnTurismo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTurismo.UseVisualStyleBackColor = false;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(314, 34);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.Text = "Administración General";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // pnlCarrerasTenologia
+            // 
+            this.pnlCarrerasTenologia.Controls.Add(this.btnElectrica);
+            this.pnlCarrerasTenologia.Controls.Add(this.btnRedes);
+            this.pnlCarrerasTenologia.Controls.Add(this.btnMecanica);
+            this.pnlCarrerasTenologia.Controls.Add(this.iconButton5);
+            this.pnlCarrerasTenologia.Controls.Add(this.btnElectronica);
+            this.pnlCarrerasTenologia.Controls.Add(this.btnPetrolera);
+            this.pnlCarrerasTenologia.Controls.Add(this.btnIndustrial);
+            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(2, 182);
+            this.pnlCarrerasTenologia.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCarrerasTenologia.MaximumSize = new System.Drawing.Size(366, 238);
+            this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(366, 238);
+            this.pnlCarrerasTenologia.Name = "pnlCarrerasTenologia";
+            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(366, 238);
+            this.pnlCarrerasTenologia.TabIndex = 15;
+            this.pnlCarrerasTenologia.Visible = false;
+            // 
+            // btnElectrica
+            // 
+            this.btnElectrica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnElectrica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElectrica.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnElectrica.FlatAppearance.BorderSize = 0;
+            this.btnElectrica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElectrica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElectrica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElectrica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElectrica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnElectrica.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnElectrica.IconColor = System.Drawing.Color.White;
+            this.btnElectrica.IconSize = 32;
+            this.btnElectrica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElectrica.Location = new System.Drawing.Point(0, 204);
+            this.btnElectrica.Name = "btnElectrica";
+            this.btnElectrica.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnElectrica.Rotation = 0D;
+            this.btnElectrica.Size = new System.Drawing.Size(366, 34);
+            this.btnElectrica.TabIndex = 20;
+            this.btnElectrica.Text = "Ing. Eléctrica";
+            this.btnElectrica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElectrica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnElectrica.UseVisualStyleBackColor = false;
+            // 
+            // btnRedes
+            // 
+            this.btnRedes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRedes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRedes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRedes.FlatAppearance.BorderSize = 0;
+            this.btnRedes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnRedes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnRedes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnRedes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRedes.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnRedes.IconColor = System.Drawing.Color.White;
+            this.btnRedes.IconSize = 32;
+            this.btnRedes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRedes.Location = new System.Drawing.Point(0, 170);
+            this.btnRedes.Name = "btnRedes";
+            this.btnRedes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRedes.Rotation = 0D;
+            this.btnRedes.Size = new System.Drawing.Size(366, 34);
+            this.btnRedes.TabIndex = 19;
+            this.btnRedes.Text = "Ing. en Redes y Telecomunicaciones";
+            this.btnRedes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRedes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRedes.UseVisualStyleBackColor = false;
+            // 
+            // btnMecanica
+            // 
+            this.btnMecanica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMecanica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMecanica.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMecanica.FlatAppearance.BorderSize = 0;
+            this.btnMecanica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnMecanica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnMecanica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMecanica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMecanica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMecanica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMecanica.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnMecanica.IconColor = System.Drawing.Color.White;
+            this.btnMecanica.IconSize = 32;
+            this.btnMecanica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMecanica.Location = new System.Drawing.Point(0, 136);
+            this.btnMecanica.Name = "btnMecanica";
+            this.btnMecanica.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMecanica.Rotation = 0D;
+            this.btnMecanica.Size = new System.Drawing.Size(366, 34);
+            this.btnMecanica.TabIndex = 18;
+            this.btnMecanica.Text = "Ing. de Sistemas";
+            this.btnMecanica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMecanica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMecanica.UseVisualStyleBackColor = false;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
+            this.iconButton5.IconSize = 32;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(0, 102);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton5.Rotation = 0D;
+            this.iconButton5.Size = new System.Drawing.Size(366, 34);
+            this.iconButton5.TabIndex = 17;
+            this.iconButton5.Text = "Ing. Mecánica Automotriz y Agroindustrial";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = false;
+            // 
+            // btnElectronica
+            // 
+            this.btnElectronica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnElectronica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElectronica.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnElectronica.FlatAppearance.BorderSize = 0;
+            this.btnElectronica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElectronica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElectronica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElectronica.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnElectronica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElectronica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnElectronica.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnElectronica.IconColor = System.Drawing.Color.White;
+            this.btnElectronica.IconSize = 32;
+            this.btnElectronica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElectronica.Location = new System.Drawing.Point(0, 68);
+            this.btnElectronica.Name = "btnElectronica";
+            this.btnElectronica.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnElectronica.Rotation = 0D;
+            this.btnElectronica.Size = new System.Drawing.Size(366, 34);
+            this.btnElectronica.TabIndex = 16;
+            this.btnElectronica.Text = "Ing. Electrónica y Sistemas";
+            this.btnElectronica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnElectronica.UseVisualStyleBackColor = false;
+            // 
+            // btnPetrolera
+            // 
+            this.btnPetrolera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPetrolera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPetrolera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPetrolera.FlatAppearance.BorderSize = 0;
+            this.btnPetrolera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnPetrolera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnPetrolera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetrolera.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPetrolera.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPetrolera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPetrolera.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnPetrolera.IconColor = System.Drawing.Color.White;
+            this.btnPetrolera.IconSize = 32;
+            this.btnPetrolera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPetrolera.Location = new System.Drawing.Point(0, 34);
+            this.btnPetrolera.Name = "btnPetrolera";
+            this.btnPetrolera.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPetrolera.Rotation = 0D;
+            this.btnPetrolera.Size = new System.Drawing.Size(366, 34);
+            this.btnPetrolera.TabIndex = 15;
+            this.btnPetrolera.Text = "Ing. en Administración Petrolera";
+            this.btnPetrolera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPetrolera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPetrolera.UseVisualStyleBackColor = false;
+            // 
+            // btnIndustrial
+            // 
+            this.btnIndustrial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnIndustrial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIndustrial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIndustrial.FlatAppearance.BorderSize = 0;
+            this.btnIndustrial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnIndustrial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnIndustrial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIndustrial.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnIndustrial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIndustrial.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnIndustrial.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnIndustrial.IconColor = System.Drawing.Color.White;
+            this.btnIndustrial.IconSize = 32;
+            this.btnIndustrial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIndustrial.Location = new System.Drawing.Point(0, 0);
+            this.btnIndustrial.Name = "btnIndustrial";
+            this.btnIndustrial.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnIndustrial.Rotation = 0D;
+            this.btnIndustrial.Size = new System.Drawing.Size(366, 34);
+            this.btnIndustrial.TabIndex = 14;
+            this.btnIndustrial.Text = "Ing. Industrial y Comercial";
+            this.btnIndustrial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIndustrial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIndustrial.UseVisualStyleBackColor = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1011,8 +1012,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
-            this.pnlCarrerasTenologia.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
+            this.pnlCarrerasTenologia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
