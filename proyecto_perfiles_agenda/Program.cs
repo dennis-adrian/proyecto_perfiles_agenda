@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace proyecto_perfiles_agenda
+namespace CapaPresentacion
 {
     static class Program
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 
-namespace proyecto_perfiles_agenda
+namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {

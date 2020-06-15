@@ -1,4 +1,4 @@
-﻿namespace proyecto_perfiles_agenda
+﻿namespace CapaPresentacion
 {
     partial class Form1
     {

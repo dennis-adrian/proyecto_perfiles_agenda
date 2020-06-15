@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace proyecto_perfiles_agenda.Properties
+namespace CapaPresentacion.Properties
 {
 
 
