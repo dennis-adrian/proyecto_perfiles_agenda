@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using CapaDatos;
 
 namespace CapaPresentacion
-{
+{//comentario
+
     public partial class FrmAgenda : Form
     {
         Conexion obj = new Conexion();
