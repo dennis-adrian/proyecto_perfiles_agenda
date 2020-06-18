@@ -20,7 +20,8 @@ namespace CapaPresentacion
         private bool facultadJuridicasClickeada;
         private bool facultadTecnologiaClickeada;
         private bool facultadEmpresarialesClickeada;
-        private IconButton btnActual;
+        private IconButton btnFacultadActual;
+        private IconButton btnCarreraActual;
         public static bool frmNuevoPerfilCerrado = false;
         private bool carrerasVisible;
         //frm hijo
@@ -31,7 +32,6 @@ namespace CapaPresentacion
         public FrmPrincipal()
         {
             InitializeComponent();
-            //estadoVentana();
             pnlPerfiles.Size = MinimumSize;
             pnlAgenda.Size = MinimumSize;
             //form
@@ -42,6 +42,26 @@ namespace CapaPresentacion
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+        private void btnNuevoPerfil_Click(object sender, EventArgs e)
+        {
+            activarBoton(sender, ColoresRgb.rojoUtepsa);
+            Form frmNuevoPerfil = new FrmNuevoPerfil();
+            frmNuevoPerfil.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            frmHijoActual.Close();
+            ReiniciarForm();
+        }
+        private void ReiniciarForm()
+        {
+            esMinimizadoAgenda = true;
+            pnlAgenda.Size = MinimumSize;
+            esMinimizadoPerfiles = true;
+            pnlPerfiles.Size = MinimumSize;
+            deshabilitarResaltado();
         }
         #region Expandir_Retraer_Facultades
         private void mostrarFacultades(Panel panel, string nombrePanel)
@@ -95,26 +115,26 @@ namespace CapaPresentacion
             {
                 deshabilitarResaltado();
 
-                btnActual = (IconButton)btnRemitente;
-                btnActual.BackColor = Color.FromArgb(178, 8, 55);
+                btnFacultadActual = (IconButton)btnRemitente;
+                btnFacultadActual.BackColor = Color.FromArgb(178, 8, 55);
                 //btnActual.ForeColor = color;
-                btnActual.TextAlign = ContentAlignment.MiddleCenter;
+                btnFacultadActual.TextAlign = ContentAlignment.MiddleCenter;
                 //btnActual.IconColor = color;
-                btnActual.TextImageRelation = TextImageRelation.TextBeforeImage;
-                btnActual.ImageAlign = ContentAlignment.MiddleCenter;
+                btnFacultadActual.TextImageRelation = TextImageRelation.TextBeforeImage;
+                btnFacultadActual.ImageAlign = ContentAlignment.MiddleCenter;
                 //btnActual.Padding = new Padding(40, 0, 0, 0);
             }
         }
         private void deshabilitarResaltado()
         {
-            if (btnActual != null)
+            if (btnFacultadActual != null)
             {
                 //btnActual.Padding = new Padding(40, 0, 0, 0);
-                btnActual.BackColor = Color.FromArgb(102, 102, 102);
-                btnActual.ForeColor = Color.White;
+                btnFacultadActual.BackColor = Color.FromArgb(102, 102, 102);
+                btnFacultadActual.ForeColor = Color.White;
                 //btnActual.TextAlign = ContentAlignment.MiddleLeft;
-                btnActual.IconColor = Color.White;
-                btnActual.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnFacultadActual.IconColor = Color.White;
+                btnFacultadActual.TextImageRelation = TextImageRelation.ImageBeforeText;
                 //btnActual.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
@@ -283,7 +303,7 @@ namespace CapaPresentacion
             carrerasVisible = false;
         }
         #endregion
-
+        #region Botones_Facultades
         private void btnEmpresarialesAgenda_MouseHover(object sender, EventArgs e)
         {
             mostrarCarrerasEmpresariales();
@@ -365,38 +385,19 @@ namespace CapaPresentacion
         }
         private string guardarFacultadClickeada(object btnRemitente)
         {
-            btnActual = (IconButton)btnRemitente;
-            return btnActual.Name;
-        }
-
-        private void btnNuevoPerfil_Click(object sender, EventArgs e)
-        {
-            activarBoton(sender, ColoresRgb.rojoUtepsa);
-            Form frmNuevoPerfil = new FrmNuevoPerfil();
-            frmNuevoPerfil.Show();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            frmHijoActual.Close();
-            ReiniciarForm();
-        }
-        private void ReiniciarForm()
-        {
-            esMinimizadoAgenda = true;
-            pnlAgenda.Size = MinimumSize;
-            esMinimizadoPerfiles = true;
-            pnlPerfiles.Size= MinimumSize;
-            deshabilitarResaltado();
-        }
-        #region Arrastrar_Form
-        
-        private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ArrastrarForm.ReleaseCapture();
-            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnFacultadActual = (IconButton)btnRemitente;
+            return btnFacultadActual.Text;
         }
         #endregion
+        #region Botones_Carreras
+        private string guardarCarreraClickeada(object btnRemitente)
+        {
+            btnCarreraActual = (IconButton)btnRemitente;
+            return btnCarreraActual.Text;
+        }
+
+        #endregion
+        
         #region Abriendo_Formularios
         private void abrirFrmHijo(Form frmHijo)
         {
@@ -414,7 +415,33 @@ namespace CapaPresentacion
             frmHijo.Show();
         }
         #endregion
-
+        #region BarraTituloYBotones
+        private void FrmPrincipal_Resize(object sender, EventArgs e)
+        {
+            revisarEstadoVentana();
+        }
+        private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.Clicks >= 2)
+            {
+                if (FormWindowState.Normal == WindowState)
+                {
+                    Rectangle workingArea = new Rectangle();
+                    workingArea = Screen.GetWorkingArea(pnlBarraTitulo);
+                    MaximumSize = workingArea.Size;
+                    WindowState = FormWindowState.Maximized;
+                }
+                else
+                {
+                    MaximumSize = new Size(0, 0);
+                    WindowState = FormWindowState.Normal;
+                }
+                pnlBarraTitulo.Select();
+                return;
+            }
+            ArrastrarForm.ReleaseCapture();
+            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -438,16 +465,21 @@ namespace CapaPresentacion
             btnRestaurar.Visible = false;
             btnMaximizar.Visible = true;
         }
-        private void estadoVentana()
+        private void revisarEstadoVentana()
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                btnRestaurar.Visible = false;
+                btnRestaurar.Visible = true;
+                btnMaximizar.Visible = false;
             }
             if (this.WindowState == FormWindowState.Normal)
             {
-                btnMaximizar.Visible = false;
+                btnMaximizar.Visible = true;
+                btnRestaurar.Visible = false;
             }
         }
+        #endregion
+
+        
     }
 }

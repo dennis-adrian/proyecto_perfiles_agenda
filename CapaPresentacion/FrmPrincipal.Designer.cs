@@ -1089,6 +1089,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1490, 739);
+            this.ControlBox = false;
             this.Controls.Add(this.pnlFrmHijo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBarraTitulo);
@@ -1097,6 +1098,7 @@
             this.Name = "FrmPrincipal";
             this.Text = "UTEPSA";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
             this.panel1.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlPerfiles.ResumeLayout(false);
