@@ -183,6 +183,7 @@ namespace CapaPresentacion
         }
         private void btnEmpresarialesPerfiles_MouseHover(object sender, EventArgs e)
         {
+            facultad = guardarFacultadClickeada(sender);
             mostrarCarrerasEmpresariales();
             ocultarCarrerasTecnologia();
             facultadTecnologiaClickeada = false;
@@ -217,6 +218,7 @@ namespace CapaPresentacion
         }
         private void btnJuridicasPerfiles_Click(object sender, EventArgs e)
         {
+            facultad = guardarFacultadClickeada(sender);
             ocultarCarrerasTecnologia();
             facultadTecnologiaClickeada = false;
             ocultarCarrerasEmpresariales();
@@ -400,6 +402,7 @@ namespace CapaPresentacion
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            MessageBox.Show(facultad + " " + carrera);
         }
 
         private void btnTurismo_Click(object sender, EventArgs e)
