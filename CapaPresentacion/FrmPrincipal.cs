@@ -22,6 +22,8 @@ namespace CapaPresentacion
         private bool facultadEmpresarialesClickeada;
         private IconButton btnFacultadActual;
         private IconButton btnCarreraActual;
+        private string facultad;
+        private string carrera;
         public static bool frmNuevoPerfilCerrado = false;
         private bool carrerasVisible;
         //frm hijo
@@ -356,7 +358,7 @@ namespace CapaPresentacion
 
         private void btnEmpresarialesAgenda_Click(object sender, EventArgs e)
         {
-            string facultad = guardarFacultadClickeada(sender);
+            facultad = guardarFacultadClickeada(sender);
             facultadEmpresarialesClickeada = true;
             ocultarCarrerasTecnologia();
             facultadTecnologiaClickeada = false;
@@ -366,7 +368,7 @@ namespace CapaPresentacion
 
         private void btnTecnologiaAgenda_Click(object sender, EventArgs e)
         {
-            string facultad = guardarFacultadClickeada(sender);
+            facultad = guardarFacultadClickeada(sender);
             facultadTecnologiaClickeada = true;
             ocultarCarrerasEmpresariales();
             facultadEmpresarialesClickeada = false;
@@ -376,7 +378,7 @@ namespace CapaPresentacion
 
         private void btnJuridicasAgenda_Click(object sender, EventArgs e)
         {
-            string facultad = guardarFacultadClickeada(sender);
+            facultad = guardarFacultadClickeada(sender);
             ocultarCarrerasTecnologia();
             facultadTecnologiaClickeada = false;
             ocultarCarrerasEmpresariales();
@@ -395,9 +397,96 @@ namespace CapaPresentacion
             btnCarreraActual = (IconButton)btnRemitente;
             return btnCarreraActual.Text;
         }
+        private void btnAdministracion_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
 
+        private void btnTurismo_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnComercial_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnComInternacional_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnMarketing_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnContaduria_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnFinanciera_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnComunicacion_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+        private void btnIndustrial_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnPetrolera_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnElectronica_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnMecanica_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnRedes_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnElectrica_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnDerecho_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnRelInter_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
+
+        private void btnPsicologia_Click(object sender, EventArgs e)
+        {
+            carrera = guardarCarreraClickeada(sender);
+        }
         #endregion
-        
+
         #region Abriendo_Formularios
         private void abrirFrmHijo(Form frmHijo)
         {
@@ -478,8 +567,8 @@ namespace CapaPresentacion
                 btnRestaurar.Visible = false;
             }
         }
+
         #endregion
 
-        
     }
 }
