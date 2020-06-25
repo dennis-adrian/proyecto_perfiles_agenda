@@ -19,7 +19,6 @@ namespace CapaPresentacion
 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
-            FrmPrincipal.frmNuevoPerfilCerrado = true;
             this.Close();
         }
         #region Arrastrar_Form

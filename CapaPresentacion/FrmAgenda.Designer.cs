@@ -28,28 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgAgenda = new System.Windows.Forms.DataGridView();
             this.pnlBuscar = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAgenda)).BeginInit();
+            this.pnlDataGrid = new System.Windows.Forms.Panel();
+            this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
             this.pnlBuscar.SuspendLayout();
+            this.pnlDataGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDefensaExterna)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtgAgenda
-            // 
-            this.dtgAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgAgenda.BackgroundColor = System.Drawing.Color.Silver;
-            this.dtgAgenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgAgenda.ColumnHeadersHeight = 29;
-            this.dtgAgenda.Location = new System.Drawing.Point(0, 46);
-            this.dtgAgenda.Margin = new System.Windows.Forms.Padding(0);
-            this.dtgAgenda.Name = "dtgAgenda";
-            this.dtgAgenda.RowHeadersWidth = 51;
-            this.dtgAgenda.Size = new System.Drawing.Size(856, 492);
-            this.dtgAgenda.TabIndex = 0;
             // 
             // pnlBuscar
             // 
@@ -69,7 +56,7 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(685, 10);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(155, 23);
             this.txtBuscar.TabIndex = 24;
@@ -88,31 +75,50 @@
             this.label14.Text = "Buscar";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // pnlDataGrid
+            // 
+            this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
+            this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDataGrid.Location = new System.Drawing.Point(0, 46);
+            this.pnlDataGrid.Name = "pnlDataGrid";
+            this.pnlDataGrid.Size = new System.Drawing.Size(856, 491);
+            this.pnlDataGrid.TabIndex = 2;
+            // 
+            // dtgDefensaExterna
+            // 
+            this.dtgDefensaExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
+            this.dtgDefensaExterna.Name = "dtgDefensaExterna";
+            this.dtgDefensaExterna.Size = new System.Drawing.Size(856, 491);
+            this.dtgDefensaExterna.TabIndex = 0;
+            // 
             // FrmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(856, 537);
+            this.Controls.Add(this.pnlDataGrid);
             this.Controls.Add(this.pnlBuscar);
-            this.Controls.Add(this.dtgAgenda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAgenda)).EndInit();
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
+            this.pnlDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDefensaExterna)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dtgAgenda;
         private System.Windows.Forms.Panel pnlBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel pnlDataGrid;
+        private System.Windows.Forms.DataGridView dtgDefensaExterna;
     }
 }

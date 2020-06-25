@@ -168,6 +168,12 @@
     <Compile Include="FrmNuevoPerfil.Designer.cs">
       <DependentUpon>FrmNuevoPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerfiles.Designer.cs">
+      <DependentUpon>FrmPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

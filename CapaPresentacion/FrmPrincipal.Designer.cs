@@ -38,7 +38,7 @@
             this.btnTecnologiaPerfiles = new FontAwesome.Sharp.IconButton();
             this.btnEmpresarialesPefiles = new FontAwesome.Sharp.IconButton();
             this.btnPerfiles = new FontAwesome.Sharp.IconButton();
-            this.pnlAgenda = new System.Windows.Forms.Panel();
+            this.pnlDefensaExterna = new System.Windows.Forms.Panel();
             this.btnJuridicasAgenda = new FontAwesome.Sharp.IconButton();
             this.btnTecnologiaAgenda = new FontAwesome.Sharp.IconButton();
             this.btnEmpresarialesAgenda = new FontAwesome.Sharp.IconButton();
@@ -75,16 +75,18 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlNuevaDefensa.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlPerfiles.SuspendLayout();
-            this.pnlAgenda.SuspendLayout();
+            this.pnlDefensaExterna.SuspendLayout();
             this.pnlNuevoPerfil.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
             this.pnlCarrerasJuridicas.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
@@ -126,7 +128,7 @@
             this.btnNuevaDefensa.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaDefensa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
             this.btnNuevaDefensa.IconSize = 28;
             this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 0);
@@ -139,11 +141,12 @@
             this.btnNuevaDefensa.Text = "Nueva Defensa";
             this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevaDefensa.UseVisualStyleBackColor = false;
+            this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
             // 
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.pnlPerfiles);
-            this.pnlMenu.Controls.Add(this.pnlAgenda);
+            this.pnlMenu.Controls.Add(this.pnlDefensaExterna);
             this.pnlMenu.Location = new System.Drawing.Point(0, 263);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMenu.MaximumSize = new System.Drawing.Size(256, 288);
@@ -286,19 +289,19 @@
             this.btnPerfiles.UseVisualStyleBackColor = false;
             this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
-            // pnlAgenda
+            // pnlDefensaExterna
             // 
-            this.pnlAgenda.Controls.Add(this.btnJuridicasAgenda);
-            this.pnlAgenda.Controls.Add(this.btnTecnologiaAgenda);
-            this.pnlAgenda.Controls.Add(this.btnEmpresarialesAgenda);
-            this.pnlAgenda.Controls.Add(this.btnDefensaExterna);
-            this.pnlAgenda.Location = new System.Drawing.Point(2, 148);
-            this.pnlAgenda.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAgenda.MaximumSize = new System.Drawing.Size(255, 142);
-            this.pnlAgenda.MinimumSize = new System.Drawing.Size(255, 41);
-            this.pnlAgenda.Name = "pnlAgenda";
-            this.pnlAgenda.Size = new System.Drawing.Size(255, 142);
-            this.pnlAgenda.TabIndex = 15;
+            this.pnlDefensaExterna.Controls.Add(this.btnJuridicasAgenda);
+            this.pnlDefensaExterna.Controls.Add(this.btnTecnologiaAgenda);
+            this.pnlDefensaExterna.Controls.Add(this.btnEmpresarialesAgenda);
+            this.pnlDefensaExterna.Controls.Add(this.btnDefensaExterna);
+            this.pnlDefensaExterna.Location = new System.Drawing.Point(2, 148);
+            this.pnlDefensaExterna.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDefensaExterna.MaximumSize = new System.Drawing.Size(255, 142);
+            this.pnlDefensaExterna.MinimumSize = new System.Drawing.Size(255, 41);
+            this.pnlDefensaExterna.Name = "pnlDefensaExterna";
+            this.pnlDefensaExterna.Size = new System.Drawing.Size(255, 142);
+            this.pnlDefensaExterna.TabIndex = 15;
             // 
             // btnJuridicasAgenda
             // 
@@ -443,7 +446,7 @@
             this.btnNuevoPerfil.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnNuevoPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.File;
             this.btnNuevoPerfil.IconColor = System.Drawing.Color.White;
             this.btnNuevoPerfil.IconSize = 28;
             this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
@@ -679,6 +682,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(258, 29);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -1170,6 +1174,19 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(125, 9);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(598, 29);
+            this.lblTitulo.TabIndex = 24;
+            this.lblTitulo.Text = "Título";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1190,12 +1207,13 @@
             this.pnlNuevaDefensa.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlPerfiles.ResumeLayout(false);
-            this.pnlAgenda.ResumeLayout(false);
+            this.pnlDefensaExterna.ResumeLayout(false);
             this.pnlNuevoPerfil.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlCarrerasJuridicas.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
@@ -1221,7 +1239,7 @@
         private FontAwesome.Sharp.IconButton btnPsicologia;
         private FontAwesome.Sharp.IconButton btnRelInter;
         private FontAwesome.Sharp.IconButton btnDerecho;
-        private System.Windows.Forms.Panel pnlAgenda;
+        private System.Windows.Forms.Panel pnlDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
         private FontAwesome.Sharp.IconButton btnTecnologiaAgenda;
         private FontAwesome.Sharp.IconButton btnEmpresarialesAgenda;
@@ -1251,6 +1269,7 @@
         private FontAwesome.Sharp.IconButton btnRestaurar;
         private System.Windows.Forms.Panel pnlNuevaDefensa;
         private FontAwesome.Sharp.IconButton btnNuevaDefensa;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
 

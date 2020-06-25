@@ -15,17 +15,14 @@ namespace CapaPresentacion
     public partial class FrmPrincipal : Form
     {
         //campos
-        private bool esMinimizadoPerfiles = true;
-        private bool esMinimizadoAgenda = true;
         private bool facultadJuridicasClickeada;
         private bool facultadTecnologiaClickeada;
         private bool facultadEmpresarialesClickeada;
         private IconButton btnFacultadActual;
         private IconButton btnCarreraActual;
+        private IconButton btnActual;
         private string facultad;
         private string carrera;
-        public static bool frmNuevoPerfilCerrado = false;
-        private bool carrerasVisible;
         //frm hijo
         private Form frmHijoActual;
 
@@ -35,7 +32,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             pnlPerfiles.Size = MinimumSize;
-            pnlAgenda.Size = MinimumSize;
+            pnlDefensaExterna.Size = MinimumSize;
             //form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -51,7 +48,12 @@ namespace CapaPresentacion
             Form frmNuevoPerfil = new FrmNuevoPerfil();
             frmNuevoPerfil.Show();
         }
-
+        private void btnNuevaDefensa_Click(object sender, EventArgs e)
+        {
+            activarBoton(sender, ColoresRgb.rojoUtepsa);
+            //Form frmNuevaDefensa = new FrmNuevaDefensa();
+            //frmNuevaDefensa.Show();
+        }
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (frmHijoActual != null)
@@ -62,52 +64,92 @@ namespace CapaPresentacion
         }
         private void ReiniciarForm()
         {
-            esMinimizadoAgenda = true;
-            pnlAgenda.Size = MinimumSize;
-            esMinimizadoPerfiles = true;
+            pnlDefensaExterna.Size = MinimumSize;
             pnlPerfiles.Size = MinimumSize;
             deshabilitarResaltado();
         }
         #region Expandir_Retraer_Facultades
-        private void mostrarFacultades(Panel panel, string nombrePanel)
+        private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            panel.Height += 124;
-            if (panel.Size == panel.MaximumSize)
+            btnActual = (IconButton)sender;
+            abrirFrmHijo(new FrmPerfiles());
+            lblTitulo.Text = "Todos los Perfiles";
+
+            if (pnlPerfiles.Size != pnlPerfiles.MaximumSize)
             {
-                switch (nombrePanel)
-                {
-                    case "agenda":
-                        esMinimizadoPerfiles = true;
-                        esMinimizadoAgenda = false;
-                        break;
-                    case "perfiles":
-                        esMinimizadoAgenda = true;
-                        esMinimizadoPerfiles = false;
-                        break;
-                    default:
-                        break;
-                }
+                mostrarFacultades(pnlPerfiles);
             }
+            else
+            {
+                ocultarFacultades(pnlPerfiles);
+            }
+            if (pnlDefensaExterna.Size == pnlDefensaExterna.MaximumSize)
+            {
+                ocultarFacultades(pnlDefensaExterna);
+            }
+            activarBoton(sender, ColoresRgb.rojoUtepsa);
         }
-        private void ocultarFacultades(Panel panel, string nombrePanel)
+        private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
-            panel.Height -= 124;
-            if (panel.Size == panel.MinimumSize)
+            btnActual = (IconButton)sender;
+            abrirFrmHijo(new FrmAgenda());
+            lblTitulo.Text = "Todos las Defensas";
+
+            if (pnlDefensaExterna.Size != pnlDefensaExterna.MaximumSize)
             {
-                switch (nombrePanel)
-                {
-                    case "agenda":
-                        esMinimizadoPerfiles = true;
-                        esMinimizadoAgenda = false;
-                        break;
-                    case "perfiles":
-                        esMinimizadoAgenda = true;
-                        esMinimizadoPerfiles = false;
-                        break;
-                    default:
-                        break;
-                }
+                mostrarFacultades(pnlDefensaExterna);
             }
+            else
+            {
+                ocultarFacultades(pnlDefensaExterna);
+            }
+            if (pnlPerfiles.Size == pnlPerfiles.MaximumSize)
+            {
+                ocultarFacultades(pnlPerfiles);
+            }
+            activarBoton(sender, ColoresRgb.rojoUtepsa);
+        }
+        private void mostrarFacultades(Panel panel)
+        {
+            //btnActual = (IconButton)boton;
+            panel.Height += 124;
+            //if (panel.Size == panel.MaximumSize)
+            //{
+            //    switch (btnActual.Name)
+            //    {
+            //        case "btnDefensaExterna":
+            //            esMinimizadoPerfiles = true;
+            //            esMinimizadoAgenda = false;
+            //            break;
+            //        case "btnPerfiles":
+            //            esMinimizadoAgenda = true;
+            //            esMinimizadoPerfiles = false;
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+        }
+        private void ocultarFacultades(Panel panel)
+        {
+            //btnActual = (IconButton)boton;
+            panel.Height -= 124;
+            //if (panel.Size == panel.MinimumSize)
+            //{
+            //    switch (btnActual.Name)
+            //    {
+            //        case "btnDefensaExterna":
+            //            esMinimizadoPerfiles = true;
+            //            esMinimizadoAgenda = false;
+            //            break;
+            //        case "btnPerfiles":
+            //            esMinimizadoAgenda = true;
+            //            esMinimizadoPerfiles = false;
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
         }
         private struct ColoresRgb
         {
@@ -142,33 +184,6 @@ namespace CapaPresentacion
                 btnFacultadActual.TextImageRelation = TextImageRelation.ImageBeforeText;
                 //btnActual.ImageAlign = ContentAlignment.MiddleLeft;
             }
-        }
-        private void btnPerfiles_Click(object sender, EventArgs e)
-        {
-            if (esMinimizadoPerfiles)
-            {
-                mostrarFacultades(pnlPerfiles, "perfiles");
-            }
-            else
-            {
-                ocultarFacultades(pnlPerfiles, "perfiles");
-            }
-            activarBoton(sender, ColoresRgb.rojoUtepsa);
-            ocultarFacultades(pnlAgenda, "perfiles");
-        }
-        private void btnDefensaExterna_Click(object sender, EventArgs e)
-        {
-            abrirFrmHijo(new FrmAgenda());
-            if (esMinimizadoAgenda)
-            {
-                mostrarFacultades(pnlAgenda, "agenda");
-            }
-            else
-            {
-                ocultarFacultades(pnlAgenda, "agenda");
-            }
-            activarBoton(sender, ColoresRgb.color1);
-            ocultarFacultades(pnlPerfiles, "agenda");
         }
         #endregion
         #region Botones_Y_Efectos
@@ -207,7 +222,6 @@ namespace CapaPresentacion
             btnEmpresarialesPefiles.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnEmpresarialesPefiles.TextAlign = ContentAlignment.MiddleRight;
             btnEmpresarialesPefiles.ImageAlign = ContentAlignment.MiddleRight;
-            carrerasVisible = true;
 
         }
         private void ocultarCarrerasEmpresariales()
@@ -217,7 +231,6 @@ namespace CapaPresentacion
             btnEmpresarialesPefiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmpresarialesPefiles.TextAlign = ContentAlignment.MiddleLeft;
             btnEmpresarialesPefiles.ImageAlign = ContentAlignment.MiddleLeft;
-            carrerasVisible = false;
         }
         private void btnJuridicasPerfiles_Click(object sender, EventArgs e)
         {
@@ -235,7 +248,6 @@ namespace CapaPresentacion
             btnJuridicasPerfiles.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnJuridicasPerfiles.TextAlign = ContentAlignment.MiddleRight;
             btnJuridicasPerfiles.ImageAlign = ContentAlignment.MiddleRight;
-            carrerasVisible = true;
             
         }
         private void ocultarCarrerasJuridicas()
@@ -245,7 +257,6 @@ namespace CapaPresentacion
             btnJuridicasPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnJuridicasPerfiles.TextAlign = ContentAlignment.MiddleLeft;
             btnJuridicasPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-            carrerasVisible = false;
         }
         private void btnJuridicasPerfiles_MouseLeave(object sender, EventArgs e)
         {
@@ -297,7 +308,6 @@ namespace CapaPresentacion
             btnTecnologiaPerfiles.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnTecnologiaPerfiles.TextAlign = ContentAlignment.MiddleRight;
             btnTecnologiaPerfiles.ImageAlign = ContentAlignment.MiddleRight;
-            carrerasVisible = true;
 
         }
         private void ocultarCarrerasTecnologia()
@@ -307,7 +317,6 @@ namespace CapaPresentacion
             btnTecnologiaPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTecnologiaPerfiles.TextAlign = ContentAlignment.MiddleLeft;
             btnTecnologiaPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-            carrerasVisible = false;
         }
         #endregion
         #region Botones_Facultades
@@ -350,7 +359,6 @@ namespace CapaPresentacion
             btnJuridicasPerfiles.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnJuridicasPerfiles.TextAlign = ContentAlignment.MiddleRight;
             btnJuridicasPerfiles.ImageAlign = ContentAlignment.MiddleRight;
-            carrerasVisible = true;
         }
 
         private void btnJuridicasAgenda_MouseLeave(object sender, EventArgs e)
@@ -405,91 +413,109 @@ namespace CapaPresentacion
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
-            MessageBox.Show(facultad + " " + carrera);
+            lblTitulo.Text = carrera;
+            //MessageBox.Show(facultad + " " + carrera);
         }
 
         private void btnTurismo_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnComercial_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnComInternacional_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnMarketing_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnContaduria_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnFinanciera_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnComunicacion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
         private void btnIndustrial_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnPetrolera_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnElectronica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnMecanica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnRedes_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnElectrica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnDerecho_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnRelInter_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
 
         private void btnPsicologia_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+            lblTitulo.Text = carrera;
         }
         #endregion
 
@@ -576,5 +602,6 @@ namespace CapaPresentacion
 
         #endregion
 
+        
     }
 }
