@@ -29,7 +29,7 @@ namespace CapaPresentacion
         {
             string sql = " select * from facultad";
 
-            dtgAgenda.DataSource = obj.mostrarDatos(sql);
+            dtgDefensaExterna.DataSource = obj.mostrarDatos(sql);
 
         }
     }
