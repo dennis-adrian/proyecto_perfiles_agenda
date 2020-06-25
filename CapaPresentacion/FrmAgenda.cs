@@ -27,8 +27,7 @@ namespace CapaPresentacion
         }
         public void cargarTodo()
         {
-            string sql = " select AG.id as idagenda, AG.fecha_presentacion as fecha ,AG.hora as Hora,AG.aula as Aula,PF.tema as Tema, EG.fecha_aprobacion as Fechaaprobacion, ES.registro as Registro, ES.nombre as Nombres, ES.apellido as Apellidos, CA.nombre as Carreras,FA.nombre as Facultad " +
-                            " from agenda AG inner join perfil_tesis PF on AG.id_tesis = PF.id inner join examen_grado as EG on AG.id_examen_grado = EG.id inner join estudiante as ES on EG.id_estudiante = ES.id inner join carrera as CA on ES.id_carrera = CA.id inner join facultad as FA on CA.id_facultad = FA.id ";
+            string sql = " select * from facultad";
 
             dtgAgenda.DataSource = obj.mostrarDatos(sql);
 
