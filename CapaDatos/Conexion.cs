@@ -11,61 +11,52 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        private SQLiteConnection cnx;
+        #region Atributos
+
+        private SQLiteConnection cnx = ;
         private string pathBd;
 
+        #endregion
+        #region Propiedades
         public string PathBd { get => pathBd; set => pathBd = value; }
         public SQLiteConnection Cnx { get => cnx; set => cnx = value; }
 
+        #endregion
+
         public Conexion()
         {
-            //cnx = new SQLiteConnection("data source=" + pathBd + @"\bd\perfiles.db");
             pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
-        }
-        
-        public void abrirConexion()
-        {
             cnx = new SQLiteConnection("data source=" + pathBd + @"\bd\perfiles.db");
-            cnx.Open();
         }
-        public void insertarDatos(string sql)
+
+        #region Metodos
+
+        public SQLiteConnection AbrirConexion()
         {
-            abrirConexion();
-            string insertSQL = sql;
-            SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-            SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-            command.ExecuteNonQuery();
-            sqlTransaction.Commit();
-
+            //cnx = new SQLiteConnection("data source=" + pathBd + @"\bd\perfiles.db");
+           
+                if(cnx.State == ConnectionState.Closed)
+                {
+                    cnx.Open();ffff
+                    return cnx;
+                }       
+        }
+        public void cerrarConexion()
+        {asdasdasd
+            
+            
+               /* if (Conexion.State == ConnectionState.Open)
+                    Conexion.Close();
+                return Conexion;*/
+            
+            *//*dfdf
         }
 
-        public DataTable mostrarDatos(string sql)
-        {
-            abrirConexion();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, cnx);
-            DataTable ds = new DataTable();
-            da.Fill(ds);
-            cnx.Close();
-            return ds;
-        }
-        public DataTable cargarCombo(string sql)
-        {
-            abrirConexion();
-            SQLiteCommand cmd = new SQLiteCommand(sql, cnx);
-            DataTable items = new DataTable();
-            items.Load(cmd.ExecuteReader());
-            return items;
 
 
-        }
-        public DataTable cargarperfilaprobado(string sql)
-        {
-            abrirConexion();
-            SQLiteCommand cmd = new SQLiteCommand(sql, cnx);
-            DataTable items = new DataTable();
-            items.Load(cmd.ExecuteReader());
-            return items;
+        #endregion
 
-        }
+
+
     }
 }
