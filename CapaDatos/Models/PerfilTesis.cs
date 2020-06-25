@@ -17,7 +17,8 @@ namespace CapaDatos.Models
             fecha_recepcion_titulacion = "";
             estado_defensa = "";
             calificacion = 0;
-            id_tutor = 0;
+            id_liceniado = 0;
+            id_tipo_licenciado = 0;
         }
         #region Atributos 
         private int id;
@@ -27,7 +28,8 @@ namespace CapaDatos.Models
         private string fecha_recepcion_titulacion;
         private string estado_defensa;
         private double calificacion;
-        private int id_tutor;
+        private int id_liceniado;
+        private int id_tipo_licenciado;
 
 
         #endregion
@@ -40,7 +42,8 @@ namespace CapaDatos.Models
         public string Fecha_recepcion_titulacion { get => fecha_recepcion_titulacion; set => fecha_recepcion_titulacion = value; }
         public string Estado_defensa { get => estado_defensa; set => estado_defensa = value; }
         public double Calificacion { get => calificacion; set => calificacion = value; }
-        public int Id_tutor { get => id_tutor; set => id_tutor = value; }
+        public int Id_liceniado { get => id_liceniado; set => id_liceniado = value; }
+        public int Id_tipo_licenciado { get => id_tipo_licenciado; set => id_tipo_licenciado = value; }
 
         #endregion
         #region Metodos 

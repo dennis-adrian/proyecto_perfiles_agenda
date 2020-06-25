@@ -18,7 +18,7 @@ namespace CapaDatos.Models
             telefono = "";
             celular = "";
             docente = 0;
-            id_tipo_licenciado = 0;
+           
             id_institucion_representada = 0;
             id_carrera_licenciado = 0;
 
@@ -32,7 +32,6 @@ namespace CapaDatos.Models
         private string telefono;
         private string celular;
         private int docente;
-        private int id_tipo_licenciado;
         private int id_institucion_representada;
         private int id_carrera_licenciado;
 
@@ -49,7 +48,6 @@ namespace CapaDatos.Models
         public string Telefono { get => telefono; set => telefono = value; }
         public string Celular { get => celular; set => celular = value; }
         public int Docente { get => docente; set => docente = value; }
-        public int Id_tipo_licenciado { get => id_tipo_licenciado; set => id_tipo_licenciado = value; }
         public int Id_institucion_representada { get => id_institucion_representada; set => id_institucion_representada = value; }
         public int Id_carrera_licenciado { get => id_carrera_licenciado; set => id_carrera_licenciado = value; }
 
