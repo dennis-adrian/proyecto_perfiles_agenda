@@ -54,7 +54,10 @@ namespace CapaPresentacion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            frmHijoActual.Close();
+            if (frmHijoActual != null)
+            {
+                frmHijoActual.Close();
+            }
             ReiniciarForm();
         }
         private void ReiniciarForm()
@@ -153,7 +156,7 @@ namespace CapaPresentacion
             activarBoton(sender, ColoresRgb.rojoUtepsa);
             ocultarFacultades(pnlAgenda, "perfiles");
         }
-        private void btnAgenda_Click(object sender, EventArgs e)
+        private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
             abrirFrmHijo(new FrmAgenda());
             if (esMinimizadoAgenda)

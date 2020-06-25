@@ -44,11 +44,11 @@
             this.dtgAgenda.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgAgenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgAgenda.ColumnHeadersHeight = 29;
-            this.dtgAgenda.Location = new System.Drawing.Point(0, 56);
+            this.dtgAgenda.Location = new System.Drawing.Point(0, 46);
             this.dtgAgenda.Margin = new System.Windows.Forms.Padding(0);
             this.dtgAgenda.Name = "dtgAgenda";
             this.dtgAgenda.RowHeadersWidth = 51;
-            this.dtgAgenda.Size = new System.Drawing.Size(1141, 606);
+            this.dtgAgenda.Size = new System.Drawing.Size(856, 492);
             this.dtgAgenda.TabIndex = 0;
             // 
             // pnlBuscar
@@ -60,40 +60,45 @@
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(1142, 56);
+            this.pnlBuscar.Size = new System.Drawing.Size(856, 46);
             this.pnlBuscar.TabIndex = 1;
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(913, 12);
+            this.txtBuscar.Location = new System.Drawing.Point(685, 10);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(206, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(155, 23);
             this.txtBuscar.TabIndex = 24;
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(833, 12);
+            this.label14.Location = new System.Drawing.Point(625, 10);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 24);
+            this.label14.Size = new System.Drawing.Size(61, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Buscar";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // FrmAgenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1142, 661);
+            this.ClientSize = new System.Drawing.Size(856, 537);
             this.Controls.Add(this.pnlBuscar);
             this.Controls.Add(this.dtgAgenda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
             ((System.ComponentModel.ISupportInitialize)(this.dtgAgenda)).EndInit();
