@@ -123,12 +123,12 @@ CREATE TABLE IF NOT EXISTS "defensa_externa" (
     "fecha_presentacion" TEXT NOT NULL,
     "hora" TEXT NOT NULL,
     "aula" TEXT NOT NULL,
-    "id_tesis" INTEGER NOT NULL,
-    "id_examen_grado" INTEGER NOT NULL,
+    "id_tesis" INTEGER,
+    "id_titulacion_otros" INTEGER,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_perfiltesis_defensaexterna FOREIGN KEY("id_tesis") REFERENCES "perfil_tesis"("id"),
-    CONSTRAINT fk_examengrado_defensaexterna FOREIGN KEY("id_examen_grado") REFERENCES "examen_grado"("id")
+    CONSTRAINT fk_titulacionotros_defensaexterna FOREIGN KEY("id_titulacion_otros") REFERENCES "titulacion_otros"("id")
 );
 CREATE TABLE IF NOT EXISTS "detalle_defensa" (
     "id" INTEGER PRIMARY KEY,
