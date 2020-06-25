@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    class Facultad
+    public class Facultad: Conexion
     {
+        #region Atributos 
+
+        #endregion
+        #region Propiedades 
+
+        #endregion
+        #region Metodos 
+
+        #endregion
+
+
+
     }
 }

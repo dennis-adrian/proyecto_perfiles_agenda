@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    class CarreraLicenciado
+    public class CarreraLicenciado : Conexion
     {
     }
 }

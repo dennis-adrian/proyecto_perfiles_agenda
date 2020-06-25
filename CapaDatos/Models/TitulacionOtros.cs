@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    class TitulacionOtros
+    public class TitulacionOtros : Conexion
     {
+        #region Atributos 
+
+        #endregion
+        #region Propiedades 
+
+        #endregion
+        #region Metodos 
+
+        #endregion
     }
 }

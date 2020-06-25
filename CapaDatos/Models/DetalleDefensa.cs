@@ -6,7 +6,33 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    class DetalleDefensa
+    public class DetalleDefensa : Conexion
     {
+        public DetalleDefensa()
+        {
+            id = 0;
+            id_defensa_externa = 0;
+            id_licenciado = 0;
+            id_tipo_licenciado = 0;
+
+
+        }
+        #region Atributos 
+        private int id;
+        private int id_defensa_externa;
+        private int id_licenciado;
+        private int id_tipo_licenciado;
+
+        #endregion
+        #region Propiedades 
+        public int Id { get => id; set => id = value; }
+        public int Id_defensa_externa { get => id_defensa_externa; set => id_defensa_externa = value; }
+        public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
+        public int Id_tipo_licenciado { get => id_tipo_licenciado; set => id_tipo_licenciado = value; }
+
+        #endregion
+        #region Metodos 
+
+        #endregion
     }
 }
