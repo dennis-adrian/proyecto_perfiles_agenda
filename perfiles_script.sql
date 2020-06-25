@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS "carrera_licenciado" (
 CREATE TABLE IF NOT EXISTS "tipo_licenciado"(
     "id" INTEGER PRIMARY KEY,
     "tipo" TEXT COMMENT 'interno, externo',
+    "funcion_licenciado" TEXT COMMENT 'tribunal interno 1 o 2, presidente, secretario, representante del ministrerio de educacion, representante uagrm 1 o 2',
     "descripcion" TEXT,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
@@ -129,13 +130,6 @@ CREATE TABLE IF NOT EXISTS "defensa_externa" (
     CONSTRAINT fk_perfiltesis_defensaexterna FOREIGN KEY("id_tesis") REFERENCES "perfil_tesis"("id"),
     CONSTRAINT fk_examengrado_defensaexterna FOREIGN KEY("id_examen_grado") REFERENCES "examen_grado"("id")
 );
-CREATE TABLE IF NOT EXISTS "tipo_licenciado" (
-    "id" INTEGER PRIMARY KEY,
-    "tipo" TEXT COMMENT 'tribunal interno 1 o 2, presidente, secretario, representante del ministrerio de educacion, representante uagrm 1 o 2',
-    "descripcion" TEXT,
-    "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
-);
 CREATE TABLE IF NOT EXISTS "detalle_defensa" (
     "id" INTEGER PRIMARY KEY,
     "id_agenda" INTEGER NOT NULL,
@@ -147,3 +141,11 @@ CREATE TABLE IF NOT EXISTS "detalle_defensa" (
     FOREIGN KEY("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id"),
     FOREIGN KEY("id_agenda") REFERENCES "agenda"("id")
 );
+INSERT INTO facultad (nombre)
+VALUES ('Ciencias Empresariales');
+INSERT INTO facultad (nombre)
+VALUES ('Ciencias y Tecnología');
+INSERT INTO facultad (nombre)
+VALUES ('Ciencias Jurídicas, Sociales');
+INSERT INTO carrera (nombre, id_facultad)
+VALUES ('carrera1', 1);
