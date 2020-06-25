@@ -13,7 +13,7 @@ namespace CapaDatos
     {
         #region Atributos
 
-        private SQLiteConnection cnx = ;
+        private SQLiteConnection cnx;
         private string pathBd;
 
         #endregion
@@ -33,26 +33,23 @@ namespace CapaDatos
 
         public SQLiteConnection AbrirConexion()
         {
-            //cnx = new SQLiteConnection("data source=" + pathBd + @"\bd\perfiles.db");
-           
-                if(cnx.State == ConnectionState.Closed)
-                {
-                    cnx.Open();ffff
-                    return cnx;
-                }       
-        }
-        public void cerrarConexion()
-        {asdasdasd
-            
-            
-               /* if (Conexion.State == ConnectionState.Open)
-                    Conexion.Close();
-                return Conexion;*/
-            
-            *//*dfdf
-        }
+            if (cnx.State == ConnectionState.Closed)
+            {
+                cnx.Open();
 
+            }
+            return cnx;
+        }
+        public SQLiteConnection cerrarConexion()
+        {
+            if (cnx.State == ConnectionState.Open)
+            {
+                cnx.Close();
 
+            }
+            return cnx;
+
+        }
 
         #endregion
 
