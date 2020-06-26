@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {//comentario
 
     public partial class FrmAgenda : Form
     {
-        Conexion obj = new Conexion();
+        NegocioDefensaExterna obj = new NegocioDefensaExterna();
+       
         public FrmAgenda()
         {
             InitializeComponent();
@@ -27,9 +28,9 @@ namespace CapaPresentacion
         }
         public void cargarTodo()
         {
-            string sql = " select * from facultad";
+            
 
-           // dtgAgenda.DataSource = obj.mostrarDatos(sql);
+           dtgDefensaExterna.DataSource = obj.Defensas();
 
         }
     }

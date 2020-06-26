@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.btnBuscarAgenda = new System.Windows.Forms.Button();
             this.txtBuscarAgenda = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
             this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
-            this.btnBuscarAgenda = new System.Windows.Forms.Button();
             this.pnlBuscar.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDefensaExterna)).BeginInit();
@@ -51,6 +51,22 @@
             this.pnlBuscar.Name = "pnlBuscar";
             this.pnlBuscar.Size = new System.Drawing.Size(1141, 57);
             this.pnlBuscar.TabIndex = 1;
+            // 
+            // btnBuscarAgenda
+            // 
+            this.btnBuscarAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnBuscarAgenda.FlatAppearance.BorderSize = 0;
+            this.btnBuscarAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnBuscarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarAgenda.Location = new System.Drawing.Point(969, 10);
+            this.btnBuscarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarAgenda.Name = "btnBuscarAgenda";
+            this.btnBuscarAgenda.Size = new System.Drawing.Size(96, 33);
+            this.btnBuscarAgenda.TabIndex = 25;
+            this.btnBuscarAgenda.Text = "Buscar";
+            this.btnBuscarAgenda.UseVisualStyleBackColor = false;
             // 
             // txtBuscarAgenda
             // 
@@ -81,7 +97,7 @@
             this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
             this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDataGrid.Location = new System.Drawing.Point(0, 57);
-            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataGrid.Name = "pnlDataGrid";
             this.pnlDataGrid.Size = new System.Drawing.Size(1141, 604);
             this.pnlDataGrid.TabIndex = 2;
@@ -91,27 +107,11 @@
             this.dtgDefensaExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
-            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";
             this.dtgDefensaExterna.RowHeadersWidth = 51;
             this.dtgDefensaExterna.Size = new System.Drawing.Size(1141, 604);
             this.dtgDefensaExterna.TabIndex = 0;
-            // 
-            // btnBuscarAgenda
-            // 
-            this.btnBuscarAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnBuscarAgenda.FlatAppearance.BorderSize = 0;
-            this.btnBuscarAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnBuscarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarAgenda.Location = new System.Drawing.Point(969, 10);
-            this.btnBuscarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarAgenda.Name = "btnBuscarAgenda";
-            this.btnBuscarAgenda.Size = new System.Drawing.Size(96, 33);
-            this.btnBuscarAgenda.TabIndex = 25;
-            this.btnBuscarAgenda.Text = "Buscar";
-            this.btnBuscarAgenda.UseVisualStyleBackColor = false;
             // 
             // FrmAgenda
             // 

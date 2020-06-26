@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class DetalleDefensa : Conexion
+    public class DetalleDefensa : Conexion, IMetodos
     {
         public DetalleDefensa()
         {
@@ -32,6 +33,25 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+
+        public void Insert()
+        {
+
+        }
+        public void Delete()
+        {
+
+        }
+        public void Update()
+        {
+
+        }
+        public DataTable Select()
+        {
+            DataTable dt = new DataTable();
+            return dt;
+
+        }
 
         #endregion
     }

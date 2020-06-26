@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class DefensaExterna : Conexion
+    public class DefensaExterna : Conexion, IMetodos
     {
         public DefensaExterna()
         {
@@ -36,6 +38,50 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+
+
+        public void Insert()
+        {
+
+        }
+        public void Delete()
+        {
+
+        }
+        public void Update()
+        {
+
+        }
+        public DataTable Select()
+        {
+            DataTable dt = new DataTable();
+            return dt;
+
+        }
+
+        public DataTable MostrarAgendas()
+        {
+
+           
+
+
+
+
+        }
+        public DataTable MostrarAgendas(string criterio)
+        {
+
+            string sql = " SELECT * FROM  (select AG.id as idagenda, AG.fecha_presentacion as fecha ,AG.hora as Hora,AG.aula as Aula,PF.tema as Tema, EG.fecha_aprobacion as Fechaaprobacion, ES.registro as Registro, ES.nombre as Nombres, ES.apellido as Apellidos, CA.nombre as Carreras,FA.nombre as Facultad " +
+                           " from agenda AG inner join perfil_tesis PF on AG.id_tesis = PF.id inner join examen_grado as EG on AG.id_examen_grado = EG.id inner join estudiante as ES on EG.id_estudiante = ES.id inner join carrera as CA on ES.id_carrera = CA.id inner join facultad as FA on CA.id_facultad = FA.id)  " +
+                           " WHERE Carreras LIKE '%" + criterio + "%'  ";
+
+            //abrirConexion();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, Cnx);
+            DataTable ds = new DataTable();
+            da.Fill(ds);
+            Cnx.Close();
+            return ds;
+        }
 
 
         #endregion
