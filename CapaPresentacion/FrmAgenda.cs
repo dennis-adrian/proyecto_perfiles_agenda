@@ -18,25 +18,37 @@ namespace CapaPresentacion
         NegocioDefensaExterna obj = new NegocioDefensaExterna();
         
        
-        public FrmAgenda()
+        public FrmAgenda(string carrera)
         {
             InitializeComponent();
-            cargarTodo();
+            cargarTodo(carrera);
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
 
         }
-        public void cargarTodo()
+        public void cargarTodo(string carrera)
         {
+            if(carrera == null)
+            {
+                var list = obj.Defensas();
 
+                var bindingList = new BindingList<ViewDefensas>(list);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
 
-            var list = obj.Defensas();  
+            }
+            else
+            {
+                var list2 = obj.DefensasCarrera(carrera);
 
-            var bindingList = new BindingList<ViewDefensas>(list);
-            var source = new BindingSource(bindingList, null);
-            dtgDefensaExterna.DataSource = source;
+                var bindingList = new BindingList<ViewDefensasCarrera>(list2);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
+            }
+
+           
 
         }
     }

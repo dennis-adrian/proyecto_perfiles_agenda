@@ -92,6 +92,7 @@ namespace CapaPresentacion
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
             btnActual = (IconButton)sender;
+            MessageBox.Show(Convert.ToString(btnActual));///capturando el button y el text mikeeee :)
             abrirFrmHijo(new FrmPerfiles());
             lblTitulo.Text = "Todos los Perfiles";
 
@@ -112,7 +113,9 @@ namespace CapaPresentacion
         private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
             btnActual = (IconButton)sender;
-            abrirFrmHijo(new FrmAgenda());
+            MessageBox.Show(Convert.ToString(btnActual));
+            string criterio = null;
+            abrirFrmHijo(new FrmAgenda(criterio));
             lblTitulo.Text = "Todos las Defensas";
 
             if (pnlDefensaExterna.Size != pnlDefensaExterna.MaximumSize)
