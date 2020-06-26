@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS "facultad" (
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "carrera" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT UNIQUE,
@@ -12,18 +13,21 @@ CREATE TABLE IF NOT EXISTS "carrera" (
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_facultad_carrera FOREIGN KEY ("id_facultad") REFERENCES "facultad"("id")
 );
+
 CREATE TABLE IF NOT EXISTS "institucion" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "carrera_licenciado" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "tipo_licenciado"(
     "id" INTEGER PRIMARY KEY,
     "tipo" TEXT COMMENT 'interno, externo',
@@ -32,6 +36,7 @@ CREATE TABLE IF NOT EXISTS "tipo_licenciado"(
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "licenciado" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
@@ -50,6 +55,20 @@ CREATE TABLE IF NOT EXISTS "licenciado" (
     
     CONSTRAINT fk_carrera_licenciado FOREIGN KEY("id_carrera_licenciado") REFERENCES "carrera_licenciado"("id")
 );
+
+CREATE TABLE IF NOT EXISTS "estudiante" (
+    "id" INTEGER PRIMARY KEY,
+    "registro" TEXT NOT NULL,
+    "nombre" TEXT NOT NULL,
+    "apellido" TEXT NOT NULL,
+    "email" TEXT,
+    "telefono" TEXT,
+    "celular" TEXT,
+    "id_carrera" INTEGER NOT NULL,
+    "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    CONSTRAINT fk_carrera_estudiante FOREIGN KEY("id_carrera") REFERENCES "carrera"("id")
+);
 CREATE TABLE IF NOT EXISTS "perfil_tesis" (
     "id" INTEGER PRIMARY KEY,
     "tema" TEXT NOT NULL,
@@ -58,12 +77,14 @@ CREATE TABLE IF NOT EXISTS "perfil_tesis" (
     "fecha_recepcion_titulacion" TEXT,
     "estado_defensa" TEXT COMMENT 'aprobada o reprobada',
     "calificacion" REAL,
+    "id_estudiante" INTEGER NOT NULL,
     "id_licenciado" INTEGER COMMENT 'tutor de tesis' NOT NULL,
     "id_tipo_licenciado" INTEGER,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_tutor_perfiltesis FOREIGN KEY("id_licenciado") REFERENCES "licenciado"("id"),
-    FOREIGN key ("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id")
+    FOREIGN key ("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id"),
+    FOREIGN key ("id_estudiante")REFERENCES "estudiante" ("id")
 );
 CREATE TABLE IF NOT EXISTS "revision" (
     "id" INTEGER PRIMARY KEY,
@@ -91,22 +112,7 @@ CREATE TABLE IF NOT EXISTS "detalle_revision" (
     CONSTRAINT fk_licenciado_revisionlicenciado FOREIGN KEY("id_licenciado") REFERENCES "licenciado"("id"),
     FOREIGN key ("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id")
 );
-CREATE TABLE IF NOT EXISTS "estudiante" (
-    "id" INTEGER PRIMARY KEY,
-    "registro" TEXT NOT NULL,
-    "nombre" TEXT NOT NULL,
-    "apellido" TEXT NOT NULL,
-    "email" TEXT,
-    "telefono" TEXT,
-    "celular" TEXT,
-    "id_carrera" INTEGER NOT NULL,
-    "id_tesis" INTEGER,
-    "id_titulacion_otro" INTEGER,
-    "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    CONSTRAINT fk_carrera_estudiante FOREIGN KEY("id_carrera") REFERENCES "carrera"("id"),
-    CONSTRAINT fk_perfil_estudiante FOREIGN KEY("id_tesis") REFERENCES "perfil_tesis"("id")
-);
+
 CREATE TABLE IF NOT EXISTS "tipo_titulacion_otros"(
     "id" INTEGER PRIMARY KEY,
     "tipo" TEXT COMMENT 'examen de grado, graduación por excelencia',

@@ -41,17 +41,47 @@ namespace CapaDatos.Models
                 SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
                 command.ExecuteNonQuery();
                 sqlTransaction.Commit();
+
+                cerrarConexion();
             }
-            cerrarConexion();
+            
+
           
             
         }
-        public void Delete()
+        public void Delete(int id)
         {
+            string deleteSQL = " DELETE FROM carrera WHERE id = " + id + " ; ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+            
+
 
         }
-        public void Update()
+        public void Update(int id)
         {
+            string updateSQL = " UPDATE carrera " +
+                         " SET nombre = '" + Nombre + "', id_facultad = " + Id_facultad + " " +
+                         " WHERE id = " + id + " ; ";
+
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
 
         }
         public DataTable Select()

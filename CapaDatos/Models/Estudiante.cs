@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,8 @@ namespace CapaDatos.Models
             telefono = "";
             celular = "";
             id_carrera = 0;
-            id_tesis = 0;
-            id_titulacion_otro = 0;
+           
+            
 
 
         }
@@ -54,14 +55,56 @@ namespace CapaDatos.Models
 
         public void Insert()
         {
+            string insertSQL = " INSERT INTO estudiante (registro,nombre, apellido,email,telefono, celular,id_carrera,        id_tesis,id_titulacion_otro) VALUES ('" + Registro + "','" + Nombre + "','" + Apellido + "','" + Email + "','" + Telefono + "','" + Celular + "'," + Id_carrera + "  ); ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
+
 
         }
-        public void Delete()
+        public void Delete(int id)
         {
+            string deleteSQL = " DELETE FROM estudiante WHERE id = " + id + " ; ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
 
         }
-        public void Update()
+        public void Update(int id)
         {
+            string updateSQL = " UPDATE estudiante " +
+                         " SET registro = '" + Registro + "', nombre = '" + Nombre + "', apellido = '" + Apellido + "', email = '" + Email + "', telefono = '" + Telefono + "', celular = '" + Celular + "',id_carrera = " + Id_carrera + "  " +
+                         " WHERE id = " + id + " ; ";
+
+
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
 
         }
         public DataTable Select()

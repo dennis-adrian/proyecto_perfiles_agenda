@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
+using CapaDatos;
 
 namespace CapaNegocio
 {
     public class NegocioDefensaExterna
     {
         DefensaExterna defensaExterna = new DefensaExterna();
+        Vistas vistas = new Vistas();
         public NegocioDefensaExterna()
         {
 
@@ -19,8 +21,11 @@ namespace CapaNegocio
 
         public DataTable Defensas()
         {
-            return defensaExterna.MostrarAgendas();
+            return vistas.ViewDefensas();
+
         }
+
+
 
         #endregion
     }

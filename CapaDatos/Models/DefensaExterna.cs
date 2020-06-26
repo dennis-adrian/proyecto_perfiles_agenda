@@ -42,14 +42,55 @@ namespace CapaDatos.Models
 
         public void Insert()
         {
+            string insertSQL = " INSERT INTO defensa_externa ( fecha_presentacion, hora,aula,id_tesis,id_titulacion_otro ) VALUES ( '"+ Fecha_presentacion + "','" + Hora + "','" + Aula + "', " + Id_tesis + ", " +Id_titulacion_otro+" ); ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
+
 
         }
-        public void Delete()
+        public void Delete(int id)
         {
+            string deleteSQL = " DELETE FROM defensa_externa WHERE id = " + id + " ; ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
 
         }
-        public void Update()
+        public void Update(int id)
         {
+            string updateSQL = " UPDATE defensa_externa " +
+                        " SET fecha_presentacion = '" + Fecha_presentacion + "', hora = '" + Hora + "', aula = '" + Aula + "', id_tesis = " + Id_tesis + ", id_titulacion_otro = " + Id_titulacion_otro + " " +
+                         " WHERE id = " + id + " ; ";
+
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
 
         }
         public DataTable Select()
@@ -58,30 +99,19 @@ namespace CapaDatos.Models
             return dt;
 
         }
-
-        public DataTable MostrarAgendas()
+        public DataTable SelectId(int id)
         {
-
-           
-
-
-
+            DataTable dt = new DataTable();
+            return dt;
 
         }
-        public DataTable MostrarAgendas(string criterio)
+        public DataTable LastId()
         {
+            DataTable dt = new DataTable();
+            return dt;
 
-            string sql = " SELECT * FROM  (select AG.id as idagenda, AG.fecha_presentacion as fecha ,AG.hora as Hora,AG.aula as Aula,PF.tema as Tema, EG.fecha_aprobacion as Fechaaprobacion, ES.registro as Registro, ES.nombre as Nombres, ES.apellido as Apellidos, CA.nombre as Carreras,FA.nombre as Facultad " +
-                           " from agenda AG inner join perfil_tesis PF on AG.id_tesis = PF.id inner join examen_grado as EG on AG.id_examen_grado = EG.id inner join estudiante as ES on EG.id_estudiante = ES.id inner join carrera as CA on ES.id_carrera = CA.id inner join facultad as FA on CA.id_facultad = FA.id)  " +
-                           " WHERE Carreras LIKE '%" + criterio + "%'  ";
-
-            //abrirConexion();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, Cnx);
-            DataTable ds = new DataTable();
-            da.Fill(ds);
-            Cnx.Close();
-            return ds;
         }
+
 
 
         #endregion

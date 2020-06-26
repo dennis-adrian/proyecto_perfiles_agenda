@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,13 +59,56 @@ namespace CapaDatos.Models
         public void Insert()
         {
 
-        }
-        public void Delete()
-        {
+            string insertSQL = " INSERT INTO licenciado (nombre,apellido,descripcion,email,telefono,celular,docente ) VALUES ('" + Nombre + "', '" + Apellido + "','" + Descripcion + "','" + Email + "', '" + Telefono + "','" + Celular + "', " + Docente +", "+ Id_institucion_representada + "," + Id_carrera_licenciado + " ); ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
+
 
         }
-        public void Update()
+        public void Delete(int id)
         {
+            string deleteSQL = " DELETE FROM licenciado WHERE id = " + id + " ; ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
+
+        }
+        public void Update(int id)
+        {
+            string updateSQL = " UPDATE licenciado " +
+                         " SET nombre = '" + Nombre + "', apellido = '" + Apellido + "', descripcion = '" + Descripcion + "', email = '" + Email + "', telefono = '" + Telefono + "', celular = '" + Celular + "', docente = "+Docente+", id_institucion_representada = " + Id_institucion_representada + ", id_carrera_licenciado = " + Id_carrera_licenciado + "  " +
+                         " WHERE id = " + id + " ; ";
+
+
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
 
         }
         public DataTable Select()

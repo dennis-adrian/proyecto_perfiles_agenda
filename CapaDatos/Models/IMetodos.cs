@@ -10,8 +10,8 @@ namespace CapaDatos.Models
     interface IMetodos
     {
         void Insert();
-        void Update();
-        void Delete();
+        void Update(int id);
+        void Delete(int id);
 
         DataTable Select();
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,14 +57,55 @@ namespace CapaDatos.Models
         #region Metodos 
         public void Insert()
         {
+            string insertSQL = " INSERT INTO revision  ( fecha_entrega_alumno,fecha_entrega_tribunal,fecha_limite_devolucion,fecha_devolucion_tribunal,fecha_devolucion_alumno,nro_tribunal,nro_revision,fecha_empaste, id_tesis ) VALUES ('"+Fecha_entrega_alumno+"','"+Fecha_entrega_tribunal+"','"+Fecha_limite_devolucion+"','"+Fecha_devolucion_tribunal+"','"+Fecha_devolucion_alumno+"',"+Nro_tribunal+" ,"+Nro_revision+" ,'"+Fecha_empaste+"',"+Id_tesis+" ); ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
+
 
         }
-        public void Delete()
+        public void Delete(int id)
         {
+            string deleteSQL = " DELETE FROM revision WHERE id = " + id + " ; ";
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
+
+
 
         }
-        public void Update()
+        public void Update(int id)
         {
+            string updateSQL = " UPDATE revision  " +
+                         " SET fecha_entrega_alumno = '"+Fecha_entrega_alumno+"',fecha_entrega_tribunal= '"+Fecha_entrega_tribunal+"',fecha_limite_devolucion = '"+Fecha_limite_devolucion+"',fecha_devolucion_tribunal = '"+Fecha_devolucion_tribunal+"',fecha_devolucion_alumno = '"+Fecha_devolucion_alumno+"',nro_tribunal="+Nro_tribunal+",nro_revision="+Nro_revision+",fecha_empaste='"+Fecha_empaste+"',id_tesis="+Id_tesis+" " +
+                         " WHERE id = " + id + " ; ";
+
+            SQLiteConnection cnx = AbrirConexion();
+            if (cnx != null)
+            {
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+
+                cerrarConexion();
+            }
 
         }
         public DataTable Select()
