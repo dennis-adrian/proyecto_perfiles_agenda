@@ -10,35 +10,34 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmNuevoPerfil : Form
+    public partial class FrmNuevoLicenciado : Form
     {
-        public FrmNuevoPerfil()
+        public FrmNuevoLicenciado()
         {
             InitializeComponent();
         }
-
-        private void btnCancelarNuevop_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        #region Arrastrar_Form
-
-        private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ArrastrarForm.ReleaseCapture();
-            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        #endregion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnElegirTutor_Click(object sender, EventArgs e)
+        private void pnlbarralicenciado_MouseDown(object sender, MouseEventArgs e)
         {
-            FrmLicenciado obj = new FrmLicenciado();
-            obj.Show();
+            ArrastrarForm.ReleaseCapture();
+            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pnlNuevoLicenciado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnGuardarNuevoP_Click(object sender, EventArgs e)
+        {
+            Form frmLicenciado = new FrmLicenciado();
+            frmLicenciado.Show();
+            this.Close();
         }
     }
 }

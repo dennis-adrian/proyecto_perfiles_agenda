@@ -156,15 +156,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
-    <Compile Include="Control.cs" />
-    <Compile Include="ControlAgenda.cs" />
-    <Compile Include="ControlPerfil.cs" />
-    <Compile Include="ControlRevision.cs" />
     <Compile Include="FrmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAgenda.Designer.cs">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLicenciado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLicenciado.Designer.cs">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevaDefensaExterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaDefensaExterna.Designer.cs">
+      <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoLicenciado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoLicenciado.Designer.cs">
+      <DependentUpon>FrmNuevoLicenciado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoPerfil.cs">
       <SubType>Form</SubType>
@@ -188,6 +202,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgenda.resx">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLicenciado.resx">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevaDefensaExterna.resx">
+      <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoLicenciado.resx">
+      <DependentUpon>FrmNuevoLicenciado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoPerfil.resx">
       <DependentUpon>FrmNuevoPerfil.cs</DependentUpon>

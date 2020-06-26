@@ -45,14 +45,34 @@ namespace CapaPresentacion
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
             activarBoton(sender, ColoresRgb.rojoUtepsa);
-            Form frmNuevoPerfil = new FrmNuevoPerfil();
+            //Form frmNuevoPerfil = new FrmNuevoPerfil();
+            //frmNuevoPerfil.Show();
+            /////este codigo controla que no se abra dos veces el formulario
+            Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
+
+            if (frmNuevoPerfil != null)
+            {
+                //si la instancia existe la pongo en primer plano
+                frmNuevoPerfil.BringToFront();
+                return;
+            }
+
+            //sino existe la instancia se crea una nueva
+            frmNuevoPerfil = new FrmNuevoPerfil();
             frmNuevoPerfil.Show();
         }
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
             activarBoton(sender, ColoresRgb.rojoUtepsa);
-            //Form frmNuevaDefensa = new FrmNuevaDefensa();
-            //frmNuevaDefensa.Show();
+            Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
+
+            if (frmNuevaDefensaExterna != null)
+            {
+                frmNuevaDefensaExterna.BringToFront();
+                return;
+            }
+            frmNuevaDefensaExterna = new FrmNuevaDefensaExterna();
+            frmNuevaDefensaExterna.Show();
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -565,7 +585,18 @@ namespace CapaPresentacion
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("¿Quiere Cerrar la Aplicación?", "Mensaje de Confirmación", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //do something
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+           
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
