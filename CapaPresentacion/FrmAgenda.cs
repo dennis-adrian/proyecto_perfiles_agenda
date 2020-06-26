@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaNegocio.Views;
 
 namespace CapaPresentacion
 {//comentario
@@ -15,6 +16,7 @@ namespace CapaPresentacion
     public partial class FrmAgenda : Form
     {
         NegocioDefensaExterna obj = new NegocioDefensaExterna();
+        
        
         public FrmAgenda()
         {
@@ -28,9 +30,13 @@ namespace CapaPresentacion
         }
         public void cargarTodo()
         {
-            
 
-           dtgDefensaExterna.DataSource = obj.Defensas();
+
+            var list = obj.Defensas();  
+
+            var bindingList = new BindingList<ViewDefensas>(list);
+            var source = new BindingSource(bindingList, null);
+            dtgDefensaExterna.DataSource = source;
 
         }
     }
