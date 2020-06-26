@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaNegocio
+namespace CapaPresentacion
 {
-    public class Class1
+    public class Control
     {
+
     }
 }

@@ -156,6 +156,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
+    <Compile Include="Control.cs" />
+    <Compile Include="ControlAgenda.cs" />
+    <Compile Include="ControlPerfil.cs" />
+    <Compile Include="ControlRevision.cs" />
     <Compile Include="FrmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoPerfil.resx">
       <DependentUpon>FrmNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerfiles.resx">
+      <DependentUpon>FrmPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
