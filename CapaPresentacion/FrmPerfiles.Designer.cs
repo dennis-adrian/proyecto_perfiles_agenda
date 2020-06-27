@@ -65,6 +65,7 @@
             this.btnBuscarPerfil.TabIndex = 25;
             this.btnBuscarPerfil.Text = "Buscar";
             this.btnBuscarPerfil.UseVisualStyleBackColor = false;
+            this.btnBuscarPerfil.Click += new System.EventHandler(this.btnBuscarPerfil_Click);
             // 
             // txtBuscarPerfil
             // 

@@ -60,7 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers.cs" />
     <Compile Include="NegocioDefensaExterna.cs" />
+    <Compile Include="NegocioPerfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ViewDefensas.cs" />
     <Compile Include="Views\ViewDefensasCarrera.cs" />

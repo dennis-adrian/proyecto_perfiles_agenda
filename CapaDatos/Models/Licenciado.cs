@@ -113,10 +113,22 @@ namespace CapaDatos.Models
         }
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            string sql = "  select LI.id as id, (LI.nombre+' '+LI.apellido) as Licenciado,LI.telefono as Telefono ,I.nombre as Institucion, CL.nombre as Carrera from licenciado as LI inner join institucion as I on I.id = LI.id_institucion_representada inner join carrera_licenciado as CL on CL.id = LI.id_carrera_licenciado;   ";
+            SQLiteConnection cnx = AbrirConexion();
+            DataTable ds = new DataTable();
+            if (cnx != null)
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, cnx);
+                
+                da.Fill(ds);
+                Cnx.Close();
+                
+            }
+            return ds;
         }
+       
+
+        
         #endregion
     }
 }

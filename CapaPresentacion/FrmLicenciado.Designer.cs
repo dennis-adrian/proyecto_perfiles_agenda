@@ -65,6 +65,7 @@
             this.dtgLicenciados.RowTemplate.Height = 24;
             this.dtgLicenciados.Size = new System.Drawing.Size(850, 493);
             this.dtgLicenciados.TabIndex = 17;
+            this.dtgLicenciados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLicenciados_CellContentClick);
             // 
             // panel2
             // 
@@ -121,6 +122,7 @@
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Licenciados";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // pnlbarralicenciado
             // 

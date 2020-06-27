@@ -493,6 +493,7 @@
             this.btnAgregarLicenciado.TabIndex = 49;
             this.btnAgregarLicenciado.Text = "Agregar";
             this.btnAgregarLicenciado.UseVisualStyleBackColor = false;
+            this.btnAgregarLicenciado.Click += new System.EventHandler(this.btnAgregarLicenciado_Click);
             // 
             // panel2
             // 

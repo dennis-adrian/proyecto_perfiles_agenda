@@ -92,8 +92,8 @@ namespace CapaPresentacion
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
             btnActual = (IconButton)sender;
-            MessageBox.Show(btnActual.Text);///capturando el button y el text mikeeee :)
-            abrirFrmHijo(new FrmPerfiles());
+            string criterio = null;
+            abrirFrmHijo(new FrmPerfiles(criterio));
             lblTitulo.Text = "Todos los Perfiles";
 
             if (pnlPerfiles.Size != pnlPerfiles.MaximumSize)
@@ -432,12 +432,25 @@ namespace CapaPresentacion
         {
             btnCarreraActual = (IconButton)btnRemitente;
             return btnCarreraActual.Text;
+            
         }
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
-            //MessageBox.Show(facultad + " " + carrera);
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+           
 
         }
 
@@ -445,101 +458,314 @@ namespace CapaPresentacion
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnComercial_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnComInternacional_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnMarketing_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnContaduria_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnFinanciera_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
 
         private void btnComunicacion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasEmpresariales();
+            }
+
         }
         private void btnIndustrial_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
+
         }
 
         private void btnPetrolera_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
+
         }
 
         private void btnElectronica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
         }
 
         private void btnMecanica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
         }
 
         private void btnRedes_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
         }
 
         private void btnElectrica_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasTecnologia();
+            }
         }
 
         private void btnDerecho_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasJuridicas();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasJuridicas();
+            }
         }
 
         private void btnRelInter_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasJuridicas();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasJuridicas();
+            }
         }
 
         private void btnPsicologia_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
             lblTitulo.Text = carrera;
+            string criterio = carrera;
+            string actual = btnActual.Text;
+            if (actual == "Defensa Externa")
+            {
+                abrirFrmHijo(new FrmAgenda(criterio));
+                ocultarCarrerasJuridicas();
+            }
+            else
+            {
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                ocultarCarrerasJuridicas();
+            }
         }
         #endregion
 

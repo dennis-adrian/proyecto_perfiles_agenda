@@ -60,7 +60,7 @@ namespace CapaDatos
         public DataTable ViewPerfiles()
         {
             
-            string sql = "  SELECT * FROM defensa_externa ; ";
+            string sql = "  SELECT * FROM ViewPerfiles ; ";
             DataTable dt = new DataTable();
 
             if (AbrirConexion() != null)
@@ -74,7 +74,7 @@ namespace CapaDatos
         }
         public DataTable ViewPerfilesCarrera(string carrera)
         {
-           string sql = "  SELECT * FROM defensa_externa ; ";
+           string sql = "  SELECT * FROM ViewPerfiles  where Carrera Like '%" + carrera + "%'; ; ";
             DataTable dt = new DataTable();
 
             if (AbrirConexion() != null)
@@ -86,5 +86,20 @@ namespace CapaDatos
             return dt;
 
         }
+        public DataTable ViewPerfilEstudiante(string estudiante)
+        {
+            string sql = "  SELECT * FROM ViewPerfiles  where Estudiante Like '%" + estudiante + "%'; ; ";
+            DataTable dt = new DataTable();
+
+            if (AbrirConexion() != null)
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, AbrirConexion());
+                da.Fill(dt);
+                cerrarConexion();
+            }
+            return dt;
+
+        }
+
     }
 }

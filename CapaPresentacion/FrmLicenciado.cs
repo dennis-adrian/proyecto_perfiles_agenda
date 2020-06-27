@@ -12,9 +12,11 @@ namespace CapaPresentacion
 {
     public partial class FrmLicenciado : Form
     {
+        CapaNegocio.NegocioPerfiles obj = new CapaNegocio.NegocioPerfiles();
         public FrmLicenciado()
         {
             InitializeComponent();
+            mostraLicenciados();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -36,6 +38,20 @@ namespace CapaPresentacion
         {
             ArrastrarForm.ReleaseCapture();
             ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dtgLicenciados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void mostraLicenciados()
+        {
+            dtgLicenciados.DataSource = obj.Licenciados();
         }
     }
 }

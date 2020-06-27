@@ -39,5 +39,11 @@ namespace CapaPresentacion
             frmLicenciado.Show();
             this.Close();
         }
+
+        private void btnAgregarLicenciado_Click(object sender, EventArgs e)
+        {
+            Form frmNuevoInstitucion = new FormsAgregar.NuevaInstitucion();
+            frmNuevoInstitucion.Show();
+        }
     }
 }
