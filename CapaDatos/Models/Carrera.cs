@@ -64,7 +64,7 @@ namespace CapaDatos.Models
         public int LastId()
         {
 
-            string tabla = "carrera";
+          
             return LastIdConexion(TableName);
         }
 

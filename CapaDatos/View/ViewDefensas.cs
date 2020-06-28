@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos;
 
-namespace CapaNegocio.Views
+namespace CapaDatos.View
 {
-    public class ViewDefensasCarrera
+    public class ViewDefensas : CapaDatos.Conexion
     {
-        public ViewDefensasCarrera()
+        public ViewDefensas()
         {
             id = 0;
             fecha_Defensa = "";
@@ -46,6 +48,20 @@ namespace CapaNegocio.Views
         public string Apellido { get => apellido; set => apellido = value; }
         public string Carrera { get => carrera; set => carrera = value; }
         public string Facultad { get => facultad; set => facultad = value; }
+
+
+
+
+        #region Metodos
+
+        public DataTable Select()
+        {
+            return SelectConexion("ViewDefensas");
+        }
+
+
+        #endregion
     }
+
 
 }

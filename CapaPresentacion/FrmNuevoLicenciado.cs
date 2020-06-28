@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmNuevoLicenciado()
         {
             InitializeComponent();
+            cargar();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace CapaPresentacion
 
         private void pnlNuevoLicenciado_Paint(object sender, PaintEventArgs e)
         {
-
+               
         }
 
         private void btnGuardarNuevoP_Click(object sender, EventArgs e)
@@ -44,6 +45,13 @@ namespace CapaPresentacion
         {
             Form frmNuevoInstitucion = new FormsAgregar.NuevaInstitucion();
             frmNuevoInstitucion.Show();
+        }
+        public void cargar()
+        {
+            CapaDatos.Models.Carrera obj = new CapaDatos.Models.Carrera();
+            comboBox1.DataSource = obj.Select();
+            comboBox1.ValueMember = "id";
+            comboBox1.DisplayMember = "nombre";
         }
     }
 }

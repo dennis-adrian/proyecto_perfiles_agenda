@@ -63,6 +63,14 @@
       <Project>{9cff7f83-ec45-437d-bdb7-079cfe5f81d7}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{5bc5d4eb-2c89-47ce-8764-e71d297cdbcb}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
+      <Project>{3fde5615-4e56-4139-b118-a2174d323968}</Project>
+      <Name>CapaPresentacion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

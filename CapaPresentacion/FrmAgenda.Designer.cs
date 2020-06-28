@@ -143,7 +143,7 @@
             // 
             // viewDefensasBindingSource
             // 
-            this.viewDefensasBindingSource.DataSource = typeof(CapaNegocio.Views.ViewDefensas);
+            this.viewDefensasBindingSource.DataSource = typeof(CapaDatos.View.ViewDefensas);
             // 
             // idDataGridViewTextBoxColumn
             // 

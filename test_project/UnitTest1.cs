@@ -27,5 +27,37 @@ namespace test_project
 
             obj.LastId();
         }
+        [TestMethod]
+        public void TestMethod3()
+        {
+            CapaNegocio.ValidationInputUI obj = new CapaNegocio.ValidationInputUI();
+            char c = 'c';
+            bool b = true;
+
+            Object[] objeto = new Object[] { 1,"2",3.3,c,b,1,15,"hello world"};
+            obj.ValidateInput(objeto);
+        }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            CapaNegocio.src.Email obj = new CapaNegocio.src.Email();
+            obj.Direccion = "emaisadas111l@example.com";
+            Console.WriteLine(obj.Direccion);
+        }
+        [TestMethod]
+        public void TestMethod5()
+        {
+            CapaNegocio.src.Numero obj = new CapaNegocio.src.Numero();
+            obj.Telefono = "336565";
+            Console.WriteLine(obj.Telefono);
+        }
+        [TestMethod]
+        public void TestMethod6()
+        {
+            CapaNegocio.src.Numero obj = new CapaNegocio.src.Numero();
+            obj.Celular = "336565";
+            Console.WriteLine(obj.Celular);
+        }
+
     }
 }

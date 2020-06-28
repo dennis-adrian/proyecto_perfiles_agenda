@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaNegocio.Views
+namespace CapaDatos.View
 {
-    class ViewRevisiones
+    class ViewPerfilesCarrera
     {
     }
 }

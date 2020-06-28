@@ -64,11 +64,9 @@
     <Compile Include="NegocioDefensaExterna.cs" />
     <Compile Include="NegocioPerfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ViewDefensas.cs" />
-    <Compile Include="Views\ViewDefensasCarrera.cs" />
-    <Compile Include="Views\ViewPerfiles.cs" />
-    <Compile Include="Views\ViewPerfilesCarrera.cs" />
-    <Compile Include="Views\ViewRevisiones.cs" />
+    <Compile Include="src\Email.cs" />
+    <Compile Include="src\Numero.cs" />
+    <Compile Include="ValidationInputUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

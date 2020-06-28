@@ -5,33 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
-using CapaDatos;
-using CapaNegocio.Views;
+using CapaDatos.View;
+
 
 namespace CapaNegocio
 {
     public class NegocioDefensaExterna
     {
-        Vistas Vista = new Vistas();
-       
+        ViewDefensas viewDefensas = new ViewDefensas();
 
-       
-
-
-
-
-        DefensaExterna defensaExterna = new DefensaExterna();
        
         public NegocioDefensaExterna()
         {
 
         }
+
+
+
         #region FrmDefensaExterna
 
         public List<ViewDefensas> Defensas()
         {
             List<ViewDefensas> ListaDefensas = new List<ViewDefensas>();
-            DataTable tabla = Vista.ViewDefensas();
+            DataTable tabla = viewDefensas.Select();
           
 
             for (int i=0; i <tabla.Rows.Count; i++)
@@ -55,7 +51,7 @@ namespace CapaNegocio
             return ListaDefensas;
 
         }
-        public List<ViewDefensasCarrera> DefensasCarrera(string  carrera)
+       /* public List<ViewDefensasCarrera> DefensasCarrera(string  carrera)
         {
             List<ViewDefensasCarrera> ListaDefensasCarreras = new List<ViewDefensasCarrera>();
             DataTable tabla = Vista.ViewDefensasCarrera(carrera);
@@ -82,7 +78,7 @@ namespace CapaNegocio
 
             return ListaDefensasCarreras;
 
-        }
+        }*/
 
 
 
