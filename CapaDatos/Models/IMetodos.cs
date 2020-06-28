@@ -13,6 +13,5 @@ namespace CapaDatos.Models
         void Update(int id);
         void Delete(int id);
 
-        DataTable Select();
     }
 }

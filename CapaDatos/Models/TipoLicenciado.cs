@@ -36,65 +36,41 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+       
+           private static string TableName = "tipo_licenciado";
         public void Insert()
         {
-            string insertSQL = " INSERT INTO tipo_licenciado ( tipo, funcion_licenciado,descripcion ) VALUES ('" + Tipo + "','" + Funcion_licenciado + "','"+Descripcion+"' ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (  tipo, funcion_licenciado,descripcion  ) VALUES ( @parametro0,@paramtros1,@parametros2); ";
+            Object[] Parametros = new Object[] { Tipo,Funcion_licenciado,Descripcion };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM tipo_licenciado WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE tipo_licenciado " +
-                         " SET tipo = '" + tipo + "', funcion_licenciado = '" + Funcion_licenciado + "',descripcion='"+Descripcion+"' " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET   tipo = @parametro0, funcion_licenciado=@parametro1,descripcion  = @parametro2  WHERE id = @parametro3 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Tipo, Funcion_licenciado, Descripcion, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
         #endregion
     }
 }

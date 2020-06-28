@@ -18,7 +18,7 @@ namespace CapaDatos.Models
         #region Atributos 
         private int id;
         private string nombre;
-
+        private static string TableName = "carrera_licenciado";
 
         #endregion
         #region Propiedades 
@@ -27,66 +27,44 @@ namespace CapaDatos.Models
 
 
         #endregion
+
+
         #region Metodos 
         public void Insert()
         {
-            string insertSQL = " INSERT INTO carrera_licenciado ( nombre) VALUES ('" + Nombre + "'  ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO "+TableName+" ( nombre) VALUES (@parametro0); ";
+            Object[] Parametros = new Object[] { Nombre };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM carrera_licenciado WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE carrera_licenciado " +
-                         " SET nombre = '" + Nombre + "'  " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET nombre = @parametro0  WHERE id = @parametro1 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Nombre,  id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
+
         #endregion
+
     }
 }

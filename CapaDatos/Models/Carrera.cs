@@ -10,17 +10,22 @@ namespace CapaDatos.Models
 {
     public class Carrera : Conexion, IMetodos
     {
+
         public Carrera()
         {
             id = 0;
             nombre = "";
             id_facultad = 0;
+
+            
           
         }
         #region Atributos 
         private int id;
         private string nombre;
         private int id_facultad;
+
+        private static string TableName = "carrera";
 
 
         #endregion
@@ -33,63 +38,38 @@ namespace CapaDatos.Models
         #region Metodos 
         public void Insert()
         {
-            string insertSQL = " INSERT INTO carrera ( nombre, id_facultad ) VALUES ('" + Nombre + "', " + Id_facultad + " ); ";
-            SQLiteConnection cnx = AbrirConexion(); 
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-            
-
-          
-            
+            string sql = " INSERT INTO "+TableName+" (nombre, id_facultad ) VALUES(@parametro0,@parametro1); ";
+            Object[] Parametros = new Object[] { Nombre, Id_facultad };
+            QueryBuilder(sql, Parametros);
+                                          
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM carrera WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-            
-
+            string sql = " DELETE FROM " + TableName + "  WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE carrera " +
-                         " SET nombre = '" + Nombre + "', id_facultad = " + Id_facultad + " " +
-                         " WHERE id = " + id + " ; ";
-
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            string sql = " UPDATE " + TableName + "  SET nombre = @parametro0 , id_facultad = @parametro1 WHERE id = @parametro2 ; ";
+            Object[] Parametros = new Object[] {Nombre,Id_facultad, id };
+            QueryBuilder(sql, Parametros);
 
         }
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            string tabla = "carrera";
+            return LastIdConexion(TableName);
+        }
+
+
+
         #endregion
     }
 }

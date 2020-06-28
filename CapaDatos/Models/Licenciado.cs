@@ -56,79 +56,43 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+        string insertSQL = " INSERT INTO licenciado (nombre,apellido,descripcion,email,telefono,celular,docente ) VALUES ();";
+
+        private static string TableName = "institucion";
         public void Insert()
         {
-
-            string insertSQL = " INSERT INTO licenciado (nombre,apellido,descripcion,email,telefono,celular,docente ) VALUES ('" + Nombre + "', '" + Apellido + "','" + Descripcion + "','" + Email + "', '" + Telefono + "','" + Celular + "', " + Docente +", "+ Id_institucion_representada + "," + Id_carrera_licenciado + " ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,docente  ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6); ";
+            Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Docente };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM licenciado WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE licenciado " +
-                         " SET nombre = '" + Nombre + "', apellido = '" + Apellido + "', descripcion = '" + Descripcion + "', email = '" + Email + "', telefono = '" + Telefono + "', celular = '" + Celular + "', docente = "+Docente+", id_institucion_representada = " + Id_institucion_representada + ", id_carrera_licenciado = " + Id_carrera_licenciado + "  " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET  nombre =@parametro0 ,apellido= @parametro1,descripcion=@parametro2,email=@parametro3,telefono=@parametro4,celular=@parametro5,docente=@parametro6  WHERE id = @parametro7 ; ";
 
-
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Docente, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            string sql = "  select LI.id as id, (LI.nombre+' '+LI.apellido) as Licenciado,LI.telefono as Telefono ,I.nombre as Institucion, CL.nombre as Carrera from licenciado as LI inner join institucion as I on I.id = LI.id_institucion_representada inner join carrera_licenciado as CL on CL.id = LI.id_carrera_licenciado;   ";
-            SQLiteConnection cnx = AbrirConexion();
-            DataTable ds = new DataTable();
-            if (cnx != null)
-            {
-                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, cnx);
-                
-                da.Fill(ds);
-                Cnx.Close();
-                
-            }
-            return ds;
+            return SelectConexion(TableName);
         }
-       
+        public int LastId()
+        {
 
-        
+            return LastIdConexion(TableName);
+        }
+
+
         #endregion
     }
 }

@@ -55,65 +55,41 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+
+             private static string TableName = "revision";
         public void Insert()
         {
-            string insertSQL = " INSERT INTO revision  ( fecha_entrega_alumno,fecha_entrega_tribunal,fecha_limite_devolucion,fecha_devolucion_tribunal,fecha_devolucion_alumno,nro_tribunal,nro_revision,fecha_empaste, id_tesis ) VALUES ('"+Fecha_entrega_alumno+"','"+Fecha_entrega_tribunal+"','"+Fecha_limite_devolucion+"','"+Fecha_devolucion_tribunal+"','"+Fecha_devolucion_alumno+"',"+Nro_tribunal+" ,"+Nro_revision+" ,'"+Fecha_empaste+"',"+Id_tesis+" ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (  fecha_entrega_alumno,fecha_entrega_tribunal,fecha_limite_devolucion,fecha_devolucion_tribunal,fecha_devolucion_alumno,nro_tribunal,nro_revision,fecha_empaste, id_tesis  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4,@parametro5,@parametro6,@parametro7,@parametro8); ";
+            Object[] Parametros = new Object[] { Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM revision WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE revision  " +
-                         " SET fecha_entrega_alumno = '"+Fecha_entrega_alumno+"',fecha_entrega_tribunal= '"+Fecha_entrega_tribunal+"',fecha_limite_devolucion = '"+Fecha_limite_devolucion+"',fecha_devolucion_tribunal = '"+Fecha_devolucion_tribunal+"',fecha_devolucion_alumno = '"+Fecha_devolucion_alumno+"',nro_tribunal="+Nro_tribunal+",nro_revision="+Nro_revision+",fecha_empaste='"+Fecha_empaste+"',id_tesis="+Id_tesis+" " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET fecha_entrega_alumno=@parametro0,fecha_entrega_tribunal=@parametro1,fecha_limite_devolucion=@parametro2,fecha_devolucion_tribunal@parametro3,fecha_devolucion_alumno=@parametro4,nro_tribunal@parametro=5,nro_revision=@parametro6,fecha_empaste=@parametro7, id_tesis=@parametro8   WHERE id = @parametro9 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Nro_tribunal, Nro_revision, Fecha_empaste, Id, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
         #endregion
     }
 }

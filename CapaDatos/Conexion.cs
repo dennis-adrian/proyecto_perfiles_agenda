@@ -51,6 +51,75 @@ namespace CapaDatos
 
         }
 
+        public void QueryBuilder(string sql, Object[] Parametros)
+        {
+            try
+            {
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
+
+                for (int i = 0; i < Parametros.Length; i++)
+                {
+                    string parametro = "@parametro" + Convert.ToString(i);
+                    command.Parameters.Add(new SQLiteParameter(parametro, Parametros[i]));
+                }
+
+                command.ExecuteNonQuery();
+                sqlTransaction.Commit();
+                cerrarConexion();
+            }
+            catch
+            {
+                throw new ArgumentException("Error");
+            }
+
+        }
+        public DataTable SelectConexion(string tabla)
+        {
+
+            string sql = " SELECT * FROM "+tabla+" ; ";
+            try
+            {
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteCommand cmd = new SQLiteCommand(sql, cnx);
+                DataTable items = new DataTable();
+                items.Load(cmd.ExecuteReader());
+                cerrarConexion();
+                return items;
+
+            }
+            catch
+            {
+                throw new ArgumentException("Error");
+            }
+        }
+        public int LastIdConexion(string tabla)
+        {
+
+            
+            string sql = "SELECT * FROM " + tabla + " WHERE ID = (SELECT MAX(ID) FROM " + tabla + ");";
+
+            try
+            {
+                int last = 0;
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteCommand cmd = new SQLiteCommand(sql, cnx);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    last = reader.GetInt32(0);
+
+                }
+                cerrarConexion();
+                return last;
+            }
+            catch
+            {
+                throw new ArgumentException("Error");
+            }
+        }
         #endregion
 
 

@@ -27,6 +27,8 @@ namespace CapaDatos.Models
         private int id_tesis;
         private int id_titulacion_otro;
 
+        private static string TableName = "defensa_externa";
+
         #endregion
         #region Propiedades 
         public int Id { get => id; set => id = value; }
@@ -40,78 +42,39 @@ namespace CapaDatos.Models
         #region Metodos 
 
 
+
         public void Insert()
         {
-            string insertSQL = " INSERT INTO defensa_externa ( fecha_presentacion, hora,aula,id_tesis,id_titulacion_otro ) VALUES ( '"+ Fecha_presentacion + "','" + Hora + "','" + Aula + "', " + Id_tesis + ", " +Id_titulacion_otro+" ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " ( fecha_presentacion, hora,aula,id_tesis,id_titulacion_otro ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4); ";
+            Object[] Parametros = new Object[] { Fecha_presentacion,Hora,Aula,Id_tesis,Id_titulacion_otro };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM defensa_externa WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE defensa_externa " +
-                        " SET fecha_presentacion = '" + Fecha_presentacion + "', hora = '" + Hora + "', aula = '" + Aula + "', id_tesis = " + Id_tesis + ", id_titulacion_otro = " + Id_titulacion_otro + " " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET fecha_presentacion=@parametro0, hora=@parametro1, aula=@parametro2, id_tesis=@parametro3,  id_titulacion_otro=@parametro4 WHERE id = @parametro5 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis, Id_titulacion_otro, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
-        public DataTable SelectId(int id)
+        public int LastId()
         {
-            DataTable dt = new DataTable();
-            return dt;
 
+            return LastIdConexion(TableName);
         }
-        public DataTable LastId()
-        {
-            DataTable dt = new DataTable();
-            return dt;
-
-        }
-
 
 
         #endregion

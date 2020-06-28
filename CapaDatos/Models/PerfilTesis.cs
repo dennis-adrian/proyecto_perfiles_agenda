@@ -14,7 +14,7 @@ namespace CapaDatos.Models
         {
             id = 0;
             tema = "";
-            estado = "Aprobado";
+            estado = "";
             fecha_aprobacion_jefe_carrera = "";
             fecha_recepcion_titulacion = "";
             estado_defensa = "";
@@ -52,66 +52,41 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+        //tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_tipo_licenciado
+        private static string TableName = "perfil_tesis";
         public void Insert()
         {
-            string insertSQL = " INSERT INTO perfil_tesis (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_tipo_licenciado) VALUES ('" + Tema + "', '" + Estado + "', '" + Fecha_aprobacion_jefe_carrera + "','" + Fecha_recepcion_titulacion + "','"+Estado_defensa+"',"+Calificacion+","+Id_estudiante+",  " + Id_licenciado + ", "+Id_tipo_licenciado+" ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_tipo_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
+            Object[] Parametros = new Object[] { Tema,Estado,Fecha_aprobacion_jefe_carrera,Fecha_recepcion_titulacion,Estado_defensa,Calificacion,Id_estudiante,Id_licenciado,Id_tipo_licenciado};
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM perfil_tesis WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE perfil_tesis " +
-                         " SET  tema = '"+Tema+"',estado,fecha_aprobacion_jefe_carrera ='"+Fecha_aprobacion_jefe_carrera+"',fecha_recepcion_titulacion = '"+Fecha_recepcion_titulacion+"',estado_defensa = '"+Estado_defensa+"',calificacion="+Calificacion+",id_estudiante="+Id_estudiante+",id_licenciado="+Id_licenciado+",id_tipo_licenciado = "+Id_tipo_licenciado+" " +
-                         " WHERE id = " + id + " ; ";
-           
+            string sql = " UPDATE " + TableName + "  SET tema = @parametro0,estado=@parametro1,fecha_aprobacion_jefe_carrera=@parametro2,fecha_recepcion_titulacion=@parametro3,estado_defensa=@parametro4,calificacion=@parametro5,id_estudiante=@parametro6,id_licenciado=@parametro7,id_tipo_licenciado=@parametro8  WHERE id = @parametro9 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Tema, Estado, Fecha_aprobacion_jefe_carrera, Fecha_recepcion_titulacion, Estado_defensa, Calificacion, Id_estudiante, Id_licenciado, Id_tipo_licenciado, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
         #endregion
     }
 }

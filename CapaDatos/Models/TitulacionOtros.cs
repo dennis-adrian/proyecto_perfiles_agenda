@@ -37,65 +37,41 @@ namespace CapaDatos.Models
         #endregion
         #region Metodos 
 
+       
+             private static string TableName = "titulacion_otros";
         public void Insert()
         {
-            string insertSQL = " INSERT INTO titulacion_otros ( estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ('" + Estado_defensa + "', " + Calificacion + ", "+Id_estudiante+","+Id_tipo_titulacion+" ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0); ";
+            Object[] Parametros = new Object[] { Estado_defensa,Calificacion,Id_estudiante,id_tipo_titulacion };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM titulacion_otros WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE titulacion_otros " +
-                         " SET estado_defensa='"+Estado_defensa+"', calificacion = "+Calificacion+",id_estudiante = "+Id_estudiante+",id_tipo_titulacion="+Id_tipo_titulacion+" " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET estado_defensa = @parametro0 ,calificacion=@parametro1,id_estudiante=@parmetro2,id_tipo_titulacion=@parametro3  WHERE id = @parametro4 ; ";
 
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Estado_defensa, Calificacion, Id_estudiante, id_tipo_titulacion, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
-
+            return SelectConexion(TableName);
         }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
 
         #endregion
     }

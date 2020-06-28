@@ -53,65 +53,40 @@ namespace CapaDatos.Models
         #endregion
         #region Metodos 
 
+        
+            
+        private static string TableName = "estudiante";
         public void Insert()
         {
-            string insertSQL = " INSERT INTO estudiante (registro,nombre, apellido,email,telefono, celular,id_carrera,        id_tesis,id_titulacion_otro) VALUES ('" + Registro + "','" + Nombre + "','" + Apellido + "','" + Email + "','" + Telefono + "','" + Celular + "'," + Id_carrera + "  ); ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(insertSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
-
+            string sql = "  INSERT INTO " + TableName + " (  registro,nombre, apellido,email,telefono, celular,id_carrera  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4,@parametro5,@parametro6); ";
+            Object[] Parametros = new Object[] { Registro, Nombre, Apellido, Email, Telefono, Celular, Id_carrera };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string deleteSQL = " DELETE FROM estudiante WHERE id = " + id + " ; ";
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(deleteSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
-
-
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string updateSQL = " UPDATE estudiante " +
-                         " SET registro = '" + Registro + "', nombre = '" + Nombre + "', apellido = '" + Apellido + "', email = '" + Email + "', telefono = '" + Telefono + "', celular = '" + Celular + "',id_carrera = " + Id_carrera + "  " +
-                         " WHERE id = " + id + " ; ";
+            string sql = " UPDATE " + TableName + "  SET  registro = @parametro0 ,nombre = @parametro1, apellido=@parametro2 ,email = @parametro3 ,telefono = @parametro4 , celular = @parametro5 ,id_carrera = @parametro6   WHERE id = @parametro7 ; ";
 
-
-            SQLiteConnection cnx = AbrirConexion();
-            if (cnx != null)
-            {
-                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = new SQLiteCommand(updateSQL, cnx);
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-
-                cerrarConexion();
-            }
+            Object[] Parametros = new Object[] { Registro, Nombre, Apellido, Email, Telefono, Celular, Id_carrera, id };
+            QueryBuilder(sql, Parametros);
 
         }
+
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
-            return dt;
+            return SelectConexion(TableName);
+        }
+        public int LastId()
+        {
 
+            return LastIdConexion(TableName);
         }
         #endregion
     }
