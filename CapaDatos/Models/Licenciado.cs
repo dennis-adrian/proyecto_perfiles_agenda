@@ -56,9 +56,9 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
-        string insertSQL = " INSERT INTO licenciado (nombre,apellido,descripcion,email,telefono,celular,docente ) VALUES ();";
+        
 
-        private static string TableName = "institucion";
+        private static string TableName = "Licenciado";
         public void Insert()
         {
             string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,docente  ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6); ";
