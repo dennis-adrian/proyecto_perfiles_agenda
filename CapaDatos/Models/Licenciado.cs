@@ -19,7 +19,8 @@ namespace CapaDatos.Models
             email = "";
             telefono = "";
             celular = "";
-            docente = 0;
+            tipo = ""; //interno o externo
+            docente = 0;// 0 no 1 si
            
             id_institucion_representada = 0;
             id_carrera_licenciado = 0;
@@ -33,6 +34,7 @@ namespace CapaDatos.Models
         private string email;
         private string telefono;
         private string celular;
+        private string tipo;
         private int docente;
         private int id_institucion_representada;
         private int id_carrera_licenciado;
@@ -49,6 +51,7 @@ namespace CapaDatos.Models
         public string Email { get => email; set => email = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Celular { get => celular; set => celular = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
         public int Docente { get => docente; set => docente = value; }
         public int Id_institucion_representada { get => id_institucion_representada; set => id_institucion_representada = value; }
         public int Id_carrera_licenciado { get => id_carrera_licenciado; set => id_carrera_licenciado = value; }
@@ -58,11 +61,11 @@ namespace CapaDatos.Models
         #region Metodos 
         
 
-        private static string TableName = "Licenciado";
+        private static string TableName = "licenciado";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,docente  ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6); ";
-            Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Docente };
+            string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,tipo,docente  ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6,@parametro7); ";
+            Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Tipo,Docente };
             QueryBuilder(sql, Parametros);
 
         }
@@ -75,9 +78,9 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  nombre =@parametro0 ,apellido= @parametro1,descripcion=@parametro2,email=@parametro3,telefono=@parametro4,celular=@parametro5,docente=@parametro6  WHERE id = @parametro7 ; ";
+            string sql = " UPDATE " + TableName + "  SET  nombre =@parametro0 ,apellido= @parametro1,descripcion=@parametro2,email=@parametro3,telefono=@parametro4,celular=@parametro5,tipo = @parametro6,docente=@parametro7  WHERE id = @parametro8 ; ";
 
-            Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Docente, id };
+            Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Tipo ,Docente, id };
             QueryBuilder(sql, Parametros);
 
         }
