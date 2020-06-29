@@ -95,6 +95,28 @@ namespace CapaDatos
                 throw new ArgumentException("Error");
             }
         }
+        public DataTable SelectConexion(string sql, string estudiante)
+        {
+            try
+            {
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
+                command.Parameters.Add(new SQLiteParameter("@parametro", estudiante));
+                DataTable items = new DataTable();
+                items.Load(command.ExecuteReader());
+
+                cerrarConexion();
+                return items;
+            }
+            catch
+            {
+                throw new ArgumentException("Error");
+            }
+
+        }
+
+
         public int LastIdConexion(string tabla)
         {
 
