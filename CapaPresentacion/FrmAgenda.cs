@@ -18,11 +18,13 @@ namespace CapaPresentacion
     {
         NegocioDefensaExterna obj = new NegocioDefensaExterna();
 
-         
+        string carrera = null;
         public FrmAgenda(string criterio)
         {
             InitializeComponent();
             cargarTodo(criterio);
+            carrera = criterio;
+
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -48,6 +50,24 @@ namespace CapaPresentacion
                 dtgDefensaExterna.DataSource = source;
             }
 
+        }
+
+        public void  estudiante(string estudiante){
+            if(carrera == null)
+            {
+                var list = obj.Defensas(estudiante);
+                var bindingList = new BindingList<ViewDefensas>(list);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
+
+            }
+            else
+            {
+                var list2 = obj.DefensasCarrera(carrera,estudiante);
+                var bindingList = new BindingList<ViewDefensasCarrera>(list2);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
+            }
         }
     }
 }
