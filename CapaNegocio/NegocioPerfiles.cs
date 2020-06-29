@@ -13,6 +13,11 @@ namespace CapaNegocio
         ViewPerfiles viewPerfiles = new ViewPerfiles();
         ViewPerfilesCarrera viewPerfilesCarrera = new ViewPerfilesCarrera();
 
+        public NegocioPerfiles()
+        {
+
+        }
+
         #region FrmPerfiles
         public List<ViewPerfiles> Perfiles()
         {
@@ -73,10 +78,10 @@ namespace CapaNegocio
 
         #endregion
         #region FrmPerfilesCarrera
-        public List<ViewPerfilesCarrera> PerfilesCarrera()
+        public List<ViewPerfilesCarrera> PerfilesCarrera(string carrera)
         {
             List<ViewPerfilesCarrera> listaperfilescarrera = new List<ViewPerfilesCarrera>();
-            DataTable tabla = viewPerfilesCarrera.Select();
+            DataTable tabla = viewPerfilesCarrera.Select(carrera);
 
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
@@ -99,10 +104,10 @@ namespace CapaNegocio
             return listaperfilescarrera;
         }
 
-        public List<ViewPerfilesCarrera> PerfilesCarrera(string estudiante)
+        public List<ViewPerfilesCarrera> PerfilesCarrera(string carrera,string estudiante)
         {
             List<ViewPerfilesCarrera> listaperfilescarrera = new List<ViewPerfilesCarrera>();
-            DataTable tabla = viewPerfilesCarrera.Select(estudiante);
+            DataTable tabla = viewPerfilesCarrera.Select(carrera,estudiante);
 
             for (int i = 0; i < tabla.Rows.Count; i++)
             {

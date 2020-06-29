@@ -16,7 +16,6 @@ namespace CapaPresentacion
         public FrmLicenciado()
         {
             InitializeComponent();
-            mostraLicenciados();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -27,9 +26,7 @@ namespace CapaPresentacion
 
         private void btnAgregarLicenciado_Click(object sender, EventArgs e)
         {
-            FrmNuevoLicenciado obj = new FrmNuevoLicenciado();
-            obj.Show();
-            this.Close();
+            ;
 
 
         }
@@ -49,9 +46,6 @@ namespace CapaPresentacion
         {
 
         }
-        public void mostraLicenciados()
-        {
-            dtgLicenciados.DataSource = obj.Licenciados();
-        }
+        
     }
 }

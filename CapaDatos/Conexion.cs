@@ -103,15 +103,16 @@ namespace CapaDatos
                 SQLiteCommand command = cnx.CreateCommand();
                 command.CommandText = sql;
                 command.Parameters.Add(new SQLiteParameter("@parametro0", parametro0));
+
                 DataTable items = new DataTable();
                 items.Load(command.ExecuteReader());
 
                 cerrarConexion();
                 return items;
             }
-            catch
+            catch(Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error" + e);
             }
 
         }

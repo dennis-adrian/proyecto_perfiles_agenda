@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaDatos.View;
 
 namespace CapaPresentacion
 {
@@ -18,35 +19,35 @@ namespace CapaPresentacion
         public FrmPerfiles(string criterio)
         {
             InitializeComponent();
-            Inicializador(criterio);
+            cargarTodo(criterio);
             carrera = criterio;
         }
-        public void Inicializador(string criterio)
-        {
-
-            if(criterio == null)
-            {
-                dtgPerfilesTesis.DataSource= obj.mostarPerfiles();
-            }
-            else
-            {
-                dtgPerfilesTesis.DataSource = obj.mostrarPerfileCarrera(criterio);
-            }
-        }
+        
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
-            string estudiante = txtBuscarPerfil.Text;
-            if(carrera == null)
+            
+           
+        }
+        public void cargarTodo(string carrera)
+        {
+
+            if (carrera == null)
             {
-                Inicializador(carrera);
+                var list = obj.Perfiles();
+                var bindingList = new BindingList<ViewPerfiles>(list);
+                var source = new BindingSource(bindingList, null);
+                dtgPerfilesTesis.DataSource = source;
 
             }
             else
             {
-                dtgPerfilesTesis.DataSource = obj.mostrarPerfilEstudiante(estudiante);
+                var list2 = obj.PerfilesCarrera(carrera);
+                var bindingList = new BindingList<ViewPerfilesCarrera>(list2);
+                var source = new BindingSource(bindingList, null);
+                dtgPerfilesTesis.DataSource = source;
             }
-           
+
         }
     }
 }

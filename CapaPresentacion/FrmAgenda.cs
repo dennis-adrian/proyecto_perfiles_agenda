@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaDatos.View;
 
 
 namespace CapaPresentacion
@@ -34,29 +35,18 @@ namespace CapaPresentacion
             if(carrera == null)
             {
                 var list = obj.Defensas();
-
-                var bindingList = new BindingList<CapaDatos.View.ViewDefensas>(list);
+                var bindingList = new BindingList<ViewDefensas>(list);
                 var source = new BindingSource(bindingList, null);
                 dtgDefensaExterna.DataSource = source;
 
-            }/*
+            }
             else
             {
                 var list2 = obj.DefensasCarrera(carrera);
-
-                var bindingList = new BindingList<CapaDatos.View.ViewDefensas>(list2);
+                var bindingList = new BindingList<ViewDefensasCarrera>(list2);
                 var source = new BindingSource(bindingList, null);
                 dtgDefensaExterna.DataSource = source;
-            }*/
-            /*
-            var Collection = obj.Defensas();
-            foreach(var item in Collection)
-            {
-
-                dtgDefensaExterna.Rows.Add();
-            }*/
-          
-
+            }
 
         }
     }
