@@ -20,8 +20,7 @@ namespace CapaDatos.View
             tipo = "";
             tema = "";
             registro = "";
-            nombre = "";
-            apellido = "";
+            estudiante = "";
             carrera = "";
             facultad = "";
         }
@@ -33,8 +32,7 @@ namespace CapaDatos.View
         private string tipo;
         private string tema;
         private string registro;
-        private string nombre;
-        private string apellido;
+        private string estudiante;
         private string carrera;
         private string facultad;
 
@@ -45,8 +43,7 @@ namespace CapaDatos.View
         public string Tipo { get => tipo; set => tipo = value; }
         public string Tema { get => tema; set => tema = value; }
         public string Registro { get => registro; set => registro = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
+        public string Estudiante { get => estudiante; set => estudiante = value; }
         public string Carrera { get => carrera; set => carrera = value; }
         public string Facultad { get => facultad; set => facultad = value; }
 
@@ -57,9 +54,16 @@ namespace CapaDatos.View
 
         public DataTable Select()
         {
-            return obj.SelectConexion("ViewDefensas");
+            string sql = " SELECT * FROM ViewDefensas ; ";
+            return obj.SelectConexion(sql);
         }
+        public DataTable Select(string estudiante)
+        {
 
+            string sql = " SELECT * FROM ViewDefensas  WHERE Estudiante LIKE '%@parametro0%' ; ";
+            return obj.SelectConexion(sql, estudiante);
+
+        }
 
 
         #endregion

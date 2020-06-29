@@ -14,7 +14,9 @@ namespace CapaNegocio
     {
         ViewDefensas viewDefensas = new ViewDefensas();
 
-      
+        ViewDefensas viewDefensas2 = new ViewDefensas();
+
+
 
         #region FrmDefensaExterna
 

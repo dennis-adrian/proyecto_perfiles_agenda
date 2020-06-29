@@ -59,12 +59,13 @@ namespace CapaDatos.View
         #region Metodos
         public DataTable Select()
         {
-            return obj.SelectConexion("ViewPerfiles") ;
+            string sql = " SELECT * FROM ViewPerfiles ; ";
+            return obj.SelectConexion(sql);
         }
         public DataTable Select(string estudiante)
         {
 
-            string sql = " SELECT * FROM ViewPerfiles  WHERE estudiante LIKE '%@parametro%' ; ";
+            string sql = " SELECT * FROM ViewPerfiles  WHERE Estudiante LIKE '%@parametro0%' ; ";
             return obj.SelectConexion(sql, estudiante);
            
         }

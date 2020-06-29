@@ -76,33 +76,54 @@ namespace CapaDatos
             }
 
         }
-        public DataTable SelectConexion(string tabla)
+        public DataTable SelectConexion(string sql)
         {
 
-            string sql = " SELECT * FROM "+tabla+" ; ";
             try
             {
                 SQLiteConnection cnx = AbrirConexion();
-                SQLiteCommand cmd = new SQLiteCommand(sql, cnx);
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
                 DataTable items = new DataTable();
-                items.Load(cmd.ExecuteReader());
+                items.Load(command.ExecuteReader());
+
                 cerrarConexion();
                 return items;
-
             }
             catch
             {
                 throw new ArgumentException("Error");
             }
         }
-        public DataTable SelectConexion(string sql, string estudiante)
+        public DataTable SelectConexion(string sql, string parametro0)
         {
             try
             {
                 SQLiteConnection cnx = AbrirConexion();
                 SQLiteCommand command = cnx.CreateCommand();
                 command.CommandText = sql;
-                command.Parameters.Add(new SQLiteParameter("@parametro", estudiante));
+                command.Parameters.Add(new SQLiteParameter("@parametro0", parametro0));
+                DataTable items = new DataTable();
+                items.Load(command.ExecuteReader());
+
+                cerrarConexion();
+                return items;
+            }
+            catch
+            {
+                throw new ArgumentException("Error");
+            }
+
+        }
+        public DataTable SelectConexion(string sql, string parametro0, string parametro1)
+        {
+            try
+            {
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
+                command.Parameters.Add(new SQLiteParameter("@parametro0", parametro0));
+                command.Parameters.Add(new SQLiteParameter("@parametro1", parametro1));
                 DataTable items = new DataTable();
                 items.Load(command.ExecuteReader());
 

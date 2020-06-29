@@ -59,7 +59,8 @@ namespace CapaDatos.Models
         }
         public DataTable Select()
         {
-            return SelectConexion(TableName);
+            string sql = " SELECT * FROM "+TableName+" ; ";
+            return SelectConexion(sql);
         }
         public int LastId()
         {
