@@ -16,12 +16,12 @@ namespace CapaPresentacion
     public partial class FrmAgenda : Form
     {
         NegocioDefensaExterna obj = new NegocioDefensaExterna();
-        
-       
-        public FrmAgenda(string carrera)
+
+         
+        public FrmAgenda(string criterio)
         {
             InitializeComponent();
-            cargarTodo(carrera);
+            cargarTodo(criterio);
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace CapaPresentacion
         }
         public void cargarTodo(string carrera)
         {
+           
             if(carrera == null)
             {
                 var list = obj.Defensas();
@@ -38,17 +39,24 @@ namespace CapaPresentacion
                 var source = new BindingSource(bindingList, null);
                 dtgDefensaExterna.DataSource = source;
 
-            }
+            }/*
             else
-            {/*
+            {
                 var list2 = obj.DefensasCarrera(carrera);
 
                 var bindingList = new BindingList<CapaDatos.View.ViewDefensas>(list2);
                 var source = new BindingSource(bindingList, null);
-                dtgDefensaExterna.DataSource = source;*/
-            }
+                dtgDefensaExterna.DataSource = source;
+            }*/
+            /*
+            var Collection = obj.Defensas();
+            foreach(var item in Collection)
+            {
 
-           
+                dtgDefensaExterna.Rows.Add();
+            }*/
+          
+
 
         }
     }

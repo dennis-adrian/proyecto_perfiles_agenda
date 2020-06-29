@@ -8,8 +8,9 @@ using CapaDatos;
 
 namespace CapaDatos.View
 {
-    public class ViewDefensas : CapaDatos.Conexion
+    public class ViewDefensas
     {
+        Conexion obj = new Conexion();
         public ViewDefensas()
         {
             id = 0;
@@ -56,7 +57,7 @@ namespace CapaDatos.View
 
         public DataTable Select()
         {
-            return SelectConexion("ViewDefensas");
+            return obj.SelectConexion("ViewDefensas");
         }
 
 
