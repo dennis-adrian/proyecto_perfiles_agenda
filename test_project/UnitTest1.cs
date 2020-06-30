@@ -40,24 +40,18 @@ namespace test_project
         [TestMethod]
         public void TestMethod4()
         {
-            CapaNegocio.src.Email obj = new CapaNegocio.src.Email();
-            obj.Direccion = "emaisadas111l@example.com";
-            Console.WriteLine(obj.Direccion);
+            CapaNegocio.src.DataTypes obj = new CapaNegocio.src.DataTypes();
+            obj.Email = "emaisadas111l@example.com";
+            Console.WriteLine(obj.Email);
         }
         [TestMethod]
         public void TestMethod5()
         {
-            CapaNegocio.src.Numero obj = new CapaNegocio.src.Numero();
-            obj.Telefono = "336565";
+            CapaNegocio.src.DataTypes obj = new CapaNegocio.src.DataTypes();
+            obj.Telefono = "777777";
             Console.WriteLine(obj.Telefono);
         }
-        [TestMethod]
-        public void TestMethod6()
-        {
-            CapaNegocio.src.Numero obj = new CapaNegocio.src.Numero();
-            obj.Celular = "336565";
-            Console.WriteLine(obj.Celular);
-        }
+        
         [TestMethod]
         public void BUGD002()
         {
