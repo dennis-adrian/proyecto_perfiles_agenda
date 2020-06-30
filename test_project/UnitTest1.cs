@@ -58,6 +58,17 @@ namespace test_project
             obj.Celular = "336565";
             Console.WriteLine(obj.Celular);
         }
+        [TestMethod]
+        public void BUGD002()
+        {
+            DetalleRevision obj = new DetalleRevision();
+
+            obj.Id_funcion_licenciado = 1;
+            obj.Id_licenciado = 1;
+            obj.Id_revision = 1;
+            obj.Insert();
+          
+        }
 
     }
 }

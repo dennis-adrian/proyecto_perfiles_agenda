@@ -68,12 +68,12 @@
     <Compile Include="Models\DetalleRevision.cs" />
     <Compile Include="Models\Estudiante.cs" />
     <Compile Include="Models\Facultad.cs" />
+    <Compile Include="Models\FuncionLicenciado.cs" />
     <Compile Include="Models\IMetodos.cs" />
     <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\Licenciado.cs" />
     <Compile Include="Models\PerfilTesis.cs" />
     <Compile Include="Models\Revision.cs" />
-    <Compile Include="Models\TipoLicenciado.cs" />
     <Compile Include="Models\TipoTitulacionOtros.cs" />
     <Compile Include="Models\TitulacionOtros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

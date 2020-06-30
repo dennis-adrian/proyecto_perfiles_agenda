@@ -15,7 +15,7 @@ namespace CapaDatos.Models
             id = 0;
             id_revision = 0;
             id_licenciado = 0;
-            id_tipo_licenciado = 0;
+            id_funcion_licenciado = 0;
 
         }
 
@@ -24,7 +24,8 @@ namespace CapaDatos.Models
         private int id;
         private int id_revision;
         private int id_licenciado;
-        private int id_tipo_licenciado;
+        private int id_funcion_licenciado;
+
 
 
 
@@ -33,7 +34,7 @@ namespace CapaDatos.Models
         public int Id { get => id; set => id = value; }
         public int Id_revision { get => id_revision; set => id_revision = value; }
         public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
-        public int Id_tipo_licenciado { get => id_tipo_licenciado; set => id_tipo_licenciado = value; }
+        public int Id_funcion_licenciado { get => id_funcion_licenciado; set => id_funcion_licenciado = value; }
 
 
         #endregion
@@ -42,8 +43,8 @@ namespace CapaDatos.Models
         private static string TableName = "detalle_revision";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  id_revision, id_licenciado,id_tipo_licenciado  ) VALUES ( @parametro0,@parametro1,@parametro2); ";
-            Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_tipo_licenciado };
+            string sql = "  INSERT INTO " + TableName + " (  id_revision, id_licenciado,id_funcion_licenciado  ) VALUES ( @parametro0,@parametro1,@parametro2); ";
+            Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_funcion_licenciado };
             QueryBuilder(sql, Parametros);
 
         }
@@ -56,9 +57,9 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  id_defensa_externa = @parametro0, id_licenciado = @parametro1 ,id_tipo_licenciado = @parametro2  WHERE id = @parametro3 ; ";
+            string sql = " UPDATE " + TableName + "  SET  id_defensa_externa = @parametro0, id_licenciado = @parametro1 ,id_funcion_licenciado  = @parametro2  WHERE id = @parametro3 ; ";
 
-            Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_tipo_licenciado, id };
+            Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_funcion_licenciado, id };
             QueryBuilder(sql, Parametros);
 
         }
