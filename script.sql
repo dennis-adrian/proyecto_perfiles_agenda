@@ -151,6 +151,8 @@ CREATE TABLE IF NOT EXISTS "detalle_defensa" (
     FOREIGN KEY("id_funcion_licenciado") REFERENCES "funcion_licenciado"("id"),
     FOREIGN KEY("id_defensa_externa") REFERENCES "defensa_externa"("id")
 );
+-- Activar las llaves foráneas
+PRAGMA foreign_keys = ON -- INSERTS
 INSERT INTO facultad (nombre)
 VALUES ('Ciencias Empresariales');
 INSERT INTO facultad (nombre)
