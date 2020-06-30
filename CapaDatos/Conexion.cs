@@ -66,9 +66,18 @@ namespace CapaDatos
                     command.Parameters.Add(new SQLiteParameter(parametro, Parametros[i]));
                 }
 
-                command.ExecuteNonQuery();
-                sqlTransaction.Commit();
-                cerrarConexion();
+                int filas = command.ExecuteNonQuery();
+                if (filas > 0)
+                {
+                    sqlTransaction.Commit();
+                    cerrarConexion();
+
+                }
+                else
+                {
+                    throw new ArgumentException("datos no afectados");
+                }
+                
             }
             catch
             {
