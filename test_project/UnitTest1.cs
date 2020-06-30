@@ -66,8 +66,7 @@ namespace test_project
             obj.Id_funcion_licenciado = 1;
             obj.Id_licenciado = 1;
             obj.Id_revision = 1;
-            obj.Update(1);
-          
+            obj.Insert();
         }
 
     }

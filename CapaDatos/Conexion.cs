@@ -79,9 +79,9 @@ namespace CapaDatos
                 }
                 
             }
-            catch
+            catch(Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error: "+e);
             }
 
         }
