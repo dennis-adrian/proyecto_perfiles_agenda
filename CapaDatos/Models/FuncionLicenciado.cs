@@ -65,6 +65,11 @@ namespace CapaDatos.Models
             string sql = " SELECT * FROM " + TableName + " ; ";
             return SelectConexion(sql);
         }
+        public int FindIdBySearch(string criterio)
+        {
+            string sql = " SELECT id FROM " + TableName + "  WHERE funcion_licenciado  like '%@parametro0%'  limit 1 ; ";
+            return FindIdBySearchConexion(sql, criterio);
+        }
         public int LastId()
         {
 

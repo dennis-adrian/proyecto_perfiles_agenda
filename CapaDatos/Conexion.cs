@@ -170,6 +170,32 @@ namespace CapaDatos
             }
             catch
             {
+                throw new ArgumentException("Error al obtener el ultimo registro");
+            }
+        }
+        public int FindIdBySearchConexion(string sql, string parametro0)
+        {
+                                 
+            
+            try
+            {
+                int findId = 0;
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
+                command.Parameters.Add(new SQLiteParameter("@parametro0", parametro0));
+
+                SQLiteDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    findId = reader.GetInt32(0);
+
+                }
+                cerrarConexion();
+                return findId;
+            }
+            catch
+            {
                 throw new ArgumentException("Error");
             }
         }

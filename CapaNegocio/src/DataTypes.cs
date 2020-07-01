@@ -19,6 +19,11 @@ namespace CapaNegocio.src
 
         private string aula;
 
+        private string fecha;
+
+        private string texto;
+
+
 
         #endregion
 
@@ -88,7 +93,7 @@ namespace CapaNegocio.src
             {
 
 
-                if (Regex.IsMatch(value, @"^[0-9]{6,10}([a-zA-Z ]{1,1)?$"))
+                if (Regex.IsMatch(value, @"^[0-9a-zA-Z]{6,10}$"))
                 {
                     this.registro = value;
                 }
@@ -122,6 +127,37 @@ namespace CapaNegocio.src
             } 
         }
 
+        public string Fecha
+        {
+            get { return fecha; }
+            set
+            {
+                if(Regex.IsMatch(value, @"^([0 - 2][0 - 9] | 3[0 - 1])(\/| -)(0[1 - 9] | 1[0 - 2])\2(\d{ 4})$"))
+                {
+                    this.fecha = value;
+                }
+                else
+                {
+                    throw new ArgumentException("datos de fecha invalidos o tiene el formato incorrecto");
+                }
+            }
+        }
+
+        public string Texto
+        {
+            get { return texto; }
+            set
+            {
+                if (Regex.IsMatch(value, @"^[a-zA-Z ]*$"))
+                {
+                    this.texto = value;
+                }
+                else
+                {
+                    throw new ArgumentException("datos invalidos solo aceptan letras");
+                }
+            }
+        }
 
         #endregion
 

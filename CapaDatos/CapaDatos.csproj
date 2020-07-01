@@ -83,7 +83,6 @@
     <Compile Include="View\ViewPerfiles.cs" />
     <Compile Include="View\ViewPerfilesCarrera.cs" />
     <Compile Include="View\ViewRevisiones.cs" />
-    <Compile Include="Vistas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

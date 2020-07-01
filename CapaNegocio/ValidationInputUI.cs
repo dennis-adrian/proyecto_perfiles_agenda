@@ -14,7 +14,7 @@ namespace CapaNegocio
         }
 
         //
-        public void ValidateInput(Object[] collection)
+        public void Validation(Object[] collection)
         {
 
 
@@ -28,69 +28,66 @@ namespace CapaNegocio
                 Type boolType = typeof(bool);
 
                 if (item.GetType() == doubleType)
-                {
-                    if(item > 0)
-                    {
+                 {
+                     double x = Convert.ToDouble(item);
+                     if(x > 0)
+                     {
 
-                    }
-                    else
-                    {
-                        throw new ArgumentException("el campo debe ser mayor a 0.0");
-                    }
-
-                    Console.WriteLine(item.GetType());
-                }
-                else if(item.GetType() == intType)
-                {
-                    if(item > 0)
-                    {
-
-                    }
-                    else
-                    {
-                        throw new ArgumentException("el campo debe ser mayor a 0");
-                    }
-
-                    Console.WriteLine(item.GetType());
-                }
-                else if(item.GetType() == stringType)
-                {
-                    bool x = string.IsNullOrEmpty(item);
-                    if(!x)
-                    {
+                     }
+                     else
+                     {
+                         throw new ArgumentException("el campo debe ser mayor a 0.0");
+                     }
 
 
-                    }
-                    else
-                    {
-                        throw new ArgumentException("el campo esta vacio ");
-                    }
-                    //Console.WriteLine(item.GetType());
-                }
-                else if (item.GetType() == charType)
-                {
-                    //Console.WriteLine(item.GetType());
-                }
-                else if (item.GetType() == boolType)
-                {
-                    if(item)
-                    {
+                 }
+                 else if(item.GetType() == intType)
+                 {
+                     int x = Convert.ToInt32(item);
+                     if (x > 0)
+                     {
 
-                    }
-                    else
-                    {
+                     }
+                     else
+                     {
+                         throw new ArgumentException("el campo debe ser mayor a 0");
+                     }
 
-                    }
-                    //Console.WriteLine(item.GetType());
-                }
-                else
-                {
-                    throw new ArgumentException("sin tipo de dato registrado");
-                }
+
+                 }
+                 else if(item.GetType() == stringType)
+                 {
+                     string s = Convert.ToString(item);
+                     bool x = string.IsNullOrEmpty(s);
+                     if(!x)
+                     {
+
+
+                     }
+                     else
+                     {
+                         throw new ArgumentException("el campo esta vacio ");
+                     }
+
+                 }
+                 else if (item.GetType() == charType)
+                 {
+
+                 }
+                 else if (item.GetType() == boolType)
+                 {
+
+
+                 }
+                 else
+                 {
+                     throw new ArgumentException("sin tipo de dato registrado");
+                 }
 
 
                 
             }
+
         }
 
       
