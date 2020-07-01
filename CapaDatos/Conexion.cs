@@ -173,7 +173,7 @@ namespace CapaDatos
                 throw new ArgumentException("Error al obtener el ultimo registro");
             }
         }
-        public int FindIdBySearchConexion(string sql, string parametro0)
+        public int FindIdBySearchConexion(string sql)
         {
                                  
             
@@ -183,7 +183,6 @@ namespace CapaDatos
                 SQLiteConnection cnx = AbrirConexion();
                 SQLiteCommand command = cnx.CreateCommand();
                 command.CommandText = sql;
-                command.Parameters.Add(new SQLiteParameter("@parametro0", parametro0));
 
                 SQLiteDataReader reader = command.ExecuteReader();
                 while (reader.Read())

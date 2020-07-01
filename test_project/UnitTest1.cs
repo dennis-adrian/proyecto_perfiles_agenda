@@ -127,17 +127,17 @@ namespace test_project
             CapaNegocio.NegocioNuevoPerfil obj = new CapaNegocio.NegocioNuevoPerfil();
             //type.Texto = "s/3s";
             // Console.WriteLine(type.Texto);
-            string registro = "551561";//input 0
-            string nombre = "perfilnom";//input 1
-            string apellido = "perfilape";//input 2
-            string email = "email@examplle.com";//input 3
+            string registro = "551581";//input 0
+            string nombre = "nom";//input 1
+            string apellido = "ape";//input 2
+            string email = "email@exampls.com";//input 3
             string telefono = "333536";//input 4
             string celular = "77747421";//input 5
             int id = 1;//input 6
 
-            string tema = "tema de tesis";//input 7
-            string fecha_aprobacion = "24/05/2020";//input 8
-            string fecha_recep = "28/05/2020";//input 9
+            string tema = "tema de tesiss";//input 7
+            string fecha_aprobacion = "24-05-2020";//input 8
+            string fecha_recep = "28-05-2020";//input 9
             int id_licenciado = 1 ;//input 10
 
 

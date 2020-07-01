@@ -14,13 +14,13 @@ namespace CapaDatos.Models
         {
             id = 0;
             
-            funcion_licenciado = "";
+            funcion = "";
             descripcion = "";
 
         }
         #region Atributos 
         private int id;
-        private string funcion_licenciado;
+        private string funcion;
         private string descripcion;
 
 
@@ -29,7 +29,7 @@ namespace CapaDatos.Models
         #region Propiedades 
         public int Id { get => id; set => id = value; }
         
-        public string Funcion_licenciado { get => funcion_licenciado; set => funcion_licenciado = value; }
+        public string Funcion { get => funcion; set => funcion = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
 
 
@@ -39,8 +39,8 @@ namespace CapaDatos.Models
            private static string TableName = "funcion_licenciado";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (   funcion_licenciado,descripcion  ) VALUES ( @parametro0,@paramtros1); ";
-            Object[] Parametros = new Object[] { Funcion_licenciado,Descripcion };
+            string sql = "  INSERT INTO " + TableName + " (   funcion,descripcion  ) VALUES ( @parametro0,@paramtros1); ";
+            Object[] Parametros = new Object[] { Funcion,Descripcion };
             QueryBuilder(sql, Parametros);
 
         }
@@ -53,9 +53,9 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET    funcion_licenciado=@parametro0,descripcion  = @parametro1  WHERE id = @parametro2 ; ";
+            string sql = " UPDATE " + TableName + "  SET    funcion=@parametro0,descripcion  = @parametro1  WHERE id = @parametro2 ; ";
 
-            Object[] Parametros = new Object[] {  Funcion_licenciado, Descripcion, id };
+            Object[] Parametros = new Object[] {  Funcion, Descripcion, id };
             QueryBuilder(sql, Parametros);
 
         }
@@ -67,8 +67,8 @@ namespace CapaDatos.Models
         }
         public int FindIdBySearch(string criterio)
         {
-            string sql = " SELECT id FROM " + TableName + "  WHERE funcion_licenciado  like '%@parametro0%'  limit 1 ; ";
-            return FindIdBySearchConexion(sql, criterio);
+            string sql = " SELECT id FROM " + TableName + "  WHERE funcion  LIKE '%"+criterio+"%'   ; ";
+            return FindIdBySearchConexion(sql);
         }
         public int LastId()
         {

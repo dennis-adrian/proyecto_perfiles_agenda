@@ -56,7 +56,7 @@ namespace CapaDatos.Models
         private static string TableName = "perfil_tesis";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_funcion_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2 @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
+            string sql = "  INSERT INTO " + TableName + " (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_funcion_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
             Object[] Parametros = new Object[] { Tema,Estado,Fecha_aprobacion_jefe_carrera,Fecha_recepcion_titulacion,Estado_defensa,Calificacion,Id_estudiante,Id_licenciado, Id_funcion_licenciado };
             QueryBuilder(sql, Parametros);
 

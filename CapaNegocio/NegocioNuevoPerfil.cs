@@ -89,7 +89,7 @@ namespace CapaNegocio
 
                 int id = estudiante.LastId();
 
-                int id_funcion = 2;//Convert.ToInt32(funcionLicenciado.Select("Tutor").Rows[1][1].ToString());
+                int id_funcion = funcionLicenciado.FindIdBySearch("Tutor");//Convert.ToInt32(funcionLicenciado.Select("Tutor").Rows[1][1].ToString());
 
 
 
