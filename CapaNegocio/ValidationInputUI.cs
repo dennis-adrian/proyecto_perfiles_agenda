@@ -29,25 +29,59 @@ namespace CapaNegocio
 
                 if (item.GetType() == doubleType)
                 {
+                    if(item > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        throw new ArgumentException("el campo debe ser mayor a 0.0");
+                    }
 
                     Console.WriteLine(item.GetType());
                 }
                 else if(item.GetType() == intType)
                 {
+                    if(item > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        throw new ArgumentException("el campo debe ser mayor a 0");
+                    }
 
                     Console.WriteLine(item.GetType());
                 }
                 else if(item.GetType() == stringType)
                 {
-                    Console.WriteLine(item.GetType());
+                    bool x = string.IsNullOrEmpty(item);
+                    if(!x)
+                    {
+
+
+                    }
+                    else
+                    {
+                        throw new ArgumentException("el campo esta vacio ");
+                    }
+                    //Console.WriteLine(item.GetType());
                 }
                 else if (item.GetType() == charType)
                 {
-                    Console.WriteLine(item.GetType());
+                    //Console.WriteLine(item.GetType());
                 }
                 else if (item.GetType() == boolType)
                 {
-                    Console.WriteLine(item.GetType());
+                    if(item)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                    //Console.WriteLine(item.GetType());
                 }
                 else
                 {

@@ -15,8 +15,14 @@ namespace CapaNegocio.src
         private string telefono;
         private string celular;
 
+        private string registro;
+
+        private string aula;
+
 
         #endregion
+
+
         #region Propiedades
         public string Email
         {
@@ -67,13 +73,54 @@ namespace CapaNegocio.src
                 }
                 else
                 {
-                    throw new ArgumentException("ingrese un numero valido de Celular");
+                    throw new ArgumentException("ingrese un número valido de Celular");
                 }
 
 
             }
         }
 
+        public string Registro 
+        {
+            get { return registro; }
+
+            set
+            {
+
+
+                if (Regex.IsMatch(value, @"^[0-9]{6,10}([a-zA-Z ]{1,1)?$"))
+                {
+                    this.registro = value;
+                }
+                else
+                {
+                    throw new ArgumentException("ingrese un número válido de Registro");
+                }
+
+
+            } 
+        }
+
+        public string Aula 
+        {
+            get { return aula; }
+
+            set
+            {
+
+
+                if (Regex.IsMatch(value, @"^[NES][0-9]{1,4}$"))
+                {
+                    this.aula = value;
+                }
+                else
+                {
+                    throw new ArgumentException("ingrese un numero válido de Registro");
+                }
+
+
+            } 
+        }
 
 
         #endregion
