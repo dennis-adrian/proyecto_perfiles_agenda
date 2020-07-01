@@ -39,7 +39,6 @@ namespace CapaNegocio
         {
             try
             {
-                NuevoEstudiante(parametros);
                 NuevoPerfil(parametros);
             }
             catch (Exception e)
@@ -49,7 +48,7 @@ namespace CapaNegocio
            
 
         }
-        public void NuevoEstudiante(Object[] Collection)
+        public void NuevoPerfil(Object[] Collection)
         {
             try
             {
@@ -73,27 +72,11 @@ namespace CapaNegocio
 
                 estudiante.Id_carrera = Convert.ToInt32(Collection[6]);
 
-
-                estudiante.Insert();
-                                                          
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
-        }
-        public void NuevoPerfil(Object[] Collection)
-        {
-            try
-            {
-
-                int id = estudiante.LastId();
-
-                int id_funcion = funcionLicenciado.FindIdBySearch("Tutor");//Convert.ToInt32(funcionLicenciado.Select("Tutor").Rows[1][1].ToString());
+               
 
 
 
-                
+
                 type.Texto = Convert.ToString(Collection[7]);//input
                 perfilTesis.Tema = type.Texto;
 
@@ -107,21 +90,25 @@ namespace CapaNegocio
 
                 perfilTesis.Estado_defensa = "Sin Asignar";
                 perfilTesis.Calificacion = 0;
-                perfilTesis.Id_estudiante = id;
+                
 
                 perfilTesis.Id_licenciado = Convert.ToInt32(Collection[10]);//input
+
+                estudiante.Insert();
+                int id = estudiante.LastId();
+                perfilTesis.Id_estudiante = id;
+                int id_funcion = funcionLicenciado.FindIdBySearch("Tutor");//Convert.ToInt32(funcionLicenciado.Select("Tutor").Rows[1][1].ToString());
                 perfilTesis.Id_funcion_licenciado = id_funcion;
-
                 perfilTesis.Insert();
-                                                                                 
-
+                
+                                                          
             }
             catch (Exception e)
             {
                 throw new ArgumentException("" + e);
             }
-
         }
+      
 
 
     }
