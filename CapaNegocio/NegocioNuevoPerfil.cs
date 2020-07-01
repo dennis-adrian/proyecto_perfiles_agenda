@@ -108,6 +108,11 @@ namespace CapaNegocio
                 throw new ArgumentException("" + e);
             }
         }
+
+        ~NegocioNuevoPerfil()
+        {
+
+        }
       
 
 

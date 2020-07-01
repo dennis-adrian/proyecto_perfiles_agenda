@@ -127,10 +127,10 @@ namespace test_project
             CapaNegocio.NegocioNuevoPerfil obj = new CapaNegocio.NegocioNuevoPerfil();
             //type.Texto = "s/3s";
             // Console.WriteLine(type.Texto);
-            string registro = "666581";//input 0
-            string nombre = "nombre";//input 1
+            string registro = "646581";//input 0
+            string nombre = "nombredebug";//input 1
             string apellido = "ape";//input 2
-            string email = "email@sedampls.com";//input 3
+            string email = "emaisdl@sesedampls.com";//input 3
             string telefono = "333536";//input 4
             string celular = "77747421";//input 5
             int id = 1;//input 6
@@ -138,7 +138,7 @@ namespace test_project
             string tema = "tema de tesiss";//input 7
             string fecha_aprobacion = "24-05-2020";//input 8
             string fecha_recep = "28-05-2020";//input 9
-            int id_licenciado = 111 ;//input 10
+            int id_licenciado = 1 ;//input 10
 
 
 
