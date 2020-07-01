@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaNegocio
+namespace CapaDatos.View
 {
-    public class Class1
+    class ViewLicenciados
     {
     }
 }

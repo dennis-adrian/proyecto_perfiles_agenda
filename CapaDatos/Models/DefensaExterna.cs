@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class DefensaExterna : Conexion
+    public class DefensaExterna : Conexion, IMetodos
     {
         public DefensaExterna()
         {
@@ -25,6 +27,8 @@ namespace CapaDatos.Models
         private int id_tesis;
         private int id_titulacion_otro;
 
+        private static string TableName = "defensa_externa";
+
         #endregion
         #region Propiedades 
         public int Id { get => id; set => id = value; }
@@ -36,6 +40,42 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+
+
+
+        public void Insert()
+        {
+            string sql = "  INSERT INTO " + TableName + " ( fecha_presentacion, hora,aula,id_tesis,id_titulacion_otro ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4); ";
+            Object[] Parametros = new Object[] { Fecha_presentacion,Hora,Aula,Id_tesis,Id_titulacion_otro };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public void Delete(int id)
+        {
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public void Update(int id)
+        {
+            string sql = " UPDATE " + TableName + "  SET fecha_presentacion=@parametro0, hora=@parametro1, aula=@parametro2, id_tesis=@parametro3,  id_titulacion_otro=@parametro4 WHERE id = @parametro5 ; ";
+
+            Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis, Id_titulacion_otro, id };
+            QueryBuilder(sql, Parametros);
+
+        }
+
+        public DataTable Select()
+        {
+            string sql = " SELECT * FROM " + TableName + " ; ";
+            return SelectConexion(sql);
+        }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
 
 
         #endregion

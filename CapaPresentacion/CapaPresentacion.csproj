@@ -156,11 +156,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
+    <Compile Include="FormsAgregar\NuevaInstitucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAgregar\NuevaInstitucion.Designer.cs">
+      <DependentUpon>NuevaInstitucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAgenda.Designer.cs">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLicenciado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLicenciado.Designer.cs">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevaDefensaExterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaDefensaExterna.Designer.cs">
+      <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoLicenciado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoLicenciado.Designer.cs">
+      <DependentUpon>FrmNuevoLicenciado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoPerfil.cs">
       <SubType>Form</SubType>
@@ -182,11 +206,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsAgregar\NuevaInstitucion.resx">
+      <DependentUpon>NuevaInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgenda.resx">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLicenciado.resx">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevaDefensaExterna.resx">
+      <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoLicenciado.resx">
+      <DependentUpon>FrmNuevoLicenciado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoPerfil.resx">
       <DependentUpon>FrmNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerfiles.resx">
+      <DependentUpon>FrmPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -201,6 +240,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CapaDatos.Models.DetalleDefensa.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.View.ViewDefensas.datasource" />
+    <None Include="Properties\DataSources\CapaNegocio.Views.ViewDefensas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -218,6 +260,10 @@
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
       <Project>{9cff7f83-ec45-437d-bdb7-079cfe5f81d7}</Project>
       <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{5bc5d4eb-2c89-47ce-8764-e71d297cdbcb}</Project>
+      <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

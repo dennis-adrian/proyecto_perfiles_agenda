@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class TitulacionOtros : Conexion
+    public class TitulacionOtros : Conexion, IMetodos
     {
         public TitulacionOtros()
         {
@@ -34,6 +36,43 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+
+       
+             private static string TableName = "titulacion_otros";
+        public void Insert()
+        {
+            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0); ";
+            Object[] Parametros = new Object[] { Estado_defensa,Calificacion,Id_estudiante,id_tipo_titulacion };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public void Delete(int id)
+        {
+            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public void Update(int id)
+        {
+            string sql = " UPDATE " + TableName + "  SET estado_defensa = @parametro0 ,calificacion=@parametro1,id_estudiante=@parmetro2,id_tipo_titulacion=@parametro3  WHERE id = @parametro4 ; ";
+
+            Object[] Parametros = new Object[] { Estado_defensa, Calificacion, Id_estudiante, id_tipo_titulacion, id };
+            QueryBuilder(sql, Parametros);
+
+        }
+
+        public DataTable Select()
+        {
+            string sql = " SELECT * FROM " + TableName + " ; ";
+            return SelectConexion(sql);
+        }
+        public int LastId()
+        {
+
+            return LastIdConexion(TableName);
+        }
+
 
         #endregion
     }

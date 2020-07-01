@@ -34,5 +34,11 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void btnElegirTutor_Click(object sender, EventArgs e)
+        {
+            FrmLicenciado obj = new FrmLicenciado();
+            obj.Show();
+        }
     }
 }
