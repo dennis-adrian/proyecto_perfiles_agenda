@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS "carrera_licenciado" (
 -- nombre modificado y se quito el campo "tipo"
 CREATE TABLE IF NOT EXISTS "funcion_licenciado"(
     "id" INTEGER PRIMARY KEY,
-    "funcion_licenciado" TEXT COMMENT 'tutor, tribunal interno 1 o 2, presidente, secretario, representante del ministrerio de educacion, representante uagrm 1 o 2',
+    "funcion" TEXT COMMENT 'tutor, tribunal interno 1 o 2, presidente, secretario, representante del ministrerio de educacion, representante uagrm 1 o 2',
     "descripcion" TEXT,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
