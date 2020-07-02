@@ -156,12 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
-    <Compile Include="FormsAgregar\NuevaInstitucion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAgregar\NuevaInstitucion.Designer.cs">
-      <DependentUpon>NuevaInstitucion.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormsAgregar\NuevaInstitucion.resx">
-      <DependentUpon>NuevaInstitucion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgenda.resx">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
     </EmbeddedResource>
