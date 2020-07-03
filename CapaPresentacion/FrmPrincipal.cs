@@ -119,7 +119,7 @@ namespace CapaPresentacion
             btnActual = (IconButton)sender;
            
             string criterio = null;
-            //abrirFrmHijo(new FrmAgenda(criterio));
+            abrirFrmHijo(new FrmAgenda(criterio));
             lblTitulo.Text = "Todos las Defensas";
 
             if (pnlDefensaExterna.Size != pnlDefensaExterna.MaximumSize)

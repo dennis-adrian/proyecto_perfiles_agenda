@@ -23,6 +23,7 @@ namespace CapaDatos
 
         #endregion
 
+
         public Conexion()
         {//correcion en conexion , se debe hacer un a conexion con llaaves foraneas activadas
             pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
