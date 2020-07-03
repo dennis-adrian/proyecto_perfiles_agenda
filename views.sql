@@ -46,4 +46,19 @@ select DE.id as Id,DE.fecha_presentacion as Fecha_Defensa ,DE.hora as Hora,DE.au
 
 --------------------------------------------------------
 
+Vista:  ViewLicenciados
+campos:
 
+Id 
+Nombre
+Apellido
+Tipo 
+Telefono
+Celular
+Email
+
+
+CREATE View ViewLicenciados
+as
+select L.id as Id, L.nombre as Nombre, L.apellido as Apellido , L.tipo as Tipo, L.telefono as Telefono, L.celular as Celular, L.email as Email from licenciado as L;
+---------------------
