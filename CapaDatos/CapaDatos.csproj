@@ -77,12 +77,15 @@
     <Compile Include="Models\TipoTitulacionOtros.cs" />
     <Compile Include="Models\TitulacionOtros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ViewDefensaPerfil.cs" />
     <Compile Include="View\ViewDefensas.cs" />
     <Compile Include="View\ViewDefensasCarrera.cs" />
     <Compile Include="View\ViewLicenciados.cs" />
     <Compile Include="View\ViewPerfiles.cs" />
     <Compile Include="View\ViewPerfilesCarrera.cs" />
+    <Compile Include="View\ViewPerfilGeneral.cs" />
     <Compile Include="View\ViewRevisiones.cs" />
+    <Compile Include="View\ViewRevisionPerfil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

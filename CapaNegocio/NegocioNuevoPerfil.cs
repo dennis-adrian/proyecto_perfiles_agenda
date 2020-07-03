@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,29 @@ namespace CapaNegocio
 {
     public class NegocioNuevoPerfil : ValidationInputUI
     {
-        PerfilTesis perfilTesis = new PerfilTesis();
-        Estudiante estudiante = new Estudiante();
-        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
-        DataTypes type = new DataTypes();
 
-        Object[] parametros; 
-        
+        #region Construct
+
         public NegocioNuevoPerfil()
         {
 
         }
+        #endregion
 
+        #region Instancias
+        PerfilTesis perfilTesis = new PerfilTesis();
+        Estudiante estudiante = new Estudiante();
+        Carrera carrera = new Carrera();
+        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
+        DataTypes type = new DataTypes();
+        #endregion
+
+        #region Atributos
+
+        Object[] parametros;
+        #endregion
+
+        #region Metodos
         public void ControlInput(Object[] Collection)
         {
             try
@@ -72,11 +84,6 @@ namespace CapaNegocio
 
                 estudiante.Id_carrera = Convert.ToInt32(Collection[6]);
 
-               
-
-
-
-
                 type.Texto = Convert.ToString(Collection[7]);//input
                 perfilTesis.Tema = type.Texto;
 
@@ -109,11 +116,30 @@ namespace CapaNegocio
             }
         }
 
+        public DataTable cargarCarreras()
+        {
+            DataTable dt1 = carrera.Select();
+            
+            return dt1;
+        }
+
+        public Object[] InitialForms()
+        {
+             Object[] collection = new Object[] { 1 };
+            return collection;
+        }
+        
+        #endregion
+
+        #region Destruct
+
         ~NegocioNuevoPerfil()
         {
 
         }
-      
+
+
+        #endregion
 
 
     }

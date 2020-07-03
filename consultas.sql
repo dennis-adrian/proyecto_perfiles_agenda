@@ -34,7 +34,7 @@ create view ViewPerfiles
 as
 select P.id as Id, P.estado as Estado_Proyecto, E.registro as Registro, (E.nombre+' '+E.apellido) as  Estudiante, C.nombre as Carrera, F.nombre as Facultad,  P.tema as Tema,  (L.nombre+' '+L.apellido) as Tutor, E.email as Email , E.telefono as Telefono, P.fecha_recepcion_titulacion as Fecha_Recepcion from perfil_tesis as  P inner join estudiante as E on P.id_estudiante = E.id inner join carrera as C on E.id_carrera = C.id inner join facultad as F on C.id_facultad = F.id inner join licenciado as L on P.id_licenciado = L.id;
 
------------------------
+
 Id
 Estado_Proyecto
 Registro

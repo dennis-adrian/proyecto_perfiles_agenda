@@ -26,7 +26,8 @@ namespace CapaPresentacion
 
         private void btnAgregarLicenciado_Click(object sender, EventArgs e)
         {
-            ;
+            Form frm = new FrmNuevoLicenciado();
+            frm.Show();
 
 
         }

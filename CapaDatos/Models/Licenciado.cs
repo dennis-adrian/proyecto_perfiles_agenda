@@ -65,6 +65,7 @@ namespace CapaDatos.Models
         public void Insert()
         {
             string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,tipo,docente,id_institucion_representada,id_carrera_licenciado  ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8,@parametro9); ";
+
             Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Tipo,Docente,Id_institucion_representada,Id_carrera_licenciado };
             QueryBuilder(sql, Parametros);
 
@@ -78,7 +79,7 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  nombre = @parametro0 ,apellido = @parametro1, descripcion = @parametro2 , email = @parametro3 , telefono = @parametro4 , celular = @parametro5, tipo = @parametro6, docente = @parametro7,id_institucion_representada = @parametro9  ,id_carrera_licenciado = @parametro9   WHERE id = @parametro8 ; ";
+            string sql = " UPDATE " + TableName + "  SET  nombre = @parametro0 ,apellido = @parametro1, descripcion = @parametro2 , email = @parametro3 , telefono = @parametro4 , celular = @parametro5, tipo = @parametro6, docente = @parametro7,id_institucion_representada = @parametro8  ,id_carrera_licenciado = @parametro9   WHERE id = @parametro10 ; ";
 
             Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Tipo ,Docente, Id_institucion_representada, Id_carrera_licenciado, id };
             QueryBuilder(sql, Parametros);
@@ -95,8 +96,19 @@ namespace CapaDatos.Models
 
             return LastIdConexion(TableName);
         }
+        public DataTable FindById(int Id)
+        {
+            string sql = " SELECT * FROM " + TableName + " WHERE id = "+Id+"  ;";
 
+            return SelectConexion(sql);
+
+        }
 
         #endregion
+
+        ~Licenciado()
+        {
+
+        }
     }
 }

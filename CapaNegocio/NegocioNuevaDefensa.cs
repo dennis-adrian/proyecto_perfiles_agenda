@@ -20,11 +20,13 @@ namespace CapaNegocio
 
 
         #endregion
+
         #region Atributos
         
         Object[] parametros;
 
         #endregion
+
         #region  Metodos
         public void ControlInput(Object[] Collection)
         {
@@ -66,6 +68,7 @@ namespace CapaNegocio
             }
         }
         #endregion
+
 
 
         #region Destruct

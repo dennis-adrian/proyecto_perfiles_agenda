@@ -91,8 +91,6 @@ namespace CapaNegocio.src
 
             set
             {
-
-
                 if (Regex.IsMatch(value, @"^[0-9a-zA-Z]{6,10}$"))
                 {
                     this.registro = value;
@@ -101,8 +99,7 @@ namespace CapaNegocio.src
                 {
                     throw new ArgumentException("ingrese un número válido de Registro");
                 }
-
-
+                
             } 
         }
 
@@ -112,9 +109,15 @@ namespace CapaNegocio.src
 
             set
             {
+                //N400
+                //E500
+                //S521
+                //N-E-S->512
+                //
 
 
-                if (Regex.IsMatch(value, @"^[NES][0-9]{1,4}$"))
+
+                if (Regex.IsMatch(value, @"^[NES][0-9]{1,3}$"))
                 {
                     this.aula = value;
                 }
