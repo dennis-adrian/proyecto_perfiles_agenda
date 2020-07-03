@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
+//using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -68,9 +68,9 @@ namespace CapaPresentacion
         #region CARGARCOMBOBOX
         public void cargarcarreratest()
         {
-            CapaDatos.Models.Carrera obj = new CapaDatos.Models.Carrera();
+            //CapaDatos.Models.Carrera obj = new CapaDatos.Models.Carrera();
 
-            cmbCarrera.DataSource = obj.Select();
+            //cmbCarrera.DataSource = obj.Select();
             cmbCarrera.DisplayMember = "nombre";
             //cmbCarrera.ValueMember = "id";
         }

@@ -108,7 +108,6 @@
             this.label14.Size = new System.Drawing.Size(152, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Nombre Estudiante";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pnlDataGrid
             // 
@@ -265,10 +264,6 @@
             this.facultadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.facultadDataGridViewTextBoxColumn.Name = "facultadDataGridViewTextBoxColumn";
             this.facultadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // viewDefensasBindingSource
-            // 
-            this.viewDefensasBindingSource.DataSource = typeof(CapaNegocio.Views.ViewDefensas);
             // 
             // FrmAgenda
             // 

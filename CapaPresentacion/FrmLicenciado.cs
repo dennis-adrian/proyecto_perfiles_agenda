@@ -16,7 +16,6 @@ namespace CapaPresentacion
         public FrmLicenciado()
         {
             InitializeComponent();
-            mostraLicenciados();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -43,15 +42,6 @@ namespace CapaPresentacion
         private void dtgLicenciados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-        public void mostraLicenciados()
-        {
-            dtgLicenciados.DataSource = obj.Licenciados();
         }
     }
 }

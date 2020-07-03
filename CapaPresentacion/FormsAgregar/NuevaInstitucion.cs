@@ -27,7 +27,7 @@ namespace CapaPresentacion.FormsAgregar
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
             string nombre = txtInstitucion.Text;
-            obj.InsertInstitucion(nombre);
+            //obj.InsertInstitucion(nombre);
             txtInstitucion.Clear();
             this.Close();
         }

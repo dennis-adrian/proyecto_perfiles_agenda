@@ -125,7 +125,6 @@
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Licenciados";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // pnlbarralicenciado
             // 

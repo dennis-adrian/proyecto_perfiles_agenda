@@ -119,7 +119,7 @@ namespace CapaPresentacion
             btnActual = (IconButton)sender;
            
             string criterio = null;
-            abrirFrmHijo(new FrmAgenda(criterio));
+            //abrirFrmHijo(new FrmAgenda(criterio));
             lblTitulo.Text = "Todos las Defensas";
 
             if (pnlDefensaExterna.Size != pnlDefensaExterna.MaximumSize)
@@ -446,7 +446,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -466,7 +466,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -485,7 +485,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -504,7 +504,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -523,7 +523,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -542,7 +542,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -561,7 +561,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -580,7 +580,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasEmpresariales();
             }
             else
@@ -598,7 +598,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -617,7 +617,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -636,7 +636,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -654,7 +654,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -672,7 +672,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -690,7 +690,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasTecnologia();
             }
             else
@@ -726,7 +726,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                ///abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasJuridicas();
             }
             else
@@ -744,7 +744,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasJuridicas();
             }
             else
@@ -762,7 +762,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                abrirFrmHijo(new FrmAgenda(criterio));
+                //abrirFrmHijo(new FrmAgenda(criterio));
                 ocultarCarrerasJuridicas();
             }
             else

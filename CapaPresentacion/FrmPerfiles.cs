@@ -23,30 +23,10 @@ namespace CapaPresentacion
         }
         public void Inicializador(string criterio)
         {
-
-            if(criterio == null)
-            {
-                dtgPerfilesTesis.DataSource= obj.mostarPerfiles();
-            }
-            else
-            {
-                dtgPerfilesTesis.DataSource = obj.mostrarPerfileCarrera(criterio);
-            }
         }
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
-            string estudiante = txtBuscarPerfil.Text;
-            if(carrera == null)
-            {
-                Inicializador(carrera);
-
-            }
-            else
-            {
-                dtgPerfilesTesis.DataSource = obj.mostrarPerfilEstudiante(estudiante);
-            }
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
