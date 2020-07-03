@@ -62,11 +62,12 @@
   <ItemGroup>
     <Compile Include="Helpers.cs" />
     <Compile Include="NegocioDefensaExterna.cs" />
+    <Compile Include="NegocioLicenciados.cs" />
     <Compile Include="NegocioNuevaDefensa.cs" />
     <Compile Include="NegocioNuevoPerfil.cs" />
     <Compile Include="NegocioPerfiles.cs" />
     <Compile Include="NegocioPerfilGeneral.cs" />
-    <Compile Include="NegocioView\NegocioLicenciados.cs" />
+    <Compile Include="NegocioRevision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\DataTypes.cs" />
     <Compile Include="ValidationInputUI.cs" />
@@ -81,6 +82,7 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

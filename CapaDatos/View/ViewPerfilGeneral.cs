@@ -8,5 +8,25 @@ namespace CapaDatos.View
 {
     public class ViewPerfilGeneral
     {
+        #region Constructor
+        public ViewPerfilGeneral()
+        {
+
+        }
+        #endregion
+        #region Atributos
+
+
+        #endregion
+        #region Metodos
+
+
+        #endregion
+        #region Desctructor
+        ~ViewPerfilGeneral()
+        {
+
+        }
+        #endregion
     }
 }

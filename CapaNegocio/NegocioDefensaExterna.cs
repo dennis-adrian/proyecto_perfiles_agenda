@@ -12,15 +12,6 @@ namespace CapaNegocio
 {
     public class NegocioDefensaExterna
     {
-        ViewDefensas viewDefensas = new ViewDefensas();
-        ViewDefensasCarrera viewDefensasCarrera = new ViewDefensasCarrera();
-
-        public NegocioDefensaExterna()
-        {
-
-        }
-
-
         #region FrmDefensaExterna
 
         public List<ViewDefensas> Defensas()
@@ -80,6 +71,7 @@ namespace CapaNegocio
 
 
         #endregion
+
         #region FrmDefensasCarrera
         public List<ViewDefensasCarrera> DefensasCarrera(string carrera)
         {
@@ -133,6 +125,31 @@ namespace CapaNegocio
 
         }
 
+        #endregion
+
+        #region Constructor
+
+        public NegocioDefensaExterna()
+        {
+
+        }
+        #endregion
+
+        #region Instancias
+        ViewDefensas viewDefensas = new ViewDefensas();
+        ViewDefensasCarrera viewDefensasCarrera = new ViewDefensasCarrera();
+
+        #endregion
+
+        #region Metodos
+
+        #endregion
+
+        #region Destructor
+        ~NegocioDefensaExterna()
+        {
+
+        }
         #endregion
     }
 }

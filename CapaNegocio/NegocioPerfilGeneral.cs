@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    class NegocioPerfilGeneral
+    public class NegocioPerfilGeneral
+
     {
+        #region Constructor
+
+
+        #endregion
+        #region Instancias
+
+        #endregion
+
+        #region Propiedades
+
+        #endregion
+        #region Metodos
+
+        #endregion
+        #region Destructor
+
+        #endregion
     }
 }

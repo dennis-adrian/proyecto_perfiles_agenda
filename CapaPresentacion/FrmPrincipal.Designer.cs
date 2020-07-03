@@ -76,6 +76,7 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlNuevaDefensa.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -134,7 +135,7 @@
             this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 0);
             this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevaDefensa.Name = "btnNuevaDefensa";
-            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(5);
             this.btnNuevaDefensa.Rotation = 0D;
             this.btnNuevaDefensa.Size = new System.Drawing.Size(213, 49);
             this.btnNuevaDefensa.TabIndex = 1;
@@ -452,7 +453,7 @@
             this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
             this.btnNuevoPerfil.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevoPerfil.Name = "btnNuevoPerfil";
-            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(5);
             this.btnNuevoPerfil.Rotation = 0D;
             this.btnNuevoPerfil.Size = new System.Drawing.Size(213, 49);
             this.btnNuevoPerfil.TabIndex = 1;
@@ -487,6 +488,7 @@
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.pnlBarraTitulo.Controls.Add(this.button1);
             this.pnlBarraTitulo.Controls.Add(this.btnRestaurar);
             this.pnlBarraTitulo.Controls.Add(this.btnMinimizar);
             this.pnlBarraTitulo.Controls.Add(this.btnMaximizar);
@@ -1187,6 +1189,16 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1270,6 +1282,7 @@
         private System.Windows.Forms.Panel pnlNuevaDefensa;
         private FontAwesome.Sharp.IconButton btnNuevaDefensa;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

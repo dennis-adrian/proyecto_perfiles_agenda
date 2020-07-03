@@ -116,11 +116,17 @@ namespace CapaNegocio
             }
         }
 
-        public Object[] InitialForms()
+        public DataTable cargarCarreras()
         {
             DataTable dt1 = carrera.Select();
-            Object[] Collection = new Object[] { dt1};
-            return Collection;
+            
+            return dt1;
+        }
+
+        public Object[] InitialForms()
+        {
+             Object[] collection = new Object[] { 1 };
+            return collection;
         }
         
         #endregion

@@ -4,26 +4,124 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
+using CapaNegocio.src;
 
 
 namespace CapaNegocio
 {
 
-    public class Helpers
+    public class Helpers : ValidationInputUI
     {
-
-        Institucion institucion = new Institucion();
+        #region Constructor
         public Helpers()
         {
 
 
         }
-        public void InsertInstitucion(string nombre)
-        {
-            institucion.Nombre = nombre;
-            institucion.Insert();
+
+        #endregion
+
+
+        #region Atributos
+
+        Object[] parametros;
+        #endregion
+
+
+        #region Instancias
+        Institucion institucion = new Institucion();
+        CarreraLicenciado carreraLicenciado = new CarreraLicenciado();
+        DataTypes type = new DataTypes();
+
+        #endregion
+
+
+        #region Metodos
+               
+        public void InsertInstitucion(Object[] Collection)
+        {            
+            try
+            {
+
+                type.Texto  = Convert.ToString(Collection[0]); 
+                institucion.Nombre = type.Texto;
+                institucion.Insert();
+
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+
+            }
 
         }
-       
+        public void InsertCarreraLicenciado(Object[] Collection)
+        {
+            try
+            {
+
+                type.Texto = Convert.ToString(Collection[0]);
+                carreraLicenciado.Nombre = type.Texto;
+                carreraLicenciado.Insert();
+
+            }
+            catch(Exception e)
+            {
+                throw new ArgumentException("" + e);
+
+            }
+            
+        }
+
+        public void ControlInput(Object[] Collection)
+        {
+            try
+            {
+                Validation(Collection);
+                parametros = Collection;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+
+        }
+
+        public void MainInsertInstitucion()
+        {
+            try
+            {
+                InsertInstitucion(parametros);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+        }
+
+        public void MainInsertCarreraLicenciado()
+        {
+            try
+            {
+                InsertCarreraLicenciado(parametros);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+
+        }
+
+        #endregion
+
+
+        #region Destructor
+
+        ~Helpers()
+        {
+
+        }
+        #endregion
+
     }
 }

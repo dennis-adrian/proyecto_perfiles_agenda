@@ -861,8 +861,13 @@ namespace CapaPresentacion
             }
         }
 
+
         #endregion
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frm = new Form1();
+            frm.Show();
+        }
     }
 }

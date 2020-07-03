@@ -175,6 +175,46 @@ namespace test_project
 
 
         }
+        [TestMethod]
+        public void TestMethod12()
+        {
+            CapaNegocio.NegocioLicenciados obj = new CapaNegocio.NegocioLicenciados();
+
+           
+
+
+            string n = "licccccccxyz";
+            string a = "licapellixdo";
+            string d = "licdecripcion";
+            string e = "mickxccccd@exampllee.com";
+            string t = "3566778";
+            string c ="77975878";
+            string ti = "interno";
+            int doc = 1;
+            int ii = 1;
+            int ic = 1;
+
+
+
+            Object[] datos = new Object[] { n, a, d, e, t, c, ti, doc, ii, ic };
+
+            obj.ControlInput(datos);
+
+
+
+        }
+        [TestMethod]
+        public void TestMethod13()
+        {
+
+            CapaNegocio.src.DataTypes type = new CapaNegocio.src.DataTypes();
+
+            type.Aula = "SS000";
+            Console.WriteLine(type.Aula);
+
+
+
+        }
 
     }
 }
