@@ -67,6 +67,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgLicenciados = new System.Windows.Forms.DataGridView();
             this.lbid_licenciado = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -168,6 +169,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.lbid_licenciado);
             this.panel1.Controls.Add(this.txtTipo);
             this.panel1.Controls.Add(this.label8);
@@ -316,10 +318,10 @@
             this.btnGuardarLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarLicenciado.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarLicenciado.Location = new System.Drawing.Point(50, 915);
+            this.btnGuardarLicenciado.Location = new System.Drawing.Point(553, 915);
             this.btnGuardarLicenciado.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardarLicenciado.Name = "btnGuardarLicenciado";
-            this.btnGuardarLicenciado.Size = new System.Drawing.Size(902, 63);
+            this.btnGuardarLicenciado.Size = new System.Drawing.Size(399, 63);
             this.btnGuardarLicenciado.TabIndex = 29;
             this.btnGuardarLicenciado.Text = "Guardar";
             this.btnGuardarLicenciado.UseVisualStyleBackColor = false;
@@ -548,6 +550,22 @@
             this.lbid_licenciado.TabIndex = 36;
             this.lbid_licenciado.Visible = false;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(90, 915);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(399, 63);
+            this.btnLimpiar.TabIndex = 37;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // FrmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -614,5 +632,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtgLicenciados;
         private System.Windows.Forms.Label lbid_licenciado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

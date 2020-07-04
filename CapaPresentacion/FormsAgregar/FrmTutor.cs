@@ -31,6 +31,10 @@ namespace CapaPresentacion
 
         #endregion
 
+        #region Atributos
+        int id_parametro = 0;
+        #endregion
+
         #region Arrastrar_Form
         private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -54,6 +58,7 @@ namespace CapaPresentacion
                 int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
 
                 info(id_seleccionado);
+                id_parametro = id_seleccionado;
             }
             catch(Exception ex)
             {
@@ -65,6 +70,8 @@ namespace CapaPresentacion
 
         private void btnSeleccionarLicenciado_Click(object sender, EventArgs e)
         {
+            int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+
 
         }
         private void btnEliminarLicenciado_Click(object sender, EventArgs e)
@@ -94,9 +101,27 @@ namespace CapaPresentacion
         {
             try
             {
-                Insert();
-                ClearForms();
-                ShowLicenciados();
+                int referencia = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+
+                if (id_parametro <= 0)
+                {
+                    Insert();
+                    ClearForms();
+                    ShowLicenciados();
+
+                }
+                else if(id_parametro > 0 && id_parametro == referencia)
+                {
+                    Update(id_parametro);
+                    ClearForms();
+                    ShowLicenciados();
+                    id_parametro = 0;
+                }
+                else
+                {
+                    throw new ArgumentException("sin referencia para actualizar");
+                }
+                
             }
             catch(Exception ex)
             {
@@ -114,6 +139,12 @@ namespace CapaPresentacion
         {
             FrmInstitucion frm1 = new FrmInstitucion();
             frm1.ShowDialog();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            ClearForms();
+            id_parametro = 0;
         }
 
         #endregion
@@ -151,7 +182,7 @@ namespace CapaPresentacion
             obj.MainInsert();
 
         }
-        public void update()
+        public void Update(int i)
         {
             string nombre = txtNombreLicenciado.Text; //input 0
             string apellido = txtApellidoLicenciado.Text;//input 1
@@ -179,7 +210,7 @@ namespace CapaPresentacion
             };
 
             obj.ControlInput(datos);
-            obj.MainUpdate(1);///
+            obj.MainUpdate(i);///
 
         }
         public void info(int i)
@@ -251,5 +282,7 @@ namespace CapaPresentacion
 
 
         #endregion
+
+      
     }
 }
