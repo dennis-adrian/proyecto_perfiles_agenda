@@ -87,6 +87,7 @@ namespace CapaPresentacion
                 }
                 catch(Exception ex)
                 {
+                    MessageBox.Show(""+ex);
 
                 }
 
