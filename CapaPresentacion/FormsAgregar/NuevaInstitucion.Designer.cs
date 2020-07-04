@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaInstitucion));
             this.txtInstitucion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,17 +44,19 @@
             // 
             // txtInstitucion
             // 
-            this.txtInstitucion.Location = new System.Drawing.Point(65, 188);
+            this.txtInstitucion.Location = new System.Drawing.Point(98, 294);
+            this.txtInstitucion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtInstitucion.Name = "txtInstitucion";
-            this.txtInstitucion.Size = new System.Drawing.Size(198, 22);
+            this.txtInstitucion.Size = new System.Drawing.Size(295, 31);
             this.txtInstitucion.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 86);
+            this.label1.Location = new System.Drawing.Point(258, 134);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
@@ -62,10 +65,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 33);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 74);
+            this.panel2.Size = new System.Drawing.Size(663, 116);
             this.panel2.TabIndex = 19;
             // 
             // lblTitulo
@@ -73,9 +76,10 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 17);
+            this.lblTitulo.Location = new System.Drawing.Point(18, 27);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(238, 36);
+            this.lblTitulo.Size = new System.Drawing.Size(357, 56);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Institucion";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,9 +90,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(442, 33);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(663, 52);
             this.pnlBarraTitulo.TabIndex = 18;
             // 
             // btnCerrar
@@ -101,11 +105,11 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(396, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(594, 2);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
-            this.btnCerrar.Size = new System.Drawing.Size(45, 36);
+            this.btnCerrar.Size = new System.Drawing.Size(68, 56);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -114,9 +118,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(61, 145);
+            this.label14.Location = new System.Drawing.Point(92, 227);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 24);
+            this.label14.Size = new System.Drawing.Size(132, 33);
             this.label14.TabIndex = 22;
             this.label14.Text = "Registro";
             // 
@@ -127,10 +132,10 @@
             this.btnCancelarNuevaInstitucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarNuevaInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevaInstitucion.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarNuevaInstitucion.Location = new System.Drawing.Point(65, 250);
-            this.btnCancelarNuevaInstitucion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarNuevaInstitucion.Location = new System.Drawing.Point(98, 391);
+            this.btnCancelarNuevaInstitucion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarNuevaInstitucion.Name = "btnCancelarNuevaInstitucion";
-            this.btnCancelarNuevaInstitucion.Size = new System.Drawing.Size(101, 31);
+            this.btnCancelarNuevaInstitucion.Size = new System.Drawing.Size(152, 48);
             this.btnCancelarNuevaInstitucion.TabIndex = 24;
             this.btnCancelarNuevaInstitucion.Text = "Cancelar";
             this.btnCancelarNuevaInstitucion.UseVisualStyleBackColor = false;
@@ -143,10 +148,10 @@
             this.btnAgregarInstitucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInstitucion.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarInstitucion.Location = new System.Drawing.Point(182, 250);
-            this.btnAgregarInstitucion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarInstitucion.Location = new System.Drawing.Point(273, 391);
+            this.btnAgregarInstitucion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregarInstitucion.Name = "btnAgregarInstitucion";
-            this.btnAgregarInstitucion.Size = new System.Drawing.Size(91, 31);
+            this.btnAgregarInstitucion.Size = new System.Drawing.Size(136, 48);
             this.btnAgregarInstitucion.TabIndex = 23;
             this.btnAgregarInstitucion.Text = "Guardar";
             this.btnAgregarInstitucion.UseVisualStyleBackColor = false;
@@ -154,10 +159,10 @@
             // 
             // NuevaInstitucion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(442, 408);
+            this.ClientSize = new System.Drawing.Size(663, 638);
             this.Controls.Add(this.btnCancelarNuevaInstitucion);
             this.Controls.Add(this.btnAgregarInstitucion);
             this.Controls.Add(this.label14);
@@ -166,6 +171,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInstitucion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NuevaInstitucion";
             this.Text = "NuevaInstitucion";
             this.panel2.ResumeLayout(false);

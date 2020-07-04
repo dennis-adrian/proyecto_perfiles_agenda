@@ -7,22 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using CapaDatos;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
     public partial class FrmNuevoPerfil : Form
     {
+        #region Instancias
+
+        NegocioNuevoPerfil obj = new NegocioNuevoPerfil();
+
+        #endregion
+
+
+        #region Constructor
         public FrmNuevoPerfil()
         {
             InitializeComponent();
-            cargarcarreratest();
+            FormsControls();
         }
 
+        #endregion
+
+
+        #region Buttons
+
+        private void btnElegirTutor_Click(object sender, EventArgs e)
+        {
+            FrmTutor frm = new FrmTutor();
+            frm.Show();
+        }
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void btnGuardarNuevoP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #endregion
+
+
         #region Arrastrar_Form
 
         private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -32,61 +59,37 @@ namespace CapaPresentacion
         }
         #endregion
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+
+        
+
+        #region Metodos
+
+        public void FormsControls()
         {
-            this.Close();
-        }
-
-        private void btnElegirTutor_Click(object sender, EventArgs e)
-        {
-            FrmLicenciado obj = new FrmLicenciado();
-            obj.Show();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnElegirTutor_Click_1(object sender, EventArgs e)
-        {
-            FrmTutor frm = new FrmTutor();
-            frm.Show();
-        }
-
-        private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        #region CARGARCOMBOBOX
-        public void cargarcarreratest()
-        {
-            //CapaDatos.Models.Carrera obj = new CapaDatos.Models.Carrera();
-
-            //cmbCarrera.DataSource = obj.Select();
+            cmbCarrera.Items.Clear();
+            cmbCarrera.DataSource = obj.cargarCarreras();
+            cmbCarrera.ValueMember = "id";
             cmbCarrera.DisplayMember = "nombre";
-            //cmbCarrera.ValueMember = "id";
+
         }
+        public void ClearForms()
+        {
+            txtRegistroAlum.Clear();//input
+            txtNombreAlum.Clear();//input
+            txtApellidoAlum.Clear();//input
+            txtEmailAlum.Clear();//input
+            txtTelefonoAlum.Clear();//input
+            txtCelularAlum.Clear();//input
+            txtTemaTesis.Clear();//input
+           
+
+        }
+
 
 
 
         #endregion
 
-        private void btnCancelarNuevop_Click_1(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void grbAlumno_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
