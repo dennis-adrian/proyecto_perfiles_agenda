@@ -252,6 +252,7 @@ namespace CapaPresentacion
         {
             cmbInstitucion.Items.Clear();
             cmbCarreraLicenciado.Items.Clear();
+            cmbTipo.Items.Clear();
 
             cmbInstitucion.DataSource = obj.cargarInstitucio();
             cmbInstitucion.ValueMember = "id";
@@ -260,6 +261,11 @@ namespace CapaPresentacion
             cmbCarreraLicenciado.DataSource = obj.cargarCarrerasLicenciados();
             cmbCarreraLicenciado.ValueMember = "id";
             cmbCarreraLicenciado.DisplayMember = "nombre";
+
+
+
+            cmbTipo.Items.Add("externo");
+            cmbTipo.Items.Add("interno");
 
             ShowLicenciados();
         }

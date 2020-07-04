@@ -68,6 +68,7 @@
             this.dtgLicenciados = new System.Windows.Forms.DataGridView();
             this.lbid_licenciado = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -169,6 +170,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.cmbTipo);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.lbid_licenciado);
             this.panel1.Controls.Add(this.txtTipo);
@@ -566,6 +568,19 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // cmbTipo
+            // 
+            this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "externo",
+            "interno"});
+            this.cmbTipo.Location = new System.Drawing.Point(528, 553);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(500, 44);
+            this.cmbTipo.TabIndex = 38;
+            // 
             // FrmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -633,5 +648,6 @@
         private System.Windows.Forms.DataGridView dtgLicenciados;
         private System.Windows.Forms.Label lbid_licenciado;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ComboBox cmbTipo;
     }
 }
