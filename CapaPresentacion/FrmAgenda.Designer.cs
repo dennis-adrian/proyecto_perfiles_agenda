@@ -99,6 +99,7 @@
             // 
             // pnlDataGrid
             // 
+            this.pnlDataGrid.BackColor = System.Drawing.Color.Silver;
             this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
             this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDataGrid.Location = new System.Drawing.Point(0, 88);
@@ -111,7 +112,7 @@
             // 
             this.dtgDefensaExterna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDefensaExterna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgDefensaExterna.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dtgDefensaExterna.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgDefensaExterna.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgDefensaExterna.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,7 +128,7 @@
             this.dtgDefensaExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
-            this.dtgDefensaExterna.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
             this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(6);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";

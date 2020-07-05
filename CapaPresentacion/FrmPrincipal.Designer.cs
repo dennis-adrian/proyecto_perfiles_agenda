@@ -76,6 +76,7 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
@@ -90,6 +91,7 @@
             this.pnlFrmHijo.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -703,6 +705,7 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
+            this.pnlFrmHijo.Controls.Add(this.pictureBox1);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
@@ -1184,6 +1187,17 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(464, 168);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(721, 559);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1216,6 +1230,7 @@
             this.pnlFrmHijo.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1269,6 +1284,7 @@
         private System.Windows.Forms.Panel pnlSubMenuDefensa;
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

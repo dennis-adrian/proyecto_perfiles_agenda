@@ -118,7 +118,7 @@
             // 
             this.dtgPerfilesTesis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgPerfilesTesis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgPerfilesTesis.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dtgPerfilesTesis.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgPerfilesTesis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgPerfilesTesis.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgPerfilesTesis.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -134,7 +134,7 @@
             this.dtgPerfilesTesis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgPerfilesTesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgPerfilesTesis.EnableHeadersVisualStyles = false;
-            this.dtgPerfilesTesis.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtgPerfilesTesis.GridColor = System.Drawing.Color.Silver;
             this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 88);
             this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(6);
             this.dtgPerfilesTesis.Name = "dtgPerfilesTesis";

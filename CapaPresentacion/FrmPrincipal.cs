@@ -251,9 +251,9 @@ namespace CapaPresentacion
 
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
-            //HiddenNuevaDefensa();
-            // HidenMenus();
-            CustomizeDesing();
+            
+            HidenMenus();
+            HiddenNuevaDefensa();
             ShowNuevoPerfil();
             /////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
@@ -273,8 +273,9 @@ namespace CapaPresentacion
 
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            HiddenNuevoperfil();
+           
             HidenMenus();
+            HiddenNuevoperfil();
             ShowNuevaDefensa();
             Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
 

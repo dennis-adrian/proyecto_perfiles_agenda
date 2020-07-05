@@ -64,7 +64,7 @@
             // 
             // pnlNuevoPerfil
             // 
-            this.pnlNuevoPerfil.BackColor = System.Drawing.Color.LightGray;
+            this.pnlNuevoPerfil.BackColor = System.Drawing.Color.Silver;
             this.pnlNuevoPerfil.Controls.Add(this.grbPerfilTesis);
             this.pnlNuevoPerfil.Controls.Add(this.grbAlumno);
             this.pnlNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,7 +77,7 @@
             // grbPerfilTesis
             // 
             this.grbPerfilTesis.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grbPerfilTesis.BackColor = System.Drawing.Color.LightGray;
+            this.grbPerfilTesis.BackColor = System.Drawing.Color.Silver;
             this.grbPerfilTesis.Controls.Add(this.cmbTutorElegido);
             this.grbPerfilTesis.Controls.Add(this.btnCancelarNuevop);
             this.grbPerfilTesis.Controls.Add(this.btnGuardarNuevoP);
@@ -236,7 +236,7 @@
             // grbAlumno
             // 
             this.grbAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grbAlumno.BackColor = System.Drawing.Color.LightGray;
+            this.grbAlumno.BackColor = System.Drawing.Color.Silver;
             this.grbAlumno.Controls.Add(this.cmbCarrera);
             this.grbAlumno.Controls.Add(this.label7);
             this.grbAlumno.Controls.Add(this.txtCelularAlum);
