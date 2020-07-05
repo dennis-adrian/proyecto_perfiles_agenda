@@ -33,6 +33,7 @@ namespace CapaPresentacion
             InitializeComponent();
             pnlPerfiles.Size = MinimumSize;
             pnlDefensaExterna.Size = MinimumSize;
+
             //form
             this.Text = string.Empty;
             this.ControlBox = false;

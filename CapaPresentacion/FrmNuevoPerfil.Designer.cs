@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoPerfil));
             this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
             this.grbPerfilTesis = new System.Windows.Forms.GroupBox();
+            this.cmbTutorElegido = new System.Windows.Forms.ComboBox();
             this.btnCancelarNuevop = new System.Windows.Forms.Button();
             this.btnGuardarNuevoP = new System.Windows.Forms.Button();
             this.btnElegirTutor = new System.Windows.Forms.Button();
-            this.dtAprovacion = new System.Windows.Forms.DateTimePicker();
-            this.dtPresentacion = new System.Windows.Forms.DateTimePicker();
-            this.txtTutor = new System.Windows.Forms.TextBox();
+            this.dtFechaAprobacion = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaRecepcion = new System.Windows.Forms.DateTimePicker();
             this.txtTemaTesis = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.pnlNuevoPerfil.Controls.Add(this.grbAlumno);
             this.pnlNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNuevoPerfil.Location = new System.Drawing.Point(4, 4);
-            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
             this.pnlNuevoPerfil.Size = new System.Drawing.Size(1768, 954);
             this.pnlNuevoPerfil.TabIndex = 34;
@@ -76,12 +77,12 @@
             // grbPerfilTesis
             // 
             this.grbPerfilTesis.BackColor = System.Drawing.Color.LightGray;
+            this.grbPerfilTesis.Controls.Add(this.cmbTutorElegido);
             this.grbPerfilTesis.Controls.Add(this.btnCancelarNuevop);
             this.grbPerfilTesis.Controls.Add(this.btnGuardarNuevoP);
             this.grbPerfilTesis.Controls.Add(this.btnElegirTutor);
-            this.grbPerfilTesis.Controls.Add(this.dtAprovacion);
-            this.grbPerfilTesis.Controls.Add(this.dtPresentacion);
-            this.grbPerfilTesis.Controls.Add(this.txtTutor);
+            this.grbPerfilTesis.Controls.Add(this.dtFechaAprobacion);
+            this.grbPerfilTesis.Controls.Add(this.dtFechaRecepcion);
             this.grbPerfilTesis.Controls.Add(this.txtTemaTesis);
             this.grbPerfilTesis.Controls.Add(this.label1);
             this.grbPerfilTesis.Controls.Add(this.label2);
@@ -90,13 +91,23 @@
             this.grbPerfilTesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbPerfilTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbPerfilTesis.Location = new System.Drawing.Point(0, 367);
-            this.grbPerfilTesis.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grbPerfilTesis.Margin = new System.Windows.Forms.Padding(6);
             this.grbPerfilTesis.Name = "grbPerfilTesis";
-            this.grbPerfilTesis.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grbPerfilTesis.Padding = new System.Windows.Forms.Padding(6);
             this.grbPerfilTesis.Size = new System.Drawing.Size(1768, 587);
             this.grbPerfilTesis.TabIndex = 36;
             this.grbPerfilTesis.TabStop = false;
             this.grbPerfilTesis.Text = "PERFIL TESIS";
+            // 
+            // cmbTutorElegido
+            // 
+            this.cmbTutorElegido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTutorElegido.FormattingEnabled = true;
+            this.cmbTutorElegido.Location = new System.Drawing.Point(380, 294);
+            this.cmbTutorElegido.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbTutorElegido.Name = "cmbTutorElegido";
+            this.cmbTutorElegido.Size = new System.Drawing.Size(530, 44);
+            this.cmbTutorElegido.TabIndex = 8;
             // 
             // btnCancelarNuevop
             // 
@@ -107,7 +118,7 @@
             this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
             this.btnCancelarNuevop.Location = new System.Drawing.Point(1188, 419);
-            this.btnCancelarNuevop.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancelarNuevop.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelarNuevop.Name = "btnCancelarNuevop";
             this.btnCancelarNuevop.Size = new System.Drawing.Size(200, 67);
             this.btnCancelarNuevop.TabIndex = 39;
@@ -124,7 +135,7 @@
             this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
             this.btnGuardarNuevoP.Location = new System.Drawing.Point(1412, 419);
-            this.btnGuardarNuevoP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGuardarNuevoP.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
             this.btnGuardarNuevoP.Size = new System.Drawing.Size(200, 67);
             this.btnGuardarNuevoP.TabIndex = 38;
@@ -140,8 +151,8 @@
             this.btnElegirTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTutor.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnElegirTutor.Location = new System.Drawing.Point(1048, 294);
-            this.btnElegirTutor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnElegirTutor.Location = new System.Drawing.Point(1044, 294);
+            this.btnElegirTutor.Margin = new System.Windows.Forms.Padding(6);
             this.btnElegirTutor.Name = "btnElegirTutor";
             this.btnElegirTutor.Size = new System.Drawing.Size(172, 50);
             this.btnElegirTutor.TabIndex = 4;
@@ -149,41 +160,31 @@
             this.btnElegirTutor.UseVisualStyleBackColor = false;
             this.btnElegirTutor.Click += new System.EventHandler(this.btnElegirTutor_Click);
             // 
-            // dtAprovacion
+            // dtFechaAprobacion
             // 
-            this.dtAprovacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtAprovacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtAprovacion.Location = new System.Drawing.Point(996, 194);
-            this.dtAprovacion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dtAprovacion.Name = "dtAprovacion";
-            this.dtAprovacion.Size = new System.Drawing.Size(220, 41);
-            this.dtAprovacion.TabIndex = 3;
+            this.dtFechaAprobacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaAprobacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaAprobacion.Location = new System.Drawing.Point(996, 194);
+            this.dtFechaAprobacion.Margin = new System.Windows.Forms.Padding(6);
+            this.dtFechaAprobacion.Name = "dtFechaAprobacion";
+            this.dtFechaAprobacion.Size = new System.Drawing.Size(220, 41);
+            this.dtFechaAprobacion.TabIndex = 3;
             // 
-            // dtPresentacion
+            // dtFechaRecepcion
             // 
-            this.dtPresentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPresentacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtPresentacion.Location = new System.Drawing.Point(380, 194);
-            this.dtPresentacion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dtPresentacion.Name = "dtPresentacion";
-            this.dtPresentacion.Size = new System.Drawing.Size(220, 41);
-            this.dtPresentacion.TabIndex = 2;
-            // 
-            // txtTutor
-            // 
-            this.txtTutor.Enabled = false;
-            this.txtTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTutor.Location = new System.Drawing.Point(380, 294);
-            this.txtTutor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtTutor.Name = "txtTutor";
-            this.txtTutor.Size = new System.Drawing.Size(530, 41);
-            this.txtTutor.TabIndex = 4;
+            this.dtFechaRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaRecepcion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaRecepcion.Location = new System.Drawing.Point(380, 194);
+            this.dtFechaRecepcion.Margin = new System.Windows.Forms.Padding(6);
+            this.dtFechaRecepcion.Name = "dtFechaRecepcion";
+            this.dtFechaRecepcion.Size = new System.Drawing.Size(220, 41);
+            this.dtFechaRecepcion.TabIndex = 2;
             // 
             // txtTemaTesis
             // 
             this.txtTemaTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTemaTesis.Location = new System.Drawing.Point(380, 96);
-            this.txtTemaTesis.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTemaTesis.Margin = new System.Windows.Forms.Padding(6);
             this.txtTemaTesis.Name = "txtTemaTesis";
             this.txtTemaTesis.Size = new System.Drawing.Size(836, 41);
             this.txtTemaTesis.TabIndex = 1;
@@ -197,7 +198,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha Aprobacion:";
+            this.label1.Text = "Fecha Aprobación:";
             // 
             // label2
             // 
@@ -214,12 +215,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 194);
+            this.label3.Location = new System.Drawing.Point(42, 194);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 36);
+            this.label3.Size = new System.Drawing.Size(271, 36);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Fecha Presentacion:";
+            this.label3.Text = "Fecha Recepción:";
             // 
             // label6
             // 
@@ -254,7 +255,7 @@
             this.grbAlumno.Location = new System.Drawing.Point(0, 0);
             this.grbAlumno.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
             this.grbAlumno.Name = "grbAlumno";
-            this.grbAlumno.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.grbAlumno.Padding = new System.Windows.Forms.Padding(10);
             this.grbAlumno.Size = new System.Drawing.Size(1768, 367);
             this.grbAlumno.TabIndex = 35;
             this.grbAlumno.TabStop = false;
@@ -265,7 +266,7 @@
             this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarrera.FormattingEnabled = true;
             this.cmbCarrera.Location = new System.Drawing.Point(1188, 94);
-            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(6);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(436, 44);
             this.cmbCarrera.TabIndex = 5;
@@ -285,7 +286,7 @@
             // 
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularAlum.Location = new System.Drawing.Point(1188, 194);
-            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(436, 41);
             this.txtCelularAlum.TabIndex = 7;
@@ -294,7 +295,7 @@
             // 
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoAlum.Location = new System.Drawing.Point(1188, 144);
-            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(436, 41);
             this.txtTelefonoAlum.TabIndex = 6;
@@ -325,7 +326,7 @@
             // 
             this.txtEmailAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAlum.Location = new System.Drawing.Point(274, 248);
-            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmailAlum.Name = "txtEmailAlum";
             this.txtEmailAlum.Size = new System.Drawing.Size(500, 41);
             this.txtEmailAlum.TabIndex = 4;
@@ -345,7 +346,7 @@
             // 
             this.txtApellidoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoAlum.Location = new System.Drawing.Point(274, 198);
-            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtApellidoAlum.Name = "txtApellidoAlum";
             this.txtApellidoAlum.Size = new System.Drawing.Size(500, 41);
             this.txtApellidoAlum.TabIndex = 3;
@@ -365,7 +366,7 @@
             // 
             this.txtNombreAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAlum.Location = new System.Drawing.Point(274, 148);
-            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombreAlum.Name = "txtNombreAlum";
             this.txtNombreAlum.Size = new System.Drawing.Size(500, 41);
             this.txtNombreAlum.TabIndex = 2;
@@ -385,7 +386,7 @@
             // 
             this.txtRegistroAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistroAlum.Location = new System.Drawing.Point(274, 98);
-            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(500, 41);
             this.txtRegistroAlum.TabIndex = 1;
@@ -409,11 +410,12 @@
             this.ClientSize = new System.Drawing.Size(1776, 962);
             this.Controls.Add(this.pnlNuevoPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNuevoPerfil";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Perfil";
             this.pnlNuevoPerfil.ResumeLayout(false);
@@ -444,9 +446,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox grbPerfilTesis;
         private System.Windows.Forms.Button btnElegirTutor;
-        private System.Windows.Forms.DateTimePicker dtAprovacion;
-        private System.Windows.Forms.DateTimePicker dtPresentacion;
-        private System.Windows.Forms.TextBox txtTutor;
+        private System.Windows.Forms.DateTimePicker dtFechaAprobacion;
+        private System.Windows.Forms.DateTimePicker dtFechaRecepcion;
         private System.Windows.Forms.TextBox txtTemaTesis;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -454,5 +455,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancelarNuevop;
         private System.Windows.Forms.Button btnGuardarNuevoP;
+        private System.Windows.Forms.ComboBox cmbTutorElegido;
     }
 }

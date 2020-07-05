@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerfiles));
             this.pnlBuscar2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBuscarPerfil = new System.Windows.Forms.Button();
@@ -64,7 +65,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(22, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(360, 52);
             this.button1.TabIndex = 26;
@@ -81,7 +82,7 @@
             this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarPerfil.Location = new System.Drawing.Point(1454, 15);
-            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
             this.btnBuscarPerfil.Size = new System.Drawing.Size(144, 52);
             this.btnBuscarPerfil.TabIndex = 25;
@@ -95,7 +96,7 @@
             this.txtBuscarPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPerfil.Location = new System.Drawing.Point(1158, 21);
-            this.txtBuscarPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarPerfil.Name = "txtBuscarPerfil";
             this.txtBuscarPerfil.Size = new System.Drawing.Size(308, 38);
             this.txtBuscarPerfil.TabIndex = 24;
@@ -135,7 +136,7 @@
             this.dtgPerfilesTesis.EnableHeadersVisualStyles = false;
             this.dtgPerfilesTesis.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 88);
-            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(6);
             this.dtgPerfilesTesis.Name = "dtgPerfilesTesis";
             this.dtgPerfilesTesis.ReadOnly = true;
             this.dtgPerfilesTesis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -166,7 +167,8 @@
             this.Controls.Add(this.dtgPerfilesTesis);
             this.Controls.Add(this.pnlBuscar2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPerfiles";
             this.Text = "FrmPerfiles";
             this.pnlBuscar2.ResumeLayout(false);

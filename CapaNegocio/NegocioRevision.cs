@@ -47,8 +47,8 @@ namespace CapaNegocio
             try
             {
 
-                type.Texto = Convert.ToString(Collection[0]);
-                revision.Estado = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[0]);
+                revision.Estado = type.Texto2;
 
                 type.Fecha = Convert.ToString(Collection[1]);
                 revision.Fecha_entrega_alumno = type.Fecha;
@@ -65,8 +65,8 @@ namespace CapaNegocio
                 type.Fecha = Convert.ToString(Collection[5]);
                 revision.Fecha_devolucion_alumno = type.Fecha;
 
-                type.Texto = Convert.ToString(Collection[6]);
-                revision.Observacion = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[6]);
+                revision.Observacion = type.Texto2;
 
                 revision.Nro_tribunal = Convert.ToInt32(Collection[7]);
 
@@ -91,8 +91,8 @@ namespace CapaNegocio
             try
             {
 
-                type.Texto = Convert.ToString(Collection[0]);
-                revision.Estado = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[0]);
+                revision.Estado = type.Texto2;
 
                 type.Fecha = Convert.ToString(Collection[1]);
                 revision.Fecha_entrega_alumno = type.Fecha;
@@ -109,8 +109,8 @@ namespace CapaNegocio
                 type.Fecha = Convert.ToString(Collection[5]);
                 revision.Fecha_devolucion_alumno = type.Fecha;
 
-                type.Texto = Convert.ToString(Collection[6]);
-                revision.Observacion = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[6]);
+                revision.Observacion = type.Texto2;
 
                 revision.Nro_tribunal = Convert.ToInt32(Collection[7]);
 

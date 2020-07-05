@@ -188,5 +188,12 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+        #region Arrastrar Forms
+        private void pnlBarraNuevoLicenciado_MouseDown(object sender, MouseEventArgs e)
+        {
+            ArrastrarForm.ReleaseCapture();
+            ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
     }
 }

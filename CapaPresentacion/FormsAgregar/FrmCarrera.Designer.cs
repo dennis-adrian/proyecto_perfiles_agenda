@@ -34,20 +34,21 @@
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.txtNombreCarreraLic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCargarTutor = new System.Windows.Forms.Button();
+            this.btnNuevaCarreraLicenciado = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBarraTitulo.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.pnlBarraTitulo.Controls.Add(this.label10);
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(730, 52);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(700, 52);
             this.pnlBarraTitulo.TabIndex = 28;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -56,12 +57,12 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(254, 10);
+            this.label10.Location = new System.Drawing.Point(164, 20);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(221, 36);
+            this.label10.Size = new System.Drawing.Size(339, 36);
             this.label10.TabIndex = 29;
-            this.label10.Text = "Nueva Carrera";
+            this.label10.Text = "Nueva Carrera Externa";
             // 
             // btnCerrar
             // 
@@ -73,7 +74,7 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(660, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(630, 2);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
@@ -85,8 +86,8 @@
             // txtNombreCarreraLic
             // 
             this.txtNombreCarreraLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCarreraLic.Location = new System.Drawing.Point(240, 160);
-            this.txtNombreCarreraLic.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombreCarreraLic.Location = new System.Drawing.Point(223, 182);
+            this.txtNombreCarreraLic.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombreCarreraLic.Name = "txtNombreCarreraLic";
             this.txtNombreCarreraLic.Size = new System.Drawing.Size(412, 41);
             this.txtNombreCarreraLic.TabIndex = 30;
@@ -95,44 +96,58 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 167);
+            this.label1.Location = new System.Drawing.Point(78, 182);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 36);
             this.label1.TabIndex = 29;
             this.label1.Text = "Nombre :";
             // 
-            // btnCargarTutor
+            // btnNuevaCarreraLicenciado
             // 
-            this.btnCargarTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnCargarTutor.FlatAppearance.BorderSize = 0;
-            this.btnCargarTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarTutor.ForeColor = System.Drawing.Color.White;
-            this.btnCargarTutor.Location = new System.Drawing.Point(314, 260);
-            this.btnCargarTutor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnCargarTutor.Name = "btnCargarTutor";
-            this.btnCargarTutor.Size = new System.Drawing.Size(248, 58);
-            this.btnCargarTutor.TabIndex = 31;
-            this.btnCargarTutor.Text = "Guardar";
-            this.btnCargarTutor.UseVisualStyleBackColor = false;
+            this.btnNuevaCarreraLicenciado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraLicenciado.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCarreraLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCarreraLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCarreraLicenciado.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaCarreraLicenciado.Location = new System.Drawing.Point(223, 281);
+            this.btnNuevaCarreraLicenciado.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNuevaCarreraLicenciado.Name = "btnNuevaCarreraLicenciado";
+            this.btnNuevaCarreraLicenciado.Size = new System.Drawing.Size(248, 58);
+            this.btnNuevaCarreraLicenciado.TabIndex = 31;
+            this.btnNuevaCarreraLicenciado.Text = "Guardar";
+            this.btnNuevaCarreraLicenciado.UseVisualStyleBackColor = false;
+            this.btnNuevaCarreraLicenciado.Click += new System.EventHandler(this.btnNuevaCarreraLicenciado_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 87);
+            this.panel2.TabIndex = 32;
             // 
             // FrmCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 487);
-            this.Controls.Add(this.btnCargarTutor);
+            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnNuevaCarreraLicenciado);
             this.Controls.Add(this.txtNombreCarreraLic);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmCarrera";
             this.Text = "FrmCarrera";
             this.pnlBarraTitulo.ResumeLayout(false);
-            this.pnlBarraTitulo.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +160,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNombreCarreraLic;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCargarTutor;
+        private System.Windows.Forms.Button btnNuevaCarreraLicenciado;
+        private System.Windows.Forms.Panel panel2;
     }
 }

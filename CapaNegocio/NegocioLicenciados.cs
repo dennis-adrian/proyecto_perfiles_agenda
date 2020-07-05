@@ -76,14 +76,14 @@ namespace CapaNegocio
         {
             try
             {
-                type.Texto = Convert.ToString(Collection[0]);
-                licenciado.Nombre = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[0]);
+                licenciado.Nombre = type.Texto2;
 
-                type.Texto = Convert.ToString(Collection[1]);
-                licenciado.Apellido = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[1]);
+                licenciado.Apellido = type.Texto2;
 
-                type.Texto = Convert.ToString(Collection[2]);
-                licenciado.Descripcion = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[2]);
+                licenciado.Descripcion = type.Texto2;
 
 
                 type.Email = Convert.ToString(Collection[3]);
@@ -95,8 +95,8 @@ namespace CapaNegocio
                 type.Celular = Convert.ToString(Collection[5]);
                 licenciado.Celular = type.Celular;
 
-                type.Texto = Convert.ToString(Collection[6]);
-                licenciado.Tipo = type.Texto;
+                type.Texto1 = Convert.ToString(Collection[6]);
+                licenciado.Tipo = type.Texto1;
 
                 licenciado.Docente = Convert.ToInt32(Collection[7]);
 
@@ -133,14 +133,14 @@ namespace CapaNegocio
 
             try
             {
-                type.Texto = Convert.ToString(Collection[0]);
-                licenciado.Nombre = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[0]);
+                licenciado.Nombre = type.Texto2;
 
-                type.Texto = Convert.ToString(Collection[1]);
-                licenciado.Apellido = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[1]);
+                licenciado.Apellido = type.Texto2;
 
-                type.Texto = Convert.ToString(Collection[2]);
-                licenciado.Descripcion = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[2]);
+                licenciado.Descripcion = type.Texto2;
 
 
                 type.Email = Convert.ToString(Collection[3]);
@@ -152,8 +152,8 @@ namespace CapaNegocio
                 type.Celular = Convert.ToString(Collection[5]);
                 licenciado.Celular = type.Celular;
 
-                type.Texto = Convert.ToString(Collection[6]);
-                licenciado.Tipo = type.Texto;
+                type.Texto1 = Convert.ToString(Collection[6]);
+                licenciado.Tipo = type.Texto1;
                 
              
                 licenciado.Docente = Convert.ToInt32(Collection[7]);

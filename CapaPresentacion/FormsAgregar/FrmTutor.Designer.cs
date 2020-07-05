@@ -39,14 +39,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.lbid_licenciado = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAgregarInstitucion = new System.Windows.Forms.Button();
             this.btnAgregarCarrera = new System.Windows.Forms.Button();
             this.cmbInstitucion = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.cmbCarreraLicenciado = new System.Windows.Forms.ComboBox();
             this.rbDocenteNo = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.rbDocenteSi = new System.Windows.Forms.RadioButton();
             this.btnGuardarLicenciado = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,9 +68,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgLicenciados = new System.Windows.Forms.DataGridView();
-            this.lbid_licenciado = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -173,14 +172,13 @@
             this.panel1.Controls.Add(this.cmbTipo);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.lbid_licenciado);
-            this.panel1.Controls.Add(this.txtTipo);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnAgregarInstitucion);
             this.panel1.Controls.Add(this.btnAgregarCarrera);
             this.panel1.Controls.Add(this.cmbInstitucion);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cmbCarreraLicenciado);
             this.panel1.Controls.Add(this.rbDocenteNo);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.rbDocenteSi);
             this.panel1.Controls.Add(this.btnGuardarLicenciado);
             this.panel1.Controls.Add(this.label6);
@@ -204,14 +202,45 @@
             this.panel1.Size = new System.Drawing.Size(1057, 1019);
             this.panel1.TabIndex = 28;
             // 
-            // txtTipo
+            // cmbTipo
             // 
-            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(262, 633);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(6);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(500, 41);
-            this.txtTipo.TabIndex = 35;
+            this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "externo",
+            "interno"});
+            this.cmbTipo.Location = new System.Drawing.Point(262, 636);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(500, 44);
+            this.cmbTipo.TabIndex = 38;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(90, 915);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(399, 63);
+            this.btnLimpiar.TabIndex = 37;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // lbid_licenciado
+            // 
+            this.lbid_licenciado.AutoSize = true;
+            this.lbid_licenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbid_licenciado.Location = new System.Drawing.Point(453, 15);
+            this.lbid_licenciado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbid_licenciado.Name = "lbid_licenciado";
+            this.lbid_licenciado.Size = new System.Drawing.Size(0, 36);
+            this.lbid_licenciado.TabIndex = 36;
+            this.lbid_licenciado.Visible = false;
             // 
             // label8
             // 
@@ -231,7 +260,7 @@
             this.btnAgregarInstitucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInstitucion.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarInstitucion.Location = new System.Drawing.Point(788, 789);
+            this.btnAgregarInstitucion.Location = new System.Drawing.Point(782, 710);
             this.btnAgregarInstitucion.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgregarInstitucion.Name = "btnAgregarInstitucion";
             this.btnAgregarInstitucion.Size = new System.Drawing.Size(246, 50);
@@ -247,7 +276,7 @@
             this.btnAgregarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCarrera.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCarrera.Location = new System.Drawing.Point(788, 710);
+            this.btnAgregarCarrera.Location = new System.Drawing.Point(782, 799);
             this.btnAgregarCarrera.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgregarCarrera.Name = "btnAgregarCarrera";
             this.btnAgregarCarrera.Size = new System.Drawing.Size(246, 50);
@@ -260,28 +289,17 @@
             // 
             this.cmbInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbInstitucion.FormattingEnabled = true;
-            this.cmbInstitucion.Location = new System.Drawing.Point(262, 793);
+            this.cmbInstitucion.Location = new System.Drawing.Point(256, 714);
             this.cmbInstitucion.Margin = new System.Windows.Forms.Padding(6);
             this.cmbInstitucion.Name = "cmbInstitucion";
             this.cmbInstitucion.Size = new System.Drawing.Size(500, 44);
             this.cmbInstitucion.TabIndex = 21;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(44, 806);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 36);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Institucion :";
-            // 
             // cmbCarreraLicenciado
             // 
             this.cmbCarreraLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreraLicenciado.FormattingEnabled = true;
-            this.cmbCarreraLicenciado.Location = new System.Drawing.Point(262, 710);
+            this.cmbCarreraLicenciado.Location = new System.Drawing.Point(256, 799);
             this.cmbCarreraLicenciado.Margin = new System.Windows.Forms.Padding(6);
             this.cmbCarreraLicenciado.Name = "cmbCarreraLicenciado";
             this.cmbCarreraLicenciado.Size = new System.Drawing.Size(500, 44);
@@ -299,6 +317,17 @@
             this.rbDocenteNo.TabStop = true;
             this.rbDocenteNo.Text = "No";
             this.rbDocenteNo.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 727);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 36);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Institucion :";
             // 
             // rbDocenteSi
             // 
@@ -344,7 +373,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(84, 717);
+            this.label5.Location = new System.Drawing.Point(78, 806);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 36);
@@ -541,46 +570,6 @@
             this.dtgLicenciados.Size = new System.Drawing.Size(1204, 644);
             this.dtgLicenciados.TabIndex = 0;
             // 
-            // lbid_licenciado
-            // 
-            this.lbid_licenciado.AutoSize = true;
-            this.lbid_licenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbid_licenciado.Location = new System.Drawing.Point(453, 15);
-            this.lbid_licenciado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbid_licenciado.Name = "lbid_licenciado";
-            this.lbid_licenciado.Size = new System.Drawing.Size(0, 36);
-            this.lbid_licenciado.TabIndex = 36;
-            this.lbid_licenciado.Visible = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(90, 915);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(399, 63);
-            this.btnLimpiar.TabIndex = 37;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // cmbTipo
-            // 
-            this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Items.AddRange(new object[] {
-            "externo",
-            "interno"});
-            this.cmbTipo.Location = new System.Drawing.Point(528, 553);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(6);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(500, 44);
-            this.cmbTipo.TabIndex = 38;
-            // 
             // FrmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -596,7 +585,6 @@
             this.Controls.Add(this.btnSeleccionarLicenciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmTutor";
             this.Text = "FrmTutor";
@@ -643,7 +631,6 @@
         private System.Windows.Forms.TextBox txtNombreLicenciado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtgLicenciados;
         private System.Windows.Forms.Label lbid_licenciado;

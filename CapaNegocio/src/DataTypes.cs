@@ -9,7 +9,7 @@ namespace CapaNegocio.src
 {
     public class DataTypes
     {
-       
+
         #region Atributos
         private string email;
         private string telefono;
@@ -21,7 +21,9 @@ namespace CapaNegocio.src
 
         private string fecha;
 
-        private string texto;
+        private string texto1;//sin  acentos y ñ
+
+        private string texto2;//con acentos y ñ
 
 
 
@@ -48,7 +50,7 @@ namespace CapaNegocio.src
             }
         }
 
-        public string Telefono 
+        public string Telefono
         {
             get { return telefono; }
             set
@@ -62,7 +64,7 @@ namespace CapaNegocio.src
                     throw new ArgumentException("ingrese un numero valido de telefono");
                 }
             }
-               
+
         }
 
         public string Celular
@@ -85,7 +87,7 @@ namespace CapaNegocio.src
             }
         }
 
-        public string Registro 
+        public string Registro
         {
             get { return registro; }
 
@@ -99,11 +101,11 @@ namespace CapaNegocio.src
                 {
                     throw new ArgumentException("ingrese un número válido de Registro");
                 }
-                
-            } 
+
+            }
         }
 
-        public string Aula 
+        public string Aula
         {
             get { return aula; }
 
@@ -127,7 +129,7 @@ namespace CapaNegocio.src
                 }
 
 
-            } 
+            }
         }
 
         public string Fecha
@@ -135,7 +137,7 @@ namespace CapaNegocio.src
             get { return fecha; }
             set
             {
-                if(Regex.IsMatch(value, @"^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"))
+                if (Regex.IsMatch(value, @"^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"))
                 {
                     this.fecha = value;
                 }
@@ -146,14 +148,29 @@ namespace CapaNegocio.src
             }
         }
 
-        public string Texto
+        public string Texto1
         {
-            get { return texto; }
+            get { return texto1; }
             set
             {
                 if (Regex.IsMatch(value, @"^[a-zA-Z ]*$"))
                 {
-                    this.texto = value;
+                    this.texto1 = value;
+                }
+                else
+                {
+                    throw new ArgumentException("datos invalidos solo aceptan letras");
+                }
+            }
+        }
+        public string Texto2
+        {
+            get { return texto2; }
+            set
+            {
+                if (Regex.IsMatch(value, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ]*$"))
+                {
+                    this.texto2 = value;
                 }
                 else
                 {

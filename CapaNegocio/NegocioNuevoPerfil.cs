@@ -67,11 +67,11 @@ namespace CapaNegocio
                 type.Registro = Convert.ToString(Collection[0]);
                 estudiante.Registro = type.Registro;
 
-                type.Texto = Convert.ToString(Collection[1]);
-                estudiante.Nombre = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[1]);
+                estudiante.Nombre = type.Texto2;
 
-                type.Texto = Convert.ToString(Collection[2]);
-                estudiante.Apellido = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[2]);
+                estudiante.Apellido = type.Texto2;
 
                 type.Email = Convert.ToString(Collection[3]);
                 estudiante.Email = type.Email;
@@ -84,8 +84,8 @@ namespace CapaNegocio
 
                 estudiante.Id_carrera = Convert.ToInt32(Collection[6]);
 
-                type.Texto = Convert.ToString(Collection[7]);//input
-                perfilTesis.Tema = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[7]);//input
+                perfilTesis.Tema = type.Texto2;
 
                 perfilTesis.Estado = "En Recepcion";
 

@@ -215,6 +215,18 @@ namespace test_project
 
 
         }
+        [TestMethod]
+        public void TestMethod14()
+        {
+
+            CapaNegocio.src.DataTypes type = new CapaNegocio.src.DataTypes();
+
+            type.Texto2 = "Hola";
+            Console.WriteLine(type.Texto2);
+
+
+
+        }
 
     }
 }

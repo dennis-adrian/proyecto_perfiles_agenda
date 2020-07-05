@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.ContractForms;
 using CapaNegocio;
 using CapaDatos.View;
 
@@ -33,6 +34,14 @@ namespace CapaPresentacion
 
         #region Atributos
         int id_parametro = 0;
+
+
+        #endregion
+
+        #region Propiedades
+        //utilizo la interface como propiedad
+        public IContractLicenciado contrato { get; set; }
+
         #endregion
 
         #region Arrastrar_Form
@@ -71,8 +80,11 @@ namespace CapaPresentacion
         private void btnSeleccionarLicenciado_Click(object sender, EventArgs e)
         {
             int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+            string tutor = (dtgLicenciados.CurrentRow.Cells[1].Value.ToString() +" "+ dtgLicenciados.CurrentRow.Cells[2].Value.ToString());
 
-
+          //usando el contrato interfaz
+            contrato.Ejecutar(id_seleccionado, tutor);
+            this.Close();
         }
         private void btnEliminarLicenciado_Click(object sender, EventArgs e)
         {
@@ -134,19 +146,27 @@ namespace CapaPresentacion
         private void btnAgregarCarrera_Click(object sender, EventArgs e)
         {
             FrmCarrera frm = new FrmCarrera();
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                ShowCarrerasLicenciado();
+            }
         }
 
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
             FrmInstitucion frm1 = new FrmInstitucion();
-            frm1.ShowDialog();
+            if (frm1.ShowDialog() == DialogResult.OK)
+            {
+                ShowInstituciones();
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             ClearForms();
             id_parametro = 0;
+
+            MessageBox.Show(cmbTipo.Text);
         }
 
         #endregion
@@ -161,7 +181,7 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            string tipo = txtTipo.Text;// input 7
+            string tipo = cmbTipo.Text;//txtTipo.Text;// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
             int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
@@ -192,7 +212,7 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            string tipo = txtTipo.Text;// input 7
+            string tipo = cmbTipo.Text;// txtTipo.Text;// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
             int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
@@ -226,7 +246,7 @@ namespace CapaPresentacion
             txtEmailLicenciado.Text = Convert.ToString(Collection[4]);
             txtTelefono.Text = Convert.ToString(Collection[5]);
             txtCelular.Text = Convert.ToString(Collection[6]);
-            txtTipo.Text = Convert.ToString(Collection[7]);
+            cmbTipo.SelectedIndex = (Convert.ToString(Collection[7])== "externo") ? 0 : 1;
             if (Convert.ToInt32(Collection[8]) == 1) { rbDocenteSi.Checked = true; } else { rbDocenteNo.Checked = true; }
             cmbInstitucion.SelectedValue = Convert.ToInt32(Collection[9]);
             cmbCarreraLicenciado.SelectedValue = Convert.ToInt32(Collection[10]);
@@ -245,29 +265,41 @@ namespace CapaPresentacion
             txtEmailLicenciado.Clear();
             txtTelefono.Clear();
             txtCelular.Clear();
-            txtTipo.Clear();
             if (rbDocenteNo.Checked) { rbDocenteNo.Checked = false; } else { rbDocenteSi.Checked = false; }
         }
         public void InitialForms()
         {
-            cmbInstitucion.Items.Clear();
-            cmbCarreraLicenciado.Items.Clear();
+            
+            
             cmbTipo.Items.Clear();
+            ShowCarrerasLicenciado();
+            ShowInstituciones();
+            cmbTipo.SelectedItem = null;
+            cmbTipo.Items.Insert(0,"externo");
+            cmbTipo.Items.Insert(1,"interno");
+            cmbTipo.SelectedIndex = 0;
 
-            cmbInstitucion.DataSource = obj.cargarInstitucio();
-            cmbInstitucion.ValueMember = "id";
-            cmbInstitucion.DisplayMember = "nombre";
 
+            ShowLicenciados();
+        }
+        public void ShowCarrerasLicenciado()
+        {
+            ///
+            cmbCarreraLicenciado.DataSource = null;
+            cmbCarreraLicenciado.Items.Clear();
             cmbCarreraLicenciado.DataSource = obj.cargarCarrerasLicenciados();
             cmbCarreraLicenciado.ValueMember = "id";
             cmbCarreraLicenciado.DisplayMember = "nombre";
 
+        }
+        public void ShowInstituciones()
+        {
+            cmbInstitucion.DataSource = null;
+            cmbInstitucion.Items.Clear();
+            cmbInstitucion.DataSource = obj.cargarInstitucio();
+            cmbInstitucion.ValueMember = "id";
+            cmbInstitucion.DisplayMember = "nombre";
 
-
-            cmbTipo.Items.Add("externo");
-            cmbTipo.Items.Add("interno");
-
-            ShowLicenciados();
         }
         public void ShowLicenciados()
         {
@@ -277,20 +309,9 @@ namespace CapaPresentacion
             dtgLicenciados.DataSource = source;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
+       
         #endregion
 
-      
+              
     }
 }

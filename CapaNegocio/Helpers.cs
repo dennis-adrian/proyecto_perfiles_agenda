@@ -43,8 +43,8 @@ namespace CapaNegocio
             try
             {
 
-                type.Texto  = Convert.ToString(Collection[0]); 
-                institucion.Nombre = type.Texto;
+                type.Texto2  = Convert.ToString(Collection[0]); 
+                institucion.Nombre = type.Texto2;
                 institucion.Insert();
 
             }
@@ -60,8 +60,8 @@ namespace CapaNegocio
             try
             {
 
-                type.Texto = Convert.ToString(Collection[0]);
-                carreraLicenciado.Nombre = type.Texto;
+                type.Texto2 = Convert.ToString(Collection[0]);
+                carreraLicenciado.Nombre = type.Texto2;
                 carreraLicenciado.Insert();
 
             }

@@ -34,8 +34,8 @@ namespace CapaPresentacion
         }
         private void btnElegirTribunal_Click(object sender, EventArgs e)
         {
-            Form frmElegirTribunal = new FrmLicenciado();
-            frmElegirTribunal.Show();
+            //ojo ->  Form frmElegirTribunal = new FrmLicenciado();
+            //frmElegirTribunal.Show();
         }
 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
