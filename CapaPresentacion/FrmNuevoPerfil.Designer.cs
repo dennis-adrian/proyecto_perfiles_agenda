@@ -76,6 +76,7 @@
             // 
             // grbPerfilTesis
             // 
+            this.grbPerfilTesis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grbPerfilTesis.BackColor = System.Drawing.Color.LightGray;
             this.grbPerfilTesis.Controls.Add(this.cmbTutorElegido);
             this.grbPerfilTesis.Controls.Add(this.btnCancelarNuevop);
@@ -88,13 +89,12 @@
             this.grbPerfilTesis.Controls.Add(this.label2);
             this.grbPerfilTesis.Controls.Add(this.label3);
             this.grbPerfilTesis.Controls.Add(this.label6);
-            this.grbPerfilTesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbPerfilTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbPerfilTesis.Location = new System.Drawing.Point(0, 367);
+            this.grbPerfilTesis.Location = new System.Drawing.Point(50, 367);
             this.grbPerfilTesis.Margin = new System.Windows.Forms.Padding(6);
             this.grbPerfilTesis.Name = "grbPerfilTesis";
             this.grbPerfilTesis.Padding = new System.Windows.Forms.Padding(6);
-            this.grbPerfilTesis.Size = new System.Drawing.Size(1768, 587);
+            this.grbPerfilTesis.Size = new System.Drawing.Size(1718, 552);
             this.grbPerfilTesis.TabIndex = 36;
             this.grbPerfilTesis.TabStop = false;
             this.grbPerfilTesis.Text = "PERFIL TESIS";
@@ -117,7 +117,7 @@
             this.btnCancelarNuevop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarNuevop.Location = new System.Drawing.Point(1188, 419);
+            this.btnCancelarNuevop.Location = new System.Drawing.Point(1163, 402);
             this.btnCancelarNuevop.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelarNuevop.Name = "btnCancelarNuevop";
             this.btnCancelarNuevop.Size = new System.Drawing.Size(200, 67);
@@ -134,7 +134,7 @@
             this.btnGuardarNuevoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarNuevoP.Location = new System.Drawing.Point(1412, 419);
+            this.btnGuardarNuevoP.Location = new System.Drawing.Point(1387, 402);
             this.btnGuardarNuevoP.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
             this.btnGuardarNuevoP.Size = new System.Drawing.Size(200, 67);
@@ -235,6 +235,7 @@
             // 
             // grbAlumno
             // 
+            this.grbAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grbAlumno.BackColor = System.Drawing.Color.LightGray;
             this.grbAlumno.Controls.Add(this.cmbCarrera);
             this.grbAlumno.Controls.Add(this.label7);
@@ -250,13 +251,12 @@
             this.grbAlumno.Controls.Add(this.label12);
             this.grbAlumno.Controls.Add(this.txtRegistroAlum);
             this.grbAlumno.Controls.Add(this.label13);
-            this.grbAlumno.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAlumno.Location = new System.Drawing.Point(0, 0);
+            this.grbAlumno.Location = new System.Drawing.Point(50, 19);
             this.grbAlumno.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
             this.grbAlumno.Name = "grbAlumno";
             this.grbAlumno.Padding = new System.Windows.Forms.Padding(10);
-            this.grbAlumno.Size = new System.Drawing.Size(1768, 367);
+            this.grbAlumno.Size = new System.Drawing.Size(1718, 347);
             this.grbAlumno.TabIndex = 35;
             this.grbAlumno.TabStop = false;
             this.grbAlumno.Text = "ALUMNO";

@@ -155,10 +155,42 @@ namespace CapaPresentacion
 
         }
 
+        public void HiddenNuevoperfil()
+        {
+            btnNuevoPerfil.BackColor = Color.FromArgb(102, 102, 102);
+            btnNuevoPerfil.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleLeft;
+            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+        public void ShowNuevoPerfil()
+        {
+            btnNuevoPerfil.BackColor = Color.FromArgb(178, 8, 55);
+            btnNuevoPerfil.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleRight;
+            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleRight;
+        }
+        public void HiddenNuevaDefensa()
+        {
+            btnNuevaDefensa.BackColor = Color.FromArgb(102, 102, 102);
+            btnNuevaDefensa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleLeft;
+            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleLeft;
+
+        }
+        public void ShowNuevaDefensa()
+        {
+            btnNuevaDefensa.BackColor = Color.FromArgb(178, 8, 55);
+            btnNuevaDefensa.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleRight;
+            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleRight;
+        }
+
         public void ShowMenus(IconButton iconbtn, Panel Submenu)
         {
             if (Submenu.Visible == false)
             {
+                HiddenNuevoperfil();
+                HiddenNuevaDefensa();
                 HidenCarreras();
                 HidenMenus();
                 Submenu.Visible = true;
@@ -218,6 +250,18 @@ namespace CapaPresentacion
             btnJuridicasAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnJuridicasAgenda.TextAlign = ContentAlignment.MiddleLeft;
             btnJuridicasAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+
+            
+            btnNuevaDefensa.BackColor = Color.FromArgb(102, 102, 102);
+            btnNuevaDefensa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleLeft;
+            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleLeft;
+
+            btnNuevoPerfil.BackColor = Color.FromArgb(102, 102, 102);
+            btnNuevoPerfil.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleLeft;
+            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+
         }
 
         public void HidenCarreras()
@@ -296,7 +340,9 @@ namespace CapaPresentacion
 
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
-            activarBoton(sender, ColoresRgb.rojoUtepsa);
+            HiddenNuevaDefensa();
+            HidenMenus();
+            ShowNuevoPerfil();
             /////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
 
@@ -315,7 +361,9 @@ namespace CapaPresentacion
 
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            activarBoton(sender, ColoresRgb.rojoUtepsa);
+            HiddenNuevoperfil();
+            HidenMenus();
+            ShowNuevaDefensa();
             Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
 
             if (frmNuevaDefensaExterna != null)
@@ -441,7 +489,7 @@ namespace CapaPresentacion
 
 
 
-        #region Botones_Carreras
+        #region Buttons_Carreras
 
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
