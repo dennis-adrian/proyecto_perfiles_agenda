@@ -51,5 +51,10 @@ namespace CapaPresentacion
            
 
         }
+
+        private void btnBuscarDefensa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

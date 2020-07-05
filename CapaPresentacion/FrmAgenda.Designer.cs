@@ -71,6 +71,7 @@
             this.btnBuscarDefensa.TabIndex = 25;
             this.btnBuscarDefensa.Text = "Buscar";
             this.btnBuscarDefensa.UseVisualStyleBackColor = false;
+            this.btnBuscarDefensa.Click += new System.EventHandler(this.btnBuscarDefensa_Click);
             // 
             // txtBuscarDefensa
             // 

@@ -76,6 +76,12 @@
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
     <Compile Include="ContractForms\IContractLicenciado.cs" />
+    <Compile Include="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsAgregar\FrmCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Revisiones\FrmGeneral.Designer.cs">
       <DependentUpon>FrmGeneral.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAgregar\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </EmbeddedResource>
