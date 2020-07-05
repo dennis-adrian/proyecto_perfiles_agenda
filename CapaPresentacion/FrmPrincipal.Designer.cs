@@ -30,16 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlNuevaDefensa = new System.Windows.Forms.Panel();
-            this.btnNuevaDefensa = new FontAwesome.Sharp.IconButton();
+            this.pnlSubMenuDefensa = new System.Windows.Forms.Panel();
+            this.btnJuridicasAgenda = new FontAwesome.Sharp.IconButton();
+            this.btnTecnologiaAgenda = new FontAwesome.Sharp.IconButton();
+            this.btnEmpresarialesAgenda = new FontAwesome.Sharp.IconButton();
+            this.btnDefensaExterna = new FontAwesome.Sharp.IconButton();
+            this.pnlSubMenuPerfiles = new System.Windows.Forms.Panel();
             this.btnJuridicasPerfiles = new FontAwesome.Sharp.IconButton();
             this.btnTecnologiaPerfiles = new FontAwesome.Sharp.IconButton();
             this.btnEmpresarialesPefiles = new FontAwesome.Sharp.IconButton();
             this.btnPerfiles = new FontAwesome.Sharp.IconButton();
-            this.btnTecnologiaAgenda = new FontAwesome.Sharp.IconButton();
-            this.btnEmpresarialesAgenda = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
             this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
+            this.pnlNuevaDefensa = new System.Windows.Forms.Panel();
+            this.btnNuevaDefensa = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
@@ -71,14 +76,12 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlSubMenuPerfiles = new System.Windows.Forms.Panel();
-            this.pnlSubMenuDefensa = new System.Windows.Forms.Panel();
-            this.btnDefensaExterna = new FontAwesome.Sharp.IconButton();
-            this.btnJuridicasAgenda = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            this.pnlNuevaDefensa.SuspendLayout();
+            this.pnlSubMenuDefensa.SuspendLayout();
+            this.pnlSubMenuPerfiles.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.pnlNuevoPerfil.SuspendLayout();
+            this.pnlNuevaDefensa.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
@@ -87,9 +90,6 @@
             this.pnlFrmHijo.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlSubMenuPerfiles.SuspendLayout();
-            this.pnlSubMenuDefensa.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,42 +109,148 @@
             this.panel1.Size = new System.Drawing.Size(516, 1154);
             this.panel1.TabIndex = 0;
             // 
-            // pnlNuevaDefensa
+            // pnlSubMenuDefensa
             // 
-            this.pnlNuevaDefensa.Controls.Add(this.btnNuevaDefensa);
-            this.pnlNuevaDefensa.Location = new System.Drawing.Point(64, 124);
-            this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(76, 4, 76, 79);
-            this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
-            this.pnlNuevaDefensa.Size = new System.Drawing.Size(320, 77);
-            this.pnlNuevaDefensa.TabIndex = 3;
+            this.pnlSubMenuDefensa.Controls.Add(this.btnJuridicasAgenda);
+            this.pnlSubMenuDefensa.Controls.Add(this.btnTecnologiaAgenda);
+            this.pnlSubMenuDefensa.Controls.Add(this.btnEmpresarialesAgenda);
+            this.pnlSubMenuDefensa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 810);
+            this.pnlSubMenuDefensa.Name = "pnlSubMenuDefensa";
+            this.pnlSubMenuDefensa.Size = new System.Drawing.Size(516, 182);
+            this.pnlSubMenuDefensa.TabIndex = 2;
             // 
-            // btnNuevaDefensa
+            // btnJuridicasAgenda
             // 
-            this.btnNuevaDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnNuevaDefensa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNuevaDefensa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevaDefensa.FlatAppearance.BorderSize = 0;
-            this.btnNuevaDefensa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaDefensa.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaDefensa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
-            this.btnNuevaDefensa.IconSize = 28;
-            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 0);
-            this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNuevaDefensa.Name = "btnNuevaDefensa";
-            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(8);
-            this.btnNuevaDefensa.Rotation = 0D;
-            this.btnNuevaDefensa.Size = new System.Drawing.Size(320, 77);
-            this.btnNuevaDefensa.TabIndex = 1;
-            this.btnNuevaDefensa.Text = "Nueva Defensa";
-            this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevaDefensa.UseVisualStyleBackColor = false;
-            this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
+            this.btnJuridicasAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnJuridicasAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJuridicasAgenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnJuridicasAgenda.FlatAppearance.BorderSize = 0;
+            this.btnJuridicasAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnJuridicasAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnJuridicasAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJuridicasAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnJuridicasAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJuridicasAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnJuridicasAgenda.IconChar = FontAwesome.Sharp.IconChar.BalanceScaleRight;
+            this.btnJuridicasAgenda.IconColor = System.Drawing.Color.White;
+            this.btnJuridicasAgenda.IconSize = 32;
+            this.btnJuridicasAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJuridicasAgenda.Location = new System.Drawing.Point(0, 120);
+            this.btnJuridicasAgenda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJuridicasAgenda.Name = "btnJuridicasAgenda";
+            this.btnJuridicasAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnJuridicasAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnJuridicasAgenda.Rotation = 0D;
+            this.btnJuridicasAgenda.Size = new System.Drawing.Size(516, 60);
+            this.btnJuridicasAgenda.TabIndex = 17;
+            this.btnJuridicasAgenda.Text = "Ciencias Jurídicas y Sociales";
+            this.btnJuridicasAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJuridicasAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnJuridicasAgenda.UseVisualStyleBackColor = false;
+            this.btnJuridicasAgenda.Click += new System.EventHandler(this.btnJuridicasAgenda_Click);
+            // 
+            // btnTecnologiaAgenda
+            // 
+            this.btnTecnologiaAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTecnologiaAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTecnologiaAgenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTecnologiaAgenda.FlatAppearance.BorderSize = 0;
+            this.btnTecnologiaAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnTecnologiaAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnTecnologiaAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTecnologiaAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnTecnologiaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTecnologiaAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTecnologiaAgenda.IconChar = FontAwesome.Sharp.IconChar.LaptopCode;
+            this.btnTecnologiaAgenda.IconColor = System.Drawing.Color.White;
+            this.btnTecnologiaAgenda.IconSize = 32;
+            this.btnTecnologiaAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTecnologiaAgenda.Location = new System.Drawing.Point(0, 60);
+            this.btnTecnologiaAgenda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTecnologiaAgenda.Name = "btnTecnologiaAgenda";
+            this.btnTecnologiaAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnTecnologiaAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnTecnologiaAgenda.Rotation = 0D;
+            this.btnTecnologiaAgenda.Size = new System.Drawing.Size(516, 60);
+            this.btnTecnologiaAgenda.TabIndex = 6;
+            this.btnTecnologiaAgenda.Text = "Ciencias y Tecnología";
+            this.btnTecnologiaAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTecnologiaAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTecnologiaAgenda.UseVisualStyleBackColor = false;
+            this.btnTecnologiaAgenda.Click += new System.EventHandler(this.btnTecnologiaAgenda_Click);
+            // 
+            // btnEmpresarialesAgenda
+            // 
+            this.btnEmpresarialesAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEmpresarialesAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmpresarialesAgenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpresarialesAgenda.FlatAppearance.BorderSize = 0;
+            this.btnEmpresarialesAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEmpresarialesAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEmpresarialesAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresarialesAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEmpresarialesAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpresarialesAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEmpresarialesAgenda.IconChar = FontAwesome.Sharp.IconChar.Briefcase;
+            this.btnEmpresarialesAgenda.IconColor = System.Drawing.Color.White;
+            this.btnEmpresarialesAgenda.IconSize = 32;
+            this.btnEmpresarialesAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpresarialesAgenda.Location = new System.Drawing.Point(0, 0);
+            this.btnEmpresarialesAgenda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmpresarialesAgenda.Name = "btnEmpresarialesAgenda";
+            this.btnEmpresarialesAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnEmpresarialesAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEmpresarialesAgenda.Rotation = 0D;
+            this.btnEmpresarialesAgenda.Size = new System.Drawing.Size(516, 60);
+            this.btnEmpresarialesAgenda.TabIndex = 1;
+            this.btnEmpresarialesAgenda.Text = "Ciencias Empresariales";
+            this.btnEmpresarialesAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpresarialesAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmpresarialesAgenda.UseVisualStyleBackColor = false;
+            this.btnEmpresarialesAgenda.Click += new System.EventHandler(this.btnEmpresarialesAgenda_Click);
+            // 
+            // btnDefensaExterna
+            // 
+            this.btnDefensaExterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnDefensaExterna.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDefensaExterna.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDefensaExterna.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDefensaExterna.FlatAppearance.BorderSize = 0;
+            this.btnDefensaExterna.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnDefensaExterna.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnDefensaExterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefensaExterna.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnDefensaExterna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefensaExterna.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDefensaExterna.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+            this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
+            this.btnDefensaExterna.IconSize = 32;
+            this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 730);
+            this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDefensaExterna.Name = "btnDefensaExterna";
+            this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDefensaExterna.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDefensaExterna.Rotation = 0D;
+            this.btnDefensaExterna.Size = new System.Drawing.Size(516, 80);
+            this.btnDefensaExterna.TabIndex = 17;
+            this.btnDefensaExterna.Text = "Defensa Externa";
+            this.btnDefensaExterna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDefensaExterna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDefensaExterna.UseVisualStyleBackColor = false;
+            this.btnDefensaExterna.Click += new System.EventHandler(this.btnDefensaExterna_Click);
+            // 
+            // pnlSubMenuPerfiles
+            // 
+            this.pnlSubMenuPerfiles.Controls.Add(this.btnJuridicasPerfiles);
+            this.pnlSubMenuPerfiles.Controls.Add(this.btnTecnologiaPerfiles);
+            this.pnlSubMenuPerfiles.Controls.Add(this.btnEmpresarialesPefiles);
+            this.pnlSubMenuPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 550);
+            this.pnlSubMenuPerfiles.Name = "pnlSubMenuPerfiles";
+            this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(516, 180);
+            this.pnlSubMenuPerfiles.TabIndex = 1;
             // 
             // btnJuridicasPerfiles
             // 
@@ -175,8 +281,6 @@
             this.btnJuridicasPerfiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJuridicasPerfiles.UseVisualStyleBackColor = false;
             this.btnJuridicasPerfiles.Click += new System.EventHandler(this.btnJuridicasPerfiles_Click);
-            this.btnJuridicasPerfiles.MouseLeave += new System.EventHandler(this.btnJuridicasPerfiles_MouseLeave);
-            this.btnJuridicasPerfiles.MouseHover += new System.EventHandler(this.btnJuridicasPerfiles_MouseHover);
             // 
             // btnTecnologiaPerfiles
             // 
@@ -207,8 +311,6 @@
             this.btnTecnologiaPerfiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTecnologiaPerfiles.UseVisualStyleBackColor = false;
             this.btnTecnologiaPerfiles.Click += new System.EventHandler(this.btnTecnologiaPerfiles_Click);
-            this.btnTecnologiaPerfiles.MouseLeave += new System.EventHandler(this.btnTecnologiaPerfiles_MouseLeave);
-            this.btnTecnologiaPerfiles.MouseHover += new System.EventHandler(this.btnTecnologiaPerfiles_MouseHover);
             // 
             // btnEmpresarialesPefiles
             // 
@@ -239,8 +341,6 @@
             this.btnEmpresarialesPefiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmpresarialesPefiles.UseVisualStyleBackColor = false;
             this.btnEmpresarialesPefiles.Click += new System.EventHandler(this.btnEmpresarialesPerfiles_Click);
-            this.btnEmpresarialesPefiles.MouseLeave += new System.EventHandler(this.btnEmpresariales_MouseLeave);
-            this.btnEmpresarialesPefiles.MouseHover += new System.EventHandler(this.btnEmpresarialesPerfiles_MouseHover);
             // 
             // btnPerfiles
             // 
@@ -273,69 +373,15 @@
             this.btnPerfiles.UseVisualStyleBackColor = false;
             this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
-            // btnTecnologiaAgenda
+            // panel3
             // 
-            this.btnTecnologiaAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTecnologiaAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTecnologiaAgenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTecnologiaAgenda.FlatAppearance.BorderSize = 0;
-            this.btnTecnologiaAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnTecnologiaAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnTecnologiaAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTecnologiaAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnTecnologiaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTecnologiaAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTecnologiaAgenda.IconChar = FontAwesome.Sharp.IconChar.LaptopCode;
-            this.btnTecnologiaAgenda.IconColor = System.Drawing.Color.White;
-            this.btnTecnologiaAgenda.IconSize = 32;
-            this.btnTecnologiaAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnologiaAgenda.Location = new System.Drawing.Point(0, 60);
-            this.btnTecnologiaAgenda.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTecnologiaAgenda.Name = "btnTecnologiaAgenda";
-            this.btnTecnologiaAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnTecnologiaAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTecnologiaAgenda.Rotation = 0D;
-            this.btnTecnologiaAgenda.Size = new System.Drawing.Size(516, 60);
-            this.btnTecnologiaAgenda.TabIndex = 6;
-            this.btnTecnologiaAgenda.Text = "Ciencias y Tecnología";
-            this.btnTecnologiaAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnologiaAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTecnologiaAgenda.UseVisualStyleBackColor = false;
-            this.btnTecnologiaAgenda.Click += new System.EventHandler(this.btnTecnologiaAgenda_Click);
-            this.btnTecnologiaAgenda.MouseLeave += new System.EventHandler(this.btnTecnologiaAgenda_MouseLeave);
-            this.btnTecnologiaAgenda.MouseHover += new System.EventHandler(this.btnTecnologiaAgenda_MouseHover);
-            // 
-            // btnEmpresarialesAgenda
-            // 
-            this.btnEmpresarialesAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEmpresarialesAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpresarialesAgenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpresarialesAgenda.FlatAppearance.BorderSize = 0;
-            this.btnEmpresarialesAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnEmpresarialesAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnEmpresarialesAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpresarialesAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnEmpresarialesAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpresarialesAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEmpresarialesAgenda.IconChar = FontAwesome.Sharp.IconChar.Briefcase;
-            this.btnEmpresarialesAgenda.IconColor = System.Drawing.Color.White;
-            this.btnEmpresarialesAgenda.IconSize = 32;
-            this.btnEmpresarialesAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpresarialesAgenda.Location = new System.Drawing.Point(0, 0);
-            this.btnEmpresarialesAgenda.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEmpresarialesAgenda.Name = "btnEmpresarialesAgenda";
-            this.btnEmpresarialesAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnEmpresarialesAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnEmpresarialesAgenda.Rotation = 0D;
-            this.btnEmpresarialesAgenda.Size = new System.Drawing.Size(516, 60);
-            this.btnEmpresarialesAgenda.TabIndex = 1;
-            this.btnEmpresarialesAgenda.Text = "Ciencias Empresariales";
-            this.btnEmpresarialesAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpresarialesAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpresarialesAgenda.UseVisualStyleBackColor = false;
-            this.btnEmpresarialesAgenda.Click += new System.EventHandler(this.btnEmpresarialesAgenda_Click);
-            this.btnEmpresarialesAgenda.MouseLeave += new System.EventHandler(this.btnEmpresarialesAgenda_MouseLeave);
-            this.btnEmpresarialesAgenda.MouseHover += new System.EventHandler(this.btnEmpresarialesAgenda_MouseHover);
+            this.panel3.Controls.Add(this.pnlNuevoPerfil);
+            this.panel3.Controls.Add(this.pnlNuevaDefensa);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 246);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(516, 224);
+            this.panel3.TabIndex = 4;
             // 
             // pnlNuevoPerfil
             // 
@@ -373,6 +419,43 @@
             this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevoPerfil.UseVisualStyleBackColor = false;
             this.btnNuevoPerfil.Click += new System.EventHandler(this.btnNuevoPerfil_Click);
+            // 
+            // pnlNuevaDefensa
+            // 
+            this.pnlNuevaDefensa.Controls.Add(this.btnNuevaDefensa);
+            this.pnlNuevaDefensa.Location = new System.Drawing.Point(64, 124);
+            this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(76, 4, 76, 79);
+            this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
+            this.pnlNuevaDefensa.Size = new System.Drawing.Size(320, 77);
+            this.pnlNuevaDefensa.TabIndex = 3;
+            // 
+            // btnNuevaDefensa
+            // 
+            this.btnNuevaDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnNuevaDefensa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNuevaDefensa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevaDefensa.FlatAppearance.BorderSize = 0;
+            this.btnNuevaDefensa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaDefensa.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaDefensa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
+            this.btnNuevaDefensa.IconSize = 28;
+            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 0);
+            this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNuevaDefensa.Name = "btnNuevaDefensa";
+            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(8);
+            this.btnNuevaDefensa.Rotation = 0D;
+            this.btnNuevaDefensa.Size = new System.Drawing.Size(320, 77);
+            this.btnNuevaDefensa.TabIndex = 1;
+            this.btnNuevaDefensa.Text = "Nueva Defensa";
+            this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaDefensa.UseVisualStyleBackColor = false;
+            this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
             // 
             // pnlLogo
             // 
@@ -499,7 +582,7 @@
             this.pnlCarrerasJuridicas.Controls.Add(this.btnPsicologia);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnRelInter);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnDerecho);
-            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(4, 527);
+            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(0, 527);
             this.pnlCarrerasJuridicas.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasJuridicas.Name = "pnlCarrerasJuridicas";
             this.pnlCarrerasJuridicas.Size = new System.Drawing.Size(416, 171);
@@ -630,7 +713,6 @@
             this.pnlFrmHijo.Name = "pnlFrmHijo";
             this.pnlFrmHijo.Size = new System.Drawing.Size(1720, 1011);
             this.pnlFrmHijo.TabIndex = 16;
-            this.pnlFrmHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmHijo_Paint);
             // 
             // pnlCarrerasEmpresariales
             // 
@@ -643,7 +725,7 @@
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnComercial);
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnTurismo);
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnAdministracion);
-            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(4, 352);
+            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(0, 352);
             this.pnlCarrerasEmpresariales.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasEmpresariales.MaximumSize = new System.Drawing.Size(540, 435);
             this.pnlCarrerasEmpresariales.MinimumSize = new System.Drawing.Size(540, 435);
@@ -892,7 +974,7 @@
             this.pnlCarrerasTenologia.Controls.Add(this.btnElectronica);
             this.pnlCarrerasTenologia.Controls.Add(this.btnPetrolera);
             this.pnlCarrerasTenologia.Controls.Add(this.btnIndustrial);
-            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(4, 439);
+            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(0, 439);
             this.pnlCarrerasTenologia.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(548, 371);
             this.pnlCarrerasTenologia.Name = "pnlCarrerasTenologia";
@@ -1102,99 +1184,6 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pnlNuevoPerfil);
-            this.panel3.Controls.Add(this.pnlNuevaDefensa);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 246);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(516, 224);
-            this.panel3.TabIndex = 4;
-            // 
-            // pnlSubMenuPerfiles
-            // 
-            this.pnlSubMenuPerfiles.Controls.Add(this.btnJuridicasPerfiles);
-            this.pnlSubMenuPerfiles.Controls.Add(this.btnTecnologiaPerfiles);
-            this.pnlSubMenuPerfiles.Controls.Add(this.btnEmpresarialesPefiles);
-            this.pnlSubMenuPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 550);
-            this.pnlSubMenuPerfiles.Name = "pnlSubMenuPerfiles";
-            this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(516, 180);
-            this.pnlSubMenuPerfiles.TabIndex = 1;
-            // 
-            // pnlSubMenuDefensa
-            // 
-            this.pnlSubMenuDefensa.Controls.Add(this.btnJuridicasAgenda);
-            this.pnlSubMenuDefensa.Controls.Add(this.btnTecnologiaAgenda);
-            this.pnlSubMenuDefensa.Controls.Add(this.btnEmpresarialesAgenda);
-            this.pnlSubMenuDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 810);
-            this.pnlSubMenuDefensa.Name = "pnlSubMenuDefensa";
-            this.pnlSubMenuDefensa.Size = new System.Drawing.Size(516, 236);
-            this.pnlSubMenuDefensa.TabIndex = 2;
-            // 
-            // btnDefensaExterna
-            // 
-            this.btnDefensaExterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnDefensaExterna.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDefensaExterna.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDefensaExterna.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnDefensaExterna.FlatAppearance.BorderSize = 0;
-            this.btnDefensaExterna.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnDefensaExterna.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnDefensaExterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDefensaExterna.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnDefensaExterna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDefensaExterna.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDefensaExterna.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
-            this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
-            this.btnDefensaExterna.IconSize = 32;
-            this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 730);
-            this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDefensaExterna.Name = "btnDefensaExterna";
-            this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDefensaExterna.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnDefensaExterna.Rotation = 0D;
-            this.btnDefensaExterna.Size = new System.Drawing.Size(516, 80);
-            this.btnDefensaExterna.TabIndex = 17;
-            this.btnDefensaExterna.Text = "Defensa Externa";
-            this.btnDefensaExterna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefensaExterna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDefensaExterna.UseVisualStyleBackColor = false;
-            this.btnDefensaExterna.Click += new System.EventHandler(this.btnDefensaExterna_Click);
-            // 
-            // btnJuridicasAgenda
-            // 
-            this.btnJuridicasAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnJuridicasAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJuridicasAgenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnJuridicasAgenda.FlatAppearance.BorderSize = 0;
-            this.btnJuridicasAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnJuridicasAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnJuridicasAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJuridicasAgenda.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnJuridicasAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJuridicasAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnJuridicasAgenda.IconChar = FontAwesome.Sharp.IconChar.BalanceScaleRight;
-            this.btnJuridicasAgenda.IconColor = System.Drawing.Color.White;
-            this.btnJuridicasAgenda.IconSize = 32;
-            this.btnJuridicasAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJuridicasAgenda.Location = new System.Drawing.Point(0, 120);
-            this.btnJuridicasAgenda.Margin = new System.Windows.Forms.Padding(4);
-            this.btnJuridicasAgenda.Name = "btnJuridicasAgenda";
-            this.btnJuridicasAgenda.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnJuridicasAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnJuridicasAgenda.Rotation = 0D;
-            this.btnJuridicasAgenda.Size = new System.Drawing.Size(516, 60);
-            this.btnJuridicasAgenda.TabIndex = 17;
-            this.btnJuridicasAgenda.Text = "Ciencias Jurídicas y Sociales";
-            this.btnJuridicasAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJuridicasAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnJuridicasAgenda.UseVisualStyleBackColor = false;
-            this.btnJuridicasAgenda.Click += new System.EventHandler(this.btnJuridicasAgenda_Click_1);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1209,12 +1198,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(2236, 1154);
             this.Name = "FrmPrincipal";
             this.Text = "UTEPSA";
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
             this.panel1.ResumeLayout(false);
-            this.pnlNuevaDefensa.ResumeLayout(false);
+            this.pnlSubMenuDefensa.ResumeLayout(false);
+            this.pnlSubMenuPerfiles.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.pnlNuevoPerfil.ResumeLayout(false);
+            this.pnlNuevaDefensa.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
@@ -1223,9 +1216,6 @@
             this.pnlFrmHijo.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.pnlSubMenuPerfiles.ResumeLayout(false);
-            this.pnlSubMenuDefensa.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
