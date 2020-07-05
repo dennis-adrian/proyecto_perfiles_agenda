@@ -52,5 +52,10 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        ~FrmNuevaDefensaExterna()
+        {
+
+        }
     }
 }

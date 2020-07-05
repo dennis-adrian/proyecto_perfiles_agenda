@@ -45,50 +45,10 @@ namespace CapaPresentacion
         #endregion
 
 
-        #region Propiedades y Estructuras
-        private struct ColoresRgb
-        {
-            public static Color color1 = Color.FromArgb(43, 228, 240);
-            public static Color rojoUtepsa = Color.FromArgb(178, 8, 55);
-        }
-
-        #endregion
-
-
 
         #region Metodos
 
-        private void activarBoton(object btnRemitente, Color color)
-        {
-            if (btnRemitente != null)
-            {
-                deshabilitarResaltado();
-
-                btnFacultadActual = (IconButton)btnRemitente;
-                btnFacultadActual.BackColor = Color.FromArgb(178, 8, 55);
-                //btnActual.ForeColor = color;
-                btnFacultadActual.TextAlign = ContentAlignment.MiddleCenter;
-                //btnActual.IconColor = color;
-                btnFacultadActual.TextImageRelation = TextImageRelation.TextBeforeImage;
-                btnFacultadActual.ImageAlign = ContentAlignment.MiddleCenter;
-                //btnActual.Padding = new Padding(40, 0, 0, 0);
-            }
-        }
-
-        private void deshabilitarResaltado()
-        {
-            if (btnFacultadActual != null)
-            {
-                //btnActual.Padding = new Padding(40, 0, 0, 0);
-                btnFacultadActual.BackColor = Color.FromArgb(102, 102, 102);
-                btnFacultadActual.ForeColor = Color.White;
-                //btnActual.TextAlign = ContentAlignment.MiddleLeft;
-                btnFacultadActual.IconColor = Color.White;
-                btnFacultadActual.TextImageRelation = TextImageRelation.ImageBeforeText;
-                //btnActual.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
-
+       
         private string guardarFacultadClickeada(object btnRemitente)
         {
             btnFacultadActual = (IconButton)btnRemitente;
@@ -132,24 +92,50 @@ namespace CapaPresentacion
             }
         }
 
+        public void FirstButtonActive(IconButton btn)
+        {
+            btn.BackColor = Color.FromArgb(178, 8, 55);
+            btn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btn.TextAlign = ContentAlignment.MiddleRight;
+            btn.ImageAlign = ContentAlignment.MiddleRight;
+
+        }
+        public void FirstButtonDesactive(IconButton btn)
+        {
+            btn.BackColor = Color.FromArgb(102, 102, 102);
+            btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn.TextAlign = ContentAlignment.MiddleLeft;
+            btn.ImageAlign = ContentAlignment.MiddleLeft;
+
+        }
+        public void SecondButtonActive(IconButton btn)
+        {
+            btn.BackColor = Color.FromArgb(178, 8, 65);
+            btn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btn.TextAlign = ContentAlignment.MiddleRight;
+            btn.ImageAlign = ContentAlignment.MiddleRight;
+
+        }
+        public void SecondButtonDesactive(IconButton btn)
+        {
+            btn.BackColor = Color.FromArgb(64, 64, 64);
+            btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn.TextAlign = ContentAlignment.MiddleLeft;
+            btn.ImageAlign = ContentAlignment.MiddleLeft;
+        }        
+
         public void HidenMenus()
         {
             if (pnlSubMenuPerfiles.Visible == true)
             {
                 pnlSubMenuPerfiles.Visible = false;
-                btnPerfiles.BackColor = Color.FromArgb(102, 102, 102);
-                btnPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-                btnPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
+                FirstButtonDesactive(btnPerfiles);
             }
-
             if (pnlSubMenuDefensa.Visible == true)
             {
+               
                 pnlSubMenuDefensa.Visible = false;
-                btnDefensaExterna.BackColor = Color.FromArgb(102, 102, 102);
-                btnDefensaExterna.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnDefensaExterna.TextAlign = ContentAlignment.MiddleLeft;
-                btnDefensaExterna.ImageAlign = ContentAlignment.MiddleLeft;
+                FirstButtonDesactive(btnDefensaExterna);
             }
 
 
@@ -157,32 +143,20 @@ namespace CapaPresentacion
 
         public void HiddenNuevoperfil()
         {
-            btnNuevoPerfil.BackColor = Color.FromArgb(102, 102, 102);
-            btnNuevoPerfil.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleLeft;
-            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+            FirstButtonDesactive(btnNuevoPerfil);
         }
         public void ShowNuevoPerfil()
         {
-            btnNuevoPerfil.BackColor = Color.FromArgb(178, 8, 55);
-            btnNuevoPerfil.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleRight;
-            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleRight;
+            FirstButtonActive(btnNuevoPerfil);
         }
         public void HiddenNuevaDefensa()
         {
-            btnNuevaDefensa.BackColor = Color.FromArgb(102, 102, 102);
-            btnNuevaDefensa.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleLeft;
-            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleLeft;
+            FirstButtonDesactive(btnNuevaDefensa);
 
         }
         public void ShowNuevaDefensa()
         {
-            btnNuevaDefensa.BackColor = Color.FromArgb(178, 8, 55);
-            btnNuevaDefensa.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleRight;
-            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleRight;
+            FirstButtonActive(btnNuevaDefensa);
         }
 
         public void ShowMenus(IconButton iconbtn, Panel Submenu)
@@ -194,18 +168,12 @@ namespace CapaPresentacion
                 HidenCarreras();
                 HidenMenus();
                 Submenu.Visible = true;
-                iconbtn.BackColor = Color.FromArgb(178, 8, 55);
-                iconbtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                iconbtn.TextAlign = ContentAlignment.MiddleRight;
-                iconbtn.ImageAlign = ContentAlignment.MiddleRight;
+                FirstButtonActive(iconbtn);
             }
             else
             {
                 Submenu.Visible = false;
-                iconbtn.BackColor = Color.FromArgb(102, 102, 102);
-                iconbtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                iconbtn.TextAlign = ContentAlignment.MiddleLeft;
-                iconbtn.ImageAlign = ContentAlignment.MiddleLeft;
+                FirstButtonDesactive(iconbtn);
             }
 
 
@@ -214,53 +182,20 @@ namespace CapaPresentacion
         public void CustomizeDesing()
         {
             pnlSubMenuPerfiles.Visible = false;
-            btnPerfiles.BackColor = Color.FromArgb(102, 102, 102);
-            btnPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-            btnPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
+            FirstButtonDesactive(btnPerfiles);
             pnlSubMenuDefensa.Visible = false;
-            btnDefensaExterna.BackColor = Color.FromArgb(102, 102, 102);
-            btnDefensaExterna.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDefensaExterna.TextAlign = ContentAlignment.MiddleLeft;
-            btnDefensaExterna.ImageAlign = ContentAlignment.MiddleLeft;
+            FirstButtonDesactive(btnDefensaExterna);
             pnlCarrerasEmpresariales.Visible = false;
-            btnEmpresarialesPefiles.BackColor = Color.FromArgb(64, 64, 64);
-            btnEmpresarialesPefiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEmpresarialesPefiles.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpresarialesPefiles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmpresarialesAgenda.BackColor = Color.FromArgb(64, 64, 64);
-            btnEmpresarialesAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEmpresarialesAgenda.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpresarialesAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+            SecondButtonDesactive(btnEmpresarialesPefiles);
+            SecondButtonDesactive(btnEmpresarialesAgenda);
             pnlCarrerasTenologia.Visible = false;
-            btnTecnologiaPerfiles.BackColor = Color.FromArgb(64, 64, 64);
-            btnTecnologiaPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTecnologiaPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-            btnTecnologiaPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTecnologiaAgenda.BackColor = Color.FromArgb(64, 64, 64);
-            btnTecnologiaAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTecnologiaAgenda.TextAlign = ContentAlignment.MiddleLeft;
-            btnTecnologiaAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+            SecondButtonDesactive(btnTecnologiaPerfiles);
+            SecondButtonDesactive(btnTecnologiaAgenda);
             pnlCarrerasJuridicas.Visible = false;
-            btnJuridicasPerfiles.BackColor = Color.FromArgb(64, 64, 64);
-            btnJuridicasPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnJuridicasPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-            btnJuridicasPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnJuridicasAgenda.BackColor = Color.FromArgb(64, 64, 64);
-            btnJuridicasAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnJuridicasAgenda.TextAlign = ContentAlignment.MiddleLeft;
-            btnJuridicasAgenda.ImageAlign = ContentAlignment.MiddleLeft;
-
-            
-            btnNuevaDefensa.BackColor = Color.FromArgb(102, 102, 102);
-            btnNuevaDefensa.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNuevaDefensa.TextAlign = ContentAlignment.MiddleLeft;
-            btnNuevaDefensa.ImageAlign = ContentAlignment.MiddleLeft;
-
-            btnNuevoPerfil.BackColor = Color.FromArgb(102, 102, 102);
-            btnNuevoPerfil.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNuevoPerfil.TextAlign = ContentAlignment.MiddleLeft;
-            btnNuevoPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+            SecondButtonDesactive(btnJuridicasPerfiles);
+            SecondButtonDesactive(btnJuridicasAgenda);
+            FirstButtonDesactive(btnNuevaDefensa);
+            FirstButtonDesactive(btnNuevoPerfil);
 
         }
 
@@ -271,39 +206,21 @@ namespace CapaPresentacion
             if (pnlCarrerasEmpresariales.Visible == true)
             {
                 pnlCarrerasEmpresariales.Visible = false;
-                btnEmpresarialesPefiles.BackColor = Color.FromArgb(64, 64, 64);
-                btnEmpresarialesPefiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnEmpresarialesPefiles.TextAlign = ContentAlignment.MiddleLeft;
-                btnEmpresarialesPefiles.ImageAlign = ContentAlignment.MiddleLeft;
-                btnEmpresarialesAgenda.BackColor = Color.FromArgb(64, 64, 64);
-                btnEmpresarialesAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnEmpresarialesAgenda.TextAlign = ContentAlignment.MiddleLeft;
-                btnEmpresarialesAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+                SecondButtonDesactive(btnEmpresarialesPefiles); 
+                SecondButtonDesactive(btnEmpresarialesAgenda);
             }
             if (pnlCarrerasTenologia.Visible == true)
             {
                 pnlCarrerasTenologia.Visible = false;
-                btnTecnologiaPerfiles.BackColor = Color.FromArgb(64, 64, 64);
-                btnTecnologiaPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnTecnologiaPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-                btnTecnologiaPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-                btnTecnologiaAgenda.BackColor = Color.FromArgb(64, 64, 64);
-                btnTecnologiaAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnTecnologiaAgenda.TextAlign = ContentAlignment.MiddleLeft;
-                btnTecnologiaAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+                SecondButtonDesactive(btnTecnologiaPerfiles);
+                SecondButtonDesactive(btnTecnologiaAgenda);
 
             }
             if (pnlCarrerasJuridicas.Visible == true)
             {
                 pnlCarrerasJuridicas.Visible = false;
-                btnJuridicasPerfiles.BackColor = Color.FromArgb(64, 64, 64);
-                btnJuridicasPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnJuridicasPerfiles.TextAlign = ContentAlignment.MiddleLeft;
-                btnJuridicasPerfiles.ImageAlign = ContentAlignment.MiddleLeft;
-                btnJuridicasAgenda.BackColor = Color.FromArgb(64, 64, 64);
-                btnJuridicasAgenda.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnJuridicasAgenda.TextAlign = ContentAlignment.MiddleLeft;
-                btnJuridicasAgenda.ImageAlign = ContentAlignment.MiddleLeft;
+                SecondButtonDesactive(btnJuridicasPerfiles);
+                SecondButtonDesactive(btnJuridicasAgenda);
             }
 
 
@@ -315,18 +232,12 @@ namespace CapaPresentacion
             {
                 HidenCarreras();
                 Submenu.Visible = true;
-                iconbtn.BackColor = Color.FromArgb(178, 8, 60);
-                iconbtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                iconbtn.TextAlign = ContentAlignment.MiddleRight;
-                iconbtn.ImageAlign = ContentAlignment.MiddleRight;
+                SecondButtonActive(iconbtn);
             }
             else
             {
                 Submenu.Visible = false;
-                iconbtn.BackColor = Color.FromArgb(64, 64, 64);
-                iconbtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                iconbtn.TextAlign = ContentAlignment.MiddleLeft;
-                iconbtn.ImageAlign = ContentAlignment.MiddleLeft;
+                SecondButtonDesactive(iconbtn);
 
             }
 
@@ -340,8 +251,9 @@ namespace CapaPresentacion
 
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
-            HiddenNuevaDefensa();
-            HidenMenus();
+            //HiddenNuevaDefensa();
+            // HidenMenus();
+            CustomizeDesing();
             ShowNuevoPerfil();
             /////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
