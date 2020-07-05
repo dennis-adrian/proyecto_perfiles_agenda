@@ -215,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
-    <Content Include="Resources\logohome.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

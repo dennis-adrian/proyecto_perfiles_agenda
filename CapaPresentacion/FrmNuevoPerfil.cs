@@ -161,8 +161,29 @@ namespace CapaPresentacion
         {
 
         }
-        #endregion
 
-      
+        #endregion
+        public bool Validate(TextBox txt,string msg)
+        {
+            bool status = true;
+
+            if(txt.Text == "")
+            {
+                ErrorProvider.SetError(txt, ""+msg);
+                status = false;
+            }
+            else
+                ErrorProvider.SetError(txt, "");
+            return status;
+
+            
+
+        }
+
+        private void txtRegistroAlum_Validating(object sender, CancelEventArgs e)
+        {
+            string msg = "complete el numero de registro";
+            Validate(txtRegistroAlum, msg);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoPerfil));
             this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
             this.grbPerfilTesis = new System.Windows.Forms.GroupBox();
@@ -57,9 +58,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtRegistroAlum = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlNuevoPerfil.SuspendLayout();
             this.grbPerfilTesis.SuspendLayout();
             this.grbAlumno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNuevoPerfil
@@ -390,6 +393,7 @@
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(500, 41);
             this.txtRegistroAlum.TabIndex = 1;
+            this.txtRegistroAlum.Validating += new System.ComponentModel.CancelEventHandler(this.txtRegistroAlum_Validating);
             // 
             // label13
             // 
@@ -401,6 +405,10 @@
             this.label13.Size = new System.Drawing.Size(144, 36);
             this.label13.TabIndex = 0;
             this.label13.Text = "Registro:";
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // FrmNuevoPerfil
             // 
@@ -423,6 +431,7 @@
             this.grbPerfilTesis.PerformLayout();
             this.grbAlumno.ResumeLayout(false);
             this.grbAlumno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,5 +465,6 @@
         private System.Windows.Forms.Button btnCancelarNuevop;
         private System.Windows.Forms.Button btnGuardarNuevoP;
         private System.Windows.Forms.ComboBox cmbTutorElegido;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

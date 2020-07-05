@@ -97,7 +97,7 @@ namespace CapaDatos
                 DataTable items = new DataTable();
                 items.Load(command.ExecuteReader());
 
-                cerrarConexion();
+                //cerrarConexion();
                 return items;
             }
             catch

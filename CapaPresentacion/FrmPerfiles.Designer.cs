@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerfiles));
             this.pnlBuscar2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditarRevisiones = new System.Windows.Forms.Button();
             this.btnBuscarPerfil = new System.Windows.Forms.Button();
             this.txtBuscarPerfil = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             // pnlBuscar2
             // 
             this.pnlBuscar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlBuscar2.Controls.Add(this.button1);
+            this.pnlBuscar2.Controls.Add(this.btnEditarRevisiones);
             this.pnlBuscar2.Controls.Add(this.btnBuscarPerfil);
             this.pnlBuscar2.Controls.Add(this.txtBuscarPerfil);
             this.pnlBuscar2.Controls.Add(this.label14);
@@ -56,22 +56,22 @@
             this.pnlBuscar2.Size = new System.Drawing.Size(1750, 88);
             this.pnlBuscar2.TabIndex = 2;
             // 
-            // button1
+            // btnEditarRevisiones
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(22, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(360, 52);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Editar Revisiones";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditarRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEditarRevisiones.FlatAppearance.BorderSize = 0;
+            this.btnEditarRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEditarRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarRevisiones.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarRevisiones.Location = new System.Drawing.Point(22, 21);
+            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarRevisiones.Name = "btnEditarRevisiones";
+            this.btnEditarRevisiones.Size = new System.Drawing.Size(360, 52);
+            this.btnEditarRevisiones.TabIndex = 26;
+            this.btnEditarRevisiones.Text = "Editar Revisiones";
+            this.btnEditarRevisiones.UseVisualStyleBackColor = false;
+            this.btnEditarRevisiones.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBuscarPerfil
             // 
@@ -185,6 +185,6 @@
         private System.Windows.Forms.TextBox txtBuscarPerfil;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dtgPerfilesTesis;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditarRevisiones;
     }
 }

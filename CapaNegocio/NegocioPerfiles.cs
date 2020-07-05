@@ -91,11 +91,11 @@ namespace CapaNegocio
                     Estado_Proyecto = tabla.Rows[i][1].ToString(),
                     Registro = tabla.Rows[i][2].ToString(),
                     Estudiante = tabla.Rows[i][3].ToString(),
-                    Tema = tabla.Rows[i][6].ToString(),
-                    Tutor = tabla.Rows[i][7].ToString(),
-                    Email = tabla.Rows[i][8].ToString(),
-                    Telefono = tabla.Rows[i][9].ToString(),
-                    Fecha_Recepcion = tabla.Rows[i][10].ToString()
+                    Tema = tabla.Rows[i][4].ToString(),
+                    Tutor = tabla.Rows[i][5].ToString(),
+                    Email = tabla.Rows[i][6].ToString(),
+                    Telefono = tabla.Rows[i][7].ToString(),
+                    Fecha_Recepcion = tabla.Rows[i][8].ToString()
 
                 });
 
@@ -117,11 +117,11 @@ namespace CapaNegocio
                     Estado_Proyecto = tabla.Rows[i][1].ToString(),
                     Registro = tabla.Rows[i][2].ToString(),
                     Estudiante = tabla.Rows[i][3].ToString(),
-                    Tema = tabla.Rows[i][6].ToString(),
-                    Tutor = tabla.Rows[i][7].ToString(),
-                    Email = tabla.Rows[i][8].ToString(),
-                    Telefono = tabla.Rows[i][9].ToString(),
-                    Fecha_Recepcion = tabla.Rows[i][10].ToString()
+                    Tema = tabla.Rows[i][4].ToString(),
+                    Tutor = tabla.Rows[i][5].ToString(),
+                    Email = tabla.Rows[i][6].ToString(),
+                    Telefono = tabla.Rows[i][7].ToString(),
+                    Fecha_Recepcion = tabla.Rows[i][8].ToString()
 
                 });
 
@@ -133,6 +133,11 @@ namespace CapaNegocio
 
         #endregion
 
+
+        ~NegocioPerfiles()
+        {
+
+        }
 
 
     }

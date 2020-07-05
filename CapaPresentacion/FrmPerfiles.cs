@@ -24,8 +24,9 @@ namespace CapaPresentacion
         }
         public void Inicializador(string criterio)
         {
-            if (carrera == null)
+            if (criterio == null)
             {
+               
                 var list = obj.Perfiles();
                 var bindingList = new BindingList<ViewPerfiles>(list);
                 var source = new BindingSource(bindingList, null);
@@ -34,7 +35,8 @@ namespace CapaPresentacion
             }
             else
             {
-                var list2 = obj.PerfilesCarrera(carrera);
+              
+                var list2 = obj.PerfilesCarrera(criterio);
                 var bindingList = new BindingList<ViewPerfilesCarrera>(list2);
                 var source = new BindingSource(bindingList, null);
                 dtgPerfilesTesis.DataSource = source;
@@ -43,6 +45,24 @@ namespace CapaPresentacion
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
+            string nombre = txtBuscarPerfil.Text;
+            if (carrera == null)
+            {
+                
+                var list = obj.Perfiles(nombre);
+                var bindingList = new BindingList<ViewPerfiles>(list);
+                var source = new BindingSource(bindingList, null);
+                dtgPerfilesTesis.DataSource = source;
+
+            }
+            else
+            {
+                var list2 = obj.PerfilesCarrera(carrera,nombre);
+                var bindingList = new BindingList<ViewPerfilesCarrera>(list2);
+                var source = new BindingSource(bindingList, null);
+                dtgPerfilesTesis.DataSource = source;
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

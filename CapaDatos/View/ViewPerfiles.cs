@@ -65,8 +65,8 @@ namespace CapaDatos.View
         public DataTable Select(string estudiante)
         {
 
-            string sql = " SELECT * FROM ViewPerfiles  WHERE Estudiante LIKE '%@parametro0%' ; ";
-            return obj.SelectConexion(sql, estudiante);
+            string sql = " SELECT * FROM ViewPerfiles  WHERE Estudiante LIKE '%"+estudiante+"%' ; ";
+            return obj.SelectConexion(sql);
            
         }
 

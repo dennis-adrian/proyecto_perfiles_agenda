@@ -44,8 +44,6 @@ namespace CapaPresentacion
 
         #endregion
 
-
-
         #region Metodos
 
        
@@ -147,6 +145,8 @@ namespace CapaPresentacion
         }
         public void ShowNuevoPerfil()
         {
+            HidenMenus();
+            HidenCarreras();
             FirstButtonActive(btnNuevoPerfil);
         }
         public void HiddenNuevaDefensa()
@@ -156,6 +156,8 @@ namespace CapaPresentacion
         }
         public void ShowNuevaDefensa()
         {
+            HidenMenus();
+            HidenCarreras();
             FirstButtonActive(btnNuevaDefensa);
         }
 
@@ -174,6 +176,7 @@ namespace CapaPresentacion
             {
                 Submenu.Visible = false;
                 FirstButtonDesactive(iconbtn);
+                HidenCarreras();
             }
 
 
@@ -252,7 +255,7 @@ namespace CapaPresentacion
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
             
-            HidenMenus();
+            
             HiddenNuevaDefensa();
             ShowNuevoPerfil();
             /////este codigo controla que no se abra dos veces el formulario
@@ -274,7 +277,7 @@ namespace CapaPresentacion
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
            
-            HidenMenus();
+            
             HiddenNuevoperfil();
             ShowNuevaDefensa();
             Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
@@ -401,18 +404,19 @@ namespace CapaPresentacion
         #endregion
 
 
-
         #region Buttons_Carreras
 
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
             carrera = guardarCarreraClickeada(sender);
+
             lblTitulo.Text = carrera;
             string criterio = carrera;
+            
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -432,7 +436,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio)); 
+                abrirFrmHijo(new FrmAgenda(criterio)); 
                 HidenCarreras();
             }
             else
@@ -451,7 +455,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -470,7 +474,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -489,7 +493,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -508,8 +512,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
-
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -528,7 +531,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
 
                 HidenCarreras();
             }
@@ -548,7 +551,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -566,7 +569,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -585,7 +588,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -604,7 +607,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -622,7 +625,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -640,7 +643,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -658,7 +661,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -694,7 +697,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                ///abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -712,7 +715,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -730,7 +733,7 @@ namespace CapaPresentacion
             string actual = btnActual.Text;
             if (actual == "Defensa Externa")
             {
-                //abrirFrmHijo(new FrmAgenda(criterio));
+                abrirFrmHijo(new FrmAgenda(criterio));
                 HidenCarreras();
             }
             else
@@ -741,9 +744,7 @@ namespace CapaPresentacion
         }
 
 
-
         #endregion
-
 
 
         #region Eventos 
@@ -776,9 +777,9 @@ namespace CapaPresentacion
             ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
+
         #endregion
-
-
 
     }
 }

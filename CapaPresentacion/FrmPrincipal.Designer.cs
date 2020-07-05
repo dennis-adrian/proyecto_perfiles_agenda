@@ -59,7 +59,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
             this.btnContaduria = new FontAwesome.Sharp.IconButton();
@@ -76,7 +75,7 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
@@ -89,9 +88,8 @@
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
-            this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlCarrerasEmpresariales.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -580,14 +578,14 @@
             // 
             // pnlCarrerasJuridicas
             // 
-            this.pnlCarrerasJuridicas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlCarrerasJuridicas.BackColor = System.Drawing.Color.Gray;
             this.pnlCarrerasJuridicas.Controls.Add(this.btnPsicologia);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnRelInter);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnDerecho);
-            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(0, 527);
+            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(0, 510);
             this.pnlCarrerasJuridicas.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasJuridicas.Name = "pnlCarrerasJuridicas";
-            this.pnlCarrerasJuridicas.Size = new System.Drawing.Size(416, 171);
+            this.pnlCarrerasJuridicas.Size = new System.Drawing.Size(550, 180);
             this.pnlCarrerasJuridicas.TabIndex = 1;
             this.pnlCarrerasJuridicas.Visible = false;
             // 
@@ -607,12 +605,12 @@
             this.btnPsicologia.IconColor = System.Drawing.Color.White;
             this.btnPsicologia.IconSize = 10;
             this.btnPsicologia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPsicologia.Location = new System.Drawing.Point(0, 108);
+            this.btnPsicologia.Location = new System.Drawing.Point(0, 120);
             this.btnPsicologia.Margin = new System.Windows.Forms.Padding(512, 4, 4, 4);
             this.btnPsicologia.Name = "btnPsicologia";
             this.btnPsicologia.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPsicologia.Rotation = 0D;
-            this.btnPsicologia.Size = new System.Drawing.Size(416, 54);
+            this.btnPsicologia.Size = new System.Drawing.Size(550, 60);
             this.btnPsicologia.TabIndex = 9;
             this.btnPsicologia.Text = "Psicología";
             this.btnPsicologia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,12 +634,12 @@
             this.btnRelInter.IconColor = System.Drawing.Color.White;
             this.btnRelInter.IconSize = 10;
             this.btnRelInter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelInter.Location = new System.Drawing.Point(0, 54);
+            this.btnRelInter.Location = new System.Drawing.Point(0, 60);
             this.btnRelInter.Margin = new System.Windows.Forms.Padding(4);
             this.btnRelInter.Name = "btnRelInter";
             this.btnRelInter.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRelInter.Rotation = 0D;
-            this.btnRelInter.Size = new System.Drawing.Size(416, 54);
+            this.btnRelInter.Size = new System.Drawing.Size(550, 60);
             this.btnRelInter.TabIndex = 8;
             this.btnRelInter.Text = "Relaciones Internacionales";
             this.btnRelInter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -670,7 +668,7 @@
             this.btnDerecho.Name = "btnDerecho";
             this.btnDerecho.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDerecho.Rotation = 0D;
-            this.btnDerecho.Size = new System.Drawing.Size(416, 54);
+            this.btnDerecho.Size = new System.Drawing.Size(550, 60);
             this.btnDerecho.TabIndex = 7;
             this.btnDerecho.Text = "Derecho";
             this.btnDerecho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -705,7 +703,6 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
-            this.pnlFrmHijo.Controls.Add(this.pictureBox1);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
@@ -716,26 +713,6 @@
             this.pnlFrmHijo.Name = "pnlFrmHijo";
             this.pnlFrmHijo.Size = new System.Drawing.Size(1720, 1011);
             this.pnlFrmHijo.TabIndex = 16;
-            // 
-            // pnlCarrerasEmpresariales
-            // 
-            this.pnlCarrerasEmpresariales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComunicacion);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnFinanciera);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnContaduria);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnMarketing);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComInternacional);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComercial);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnTurismo);
-            this.pnlCarrerasEmpresariales.Controls.Add(this.btnAdministracion);
-            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(0, 352);
-            this.pnlCarrerasEmpresariales.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCarrerasEmpresariales.MaximumSize = new System.Drawing.Size(540, 435);
-            this.pnlCarrerasEmpresariales.MinimumSize = new System.Drawing.Size(540, 435);
-            this.pnlCarrerasEmpresariales.Name = "pnlCarrerasEmpresariales";
-            this.pnlCarrerasEmpresariales.Size = new System.Drawing.Size(540, 435);
-            this.pnlCarrerasEmpresariales.TabIndex = 16;
-            this.pnlCarrerasEmpresariales.Visible = false;
             // 
             // btnComunicacion
             // 
@@ -753,12 +730,12 @@
             this.btnComunicacion.IconColor = System.Drawing.Color.White;
             this.btnComunicacion.IconSize = 10;
             this.btnComunicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComunicacion.Location = new System.Drawing.Point(0, 378);
+            this.btnComunicacion.Location = new System.Drawing.Point(0, 420);
             this.btnComunicacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnComunicacion.Name = "btnComunicacion";
             this.btnComunicacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComunicacion.Rotation = 0D;
-            this.btnComunicacion.Size = new System.Drawing.Size(540, 54);
+            this.btnComunicacion.Size = new System.Drawing.Size(550, 60);
             this.btnComunicacion.TabIndex = 21;
             this.btnComunicacion.Text = "Comunicación Estratégica y Digital";
             this.btnComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -782,14 +759,14 @@
             this.btnFinanciera.IconColor = System.Drawing.Color.White;
             this.btnFinanciera.IconSize = 10;
             this.btnFinanciera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinanciera.Location = new System.Drawing.Point(0, 324);
+            this.btnFinanciera.Location = new System.Drawing.Point(0, 360);
             this.btnFinanciera.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinanciera.Name = "btnFinanciera";
             this.btnFinanciera.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnFinanciera.Rotation = 0D;
-            this.btnFinanciera.Size = new System.Drawing.Size(540, 54);
+            this.btnFinanciera.Size = new System.Drawing.Size(550, 60);
             this.btnFinanciera.TabIndex = 20;
-            this.btnFinanciera.Text = "Ing. Financiera";
+            this.btnFinanciera.Text = "Ingeniería Financiera";
             this.btnFinanciera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFinanciera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFinanciera.UseVisualStyleBackColor = false;
@@ -811,12 +788,12 @@
             this.btnContaduria.IconColor = System.Drawing.Color.White;
             this.btnContaduria.IconSize = 10;
             this.btnContaduria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContaduria.Location = new System.Drawing.Point(0, 270);
+            this.btnContaduria.Location = new System.Drawing.Point(0, 180);
             this.btnContaduria.Margin = new System.Windows.Forms.Padding(4);
             this.btnContaduria.Name = "btnContaduria";
             this.btnContaduria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnContaduria.Rotation = 0D;
-            this.btnContaduria.Size = new System.Drawing.Size(540, 54);
+            this.btnContaduria.Size = new System.Drawing.Size(550, 60);
             this.btnContaduria.TabIndex = 19;
             this.btnContaduria.Text = "Contaduría Pública";
             this.btnContaduria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -840,14 +817,14 @@
             this.btnMarketing.IconColor = System.Drawing.Color.White;
             this.btnMarketing.IconSize = 10;
             this.btnMarketing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarketing.Location = new System.Drawing.Point(0, 216);
+            this.btnMarketing.Location = new System.Drawing.Point(0, 60);
             this.btnMarketing.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarketing.Name = "btnMarketing";
             this.btnMarketing.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnMarketing.Rotation = 0D;
-            this.btnMarketing.Size = new System.Drawing.Size(540, 54);
+            this.btnMarketing.Size = new System.Drawing.Size(550, 60);
             this.btnMarketing.TabIndex = 18;
-            this.btnMarketing.Text = "Ing. en Marketing y Publicidad";
+            this.btnMarketing.Text = "Marketing y Publicidad";
             this.btnMarketing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMarketing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMarketing.UseVisualStyleBackColor = false;
@@ -869,12 +846,12 @@
             this.btnComInternacional.IconColor = System.Drawing.Color.White;
             this.btnComInternacional.IconSize = 10;
             this.btnComInternacional.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComInternacional.Location = new System.Drawing.Point(0, 162);
+            this.btnComInternacional.Location = new System.Drawing.Point(0, 0);
             this.btnComInternacional.Margin = new System.Windows.Forms.Padding(4);
             this.btnComInternacional.Name = "btnComInternacional";
             this.btnComInternacional.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComInternacional.Rotation = 0D;
-            this.btnComInternacional.Size = new System.Drawing.Size(540, 54);
+            this.btnComInternacional.Size = new System.Drawing.Size(550, 60);
             this.btnComInternacional.TabIndex = 17;
             this.btnComInternacional.Text = "Comercio Internacional";
             this.btnComInternacional.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -898,14 +875,14 @@
             this.btnComercial.IconColor = System.Drawing.Color.White;
             this.btnComercial.IconSize = 10;
             this.btnComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComercial.Location = new System.Drawing.Point(0, 108);
+            this.btnComercial.Location = new System.Drawing.Point(0, 120);
             this.btnComercial.Margin = new System.Windows.Forms.Padding(4);
             this.btnComercial.Name = "btnComercial";
             this.btnComercial.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComercial.Rotation = 0D;
-            this.btnComercial.Size = new System.Drawing.Size(540, 54);
+            this.btnComercial.Size = new System.Drawing.Size(550, 60);
             this.btnComercial.TabIndex = 16;
-            this.btnComercial.Text = "Ing. Comercial";
+            this.btnComercial.Text = "Ingeniería Comercial";
             this.btnComercial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComercial.UseVisualStyleBackColor = false;
             this.btnComercial.Click += new System.EventHandler(this.btnComercial_Click);
@@ -926,12 +903,12 @@
             this.btnTurismo.IconColor = System.Drawing.Color.White;
             this.btnTurismo.IconSize = 10;
             this.btnTurismo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTurismo.Location = new System.Drawing.Point(0, 54);
+            this.btnTurismo.Location = new System.Drawing.Point(0, 300);
             this.btnTurismo.Margin = new System.Windows.Forms.Padding(0);
             this.btnTurismo.Name = "btnTurismo";
             this.btnTurismo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTurismo.Rotation = 0D;
-            this.btnTurismo.Size = new System.Drawing.Size(540, 54);
+            this.btnTurismo.Size = new System.Drawing.Size(550, 60);
             this.btnTurismo.TabIndex = 15;
             this.btnTurismo.Text = "Administración de Turismo";
             this.btnTurismo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -955,12 +932,12 @@
             this.btnAdministracion.IconColor = System.Drawing.Color.White;
             this.btnAdministracion.IconSize = 10;
             this.btnAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministracion.Location = new System.Drawing.Point(0, 0);
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 240);
             this.btnAdministracion.Margin = new System.Windows.Forms.Padding(4, 15, 4, 4);
             this.btnAdministracion.Name = "btnAdministracion";
             this.btnAdministracion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAdministracion.Rotation = 0D;
-            this.btnAdministracion.Size = new System.Drawing.Size(540, 54);
+            this.btnAdministracion.Size = new System.Drawing.Size(550, 60);
             this.btnAdministracion.TabIndex = 10;
             this.btnAdministracion.Text = "Administración General";
             this.btnAdministracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -969,7 +946,7 @@
             // 
             // pnlCarrerasTenologia
             // 
-            this.pnlCarrerasTenologia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlCarrerasTenologia.BackColor = System.Drawing.Color.Gray;
             this.pnlCarrerasTenologia.Controls.Add(this.btnElectrica);
             this.pnlCarrerasTenologia.Controls.Add(this.btnRedes);
             this.pnlCarrerasTenologia.Controls.Add(this.btnMecanica);
@@ -977,11 +954,11 @@
             this.pnlCarrerasTenologia.Controls.Add(this.btnElectronica);
             this.pnlCarrerasTenologia.Controls.Add(this.btnPetrolera);
             this.pnlCarrerasTenologia.Controls.Add(this.btnIndustrial);
-            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(0, 439);
+            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(0, 430);
             this.pnlCarrerasTenologia.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(548, 371);
             this.pnlCarrerasTenologia.Name = "pnlCarrerasTenologia";
-            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(598, 379);
+            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(550, 420);
             this.pnlCarrerasTenologia.TabIndex = 15;
             this.pnlCarrerasTenologia.Visible = false;
             // 
@@ -1001,14 +978,14 @@
             this.btnElectrica.IconColor = System.Drawing.Color.White;
             this.btnElectrica.IconSize = 10;
             this.btnElectrica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectrica.Location = new System.Drawing.Point(0, 324);
+            this.btnElectrica.Location = new System.Drawing.Point(0, 360);
             this.btnElectrica.Margin = new System.Windows.Forms.Padding(4);
             this.btnElectrica.Name = "btnElectrica";
             this.btnElectrica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnElectrica.Rotation = 0D;
-            this.btnElectrica.Size = new System.Drawing.Size(598, 54);
+            this.btnElectrica.Size = new System.Drawing.Size(550, 60);
             this.btnElectrica.TabIndex = 20;
-            this.btnElectrica.Text = "Ing. Eléctrica";
+            this.btnElectrica.Text = "Ingeniería Eléctrica";
             this.btnElectrica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnElectrica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnElectrica.UseVisualStyleBackColor = false;
@@ -1030,14 +1007,14 @@
             this.btnRedes.IconColor = System.Drawing.Color.White;
             this.btnRedes.IconSize = 10;
             this.btnRedes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRedes.Location = new System.Drawing.Point(0, 270);
+            this.btnRedes.Location = new System.Drawing.Point(0, 300);
             this.btnRedes.Margin = new System.Windows.Forms.Padding(4);
             this.btnRedes.Name = "btnRedes";
             this.btnRedes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRedes.Rotation = 0D;
-            this.btnRedes.Size = new System.Drawing.Size(598, 54);
+            this.btnRedes.Size = new System.Drawing.Size(550, 60);
             this.btnRedes.TabIndex = 19;
-            this.btnRedes.Text = "Ing. en Redes y Telecomunicaciones";
+            this.btnRedes.Text = "Ingeniería en Redes y Telecomunicaciones";
             this.btnRedes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRedes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRedes.UseVisualStyleBackColor = false;
@@ -1059,14 +1036,14 @@
             this.btnMecanica.IconColor = System.Drawing.Color.White;
             this.btnMecanica.IconSize = 10;
             this.btnMecanica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMecanica.Location = new System.Drawing.Point(0, 216);
+            this.btnMecanica.Location = new System.Drawing.Point(0, 240);
             this.btnMecanica.Margin = new System.Windows.Forms.Padding(4);
             this.btnMecanica.Name = "btnMecanica";
             this.btnMecanica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnMecanica.Rotation = 0D;
-            this.btnMecanica.Size = new System.Drawing.Size(598, 54);
+            this.btnMecanica.Size = new System.Drawing.Size(550, 60);
             this.btnMecanica.TabIndex = 18;
-            this.btnMecanica.Text = "Ing. de Sistemas";
+            this.btnMecanica.Text = "Ingeniería en Sistemas";
             this.btnMecanica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMecanica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMecanica.UseVisualStyleBackColor = false;
@@ -1088,14 +1065,14 @@
             this.iconButton5.IconColor = System.Drawing.Color.White;
             this.iconButton5.IconSize = 10;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 162);
+            this.iconButton5.Location = new System.Drawing.Point(0, 180);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(598, 54);
+            this.iconButton5.Size = new System.Drawing.Size(550, 60);
             this.iconButton5.TabIndex = 17;
-            this.iconButton5.Text = "Ing. Mecánica Automotriz y Agroindustrial";
+            this.iconButton5.Text = "Ingeniería Mecánica Automotríz y Agroindustrial";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = false;
@@ -1117,14 +1094,14 @@
             this.btnElectronica.IconColor = System.Drawing.Color.White;
             this.btnElectronica.IconSize = 10;
             this.btnElectronica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectronica.Location = new System.Drawing.Point(0, 108);
+            this.btnElectronica.Location = new System.Drawing.Point(0, 120);
             this.btnElectronica.Margin = new System.Windows.Forms.Padding(4);
             this.btnElectronica.Name = "btnElectronica";
             this.btnElectronica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnElectronica.Rotation = 0D;
-            this.btnElectronica.Size = new System.Drawing.Size(598, 54);
+            this.btnElectronica.Size = new System.Drawing.Size(550, 60);
             this.btnElectronica.TabIndex = 16;
-            this.btnElectronica.Text = "Ing. Electrónica y Sistemas";
+            this.btnElectronica.Text = "Ingeniería Electrónica y Sistemas";
             this.btnElectronica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnElectronica.UseVisualStyleBackColor = false;
             this.btnElectronica.Click += new System.EventHandler(this.btnElectronica_Click);
@@ -1145,14 +1122,14 @@
             this.btnPetrolera.IconColor = System.Drawing.Color.White;
             this.btnPetrolera.IconSize = 10;
             this.btnPetrolera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPetrolera.Location = new System.Drawing.Point(0, 54);
+            this.btnPetrolera.Location = new System.Drawing.Point(0, 60);
             this.btnPetrolera.Margin = new System.Windows.Forms.Padding(4);
             this.btnPetrolera.Name = "btnPetrolera";
             this.btnPetrolera.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPetrolera.Rotation = 0D;
-            this.btnPetrolera.Size = new System.Drawing.Size(598, 54);
+            this.btnPetrolera.Size = new System.Drawing.Size(550, 60);
             this.btnPetrolera.TabIndex = 15;
-            this.btnPetrolera.Text = "Ing. en Administración Petrolera";
+            this.btnPetrolera.Text = "Ingeniería en Administración Petrolera";
             this.btnPetrolera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPetrolera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPetrolera.UseVisualStyleBackColor = false;
@@ -1179,24 +1156,29 @@
             this.btnIndustrial.Name = "btnIndustrial";
             this.btnIndustrial.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIndustrial.Rotation = 0D;
-            this.btnIndustrial.Size = new System.Drawing.Size(598, 54);
+            this.btnIndustrial.Size = new System.Drawing.Size(550, 60);
             this.btnIndustrial.TabIndex = 14;
-            this.btnIndustrial.Text = "Ing. Industrial y Comercial";
+            this.btnIndustrial.Text = "Ingeniería Industrial y Comercial";
             this.btnIndustrial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIndustrial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
-            // pictureBox1
+            // pnlCarrerasEmpresariales
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(464, 168);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(721, 559);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pnlCarrerasEmpresariales.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComunicacion);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnFinanciera);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnTurismo);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnAdministracion);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnContaduria);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComercial);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnMarketing);
+            this.pnlCarrerasEmpresariales.Controls.Add(this.btnComInternacional);
+            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(0, 400);
+            this.pnlCarrerasEmpresariales.Name = "pnlCarrerasEmpresariales";
+            this.pnlCarrerasEmpresariales.Size = new System.Drawing.Size(550, 480);
+            this.pnlCarrerasEmpresariales.TabIndex = 17;
             // 
             // FrmPrincipal
             // 
@@ -1228,9 +1210,8 @@
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
-            this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1263,7 +1244,6 @@
         private FontAwesome.Sharp.IconButton btnElectronica;
         private FontAwesome.Sharp.IconButton btnPetrolera;
         private FontAwesome.Sharp.IconButton btnIndustrial;
-        private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
         private FontAwesome.Sharp.IconButton btnComunicacion;
         private FontAwesome.Sharp.IconButton btnFinanciera;
         private FontAwesome.Sharp.IconButton btnContaduria;
@@ -1284,7 +1264,7 @@
         private System.Windows.Forms.Panel pnlSubMenuDefensa;
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
     }
 }
 
