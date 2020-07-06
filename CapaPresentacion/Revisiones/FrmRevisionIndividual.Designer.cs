@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlRevision = new System.Windows.Forms.Panel();
+            this.cmbTribunal = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,7 +51,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cmbTribunal = new System.Windows.Forms.ComboBox();
             this.pnlRevision.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,10 +80,19 @@
             this.pnlRevision.Controls.Add(this.btnGuardar);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
-            this.pnlRevision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRevision.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRevision.Name = "pnlRevision";
             this.pnlRevision.Size = new System.Drawing.Size(1598, 875);
             this.pnlRevision.TabIndex = 35;
+            // 
+            // cmbTribunal
+            // 
+            this.cmbTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTribunal.FormattingEnabled = true;
+            this.cmbTribunal.Location = new System.Drawing.Point(50, 234);
+            this.cmbTribunal.Name = "cmbTribunal";
+            this.cmbTribunal.Size = new System.Drawing.Size(541, 41);
+            this.cmbTribunal.TabIndex = 60;
             // 
             // label6
             // 
@@ -100,7 +109,7 @@
             // 
             this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservaciones.Location = new System.Drawing.Point(852, 579);
-            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(6);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(700, 156);
@@ -112,7 +121,7 @@
             this.panel1.Controls.Add(this.rbTribunal1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1598, 119);
             this.panel1.TabIndex = 57;
@@ -125,7 +134,7 @@
             this.rbTribunal2.AutoSize = true;
             this.rbTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.rbTribunal2.Location = new System.Drawing.Point(902, 40);
-            this.rbTribunal2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbTribunal2.Margin = new System.Windows.Forms.Padding(6);
             this.rbTribunal2.Name = "rbTribunal2";
             this.rbTribunal2.Size = new System.Drawing.Size(202, 41);
             this.rbTribunal2.TabIndex = 24;
@@ -142,7 +151,7 @@
             this.rbTribunal1.Checked = true;
             this.rbTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.rbTribunal1.Location = new System.Drawing.Point(480, 40);
-            this.rbTribunal1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbTribunal1.Margin = new System.Windows.Forms.Padding(6);
             this.rbTribunal1.Name = "rbTribunal1";
             this.rbTribunal1.Size = new System.Drawing.Size(200, 41);
             this.rbTribunal1.TabIndex = 23;
@@ -154,10 +163,11 @@
             // dttDevolucionAlumno
             // 
             this.dttDevolucionAlumno.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttDevolucionAlumno.CustomFormat = "dd-MM-yyyy";
             this.dttDevolucionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttDevolucionAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttDevolucionAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttDevolucionAlumno.Location = new System.Drawing.Point(50, 731);
-            this.dttDevolucionAlumno.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttDevolucionAlumno.Margin = new System.Windows.Forms.Padding(6);
             this.dttDevolucionAlumno.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttDevolucionAlumno.Name = "dttDevolucionAlumno";
             this.dttDevolucionAlumno.Size = new System.Drawing.Size(310, 41);
@@ -167,10 +177,11 @@
             // dttDevolucionTribunal
             // 
             this.dttDevolucionTribunal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttDevolucionTribunal.CustomFormat = "dd-MM-yyyy";
             this.dttDevolucionTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttDevolucionTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttDevolucionTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttDevolucionTribunal.Location = new System.Drawing.Point(50, 604);
-            this.dttDevolucionTribunal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttDevolucionTribunal.Margin = new System.Windows.Forms.Padding(6);
             this.dttDevolucionTribunal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttDevolucionTribunal.Name = "dttDevolucionTribunal";
             this.dttDevolucionTribunal.Size = new System.Drawing.Size(310, 41);
@@ -180,10 +191,11 @@
             // dttLimiteSugerido
             // 
             this.dttLimiteSugerido.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttLimiteSugerido.CustomFormat = "dd-MM-yyyy";
             this.dttLimiteSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttLimiteSugerido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttLimiteSugerido.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttLimiteSugerido.Location = new System.Drawing.Point(852, 477);
-            this.dttLimiteSugerido.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttLimiteSugerido.Margin = new System.Windows.Forms.Padding(6);
             this.dttLimiteSugerido.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttLimiteSugerido.Name = "dttLimiteSugerido";
             this.dttLimiteSugerido.Size = new System.Drawing.Size(310, 41);
@@ -193,10 +205,11 @@
             // dttEntregaTribunal
             // 
             this.dttEntregaTribunal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttEntregaTribunal.CustomFormat = "dd-MM-yyyy";
             this.dttEntregaTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttEntregaTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttEntregaTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttEntregaTribunal.Location = new System.Drawing.Point(50, 477);
-            this.dttEntregaTribunal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttEntregaTribunal.Margin = new System.Windows.Forms.Padding(6);
             this.dttEntregaTribunal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEntregaTribunal.Name = "dttEntregaTribunal";
             this.dttEntregaTribunal.Size = new System.Drawing.Size(310, 41);
@@ -206,10 +219,11 @@
             // dttEntregaAlumno
             // 
             this.dttEntregaAlumno.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttEntregaAlumno.CustomFormat = "dd-MM-yyyy";
             this.dttEntregaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttEntregaAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttEntregaAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttEntregaAlumno.Location = new System.Drawing.Point(50, 354);
-            this.dttEntregaAlumno.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttEntregaAlumno.Margin = new System.Windows.Forms.Padding(6);
             this.dttEntregaAlumno.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEntregaAlumno.Name = "dttEntregaAlumno";
             this.dttEntregaAlumno.Size = new System.Drawing.Size(310, 41);
@@ -274,10 +288,11 @@
             // dttEmpaste
             // 
             this.dttEmpaste.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttEmpaste.CustomFormat = "dd-MM-yyyy";
             this.dttEmpaste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dttEmpaste.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttEmpaste.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttEmpaste.Location = new System.Drawing.Point(980, 213);
-            this.dttEmpaste.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dttEmpaste.Margin = new System.Windows.Forms.Padding(6);
             this.dttEmpaste.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEmpaste.Name = "dttEmpaste";
             this.dttEmpaste.Size = new System.Drawing.Size(310, 41);
@@ -304,7 +319,7 @@
             this.btnElegirTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnElegirTribunal.Location = new System.Drawing.Point(682, 215);
-            this.btnElegirTribunal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnElegirTribunal.Margin = new System.Windows.Forms.Padding(6);
             this.btnElegirTribunal.Name = "btnElegirTribunal";
             this.btnElegirTribunal.Size = new System.Drawing.Size(176, 52);
             this.btnElegirTribunal.TabIndex = 27;
@@ -331,7 +346,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(1160, 754);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 73);
             this.btnCancelar.TabIndex = 22;
@@ -347,21 +362,13 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(1384, 754);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(164, 73);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // cmbTribunal
-            // 
-            this.cmbTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTribunal.FormattingEnabled = true;
-            this.cmbTribunal.Location = new System.Drawing.Point(50, 234);
-            this.cmbTribunal.Name = "cmbTribunal";
-            this.cmbTribunal.Size = new System.Drawing.Size(541, 41);
-            this.cmbTribunal.TabIndex = 60;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmRevisionIndividual
             // 
@@ -372,7 +379,7 @@
             this.Controls.Add(this.pnlRevision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRevisionIndividual";
             this.Text = "FrmNuevoLicenciado";
             this.pnlRevision.ResumeLayout(false);

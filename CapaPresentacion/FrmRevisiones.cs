@@ -160,29 +160,12 @@ namespace CapaPresentacion
 
         private void btnPrimeraRev_Click(object sender, EventArgs e)
         {
-            if(this.cantRevisiones >= 0)
-            {
-               
-
-                DialogResult result = MessageBox.Show("¿Quiere Agregar una nueva revision?", "primera revision", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    reiniciarResaltado();
-                    pnlPrimeraRev.Visible = true;
-                    AbrirFormEnPanel(new FrmRevisionIndividual());
-                }
-                else if (result == DialogResult.No)
-                {
-
-                }
-
-            }
-            else
-            {
+           
+           
                 reiniciarResaltado();
                 pnlPrimeraRev.Visible = true;
-                AbrirFormEnPanel(new FrmRevisionIndividual());
-            }
+                AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,1));
+            
             
         }
 
@@ -190,39 +173,39 @@ namespace CapaPresentacion
         {
             reiniciarResaltado();
             pnlSegundaRev.Visible = true;
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,2));
         }
         private void btnTerceraRev_Click(object sender, EventArgs e)
         {
             reiniciarResaltado();
             pnlTerceraRev.Visible = true;
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,3));
         }
         private void btnCuartaRev_Click(object sender, EventArgs e)
         {
             reiniciarResaltado();
             pnlCuartaRev.Visible = true;
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
         }
         private void btnAddNewRev_Click(object sender, EventArgs e)
         {
             reiniciarResaltado();
             validarRevision2();
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,2));
         }
 
         private void btnAddNewRev3_Click(object sender, EventArgs e)
         {
             reiniciarResaltado();
             validarRevision3();
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,3));
         }
 
         private void btnAddNewRev4_Click(object sender, EventArgs e)
         {
             reiniciarResaltado();
             validarRevision4();
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            AbrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

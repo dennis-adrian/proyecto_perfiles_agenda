@@ -8,16 +8,22 @@ using CapaDatos.View;
 
 namespace CapaNegocio
 {
-    public class NegocioRevisiones
+    public class NegocioRevisiones : ValidationInputUI
     {
         public NegocioRevisiones()
         {
 
         }
+
+        #region Atributos
+
+        #endregion
         #region Instancias
 
         ViewRevisiones viewRevisiones = new ViewRevisiones();
         #endregion
+
+       
 
         public List<ViewRevisiones> Revisiones(int idrev)
         {

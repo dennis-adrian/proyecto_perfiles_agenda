@@ -46,30 +46,43 @@ namespace CapaNegocio
 
         }
 
+        public void MainInsert()
+        {
+            try
+            {
+                NuevaRevision(parametros);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
 
 
-        public void InsertRevision(Object[] Collection)
+        }
+
+        public void NuevaRevision(Object[] Collection)
         {
             try
             {
 
                 type.Texto2 = Convert.ToString(Collection[0]);
+                
                 revision.Estado = type.Texto2;
 
-                type.Fecha = Convert.ToString(Collection[1]);
-                revision.Fecha_entrega_alumno = type.Fecha;
+                string fec1 = Convert.ToString(Collection[1]);
+                revision.Fecha_entrega_alumno = (fec1 == "12-12-2000") ? "" : fec1;
 
-                type.Fecha = Convert.ToString(Collection[2]);
-                revision.Fecha_entrega_tribunal = type.Fecha;
+                string fec2 = Convert.ToString(Collection[2]);
+                revision.Fecha_entrega_tribunal = (fec2 == "12-12-2000") ? "" : fec2;
 
-                type.Fecha = Convert.ToString(Collection[3]);
-                revision.Fecha_limite_devolucion = type.Fecha;
+                string fec3= Convert.ToString(Collection[3]);
+                revision.Fecha_limite_devolucion = (fec3 == "12-12-2000") ? "" : fec3;
 
-                type.Fecha = Convert.ToString(Collection[4]);
-                revision.Fecha_devolucion_tribunal = type.Fecha;
+                string fec4 = Convert.ToString(Collection[4]);
+                revision.Fecha_devolucion_tribunal = (fec4 == "12-12-2000") ? "" : fec4; ;
 
-                type.Fecha = Convert.ToString(Collection[5]);
-                revision.Fecha_devolucion_alumno = type.Fecha;
+                string fec5 = Convert.ToString(Collection[5]);
+                revision.Fecha_devolucion_alumno = (fec5 == "12-12-2000") ? "" : fec5; ;
 
                 type.Texto2 = Convert.ToString(Collection[6]);
                 revision.Observacion = type.Texto2;
