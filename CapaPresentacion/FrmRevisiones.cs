@@ -9,13 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
+using CapaNegocio;
+
 
 namespace CapaPresentacion
 {
     public partial class FrmRevisiones : Form
     {
-        int cantRevisiones;
+        int cantRevisiones = 0;
         int idperfil;
+
+        #region Instancias
+
+        NegocioRevisiones revisiones = new NegocioRevisiones();
+
+
+        #endregion
         #region Constructores
         public FrmRevisiones()
         {
@@ -28,6 +37,14 @@ namespace CapaPresentacion
             this.idperfil = idperfil;
         }
         #endregion
+
+
+
+
+
+
+
+        //-------------
         private void FrmRevisiones2_Load(object sender, EventArgs e)
         {
             btnGeneralRev_Click(null, e);
@@ -143,9 +160,30 @@ namespace CapaPresentacion
 
         private void btnPrimeraRev_Click(object sender, EventArgs e)
         {
-            reiniciarResaltado();
-            pnlPrimeraRev.Visible = true;
-            AbrirFormEnPanel(new FrmRevisionIndividual());
+            if(this.cantRevisiones >= 0)
+            {
+               
+
+                DialogResult result = MessageBox.Show("¿Quiere Agregar una nueva revision?", "primera revision", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    reiniciarResaltado();
+                    pnlPrimeraRev.Visible = true;
+                    AbrirFormEnPanel(new FrmRevisionIndividual());
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
+            }
+            else
+            {
+                reiniciarResaltado();
+                pnlPrimeraRev.Visible = true;
+                AbrirFormEnPanel(new FrmRevisionIndividual());
+            }
+            
         }
 
         private void btnSegundaRev_Click(object sender, EventArgs e)

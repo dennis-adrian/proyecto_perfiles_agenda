@@ -8,10 +8,14 @@ using CapaNegocio.src;
 
 namespace CapaNegocio
 {
-    public class NegocioRevision : ValidationInputUI
+    public class NegocioNuevaRevision : ValidationInputUI
     {
         #region Constructor
 
+        public NegocioNuevaRevision()
+        {
+
+        }
 
         #endregion
         #region Instancias
@@ -156,7 +160,7 @@ namespace CapaNegocio
         #endregion
 
         #region Destructor
-        ~NegocioRevision()
+        ~NegocioNuevaRevision()
         {
 
         }
