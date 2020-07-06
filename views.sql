@@ -139,3 +139,21 @@ AS
 select P.id as Id ,P.tema as Tema, P.estado as Estado_Proyecto, P.fecha_aprobacion_jefe_carrera as Fecha_Aprobacion, P.fecha_recepcion_titulacion as Fecha_Recepcion, P.estado_defensa as Estado_Defensa, P.calificacion as Calificacion, E.registro as Registro, E.nombre as Nombre, E.apellido as Apellido, E.email as Email, E.telefono as  Telefono, E.celular as Celular, C.nombre as Carrera,F.nombre as Facultad, L.nombre||' '||L.apellido as Licenciado, L.tipo as Tipo, TL.funcion as Funcion, I.nombre as Institucion, CL.nombre Carrera_Licenciado  From perfil_tesis as P inner join estudiante as E on P.id_estudiante = E.id inner join carrera as C on E.id_carrera = C.id inner join facultad as  F on C.id_facultad = F.id inner join licenciado as L on L.id = P.id_licenciado inner join funcion_licenciado as TL on TL.id = P.id_funcion_licenciado inner join institucion as I on L.id_institucion_representada = I.id inner join carrera_licenciado as CL on CL.id = L.id_carrera_licenciado ;
 
 
+-------------------------------------------
+Revision	  
+SELECT R.id as Id,R.id_tesis as Id_tesis, R.estado as Estado, R.fecha_entrega_alumno as Fecha_entrega_alumno,R.fecha_entrega_tribunal as Fecha_entrega_tribunal,R.fecha_limite_devolucion as Fecha_limite_devolucion, R.fecha_devolucion_tribunal as Fecha_devolucion_tribunal, R.fecha_devolucion_alumno as Fecha_devolucion_alumno, R.observacion as Observacion,R.nro_tribunal as Nro_tribunal, R.nro_revision as Nro_revision, R.fecha_empaste as Fecha_empaste ,L.nombre||' '||L.apellido as Licenciado,L.tipo as Tipo,FL.funcion as Funcion  FROM revision as R INNER JOIN detalle_revision as DR ON DR.id_revision = R.id INNER JOIN licenciado as L ON L.id = DR.id_licenciado INNER JOIN funcion_licenciado as FL ON FL.id = DR.id_funcion_licenciado where R.id_tesis = 1;
+Id
+Id_tesis
+Estado
+Fecha_entrega_alumno
+Fecha_entrega_tribunal
+Fecha_limite_devolucion
+Fecha_devolucion_tribunal
+Fecha_devolucion_alumno
+Observacion
+Nro_tribunal
+Nro_revision
+Fecha_empaste 
+Licenciado
+Tipo
+Funcion
