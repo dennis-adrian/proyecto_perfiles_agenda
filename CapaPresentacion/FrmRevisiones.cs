@@ -8,21 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.ContractForms;
 
 namespace CapaPresentacion
 {
     public partial class FrmRevisiones : Form
     {
         int cantRevisiones;
+        int idperfil;
         #region Constructores
         public FrmRevisiones()
         {
             InitializeComponent();
         }
-        public FrmRevisiones(int cantRevisiones)
+        public FrmRevisiones(int cantRevisiones,int idperfil)
         {
             InitializeComponent();
             this.cantRevisiones = cantRevisiones;
+            this.idperfil = idperfil;
         }
         #endregion
         private void FrmRevisiones2_Load(object sender, EventArgs e)
@@ -135,7 +138,7 @@ namespace CapaPresentacion
         {
             reiniciarResaltado();
             pnlGeneral.Visible = true;
-            AbrirFormEnPanel(new FrmGeneral());
+            AbrirFormEnPanel(new FrmGeneral(this.idperfil));
         }
 
         private void btnPrimeraRev_Click(object sender, EventArgs e)

@@ -76,14 +76,14 @@ namespace test_project
             cl.Insert();
 
 
-            obj.Nombre = "licenciado 1";
-            obj.Apellido = "apellido1";
+            obj.Nombre = "licenciadooo ";
+            obj.Apellido = "apellidooo";
             obj.Descripcion = "descripcion";
             obj.Email = "email@example.com";
             obj.Telefono = "777773";
             obj.Celular = "6555465";
             obj.Tipo = "externo"; //interno o externo
-            obj.Docente = 0;// 0 no 1 si
+            obj.Docente = 2;// 2 no 1 si
 
             obj.Id_institucion_representada = 1;
             obj.Id_carrera_licenciado = 1 ;

@@ -104,10 +104,10 @@ namespace CapaNegocio
             return listaperfilescarrera;
         }
 
-        public List<ViewPerfilesCarrera> PerfilesCarrera(string carrera,string estudiante)
+        public  List<ViewPerfilesCarrera> PerfilesCarrera(string carrera,string estudiante)
         {
             List<ViewPerfilesCarrera> listaperfilescarrera = new List<ViewPerfilesCarrera>();
-            DataTable tabla = viewPerfilesCarrera.Select(carrera,estudiante);
+            DataTable tabla =  viewPerfilesCarrera.Select(carrera, estudiante);
 
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
@@ -127,8 +127,9 @@ namespace CapaNegocio
 
             }
 
-            return listaperfilescarrera;
+            return  listaperfilescarrera;
         }
+     
 
 
         #endregion

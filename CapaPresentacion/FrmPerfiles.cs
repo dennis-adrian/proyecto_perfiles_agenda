@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaDatos.View;
+using CapaPresentacion.ContractForms;
 
 namespace CapaPresentacion
 {
@@ -22,6 +23,12 @@ namespace CapaPresentacion
             Inicializador(criterio);
             carrera = criterio;
         }
+
+        #region propiedades
+
+       
+
+        #endregion
         public void Inicializador(string criterio)
         {
             if (criterio == null)
@@ -67,9 +74,17 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
+
+
+          //  string tutor = (dtgLicenciados.CurrentRow.Cells[1].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[2].Value.ToString());
+
+            //usando el contrato interfaz
+           // contrato.Ejecutar(id_seleccionado, tutor);
+            //this.Close();
             //esta variable debería corresponder a la cantidad de revisiones que tiene el perfil seleccionado
             int cantidadRevisiones = 1;
-            FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones);
+            FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones,id_seleccionado);
             frm.Show();
         }
         

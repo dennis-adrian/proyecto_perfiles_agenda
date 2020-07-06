@@ -544,7 +544,7 @@
             this.dtgLicenciados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgLicenciados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgLicenciados.EnableHeadersVisualStyles = false;
-            this.dtgLicenciados.GridColor = System.Drawing.Color.SteelBlue;
+            this.dtgLicenciados.GridColor = System.Drawing.Color.Silver;
             this.dtgLicenciados.Location = new System.Drawing.Point(0, 0);
             this.dtgLicenciados.Margin = new System.Windows.Forms.Padding(6);
             this.dtgLicenciados.Name = "dtgLicenciados";
