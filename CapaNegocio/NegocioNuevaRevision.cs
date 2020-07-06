@@ -21,6 +21,8 @@ namespace CapaNegocio
         #region Instancias
         Revision revision = new Revision();
         DetalleRevision detalleRevision = new DetalleRevision();
+
+        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
         DataTypes type = new DataTypes();
 
         #endregion
@@ -82,6 +84,17 @@ namespace CapaNegocio
                 revision.Id_tesis = Convert.ToInt32(Collection[10]);
 
                 revision.Insert();
+
+                detalleRevision.Id_revision = revision.LastId();
+                detalleRevision.Id_licenciado = Convert.ToInt32(Collection[11]);
+                detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
+                
+                
+                detalleRevision.Insert();
+
+
+
+
 
 
             }
