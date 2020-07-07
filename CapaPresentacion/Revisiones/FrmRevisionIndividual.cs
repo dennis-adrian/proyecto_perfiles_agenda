@@ -26,6 +26,9 @@ namespace CapaPresentacion
             this.idperfil = idperf;
             this.nrorev = nro;
         }
+        public FrmRevisionIndividual()
+        {
+        }
         #region instancias
         NegocioNuevaRevision obj = new NegocioNuevaRevision();       
         #endregion
