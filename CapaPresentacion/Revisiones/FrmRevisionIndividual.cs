@@ -25,6 +25,7 @@ namespace CapaPresentacion
             InitializeComponent();
             this.idperfil = idperf;
             this.nrorev = nro;
+            inicializarDateTimePickers();
         }
         public FrmRevisionIndividual()
         {
@@ -44,11 +45,7 @@ namespace CapaPresentacion
 
             //---------------------------
             txtObservaciones.Text = "";
-            dttDevolucionAlumno.Value = DateTime.Parse("12-12-2000");
-            dttDevolucionTribunal.Value = DateTime.Parse("12-12-2000");
-            dttEmpaste.Value = DateTime.Parse("12-12-2000");
-            dttEntregaAlumno.Value = DateTime.Parse("12-12-2000");
-            dttEntregaTribunal.Value = DateTime.Parse("12-12-2000");
+            inicializarDateTimePickers();
         }
 
 
@@ -63,8 +60,46 @@ namespace CapaPresentacion
             cmbTribunal.Items.Add(item);
             cmbTribunal.SelectedIndex = 0;
         }
+        #region DateTimePickers
+        public void inicializarDateTimePickers()
+        {
+            dttDevolucionAlumno.Value = DateTime.Now;
+            dttDevolucionAlumno.Enabled = false;
+            chbDevolucionAlumno.Checked = false;
 
+            dttDevolucionTribunal.Value = DateTime.Now;
+            dttDevolucionTribunal.Enabled = false;
+            chbDevolucionTribunal.Checked = false;
 
+            dttEmpaste.Value = DateTime.Now;
+            dttEmpaste.Enabled = false;
+            chbEmpaste.Checked = false;
+
+            dttEntregaAlumno.Value = DateTime.Now;
+            dttEntregaAlumno.Enabled = false;
+            chbEntregaAlumno.Checked = false;
+
+            dttEntregaTribunal.Value = DateTime.Now;
+            dttEntregaTribunal.Enabled = false;
+            chbEntregaTribunal.Checked = false;
+
+            dttLimiteSugerido.Value = DateTime.Now;
+            dttLimiteSugerido.Enabled = false;
+            chbLimiteSugerido.Checked = false;
+        }
+        private void cambiarEstadoDateTimePicker(DateTimePicker dateTimePicker, object obj)
+        {
+            CheckBox checkBox = (CheckBox)obj;
+            if (!checkBox.Checked)
+            {
+                dateTimePicker.Enabled = false;
+            }
+            else
+            {
+                dateTimePicker.Enabled = true;
+            }
+        }
+        #endregion
 
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -169,6 +204,41 @@ namespace CapaPresentacion
         {
            
             
+
+        }
+
+        private void chbEntregaAlumno_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttEntregaAlumno, sender);
+        }
+
+        private void chbEntregaTribunal_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttEntregaTribunal, sender);
+        }
+
+        private void chbDevolucionTribunal_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttDevolucionTribunal, sender);
+        }
+
+        private void chbDevolucionAlumno_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttDevolucionAlumno, sender);
+        }
+
+        private void chbEmpaste_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttEmpaste, sender);
+        }
+
+        private void chbLimiteSugerido_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dttLimiteSugerido, sender);
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
 
         }
     }
