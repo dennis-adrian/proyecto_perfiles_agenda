@@ -140,12 +140,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Revisiones\FrmGeneral.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Revisiones\FrmGeneral.Designer.cs">
-      <DependentUpon>FrmGeneral.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FormsAgregar\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,9 +179,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Revisiones\FrmGeneral.resx">
-      <DependentUpon>FrmGeneral.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaDatos.Models.DetalleDefensa.datasource" />
     <None Include="Properties\DataSources\CapaNegocio.Views.ViewDefensas.datasource" />
