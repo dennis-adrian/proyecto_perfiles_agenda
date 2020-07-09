@@ -58,7 +58,6 @@
             // 
             // btnEditarRevisiones
             // 
-            this.btnEditarRevisiones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEditarRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnEditarRevisiones.FlatAppearance.BorderSize = 0;
             this.btnEditarRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
@@ -76,7 +75,7 @@
             // 
             // btnBuscarPerfil
             // 
-            this.btnBuscarPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnBuscarPerfil.FlatAppearance.BorderSize = 0;
             this.btnBuscarPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
@@ -95,7 +94,7 @@
             // 
             // txtBuscarPerfil
             // 
-            this.txtBuscarPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscarPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPerfil.Location = new System.Drawing.Point(514, 11);
@@ -107,7 +106,7 @@
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -122,7 +121,7 @@
             // dtgPerfilesTesis
             // 
             this.dtgPerfilesTesis.AllowUserToAddRows = false;
-            this.dtgPerfilesTesis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgPerfilesTesis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPerfilesTesis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgPerfilesTesis.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgPerfilesTesis.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -153,6 +152,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgPerfilesTesis.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgPerfilesTesis.RowHeadersVisible = false;
             this.dtgPerfilesTesis.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

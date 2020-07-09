@@ -58,7 +58,7 @@
             // 
             // btnBuscarDefensa
             // 
-            this.btnBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnBuscarDefensa.FlatAppearance.BorderSize = 0;
             this.btnBuscarDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
@@ -76,7 +76,7 @@
             // 
             // txtBuscarDefensa
             // 
-            this.txtBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarDefensa.Location = new System.Drawing.Point(520, 11);
@@ -87,7 +87,7 @@
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -142,6 +142,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgDefensaExterna.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgDefensaExterna.RowHeadersVisible = false;
             this.dtgDefensaExterna.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
