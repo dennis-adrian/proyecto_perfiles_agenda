@@ -80,9 +80,9 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET estado = @parametro0,fecha_entrega_alumno=@parametro1,fecha_entrega_tribunal=@parametro2,fecha_limite_devolucion=@parametro3,fecha_devolucion_tribunal=@parametro4,fecha_devolucion_alumno=@parametro5,nro_tribunal=@parametro6,nro_revision=@parametro7,fecha_empaste=@parametro7, id_tesis=@parametro8   WHERE id = @parametro9 ; ";
+            string sql = " UPDATE " + TableName + "  SET estado = @parametro0, fecha_entrega_alumno = @parametro1 ,fecha_entrega_tribunal = @parametro2 ,fecha_limite_devolucion = @parametro3 ,fecha_devolucion_tribunal = @parametro4 ,fecha_devolucion_alumno  = @parametro5 , observacion = @parametro6, nro_tribunal = @parametro7 , nro_revision = @parametro8 ,fecha_empaste =@parametro9, id_tesis=@parametro10   WHERE id = @parametro11 ; ";
 
-            Object[] Parametros = new Object[] { Estado,Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion,Nro_tribunal, Nro_revision, Fecha_empaste, Id, id };
+            Object[] Parametros = new Object[] { Estado,Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion,Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis, id };
             QueryBuilder(sql, Parametros);
 
         }

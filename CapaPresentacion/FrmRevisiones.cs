@@ -21,7 +21,6 @@ namespace CapaPresentacion
 
         #region Instancias
 
-        NegocioRevisiones revisiones = new NegocioRevisiones();
         NegocioPerfilGeneral obj = new NegocioPerfilGeneral();
 
 
@@ -224,6 +223,11 @@ namespace CapaPresentacion
             pnlCuartaRev.Visible = true;
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
         }
+
+
+
+
+
         private void btnAddNewRev_Click(object sender, EventArgs e)
         {
             pnlContenedorGral.Visible = false;
@@ -245,6 +249,12 @@ namespace CapaPresentacion
             validarRevision4();
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
         }
+
+
+
+
+
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

@@ -12,6 +12,7 @@ namespace CapaDatos.View
         Conexion obj = new Conexion();
         public ViewRevisiones()
         {
+
             id = 0;
             id_tesis = 0;
             estado = "";
@@ -22,9 +23,10 @@ namespace CapaDatos.View
             fecha_devolucion_alumno = "";
             observacion = "";
             nro_tribunal = 0;
-            nro_revision = 0;
+            nro_revision = 0;           
             fecha_empaste = "";
-            licenciado="";
+            id_Licenciado = 0;
+            licenciado = "";
             tipo = "";
             funcion = "";
 
@@ -44,6 +46,7 @@ namespace CapaDatos.View
         private int nro_tribunal;
         private int nro_revision;
         private string fecha_empaste;
+        private int id_Licenciado;
         private string licenciado;
         private string tipo;
         private string funcion;
@@ -67,6 +70,7 @@ namespace CapaDatos.View
         public string Licenciado { get => licenciado; set => licenciado = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string Funcion { get => funcion; set => funcion = value; }
+        public int Id_Licenciado { get => id_Licenciado; set => id_Licenciado = value; }
 
         #endregion
 
@@ -75,6 +79,11 @@ namespace CapaDatos.View
         public DataTable Select(int i)
         {
             string sql = " SELECT * FROM ViewRevisiones WHERE Id_tesis = " + i + " ; ";
+            return obj.SelectConexion(sql);
+        }
+        public DataTable RevisionByTribunal(int idp, int nro, int tri)
+        {
+            string sql = " SELECT * FROM ViewRevisiones WHERE Id_tesis = " + idp + " AND Nro_revision = " + nro + " AND Nro_tribunal = " + tri + " ; ";
             return obj.SelectConexion(sql);
         }
 

@@ -174,14 +174,7 @@ namespace CapaNegocio
 
         }
        
-        public void MainInsertRevision()
-        {
-
-        }
-        public void MainUpdateInsert()
-        {
-
-        }
+       
 
         #endregion
 

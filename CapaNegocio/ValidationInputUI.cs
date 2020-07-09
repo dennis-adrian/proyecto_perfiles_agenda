@@ -58,8 +58,8 @@ namespace CapaNegocio
                  else if(item.GetType() == stringType)
                  {
                      string s = Convert.ToString(item);
-                     bool x = string.IsNullOrEmpty(s);
-                     if(!x)
+                     //bool x = string.IsNullOrEmpty(s);
+                     if(s != null)
                      {
 
 
