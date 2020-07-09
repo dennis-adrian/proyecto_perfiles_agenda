@@ -185,5 +185,20 @@ namespace CapaPresentacion
             string msg = "complete el numero de registro";
             Validate(txtRegistroAlum, msg);
         }
+
+        private void grbPerfilTesis_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlNuevoPerfil_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void grbAlumno_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

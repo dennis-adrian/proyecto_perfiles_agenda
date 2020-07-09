@@ -58,6 +58,7 @@
             // 
             // btnEditarRevisiones
             // 
+            this.btnEditarRevisiones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEditarRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnEditarRevisiones.FlatAppearance.BorderSize = 0;
             this.btnEditarRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
@@ -65,7 +66,7 @@
             this.btnEditarRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarRevisiones.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditarRevisiones.Location = new System.Drawing.Point(11, 11);
-            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarRevisiones.Name = "btnEditarRevisiones";
             this.btnEditarRevisiones.Size = new System.Drawing.Size(180, 27);
             this.btnEditarRevisiones.TabIndex = 26;
@@ -75,14 +76,16 @@
             // 
             // btnBuscarPerfil
             // 
+            this.btnBuscarPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnBuscarPerfil.FlatAppearance.BorderSize = 0;
             this.btnBuscarPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnBuscarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarPerfil.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscarPerfil.Location = new System.Drawing.Point(694, 9);
-            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
             this.btnBuscarPerfil.Size = new System.Drawing.Size(72, 27);
             this.btnBuscarPerfil.TabIndex = 25;
@@ -92,18 +95,19 @@
             // 
             // txtBuscarPerfil
             // 
-            this.txtBuscarPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBuscarPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPerfil.Location = new System.Drawing.Point(514, 11);
-            this.txtBuscarPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarPerfil.Name = "txtBuscarPerfil";
             this.txtBuscarPerfil.Size = new System.Drawing.Size(176, 23);
             this.txtBuscarPerfil.TabIndex = 24;
+            this.txtBuscarPerfil.TextChanged += new System.EventHandler(this.txtBuscarPerfil_TextChanged);
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -113,6 +117,7 @@
             this.label14.Size = new System.Drawing.Size(152, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Nombre Estudiante";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // dtgPerfilesTesis
             // 
@@ -150,7 +155,7 @@
             this.dtgPerfilesTesis.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgPerfilesTesis.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -168,7 +173,7 @@
             this.Controls.Add(this.pnlBuscar2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPerfiles";
             this.Text = "FrmPerfiles";
             this.pnlBuscar2.ResumeLayout(false);

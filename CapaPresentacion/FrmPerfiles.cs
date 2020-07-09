@@ -79,6 +79,15 @@ namespace CapaPresentacion
             FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones,id_seleccionado);
             frm.Show();
         }
-        
+
+        private void txtBuscarPerfil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

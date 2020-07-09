@@ -58,6 +58,7 @@
             // 
             // btnBuscarDefensa
             // 
+            this.btnBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscarDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnBuscarDefensa.FlatAppearance.BorderSize = 0;
             this.btnBuscarDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
@@ -65,7 +66,7 @@
             this.btnBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarDefensa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarDefensa.Location = new System.Drawing.Point(694, 8);
-            this.btnBuscarDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarDefensa.Name = "btnBuscarDefensa";
             this.btnBuscarDefensa.Size = new System.Drawing.Size(72, 27);
             this.btnBuscarDefensa.TabIndex = 25;
@@ -75,18 +76,18 @@
             // 
             // txtBuscarDefensa
             // 
-            this.txtBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarDefensa.Location = new System.Drawing.Point(520, 11);
-            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarDefensa.Name = "txtBuscarDefensa";
             this.txtBuscarDefensa.Size = new System.Drawing.Size(155, 23);
             this.txtBuscarDefensa.TabIndex = 24;
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -163,7 +164,7 @@
             this.Controls.Add(this.pnlBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
             this.pnlBuscar.ResumeLayout(false);

@@ -309,9 +309,13 @@ namespace CapaPresentacion
             dtgLicenciados.DataSource = source;
         }
 
-       
+
+
         #endregion
 
-              
+        private void dtgLicenciados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevisionIndividual));
             this.pnlRevision = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.chbEmpaste = new System.Windows.Forms.CheckBox();
+            this.chbLimiteSugerido = new System.Windows.Forms.CheckBox();
+            this.chbDevolucionAlumno = new System.Windows.Forms.CheckBox();
+            this.chbDevolucionTribunal = new System.Windows.Forms.CheckBox();
+            this.chbEntregaTribunal = new System.Windows.Forms.CheckBox();
             this.chbEntregaAlumno = new System.Windows.Forms.CheckBox();
             this.cmbTribunal = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,18 +65,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.chbEntregaTribunal = new System.Windows.Forms.CheckBox();
-            this.chbDevolucionTribunal = new System.Windows.Forms.CheckBox();
-            this.chbDevolucionAlumno = new System.Windows.Forms.CheckBox();
-            this.chbLimiteSugerido = new System.Windows.Forms.CheckBox();
-            this.chbEmpaste = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.pnlRevision.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,155 @@
             this.pnlRevision.Size = new System.Drawing.Size(799, 455);
             this.pnlRevision.TabIndex = 35;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(429, 246);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 32);
+            this.button6.TabIndex = 72;
+            this.toolTip1.SetToolTip(this.button6, "Si esta fecha no está habilitada, no será guardada.");
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(492, 109);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 32);
+            this.button5.TabIndex = 71;
+            this.toolTip1.SetToolTip(this.button5, "Si esta fecha no está habilitada, no será guardada.");
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(26, 378);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 32);
+            this.button4.TabIndex = 70;
+            this.toolTip1.SetToolTip(this.button4, "Si esta fecha no está habilitada, no será guardada.");
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(26, 312);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 32);
+            this.button3.TabIndex = 69;
+            this.toolTip1.SetToolTip(this.button3, "Si esta fecha no está habilitada, no será guardada.");
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(26, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 32);
+            this.button2.TabIndex = 68;
+            this.toolTip1.SetToolTip(this.button2, "Si esta fecha no está habilitada, no será guardada.");
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(26, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 32);
+            this.button1.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.button1, "Si esta fecha no está habilitada, no será guardada.");
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // chbEmpaste
+            // 
+            this.chbEmpaste.AutoSize = true;
+            this.chbEmpaste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbEmpaste.Location = new System.Drawing.Point(703, 117);
+            this.chbEmpaste.Name = "chbEmpaste";
+            this.chbEmpaste.Size = new System.Drawing.Size(72, 19);
+            this.chbEmpaste.TabIndex = 66;
+            this.chbEmpaste.Text = "Habilitar";
+            this.toolTip1.SetToolTip(this.chbEmpaste, "Para elegir y guardar la fecha, debe habilitarla.");
+            this.chbEmpaste.UseVisualStyleBackColor = true;
+            this.chbEmpaste.CheckedChanged += new System.EventHandler(this.chbEmpaste_CheckedChanged);
+            // 
+            // chbLimiteSugerido
+            // 
+            this.chbLimiteSugerido.AutoSize = true;
+            this.chbLimiteSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbLimiteSugerido.Location = new System.Drawing.Point(642, 254);
+            this.chbLimiteSugerido.Name = "chbLimiteSugerido";
+            this.chbLimiteSugerido.Size = new System.Drawing.Size(72, 19);
+            this.chbLimiteSugerido.TabIndex = 65;
+            this.chbLimiteSugerido.Text = "Habilitar";
+            this.toolTip1.SetToolTip(this.chbLimiteSugerido, "Para elegir y guardar la fecha, debe habilitarla.");
+            this.chbLimiteSugerido.UseVisualStyleBackColor = true;
+            this.chbLimiteSugerido.CheckedChanged += new System.EventHandler(this.chbLimiteSugerido_CheckedChanged);
+            // 
+            // chbDevolucionAlumno
+            // 
+            this.chbDevolucionAlumno.AutoSize = true;
+            this.chbDevolucionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDevolucionAlumno.Location = new System.Drawing.Point(237, 386);
+            this.chbDevolucionAlumno.Name = "chbDevolucionAlumno";
+            this.chbDevolucionAlumno.Size = new System.Drawing.Size(72, 19);
+            this.chbDevolucionAlumno.TabIndex = 64;
+            this.chbDevolucionAlumno.Text = "Habilitar";
+            this.toolTip1.SetToolTip(this.chbDevolucionAlumno, "Para elegir y guardar la fecha, debe habilitarla.");
+            this.chbDevolucionAlumno.UseVisualStyleBackColor = true;
+            this.chbDevolucionAlumno.CheckedChanged += new System.EventHandler(this.chbDevolucionAlumno_CheckedChanged);
+            // 
+            // chbDevolucionTribunal
+            // 
+            this.chbDevolucionTribunal.AutoSize = true;
+            this.chbDevolucionTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDevolucionTribunal.Location = new System.Drawing.Point(237, 320);
+            this.chbDevolucionTribunal.Name = "chbDevolucionTribunal";
+            this.chbDevolucionTribunal.Size = new System.Drawing.Size(72, 19);
+            this.chbDevolucionTribunal.TabIndex = 63;
+            this.chbDevolucionTribunal.Text = "Habilitar";
+            this.toolTip1.SetToolTip(this.chbDevolucionTribunal, "Para elegir y guardar la fecha, debe habilitarla.");
+            this.chbDevolucionTribunal.UseVisualStyleBackColor = true;
+            this.chbDevolucionTribunal.CheckedChanged += new System.EventHandler(this.chbDevolucionTribunal_CheckedChanged);
+            // 
+            // chbEntregaTribunal
+            // 
+            this.chbEntregaTribunal.AutoSize = true;
+            this.chbEntregaTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbEntregaTribunal.Location = new System.Drawing.Point(237, 254);
+            this.chbEntregaTribunal.Name = "chbEntregaTribunal";
+            this.chbEntregaTribunal.Size = new System.Drawing.Size(72, 19);
+            this.chbEntregaTribunal.TabIndex = 62;
+            this.chbEntregaTribunal.Text = "Habilitar";
+            this.toolTip1.SetToolTip(this.chbEntregaTribunal, "Para elegir y guardar la fecha, debe habilitarla.");
+            this.chbEntregaTribunal.UseVisualStyleBackColor = true;
+            this.chbEntregaTribunal.CheckedChanged += new System.EventHandler(this.chbEntregaTribunal_CheckedChanged);
+            // 
             // chbEntregaAlumno
             // 
             this.chbEntregaAlumno.AutoSize = true;
@@ -127,6 +276,7 @@
             // 
             // cmbTribunal
             // 
+            this.cmbTribunal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTribunal.FormattingEnabled = true;
             this.cmbTribunal.Location = new System.Drawing.Point(25, 114);
@@ -392,160 +542,11 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // chbEntregaTribunal
-            // 
-            this.chbEntregaTribunal.AutoSize = true;
-            this.chbEntregaTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEntregaTribunal.Location = new System.Drawing.Point(237, 254);
-            this.chbEntregaTribunal.Name = "chbEntregaTribunal";
-            this.chbEntregaTribunal.Size = new System.Drawing.Size(72, 19);
-            this.chbEntregaTribunal.TabIndex = 62;
-            this.chbEntregaTribunal.Text = "Habilitar";
-            this.toolTip1.SetToolTip(this.chbEntregaTribunal, "Para elegir y guardar la fecha, debe habilitarla.");
-            this.chbEntregaTribunal.UseVisualStyleBackColor = true;
-            this.chbEntregaTribunal.CheckedChanged += new System.EventHandler(this.chbEntregaTribunal_CheckedChanged);
-            // 
-            // chbDevolucionTribunal
-            // 
-            this.chbDevolucionTribunal.AutoSize = true;
-            this.chbDevolucionTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbDevolucionTribunal.Location = new System.Drawing.Point(237, 320);
-            this.chbDevolucionTribunal.Name = "chbDevolucionTribunal";
-            this.chbDevolucionTribunal.Size = new System.Drawing.Size(72, 19);
-            this.chbDevolucionTribunal.TabIndex = 63;
-            this.chbDevolucionTribunal.Text = "Habilitar";
-            this.toolTip1.SetToolTip(this.chbDevolucionTribunal, "Para elegir y guardar la fecha, debe habilitarla.");
-            this.chbDevolucionTribunal.UseVisualStyleBackColor = true;
-            this.chbDevolucionTribunal.CheckedChanged += new System.EventHandler(this.chbDevolucionTribunal_CheckedChanged);
-            // 
-            // chbDevolucionAlumno
-            // 
-            this.chbDevolucionAlumno.AutoSize = true;
-            this.chbDevolucionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbDevolucionAlumno.Location = new System.Drawing.Point(237, 386);
-            this.chbDevolucionAlumno.Name = "chbDevolucionAlumno";
-            this.chbDevolucionAlumno.Size = new System.Drawing.Size(72, 19);
-            this.chbDevolucionAlumno.TabIndex = 64;
-            this.chbDevolucionAlumno.Text = "Habilitar";
-            this.toolTip1.SetToolTip(this.chbDevolucionAlumno, "Para elegir y guardar la fecha, debe habilitarla.");
-            this.chbDevolucionAlumno.UseVisualStyleBackColor = true;
-            this.chbDevolucionAlumno.CheckedChanged += new System.EventHandler(this.chbDevolucionAlumno_CheckedChanged);
-            // 
-            // chbLimiteSugerido
-            // 
-            this.chbLimiteSugerido.AutoSize = true;
-            this.chbLimiteSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbLimiteSugerido.Location = new System.Drawing.Point(642, 254);
-            this.chbLimiteSugerido.Name = "chbLimiteSugerido";
-            this.chbLimiteSugerido.Size = new System.Drawing.Size(72, 19);
-            this.chbLimiteSugerido.TabIndex = 65;
-            this.chbLimiteSugerido.Text = "Habilitar";
-            this.toolTip1.SetToolTip(this.chbLimiteSugerido, "Para elegir y guardar la fecha, debe habilitarla.");
-            this.chbLimiteSugerido.UseVisualStyleBackColor = true;
-            this.chbLimiteSugerido.CheckedChanged += new System.EventHandler(this.chbLimiteSugerido_CheckedChanged);
-            // 
-            // chbEmpaste
-            // 
-            this.chbEmpaste.AutoSize = true;
-            this.chbEmpaste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEmpaste.Location = new System.Drawing.Point(703, 117);
-            this.chbEmpaste.Name = "chbEmpaste";
-            this.chbEmpaste.Size = new System.Drawing.Size(72, 19);
-            this.chbEmpaste.TabIndex = 66;
-            this.chbEmpaste.Text = "Habilitar";
-            this.toolTip1.SetToolTip(this.chbEmpaste, "Para elegir y guardar la fecha, debe habilitarla.");
-            this.chbEmpaste.UseVisualStyleBackColor = true;
-            this.chbEmpaste.CheckedChanged += new System.EventHandler(this.chbEmpaste_CheckedChanged);
-            // 
             // toolTip1
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Habilitar Fecha";
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(26, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.button1, "Si esta fecha no está habilitada, no será guardada.");
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(26, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 68;
-            this.toolTip1.SetToolTip(this.button2, "Si esta fecha no está habilitada, no será guardada.");
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(26, 312);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 32);
-            this.button3.TabIndex = 69;
-            this.toolTip1.SetToolTip(this.button3, "Si esta fecha no está habilitada, no será guardada.");
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(26, 378);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 32);
-            this.button4.TabIndex = 70;
-            this.toolTip1.SetToolTip(this.button4, "Si esta fecha no está habilitada, no será guardada.");
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(492, 109);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 32);
-            this.button5.TabIndex = 71;
-            this.toolTip1.SetToolTip(this.button5, "Si esta fecha no está habilitada, no será guardada.");
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(429, 246);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 32);
-            this.button6.TabIndex = 72;
-            this.toolTip1.SetToolTip(this.button6, "Si esta fecha no está habilitada, no será guardada.");
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // FrmRevisionIndividual
             // 
