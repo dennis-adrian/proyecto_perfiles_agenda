@@ -84,6 +84,10 @@ namespace CapaDatos
             {
                 throw new ArgumentException("Error: "+e);
             }
+            finally
+            {
+                cerrarConexion();
+            }
 
         }
         public DataTable SelectConexion(string sql)
@@ -103,6 +107,10 @@ namespace CapaDatos
             catch
             {
                 throw new ArgumentException("Error");
+            }
+            finally
+            {
+                cerrarConexion();
             }
         }
         public DataTable SelectConexion(string sql, string parametro0)
@@ -124,6 +132,10 @@ namespace CapaDatos
             {
                 throw new ArgumentException("Error" + e);
             }
+            finally
+            {
+                cerrarConexion();
+            }
 
         }
         public DataTable SelectConexion(string sql, string parametro0, string parametro1)
@@ -144,6 +156,10 @@ namespace CapaDatos
             catch
             {
                 throw new ArgumentException("Error");
+            }
+            finally
+            {
+                cerrarConexion();
             }
 
         }
@@ -173,6 +189,10 @@ namespace CapaDatos
             {
                 throw new ArgumentException("Error al obtener el ultimo registro");
             }
+            finally
+            {
+                cerrarConexion();
+            }
         }
         public int FindIdBySearchConexion(string sql)
         {
@@ -197,6 +217,10 @@ namespace CapaDatos
             catch
             {
                 throw new ArgumentException("Error");
+            }
+            finally
+            {
+                cerrarConexion();
             }
         }
         #endregion

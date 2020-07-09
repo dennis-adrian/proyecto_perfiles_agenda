@@ -193,6 +193,7 @@ namespace CapaPresentacion
             cerrarFormEnPanel();
             pnlContenedorRev.Controls.Add(pnlContenedorGral);
             pnlContenedorGral.Visible = true;
+            ShowPerfilGeneral(this.idperfil);
         }
 
         private void btnPrimeraRev_Click(object sender, EventArgs e)
