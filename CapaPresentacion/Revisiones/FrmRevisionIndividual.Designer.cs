@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevisionIndividual));
             this.pnlRevision = new System.Windows.Forms.Panel();
+            this.lbIdRevision = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lbIdRevision = new System.Windows.Forms.Label();
             this.pnlRevision.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,17 @@
             this.pnlRevision.Name = "pnlRevision";
             this.pnlRevision.Size = new System.Drawing.Size(1598, 875);
             this.pnlRevision.TabIndex = 35;
+            // 
+            // lbIdRevision
+            // 
+            this.lbIdRevision.AutoSize = true;
+            this.lbIdRevision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdRevision.Location = new System.Drawing.Point(396, 150);
+            this.lbIdRevision.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbIdRevision.Name = "lbIdRevision";
+            this.lbIdRevision.Size = new System.Drawing.Size(41, 36);
+            this.lbIdRevision.TabIndex = 73;
+            this.lbIdRevision.Text = "id";
             // 
             // button6
             // 
@@ -601,17 +612,6 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Habilitar Fecha";
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // lbIdRevision
-            // 
-            this.lbIdRevision.AutoSize = true;
-            this.lbIdRevision.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdRevision.Location = new System.Drawing.Point(396, 150);
-            this.lbIdRevision.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbIdRevision.Name = "lbIdRevision";
-            this.lbIdRevision.Size = new System.Drawing.Size(0, 36);
-            this.lbIdRevision.TabIndex = 73;
-            this.lbIdRevision.Visible = false;
             // 
             // FrmRevisionIndividual
             // 

@@ -161,10 +161,18 @@ namespace CapaPresentacion
                 {
                     Insert();
 
+                    rbTribunal1.Checked = false;
+                    rbTribunal2.Checked = false;
+                    ClearForms();
+
                 }
                 else
                 {
                     Update(this.id_revision);
+
+                    rbTribunal1.Checked = false;
+                    rbTribunal2.Checked = false;
+                    ClearForms();
                 }
                
 
@@ -185,7 +193,7 @@ namespace CapaPresentacion
             //this.nroTribunal = "2";
             //reiniciarValores();
             //txtTribunal.Text = nroTribunal;
-            infoRevision(this.id_perfil, this.num_revision, 1);
+            infoRevision(this.id_perfil, this.num_revision, 2);
         }
 
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
@@ -193,7 +201,7 @@ namespace CapaPresentacion
             //this.nroTribunal = "1";
             //reiniciarValores();
             //txtTribunal.Text = nroTribunal;
-            infoRevision(this.id_perfil, this.num_revision, 2);
+            infoRevision(this.id_perfil, this.num_revision, 1);
         }
 
 
@@ -207,6 +215,8 @@ namespace CapaPresentacion
             {
                txtEstadoDatos.Text = "sin datos asignados";
                 this.id_revision = 0;
+                lbIdRevision.Text = Convert.ToString(0);
+                ClearForms();
             }
             else
             {
@@ -242,6 +252,7 @@ namespace CapaPresentacion
 
                 txtEstadoDatos.Text = "Datos Asignados";
                 this.id_revision = Convert.ToInt32(Collection[0].ToString());
+                lbIdRevision.Text = Collection[0].ToString();
 
             }
 
