@@ -76,8 +76,8 @@ namespace CapaNegocio
                 type.Email = Convert.ToString(Collection[3]);
                 estudiante.Email = type.Email;
 
-                type.Telefono = Convert.ToString(Collection[4]);
-                estudiante.Telefono = type.Telefono;
+                string tel = Convert.ToString(Collection[4]);
+                estudiante.Telefono = (tel == "") ? "" : tel;
 
                 type.Celular = Convert.ToString(Collection[5]);
                 estudiante.Celular = type.Celular;
