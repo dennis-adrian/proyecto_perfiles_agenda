@@ -137,8 +137,8 @@ namespace CapaNegocio
 
                 revision.Nro_revision = Convert.ToInt32(Collection[8]);
 
-                type.Fecha = Convert.ToString(Collection[9]);
-                revision.Fecha_empaste = type.Fecha;
+                string fec_empaste = Convert.ToString(Collection[9]);
+                revision.Fecha_empaste = (fec_empaste == "") ? "" : fec_empaste;
 
                 revision.Id_tesis = Convert.ToInt32(Collection[10]);
 
@@ -193,8 +193,8 @@ namespace CapaNegocio
 
                 revision.Nro_revision = Convert.ToInt32(Collection[8]);
 
-                type.Fecha = Convert.ToString(Collection[9]);
-                revision.Fecha_empaste = type.Fecha;
+                string fec_empaste = Convert.ToString(Collection[9]);
+                revision.Fecha_empaste = (fec_empaste == "") ? "" : fec_empaste;
 
                 revision.Id_tesis = Convert.ToInt32(Collection[10]);
 
