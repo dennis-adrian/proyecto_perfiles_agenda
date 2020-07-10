@@ -402,5 +402,13 @@ namespace CapaPresentacion
         {
 
         }
+
+        #region Destructor
+
+        ~FrmRevisionIndividual()
+        {
+
+        }
+        #endregion
     }
 }
