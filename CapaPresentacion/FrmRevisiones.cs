@@ -167,7 +167,7 @@ namespace CapaPresentacion
         private void btnGeneralRev_Click(object sender, EventArgs e)
         {
             Panel pnlContenedorGral = pnlContenedorGralBackup;
-
+            pnlGeneral.BackColor = Color.Crimson;
 
             //reiniciarResaltado();
             pnlGeneral.Visible = true;
