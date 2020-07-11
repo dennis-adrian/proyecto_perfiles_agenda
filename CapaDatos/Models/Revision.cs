@@ -98,6 +98,7 @@ namespace CapaDatos.Models
             return LastIdConexion(TableName);
         }
 
+
         #endregion
     }
 }

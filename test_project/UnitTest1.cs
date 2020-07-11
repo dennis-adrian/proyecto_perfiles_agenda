@@ -66,14 +66,10 @@ namespace test_project
         [TestMethod]
         public void BUGD003()
         {
-            Institucion i = new Institucion();
-            CarreraLicenciado cl = new CarreraLicenciado();
+           
             Licenciado obj = new Licenciado();
 
-            i.Nombre = "institucionx";
-            i.Insert();
-            cl.Nombre = "carrera12356";
-            cl.Insert();
+         
 
 
             obj.Nombre = "licenciadooo ";
@@ -87,7 +83,7 @@ namespace test_project
 
             obj.Id_institucion_representada = 1;
             obj.Id_carrera_licenciado = 1 ;
-            obj.Insert();
+            obj.Update(1);
         }
         [TestMethod]
         public void TestMethod6()
@@ -223,6 +219,28 @@ namespace test_project
 
             type.Texto2 = "Hola";
             Console.WriteLine(type.Texto2);
+
+
+
+        }
+        [TestMethod]
+        public void TestMethod15()
+        {
+
+            TipoTitulacionOtros obj = new TipoTitulacionOtros();
+
+            obj.Select();
+
+
+
+        }
+        [TestMethod]
+        public void TestMethod16()
+        {
+
+            TitulacionOtros obj = new TitulacionOtros();
+
+            obj.Select();
 
 
 
