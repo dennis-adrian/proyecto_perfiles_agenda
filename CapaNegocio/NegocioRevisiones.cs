@@ -122,6 +122,7 @@ namespace CapaNegocio
                 revision.Fecha_entrega_tribunal = (fec2 == "") ? "" : fec2;
 
                 string fec3 = Convert.ToString(Collection[3]);
+
                 revision.Fecha_limite_devolucion = (fec3 == "") ? "" : fec3;
 
                 string fec4 = Convert.ToString(Collection[4]);
