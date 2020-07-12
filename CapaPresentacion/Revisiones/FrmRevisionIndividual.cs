@@ -273,8 +273,19 @@ namespace CapaPresentacion
             }
             else
             {
-                
-                dtt.Value = DateTime.Parse(fec);
+
+                //esta lineas se aumentaron-----------------------
+                var fec_format = fec;
+                var fec_array = fec_format.Split('-');
+                int d = Convert.ToInt32(fec_array[0].ToString());
+                int m = Convert.ToInt32(fec_array[1].ToString());
+                int y = Convert.ToInt32(fec_array[2].ToString());
+                dtt.Value = new DateTime(y, m, d);
+                //--------------------------------------------------
+
+
+                //estas se comentaron
+               // dtt.Value = DateTime.Parse(fec);
                 dtt.Enabled = true;
                 check.Checked = true;
             }
