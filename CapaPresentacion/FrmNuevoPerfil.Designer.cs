@@ -33,8 +33,6 @@
             this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
             this.grbPerfilTesis = new System.Windows.Forms.GroupBox();
             this.cmbTutorElegido = new System.Windows.Forms.ComboBox();
-            this.btnCancelarNuevop = new System.Windows.Forms.Button();
-            this.btnGuardarNuevoP = new System.Windows.Forms.Button();
             this.btnElegirTutor = new System.Windows.Forms.Button();
             this.dtFechaAprobacion = new System.Windows.Forms.DateTimePicker();
             this.dtFechaRecepcion = new System.Windows.Forms.DateTimePicker();
@@ -43,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelarNuevop = new System.Windows.Forms.Button();
+            this.btnGuardarNuevoP = new System.Windows.Forms.Button();
             this.grbAlumno = new System.Windows.Forms.GroupBox();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.pnlNuevoPerfil.Controls.Add(this.grbAlumno);
             this.pnlNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNuevoPerfil.Location = new System.Drawing.Point(2, 2);
-            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
             this.pnlNuevoPerfil.Size = new System.Drawing.Size(806, 474);
             this.pnlNuevoPerfil.TabIndex = 34;
@@ -111,38 +111,6 @@
             this.cmbTutorElegido.Size = new System.Drawing.Size(267, 26);
             this.cmbTutorElegido.TabIndex = 8;
             // 
-            // btnCancelarNuevop
-            // 
-            this.btnCancelarNuevop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelarNuevop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnCancelarNuevop.FlatAppearance.BorderSize = 0;
-            this.btnCancelarNuevop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarNuevop.Location = new System.Drawing.Point(561, 410);
-            this.btnCancelarNuevop.Name = "btnCancelarNuevop";
-            this.btnCancelarNuevop.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelarNuevop.TabIndex = 39;
-            this.btnCancelarNuevop.Text = "Cancelar";
-            this.btnCancelarNuevop.UseVisualStyleBackColor = false;
-            this.btnCancelarNuevop.Click += new System.EventHandler(this.btnCancelarNuevop_Click);
-            // 
-            // btnGuardarNuevoP
-            // 
-            this.btnGuardarNuevoP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGuardarNuevoP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnGuardarNuevoP.FlatAppearance.BorderSize = 0;
-            this.btnGuardarNuevoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarNuevoP.Location = new System.Drawing.Point(667, 410);
-            this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
-            this.btnGuardarNuevoP.Size = new System.Drawing.Size(100, 35);
-            this.btnGuardarNuevoP.TabIndex = 38;
-            this.btnGuardarNuevoP.Text = "Guardar";
-            this.btnGuardarNuevoP.UseVisualStyleBackColor = false;
-            this.btnGuardarNuevoP.Click += new System.EventHandler(this.btnGuardarNuevoP_Click);
-            // 
             // btnElegirTutor
             // 
             this.btnElegirTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
@@ -155,7 +123,7 @@
             this.btnElegirTutor.Name = "btnElegirTutor";
             this.btnElegirTutor.Size = new System.Drawing.Size(86, 26);
             this.btnElegirTutor.TabIndex = 4;
-            this.btnElegirTutor.Text = "Cargar";
+            this.btnElegirTutor.Text = "Elegir";
             this.btnElegirTutor.UseVisualStyleBackColor = false;
             this.btnElegirTutor.Click += new System.EventHandler(this.btnElegirTutor_Click);
             // 
@@ -225,6 +193,38 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tema:";
             // 
+            // btnCancelarNuevop
+            // 
+            this.btnCancelarNuevop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelarNuevop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnCancelarNuevop.FlatAppearance.BorderSize = 0;
+            this.btnCancelarNuevop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarNuevop.Location = new System.Drawing.Point(561, 410);
+            this.btnCancelarNuevop.Name = "btnCancelarNuevop";
+            this.btnCancelarNuevop.Size = new System.Drawing.Size(100, 35);
+            this.btnCancelarNuevop.TabIndex = 39;
+            this.btnCancelarNuevop.Text = "Cancelar";
+            this.btnCancelarNuevop.UseVisualStyleBackColor = false;
+            this.btnCancelarNuevop.Click += new System.EventHandler(this.btnCancelarNuevop_Click);
+            // 
+            // btnGuardarNuevoP
+            // 
+            this.btnGuardarNuevoP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardarNuevoP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGuardarNuevoP.FlatAppearance.BorderSize = 0;
+            this.btnGuardarNuevoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarNuevoP.Location = new System.Drawing.Point(667, 410);
+            this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
+            this.btnGuardarNuevoP.Size = new System.Drawing.Size(100, 35);
+            this.btnGuardarNuevoP.TabIndex = 38;
+            this.btnGuardarNuevoP.Text = "Guardar";
+            this.btnGuardarNuevoP.UseVisualStyleBackColor = false;
+            this.btnGuardarNuevoP.Click += new System.EventHandler(this.btnGuardarNuevoP_Click);
+            // 
             // grbAlumno
             // 
             this.grbAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -245,9 +245,9 @@
             this.grbAlumno.Controls.Add(this.label13);
             this.grbAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAlumno.Location = new System.Drawing.Point(10, 5);
-            this.grbAlumno.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.grbAlumno.Margin = new System.Windows.Forms.Padding(10);
             this.grbAlumno.Name = "grbAlumno";
-            this.grbAlumno.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grbAlumno.Padding = new System.Windows.Forms.Padding(5);
             this.grbAlumno.Size = new System.Drawing.Size(759, 180);
             this.grbAlumno.TabIndex = 35;
             this.grbAlumno.TabStop = false;
@@ -399,7 +399,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNuevoPerfil";
-            this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Perfil";
             this.pnlNuevoPerfil.ResumeLayout(false);
