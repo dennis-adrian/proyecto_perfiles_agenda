@@ -181,10 +181,6 @@ namespace CapaPresentacion
                     rbTribunal2.Checked = false;
                     ClearForms();
                     MessageBox.Show("Datos guardados correctamente");
-<<<<<<< HEAD
-=======
-
->>>>>>> 250e375678ff003a12b3e8c1f7321dafbfdd57bc
                 }
                 else
                 {
@@ -193,11 +189,7 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-<<<<<<< HEAD
-                    MessageBox.Show("Datos guardados correctamente");
-=======
                     MessageBox.Show("Datos actualizados correctamente");
->>>>>>> 250e375678ff003a12b3e8c1f7321dafbfdd57bc
                 }
             }
             catch (Exception ex)

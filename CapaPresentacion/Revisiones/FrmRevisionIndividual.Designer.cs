@@ -116,8 +116,6 @@
             this.pnlRevision.Size = new System.Drawing.Size(1598, 875);
             this.pnlRevision.TabIndex = 35;
             // 
-<<<<<<< HEAD
-=======
             // lbIdRevision
             // 
             this.lbIdRevision.AutoSize = true;
@@ -129,7 +127,6 @@
             this.lbIdRevision.TabIndex = 73;
             this.lbIdRevision.Text = "id";
             // 
->>>>>>> 250e375678ff003a12b3e8c1f7321dafbfdd57bc
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
