@@ -388,12 +388,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rbTribunal1.AutoSize = true;
+            this.rbTribunal1.Checked = true;
             this.rbTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.rbTribunal1.Location = new System.Drawing.Point(480, 40);
             this.rbTribunal1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbTribunal1.Name = "rbTribunal1";
             this.rbTribunal1.Size = new System.Drawing.Size(200, 41);
             this.rbTribunal1.TabIndex = 23;
+            this.rbTribunal1.TabStop = true;
             this.rbTribunal1.Text = "Tribunal 1";
             this.rbTribunal1.UseVisualStyleBackColor = true;
             this.rbTribunal1.CheckedChanged += new System.EventHandler(this.rbTribunal1_CheckedChanged);
