@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
 using CapaNegocio;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -274,7 +275,7 @@ namespace CapaPresentacion
             else
             {
 
-                dtt.Value = DateTime.Parse(fec);
+                dtt.Value = DateTime.Parse(fec, new CultureInfo("en-GB"));
                 dtt.Enabled = true;
                 check.Checked = true;
             }
