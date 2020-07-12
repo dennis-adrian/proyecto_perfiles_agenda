@@ -273,7 +273,7 @@ namespace CapaPresentacion
             }
             else
             {
-
+                
                 dtt.Value = DateTime.Parse(fec);
                 dtt.Enabled = true;
                 check.Checked = true;
