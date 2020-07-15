@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
 using CapaNegocio;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -21,6 +22,13 @@ namespace CapaPresentacion
         int num_revision;
         int id_revision = 0;
 
+        #region instancias
+
+        NegocioRevisiones obj = new NegocioRevisiones();
+
+
+        #endregion
+
 
 
         #region Constructor
@@ -30,16 +38,24 @@ namespace CapaPresentacion
             this.id_perfil = id;
             this.num_revision = nro;
             inicializarDateTimePickers();
+            ShowData();
         }
         #endregion
 
 
-        #region instancias
+        public void ShowData()
+        {
+            if(rbTribunal1.Checked == true)
+            {
+                infoRevision(this.id_perfil, this.num_revision, 1);
+            }
+            else if(rbTribunal2.Checked == true)
+            {
+                infoRevision(this.id_perfil, this.num_revision, 2);
+            }
+        }
 
-        NegocioRevisiones obj = new NegocioRevisiones();       
-
-
-        #endregion
+        
         public void ClearForms()
         {
             cmbTribunal.Items.Clear();
@@ -164,6 +180,7 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
+                    MessageBox.Show("Datos guardados correctamente");
 
                 }
                 else
@@ -173,6 +190,7 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
+                    MessageBox.Show("Datos actualizados correctamente");
                 }
                
 
@@ -274,7 +292,7 @@ namespace CapaPresentacion
             else
             {
 
-                dtt.Value = DateTime.Parse(fec);
+                dtt.Value = DateTime.Parse(fec, new CultureInfo("en-GB"));
                 dtt.Enabled = true;
                 check.Checked = true;
             }
@@ -402,5 +420,13 @@ namespace CapaPresentacion
         {
 
         }
+
+        #region Destructor
+
+        ~FrmRevisionIndividual()
+        {
+
+        }
+        #endregion
     }
 }

@@ -31,44 +31,87 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        public FrmRevisiones(int cantRevisiones,int idperfil)
+        public FrmRevisiones(int cantRevisiones, int idperfil)
         {
             InitializeComponent();
             this.cantRevisiones = cantRevisiones;
             this.idperfil = idperfil;
             ShowPerfilGeneral(idperfil);
+            //HiddenRevision();
+            pnlSubMenus.Visible = false;
+            DesactiveColors();
         }
         #endregion
 
+        public void HiddenRevision()
+        {
+            if(pnlContainerPrimera.Visible == true)
+            {
+                pnlContainerPrimera.Visible = false;
 
-        //-------------
+            }
+            if (pnlContainerSegunda.Visible == true)
+            {
+                pnlContainerSegunda.Visible = false;
+
+            }
+            if (pnlContainerTercera.Visible == true)
+            {
+                pnlContainerTercera.Visible = false;
+
+            }
+            if (pnlContainerCuarta.Visible == true)
+            {
+                pnlContainerCuarta.Visible = false;
+
+            }
+            if (pnlAdd1.Visible == true)
+            {
+                pnlAdd1.Visible = false;
+
+            }
+            if (pnlAdd2.Visible == true)
+            {
+                pnlAdd2.Visible = false;
+
+            }
+            if (pnlAdd3.Visible == true)
+            {
+                pnlAdd3.Visible = false;
+
+            }
+            if (pnlAdd4.Visible == true)
+            {
+                pnlAdd4.Visible = false;
+
+            }
+
+
+
+        }
+       
+
+        public void DesactiveColors()
+        {
+            pnlGeneral.BackColor = Color.FromArgb(64, 64, 64);
+            pnlRevisiones.BackColor = Color.FromArgb(64, 64, 64);
+            pnlPrimeraRev.BackColor = Color.FromArgb(64, 64, 64);
+            pnlSegundaRev.BackColor = Color.FromArgb(64, 64, 64);
+            pnlTerceraRev.BackColor = Color.FromArgb(64, 64, 64);
+            pnlCuartaRev.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        
+
+
+
         private void FrmRevisiones2_Load(object sender, EventArgs e)
         {
             pnlContenedorGralBackup = pnlContenedorGral;
             btnGeneralRev_Click(null, e);
-            inicializarComponentes();
-            validarCantRevisiones();
         }
-        public void inicializarComponentes()
-        {
-            pnlPrimeraRev.Visible = false;
-            btnSegundaRev.Visible = false;
-            pnlSegundaRev.Visible = false;
-            btnTerceraRev.Visible = false;
-            pnlTerceraRev.Visible = false;
-            btnCuartaRev.Visible = false;
-            pnlCuartaRev.Visible = false;
-            btnAddNewRev3.Visible = false;
-            btnAddNewRev4.Visible = false;
-        }
-        public void reiniciarResaltado()
-        {
-            pnlGeneral.Visible = false;
-            pnlPrimeraRev.Visible = false;
-            pnlSegundaRev.Visible = false;
-            pnlTerceraRev.Visible = false;
-            pnlCuartaRev.Visible = false;
-        }
+       
+       
         public void ShowPerfilGeneral(int id)
         {
             var Collection = obj.PerfilGeneral(id);
@@ -101,73 +144,8 @@ namespace CapaPresentacion
                 dttFechaAprobacionGral.Value = new DateTime(yy, mm, dd);
             }
         }
-        #region validarRevisiones
-        public void validarCantRevisiones()
-        {
-            int cantidad = this.cantRevisiones;
-            switch (cantidad)
-            {
-                case 1:
-                    btnPrimeraRev.Visible = true;
-                    btnSegundaRev.Visible = false;
-                    btnTerceraRev.Visible = false;
-                    btnCuartaRev.Visible = false;
-                    break;
-                case 2:
-                    btnPrimeraRev.Visible = true;
-                    validarRevision2();
-                    break;
-                case 3:
-                    btnPrimeraRev.Visible = true;
-                    validarRevision2();
-                    validarRevision3();
-                    break;
-                case 4:
-                    btnPrimeraRev.Visible = true;
-                    validarRevision2();
-                    validarRevision3();
-                    validarRevision4();
-                    break;
-                default:
-                    break;
-            }
-        }
-        public void validarRevision2()
-        {
-            if (btnSegundaRev.Visible == false && pnlSegundaRev.Visible == false)
-            {
-                btnSegundaRev.Visible = true;
-                pnlSegundaRev.Visible = true;
-                btnAddNewRev.Visible = false;
-                btnAddNewRev3.Visible = true;
-            }
-        }
-        public void validarRevision3()
-        {
-            if (btnTerceraRev.Visible == false && pnlTerceraRev.Visible == false)
-            {
-                btnTerceraRev.Visible = true;
-                pnlTerceraRev.Visible = true;
-                btnAddNewRev3.Visible = false;
-                btnAddNewRev4.Visible = true;
-            }
-        }
-        public void validarRevision4()
-        {
-            if (btnCuartaRev.Visible == false && pnlCuartaRev.Visible == false)
-            {
-                btnCuartaRev.Visible = true;
-                pnlCuartaRev.Visible = true;
-                btnAddNewRev4.Visible = false;
-
-            }
-        }
-        #endregion
-        private void btnCancelRev_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
+       
         private void abrirFormEnPanel(object formhija)
         {
             if (this.pnlContenedorRev.Controls.Count > 0)
@@ -184,10 +162,14 @@ namespace CapaPresentacion
             if (this.pnlContenedorRev.Controls.Count > 0)
                 this.pnlContenedorRev.Controls.Clear();
         }
+
+
         private void btnGeneralRev_Click(object sender, EventArgs e)
         {
             Panel pnlContenedorGral = pnlContenedorGralBackup;
-            reiniciarResaltado();
+            pnlGeneral.BackColor = Color.Crimson;
+
+            //reiniciarResaltado();
             pnlGeneral.Visible = true;
             cerrarFormEnPanel();
             pnlContenedorRev.Controls.Add(pnlContenedorGral);
@@ -195,65 +177,43 @@ namespace CapaPresentacion
             ShowPerfilGeneral(this.idperfil);
         }
 
+
+
         private void btnPrimeraRev_Click(object sender, EventArgs e)
         {
             pnlContenedorGral.Visible = false;
-            reiniciarResaltado();
+            DesactiveColors();
             pnlPrimeraRev.Visible = true;
+            pnlPrimeraRev.BackColor = Color.Crimson;
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,1));
         }
 
         private void btnSegundaRev_Click(object sender, EventArgs e)
         {
-            reiniciarResaltado();
+            pnlContenedorGral.Visible = false;
+            DesactiveColors();
             pnlSegundaRev.Visible = true;
+            pnlSegundaRev.BackColor = Color.Crimson;
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,2));
         }
         private void btnTerceraRev_Click(object sender, EventArgs e)
         {
             pnlContenedorGral.Visible = false;
-            reiniciarResaltado();
+            DesactiveColors();
             pnlTerceraRev.Visible = true;
+            pnlTerceraRev.BackColor = Color.Crimson;
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,3));
         }
         private void btnCuartaRev_Click(object sender, EventArgs e)
         {
             pnlContenedorGral.Visible = false;
-            reiniciarResaltado();
+            DesactiveColors();
             pnlCuartaRev.Visible = true;
+            pnlCuartaRev.BackColor = Color.Crimson;
             abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
         }
 
-
-
-
-
-        private void btnAddNewRev_Click(object sender, EventArgs e)
-        {
-            pnlContenedorGral.Visible = false;
-            reiniciarResaltado();
-            validarRevision2();
-            abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,2));
-        }
-
-        private void btnAddNewRev3_Click(object sender, EventArgs e)
-        {
-            reiniciarResaltado();
-            validarRevision3();
-            abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,3));
-        }
-
-        private void btnAddNewRev4_Click(object sender, EventArgs e)
-        {
-            reiniciarResaltado();
-            validarRevision4();
-            abrirFormEnPanel(new FrmRevisionIndividual(this.idperfil,4));
-        }
-
-
-
-
-
+          
 
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -268,5 +228,93 @@ namespace CapaPresentacion
         }
         #endregion
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRevisiones_Click(object sender, EventArgs e)
+        {
+            int num = Convert.ToInt32(txtNumeroRevisiones.Text);
+            pnlSubMenus.Visible = true;
+            ShowRevisiones(num);
+        }
+
+       
+
+        public void ShowRevisiones(int num)
+        {
+            
+            switch (num)
+            {
+                case 1:
+
+                    pnlContainerRevisiones.Visible = false;
+                    HiddenRevision();
+                    pnlAdd2.Visible = true;
+                    pnlContainerPrimera.Visible = true;
+                    break;
+                case 2:
+
+                    pnlContainerRevisiones.Visible = false;
+                    HiddenRevision();
+                    pnlAdd3.Visible = true;
+                    pnlContainerSegunda.Visible = true;
+                    pnlContainerPrimera.Visible = true;
+                    break;
+                case 3:
+
+                    pnlContainerRevisiones.Visible = false;
+                    HiddenRevision();
+                    pnlAdd4.Visible = true;
+                    pnlContainerTercera.Visible = true;
+                    pnlContainerSegunda.Visible = true;
+                    pnlContainerPrimera.Visible = true;
+                    break;
+                case 4:
+
+                    pnlContainerRevisiones.Visible = false;
+                    HiddenRevision();
+                    pnlContainerCuarta.Visible = true;
+                    pnlContainerTercera.Visible = true;
+                    pnlContainerSegunda.Visible = true;
+                    pnlContainerPrimera.Visible = true;
+
+                    break;
+                case 0:
+                    HiddenRevision();
+                    pnlAdd1.Visible = true;
+                    pnlContainerRevisiones.Visible = false;
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        
+
+        private void btnAddNewRev1_Click(object sender, EventArgs e)
+        {
+
+            ShowRevisiones(1);
+
+        }
+
+        private void btnAddNewRev2_Click(object sender, EventArgs e)
+        {
+
+            ShowRevisiones(2);
+
+        }
+
+        private void btnAddNewRev3_Click_1(object sender, EventArgs e)
+        {
+            ShowRevisiones(3);
+
+        }
+        private void btnAddNewRev4_Click(object sender, EventArgs e)
+        {
+            ShowRevisiones(4);
+        }
     }
 }
