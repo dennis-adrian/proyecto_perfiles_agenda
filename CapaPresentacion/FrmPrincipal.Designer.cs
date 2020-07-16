@@ -76,6 +76,9 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
+            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
@@ -90,6 +93,7 @@
             this.pnlFrmHijo.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -706,6 +710,7 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
+            this.pnlFrmHijo.Controls.Add(this.panel4);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
@@ -1184,6 +1189,74 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Controls.Add(this.btnGraduacionExcelencia);
+            this.panel4.Controls.Add(this.btnExamendeGrado);
+            this.panel4.Location = new System.Drawing.Point(2, 99);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(275, 59);
+            this.panel4.TabIndex = 18;
+            this.panel4.Visible = false;
+            // 
+            // btnGraduacionExcelencia
+            // 
+            this.btnGraduacionExcelencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGraduacionExcelencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraduacionExcelencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGraduacionExcelencia.FlatAppearance.BorderSize = 0;
+            this.btnGraduacionExcelencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraduacionExcelencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGraduacionExcelencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraduacionExcelencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGraduacionExcelencia.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGraduacionExcelencia.IconColor = System.Drawing.Color.White;
+            this.btnGraduacionExcelencia.IconSize = 10;
+            this.btnGraduacionExcelencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.Location = new System.Drawing.Point(0, 31);
+            this.btnGraduacionExcelencia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGraduacionExcelencia.Name = "btnGraduacionExcelencia";
+            this.btnGraduacionExcelencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGraduacionExcelencia.Rotation = 0D;
+            this.btnGraduacionExcelencia.Size = new System.Drawing.Size(275, 31);
+            this.btnGraduacionExcelencia.TabIndex = 8;
+            this.btnGraduacionExcelencia.Text = "Graduacion por Excelencia";
+            this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
+            // 
+            // btnExamendeGrado
+            // 
+            this.btnExamendeGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExamendeGrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExamendeGrado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExamendeGrado.FlatAppearance.BorderSize = 0;
+            this.btnExamendeGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamendeGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnExamendeGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExamendeGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExamendeGrado.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnExamendeGrado.IconColor = System.Drawing.Color.White;
+            this.btnExamendeGrado.IconSize = 10;
+            this.btnExamendeGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.Location = new System.Drawing.Point(0, 0);
+            this.btnExamendeGrado.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExamendeGrado.Name = "btnExamendeGrado";
+            this.btnExamendeGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnExamendeGrado.Rotation = 0D;
+            this.btnExamendeGrado.Size = new System.Drawing.Size(275, 31);
+            this.btnExamendeGrado.TabIndex = 7;
+            this.btnExamendeGrado.Text = "Examen de Grado";
+            this.btnExamendeGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExamendeGrado.UseVisualStyleBackColor = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1216,6 +1289,7 @@
             this.pnlFrmHijo.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1269,6 +1343,9 @@
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
         private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
+        private System.Windows.Forms.Panel panel4;
+        private FontAwesome.Sharp.IconButton btnGraduacionExcelencia;
+        private FontAwesome.Sharp.IconButton btnExamendeGrado;
     }
 }
 

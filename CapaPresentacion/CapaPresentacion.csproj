@@ -101,12 +101,6 @@
     <Compile Include="FrmNuevaDefensaExterna.Designer.cs">
       <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTesis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTesis.Designer.cs">
-      <DependentUpon>FrmTesis.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\ComboBoxItem.cs" />
     <Compile Include="Revisiones\FrmRevisionIndividual.cs">
       <SubType>Form</SubType>
@@ -160,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevaDefensaExterna.resx">
       <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTesis.resx">
-      <DependentUpon>FrmTesis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Revisiones\FrmRevisionIndividual.resx">
       <DependentUpon>FrmRevisionIndividual.cs</DependentUpon>
