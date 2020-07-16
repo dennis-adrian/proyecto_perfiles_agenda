@@ -1,24 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class Carrera : Conexion
+    public class Carrera : Conexion, IMetodos
     {
+
         public Carrera()
         {
             id = 0;
             nombre = "";
             id_facultad = 0;
+
+            
           
         }
         #region Atributos 
         private int id;
         private string nombre;
         private int id_facultad;
+
+        private static string TableName = "carrera";
 
 
         #endregion
@@ -29,6 +36,40 @@ namespace CapaDatos.Models
 
         #endregion
         #region Metodos 
+        public void Insert()
+        {
+            string sql = " INSERT INTO "+TableName+" (nombre, id_facultad ) VALUES(@parametro0,@parametro1); ";
+            Object[] Parametros = new Object[] { Nombre, Id_facultad };
+            QueryBuilder(sql, Parametros);
+                                          
+        }
+        public void Delete(int id)
+        {
+            string sql = " DELETE FROM " + TableName + "  WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public void Update(int id)
+        {
+            string sql = " UPDATE " + TableName + "  SET nombre = @parametro0 , id_facultad = @parametro1 WHERE id = @parametro2 ; ";
+            Object[] Parametros = new Object[] {Nombre,Id_facultad, id };
+            QueryBuilder(sql, Parametros);
+
+        }
+        public DataTable Select()
+        {
+            string sql = " SELECT * FROM "+TableName+" ; ";
+            return SelectConexion(sql);
+        }
+        public int LastId()
+        {
+
+          
+            return LastIdConexion(TableName);
+        }
+
+
 
         #endregion
     }

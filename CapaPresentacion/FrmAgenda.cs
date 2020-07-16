@@ -7,29 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
+using CapaNegocio;
+using CapaDatos.View;
 
 namespace CapaPresentacion
 {//comentario
 
     public partial class FrmAgenda : Form
     {
-        Conexion obj = new Conexion();
-        public FrmAgenda()
+        NegocioDefensaExterna obj = new NegocioDefensaExterna();
+
+        string carrera = null;
+       
+        public FrmAgenda(string criterio)
         {
             InitializeComponent();
-            cargarTodo();
+            Inicializador(criterio);
+            carrera = criterio;
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
 
         }
-        public void cargarTodo()
+        public void Inicializador(string criterio)
         {
-            string sql = " select * from facultad";
+            if(criterio == null)
+            {
+                var list = obj.Defensas();
 
-           // dtgAgenda.DataSource = obj.mostrarDatos(sql);
+                var bindingList = new BindingList<ViewDefensas>(list);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
+
+            }
+            else
+            {
+                var list2 = obj.DefensasCarrera(criterio);
+
+                var bindingList = new BindingList<ViewDefensasCarrera>(list2);
+                var source = new BindingSource(bindingList, null);
+                dtgDefensaExterna.DataSource = source;
+            }
+
+           
+
+        }
+
+        private void btnBuscarDefensa_Click(object sender, EventArgs e)
+        {
 
         }
     }

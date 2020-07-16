@@ -60,13 +60,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="NegocioDefensaExterna.cs" />
+    <Compile Include="NegocioLicenciados.cs" />
+    <Compile Include="NegocioNuevaDefensa.cs" />
+    <Compile Include="NegocioNuevoPerfil.cs" />
+    <Compile Include="NegocioPerfiles.cs" />
+    <Compile Include="NegocioPerfilGeneral.cs" />
+    <Compile Include="NegocioNuevaRevision.cs" />
+    <Compile Include="NegocioRevisiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\DataTypes.cs" />
+    <Compile Include="ValidationInputUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{9cff7f83-ec45-437d-bdb7-079cfe5f81d7}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

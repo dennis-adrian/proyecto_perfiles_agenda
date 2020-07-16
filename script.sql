@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS "facultad" (
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "carrera" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT UNIQUE,
@@ -12,26 +13,34 @@ CREATE TABLE IF NOT EXISTS "carrera" (
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_facultad_carrera FOREIGN KEY ("id_facultad") REFERENCES "facultad"("id")
 );
+
 CREATE TABLE IF NOT EXISTS "institucion" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "carrera_licenciado" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+<<<<<<< HEAD:script.sql
 -- nombre modificado y se quito el campo "tipo"
 CREATE TABLE IF NOT EXISTS "funcion_licenciado"(
+=======
+
+CREATE TABLE IF NOT EXISTS "tipo_licenciado"(
+>>>>>>> 11c98ee4a2e2f51610b478d918ed0ef651f9b5c9:scriptv2.sql
     "id" INTEGER PRIMARY KEY,
     "funcion_licenciado" TEXT COMMENT 'tutor, tribunal interno 1 o 2, presidente, secretario, representante del ministrerio de educacion, representante uagrm 1 o 2',
     "descripcion" TEXT,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS "licenciado" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
@@ -50,6 +59,10 @@ CREATE TABLE IF NOT EXISTS "licenciado" (
     CONSTRAINT fk_institucion_licenciado FOREIGN KEY("id_institucion_representada") REFERENCES "institucion"("id"),
     CONSTRAINT fk_carrera_licenciado FOREIGN KEY("id_carrera_licenciado") REFERENCES "carrera_licenciado"("id")
 );
+<<<<<<< HEAD:script.sql
+=======
+
+>>>>>>> 11c98ee4a2e2f51610b478d918ed0ef651f9b5c9:scriptv2.sql
 CREATE TABLE IF NOT EXISTS "estudiante" (
     "id" INTEGER PRIMARY KEY,
     "registro" TEXT NOT NULL,
@@ -77,8 +90,13 @@ CREATE TABLE IF NOT EXISTS "perfil_tesis" (
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_tutor_perfiltesis FOREIGN KEY("id_licenciado") REFERENCES "licenciado"("id"),
+<<<<<<< HEAD:script.sql
     FOREIGN key ("id_funcion_licenciado") REFERENCES "funcion_licenciado"("id"),
     FOREIGN key ("id_estudiante") REFERENCES "estudiante" ("id")
+=======
+    FOREIGN key ("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id"),
+    FOREIGN key ("id_estudiante")REFERENCES "estudiante" ("id")
+>>>>>>> 11c98ee4a2e2f51610b478d918ed0ef651f9b5c9:scriptv2.sql
 );
 CREATE TABLE IF NOT EXISTS "revision" (
     "id" INTEGER PRIMARY KEY,
@@ -108,8 +126,14 @@ CREATE TABLE IF NOT EXISTS "detalle_revision" (
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_revision_revisionlicenciado FOREIGN KEY("id_revision") REFERENCES "revision"("id"),
     CONSTRAINT fk_licenciado_revisionlicenciado FOREIGN KEY("id_licenciado") REFERENCES "licenciado"("id"),
+<<<<<<< HEAD:script.sql
     FOREIGN key ("id_funcion_licenciado") REFERENCES "funcion_licenciado"("id")
 );
+=======
+    FOREIGN key ("id_tipo_licenciado") REFERENCES "tipo_licenciado"("id")
+);
+
+>>>>>>> 11c98ee4a2e2f51610b478d918ed0ef651f9b5c9:scriptv2.sql
 CREATE TABLE IF NOT EXISTS "tipo_titulacion_otros"(
     "id" INTEGER PRIMARY KEY,
     "tipo" TEXT COMMENT 'examen de grado, graduación por excelencia',
@@ -151,6 +175,8 @@ CREATE TABLE IF NOT EXISTS "detalle_defensa" (
     FOREIGN KEY("id_funcion_licenciado") REFERENCES "funcion_licenciado"("id"),
     FOREIGN KEY("id_defensa_externa") REFERENCES "defensa_externa"("id")
 );
+-- Activar las llaves foráneas
+PRAGMA foreign_keys = ON -- INSERTS
 INSERT INTO facultad (nombre)
 VALUES ('Ciencias Empresariales');
 INSERT INTO facultad (nombre)
