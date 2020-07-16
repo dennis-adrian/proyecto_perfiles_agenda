@@ -393,10 +393,10 @@
             // pnlNuevoPerfil
             // 
             this.pnlNuevoPerfil.Controls.Add(this.btnNuevoPerfil);
-            this.pnlNuevoPerfil.Location = new System.Drawing.Point(33, 15);
+            this.pnlNuevoPerfil.Location = new System.Drawing.Point(0, 15);
             this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
-            this.pnlNuevoPerfil.Size = new System.Drawing.Size(160, 40);
+            this.pnlNuevoPerfil.Size = new System.Drawing.Size(258, 40);
             this.pnlNuevoPerfil.TabIndex = 2;
             // 
             // btnNuevoPerfil
@@ -420,7 +420,7 @@
             this.btnNuevoPerfil.Name = "btnNuevoPerfil";
             this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(4);
             this.btnNuevoPerfil.Rotation = 0D;
-            this.btnNuevoPerfil.Size = new System.Drawing.Size(160, 40);
+            this.btnNuevoPerfil.Size = new System.Drawing.Size(258, 40);
             this.btnNuevoPerfil.TabIndex = 1;
             this.btnNuevoPerfil.Text = "Nuevo Perfil";
             this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -430,10 +430,10 @@
             // pnlNuevaDefensa
             // 
             this.pnlNuevaDefensa.Controls.Add(this.btnNuevaDefensa);
-            this.pnlNuevaDefensa.Location = new System.Drawing.Point(32, 64);
+            this.pnlNuevaDefensa.Location = new System.Drawing.Point(0, 64);
             this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
             this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
-            this.pnlNuevaDefensa.Size = new System.Drawing.Size(160, 40);
+            this.pnlNuevaDefensa.Size = new System.Drawing.Size(258, 40);
             this.pnlNuevaDefensa.TabIndex = 3;
             // 
             // btnNuevaDefensa
@@ -457,7 +457,7 @@
             this.btnNuevaDefensa.Name = "btnNuevaDefensa";
             this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(4);
             this.btnNuevaDefensa.Rotation = 0D;
-            this.btnNuevaDefensa.Size = new System.Drawing.Size(160, 40);
+            this.btnNuevaDefensa.Size = new System.Drawing.Size(258, 40);
             this.btnNuevaDefensa.TabIndex = 1;
             this.btnNuevaDefensa.Text = "Nueva Defensa";
             this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -727,7 +727,7 @@
             this.paneldefensa.BackColor = System.Drawing.Color.Gray;
             this.paneldefensa.Controls.Add(this.btnGraduacionExcelencia);
             this.paneldefensa.Controls.Add(this.btnExamendeGrado);
-            this.paneldefensa.Location = new System.Drawing.Point(1, 118);
+            this.paneldefensa.Location = new System.Drawing.Point(0, 107);
             this.paneldefensa.Margin = new System.Windows.Forms.Padding(0);
             this.paneldefensa.Name = "paneldefensa";
             this.paneldefensa.Size = new System.Drawing.Size(275, 59);
