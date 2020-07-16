@@ -82,15 +82,15 @@ namespace CapaNegocio
                 type.Texto2 = Convert.ToString(Collection[1]);
                 licenciado.Apellido = type.Texto2;
 
-                type.Texto2 = Convert.ToString(Collection[2]);
-                licenciado.Descripcion = type.Texto2;
+                string des = Convert.ToString(Collection[2]);
+                licenciado.Descripcion = (des == "") ? "" : des;
 
 
                 type.Email = Convert.ToString(Collection[3]);
                 licenciado.Email = type.Email;
 
-                type.Telefono = Convert.ToString(Collection[4]);
-                licenciado.Telefono = type.Telefono;
+                string tel = Convert.ToString(Collection[4]);
+                licenciado.Telefono = (tel == "") ? "" : tel;
 
                 type.Celular = Convert.ToString(Collection[5]);
                 licenciado.Celular = type.Celular;
@@ -139,15 +139,16 @@ namespace CapaNegocio
                 type.Texto2 = Convert.ToString(Collection[1]);
                 licenciado.Apellido = type.Texto2;
 
-                type.Texto2 = Convert.ToString(Collection[2]);
-                licenciado.Descripcion = type.Texto2;
+
+                string des = Convert.ToString(Collection[2]);
+                licenciado.Descripcion = (des == "") ? "" : des;
 
 
                 type.Email = Convert.ToString(Collection[3]);
                 licenciado.Email = type.Email;
 
-                type.Telefono = Convert.ToString(Collection[4]);
-                licenciado.Telefono = type.Telefono;
+                string tel = Convert.ToString(Collection[4]);
+                licenciado.Telefono = (tel == "") ? "" : tel;
 
                 type.Celular = Convert.ToString(Collection[5]);
                 licenciado.Celular = type.Celular;

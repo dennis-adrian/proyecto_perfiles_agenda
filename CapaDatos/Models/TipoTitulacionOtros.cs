@@ -30,7 +30,7 @@ namespace CapaDatos.Models
         #endregion
         #region Metodos 
         
-             private static string TableName = "tipo_licenciado";
+             private static string TableName = "tipo_titulacion_otros";
         public void Insert()
         {
             string sql = "  INSERT INTO " + TableName + " (  tipo,descripcion  ) VALUES ( @parametro0,@parametro1); ";

@@ -39,7 +39,7 @@ namespace CapaDatos.Models
            private static string TableName = "funcion_licenciado";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (   funcion,descripcion  ) VALUES ( @parametro0,@paramtros1); ";
+            string sql = "  INSERT INTO " + TableName + " (   funcion,descripcion  ) VALUES ( @parametro0,@paramtro1); ";
             Object[] Parametros = new Object[] { Funcion,Descripcion };
             QueryBuilder(sql, Parametros);
 
