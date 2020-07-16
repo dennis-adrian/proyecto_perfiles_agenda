@@ -41,7 +41,7 @@ namespace CapaDatos.Models
              private static string TableName = "titulacion_otros";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0); ";
+            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3); ";
             Object[] Parametros = new Object[] { Estado_defensa,Calificacion,Id_estudiante,id_tipo_titulacion };
             QueryBuilder(sql, Parametros);
 
