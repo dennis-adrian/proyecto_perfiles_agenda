@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmTesis
+    partial class FrmTesisAgenda
     {
         /// <summary>
         /// Required designer variable.
@@ -384,7 +384,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // FrmTesis
+            // FrmTesisAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -422,7 +422,7 @@
             this.Controls.Add(this.txtNombreGral);
             this.Controls.Add(this.txtRegistroGral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmTesis";
+            this.Name = "FrmTesisAgenda";
             this.Text = "FrmTesis";
             this.ResumeLayout(false);
             this.PerformLayout();
