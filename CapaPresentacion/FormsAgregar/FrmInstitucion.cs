@@ -14,6 +14,20 @@ namespace CapaPresentacion.FormsAgregar
 {
     public partial class FrmInstitucion : Form
     {
+
+        private const int CS_DROPSHADOW = 0x20000;
+        //SOMBRA FORMULARIO
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
         #region Constructor
 
         public FrmInstitucion()

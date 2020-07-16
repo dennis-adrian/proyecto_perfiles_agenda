@@ -181,7 +181,6 @@ namespace CapaPresentacion
                     rbTribunal2.Checked = false;
                     ClearForms();
                     MessageBox.Show("Datos guardados correctamente");
-
                 }
                 else
                 {
@@ -192,9 +191,6 @@ namespace CapaPresentacion
                     ClearForms();
                     MessageBox.Show("Datos actualizados correctamente");
                 }
-               
-
-
             }
             catch (Exception ex)
             {

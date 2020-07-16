@@ -101,11 +101,11 @@
     <Compile Include="FrmNuevaDefensaExterna.Designer.cs">
       <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTesis.cs">
+    <Compile Include="FrmTesisAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTesis.Designer.cs">
-      <DependentUpon>FrmTesis.cs</DependentUpon>
+    <Compile Include="FrmTesisAgenda.Designer.cs">
+      <DependentUpon>FrmTesisAgenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\ComboBoxItem.cs" />
     <Compile Include="Revisiones\FrmRevisionIndividual.cs">
@@ -161,8 +161,8 @@
     <EmbeddedResource Include="FrmNuevaDefensaExterna.resx">
       <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTesis.resx">
-      <DependentUpon>FrmTesis.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTesisAgenda.resx">
+      <DependentUpon>FrmTesisAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Revisiones\FrmRevisionIndividual.resx">
       <DependentUpon>FrmRevisionIndividual.cs</DependentUpon>

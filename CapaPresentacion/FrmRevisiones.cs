@@ -18,6 +18,7 @@ namespace CapaPresentacion
         int cantRevisiones = 0;
         int idperfil;
         Panel pnlContenedorGralBackup;
+        private const int CS_DROPSHADOW = 0x20000;
 
         #region Instancias
 
@@ -43,6 +44,17 @@ namespace CapaPresentacion
         }
         #endregion
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
         public void HiddenRevision()
         {
             if(pnlContainerPrimera.Visible == true)

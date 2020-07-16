@@ -16,6 +16,21 @@ namespace CapaPresentacion
 {
     public partial class FrmTutor : Form
     {
+
+        private const int CS_DROPSHADOW = 0x20000;
+        //SOMBRA FORMULARIO
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
+
         #region Constructor
         public FrmTutor()
         {
@@ -314,6 +329,11 @@ namespace CapaPresentacion
         #endregion
 
         private void dtgLicenciados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmTutor_Load(object sender, EventArgs e)
         {
 
         }

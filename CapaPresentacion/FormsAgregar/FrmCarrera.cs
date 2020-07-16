@@ -15,6 +15,21 @@ namespace CapaPresentacion.FormsAgregar
 {
     public partial class FrmCarrera : Form
     {
+
+        private const int CS_DROPSHADOW = 0x20000;
+        //SOMBRA FORMULARIO
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
+
         #region Constructor
 
         public FrmCarrera()
@@ -87,5 +102,10 @@ namespace CapaPresentacion.FormsAgregar
 
 
         #endregion
+
+        private void FrmCarrera_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
