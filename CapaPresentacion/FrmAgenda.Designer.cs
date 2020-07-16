@@ -38,6 +38,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
             this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
+            this.btnEditarRevisiones = new System.Windows.Forms.Button();
             this.pnlBuscar.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDefensaExterna)).BeginInit();
@@ -46,6 +47,7 @@
             // pnlBuscar
             // 
             this.pnlBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlBuscar.Controls.Add(this.btnEditarRevisiones);
             this.pnlBuscar.Controls.Add(this.btnBuscarDefensa);
             this.pnlBuscar.Controls.Add(this.txtBuscarDefensa);
             this.pnlBuscar.Controls.Add(this.label14);
@@ -154,6 +156,23 @@
             this.dtgDefensaExterna.Size = new System.Drawing.Size(810, 432);
             this.dtgDefensaExterna.TabIndex = 0;
             // 
+            // btnEditarRevisiones
+            // 
+            this.btnEditarRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEditarRevisiones.FlatAppearance.BorderSize = 0;
+            this.btnEditarRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEditarRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarRevisiones.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarRevisiones.Location = new System.Drawing.Point(11, 8);
+            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarRevisiones.Name = "btnEditarRevisiones";
+            this.btnEditarRevisiones.Size = new System.Drawing.Size(180, 27);
+            this.btnEditarRevisiones.TabIndex = 27;
+            this.btnEditarRevisiones.Text = "Editar Revisiones";
+            this.btnEditarRevisiones.UseVisualStyleBackColor = false;
+            this.btnEditarRevisiones.Click += new System.EventHandler(this.btnEditarRevisiones_Click);
+            // 
             // FrmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,5 +202,6 @@
         private System.Windows.Forms.Panel pnlDataGrid;
         private System.Windows.Forms.DataGridView dtgDefensaExterna;
         private System.Windows.Forms.Button btnBuscarDefensa;
+        private System.Windows.Forms.Button btnEditarRevisiones;
     }
 }
