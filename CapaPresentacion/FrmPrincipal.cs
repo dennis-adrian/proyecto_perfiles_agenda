@@ -276,21 +276,20 @@ namespace CapaPresentacion
 
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-           
-            
-            HiddenNuevoperfil();
-            ShowNuevaDefensa();
-            Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
+            ShowCarreras(btnNuevaDefensa, paneldefensa);
 
-            if (frmNuevaDefensaExterna != null)
-            {
-                frmNuevaDefensaExterna.BringToFront();
-                return;
-            }
+       
+           //Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
 
-            lblTitulo.Text = "NUEVA DEFENSA";
-            frmNuevaDefensaExterna = new FrmNuevaDefensaExterna();
-            abrirFrmHijo(frmNuevaDefensaExterna);
+           // if (frmNuevaDefensaExterna != null)
+           // {
+           //     frmNuevaDefensaExterna.BringToFront();
+           //     return;
+           // }
+
+           // lblTitulo.Text = "NUEVA DEFENSA";
+           // frmNuevaDefensaExterna = new FrmNuevaDefensaExterna();
+           // abrirFrmHijo(frmNuevaDefensaExterna);
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)
@@ -781,5 +780,9 @@ namespace CapaPresentacion
 
         #endregion
 
+        private void btnExamendeGrado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
