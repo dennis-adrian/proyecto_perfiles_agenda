@@ -181,10 +181,6 @@ namespace CapaPresentacion
                     rbTribunal2.Checked = false;
                     ClearForms();
                     MessageBox.Show("Datos guardados correctamente");
-<<<<<<< HEAD
-
-=======
->>>>>>> alf
                 }
                 else
                 {
