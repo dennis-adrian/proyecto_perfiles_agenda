@@ -59,9 +59,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.paneldefensa = new System.Windows.Forms.Panel();
-            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
-            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
             this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
@@ -91,7 +88,6 @@
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
-            this.paneldefensa.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
             this.SuspendLayout();
@@ -393,10 +389,10 @@
             // pnlNuevoPerfil
             // 
             this.pnlNuevoPerfil.Controls.Add(this.btnNuevoPerfil);
-            this.pnlNuevoPerfil.Location = new System.Drawing.Point(0, 15);
+            this.pnlNuevoPerfil.Location = new System.Drawing.Point(33, 15);
             this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
-            this.pnlNuevoPerfil.Size = new System.Drawing.Size(258, 40);
+            this.pnlNuevoPerfil.Size = new System.Drawing.Size(160, 40);
             this.pnlNuevoPerfil.TabIndex = 2;
             // 
             // btnNuevoPerfil
@@ -420,7 +416,7 @@
             this.btnNuevoPerfil.Name = "btnNuevoPerfil";
             this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(4);
             this.btnNuevoPerfil.Rotation = 0D;
-            this.btnNuevoPerfil.Size = new System.Drawing.Size(258, 40);
+            this.btnNuevoPerfil.Size = new System.Drawing.Size(160, 40);
             this.btnNuevoPerfil.TabIndex = 1;
             this.btnNuevoPerfil.Text = "Nuevo Perfil";
             this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -430,10 +426,10 @@
             // pnlNuevaDefensa
             // 
             this.pnlNuevaDefensa.Controls.Add(this.btnNuevaDefensa);
-            this.pnlNuevaDefensa.Location = new System.Drawing.Point(0, 64);
+            this.pnlNuevaDefensa.Location = new System.Drawing.Point(32, 64);
             this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
             this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
-            this.pnlNuevaDefensa.Size = new System.Drawing.Size(258, 40);
+            this.pnlNuevaDefensa.Size = new System.Drawing.Size(160, 40);
             this.pnlNuevaDefensa.TabIndex = 3;
             // 
             // btnNuevaDefensa
@@ -457,7 +453,7 @@
             this.btnNuevaDefensa.Name = "btnNuevaDefensa";
             this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(4);
             this.btnNuevaDefensa.Rotation = 0D;
-            this.btnNuevaDefensa.Size = new System.Drawing.Size(258, 40);
+            this.btnNuevaDefensa.Size = new System.Drawing.Size(160, 40);
             this.btnNuevaDefensa.TabIndex = 1;
             this.btnNuevaDefensa.Text = "Nueva Defensa";
             this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -710,7 +706,6 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
-            this.pnlFrmHijo.Controls.Add(this.paneldefensa);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
@@ -730,7 +725,7 @@
             this.paneldefensa.Location = new System.Drawing.Point(0, 107);
             this.paneldefensa.Margin = new System.Windows.Forms.Padding(0);
             this.paneldefensa.Name = "paneldefensa";
-            this.paneldefensa.Size = new System.Drawing.Size(275, 63);
+            this.paneldefensa.Size = new System.Drawing.Size(275, 59);
             this.paneldefensa.TabIndex = 18;
             this.paneldefensa.Visible = false;
             // 
@@ -1288,7 +1283,6 @@
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
-            this.paneldefensa.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1344,9 +1338,6 @@
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
         private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
-        private System.Windows.Forms.Panel paneldefensa;
-        private FontAwesome.Sharp.IconButton btnGraduacionExcelencia;
-        private FontAwesome.Sharp.IconButton btnExamendeGrado;
     }
 }
 
