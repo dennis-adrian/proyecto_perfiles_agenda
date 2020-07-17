@@ -761,6 +761,7 @@
             this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGraduacionExcelencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
+            this.btnGraduacionExcelencia.Click += new System.EventHandler(this.btnGraduacionExcelencia_Click);
             // 
             // btnExamendeGrado
             // 

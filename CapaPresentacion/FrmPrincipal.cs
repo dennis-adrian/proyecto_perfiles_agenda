@@ -22,6 +22,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CustomizeDesing();
+            personalizarDefensa();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -184,6 +185,8 @@ namespace CapaPresentacion
 
         public void CustomizeDesing()
         {
+            paneldefensa.Visible = false;
+            FirstButtonDesactive(btnNuevaDefensa);
             pnlSubMenuPerfiles.Visible = false;
             FirstButtonDesactive(btnPerfiles);
             pnlSubMenuDefensa.Visible = false;
@@ -273,40 +276,52 @@ namespace CapaPresentacion
             frmNuevoPerfil = new FrmNuevoPerfil();
             abrirFrmHijo(frmNuevoPerfil);
         }
+        #region BOTON NUEVA DEFENSA
+        private void personalizarDefensa()
+        {
+            paneldefensa.Visible = false;
+        }
+        public void hiddeDefensa()
+        {
+            if (paneldefensa.Visible == true)
+                paneldefensa.Visible = false;
+        }
+        public void ShowSubDefensa(Panel subDefensa)
+        {
+            if (subDefensa.Visible == false)
+            {
+                hiddeDefensa();
+                subDefensa.Visible = true;
+            }
+            else
+                subDefensa.Visible = false;
+        }
+        #endregion
 
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            ShowCarreras(btnNuevaDefensa, paneldefensa);
-
-       
-           //Form frmNuevaDefensaExterna = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevaDefensaExterna);
-
-           // if (frmNuevaDefensaExterna != null)
-           // {
-           //     frmNuevaDefensaExterna.BringToFront();
-           //     return;
-           // }
-
-           // lblTitulo.Text = "NUEVA DEFENSA";
-           // frmNuevaDefensaExterna = new FrmNuevaDefensaExterna();
-           // abrirFrmHijo(frmNuevaDefensaExterna);
+            ShowMenus(btnNuevaDefensa, paneldefensa);
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
+            hiddeDefensa();
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmPerfiles(criterio));
             lblTitulo.Text = "Todos los Perfiles";
             ShowMenus(btnPerfiles, pnlSubMenuPerfiles);
+           
         }
         private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
+            hiddeDefensa();
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmAgenda(criterio));
             lblTitulo.Text = "Todos las Defensas";
             ShowMenus(btnDefensaExterna, pnlSubMenuDefensa);
+          
 
         }
 
@@ -782,7 +797,16 @@ namespace CapaPresentacion
 
         private void btnExamendeGrado_Click(object sender, EventArgs e)
         {
+            //....
+            //...
+            hiddeDefensa();
+        }
 
+        private void btnGraduacionExcelencia_Click(object sender, EventArgs e)
+        {
+            //....
+            //...
+            hiddeDefensa();
         }
     }
 }
