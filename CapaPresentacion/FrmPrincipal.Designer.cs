@@ -46,7 +46,7 @@
             this.pnlNuevaDefensa = new System.Windows.Forms.Panel();
             this.btnNuevaDefensa = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.btnImagenUtepsa = new System.Windows.Forms.PictureBox();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.btnMinimizar = new FontAwesome.Sharp.IconButton();
@@ -86,7 +86,7 @@
             this.pnlNuevoPerfil.SuspendLayout();
             this.pnlNuevaDefensa.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -466,7 +466,7 @@
             // 
             // pnlLogo
             // 
-            this.pnlLogo.Controls.Add(this.btnHome);
+            this.pnlLogo.Controls.Add(this.btnImagenUtepsa);
             this.pnlLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
@@ -475,17 +475,17 @@
             this.pnlLogo.Size = new System.Drawing.Size(258, 128);
             this.pnlLogo.TabIndex = 0;
             // 
-            // btnHome
+            // btnImagenUtepsa
             // 
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(32, 11);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(184, 97);
-            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnHome.TabIndex = 0;
-            this.btnHome.TabStop = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnImagenUtepsa.Image = ((System.Drawing.Image)(resources.GetObject("btnImagenUtepsa.Image")));
+            this.btnImagenUtepsa.Location = new System.Drawing.Point(32, 11);
+            this.btnImagenUtepsa.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnImagenUtepsa.Name = "btnImagenUtepsa";
+            this.btnImagenUtepsa.Size = new System.Drawing.Size(184, 97);
+            this.btnImagenUtepsa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnImagenUtepsa.TabIndex = 0;
+            this.btnImagenUtepsa.TabStop = false;
+            this.btnImagenUtepsa.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pnlBarraTitulo
             // 
@@ -1284,7 +1284,7 @@
             this.pnlNuevoPerfil.ResumeLayout(false);
             this.pnlNuevaDefensa.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1303,7 +1303,7 @@
         private System.Windows.Forms.Panel pnlNuevoPerfil;
         private FontAwesome.Sharp.IconButton btnNuevoPerfil;
         private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.PictureBox btnImagenUtepsa;
         private FontAwesome.Sharp.IconButton btnPerfiles;
         private FontAwesome.Sharp.IconButton btnEmpresarialesPefiles;
         private FontAwesome.Sharp.IconButton btnJuridicasPerfiles;
