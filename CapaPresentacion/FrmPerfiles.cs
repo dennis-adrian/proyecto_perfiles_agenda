@@ -74,10 +74,17 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
-            int cantidadRevisiones = 1;
-            FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones,id_seleccionado);
-            frm.Show();
+            if (dtgPerfilesTesis.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
+                int cantidadRevisiones = 1;
+                FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
         }
 
         private void txtBuscarPerfil_TextChanged(object sender, EventArgs e)
