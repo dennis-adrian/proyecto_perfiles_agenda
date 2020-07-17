@@ -19,6 +19,22 @@ namespace CapaPresentacion
         int idperfil;
         Panel pnlContenedorGralBackup;
 
+        //SOMBREADO DE BORDES FORMULARIOS
+        private const int CS_DROPSHADOW = 0x20000;
+
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
+
         #region Instancias
 
         NegocioPerfilGeneral obj = new NegocioPerfilGeneral();
@@ -315,6 +331,11 @@ namespace CapaPresentacion
         private void btnAddNewRev4_Click(object sender, EventArgs e)
         {
             ShowRevisiones(4);
+        }
+
+        private void pnlContenedorGral_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
