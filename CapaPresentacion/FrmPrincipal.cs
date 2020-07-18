@@ -797,6 +797,9 @@ namespace CapaPresentacion
 
         private void btnExamendeGrado_Click(object sender, EventArgs e)
         {
+            string msg = btnExamendeGrado.Text;
+            lblTitulo.Text = msg;
+            MessageBox.Show(msg);
             //....
             //...
             hiddeDefensa();

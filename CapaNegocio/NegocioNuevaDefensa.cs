@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos.Models;
+
+
 
 namespace CapaNegocio
 {
@@ -15,8 +18,12 @@ namespace CapaNegocio
 
         #endregion
 
-        
+
         #region Instancias
+
+        Estudiante estudiante = new Estudiante();
+        DefensaExterna defensaExterna = new DefensaExterna();
+        DetalleDefensa detalleDefensa = new DetalleDefensa();
 
 
         #endregion
