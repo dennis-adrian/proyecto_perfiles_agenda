@@ -22,7 +22,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CustomizeDesing();
-            personalizarDefensa();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -136,6 +135,14 @@ namespace CapaPresentacion
                 pnlSubMenuDefensa.Visible = false;
                 FirstButtonDesactive(btnDefensaExterna);
             }
+            if (pnlSubMenuNuevaDefensa.Visible == true)
+            {
+
+                pnlSubMenuNuevaDefensa.Visible = false;
+                FirstButtonDesactive(btnNuevaDefensa);
+            }
+
+
 
 
         }
@@ -153,6 +160,8 @@ namespace CapaPresentacion
         public void HiddenNuevaDefensa()
         {
             FirstButtonDesactive(btnNuevaDefensa);
+            if (pnlSubMenuNuevaDefensa.Visible == true)
+                pnlSubMenuNuevaDefensa.Visible = false;
 
         }
         public void ShowNuevaDefensa()
@@ -166,6 +175,7 @@ namespace CapaPresentacion
         {
             if (Submenu.Visible == false)
             {
+
                 HiddenNuevoperfil();
                 HiddenNuevaDefensa();
                 HidenCarreras();
@@ -185,7 +195,9 @@ namespace CapaPresentacion
 
         public void CustomizeDesing()
         {
-            paneldefensa.Visible = false;
+           
+            
+            pnlSubMenuNuevaDefensa.Visible = false;
             FirstButtonDesactive(btnNuevaDefensa);
             pnlSubMenuPerfiles.Visible = false;
             FirstButtonDesactive(btnPerfiles);
@@ -276,36 +288,18 @@ namespace CapaPresentacion
             frmNuevoPerfil = new FrmNuevoPerfil();
             abrirFrmHijo(frmNuevoPerfil);
         }
-        #region BOTON NUEVA DEFENSA
-        private void personalizarDefensa()
-        {
-            paneldefensa.Visible = false;
-        }
-        public void hiddeDefensa()
-        {
-            if (paneldefensa.Visible == true)
-                paneldefensa.Visible = false;
-        }
-        public void ShowSubDefensa(Panel subDefensa)
-        {
-            if (subDefensa.Visible == false)
-            {
-                hiddeDefensa();
-                subDefensa.Visible = true;
-            }
-            else
-                subDefensa.Visible = false;
-        }
-        #endregion
-
+       
+        
+        
+       
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            ShowMenus(btnNuevaDefensa, paneldefensa);
+            ShowMenus(btnNuevaDefensa, pnlSubMenuNuevaDefensa);
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            hiddeDefensa();
+           
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmPerfiles(criterio));
@@ -315,7 +309,7 @@ namespace CapaPresentacion
         }
         private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
-            hiddeDefensa();
+           
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmAgenda(criterio));
@@ -797,19 +791,24 @@ namespace CapaPresentacion
 
         private void btnExamendeGrado_Click(object sender, EventArgs e)
         {
-            string msg = btnExamendeGrado.Text;
-            lblTitulo.Text = msg;
-            MessageBox.Show(msg);
+
+            lblTitulo.Text = btnExamendeGrado.Text;
+            abrirFrmHijo(new FrmNuevaDefensaExterna());
+
+            //MessageBox.Show(msg);
             //....
             //...
-            hiddeDefensa();
+            
         }
 
         private void btnGraduacionExcelencia_Click(object sender, EventArgs e)
         {
+
+            lblTitulo.Text = btnGraduacionExcelencia.Text;
+            abrirFrmHijo(new FrmNuevaDefensaExterna());
             //....
             //...
-            hiddeDefensa();
+            
         }
     }
 }

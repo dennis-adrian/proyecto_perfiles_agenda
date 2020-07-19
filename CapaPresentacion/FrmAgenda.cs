@@ -61,9 +61,7 @@ namespace CapaPresentacion
 
         private void btnEditarRevisiones_Click(object sender, EventArgs e)
         {
-            //int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
-            int cantidadRevisiones = 1;
-            //FrmNuevaDefensaExterna frm = new FrmNuevaDefensaExterna(cantidadRevisiones, id_seleccionado);
+
             FrmNuevaDefensaExterna frm = new FrmNuevaDefensaExterna();
             frm.Show();
         }
