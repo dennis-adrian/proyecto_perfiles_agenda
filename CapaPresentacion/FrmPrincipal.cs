@@ -256,11 +256,13 @@ namespace CapaPresentacion
             {
                 Submenu.Visible = false;
                 SecondButtonDesactive(iconbtn);
-
             }
 
 
         }
+
+        
+        
 
         #endregion
 
@@ -791,23 +793,28 @@ namespace CapaPresentacion
 
         private void btnExamendeGrado_Click(object sender, EventArgs e)
         {
-
+           
+           
+            SecondButtonDesactive(btnGraduacionExcelencia);
             lblTitulo.Text = btnExamendeGrado.Text;
+            HidenCarreras();
             abrirFrmHijo(new FrmNuevaDefensaExterna());
+            SecondButtonActive(btnExamendeGrado);
+           
 
-            //MessageBox.Show(msg);
-            //....
-            //...
-            
+
+
         }
 
         private void btnGraduacionExcelencia_Click(object sender, EventArgs e)
         {
 
+            SecondButtonDesactive(btnExamendeGrado);
             lblTitulo.Text = btnGraduacionExcelencia.Text;
+            HidenCarreras();
             abrirFrmHijo(new FrmNuevaDefensaExterna());
-            //....
-            //...
+            SecondButtonActive(btnGraduacionExcelencia);
+         
             
         }
     }
