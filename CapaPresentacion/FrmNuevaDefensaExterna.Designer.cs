@@ -76,7 +76,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtFechaDefensa = new System.Windows.Forms.DateTimePicker();
             this.dtHora = new System.Windows.Forms.DateTimePicker();
-            this.lbpresidente = new System.Windows.Forms.Label();
             this.pnlNuevaDefensa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +83,6 @@
             // 
             this.pnlNuevaDefensa.BackColor = System.Drawing.Color.Silver;
             this.pnlNuevaDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNuevaDefensa.Controls.Add(this.lbpresidente);
             this.pnlNuevaDefensa.Controls.Add(this.label8);
             this.pnlNuevaDefensa.Controls.Add(this.txtTema);
             this.pnlNuevaDefensa.Controls.Add(this.label19);
@@ -141,9 +139,10 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(144, 113);
+            this.label8.Location = new System.Drawing.Point(78, 118);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 36);
@@ -152,8 +151,9 @@
             // 
             // txtTema
             // 
+            this.txtTema.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTema.Location = new System.Drawing.Point(263, 121);
+            this.txtTema.Location = new System.Drawing.Point(231, 121);
             this.txtTema.Margin = new System.Windows.Forms.Padding(6);
             this.txtTema.Name = "txtTema";
             this.txtTema.Size = new System.Drawing.Size(761, 41);
@@ -161,6 +161,7 @@
             // 
             // label19
             // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(96, 29);
@@ -172,9 +173,10 @@
             // 
             // cmbCarrera
             // 
+            this.cmbCarrera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarrera.FormattingEnabled = true;
-            this.cmbCarrera.Location = new System.Drawing.Point(1211, 282);
+            this.cmbCarrera.Location = new System.Drawing.Point(1211, 287);
             this.cmbCarrera.Margin = new System.Windows.Forms.Padding(6);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(436, 44);
@@ -182,9 +184,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1063, 282);
+            this.label4.Location = new System.Drawing.Point(1063, 287);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 36);
@@ -193,8 +196,9 @@
             // 
             // txtCelularAlum
             // 
+            this.txtCelularAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelularAlum.Location = new System.Drawing.Point(1211, 227);
+            this.txtCelularAlum.Location = new System.Drawing.Point(1211, 232);
             this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(436, 41);
@@ -202,8 +206,9 @@
             // 
             // txtTelefonoAlum
             // 
+            this.txtTelefonoAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoAlum.Location = new System.Drawing.Point(1211, 170);
+            this.txtTelefonoAlum.Location = new System.Drawing.Point(1211, 175);
             this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(436, 41);
@@ -211,9 +216,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1047, 173);
+            this.label5.Location = new System.Drawing.Point(1047, 178);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 36);
@@ -222,9 +228,10 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1063, 230);
+            this.label14.Location = new System.Drawing.Point(1063, 235);
             this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(125, 36);
@@ -233,8 +240,9 @@
             // 
             // txtEmailAlum
             // 
+            this.txtEmailAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmailAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailAlum.Location = new System.Drawing.Point(263, 290);
+            this.txtEmailAlum.Location = new System.Drawing.Point(231, 290);
             this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmailAlum.Name = "txtEmailAlum";
             this.txtEmailAlum.Size = new System.Drawing.Size(761, 41);
@@ -242,9 +250,10 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(149, 290);
+            this.label15.Location = new System.Drawing.Point(78, 287);
             this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 36);
@@ -253,8 +262,9 @@
             // 
             // txtApellidoAlum
             // 
+            this.txtApellidoAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellidoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoAlum.Location = new System.Drawing.Point(263, 231);
+            this.txtApellidoAlum.Location = new System.Drawing.Point(231, 231);
             this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtApellidoAlum.Name = "txtApellidoAlum";
             this.txtApellidoAlum.Size = new System.Drawing.Size(761, 41);
@@ -262,9 +272,10 @@
             // 
             // label16
             // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(110, 231);
+            this.label16.Location = new System.Drawing.Point(78, 235);
             this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(141, 36);
@@ -273,8 +284,9 @@
             // 
             // txtNombreAlum
             // 
+            this.txtNombreAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreAlum.Location = new System.Drawing.Point(263, 176);
+            this.txtNombreAlum.Location = new System.Drawing.Point(231, 176);
             this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombreAlum.Name = "txtNombreAlum";
             this.txtNombreAlum.Size = new System.Drawing.Size(761, 41);
@@ -282,9 +294,10 @@
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(116, 173);
+            this.label17.Location = new System.Drawing.Point(78, 178);
             this.label17.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(135, 36);
@@ -293,8 +306,9 @@
             // 
             // txtRegistroAlum
             // 
+            this.txtRegistroAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRegistroAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistroAlum.Location = new System.Drawing.Point(1211, 113);
+            this.txtRegistroAlum.Location = new System.Drawing.Point(1211, 118);
             this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(6);
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(436, 41);
@@ -302,9 +316,10 @@
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1047, 118);
+            this.label18.Location = new System.Drawing.Point(1047, 123);
             this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(144, 36);
@@ -314,7 +329,7 @@
             // btnElegirTribunal2
             // 
             this.btnElegirTribunal2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirTribunal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirTribunal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirTribunal2.FlatAppearance.BorderSize = 0;
             this.btnElegirTribunal2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,7 +346,7 @@
             // btnElegirRepresentanteUagrm1
             // 
             this.btnElegirRepresentanteUagrm1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteUagrm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteUagrm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteUagrm1.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteUagrm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteUagrm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,7 +363,7 @@
             // btnElegirRepresentanteUagrm2
             // 
             this.btnElegirRepresentanteUagrm2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteUagrm2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteUagrm2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteUagrm2.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteUagrm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,7 +380,7 @@
             // btnElegirTribunal1
             // 
             this.btnElegirTribunal1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirTribunal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirTribunal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirTribunal1.FlatAppearance.BorderSize = 0;
             this.btnElegirTribunal1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,7 +397,7 @@
             // btnElegirRepresentanteMinisterio
             // 
             this.btnElegirRepresentanteMinisterio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteMinisterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteMinisterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteMinisterio.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteMinisterio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteMinisterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -399,7 +414,7 @@
             // btnElegirSecretario
             // 
             this.btnElegirSecretario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirSecretario.FlatAppearance.BorderSize = 0;
             this.btnElegirSecretario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -416,7 +431,7 @@
             // btnElegirPresidente
             // 
             this.btnElegirPresidente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirPresidente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirPresidente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirPresidente.FlatAppearance.BorderSize = 0;
             this.btnElegirPresidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -727,17 +742,6 @@
             this.dtHora.Size = new System.Drawing.Size(212, 40);
             this.dtHora.TabIndex = 18;
             // 
-            // lbpresidente
-            // 
-            this.lbpresidente.AutoSize = true;
-            this.lbpresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbpresidente.Location = new System.Drawing.Point(480, 381);
-            this.lbpresidente.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbpresidente.Name = "lbpresidente";
-            this.lbpresidente.Size = new System.Drawing.Size(41, 36);
-            this.lbpresidente.TabIndex = 106;
-            this.lbpresidente.Text = "id";
-            // 
             // FrmNuevaDefensaExterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -805,6 +809,5 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTema;
-        private System.Windows.Forms.Label lbpresidente;
     }
 }

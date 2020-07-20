@@ -47,6 +47,7 @@ namespace CapaPresentacion
         private void btnElegirPresidente_Click(object sender, EventArgs e)
         {
             tipolicenciado = 1;
+            FirstButtonActive(btnElegirPresidente);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -54,6 +55,7 @@ namespace CapaPresentacion
         private void btnElegirSecretario_Click(object sender, EventArgs e)
         {
             tipolicenciado = 4;
+            FirstButtonActive(btnElegirSecretario);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -63,6 +65,7 @@ namespace CapaPresentacion
         private void btnElegirTribunal1_Click(object sender, EventArgs e)
         {
             tipolicenciado = 2;
+            FirstButtonActive(btnElegirTribunal1);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -71,6 +74,7 @@ namespace CapaPresentacion
         private void btnElegirTribunal2_Click(object sender, EventArgs e)
         {
             tipolicenciado = 3;
+            FirstButtonActive(btnElegirTribunal2);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -79,6 +83,7 @@ namespace CapaPresentacion
         private void btnElegirRepresentanteMinisterio_Click(object sender, EventArgs e)
         {
             tipolicenciado = 5;
+            FirstButtonActive(btnElegirRepresentanteMinisterio);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -87,6 +92,7 @@ namespace CapaPresentacion
         private void btnElegirRepresentanteUagrm1_Click(object sender, EventArgs e)
         {
             tipolicenciado = 6;
+            FirstButtonActive(btnElegirRepresentanteUagrm1);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -95,6 +101,7 @@ namespace CapaPresentacion
         private void btnElegirRepresentanteUagrm2_Click(object sender, EventArgs e)
         {
             tipolicenciado = 7;
+            FirstButtonActive(btnElegirRepresentanteUagrm2);
             FrmTutor frm = new FrmTutor();
             frm.contrato = this;
             frm.Show();
@@ -185,7 +192,7 @@ namespace CapaPresentacion
             string hora = dtHora.Value.ToString("HH:mm");
             string aula = txtAula.Text;
 
-           
+
 
             int id_presidente = Convert.ToInt32((cmbPresidente.SelectedItem as ComboBoxItem).Value.ToString());
             string f_presidente = "Presidente";
@@ -245,7 +252,7 @@ namespace CapaPresentacion
             obj.ControlInput(datos);
             obj.Main();
         }
-        
+
 
         #endregion
 
@@ -260,7 +267,7 @@ namespace CapaPresentacion
 
         #endregion
 
-        
+
 
         public void Ejecutar(int id, string nombre)
         {
@@ -276,7 +283,7 @@ namespace CapaPresentacion
                         item.Value = id;
                         cmbPresidente.Items.Add(item);
                         cmbPresidente.SelectedIndex = 0;
-                       
+
                         break;
                     case 2:
                         cmbTribunalInterno1.Items.Clear();
@@ -293,7 +300,7 @@ namespace CapaPresentacion
                         cmbTribunalInterno2.SelectedIndex = 0;
 
                         break;
-                    case 4:                        
+                    case 4:
                         cmbSecretario.Items.Clear();
                         item.Text = nombre;
                         item.Value = id;
@@ -323,18 +330,35 @@ namespace CapaPresentacion
                         cmbRepresentanteUagrm2.Items.Add(item);
                         cmbRepresentanteUagrm2.SelectedIndex = 0;
                         break;
-                  
+
                     default:
                         throw new ArgumentException();
 
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show("" + ex);
             }
-            
+
+        }
+
+        public void FirstButtonActive(Button btn)
+        {
+            FirstButtonDesactiveAll();
+            btn.BackColor = Color.FromArgb(178, 8, 55);
+
+        }
+        public void FirstButtonDesactiveAll()
+        {
+            btnElegirPresidente.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirSecretario.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirTribunal1.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirTribunal2.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirRepresentanteMinisterio.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirRepresentanteUagrm1.BackColor = Color.FromArgb(102, 102, 102);
+            btnElegirRepresentanteUagrm2.BackColor = Color.FromArgb(102, 102, 102);
         }
 
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
@@ -342,6 +366,7 @@ namespace CapaPresentacion
             try
             {
                 Insert();
+                ClearForms();
 
             }
             catch(Exception ex)
