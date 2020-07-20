@@ -14,6 +14,7 @@ namespace CapaDatos.Models
         {
             id = 0;
             estado_defensa = "";
+            tema = "";
             calificacion = 0;
             id_estudiante = 0;
             id_tipo_titulacion = 0;
@@ -21,6 +22,7 @@ namespace CapaDatos.Models
         #region Atributos 
         private int id;
         private string estado_defensa;
+        private string tema;
         private double calificacion;
         private int id_estudiante;
         private int id_tipo_titulacion;
@@ -33,16 +35,17 @@ namespace CapaDatos.Models
         public double Calificacion { get => calificacion; set => calificacion = value; }
         public int Id_estudiante { get => id_estudiante; set => id_estudiante = value; }
         public int Id_tipo_titulacion { get => id_tipo_titulacion; set => id_tipo_titulacion = value; }
+        public string Tema { get => tema; set => tema = value; }
 
         #endregion
         #region Metodos 
 
-       
-             private static string TableName = "titulacion_otros";
+
+        private static string TableName = "titulacion_otros";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3); ";
-            Object[] Parametros = new Object[] { Estado_defensa,Calificacion,Id_estudiante,id_tipo_titulacion };
+            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,tema,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4); ";
+            Object[] Parametros = new Object[] { Estado_defensa,Tema,Calificacion,Id_estudiante,id_tipo_titulacion };
             QueryBuilder(sql, Parametros);
 
         }
@@ -55,7 +58,7 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET estado_defensa = @parametro0 ,calificacion=@parametro1,id_estudiante=@parmetro2,id_tipo_titulacion=@parametro3  WHERE id = @parametro4 ; ";
+            string sql = " UPDATE " + TableName + "  SET estado_defensa = @parametro0 , tema = @parametro1 ,calificacion=@parametro2,id_estudiante=@parmetro3,id_tipo_titulacion=@parametro4  WHERE id = @parametro5 ; ";
 
             Object[] Parametros = new Object[] { Estado_defensa, Calificacion, Id_estudiante, id_tipo_titulacion, id };
             QueryBuilder(sql, Parametros);

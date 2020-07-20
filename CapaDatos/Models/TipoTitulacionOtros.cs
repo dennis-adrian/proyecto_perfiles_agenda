@@ -64,7 +64,11 @@ namespace CapaDatos.Models
 
             return LastIdConexion(TableName);
         }
-
+        public int FindIdBySearch(string criterio)
+        {
+            string sql = " SELECT id FROM " + TableName + "  WHERE tipo  LIKE '%" + criterio + "%'   ; ";
+            return FindIdBySearchConexion(sql);
+        }
         #endregion
     }
 }

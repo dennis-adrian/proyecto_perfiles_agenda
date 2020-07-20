@@ -40,10 +40,12 @@
             this.btnTecnologiaPerfiles = new FontAwesome.Sharp.IconButton();
             this.btnEmpresarialesPefiles = new FontAwesome.Sharp.IconButton();
             this.btnPerfiles = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
-            this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
+            this.pnlSubMenuNuevaDefensa = new System.Windows.Forms.Panel();
+            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
+            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
             this.btnNuevaDefensa = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnImagenUtepsa = new System.Windows.Forms.PictureBox();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
@@ -58,9 +60,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.pnlSubMenuNuevaDefensa = new System.Windows.Forms.Panel();
-            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
-            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
             this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
@@ -81,15 +80,14 @@
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
+            this.pnlSubMenuNuevaDefensa.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnlNuevoPerfil.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
-            this.pnlSubMenuNuevaDefensa.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +117,7 @@
             this.pnlSubMenuDefensa.Controls.Add(this.btnTecnologiaAgenda);
             this.pnlSubMenuDefensa.Controls.Add(this.btnEmpresarialesAgenda);
             this.pnlSubMenuDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 975);
+            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 900);
             this.pnlSubMenuDefensa.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSubMenuDefensa.Name = "pnlSubMenuDefensa";
             this.pnlSubMenuDefensa.Size = new System.Drawing.Size(500, 183);
@@ -232,13 +230,13 @@
             this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
             this.btnDefensaExterna.IconSize = 32;
             this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 885);
+            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 820);
             this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.btnDefensaExterna.Name = "btnDefensaExterna";
             this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDefensaExterna.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDefensaExterna.Rotation = 0D;
-            this.btnDefensaExterna.Size = new System.Drawing.Size(500, 90);
+            this.btnDefensaExterna.Size = new System.Drawing.Size(500, 80);
             this.btnDefensaExterna.TabIndex = 17;
             this.btnDefensaExterna.Text = "Defensa Externa";
             this.btnDefensaExterna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,7 +250,7 @@
             this.pnlSubMenuPerfiles.Controls.Add(this.btnTecnologiaPerfiles);
             this.pnlSubMenuPerfiles.Controls.Add(this.btnEmpresarialesPefiles);
             this.pnlSubMenuPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 704);
+            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 639);
             this.pnlSubMenuPerfiles.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSubMenuPerfiles.Name = "pnlSubMenuPerfiles";
             this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(500, 181);
@@ -365,13 +363,13 @@
             this.btnPerfiles.IconColor = System.Drawing.Color.White;
             this.btnPerfiles.IconSize = 32;
             this.btnPerfiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfiles.Location = new System.Drawing.Point(0, 614);
+            this.btnPerfiles.Location = new System.Drawing.Point(0, 559);
             this.btnPerfiles.Margin = new System.Windows.Forms.Padding(4);
             this.btnPerfiles.Name = "btnPerfiles";
             this.btnPerfiles.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPerfiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPerfiles.Rotation = 0D;
-            this.btnPerfiles.Size = new System.Drawing.Size(500, 90);
+            this.btnPerfiles.Size = new System.Drawing.Size(500, 80);
             this.btnPerfiles.TabIndex = 0;
             this.btnPerfiles.Text = "Perfiles";
             this.btnPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,52 +377,78 @@
             this.btnPerfiles.UseVisualStyleBackColor = false;
             this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
-            // panel3
+            // pnlSubMenuNuevaDefensa
             // 
-            this.panel3.Controls.Add(this.pnlNuevoPerfil);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 246);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(500, 158);
-            this.panel3.TabIndex = 4;
+            this.pnlSubMenuNuevaDefensa.BackColor = System.Drawing.Color.Gray;
+            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnExamendeGrado);
+            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnGraduacionExcelencia);
+            this.pnlSubMenuNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuNuevaDefensa.Location = new System.Drawing.Point(0, 439);
+            this.pnlSubMenuNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSubMenuNuevaDefensa.Name = "pnlSubMenuNuevaDefensa";
+            this.pnlSubMenuNuevaDefensa.Size = new System.Drawing.Size(500, 120);
+            this.pnlSubMenuNuevaDefensa.TabIndex = 18;
+            this.pnlSubMenuNuevaDefensa.Visible = false;
             // 
-            // pnlNuevoPerfil
+            // btnExamendeGrado
             // 
-            this.pnlNuevoPerfil.Controls.Add(this.btnNuevoPerfil);
-            this.pnlNuevoPerfil.Location = new System.Drawing.Point(0, 46);
-            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(76, 4, 76, 79);
-            this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
-            this.pnlNuevoPerfil.Size = new System.Drawing.Size(516, 90);
-            this.pnlNuevoPerfil.TabIndex = 2;
+            this.btnExamendeGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExamendeGrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExamendeGrado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExamendeGrado.FlatAppearance.BorderSize = 0;
+            this.btnExamendeGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamendeGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnExamendeGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExamendeGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExamendeGrado.IconChar = FontAwesome.Sharp.IconChar.University;
+            this.btnExamendeGrado.IconColor = System.Drawing.Color.White;
+            this.btnExamendeGrado.IconSize = 32;
+            this.btnExamendeGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.Location = new System.Drawing.Point(0, 60);
+            this.btnExamendeGrado.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExamendeGrado.Name = "btnExamendeGrado";
+            this.btnExamendeGrado.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnExamendeGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnExamendeGrado.Rotation = 0D;
+            this.btnExamendeGrado.Size = new System.Drawing.Size(500, 60);
+            this.btnExamendeGrado.TabIndex = 7;
+            this.btnExamendeGrado.Text = "Examen de Grado";
+            this.btnExamendeGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExamendeGrado.UseVisualStyleBackColor = false;
+            this.btnExamendeGrado.Click += new System.EventHandler(this.btnExamendeGrado_Click);
             // 
-            // btnNuevoPerfil
+            // btnGraduacionExcelencia
             // 
-            this.btnNuevoPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnNuevoPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNuevoPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevoPerfil.FlatAppearance.BorderSize = 0;
-            this.btnNuevoPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevoPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevoPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoPerfil.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnNuevoPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnNuevoPerfil.IconColor = System.Drawing.Color.White;
-            this.btnNuevoPerfil.IconSize = 28;
-            this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
-            this.btnNuevoPerfil.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNuevoPerfil.Name = "btnNuevoPerfil";
-            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(8);
-            this.btnNuevoPerfil.Rotation = 0D;
-            this.btnNuevoPerfil.Size = new System.Drawing.Size(516, 90);
-            this.btnNuevoPerfil.TabIndex = 1;
-            this.btnNuevoPerfil.Text = "Nuevo Perfil";
-            this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoPerfil.UseVisualStyleBackColor = false;
-            this.btnNuevoPerfil.Click += new System.EventHandler(this.btnNuevoPerfil_Click);
+            this.btnGraduacionExcelencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGraduacionExcelencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraduacionExcelencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGraduacionExcelencia.FlatAppearance.BorderSize = 0;
+            this.btnGraduacionExcelencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraduacionExcelencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGraduacionExcelencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraduacionExcelencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGraduacionExcelencia.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.btnGraduacionExcelencia.IconColor = System.Drawing.Color.White;
+            this.btnGraduacionExcelencia.IconSize = 32;
+            this.btnGraduacionExcelencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.Location = new System.Drawing.Point(0, 0);
+            this.btnGraduacionExcelencia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGraduacionExcelencia.Name = "btnGraduacionExcelencia";
+            this.btnGraduacionExcelencia.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnGraduacionExcelencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGraduacionExcelencia.Rotation = 0D;
+            this.btnGraduacionExcelencia.Size = new System.Drawing.Size(500, 60);
+            this.btnGraduacionExcelencia.TabIndex = 8;
+            this.btnGraduacionExcelencia.Text = "Graduacion por Excelencia";
+            this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
+            this.btnGraduacionExcelencia.Click += new System.EventHandler(this.btnGraduacionExcelencia_Click);
             // 
             // btnNuevaDefensa
             // 
@@ -443,18 +467,56 @@
             this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
             this.btnNuevaDefensa.IconSize = 32;
             this.btnNuevaDefensa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 404);
+            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 359);
             this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevaDefensa.Name = "btnNuevaDefensa";
             this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnNuevaDefensa.Rotation = 0D;
-            this.btnNuevaDefensa.Size = new System.Drawing.Size(500, 90);
+            this.btnNuevaDefensa.Size = new System.Drawing.Size(500, 80);
             this.btnNuevaDefensa.TabIndex = 1;
             this.btnNuevaDefensa.Text = "Nueva Defensa";
             this.btnNuevaDefensa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevaDefensa.UseVisualStyleBackColor = false;
             this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnNuevoPerfil);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 246);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(500, 113);
+            this.panel3.TabIndex = 4;
+            // 
+            // btnNuevoPerfil
+            // 
+            this.btnNuevoPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnNuevoPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevoPerfil.FlatAppearance.BorderSize = 0;
+            this.btnNuevoPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoPerfil.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevoPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnNuevoPerfil.IconColor = System.Drawing.Color.White;
+            this.btnNuevoPerfil.IconSize = 28;
+            this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
+            this.btnNuevoPerfil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNuevoPerfil.Name = "btnNuevoPerfil";
+            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(8);
+            this.btnNuevoPerfil.Rotation = 0D;
+            this.btnNuevoPerfil.Size = new System.Drawing.Size(500, 80);
+            this.btnNuevoPerfil.TabIndex = 1;
+            this.btnNuevoPerfil.Text = "Nuevo Perfil";
+            this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoPerfil.UseVisualStyleBackColor = false;
+            this.btnNuevoPerfil.Click += new System.EventHandler(this.btnNuevoPerfil_Click);
             // 
             // pnlLogo
             // 
@@ -712,79 +774,6 @@
             this.pnlFrmHijo.Name = "pnlFrmHijo";
             this.pnlFrmHijo.Size = new System.Drawing.Size(1768, 1115);
             this.pnlFrmHijo.TabIndex = 16;
-            // 
-            // pnlSubMenuNuevaDefensa
-            // 
-            this.pnlSubMenuNuevaDefensa.BackColor = System.Drawing.Color.Gray;
-            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnExamendeGrado);
-            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnGraduacionExcelencia);
-            this.pnlSubMenuNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuNuevaDefensa.Location = new System.Drawing.Point(0, 494);
-            this.pnlSubMenuNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSubMenuNuevaDefensa.Name = "pnlSubMenuNuevaDefensa";
-            this.pnlSubMenuNuevaDefensa.Size = new System.Drawing.Size(500, 120);
-            this.pnlSubMenuNuevaDefensa.TabIndex = 18;
-            this.pnlSubMenuNuevaDefensa.Visible = false;
-            // 
-            // btnGraduacionExcelencia
-            // 
-            this.btnGraduacionExcelencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGraduacionExcelencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGraduacionExcelencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGraduacionExcelencia.FlatAppearance.BorderSize = 0;
-            this.btnGraduacionExcelencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnGraduacionExcelencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnGraduacionExcelencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGraduacionExcelencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGraduacionExcelencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGraduacionExcelencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGraduacionExcelencia.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
-            this.btnGraduacionExcelencia.IconColor = System.Drawing.Color.White;
-            this.btnGraduacionExcelencia.IconSize = 32;
-            this.btnGraduacionExcelencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraduacionExcelencia.Location = new System.Drawing.Point(0, 0);
-            this.btnGraduacionExcelencia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGraduacionExcelencia.Name = "btnGraduacionExcelencia";
-            this.btnGraduacionExcelencia.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnGraduacionExcelencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnGraduacionExcelencia.Rotation = 0D;
-            this.btnGraduacionExcelencia.Size = new System.Drawing.Size(500, 60);
-            this.btnGraduacionExcelencia.TabIndex = 8;
-            this.btnGraduacionExcelencia.Text = "Graduacion por Excelencia";
-            this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraduacionExcelencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
-            this.btnGraduacionExcelencia.Click += new System.EventHandler(this.btnGraduacionExcelencia_Click);
-            // 
-            // btnExamendeGrado
-            // 
-            this.btnExamendeGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnExamendeGrado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExamendeGrado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExamendeGrado.FlatAppearance.BorderSize = 0;
-            this.btnExamendeGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnExamendeGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnExamendeGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamendeGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnExamendeGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExamendeGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExamendeGrado.IconChar = FontAwesome.Sharp.IconChar.University;
-            this.btnExamendeGrado.IconColor = System.Drawing.Color.White;
-            this.btnExamendeGrado.IconSize = 32;
-            this.btnExamendeGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamendeGrado.Location = new System.Drawing.Point(0, 60);
-            this.btnExamendeGrado.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExamendeGrado.Name = "btnExamendeGrado";
-            this.btnExamendeGrado.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnExamendeGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnExamendeGrado.Rotation = 0D;
-            this.btnExamendeGrado.Size = new System.Drawing.Size(500, 60);
-            this.btnExamendeGrado.TabIndex = 7;
-            this.btnExamendeGrado.Text = "Examen de Grado";
-            this.btnExamendeGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamendeGrado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExamendeGrado.UseVisualStyleBackColor = false;
-            this.btnExamendeGrado.Click += new System.EventHandler(this.btnExamendeGrado_Click);
             // 
             // pnlCarrerasEmpresariales
             // 
@@ -1274,15 +1263,14 @@
             this.panel1.ResumeLayout(false);
             this.pnlSubMenuDefensa.ResumeLayout(false);
             this.pnlSubMenuPerfiles.ResumeLayout(false);
+            this.pnlSubMenuNuevaDefensa.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.pnlNuevoPerfil.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
-            this.pnlSubMenuNuevaDefensa.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1293,7 +1281,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlBarraTitulo;
-        private System.Windows.Forms.Panel pnlNuevoPerfil;
         private FontAwesome.Sharp.IconButton btnNuevoPerfil;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.PictureBox btnImagenUtepsa;

@@ -45,9 +45,23 @@ namespace CapaDatos.Models
 
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " ( fecha_presentacion, hora,aula,id_tesis,id_titulacion_otro ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4); ";
-            Object[] Parametros = new Object[] { Fecha_presentacion,Hora,Aula,Id_tesis,Id_titulacion_otro };
-            QueryBuilder(sql, Parametros);
+            if(Id_tesis == 0)
+            {
+                string sql = "  INSERT INTO " + TableName + " ( fecha_presentacion, hora,aula, id_titulacion_otro ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3 ); ";
+                Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_titulacion_otro };
+                QueryBuilder(sql, Parametros);
+            }
+            else if (Id_titulacion_otro == 0)
+            {
+                 string sql = "  INSERT INTO " + TableName + " ( fecha_presentacion, hora,aula,id_tesis ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3 ); ";
+                Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis };
+                QueryBuilder(sql, Parametros);
+            }
+            else
+            {
+
+            }
+
 
         }
         public void Delete(int id)
@@ -59,10 +73,23 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET fecha_presentacion=@parametro0, hora=@parametro1, aula=@parametro2, id_tesis=@parametro3,  id_titulacion_otro=@parametro4 WHERE id = @parametro5 ; ";
+            if (Id_tesis == 0)
+            {
+                string sql = " UPDATE " + TableName + "  SET fecha_presentacion=@parametro0, hora=@parametro1, aula=@parametro2,  id_titulacion_otro=@parametro3 WHERE id = @parametro4 ; ";
 
-            Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis, Id_titulacion_otro, id };
-            QueryBuilder(sql, Parametros);
+                Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_titulacion_otro, id };
+                QueryBuilder(sql, Parametros);
+
+            }
+            else if (Id_titulacion_otro == 0)
+            {
+                string sql = " UPDATE " + TableName + " SET fecha_presentacion=@parametro0, hora=@parametro1, aula=@parametro2, id_tesis=@parametro3 WHERE id = @parametro4 ; ";
+
+                Object[] Parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis, id };
+                QueryBuilder(sql, Parametros);
+            }
+           
+          
 
         }
 

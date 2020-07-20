@@ -160,6 +160,8 @@ namespace CapaPresentacion
         public void HiddenNuevaDefensa()
         {
             FirstButtonDesactive(btnNuevaDefensa);
+            SecondButtonDesactive(btnExamendeGrado);
+            SecondButtonDesactive(btnGraduacionExcelencia);
             if (pnlSubMenuNuevaDefensa.Visible == true)
                 pnlSubMenuNuevaDefensa.Visible = false;
 
