@@ -277,7 +277,7 @@ namespace CapaPresentacion
             
             HiddenNuevaDefensa();
             ShowNuevoPerfil();
-            /////este codigo controla que no se abra dos veces el formulario
+            /*/////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
 
             if (frmNuevoPerfil != null)
@@ -288,9 +288,12 @@ namespace CapaPresentacion
             }
 
             //sino existe la instancia se crea una nueva
-            lblTitulo.Text = "NUEVO PERFIL";
+            
             frmNuevoPerfil = new FrmNuevoPerfil();
-            abrirFrmHijo(frmNuevoPerfil);
+            abrirFrmHijo(frmNuevoPerfil);*/
+
+            lblTitulo.Text = "NUEVO PERFIL";
+            abrirFrmHijo(new FrmNuevaDefensaExterna());
         }
        
         
@@ -298,7 +301,12 @@ namespace CapaPresentacion
        
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            ShowMenus(btnNuevaDefensa, pnlSubMenuNuevaDefensa);
+            
+                ShowMenus(btnNuevaDefensa, pnlSubMenuNuevaDefensa);
+
+           
+           
+            
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)
@@ -803,6 +811,7 @@ namespace CapaPresentacion
             abrirFrmHijo(new FrmNuevaDefensaExterna());
             SecondButtonActive(btnExamendeGrado);
             pnlSubMenuNuevaDefensa.Visible = false;
+
 
 
 
