@@ -107,6 +107,9 @@ namespace CapaNegocio
                 titulacionOtros.Id_estudiante = idestudiante;
 
                 titulacionOtros.Id_tipo_titulacion = tipoTitulacionOtros.FindIdBySearch(Convert.ToString(Collection[8]));
+                titulacionOtros.Insert();
+
+
 
                 type.Fecha =  Convert.ToString(Collection[9]);
                 defensaExterna.Fecha_presentacion = type.Fecha;
@@ -116,7 +119,7 @@ namespace CapaNegocio
                 defensaExterna.Aula = type.Aula;
                 
                 defensaExterna.Id_tesis = 0;
-                defensaExterna.Id_titulacion_otro = idestudiante;
+                defensaExterna.Id_titulacion_otro = titulacionOtros.LastId();
                 defensaExterna.Insert();
 
                 int iddefensa = defensaExterna.LastId();

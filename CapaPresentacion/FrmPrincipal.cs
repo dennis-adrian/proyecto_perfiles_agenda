@@ -808,7 +808,7 @@ namespace CapaPresentacion
             SecondButtonDesactive(btnGraduacionExcelencia);
             lblTitulo.Text = btnExamendeGrado.Text;
             HidenCarreras();
-            abrirFrmHijo(new FrmNuevaDefensaExterna());
+            abrirFrmHijo(new FrmNuevaDefensaExterna(1));
             SecondButtonActive(btnExamendeGrado);
             pnlSubMenuNuevaDefensa.Visible = false;
 
@@ -823,7 +823,7 @@ namespace CapaPresentacion
             SecondButtonDesactive(btnExamendeGrado);
             lblTitulo.Text = btnGraduacionExcelencia.Text;
             HidenCarreras();
-            abrirFrmHijo(new FrmNuevaDefensaExterna());
+            abrirFrmHijo(new FrmNuevaDefensaExterna(2));
             SecondButtonActive(btnGraduacionExcelencia);
             pnlSubMenuNuevaDefensa.Visible = false;
          
