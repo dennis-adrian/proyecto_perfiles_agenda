@@ -802,7 +802,7 @@ namespace CapaPresentacion
             HidenCarreras();
             abrirFrmHijo(new FrmNuevaDefensaExterna());
             SecondButtonActive(btnExamendeGrado);
-           
+            pnlSubMenuNuevaDefensa.Visible = false;
 
 
 
@@ -816,6 +816,7 @@ namespace CapaPresentacion
             HidenCarreras();
             abrirFrmHijo(new FrmNuevaDefensaExterna());
             SecondButtonActive(btnGraduacionExcelencia);
+            pnlSubMenuNuevaDefensa.Visible = false;
          
             
         }

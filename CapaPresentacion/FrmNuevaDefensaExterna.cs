@@ -184,7 +184,7 @@ namespace CapaPresentacion
             string aula = txtAula.Text;
 
             int id_presidente = Convert.ToInt32(cmbPresidente.SelectedValue.ToString());
-            string funcion = "Presidente";
+            string f_presidente = "Presidente";
             int id_secretario = Convert.ToInt32(cmbSecretario.SelectedValue.ToString());
             int tribunal1 = Convert.ToInt32(cmbTribunalInterno1.SelectedValue.ToString());
             int tribunal2 = Convert.ToInt32(cmbTribunalInterno2.SelectedValue.ToString());
@@ -208,14 +208,14 @@ namespace CapaPresentacion
                 aula,//input 11
 
                 id_presidente,//input 12
-                "Presidente",//input 13
+                f_presidente,//input 13
                 id_secretario,//input 14
                 "Secretario",//input 15
                 tribunal1,
                 tribunal2,
                 ministerio,
                 uagrm1,
-                uagrm2
+                uagrm2,
 
            };
         }

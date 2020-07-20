@@ -100,7 +100,6 @@
             this.panel1.Controls.Add(this.btnDefensaExterna);
             this.panel1.Controls.Add(this.pnlSubMenuPerfiles);
             this.panel1.Controls.Add(this.btnPerfiles);
-            this.panel1.Controls.Add(this.pnlSubMenuNuevaDefensa);
             this.panel1.Controls.Add(this.btnNuevaDefensa);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pnlLogo);
@@ -117,7 +116,7 @@
             this.pnlSubMenuDefensa.Controls.Add(this.btnTecnologiaAgenda);
             this.pnlSubMenuDefensa.Controls.Add(this.btnEmpresarialesAgenda);
             this.pnlSubMenuDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 900);
+            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 780);
             this.pnlSubMenuDefensa.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSubMenuDefensa.Name = "pnlSubMenuDefensa";
             this.pnlSubMenuDefensa.Size = new System.Drawing.Size(500, 183);
@@ -230,7 +229,7 @@
             this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
             this.btnDefensaExterna.IconSize = 32;
             this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 820);
+            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 700);
             this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.btnDefensaExterna.Name = "btnDefensaExterna";
             this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -250,7 +249,7 @@
             this.pnlSubMenuPerfiles.Controls.Add(this.btnTecnologiaPerfiles);
             this.pnlSubMenuPerfiles.Controls.Add(this.btnEmpresarialesPefiles);
             this.pnlSubMenuPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 639);
+            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 519);
             this.pnlSubMenuPerfiles.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSubMenuPerfiles.Name = "pnlSubMenuPerfiles";
             this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(500, 181);
@@ -363,7 +362,7 @@
             this.btnPerfiles.IconColor = System.Drawing.Color.White;
             this.btnPerfiles.IconSize = 32;
             this.btnPerfiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfiles.Location = new System.Drawing.Point(0, 559);
+            this.btnPerfiles.Location = new System.Drawing.Point(0, 439);
             this.btnPerfiles.Margin = new System.Windows.Forms.Padding(4);
             this.btnPerfiles.Name = "btnPerfiles";
             this.btnPerfiles.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -382,8 +381,7 @@
             this.pnlSubMenuNuevaDefensa.BackColor = System.Drawing.Color.Gray;
             this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnExamendeGrado);
             this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnGraduacionExcelencia);
-            this.pnlSubMenuNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuNuevaDefensa.Location = new System.Drawing.Point(0, 439);
+            this.pnlSubMenuNuevaDefensa.Location = new System.Drawing.Point(0, 220);
             this.pnlSubMenuNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSubMenuNuevaDefensa.Name = "pnlSubMenuNuevaDefensa";
             this.pnlSubMenuNuevaDefensa.Size = new System.Drawing.Size(500, 120);
@@ -767,6 +765,7 @@
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
+            this.pnlFrmHijo.Controls.Add(this.pnlSubMenuNuevaDefensa);
             this.pnlFrmHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFrmHijo.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.pnlFrmHijo.Location = new System.Drawing.Point(500, 143);
