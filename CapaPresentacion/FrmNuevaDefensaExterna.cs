@@ -23,6 +23,11 @@ namespace CapaPresentacion
             FormsControls();
             this.titulacion = titulacion;
         }
+        public FrmNuevaDefensaExterna()
+        {
+            InitializeComponent();
+            FormsControls();
+        }
         #endregion
 
         #region Atributos
