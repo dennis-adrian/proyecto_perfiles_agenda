@@ -93,11 +93,11 @@ namespace CapaDatos
                 {
                     throw new ArgumentException("datos no afectados");
                 }
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                throw new ArgumentException("Error: "+e);
+                throw new ArgumentException("Error: " + e);
             }
             finally
             {
@@ -143,7 +143,7 @@ namespace CapaDatos
                 cerrarConexion();
                 return items;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new ArgumentException("Error" + e);
             }
@@ -183,7 +183,7 @@ namespace CapaDatos
         public int LastIdConexion(string tabla)
         {
 
-            
+
             string sql = "SELECT * FROM " + tabla + " WHERE ID = (SELECT MAX(ID) FROM " + tabla + ");";
 
             try
@@ -211,8 +211,8 @@ namespace CapaDatos
         }
         public int FindIdBySearchConexion(string sql)
         {
-                                 
-            
+
+
             try
             {
                 int findId = 0;
