@@ -107,7 +107,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 648);
+            this.panel1.Size = new System.Drawing.Size(250, 691);
             this.panel1.TabIndex = 0;
             // 
             // pnlSubMenuDefensa
@@ -770,7 +770,7 @@
             this.pnlFrmHijo.Location = new System.Drawing.Point(250, 74);
             this.pnlFrmHijo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFrmHijo.Name = "pnlFrmHijo";
-            this.pnlFrmHijo.Size = new System.Drawing.Size(915, 574);
+            this.pnlFrmHijo.Size = new System.Drawing.Size(915, 617);
             this.pnlFrmHijo.TabIndex = 16;
             // 
             // pnlCarrerasEmpresariales
@@ -1245,7 +1245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1165, 648);
+            this.ClientSize = new System.Drawing.Size(1165, 691);
             this.ControlBox = false;
             this.Controls.Add(this.pnlFrmHijo);
             this.Controls.Add(this.panel2);
@@ -1254,7 +1254,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(799, 446);
+            this.MinimumSize = new System.Drawing.Size(799, 617);
             this.Name = "FrmPrincipal";
             this.Text = "UTEPSA";
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
