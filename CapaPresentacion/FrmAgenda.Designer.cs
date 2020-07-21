@@ -33,12 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgenda));
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.btnEditarAgenda = new System.Windows.Forms.Button();
             this.btnBuscarDefensa = new System.Windows.Forms.Button();
             this.txtBuscarDefensa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
             this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
-            this.btnEditarRevisiones = new System.Windows.Forms.Button();
             this.pnlBuscar.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDefensaExterna)).BeginInit();
@@ -47,7 +47,7 @@
             // pnlBuscar
             // 
             this.pnlBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlBuscar.Controls.Add(this.btnEditarRevisiones);
+            this.pnlBuscar.Controls.Add(this.btnEditarAgenda);
             this.pnlBuscar.Controls.Add(this.btnBuscarDefensa);
             this.pnlBuscar.Controls.Add(this.txtBuscarDefensa);
             this.pnlBuscar.Controls.Add(this.label14);
@@ -58,6 +58,23 @@
             this.pnlBuscar.Size = new System.Drawing.Size(810, 46);
             this.pnlBuscar.TabIndex = 1;
             // 
+            // btnEditarAgenda
+            // 
+            this.btnEditarAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEditarAgenda.FlatAppearance.BorderSize = 0;
+            this.btnEditarAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEditarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarAgenda.Location = new System.Drawing.Point(11, 8);
+            this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarAgenda.Name = "btnEditarAgenda";
+            this.btnEditarAgenda.Size = new System.Drawing.Size(270, 27);
+            this.btnEditarAgenda.TabIndex = 27;
+            this.btnEditarAgenda.Text = "Editar Información de la Defensa";
+            this.btnEditarAgenda.UseVisualStyleBackColor = false;
+            this.btnEditarAgenda.Click += new System.EventHandler(this.btnEditarAgenda_Click);
+            // 
             // btnBuscarDefensa
             // 
             this.btnBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,7 +84,7 @@
             this.btnBuscarDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarDefensa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarDefensa.Location = new System.Drawing.Point(694, 8);
+            this.btnBuscarDefensa.Location = new System.Drawing.Point(727, 8);
             this.btnBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarDefensa.Name = "btnBuscarDefensa";
             this.btnBuscarDefensa.Size = new System.Drawing.Size(72, 27);
@@ -81,7 +98,7 @@
             this.txtBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDefensa.Location = new System.Drawing.Point(520, 11);
+            this.txtBuscarDefensa.Location = new System.Drawing.Point(553, 11);
             this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarDefensa.Name = "txtBuscarDefensa";
             this.txtBuscarDefensa.Size = new System.Drawing.Size(155, 23);
@@ -93,7 +110,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(356, 13);
+            this.label14.Location = new System.Drawing.Point(389, 13);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(152, 18);
@@ -156,23 +173,6 @@
             this.dtgDefensaExterna.Size = new System.Drawing.Size(810, 432);
             this.dtgDefensaExterna.TabIndex = 0;
             // 
-            // btnEditarRevisiones
-            // 
-            this.btnEditarRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnEditarRevisiones.FlatAppearance.BorderSize = 0;
-            this.btnEditarRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnEditarRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarRevisiones.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarRevisiones.Location = new System.Drawing.Point(11, 8);
-            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditarRevisiones.Name = "btnEditarRevisiones";
-            this.btnEditarRevisiones.Size = new System.Drawing.Size(180, 27);
-            this.btnEditarRevisiones.TabIndex = 27;
-            this.btnEditarRevisiones.Text = "Editar Revisiones";
-            this.btnEditarRevisiones.UseVisualStyleBackColor = false;
-            this.btnEditarRevisiones.Click += new System.EventHandler(this.btnEditarRevisiones_Click);
-            // 
             // FrmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +202,6 @@
         private System.Windows.Forms.Panel pnlDataGrid;
         private System.Windows.Forms.DataGridView dtgDefensaExterna;
         private System.Windows.Forms.Button btnBuscarDefensa;
-        private System.Windows.Forms.Button btnEditarRevisiones;
+        private System.Windows.Forms.Button btnEditarAgenda;
     }
 }

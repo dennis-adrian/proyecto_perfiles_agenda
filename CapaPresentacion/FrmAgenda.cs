@@ -58,10 +58,8 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void btnEditarRevisiones_Click(object sender, EventArgs e)
+        private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
-
             FrmNuevaDefensaExterna frm = new FrmNuevaDefensaExterna();
             frm.Show();
         }
