@@ -293,7 +293,7 @@ namespace CapaPresentacion
             abrirFrmHijo(frmNuevoPerfil);*/
 
             lblTitulo.Text = "NUEVO PERFIL";
-            abrirFrmHijo(new FrmNuevaDefensaExterna());
+            abrirFrmHijo(new FrmNuevoPerfil());
         }
        
         
