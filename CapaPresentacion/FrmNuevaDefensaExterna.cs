@@ -379,5 +379,10 @@ namespace CapaPresentacion
                 MessageBox.Show("" + ex);
             }
         }
+
+        private void pnlNuevaDefensa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -60,8 +60,14 @@ namespace CapaPresentacion
         }
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
-            FrmNuevaDefensaExterna frm = new FrmNuevaDefensaExterna();
+            FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna();
             frm.Show();
+
+        }
+
+        private void dtgDefensaExterna_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

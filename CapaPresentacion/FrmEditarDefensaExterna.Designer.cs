@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmNuevaDefensaExterna
+    partial class FrmEditarDefensaExterna
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevaDefensaExterna));
-            this.pnlNuevaDefensa = new System.Windows.Forms.Panel();
+            this.pnlBarraTitulo = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
             this.btnElegirRepresentanteUagrm1 = new System.Windows.Forms.Button();
@@ -77,25 +80,106 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtRegistroAlum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.pnlNuevaDefensa.SuspendLayout();
+            this.pnlBarraTitulo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlNuevaDefensa
+            // pnlBarraTitulo
             // 
-            this.pnlNuevaDefensa.BackColor = System.Drawing.Color.Silver;
-            this.pnlNuevaDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNuevaDefensa.Controls.Add(this.groupBox2);
-            this.pnlNuevaDefensa.Controls.Add(this.groupBox1);
-            this.pnlNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlNuevaDefensa.Location = new System.Drawing.Point(0, 0);
-            this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
-            this.pnlNuevaDefensa.Size = new System.Drawing.Size(915, 617);
-            this.pnlNuevaDefensa.TabIndex = 0;
-            this.pnlNuevaDefensa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNuevaDefensa_Paint);
+            this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.pnlBarraTitulo.Controls.Add(this.btnRestaurar);
+            this.pnlBarraTitulo.Controls.Add(this.btnMinimizar);
+            this.pnlBarraTitulo.Controls.Add(this.btnMaximizar);
+            this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
+            this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBarraTitulo.Name = "pnlBarraTitulo";
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1090, 29);
+            this.pnlBarraTitulo.TabIndex = 1;
+            this.pnlBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseDown);
+            this.pnlBarraTitulo.Move += new System.EventHandler(this.FrmEditarDefensaExterna_Load);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnRestaurar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.btnRestaurar.IconColor = System.Drawing.Color.Black;
+            this.btnRestaurar.IconSize = 16;
+            this.btnRestaurar.Location = new System.Drawing.Point(1019, 2);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Rotation = 0D;
+            this.btnRestaurar.Size = new System.Drawing.Size(34, 29);
+            this.btnRestaurar.TabIndex = 3;
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Visible = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
+            this.btnMinimizar.IconSize = 16;
+            this.btnMinimizar.Location = new System.Drawing.Point(982, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Rotation = 0D;
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 29);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
+            this.btnMaximizar.IconSize = 16;
+            this.btnMaximizar.Location = new System.Drawing.Point(1019, 2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Rotation = 0D;
+            this.btnMaximizar.Size = new System.Drawing.Size(34, 29);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconSize = 16;
+            this.btnCerrar.Location = new System.Drawing.Point(1056, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Rotation = 0D;
+            this.btnCerrar.Size = new System.Drawing.Size(34, 29);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // groupBox2
             // 
@@ -130,10 +214,10 @@
             this.groupBox2.Controls.Add(this.dtFechaDefensa);
             this.groupBox2.Controls.Add(this.dtHora);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(23, 217);
+            this.groupBox2.Location = new System.Drawing.Point(112, 288);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(866, 365);
-            this.groupBox2.TabIndex = 107;
+            this.groupBox2.TabIndex = 109;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMACIÓN DE LA DEFENSA";
             // 
@@ -152,7 +236,6 @@
             this.btnElegirTribunal2.TabIndex = 60;
             this.btnElegirTribunal2.Text = "Elegir";
             this.btnElegirTribunal2.UseVisualStyleBackColor = false;
-            this.btnElegirTribunal2.Click += new System.EventHandler(this.btnElegirTribunal2_Click);
             // 
             // btnElegirRepresentanteUagrm1
             // 
@@ -169,7 +252,6 @@
             this.btnElegirRepresentanteUagrm1.TabIndex = 59;
             this.btnElegirRepresentanteUagrm1.Text = "Elegir";
             this.btnElegirRepresentanteUagrm1.UseVisualStyleBackColor = false;
-            this.btnElegirRepresentanteUagrm1.Click += new System.EventHandler(this.btnElegirRepresentanteUagrm1_Click);
             // 
             // btnElegirRepresentanteUagrm2
             // 
@@ -186,7 +268,6 @@
             this.btnElegirRepresentanteUagrm2.TabIndex = 57;
             this.btnElegirRepresentanteUagrm2.Text = "Elegir";
             this.btnElegirRepresentanteUagrm2.UseVisualStyleBackColor = false;
-            this.btnElegirRepresentanteUagrm2.Click += new System.EventHandler(this.btnElegirRepresentanteUagrm2_Click);
             // 
             // btnElegirTribunal1
             // 
@@ -203,7 +284,6 @@
             this.btnElegirTribunal1.TabIndex = 56;
             this.btnElegirTribunal1.Text = "Elegir";
             this.btnElegirTribunal1.UseVisualStyleBackColor = false;
-            this.btnElegirTribunal1.Click += new System.EventHandler(this.btnElegirTribunal1_Click);
             // 
             // btnElegirRepresentanteMinisterio
             // 
@@ -220,7 +300,6 @@
             this.btnElegirRepresentanteMinisterio.TabIndex = 55;
             this.btnElegirRepresentanteMinisterio.Text = "Elegir";
             this.btnElegirRepresentanteMinisterio.UseVisualStyleBackColor = false;
-            this.btnElegirRepresentanteMinisterio.Click += new System.EventHandler(this.btnElegirRepresentanteMinisterio_Click);
             // 
             // btnElegirSecretario
             // 
@@ -237,7 +316,6 @@
             this.btnElegirSecretario.TabIndex = 54;
             this.btnElegirSecretario.Text = "Elegir";
             this.btnElegirSecretario.UseVisualStyleBackColor = false;
-            this.btnElegirSecretario.Click += new System.EventHandler(this.btnElegirSecretario_Click);
             // 
             // btnElegirPresidente
             // 
@@ -254,7 +332,6 @@
             this.btnElegirPresidente.TabIndex = 53;
             this.btnElegirPresidente.Text = "Elegir";
             this.btnElegirPresidente.UseVisualStyleBackColor = false;
-            this.btnElegirPresidente.Click += new System.EventHandler(this.btnElegirPresidente_Click);
             // 
             // cmbRepresentanteUagrm2
             // 
@@ -467,7 +544,6 @@
             this.btnCancelarNuevaDefensa.TabIndex = 35;
             this.btnCancelarNuevaDefensa.Text = "Cancelar";
             this.btnCancelarNuevaDefensa.UseVisualStyleBackColor = false;
-            this.btnCancelarNuevaDefensa.Click += new System.EventHandler(this.btnCancelarNuevaD_Click);
             // 
             // btnGuardarNuevaDefensa
             // 
@@ -484,7 +560,6 @@
             this.btnGuardarNuevaDefensa.TabIndex = 34;
             this.btnGuardarNuevaDefensa.Text = "Guardar";
             this.btnGuardarNuevaDefensa.UseVisualStyleBackColor = false;
-            this.btnGuardarNuevaDefensa.Click += new System.EventHandler(this.btnGuardarNuevaDefensa_Click);
             // 
             // label2
             // 
@@ -573,10 +648,10 @@
             this.groupBox1.Controls.Add(this.txtRegistroAlum);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(35, 18);
+            this.groupBox1.Location = new System.Drawing.Point(124, 89);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(832, 185);
-            this.groupBox1.TabIndex = 106;
+            this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ALUMNO";
             // 
@@ -741,19 +816,20 @@
             this.label18.TabIndex = 95;
             this.label18.Text = "Registro:";
             // 
-            // FrmNuevaDefensaExterna
+            // FrmEditarDefensaExterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(915, 617);
-            this.Controls.Add(this.pnlNuevaDefensa);
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(1090, 743);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmNuevaDefensaExterna";
-            this.Text = "FrmNuevaDefensaExterna";
-            this.pnlNuevaDefensa.ResumeLayout(false);
+            this.Name = "FrmEditarDefensaExterna";
+            this.Text = "FrmEditarDefensaExterna";
+            this.Load += new System.EventHandler(this.FrmEditarDefensaExterna_Load);
+            this.pnlBarraTitulo.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -764,36 +840,44 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlNuevaDefensa;
-        private System.Windows.Forms.DateTimePicker dtFechaDefensa;
-        private System.Windows.Forms.DateTimePicker dtHora;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAula;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnCancelarNuevaDefensa;
-        private System.Windows.Forms.Button btnGuardarNuevaDefensa;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnElegirPresidente;
-        private System.Windows.Forms.ComboBox cmbRepresentanteUagrm2;
-        private System.Windows.Forms.ComboBox cmbTribunalInterno1;
-        private System.Windows.Forms.ComboBox cmbTribunalInterno2;
-        private System.Windows.Forms.ComboBox cmbSecretario;
-        private System.Windows.Forms.ComboBox cmbRepresentanteMinisterio;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel pnlBarraTitulo;
+        private FontAwesome.Sharp.IconButton btnRestaurar;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
+        private FontAwesome.Sharp.IconButton btnMaximizar;
+        private FontAwesome.Sharp.IconButton btnCerrar;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnElegirTribunal2;
         private System.Windows.Forms.Button btnElegirRepresentanteUagrm1;
         private System.Windows.Forms.Button btnElegirRepresentanteUagrm2;
         private System.Windows.Forms.Button btnElegirTribunal1;
         private System.Windows.Forms.Button btnElegirRepresentanteMinisterio;
         private System.Windows.Forms.Button btnElegirSecretario;
+        private System.Windows.Forms.Button btnElegirPresidente;
+        private System.Windows.Forms.ComboBox cmbRepresentanteUagrm2;
+        private System.Windows.Forms.ComboBox cmbTribunalInterno1;
+        private System.Windows.Forms.ComboBox cmbTribunalInterno2;
+        private System.Windows.Forms.ComboBox cmbSecretario;
         private System.Windows.Forms.ComboBox cmbPresidente;
         private System.Windows.Forms.ComboBox cmbRepresentanteUagrm1;
+        private System.Windows.Forms.ComboBox cmbRepresentanteMinisterio;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCancelarNuevaDefensa;
+        private System.Windows.Forms.Button btnGuardarNuevaDefensa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtAula;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtFechaDefensa;
+        private System.Windows.Forms.DateTimePicker dtHora;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTema;
         private System.Windows.Forms.ComboBox cmbCarrera;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCelularAlum;
@@ -808,9 +892,5 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtRegistroAlum;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTema;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

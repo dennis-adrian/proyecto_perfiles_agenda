@@ -172,6 +172,7 @@
             this.dtgDefensaExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDefensaExterna.Size = new System.Drawing.Size(810, 432);
             this.dtgDefensaExterna.TabIndex = 0;
+            this.dtgDefensaExterna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDefensaExterna_CellContentClick);
             // 
             // FrmAgenda
             // 

@@ -94,6 +94,12 @@
     <Compile Include="FrmAgenda.Designer.cs">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarDefensaExterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarDefensaExterna.Designer.cs">
+      <DependentUpon>FrmEditarDefensaExterna.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNuevaDefensaExterna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgenda.resx">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarDefensaExterna.resx">
+      <DependentUpon>FrmEditarDefensaExterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevaDefensaExterna.resx">
       <DependentUpon>FrmNuevaDefensaExterna.cs</DependentUpon>
