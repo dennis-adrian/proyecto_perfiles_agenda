@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
-            this.btnRestaurar = new FontAwesome.Sharp.IconButton();
-            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
-            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
@@ -88,78 +85,15 @@
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.pnlBarraTitulo.Controls.Add(this.btnRestaurar);
-            this.pnlBarraTitulo.Controls.Add(this.btnMinimizar);
-            this.pnlBarraTitulo.Controls.Add(this.btnMaximizar);
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1090, 29);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(919, 29);
             this.pnlBarraTitulo.TabIndex = 1;
             this.pnlBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseDown);
             this.pnlBarraTitulo.Move += new System.EventHandler(this.FrmEditarDefensaExterna_Load);
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
-            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnRestaurar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            this.btnRestaurar.IconColor = System.Drawing.Color.Black;
-            this.btnRestaurar.IconSize = 16;
-            this.btnRestaurar.Location = new System.Drawing.Point(1019, 2);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Rotation = 0D;
-            this.btnRestaurar.Size = new System.Drawing.Size(34, 29);
-            this.btnRestaurar.TabIndex = 3;
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Visible = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
-            this.btnMinimizar.IconSize = 16;
-            this.btnMinimizar.Location = new System.Drawing.Point(982, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Rotation = 0D;
-            this.btnMinimizar.Size = new System.Drawing.Size(34, 29);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
-            this.btnMaximizar.IconSize = 16;
-            this.btnMaximizar.Location = new System.Drawing.Point(1019, 2);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Rotation = 0D;
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 29);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
@@ -172,7 +106,7 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(1056, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(885, 2);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
@@ -214,7 +148,7 @@
             this.groupBox2.Controls.Add(this.dtFechaDefensa);
             this.groupBox2.Controls.Add(this.dtHora);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(112, 288);
+            this.groupBox2.Location = new System.Drawing.Point(26, 245);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(866, 365);
             this.groupBox2.TabIndex = 109;
@@ -648,7 +582,7 @@
             this.groupBox1.Controls.Add(this.txtRegistroAlum);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(124, 89);
+            this.groupBox1.Location = new System.Drawing.Point(38, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(832, 185);
             this.groupBox1.TabIndex = 108;
@@ -820,8 +754,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1090, 743);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(919, 631);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlBarraTitulo);
@@ -841,9 +775,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraTitulo;
-        private FontAwesome.Sharp.IconButton btnRestaurar;
-        private FontAwesome.Sharp.IconButton btnMinimizar;
-        private FontAwesome.Sharp.IconButton btnMaximizar;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnElegirTribunal2;

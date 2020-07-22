@@ -51,24 +51,7 @@ namespace CapaPresentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
-          
                 this.Close();
-           
-        }
-
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
-
-            this.WindowState = FormWindowState.Normal;
-            btnRestaurar.Visible = false;
-            btnMaximizar.Visible = true;
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-
-            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
