@@ -47,7 +47,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 45);
+            this.panel2.Size = new System.Drawing.Size(571, 45);
             this.panel2.TabIndex = 34;
             // 
             // lbltitu
@@ -55,11 +55,11 @@
             this.lbltitu.AutoSize = true;
             this.lbltitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitu.ForeColor = System.Drawing.Color.White;
-            this.lbltitu.Location = new System.Drawing.Point(118, 14);
+            this.lbltitu.Location = new System.Drawing.Point(155, 14);
             this.lbltitu.Name = "lbltitu";
-            this.lbltitu.Size = new System.Drawing.Size(124, 18);
+            this.lbltitu.Size = new System.Drawing.Size(275, 18);
             this.lbltitu.TabIndex = 29;
-            this.lbltitu.Text = "Nueva Facultad";
+            this.lbltitu.Text = "Agregar una Facultad para UTEPSA";
             // 
             // pnlBarraTitulo
             // 
@@ -69,7 +69,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(348, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(571, 27);
             this.pnlBarraTitulo.TabIndex = 33;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -83,7 +83,7 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(313, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(536, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
@@ -99,7 +99,7 @@
             this.btnGuardarNewFacu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNewFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNewFacu.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarNewFacu.Location = new System.Drawing.Point(139, 145);
+            this.btnGuardarNewFacu.Location = new System.Drawing.Point(229, 148);
             this.btnGuardarNewFacu.Name = "btnGuardarNewFacu";
             this.btnGuardarNewFacu.Size = new System.Drawing.Size(124, 30);
             this.btnGuardarNewFacu.TabIndex = 37;
@@ -111,7 +111,7 @@
             this.txtNombreFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreFacu.Location = new System.Drawing.Point(110, 103);
             this.txtNombreFacu.Name = "txtNombreFacu";
-            this.txtNombreFacu.Size = new System.Drawing.Size(208, 24);
+            this.txtNombreFacu.Size = new System.Drawing.Size(420, 24);
             this.txtNombreFacu.TabIndex = 36;
             // 
             // label1
@@ -128,8 +128,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(348, 208);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(571, 208);
             this.Controls.Add(this.btnGuardarNewFacu);
             this.Controls.Add(this.txtNombreFacu);
             this.Controls.Add(this.label1);

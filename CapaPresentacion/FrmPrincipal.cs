@@ -869,7 +869,7 @@ namespace CapaPresentacion
         {
             HiddenAgregar();
             FrmTutor frm = new FrmTutor();
-            frm.btnSeleccionarLicenciado.Enabled = false;
+            frm.btnSeleccionarLicenciado.Visible = false;
             frm.ShowDialog();
         }
 
@@ -882,7 +882,7 @@ namespace CapaPresentacion
 
         private void btnNuevaCarreraEx_Click(object sender, EventArgs e)
         {
-            FrmCarrera frm = new FrmCarrera();
+            FrmCarreraInterna frm = new FrmCarreraInterna();
             HiddenAgregar();
            // SecondButtonDesactive(btnExamendeGrado);
             frm.lbltitu.Text = btnNuevaCarreraEx.Text;
@@ -895,7 +895,7 @@ namespace CapaPresentacion
         private void btnNuevaCareraIn_Click(object sender, EventArgs e)
         {
             HiddenAgregar();
-            FrmCarrera frm = new FrmCarrera();
+            FrmCarreraInterna frm = new FrmCarreraInterna();
             HiddenAgregar();
            // SecondButtonDesactive(btnExamendeGrado);
             frm.lbltitu.Text = btnNuevaCareraIn.Text;

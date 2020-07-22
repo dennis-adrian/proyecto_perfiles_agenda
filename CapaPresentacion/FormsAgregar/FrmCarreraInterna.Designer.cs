@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.FormsAgregar
 {
-    partial class FrmCarrera
+    partial class FrmCarreraInterna
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarrera));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarreraInterna));
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.lbltitu = new System.Windows.Forms.Label();
             this.txtNombreCarreraLic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevaCarreraLicenciado = new System.Windows.Forms.Button();
+            this.btnNuevaCarreraInterna = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFacultad = new System.Windows.Forms.ComboBox();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(350, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(545, 27);
             this.pnlBarraTitulo.TabIndex = 28;
             this.pnlBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
@@ -65,7 +65,7 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(315, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(510, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
@@ -79,18 +79,18 @@
             this.lbltitu.AutoSize = true;
             this.lbltitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitu.ForeColor = System.Drawing.Color.White;
-            this.lbltitu.Location = new System.Drawing.Point(82, 10);
+            this.lbltitu.Location = new System.Drawing.Point(183, 12);
             this.lbltitu.Name = "lbltitu";
-            this.lbltitu.Size = new System.Drawing.Size(179, 18);
+            this.lbltitu.Size = new System.Drawing.Size(173, 18);
             this.lbltitu.TabIndex = 29;
-            this.lbltitu.Text = "Nueva Carrera Externa";
+            this.lbltitu.Text = "Nueva Carrera Interna";
             // 
             // txtNombreCarreraLic
             // 
             this.txtNombreCarreraLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCarreraLic.Location = new System.Drawing.Point(108, 124);
             this.txtNombreCarreraLic.Name = "txtNombreCarreraLic";
-            this.txtNombreCarreraLic.Size = new System.Drawing.Size(208, 24);
+            this.txtNombreCarreraLic.Size = new System.Drawing.Size(395, 24);
             this.txtNombreCarreraLic.TabIndex = 30;
             // 
             // label1
@@ -103,20 +103,20 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Nombre :";
             // 
-            // btnNuevaCarreraLicenciado
+            // btnNuevaCarreraInterna
             // 
-            this.btnNuevaCarreraLicenciado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaCarreraLicenciado.FlatAppearance.BorderSize = 0;
-            this.btnNuevaCarreraLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaCarreraLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaCarreraLicenciado.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaCarreraLicenciado.Location = new System.Drawing.Point(137, 166);
-            this.btnNuevaCarreraLicenciado.Name = "btnNuevaCarreraLicenciado";
-            this.btnNuevaCarreraLicenciado.Size = new System.Drawing.Size(124, 30);
-            this.btnNuevaCarreraLicenciado.TabIndex = 31;
-            this.btnNuevaCarreraLicenciado.Text = "Guardar";
-            this.btnNuevaCarreraLicenciado.UseVisualStyleBackColor = false;
-            this.btnNuevaCarreraLicenciado.Click += new System.EventHandler(this.btnNuevaCarreraLicenciado_Click);
+            this.btnNuevaCarreraInterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraInterna.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCarreraInterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCarreraInterna.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCarreraInterna.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaCarreraInterna.Location = new System.Drawing.Point(218, 166);
+            this.btnNuevaCarreraInterna.Name = "btnNuevaCarreraInterna";
+            this.btnNuevaCarreraInterna.Size = new System.Drawing.Size(124, 30);
+            this.btnNuevaCarreraInterna.TabIndex = 31;
+            this.btnNuevaCarreraInterna.Text = "Guardar";
+            this.btnNuevaCarreraInterna.UseVisualStyleBackColor = false;
+            this.btnNuevaCarreraInterna.Click += new System.EventHandler(this.btnNuevaCarreraLicenciado_Click);
             // 
             // panel2
             // 
@@ -126,7 +126,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 45);
+            this.panel2.Size = new System.Drawing.Size(545, 45);
             this.panel2.TabIndex = 32;
             // 
             // label2
@@ -139,34 +139,30 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Facultad :";
             // 
-            // comboBox1
+            // cmbFacultad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "CIENCIAS EMPRESARIALES",
-            "CIENCIAS Y TECNOLOGÍA",
-            "CIENCIAS JURÍDICAS Y SOCIALES"});
-            this.comboBox1.Location = new System.Drawing.Point(108, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(208, 21);
-            this.comboBox1.TabIndex = 33;
+            this.cmbFacultad.FormattingEnabled = true;
+            this.cmbFacultad.Location = new System.Drawing.Point(108, 94);
+            this.cmbFacultad.Name = "cmbFacultad";
+            this.cmbFacultad.Size = new System.Drawing.Size(395, 21);
+            this.cmbFacultad.TabIndex = 33;
             // 
-            // FrmCarrera
+            // FrmCarreraInterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(350, 208);
-            this.Controls.Add(this.comboBox1);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(545, 208);
+            this.Controls.Add(this.cmbFacultad);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnNuevaCarreraLicenciado);
+            this.Controls.Add(this.btnNuevaCarreraInterna);
             this.Controls.Add(this.txtNombreCarreraLic);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmCarrera";
+            this.Name = "FrmCarreraInterna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCarrera";
             this.Load += new System.EventHandler(this.FrmCarrera_Load);
@@ -184,10 +180,10 @@
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.TextBox txtNombreCarreraLic;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNuevaCarreraLicenciado;
+        private System.Windows.Forms.Button btnNuevaCarreraInterna;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lbltitu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFacultad;
     }
 }

@@ -76,11 +76,17 @@
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
     <Compile Include="ContractForms\IContractLicenciado.cs" />
-    <Compile Include="FormsAgregar\FrmCarrera.cs">
+    <Compile Include="FormsAgregar\FrmCarreraExterna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsAgregar\FrmCarrera.Designer.cs">
-      <DependentUpon>FrmCarrera.cs</DependentUpon>
+    <Compile Include="FormsAgregar\FrmCarreraExterna.Designer.cs">
+      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAgregar\FrmCarreraInterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAgregar\FrmCarreraInterna.Designer.cs">
+      <DependentUpon>FrmCarreraInterna.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAgregar\FrmFacultad.cs">
       <SubType>Form</SubType>
@@ -137,11 +143,11 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAgregar\FrmTutor.cs">
+    <Compile Include="FormsAgregar\FrmLicenciado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsAgregar\FrmTutor.Designer.cs">
-      <DependentUpon>FrmTutor.cs</DependentUpon>
+    <Compile Include="FormsAgregar\FrmLicenciado.Designer.cs">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRevisiones.cs">
       <SubType>Form</SubType>
@@ -151,8 +157,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormsAgregar\FrmCarrera.resx">
-      <DependentUpon>FrmCarrera.cs</DependentUpon>
+    <EmbeddedResource Include="FormsAgregar\FrmCarreraExterna.resx">
+      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAgregar\FrmCarreraInterna.resx">
+      <DependentUpon>FrmCarreraInterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAgregar\FrmFacultad.resx">
       <DependentUpon>FrmFacultad.cs</DependentUpon>
@@ -160,8 +169,8 @@
     <EmbeddedResource Include="FormsAgregar\FrmInstitucion.resx">
       <DependentUpon>FrmInstitucion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsAgregar\FrmTutor.resx">
-      <DependentUpon>FrmTutor.cs</DependentUpon>
+    <EmbeddedResource Include="FormsAgregar\FrmLicenciado.resx">
+      <DependentUpon>FrmLicenciado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgenda.resx">
       <DependentUpon>FrmAgenda.cs</DependentUpon>
