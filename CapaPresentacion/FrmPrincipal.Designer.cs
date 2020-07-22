@@ -58,8 +58,14 @@
             this.btnRelInter = new FontAwesome.Sharp.IconButton();
             this.btnDerecho = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregrNew = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
+            this.pnlAgregar = new System.Windows.Forms.Panel();
+            this.btnNuevaCareraIn = new FontAwesome.Sharp.IconButton();
+            this.btnNuevaCarreraEx = new FontAwesome.Sharp.IconButton();
+            this.btnNuevaFacultad = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoLicen = new FontAwesome.Sharp.IconButton();
             this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
@@ -88,6 +94,7 @@
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
+            this.pnlAgregar.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
             this.SuspendLayout();
@@ -737,6 +744,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnAgregrNew);
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(250, 29);
@@ -744,6 +752,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(915, 45);
             this.panel2.TabIndex = 15;
+            // 
+            // btnAgregrNew
+            // 
+            this.btnAgregrNew.FlatAppearance.BorderSize = 0;
+            this.btnAgregrNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAgregrNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnAgregrNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregrNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregrNew.Image")));
+            this.btnAgregrNew.Location = new System.Drawing.Point(14, 5);
+            this.btnAgregrNew.Name = "btnAgregrNew";
+            this.btnAgregrNew.Size = new System.Drawing.Size(38, 36);
+            this.btnAgregrNew.TabIndex = 28;
+            this.btnAgregrNew.UseVisualStyleBackColor = true;
+            this.btnAgregrNew.Click += new System.EventHandler(this.btnAgregrNew_Click);
             // 
             // lblTitulo
             // 
@@ -761,6 +783,7 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
+            this.pnlFrmHijo.Controls.Add(this.pnlAgregar);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
@@ -772,6 +795,134 @@
             this.pnlFrmHijo.Name = "pnlFrmHijo";
             this.pnlFrmHijo.Size = new System.Drawing.Size(915, 617);
             this.pnlFrmHijo.TabIndex = 16;
+            // 
+            // pnlAgregar
+            // 
+            this.pnlAgregar.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlAgregar.Controls.Add(this.btnNuevaCareraIn);
+            this.pnlAgregar.Controls.Add(this.btnNuevaCarreraEx);
+            this.pnlAgregar.Controls.Add(this.btnNuevaFacultad);
+            this.pnlAgregar.Controls.Add(this.btnNuevoLicen);
+            this.pnlAgregar.Location = new System.Drawing.Point(-1, -1);
+            this.pnlAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAgregar.Name = "pnlAgregar";
+            this.pnlAgregar.Size = new System.Drawing.Size(275, 127);
+            this.pnlAgregar.TabIndex = 20;
+            // 
+            // btnNuevaCareraIn
+            // 
+            this.btnNuevaCareraIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaCareraIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaCareraIn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaCareraIn.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCareraIn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCareraIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCareraIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCareraIn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaCareraIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCareraIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaCareraIn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaCareraIn.IconColor = System.Drawing.Color.White;
+            this.btnNuevaCareraIn.IconSize = 10;
+            this.btnNuevaCareraIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCareraIn.Location = new System.Drawing.Point(0, 93);
+            this.btnNuevaCareraIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevaCareraIn.Name = "btnNuevaCareraIn";
+            this.btnNuevaCareraIn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaCareraIn.Rotation = 0D;
+            this.btnNuevaCareraIn.Size = new System.Drawing.Size(275, 31);
+            this.btnNuevaCareraIn.TabIndex = 19;
+            this.btnNuevaCareraIn.Text = "Nueva Carrera Interna";
+            this.btnNuevaCareraIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCareraIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaCareraIn.UseVisualStyleBackColor = false;
+            this.btnNuevaCareraIn.Click += new System.EventHandler(this.btnNuevaCareraIn_Click);
+            // 
+            // btnNuevaCarreraEx
+            // 
+            this.btnNuevaCarreraEx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaCarreraEx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaCarreraEx.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaCarreraEx.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCarreraEx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCarreraEx.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaCarreraEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCarreraEx.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaCarreraEx.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaCarreraEx.IconColor = System.Drawing.Color.White;
+            this.btnNuevaCarreraEx.IconSize = 10;
+            this.btnNuevaCarreraEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCarreraEx.Location = new System.Drawing.Point(0, 62);
+            this.btnNuevaCarreraEx.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevaCarreraEx.Name = "btnNuevaCarreraEx";
+            this.btnNuevaCarreraEx.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaCarreraEx.Rotation = 0D;
+            this.btnNuevaCarreraEx.Size = new System.Drawing.Size(275, 31);
+            this.btnNuevaCarreraEx.TabIndex = 16;
+            this.btnNuevaCarreraEx.Text = "Nueva Carrera Externa";
+            this.btnNuevaCarreraEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaCarreraEx.UseVisualStyleBackColor = false;
+            this.btnNuevaCarreraEx.Click += new System.EventHandler(this.btnNuevaCarreraEx_Click);
+            // 
+            // btnNuevaFacultad
+            // 
+            this.btnNuevaFacultad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaFacultad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaFacultad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaFacultad.FlatAppearance.BorderSize = 0;
+            this.btnNuevaFacultad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaFacultad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaFacultad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaFacultad.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaFacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaFacultad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaFacultad.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaFacultad.IconColor = System.Drawing.Color.White;
+            this.btnNuevaFacultad.IconSize = 10;
+            this.btnNuevaFacultad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaFacultad.Location = new System.Drawing.Point(0, 31);
+            this.btnNuevaFacultad.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevaFacultad.Name = "btnNuevaFacultad";
+            this.btnNuevaFacultad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaFacultad.Rotation = 0D;
+            this.btnNuevaFacultad.Size = new System.Drawing.Size(275, 31);
+            this.btnNuevaFacultad.TabIndex = 18;
+            this.btnNuevaFacultad.Text = "Nueva Faculdad";
+            this.btnNuevaFacultad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaFacultad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaFacultad.UseVisualStyleBackColor = false;
+            this.btnNuevaFacultad.Click += new System.EventHandler(this.btnNuevaFacultad_Click);
+            // 
+            // btnNuevoLicen
+            // 
+            this.btnNuevoLicen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevoLicen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoLicen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoLicen.FlatAppearance.BorderSize = 0;
+            this.btnNuevoLicen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoLicen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoLicen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoLicen.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevoLicen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoLicen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevoLicen.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevoLicen.IconColor = System.Drawing.Color.White;
+            this.btnNuevoLicen.IconSize = 10;
+            this.btnNuevoLicen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoLicen.Location = new System.Drawing.Point(0, 0);
+            this.btnNuevoLicen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoLicen.Name = "btnNuevoLicen";
+            this.btnNuevoLicen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevoLicen.Rotation = 0D;
+            this.btnNuevoLicen.Size = new System.Drawing.Size(275, 31);
+            this.btnNuevoLicen.TabIndex = 17;
+            this.btnNuevoLicen.Text = "Nuevo Licenciado";
+            this.btnNuevoLicen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoLicen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoLicen.UseVisualStyleBackColor = false;
+            this.btnNuevoLicen.Click += new System.EventHandler(this.btnNuevoLicen_Click);
             // 
             // pnlCarrerasEmpresariales
             // 
@@ -1269,6 +1420,7 @@
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
+            this.pnlAgregar.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1325,6 +1477,12 @@
         private System.Windows.Forms.Panel pnlSubMenuNuevaDefensa;
         private FontAwesome.Sharp.IconButton btnGraduacionExcelencia;
         private FontAwesome.Sharp.IconButton btnExamendeGrado;
+        private System.Windows.Forms.Button btnAgregrNew;
+        private System.Windows.Forms.Panel pnlAgregar;
+        private FontAwesome.Sharp.IconButton btnNuevaCareraIn;
+        private FontAwesome.Sharp.IconButton btnNuevaCarreraEx;
+        private FontAwesome.Sharp.IconButton btnNuevaFacultad;
+        private FontAwesome.Sharp.IconButton btnNuevoLicen;
     }
 }
 

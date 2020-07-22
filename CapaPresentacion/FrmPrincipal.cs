@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.FormsAgregar;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -120,8 +121,18 @@ namespace CapaPresentacion
             btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn.TextAlign = ContentAlignment.MiddleLeft;
             btn.ImageAlign = ContentAlignment.MiddleLeft;
-        }        
+        }
 
+        public void showSubMenus(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                HidenMenus();
+                submenu.Visible = true;
+            }
+            else
+                submenu.Visible = false;
+        }
         public void HidenMenus()
         {
             if (pnlSubMenuPerfiles.Visible == true)
@@ -142,11 +153,27 @@ namespace CapaPresentacion
                 FirstButtonDesactive(btnNuevaDefensa);
             }
 
+            if (pnlAgregar.Visible == true)
+            {
 
+                pnlAgregar.Visible = false;
+
+            }
 
 
         }
 
+        public void HiddenAgregar()
+        {
+            //  FirstButtonDesactive(btnAgregrNew);
+            SecondButtonDesactive(btnNuevoLicen);
+            SecondButtonDesactive(btnNuevaFacultad);
+            SecondButtonDesactive(btnNuevaCarreraEx);
+            SecondButtonDesactive(btnNuevaCareraIn);
+            if (pnlAgregar.Visible == true)
+                pnlAgregar.Visible = false;
+
+        }
         public void HiddenNuevoperfil()
         {
             FirstButtonDesactive(btnNuevoPerfil);
@@ -170,6 +197,7 @@ namespace CapaPresentacion
         {
             HidenMenus();
             HidenCarreras();
+            HiddenAgregar();
             FirstButtonActive(btnNuevaDefensa);
         }
 
@@ -180,6 +208,7 @@ namespace CapaPresentacion
 
                 HiddenNuevoperfil();
                 HiddenNuevaDefensa();
+                HiddenAgregar();
                 HidenCarreras();
                 HidenMenus();
                 Submenu.Visible = true;
@@ -197,8 +226,8 @@ namespace CapaPresentacion
 
         public void CustomizeDesing()
         {
-           
-            
+
+            pnlAgregar.Visible = false;
             pnlSubMenuNuevaDefensa.Visible = false;
             FirstButtonDesactive(btnNuevaDefensa);
             pnlSubMenuPerfiles.Visible = false;
@@ -828,6 +857,52 @@ namespace CapaPresentacion
             pnlSubMenuNuevaDefensa.Visible = false;
          
             
+        }
+
+        private void btnAgregrNew_Click(object sender, EventArgs e)
+        {
+            HidenCarreras();
+            showSubMenus(pnlAgregar);
+        }
+
+        private void btnNuevoLicen_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmTutor frm = new FrmTutor();
+            frm.btnSeleccionarLicenciado.Visible = false;
+            frm.ShowDialog();
+        }
+
+        private void btnNuevaFacultad_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmFacultad frmfacu = new FrmFacultad();
+            frmfacu.ShowDialog();
+        }
+
+        private void btnNuevaCarreraEx_Click(object sender, EventArgs e)
+        {
+            FrmCarreraInterna frm = new FrmCarreraInterna();
+            HiddenAgregar();
+           // SecondButtonDesactive(btnExamendeGrado);
+            frm.lbltitu.Text = btnNuevaCarreraEx.Text;
+            HidenCarreras();
+            frm.ShowDialog();
+           // SecondButtonActive(btnGraduacionExcelencia);
+            pnlAgregar.Visible = false;
+        }
+
+        private void btnNuevaCareraIn_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmCarreraInterna frm = new FrmCarreraInterna();
+            HiddenAgregar();
+           // SecondButtonDesactive(btnExamendeGrado);
+            frm.lbltitu.Text = btnNuevaCareraIn.Text;
+            HidenCarreras();
+            frm.ShowDialog();
+            // SecondButtonActive(btnGraduacionExcelencia);
+            pnlAgregar.Visible = false;
         }
     }
 }

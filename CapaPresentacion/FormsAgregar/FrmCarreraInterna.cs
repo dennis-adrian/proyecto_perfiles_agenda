@@ -13,7 +13,7 @@ using CapaNegocio.src;
 
 namespace CapaPresentacion.FormsAgregar
 {
-    public partial class FrmCarrera : Form
+    public partial class FrmCarreraInterna : Form
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -31,14 +31,18 @@ namespace CapaPresentacion.FormsAgregar
         }
         #region Constructor
 
-        public FrmCarrera()
+        public FrmCarreraInterna()
         {
             InitializeComponent();
+            InitialForms();
         }
         #endregion
 
         #region Instancias
         Helpers helper = new Helpers();
+
+        NegocioLicenciados obj = new NegocioLicenciados();
+
         #endregion
 
         #region Atributos
@@ -88,7 +92,21 @@ namespace CapaPresentacion.FormsAgregar
         #endregion
 
         #region Metodos
+        public void InitialForms()
+        {
 
+
+            //cmbTipo.Items.Clear();
+           // ShowCarrerasLicenciado();
+            mostrarFacultades();
+           // cmbTipo.SelectedItem = null;
+           // cmbTipo.Items.Insert(0, "externo");
+           // cmbTipo.Items.Insert(1, "interno");
+            //cmbTipo.SelectedIndex = 0;
+
+
+            //ShowLicenciados();
+        }
         public void Insert()
         {
             string nombre = txtNombreCarreraLic.Text;
@@ -99,10 +117,23 @@ namespace CapaPresentacion.FormsAgregar
 
         }
 
+        public void mostrarFacultades()
+        {
+            cmbFacultad.DataSource = null;
+            cmbFacultad.Items.Clear();
+            cmbFacultad.DataSource = obj.cargarInstitucio();
+            cmbFacultad.ValueMember = "id";
+            cmbFacultad.DisplayMember = "nombre";
 
+        }
         #endregion
 
         private void FrmCarrera_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
         {
 
         }
