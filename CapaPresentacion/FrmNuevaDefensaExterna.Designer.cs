@@ -140,7 +140,7 @@
             // btnElegirTribunal2
             // 
             this.btnElegirTribunal2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirTribunal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirTribunal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirTribunal2.FlatAppearance.BorderSize = 0;
             this.btnElegirTribunal2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +157,7 @@
             // btnElegirRepresentanteUagrm1
             // 
             this.btnElegirRepresentanteUagrm1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteUagrm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteUagrm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteUagrm1.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteUagrm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteUagrm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,7 +174,7 @@
             // btnElegirRepresentanteUagrm2
             // 
             this.btnElegirRepresentanteUagrm2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteUagrm2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteUagrm2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteUagrm2.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteUagrm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,7 +191,7 @@
             // btnElegirTribunal1
             // 
             this.btnElegirTribunal1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirTribunal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirTribunal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirTribunal1.FlatAppearance.BorderSize = 0;
             this.btnElegirTribunal1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,7 +208,7 @@
             // btnElegirRepresentanteMinisterio
             // 
             this.btnElegirRepresentanteMinisterio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirRepresentanteMinisterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirRepresentanteMinisterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirRepresentanteMinisterio.FlatAppearance.BorderSize = 0;
             this.btnElegirRepresentanteMinisterio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteMinisterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,7 +225,7 @@
             // btnElegirSecretario
             // 
             this.btnElegirSecretario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirSecretario.FlatAppearance.BorderSize = 0;
             this.btnElegirSecretario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,7 +242,7 @@
             // btnElegirPresidente
             // 
             this.btnElegirPresidente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnElegirPresidente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirPresidente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnElegirPresidente.FlatAppearance.BorderSize = 0;
             this.btnElegirPresidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
