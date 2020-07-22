@@ -106,5 +106,10 @@ namespace CapaPresentacion.FormsAgregar
         {
 
         }
+
+        private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

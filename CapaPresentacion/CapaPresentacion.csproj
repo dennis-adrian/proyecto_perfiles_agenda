@@ -82,6 +82,12 @@
     <Compile Include="FormsAgregar\FrmCarrera.Designer.cs">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsAgregar\FrmFacultad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAgregar\FrmFacultad.Designer.cs">
+      <DependentUpon>FrmFacultad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsAgregar\FrmInstitucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormsAgregar\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAgregar\FrmFacultad.resx">
+      <DependentUpon>FrmFacultad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAgregar\FrmInstitucion.resx">
       <DependentUpon>FrmInstitucion.cs</DependentUpon>

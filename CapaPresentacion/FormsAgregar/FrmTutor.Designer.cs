@@ -555,7 +555,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSeleccionarLicenciado;
         private System.Windows.Forms.Button btnEditarLicenciado;
         private System.Windows.Forms.Panel pnlBarraTitulo;
         private FontAwesome.Sharp.IconButton btnCerrar;
@@ -590,5 +589,6 @@
         private System.Windows.Forms.Label lbid_licenciado;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ComboBox cmbTipo;
+        public System.Windows.Forms.Button btnSeleccionarLicenciado;
     }
 }
