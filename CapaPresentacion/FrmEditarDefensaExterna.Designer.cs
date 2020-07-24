@@ -195,7 +195,7 @@
             this.btnElegirRepresentanteUagrm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirRepresentanteUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirRepresentanteUagrm2.ForeColor = System.Drawing.Color.White;
-            this.btnElegirRepresentanteUagrm2.Location = new System.Drawing.Point(736, 261);
+            this.btnElegirRepresentanteUagrm2.Location = new System.Drawing.Point(738, 261);
             this.btnElegirRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirRepresentanteUagrm2.Name = "btnElegirRepresentanteUagrm2";
             this.btnElegirRepresentanteUagrm2.Size = new System.Drawing.Size(88, 29);
@@ -211,7 +211,7 @@
             this.btnElegirTribunal1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal1.ForeColor = System.Drawing.Color.White;
-            this.btnElegirTribunal1.Location = new System.Drawing.Point(322, 128);
+            this.btnElegirTribunal1.Location = new System.Drawing.Point(326, 128);
             this.btnElegirTribunal1.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirTribunal1.Name = "btnElegirTribunal1";
             this.btnElegirTribunal1.Size = new System.Drawing.Size(88, 29);
@@ -259,7 +259,7 @@
             this.btnElegirPresidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirPresidente.ForeColor = System.Drawing.Color.White;
-            this.btnElegirPresidente.Location = new System.Drawing.Point(322, 57);
+            this.btnElegirPresidente.Location = new System.Drawing.Point(326, 57);
             this.btnElegirPresidente.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirPresidente.Name = "btnElegirPresidente";
             this.btnElegirPresidente.Size = new System.Drawing.Size(88, 29);
@@ -281,7 +281,7 @@
             this.cmbRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteUagrm2.Name = "cmbRepresentanteUagrm2";
             this.cmbRepresentanteUagrm2.Size = new System.Drawing.Size(280, 25);
-            this.cmbRepresentanteUagrm2.TabIndex = 52;
+            this.cmbRepresentanteUagrm2.TabIndex = 9;
             // 
             // cmbTribunalInterno1
             // 
@@ -297,7 +297,7 @@
             this.cmbTribunalInterno1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTribunalInterno1.Name = "cmbTribunalInterno1";
             this.cmbTribunalInterno1.Size = new System.Drawing.Size(280, 25);
-            this.cmbTribunalInterno1.TabIndex = 50;
+            this.cmbTribunalInterno1.TabIndex = 1;
             // 
             // cmbTribunalInterno2
             // 
@@ -313,7 +313,7 @@
             this.cmbTribunalInterno2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTribunalInterno2.Name = "cmbTribunalInterno2";
             this.cmbTribunalInterno2.Size = new System.Drawing.Size(280, 25);
-            this.cmbTribunalInterno2.TabIndex = 49;
+            this.cmbTribunalInterno2.TabIndex = 2;
             // 
             // cmbSecretario
             // 
@@ -329,7 +329,7 @@
             this.cmbSecretario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSecretario.Name = "cmbSecretario";
             this.cmbSecretario.Size = new System.Drawing.Size(280, 25);
-            this.cmbSecretario.TabIndex = 48;
+            this.cmbSecretario.TabIndex = 6;
             // 
             // cmbPresidente
             // 
@@ -345,7 +345,7 @@
             this.cmbPresidente.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPresidente.Name = "cmbPresidente";
             this.cmbPresidente.Size = new System.Drawing.Size(280, 25);
-            this.cmbPresidente.TabIndex = 47;
+            this.cmbPresidente.TabIndex = 0;
             // 
             // cmbRepresentanteUagrm1
             // 
@@ -361,7 +361,7 @@
             this.cmbRepresentanteUagrm1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteUagrm1.Name = "cmbRepresentanteUagrm1";
             this.cmbRepresentanteUagrm1.Size = new System.Drawing.Size(280, 25);
-            this.cmbRepresentanteUagrm1.TabIndex = 46;
+            this.cmbRepresentanteUagrm1.TabIndex = 8;
             // 
             // cmbRepresentanteMinisterio
             // 
@@ -377,7 +377,7 @@
             this.cmbRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteMinisterio.Name = "cmbRepresentanteMinisterio";
             this.cmbRepresentanteMinisterio.Size = new System.Drawing.Size(280, 25);
-            this.cmbRepresentanteMinisterio.TabIndex = 45;
+            this.cmbRepresentanteMinisterio.TabIndex = 7;
             // 
             // label13
             // 
@@ -475,9 +475,10 @@
             this.btnCancelarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarNuevaDefensa.Name = "btnCancelarNuevaDefensa";
             this.btnCancelarNuevaDefensa.Size = new System.Drawing.Size(111, 38);
-            this.btnCancelarNuevaDefensa.TabIndex = 35;
+            this.btnCancelarNuevaDefensa.TabIndex = 11;
             this.btnCancelarNuevaDefensa.Text = "Cancelar";
             this.btnCancelarNuevaDefensa.UseVisualStyleBackColor = false;
+            this.btnCancelarNuevaDefensa.Click += new System.EventHandler(this.btnCancelarNuevaDefensa_Click);
             // 
             // btnGuardarNuevaDefensa
             // 
@@ -491,7 +492,7 @@
             this.btnGuardarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarNuevaDefensa.Name = "btnGuardarNuevaDefensa";
             this.btnGuardarNuevaDefensa.Size = new System.Drawing.Size(111, 38);
-            this.btnGuardarNuevaDefensa.TabIndex = 34;
+            this.btnGuardarNuevaDefensa.TabIndex = 10;
             this.btnGuardarNuevaDefensa.Text = "Guardar";
             this.btnGuardarNuevaDefensa.UseVisualStyleBackColor = false;
             // 
@@ -514,7 +515,7 @@
             this.txtAula.Margin = new System.Windows.Forms.Padding(2);
             this.txtAula.Name = "txtAula";
             this.txtAula.Size = new System.Drawing.Size(108, 29);
-            this.txtAula.TabIndex = 30;
+            this.txtAula.TabIndex = 5;
             // 
             // label1
             // 
@@ -549,7 +550,7 @@
             this.dtFechaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaDefensa.Name = "dtFechaDefensa";
             this.dtFechaDefensa.Size = new System.Drawing.Size(108, 24);
-            this.dtFechaDefensa.TabIndex = 19;
+            this.dtFechaDefensa.TabIndex = 3;
             // 
             // dtHora
             // 
@@ -559,8 +560,9 @@
             this.dtHora.Location = new System.Drawing.Point(214, 276);
             this.dtHora.Margin = new System.Windows.Forms.Padding(2);
             this.dtHora.Name = "dtHora";
+            this.dtHora.ShowUpDown = true;
             this.dtHora.Size = new System.Drawing.Size(108, 24);
-            this.dtHora.TabIndex = 18;
+            this.dtHora.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -607,7 +609,7 @@
             this.txtTema.Location = new System.Drawing.Point(101, 47);
             this.txtTema.Name = "txtTema";
             this.txtTema.Size = new System.Drawing.Size(382, 24);
-            this.txtTema.TabIndex = 104;
+            this.txtTema.TabIndex = 0;
             // 
             // cmbCarrera
             // 
@@ -617,7 +619,7 @@
             this.cmbCarrera.Location = new System.Drawing.Point(591, 133);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(220, 26);
-            this.cmbCarrera.TabIndex = 100;
+            this.cmbCarrera.TabIndex = 7;
             // 
             // label4
             // 
@@ -637,7 +639,7 @@
             this.txtCelularAlum.Location = new System.Drawing.Point(591, 105);
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(220, 24);
-            this.txtCelularAlum.TabIndex = 102;
+            this.txtCelularAlum.TabIndex = 6;
             // 
             // txtTelefonoAlum
             // 
@@ -646,7 +648,7 @@
             this.txtTelefonoAlum.Location = new System.Drawing.Point(591, 75);
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(220, 24);
-            this.txtTelefonoAlum.TabIndex = 101;
+            this.txtTelefonoAlum.TabIndex = 5;
             // 
             // label5
             // 
@@ -677,7 +679,7 @@
             this.txtEmailAlum.Location = new System.Drawing.Point(101, 135);
             this.txtEmailAlum.Name = "txtEmailAlum";
             this.txtEmailAlum.Size = new System.Drawing.Size(382, 24);
-            this.txtEmailAlum.TabIndex = 99;
+            this.txtEmailAlum.TabIndex = 3;
             // 
             // label15
             // 
@@ -697,7 +699,7 @@
             this.txtApellidoAlum.Location = new System.Drawing.Point(101, 104);
             this.txtApellidoAlum.Name = "txtApellidoAlum";
             this.txtApellidoAlum.Size = new System.Drawing.Size(382, 24);
-            this.txtApellidoAlum.TabIndex = 98;
+            this.txtApellidoAlum.TabIndex = 2;
             // 
             // label16
             // 
@@ -717,7 +719,7 @@
             this.txtNombreAlum.Location = new System.Drawing.Point(101, 76);
             this.txtNombreAlum.Name = "txtNombreAlum";
             this.txtNombreAlum.Size = new System.Drawing.Size(382, 24);
-            this.txtNombreAlum.TabIndex = 97;
+            this.txtNombreAlum.TabIndex = 1;
             // 
             // label17
             // 
@@ -737,7 +739,7 @@
             this.txtRegistroAlum.Location = new System.Drawing.Point(591, 45);
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(220, 24);
-            this.txtRegistroAlum.TabIndex = 96;
+            this.txtRegistroAlum.TabIndex = 4;
             // 
             // label18
             // 
