@@ -12,6 +12,7 @@ namespace CapaPresentacion
 {
     public partial class FrmTesisAgenda : Form
     {
+
         public FrmTesisAgenda()
         {
             InitializeComponent();

@@ -13,13 +13,13 @@ namespace CapaDatos.Models
         public Revision()
         {
             id = 0;
-            estado="";//campo nuevo
+            estado = "";//campo nuevo
             fecha_entrega_alumno = "";
             fecha_entrega_tribunal = "";
             fecha_limite_devolucion = "";
             fecha_devolucion_tribunal = "";
             fecha_devolucion_alumno = "";
-            observacion="";//campo nuevo
+            observacion = "";//campo nuevo
             nro_tribunal = 0;
             nro_revision = 0;
             fecha_empaste = "";
@@ -67,7 +67,7 @@ namespace CapaDatos.Models
         public void Insert()
         {
             string sql = "  INSERT INTO " + TableName + " (  estado,fecha_entrega_alumno,fecha_entrega_tribunal,fecha_limite_devolucion,fecha_devolucion_tribunal,fecha_devolucion_alumno,observacion,nro_tribunal,nro_revision,fecha_empaste, id_tesis  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4,@parametro5,@parametro6,@parametro7,@parametro8,@parametro9,@parametro10); ";
-            Object[] Parametros = new Object[] {Estado, Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion, Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis };
+            Object[] Parametros = new Object[] { Estado, Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion, Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis };
             QueryBuilder(sql, Parametros);
 
         }
@@ -82,7 +82,7 @@ namespace CapaDatos.Models
         {
             string sql = " UPDATE " + TableName + "  SET estado = @parametro0, fecha_entrega_alumno = @parametro1 ,fecha_entrega_tribunal = @parametro2 ,fecha_limite_devolucion = @parametro3 ,fecha_devolucion_tribunal = @parametro4 ,fecha_devolucion_alumno  = @parametro5 , observacion = @parametro6, nro_tribunal = @parametro7 , nro_revision = @parametro8 ,fecha_empaste =@parametro9, id_tesis=@parametro10   WHERE id = @parametro11 ; ";
 
-            Object[] Parametros = new Object[] { Estado,Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion,Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis, id };
+            Object[] Parametros = new Object[] { Estado, Fecha_entrega_alumno, Fecha_entrega_tribunal, Fecha_limite_devolucion, Fecha_devolucion_tribunal, Fecha_devolucion_alumno, Observacion, Nro_tribunal, Nro_revision, Fecha_empaste, Id_tesis, id };
             QueryBuilder(sql, Parametros);
 
         }
@@ -97,7 +97,21 @@ namespace CapaDatos.Models
 
             return LastIdConexion(TableName);
         }
+        public DataTable LastRevisionByTribunal(int itesis, int nrotri)
+        {
+            string idtesis = Convert.ToString(itesis);
+            string nrotribunal = Convert.ToString(nrotri);
+            string sql = " SELECT * FROM revision WHERE id_tesis = @parametro0 AND nro_tribunal = @parametro1 AND nro_revision = (SELECT MAX(nro_revision) FROM revision WHERE id_tesis = @parametro0 AND nro_tribunal = @parametro1); ";
 
+            return SelectConexion(sql, idtesis, nrotribunal);
+        }
+        public DataTable MaxNumberOfRevsionesByTribunal(int itesis, int nrotri)
+        {
+            string idtesis = Convert.ToString(itesis);
+            string nrotribunal = Convert.ToString(nrotri);
+            string sql = " select MAX(nro_revision) from revision where id_tesis = @parametro0 and nro_tribunal = @parametro1 ; ";
+            return SelectConexion(sql, idtesis, nrotribunal);
+        }
 
         #endregion
     }

@@ -245,6 +245,30 @@ namespace test_project
 
 
         }
+        [TestMethod]
+        public void Test1()
+        {
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            bool res1 = obj.ValidarFechasTribunal(1, 1);
+            bool res2 = obj.ValidarFechaEmpasteTribunal(1, 1);
+            if (res1 ==  true && res2 == true)
+            {
+                Console.WriteLine("tienes las fechas asignadas y la fecha de empaste tambien");
+            }
+            else if(res1 == true)
+            {
+                
+                Console.WriteLine("no hay fecha de empaste");
+
+                
+            }
+            else
+            {
+                Console.WriteLine("las fechas estan incompletas");
+
+            }
+
+        }
 
     }
 }

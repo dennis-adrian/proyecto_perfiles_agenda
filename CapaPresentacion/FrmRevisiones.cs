@@ -38,8 +38,7 @@ namespace CapaPresentacion
         #region Instancias
 
         NegocioPerfilGeneral obj = new NegocioPerfilGeneral();
-
-
+        NegocioRevisiones rev = new NegocioRevisiones();
         #endregion
 
         #region Constructores
@@ -319,18 +318,169 @@ namespace CapaPresentacion
         private void btnAddNewRev2_Click(object sender, EventArgs e)
         {
 
-            ShowRevisiones(2);
+            bool t1_fechas = rev.ValidarFechasTribunal(this.idperfil, 1);
+            bool t1_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 1);
+
+            bool t2_fechas = rev.ValidarFechasTribunal(this.idperfil, 2);
+            bool t2_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 2);
+
+
+            if( (t1_fechas == true && !t1_empaste == true) && (t2_fechas == true && !t2_empaste == true))
+            {
+               bool res = rev.ValidateNextRevision(this.idperfil, 1, 2);
+                if(res == true)
+                {
+                    ShowRevisiones(2);
+
+                }
+                else
+                {
+                    MessageBox.Show("falta datos en revisiones ");
+                }
+                
+            }
+            else
+            {
+                if (t1_fechas == true)
+                {
+                    if (!t1_empaste == true)
+                    {
+                        if(t2_fechas == true)
+                        {
+                            MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 2");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 2 ");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 1");
+
+                    }
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 1 ");
+                }
+                  
+            }
+
 
         }
 
         private void btnAddNewRev3_Click_1(object sender, EventArgs e)
         {
-            ShowRevisiones(3);
+
+            bool t1_fechas = rev.ValidarFechasTribunal(this.idperfil, 1);
+            bool t1_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 1);
+
+            bool t2_fechas = rev.ValidarFechasTribunal(this.idperfil, 2);
+            bool t2_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 2);
+
+
+            if ((t1_fechas == true && !t1_empaste == true) && (t2_fechas == true && !t2_empaste == true))
+            {
+                bool res = rev.ValidateNextRevision(this.idperfil, 1, 2);
+                if (res == true)
+                {
+                    ShowRevisiones(3);
+
+                }
+                else
+                {
+                    MessageBox.Show("falta datos en revisiones ");
+                }
+            }
+            else
+            {
+                if (t1_fechas == true)
+                {
+                    if (!t1_empaste == true)
+                    {
+                        if (t2_fechas == true)
+                        {
+                            MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 2");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 2 ");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 1");
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 1 ");
+                }
+
+            }
 
         }
         private void btnAddNewRev4_Click(object sender, EventArgs e)
         {
-            ShowRevisiones(4);
+
+            bool t1_fechas = rev.ValidarFechasTribunal(this.idperfil, 1);
+            bool t1_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 1);
+
+            bool t2_fechas = rev.ValidarFechasTribunal(this.idperfil, 2);
+            bool t2_empaste = rev.ValidarFechaEmpasteTribunal(this.idperfil, 2);
+
+
+            if ((t1_fechas == true && !t1_empaste == true) && (t2_fechas == true && !t2_empaste == true))
+            {
+                bool res = rev.ValidateNextRevision(this.idperfil, 1, 2);
+                if (res == true)
+                {
+                    ShowRevisiones(4);
+
+                }
+                else
+                {
+                    MessageBox.Show("falta datos en revisiones ");
+                }
+            }
+            else
+            {
+                if (t1_fechas == true)
+                {
+                    if (!t1_empaste == true)
+                    {
+                        if (t2_fechas == true)
+                        {
+                            MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 2");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 2 ");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede agregar otra revision ya existe fecha de empaste en tribunal 1");
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Hay Fechas Pendientes en la revision del tribunal 1 ");
+                }
+
+            }
         }
 
         private void pnlContenedorGral_Paint(object sender, PaintEventArgs e)

@@ -55,7 +55,7 @@
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(810, 46);
+            this.pnlBuscar.Size = new System.Drawing.Size(1080, 57);
             this.pnlBuscar.TabIndex = 1;
             // 
             // btnEditarAgenda
@@ -66,10 +66,10 @@
             this.btnEditarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarAgenda.Location = new System.Drawing.Point(11, 8);
-            this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarAgenda.Location = new System.Drawing.Point(15, 10);
+            this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditarAgenda.Name = "btnEditarAgenda";
-            this.btnEditarAgenda.Size = new System.Drawing.Size(270, 27);
+            this.btnEditarAgenda.Size = new System.Drawing.Size(360, 33);
             this.btnEditarAgenda.TabIndex = 27;
             this.btnEditarAgenda.Text = "Editar Información de la Defensa";
             this.btnEditarAgenda.UseVisualStyleBackColor = false;
@@ -84,10 +84,10 @@
             this.btnBuscarDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarDefensa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscarDefensa.Location = new System.Drawing.Point(727, 8);
-            this.btnBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarDefensa.Location = new System.Drawing.Point(969, 10);
+            this.btnBuscarDefensa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarDefensa.Name = "btnBuscarDefensa";
-            this.btnBuscarDefensa.Size = new System.Drawing.Size(72, 27);
+            this.btnBuscarDefensa.Size = new System.Drawing.Size(96, 33);
             this.btnBuscarDefensa.TabIndex = 25;
             this.btnBuscarDefensa.Text = "Buscar";
             this.btnBuscarDefensa.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@
             this.txtBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDefensa.Location = new System.Drawing.Point(553, 11);
-            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarDefensa.Location = new System.Drawing.Point(737, 14);
+            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarDefensa.Name = "txtBuscarDefensa";
-            this.txtBuscarDefensa.Size = new System.Drawing.Size(155, 23);
+            this.txtBuscarDefensa.Size = new System.Drawing.Size(206, 27);
             this.txtBuscarDefensa.TabIndex = 24;
             // 
             // label14
@@ -110,10 +110,9 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(389, 13);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(519, 16);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 18);
+            this.label14.Size = new System.Drawing.Size(189, 24);
             this.label14.TabIndex = 23;
             this.label14.Text = "Nombre Estudiante";
             // 
@@ -122,9 +121,10 @@
             this.pnlDataGrid.BackColor = System.Drawing.Color.Silver;
             this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
             this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDataGrid.Location = new System.Drawing.Point(0, 46);
+            this.pnlDataGrid.Location = new System.Drawing.Point(0, 57);
+            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDataGrid.Name = "pnlDataGrid";
-            this.pnlDataGrid.Size = new System.Drawing.Size(810, 432);
+            this.pnlDataGrid.Size = new System.Drawing.Size(1080, 531);
             this.pnlDataGrid.TabIndex = 2;
             // 
             // dtgDefensaExterna
@@ -150,6 +150,7 @@
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
             this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
+            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";
             this.dtgDefensaExterna.ReadOnly = true;
             this.dtgDefensaExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -170,22 +171,22 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgDefensaExterna.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgDefensaExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDefensaExterna.Size = new System.Drawing.Size(810, 432);
+            this.dtgDefensaExterna.Size = new System.Drawing.Size(1080, 531);
             this.dtgDefensaExterna.TabIndex = 0;
             this.dtgDefensaExterna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDefensaExterna_CellContentClick);
             // 
             // FrmAgenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(810, 478);
+            this.ClientSize = new System.Drawing.Size(1080, 588);
             this.Controls.Add(this.pnlDataGrid);
             this.Controls.Add(this.pnlBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
             this.pnlBuscar.ResumeLayout(false);
