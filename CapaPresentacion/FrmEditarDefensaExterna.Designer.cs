@@ -31,6 +31,8 @@
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
             this.btnElegirRepresentanteUagrm1 = new System.Windows.Forms.Button();
             this.btnElegirRepresentanteUagrm2 = new System.Windows.Forms.Button();
@@ -77,8 +79,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtRegistroAlum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtNota = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.pnlBarraTitulo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -157,7 +157,26 @@
             this.groupBox2.Size = new System.Drawing.Size(866, 432);
             this.groupBox2.TabIndex = 109;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "INFORMACIÓN DE LA DEFENSA";
+            this.groupBox2.Text = "Información de la Defensa";
+            // 
+            // txtNota
+            // 
+            this.txtNota.Location = new System.Drawing.Point(214, 391);
+            this.txtNota.Multiline = true;
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(44, 24);
+            this.txtNota.TabIndex = 61;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(104, 397);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(96, 18);
+            this.label19.TabIndex = 62;
+            this.label19.Text = "Calificación";
             // 
             // btnElegirTribunal2
             // 
@@ -593,7 +612,7 @@
             this.groupBox1.Size = new System.Drawing.Size(832, 185);
             this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ALUMNO";
+            this.groupBox1.Text = "Alumno";
             // 
             // label8
             // 
@@ -755,25 +774,6 @@
             this.label18.Size = new System.Drawing.Size(77, 18);
             this.label18.TabIndex = 95;
             this.label18.Text = "Registro:";
-            // 
-            // txtNota
-            // 
-            this.txtNota.Location = new System.Drawing.Point(214, 391);
-            this.txtNota.Multiline = true;
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(44, 24);
-            this.txtNota.TabIndex = 61;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(104, 397);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 18);
-            this.label19.TabIndex = 62;
-            this.label19.Text = "Calificación";
             // 
             // FrmEditarDefensaExterna
             // 
