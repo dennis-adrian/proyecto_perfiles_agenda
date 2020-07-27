@@ -32,10 +32,81 @@ namespace CapaPresentacion
 
         #endregion
 
+        #region Instancia frmHijo Unasolo vez
+
+        private FrmCarreraInterna CarInt = null;
+        private FrmCarreraExterna CarExt = null;
+        private FrmTutor Tutor = null;
+        private FrmFacultad facu = null;
+
+
+
+
+        private FrmCarreraInterna FormInstance1
+        {
+            get
+            {
+                if (CarInt== null)
+                {
+                    CarInt = new FrmCarreraInterna();
+                    CarInt.Disposed += new EventHandler(form_Disposed1);
+                }
+
+                return CarInt;
+            }
+        }
+
+        void form_Disposed1(object sender, EventArgs e)
+        {
+            CarInt = null;
+
+        }
+
+        private FrmCarreraExterna FormInstance2
+        {
+            get
+            {
+                if (CarExt == null)
+                {
+                    CarExt = new FrmCarreraExterna();
+                    CarExt.Disposed += new EventHandler(form_Disposed2);
+                }
+
+                return CarExt;
+            }
+        }
+
+        void form_Disposed2(object sender, EventArgs e)
+        {
+            CarInt = null;
+
+        }
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (Tutor == null)
+                {
+                    Tutor = new FrmTutor();
+                    Tutor.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return Tutor;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            Tutor = null;
+
+        }
+        #endregion
+
 
         #region Atributos
 
-      
+
         private IconButton btnFacultadActual;//guarda la facultad actual seleccionada
         private IconButton btnCarreraActual;//guarda la carrera actual seleccionada
         private IconButton btnActual;//valor entre los buttons perfiles y defensa externa
@@ -868,9 +939,10 @@ namespace CapaPresentacion
         private void btnNuevoLicen_Click(object sender, EventArgs e)
         {
             HiddenAgregar();
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.btnSeleccionarLicenciado.Visible = false;
-            frm.ShowDialog();
+            frm.Show();
+            frm.BringToFront();
         }
 
         private void btnNuevaFacultad_Click(object sender, EventArgs e)
@@ -882,27 +954,29 @@ namespace CapaPresentacion
 
         private void btnNuevaCarreraEx_Click(object sender, EventArgs e)
         {
-            FrmCarreraInterna frm = new FrmCarreraInterna();
             HiddenAgregar();
-           // SecondButtonDesactive(btnExamendeGrado);
-            frm.lbltitu.Text = btnNuevaCarreraEx.Text;
+            FrmCarreraExterna frm = this.FormInstance2;
+            // HiddenAgregar();
             HidenCarreras();
-            frm.ShowDialog();
-           // SecondButtonActive(btnGraduacionExcelencia);
+            frm.Show();
+            frm.BringToFront();
             pnlAgregar.Visible = false;
         }
 
         private void btnNuevaCareraIn_Click(object sender, EventArgs e)
         {
             HiddenAgregar();
-            FrmCarreraInterna frm = new FrmCarreraInterna();
-            HiddenAgregar();
-           // SecondButtonDesactive(btnExamendeGrado);
-            frm.lbltitu.Text = btnNuevaCareraIn.Text;
+            FrmCarreraInterna frm = this.FormInstance1;
+           // HiddenAgregar();
             HidenCarreras();
-            frm.ShowDialog();
-            // SecondButtonActive(btnGraduacionExcelencia);
+            frm.Show();
+            frm.BringToFront();
             pnlAgregar.Visible = false;
+        }
+
+        private void pnlFrmHijo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

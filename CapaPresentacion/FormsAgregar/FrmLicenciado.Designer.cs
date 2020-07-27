@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTutor));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSeleccionarLicenciado = new System.Windows.Forms.Button();
             this.btnEditarLicenciado = new System.Windows.Forms.Button();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.rbDocenteNo = new System.Windows.Forms.RadioButton();
+            this.rbDocenteSi = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lbid_licenciado = new System.Windows.Forms.Label();
@@ -65,10 +69,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgLicenciados = new System.Windows.Forms.DataGridView();
-            this.rbDocenteNo = new System.Windows.Forms.RadioButton();
-            this.rbDocenteSi = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -184,6 +184,57 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 471);
             this.panel1.TabIndex = 28;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(405, 294);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 32);
+            this.button6.TabIndex = 73;
+            this.toolTip1.SetToolTip(this.button6, "Esta opción se habilita si el licenciado trabaja en Utepsa.");
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // rbDocenteNo
+            // 
+            this.rbDocenteNo.AutoSize = true;
+            this.rbDocenteNo.Checked = true;
+            this.rbDocenteNo.Enabled = false;
+            this.rbDocenteNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDocenteNo.Location = new System.Drawing.Point(350, 298);
+            this.rbDocenteNo.Name = "rbDocenteNo";
+            this.rbDocenteNo.Size = new System.Drawing.Size(49, 24);
+            this.rbDocenteNo.TabIndex = 38;
+            this.rbDocenteNo.TabStop = true;
+            this.rbDocenteNo.Text = "No";
+            this.rbDocenteNo.UseVisualStyleBackColor = true;
+            // 
+            // rbDocenteSi
+            // 
+            this.rbDocenteSi.AutoSize = true;
+            this.rbDocenteSi.Enabled = false;
+            this.rbDocenteSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDocenteSi.Location = new System.Drawing.Point(269, 297);
+            this.rbDocenteSi.Name = "rbDocenteSi";
+            this.rbDocenteSi.Size = new System.Drawing.Size(43, 24);
+            this.rbDocenteSi.TabIndex = 37;
+            this.rbDocenteSi.Text = "Si";
+            this.rbDocenteSi.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 300);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(236, 18);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "El Lic. es Docente en Utepsa?";
             // 
             // cmbTipo
             // 
@@ -459,14 +510,14 @@
             this.dtgLicenciados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgLicenciados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgLicenciados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLicenciados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLicenciados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgLicenciados.ColumnHeadersHeight = 34;
             this.dtgLicenciados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgLicenciados.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -476,77 +527,26 @@
             this.dtgLicenciados.Name = "dtgLicenciados";
             this.dtgLicenciados.ReadOnly = true;
             this.dtgLicenciados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLicenciados.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLicenciados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgLicenciados.RowHeadersVisible = false;
             this.dtgLicenciados.RowHeadersWidth = 52;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgLicenciados.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgLicenciados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgLicenciados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgLicenciados.Size = new System.Drawing.Size(602, 335);
             this.dtgLicenciados.TabIndex = 0;
             this.dtgLicenciados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLicenciados_CellContentClick);
-            // 
-            // rbDocenteNo
-            // 
-            this.rbDocenteNo.AutoSize = true;
-            this.rbDocenteNo.Checked = true;
-            this.rbDocenteNo.Enabled = false;
-            this.rbDocenteNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocenteNo.Location = new System.Drawing.Point(350, 298);
-            this.rbDocenteNo.Name = "rbDocenteNo";
-            this.rbDocenteNo.Size = new System.Drawing.Size(49, 24);
-            this.rbDocenteNo.TabIndex = 38;
-            this.rbDocenteNo.TabStop = true;
-            this.rbDocenteNo.Text = "No";
-            this.rbDocenteNo.UseVisualStyleBackColor = true;
-            // 
-            // rbDocenteSi
-            // 
-            this.rbDocenteSi.AutoSize = true;
-            this.rbDocenteSi.Enabled = false;
-            this.rbDocenteSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocenteSi.Location = new System.Drawing.Point(269, 297);
-            this.rbDocenteSi.Name = "rbDocenteSi";
-            this.rbDocenteSi.Size = new System.Drawing.Size(43, 24);
-            this.rbDocenteSi.TabIndex = 37;
-            this.rbDocenteSi.Text = "Si";
-            this.rbDocenteSi.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 300);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(236, 18);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "El Lic. es Docente en Utepsa?";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(405, 294);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 32);
-            this.button6.TabIndex = 73;
-            this.toolTip1.SetToolTip(this.button6, "Esta opción se habilita si el licenciado trabaja en Utepsa.");
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // FrmTutor
             // 
