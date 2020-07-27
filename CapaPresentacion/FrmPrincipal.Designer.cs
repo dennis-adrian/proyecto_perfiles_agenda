@@ -795,6 +795,7 @@
             this.pnlFrmHijo.Name = "pnlFrmHijo";
             this.pnlFrmHijo.Size = new System.Drawing.Size(915, 617);
             this.pnlFrmHijo.TabIndex = 16;
+            this.pnlFrmHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmHijo_Paint);
             // 
             // pnlAgregar
             // 
