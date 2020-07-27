@@ -269,6 +269,23 @@ namespace test_project
             }
 
         }
+        [TestMethod]
+        public void Test2()
+        {
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            bool res1 = obj.ValidarFechasEmpasteforNewInsert(1, 1, 2);
+            if (res1 == true )
+            {
+                Console.WriteLine("puedes hacer el insert");
+            }
+            else
+            {
+                Console.WriteLine("no puedes hace un insert");
+
+            }
+
+        }
+
 
     }
 }

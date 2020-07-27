@@ -178,18 +178,12 @@ namespace CapaNegocio
         {
             try
             {
-                type.Fecha = Convert.ToString(Collection[0]);
-                defensaExterna.Fecha_presentacion = type.Fecha;
+                defensaExterna.Fecha_presentacion = "";
 
-                string hr = Convert.ToString(Collection[1]);
-                defensaExterna.Hora = hr;
-
-                type.Aula = Convert.ToString(Collection[2]);
-                defensaExterna.Aula = type.Aula;
-
-                int idtesis = Convert.ToInt32(Collection[3]);
+                defensaExterna.Hora = "";               
+                defensaExterna.Aula = "";
+                int idtesis = Convert.ToInt32(Collection[0]);
                 defensaExterna.Id_tesis = idtesis;
-
                 defensaExterna.Id_titulacion_otro = 0;
                 defensaExterna.Insert();
 

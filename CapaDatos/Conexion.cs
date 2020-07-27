@@ -97,7 +97,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new ArgumentException("Error: " + e);
+                throw new ArgumentException("Error en  QueryBuilder: " + e);
             }
             finally
             {
@@ -119,9 +119,9 @@ namespace CapaDatos
                 //cerrarConexion();
                 return items;
             }
-            catch
+            catch (Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error en  Select conexion"+ e);
             }
             finally
             {
@@ -145,7 +145,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new ArgumentException("Error" + e);
+                throw new ArgumentException("Error  en  Select conexion over2" + e);
             }
             finally
             {
@@ -168,9 +168,9 @@ namespace CapaDatos
                 cerrarConexion();
                 return items;
             }
-            catch
+            catch(Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error  en  Select conexion over3"+e);
             }
             finally
             {
