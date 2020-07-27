@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Helpers.cs" />
     <Compile Include="NegocioDefensaExterna.cs" />
+    <Compile Include="NegocioDefensaGeneral.cs" />
     <Compile Include="NegocioLicenciados.cs" />
     <Compile Include="NegocioNuevaDefensa.cs" />
     <Compile Include="NegocioNuevoPerfil.cs" />

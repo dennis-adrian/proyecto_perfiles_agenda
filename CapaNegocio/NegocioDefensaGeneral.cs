@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
+using CapaDatos.View;
 using CapaNegocio.src;
-
-
 
 namespace CapaNegocio
 {
-    public class NegocioNuevaDefensa : ValidationInputUI
+    public class NegocioDefensaGeneral : ValidationInputUI
     {
-        #region  Construct
-        public NegocioNuevaDefensa(){
+        public NegocioDefensaGeneral()
+        {
 
         }
-
-        #endregion
-
 
         #region Instancias
         Carrera carrera = new Carrera();
@@ -40,7 +35,28 @@ namespace CapaNegocio
 
         #endregion
 
-        #region  Metodos
+        public void MainUpdate(int operacion = 1)
+        {
+            try
+            {
+                switch (operacion)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+
+
+        }
         public void ControlInput(Object[] Collection)
         {
             try
@@ -54,32 +70,7 @@ namespace CapaNegocio
             }
 
         }
-        public void Main(int operacion = 1)
-        {
-            try
-            {
-                switch (operacion)
-                {
-                    case 1:
-                        InsertDefensaTitulacionOtros(parametros);
-                        break;
-                    case 2:
-                        NuevaDefensaTesis(parametros);
-                        break;
-                    default:
-                        break;
-                }
-                
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
-           
-
-        }
-       
-        public void InsertDefensaTitulacionOtros(Object[] Collection)
+        public void UpdateDefensaTitulacionOtros(int idestudiante, int idtitulacion, int iddefensa, int lic1, int lic2, int lic3, int lic4, int lic5, int lic6, int lic7, Object[] Collection)
         {
             try
             {
@@ -96,73 +87,72 @@ namespace CapaNegocio
                 string cel = Convert.ToString(Collection[5]);
                 estudiante.Celular = (cel == "") ? "" : cel;
                 estudiante.Id_carrera = Convert.ToInt32(Collection[6]);
-                
+
                 titulacionOtros.Estado_defensa = "pendiente";
                 titulacionOtros.Tema = Convert.ToString(Collection[7]);
 
                 titulacionOtros.Calificacion = 0;
 
 
-                estudiante.Insert();
-                int idestudiante = estudiante.LastId();
+                estudiante.Update(idestudiante);
+
                 titulacionOtros.Id_estudiante = idestudiante;
 
                 titulacionOtros.Id_tipo_titulacion = tipoTitulacionOtros.FindIdBySearch(Convert.ToString(Collection[8]));
-                titulacionOtros.Insert();
+                titulacionOtros.Update(idtitulacion);
 
 
 
-                type.Fecha =  Convert.ToString(Collection[9]);
+                type.Fecha = Convert.ToString(Collection[9]);
                 defensaExterna.Fecha_presentacion = type.Fecha;
                 string hr = Convert.ToString(Collection[10]);
                 defensaExterna.Hora = hr;
                 type.Aula = Convert.ToString(Collection[11]);
                 defensaExterna.Aula = type.Aula;
-                
-                defensaExterna.Id_tesis = 0;
-                defensaExterna.Id_titulacion_otro = titulacionOtros.LastId();
-                defensaExterna.Insert();
 
-                int iddefensa = defensaExterna.LastId();
+                defensaExterna.Id_tesis = 0;
+                defensaExterna.Id_titulacion_otro = idtitulacion;
+                defensaExterna.Update(iddefensa);
+
 
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[12]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[13]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic1);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[14]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[15]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic2);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[16]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[17]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic3);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[18]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[19]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic4);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[20]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[21]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic5);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[22]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[23]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic6);
 
                 detalleDefensa.Id_defensa_externa = iddefensa;
                 detalleDefensa.Id_licenciado = Convert.ToInt32(Collection[24]);
                 detalleDefensa.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch(Convert.ToString(Collection[25]));
-                detalleDefensa.Insert();
+                detalleDefensa.Update(lic7);
 
 
-                
+
 
 
 
@@ -172,53 +162,21 @@ namespace CapaNegocio
             {
                 throw new ArgumentException("" + e);
             }
-        }
 
-        public void NuevaDefensaTesis(Object[] Collection)
+        }
+        public Object[] InfoDefensaOtros(int iddefensa)
         {
-            try
-            {
-                type.Fecha = Convert.ToString(Collection[0]);
-                defensaExterna.Fecha_presentacion = type.Fecha;
+            Object[] datos = new Object[] { };
 
-                string hr = Convert.ToString(Collection[1]);
-                defensaExterna.Hora = hr;
+            return datos;
 
-                type.Aula = Convert.ToString(Collection[2]);
-                defensaExterna.Aula = type.Aula;
-
-                int idtesis = Convert.ToInt32(Collection[3]);
-                defensaExterna.Id_tesis = idtesis;
-
-                defensaExterna.Id_titulacion_otro = 0;
-                defensaExterna.Insert();
-
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
         }
 
-        
 
-
-        public DataTable cargarCarreras()
+        ~NegocioDefensaGeneral()
         {
-            DataTable dt1 = carrera.Select();
-
-            return dt1;
-        }
-        #endregion
-
-
-
-
-        #region Destruct
-
-        ~NegocioNuevaDefensa(){
 
         }
-        #endregion
+
     }
 }
