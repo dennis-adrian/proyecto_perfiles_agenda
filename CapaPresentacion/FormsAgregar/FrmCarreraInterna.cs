@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.src;
 
-
 namespace CapaPresentacion.FormsAgregar
 {
     public partial class FrmCarreraInterna : Form
@@ -29,24 +28,22 @@ namespace CapaPresentacion.FormsAgregar
                 return cp;
             }
         }
+
         #region Constructor
 
         public FrmCarreraInterna()
         {
             InitializeComponent();
-            InitialForms();
         }
+
         #endregion
 
         #region Instancias
+
         Helpers helper = new Helpers();
-
-        NegocioLicenciados obj = new NegocioLicenciados();
-
         #endregion
 
         #region Atributos
-
 
         int posY = 0;
         int posX = 0;
@@ -58,20 +55,19 @@ namespace CapaPresentacion.FormsAgregar
         {
             this.Close();
         }
-        private void btnNuevaCarreraLicenciado_Click(object sender, EventArgs e)
+        private void btnNuevaInstitucion_Click(object sender, EventArgs e)
         {
             try
             {
                 Insert();
-                txtNombreCarreraLic.Clear();
+                txtNuevaInstitucion.Clear();
                 this.DialogResult = DialogResult.OK;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
-
         }
 
         private void pnlBarraTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -88,54 +84,59 @@ namespace CapaPresentacion.FormsAgregar
             }
         }
 
-
         #endregion
 
         #region Metodos
-        public void InitialForms()
-        {
-
-
-            //cmbTipo.Items.Clear();
-           // ShowCarrerasLicenciado();
-            mostrarFacultades();
-           // cmbTipo.SelectedItem = null;
-           // cmbTipo.Items.Insert(0, "externo");
-           // cmbTipo.Items.Insert(1, "interno");
-            //cmbTipo.SelectedIndex = 0;
-
-
-            //ShowLicenciados();
-        }
         public void Insert()
         {
-            string nombre = txtNombreCarreraLic.Text;
+            string nombre = txtNuevaInstitucion.Text;
             Object[] datos = new Object[] { nombre };
             helper.ControlInput(datos);
-            helper.MainInsertCarreraLicenciado();
-
-
+            helper.MainInsertInstitucion();
         }
 
-        public void mostrarFacultades()
-        {
-            cmbFacultad.DataSource = null;
-            cmbFacultad.Items.Clear();
-            cmbFacultad.DataSource = obj.cargarInstitucio();
-            cmbFacultad.ValueMember = "id";
-            cmbFacultad.DisplayMember = "nombre";
 
-        }
         #endregion
 
-        private void FrmCarrera_Load(object sender, EventArgs e)
+        private void FrmInstitucion_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtgInstitucion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnNuevaInstitu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.btnBuscar.IconColor = Color.White;
+            this.btnBuscar.IconColor = Color.Black;
         }
     }
 }

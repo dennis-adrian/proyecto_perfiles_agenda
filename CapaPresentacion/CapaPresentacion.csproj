@@ -76,17 +76,17 @@
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
     <Compile Include="ContractForms\IContractLicenciado.cs" />
-    <Compile Include="FormsAgregar\FrmCarreraExterna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAgregar\FrmCarreraExterna.Designer.cs">
-      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsAgregar\FrmCarreraInterna.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsAgregar\FrmCarreraInterna.Designer.cs">
       <DependentUpon>FrmCarreraInterna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAgregar\FrmCarreraExterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAgregar\FrmCarreraExterna.Designer.cs">
+      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAgregar\FrmFacultad.cs">
       <SubType>Form</SubType>
@@ -169,11 +169,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormsAgregar\FrmCarreraExterna.resx">
-      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsAgregar\FrmCarreraInterna.resx">
       <DependentUpon>FrmCarreraInterna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAgregar\FrmCarreraExterna.resx">
+      <DependentUpon>FrmCarreraExterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAgregar\FrmFacultad.resx">
       <DependentUpon>FrmFacultad.cs</DependentUpon>
