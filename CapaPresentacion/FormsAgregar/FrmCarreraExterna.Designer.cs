@@ -37,7 +37,7 @@
             this.lbltitu = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtNuevaInstitucion = new System.Windows.Forms.TextBox();
+            this.txtNombreCarreraLic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevaInstitu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -112,7 +112,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtNuevaInstitucion);
+            this.groupBox2.Controls.Add(this.txtNombreCarreraLic);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnNuevaInstitu);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,13 +123,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar y agregar carrera externa";
             // 
-            // txtNuevaInstitucion
+            // txtNombreCarreraLic
             // 
-            this.txtNuevaInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaInstitucion.Location = new System.Drawing.Point(18, 55);
-            this.txtNuevaInstitucion.Name = "txtNuevaInstitucion";
-            this.txtNuevaInstitucion.Size = new System.Drawing.Size(482, 26);
-            this.txtNuevaInstitucion.TabIndex = 52;
+            this.txtNombreCarreraLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCarreraLic.Location = new System.Drawing.Point(18, 55);
+            this.txtNombreCarreraLic.Name = "txtNombreCarreraLic";
+            this.txtNombreCarreraLic.Size = new System.Drawing.Size(482, 26);
+            this.txtNombreCarreraLic.TabIndex = 52;
             // 
             // label1
             // 
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(600, 612);
+            this.ClientSize = new System.Drawing.Size(600, 589);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -341,7 +341,7 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lbltitu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtNuevaInstitucion;
+        private System.Windows.Forms.TextBox txtNombreCarreraLic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNuevaInstitu;
         private System.Windows.Forms.GroupBox groupBox1;
