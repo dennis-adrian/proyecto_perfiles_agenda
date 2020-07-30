@@ -169,11 +169,8 @@ namespace CapaPresentacion
 
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
-            FrmAgregarGenerico frm1 = new FrmAgregarGenerico();
-            if (frm1.ShowDialog() == DialogResult.OK)
-            {
-                ShowInstituciones();
-            }
+            FrmInstitucion frmI = new FrmInstitucion();
+            frmI.Show();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

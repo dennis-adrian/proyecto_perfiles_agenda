@@ -23,7 +23,32 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             Inicializador(criterio);
+            personalizarDiseño();
             carrera = criterio;
+        }
+
+        FrmPrincipal frp = new FrmPrincipal();
+
+        private void personalizarDiseño()
+        {
+            pnlFiltroDefensa.Visible = false;
+        }
+        private void ocultarPaneles()
+        {
+            if (pnlFiltroDefensa.Visible == true)
+                pnlFiltroDefensa.Visible = false;
+            if (frp.pnlAgregar.Visible == true)
+                frp.pnlAgregar.Visible = false;
+        }
+        private void mostrarPaneles(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                ocultarPaneles();
+                submenu.Visible = true;
+            }
+            else
+                submenu.Visible = false;
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -68,6 +93,32 @@ namespace CapaPresentacion
         private void dtgDefensaExterna_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            mostrarPaneles(pnlFiltroDefensa);
+        }
+
+        private void btnExamenGrado_Click(object sender, EventArgs e)
+        {
+            //..
+            //..
+            ocultarPaneles();
+        }
+
+        private void btnTesis_Click(object sender, EventArgs e)
+        {
+            //..
+            //..
+            ocultarPaneles();
+        }
+
+        private void btnPorExecencia_Click(object sender, EventArgs e)
+        {
+            //..
+            //..
+            ocultarPaneles();
         }
     }
 }

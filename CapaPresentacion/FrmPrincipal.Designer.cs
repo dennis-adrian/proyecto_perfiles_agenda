@@ -1439,7 +1439,6 @@
         private FontAwesome.Sharp.IconButton btnEmpresarialesPefiles;
         private FontAwesome.Sharp.IconButton btnJuridicasPerfiles;
         private FontAwesome.Sharp.IconButton btnTecnologiaPerfiles;
-        private System.Windows.Forms.Panel pnlCarrerasJuridicas;
         private FontAwesome.Sharp.IconButton btnPsicologia;
         private FontAwesome.Sharp.IconButton btnRelInter;
         private FontAwesome.Sharp.IconButton btnDerecho;
@@ -1447,7 +1446,6 @@
         private FontAwesome.Sharp.IconButton btnEmpresarialesAgenda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlFrmHijo;
-        private System.Windows.Forms.Panel pnlCarrerasTenologia;
         private FontAwesome.Sharp.IconButton btnElectrica;
         private FontAwesome.Sharp.IconButton btnRedes;
         private FontAwesome.Sharp.IconButton btnMecanica;
@@ -1474,16 +1472,18 @@
         private System.Windows.Forms.Panel pnlSubMenuDefensa;
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
-        private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
-        private System.Windows.Forms.Panel pnlSubMenuNuevaDefensa;
         private FontAwesome.Sharp.IconButton btnGraduacionExcelencia;
         private FontAwesome.Sharp.IconButton btnExamendeGrado;
         private System.Windows.Forms.Button btnAgregrNew;
-        private System.Windows.Forms.Panel pnlAgregar;
         private FontAwesome.Sharp.IconButton btnNuevaCareraIn;
         private FontAwesome.Sharp.IconButton btnNuevaCarreraEx;
         private FontAwesome.Sharp.IconButton btnNuevaFacultad;
         private FontAwesome.Sharp.IconButton btnNuevoLicen;
+        public System.Windows.Forms.Panel pnlCarrerasJuridicas;
+        public System.Windows.Forms.Panel pnlCarrerasTenologia;
+        public System.Windows.Forms.Panel pnlCarrerasEmpresariales;
+        public System.Windows.Forms.Panel pnlSubMenuNuevaDefensa;
+        public System.Windows.Forms.Panel pnlAgregar;
     }
 }
 
