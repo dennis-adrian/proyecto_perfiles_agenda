@@ -74,10 +74,11 @@
             this.pnlNuevoPerfil.Controls.Add(this.grbAlumno);
             this.pnlNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNuevoPerfil.Location = new System.Drawing.Point(2, 2);
-            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
             this.pnlNuevoPerfil.Size = new System.Drawing.Size(911, 613);
             this.pnlNuevoPerfil.TabIndex = 34;
+            this.pnlNuevoPerfil.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNuevoPerfil_Paint);
             // 
             // grbPerfilTesis
             // 
@@ -243,9 +244,9 @@
             this.grbAlumno.Controls.Add(this.label13);
             this.grbAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAlumno.Location = new System.Drawing.Point(62, 74);
-            this.grbAlumno.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.grbAlumno.Margin = new System.Windows.Forms.Padding(10);
             this.grbAlumno.Name = "grbAlumno";
-            this.grbAlumno.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grbAlumno.Padding = new System.Windows.Forms.Padding(5);
             this.grbAlumno.Size = new System.Drawing.Size(759, 180);
             this.grbAlumno.TabIndex = 35;
             this.grbAlumno.TabStop = false;
@@ -396,7 +397,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNuevoPerfil";
-            this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Perfil";
             this.pnlNuevoPerfil.ResumeLayout(false);

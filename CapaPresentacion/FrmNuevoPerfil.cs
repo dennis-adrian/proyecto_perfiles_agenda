@@ -208,7 +208,9 @@ namespace CapaPresentacion
             Validate(txtRegistroAlum, msg);
         }
 
+        private void pnlNuevoPerfil_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 }
