@@ -12,6 +12,21 @@ namespace CapaPresentacion.FormsAgregar
 {
     public partial class FrmFacultad : Form
     {
+        //BORDE SOMBREADO FORMULAR
+        private const int CS_DROPSHADOW = 0x20000;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ClassStyle |= CS_DROPSHADOW;
+
+                return cp;
+            }
+        }
+
         public FrmFacultad()
         {
             InitializeComponent();
@@ -36,6 +51,11 @@ namespace CapaPresentacion.FormsAgregar
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void FrmFacultad_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

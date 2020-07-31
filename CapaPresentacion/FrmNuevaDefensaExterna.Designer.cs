@@ -45,13 +45,13 @@
             this.cmbPresidente = new System.Windows.Forms.ComboBox();
             this.cmbRepresentanteUagrm1 = new System.Windows.Forms.ComboBox();
             this.cmbRepresentanteMinisterio = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblRepreGaby1 = new System.Windows.Forms.Label();
+            this.lblRME = new System.Windows.Forms.Label();
+            this.lblPresidente = new System.Windows.Forms.Label();
+            this.lblSecretario = new System.Windows.Forms.Label();
+            this.lblRepreGaby2 = new System.Windows.Forms.Label();
+            this.lblTribuInterno2 = new System.Windows.Forms.Label();
+            this.lbltribiInterno1 = new System.Windows.Forms.Label();
             this.btnCancelarNuevaDefensa = new System.Windows.Forms.Button();
             this.btnGuardarNuevaDefensa = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -114,13 +114,13 @@
             this.groupBox2.Controls.Add(this.cmbPresidente);
             this.groupBox2.Controls.Add(this.cmbRepresentanteUagrm1);
             this.groupBox2.Controls.Add(this.cmbRepresentanteMinisterio);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.lblRepreGaby1);
+            this.groupBox2.Controls.Add(this.lblRME);
+            this.groupBox2.Controls.Add(this.lblPresidente);
+            this.groupBox2.Controls.Add(this.lblSecretario);
+            this.groupBox2.Controls.Add(this.lblRepreGaby2);
+            this.groupBox2.Controls.Add(this.lblTribuInterno2);
+            this.groupBox2.Controls.Add(this.lbltribiInterno1);
             this.groupBox2.Controls.Add(this.btnCancelarNuevaDefensa);
             this.groupBox2.Controls.Add(this.btnGuardarNuevaDefensa);
             this.groupBox2.Controls.Add(this.label2);
@@ -368,89 +368,89 @@
             this.cmbRepresentanteMinisterio.Size = new System.Drawing.Size(280, 25);
             this.cmbRepresentanteMinisterio.TabIndex = 7;
             // 
-            // label13
+            // lblRepreGaby1
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(450, 170);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(279, 18);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Primer Representante de la UAGRM";
+            this.lblRepreGaby1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRepreGaby1.AutoSize = true;
+            this.lblRepreGaby1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepreGaby1.Location = new System.Drawing.Point(450, 170);
+            this.lblRepreGaby1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRepreGaby1.Name = "lblRepreGaby1";
+            this.lblRepreGaby1.Size = new System.Drawing.Size(279, 18);
+            this.lblRepreGaby1.TabIndex = 44;
+            this.lblRepreGaby1.Text = "Primer Representante de la UAGRM";
             // 
-            // label12
+            // lblRME
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(450, 102);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(330, 18);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Representante del Ministerio de Educación";
+            this.lblRME.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRME.AutoSize = true;
+            this.lblRME.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRME.Location = new System.Drawing.Point(450, 102);
+            this.lblRME.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRME.Name = "lblRME";
+            this.lblRME.Size = new System.Drawing.Size(330, 18);
+            this.lblRME.TabIndex = 43;
+            this.lblRME.Text = "Representante del Ministerio de Educación";
             // 
-            // label11
+            // lblPresidente
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(38, 32);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 18);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Presidente";
+            this.lblPresidente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPresidente.AutoSize = true;
+            this.lblPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresidente.Location = new System.Drawing.Point(38, 32);
+            this.lblPresidente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPresidente.Name = "lblPresidente";
+            this.lblPresidente.Size = new System.Drawing.Size(88, 18);
+            this.lblPresidente.TabIndex = 42;
+            this.lblPresidente.Text = "Presidente";
             // 
-            // label10
+            // lblSecretario
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(452, 32);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 18);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Secretario";
+            this.lblSecretario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSecretario.AutoSize = true;
+            this.lblSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecretario.Location = new System.Drawing.Point(452, 32);
+            this.lblSecretario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSecretario.Name = "lblSecretario";
+            this.lblSecretario.Size = new System.Drawing.Size(86, 18);
+            this.lblSecretario.TabIndex = 41;
+            this.lblSecretario.Text = "Secretario";
             // 
-            // label9
+            // lblRepreGaby2
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(450, 233);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(295, 18);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "Segundo Representante de la UAGRM";
+            this.lblRepreGaby2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRepreGaby2.AutoSize = true;
+            this.lblRepreGaby2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepreGaby2.Location = new System.Drawing.Point(450, 233);
+            this.lblRepreGaby2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRepreGaby2.Name = "lblRepreGaby2";
+            this.lblRepreGaby2.Size = new System.Drawing.Size(295, 18);
+            this.lblRepreGaby2.TabIndex = 40;
+            this.lblRepreGaby2.Text = "Segundo Representante de la UAGRM";
             // 
-            // label7
+            // lblTribuInterno2
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 170);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 18);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Segundo Tribunal Interno";
+            this.lblTribuInterno2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTribuInterno2.AutoSize = true;
+            this.lblTribuInterno2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTribuInterno2.Location = new System.Drawing.Point(38, 170);
+            this.lblTribuInterno2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTribuInterno2.Name = "lblTribuInterno2";
+            this.lblTribuInterno2.Size = new System.Drawing.Size(196, 18);
+            this.lblTribuInterno2.TabIndex = 38;
+            this.lblTribuInterno2.Text = "Segundo Tribunal Interno";
             // 
-            // label6
+            // lbltribiInterno1
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 102);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 18);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Primer Tribunal Interno";
+            this.lbltribiInterno1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbltribiInterno1.AutoSize = true;
+            this.lbltribiInterno1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltribiInterno1.Location = new System.Drawing.Point(36, 102);
+            this.lbltribiInterno1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltribiInterno1.Name = "lbltribiInterno1";
+            this.lbltribiInterno1.Size = new System.Drawing.Size(180, 18);
+            this.lbltribiInterno1.TabIndex = 37;
+            this.lbltribiInterno1.Text = "Primer Tribunal Interno";
             // 
             // btnCancelarNuevaDefensa
             // 
@@ -774,19 +774,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelarNuevaDefensa;
         private System.Windows.Forms.Button btnGuardarNuevaDefensa;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblRepreGaby2;
+        private System.Windows.Forms.Label lblTribuInterno2;
+        private System.Windows.Forms.Label lbltribiInterno1;
         private System.Windows.Forms.Button btnElegirPresidente;
         private System.Windows.Forms.ComboBox cmbRepresentanteUagrm2;
         private System.Windows.Forms.ComboBox cmbTribunalInterno1;
         private System.Windows.Forms.ComboBox cmbTribunalInterno2;
         private System.Windows.Forms.ComboBox cmbSecretario;
         private System.Windows.Forms.ComboBox cmbRepresentanteMinisterio;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblRepreGaby1;
+        private System.Windows.Forms.Label lblRME;
+        private System.Windows.Forms.Label lblPresidente;
+        private System.Windows.Forms.Label lblSecretario;
         private System.Windows.Forms.Button btnElegirTribunal2;
         private System.Windows.Forms.Button btnElegirRepresentanteUagrm1;
         private System.Windows.Forms.Button btnElegirRepresentanteUagrm2;

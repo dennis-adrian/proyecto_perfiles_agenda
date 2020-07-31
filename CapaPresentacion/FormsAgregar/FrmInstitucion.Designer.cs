@@ -169,7 +169,7 @@
             this.groupBox1.Location = new System.Drawing.Point(9, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(520, 290);
+            this.groupBox1.Size = new System.Drawing.Size(520, 307);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Y Elegir Institución";
@@ -210,7 +210,7 @@
             this.btnSelecInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecInstitu.ForeColor = System.Drawing.Color.White;
             this.btnSelecInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecInstitu.Image")));
-            this.btnSelecInstitu.Location = new System.Drawing.Point(408, 251);
+            this.btnSelecInstitu.Location = new System.Drawing.Point(408, 254);
             this.btnSelecInstitu.Name = "btnSelecInstitu";
             this.btnSelecInstitu.Size = new System.Drawing.Size(93, 29);
             this.btnSelecInstitu.TabIndex = 43;
@@ -226,7 +226,7 @@
             this.btnEditarInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarInstitu.ForeColor = System.Drawing.Color.White;
             this.btnEditarInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarInstitu.Image")));
-            this.btnEditarInstitu.Location = new System.Drawing.Point(305, 251);
+            this.btnEditarInstitu.Location = new System.Drawing.Point(305, 254);
             this.btnEditarInstitu.Name = "btnEditarInstitu";
             this.btnEditarInstitu.Size = new System.Drawing.Size(93, 29);
             this.btnEditarInstitu.TabIndex = 43;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(548, 527);
+            this.ClientSize = new System.Drawing.Size(548, 544);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);

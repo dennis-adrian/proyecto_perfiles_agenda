@@ -60,7 +60,7 @@ namespace CapaPresentacion.FormsAgregar
             try
             {
                 Insert();
-                txtNuevaInstitucion.Clear();
+                txtNombreCarrera.Clear();
                 this.DialogResult = DialogResult.OK;
 
             }
@@ -89,7 +89,7 @@ namespace CapaPresentacion.FormsAgregar
         #region Metodos
         public void Insert()
         {
-            string nombre = txtNuevaInstitucion.Text;
+            string nombre = txtNombreCarrera.Text;
             Object[] datos = new Object[] { nombre };
             helper.ControlInput(datos);
             helper.MainInsertInstitucion();

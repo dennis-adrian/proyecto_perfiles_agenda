@@ -40,7 +40,25 @@ namespace CapaPresentacion
         private FrmFacultad facu = null;
 
 
+        private FrmFacultad FormInstance4
+        {
+            get
+            {
+                if (facu == null)
+                {
+                    facu = new FrmFacultad();
+                    facu.Disposed += new EventHandler(form_Disposed4);
+                }
 
+                return facu;
+            }
+        }
+
+        void form_Disposed4(object sender, EventArgs e)
+        {
+            facu = null;
+
+        }
 
         private FrmCarreraInterna FormInstance1
         {
@@ -78,7 +96,7 @@ namespace CapaPresentacion
 
         void form_Disposed2(object sender, EventArgs e)
         {
-            CarInt = null;
+            CarExt = null;
 
         }
 
@@ -948,15 +966,15 @@ namespace CapaPresentacion
         private void btnNuevaFacultad_Click(object sender, EventArgs e)
         {
             HiddenAgregar();
-            FrmFacultad frmfacu = new FrmFacultad();
-            frmfacu.ShowDialog();
+            FrmFacultad frm = this.FormInstance4;
+            frm.Show();
+            frm.BringToFront();
         }
 
         private void btnNuevaCarreraEx_Click(object sender, EventArgs e)
         {
             HiddenAgregar();
             FrmCarreraExterna frm = this.FormInstance2;
-            // HiddenAgregar();
             HidenCarreras();
             frm.Show();
             frm.BringToFront();

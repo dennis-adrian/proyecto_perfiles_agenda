@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
         #region propiedades
 
-       
+
 
         #endregion
         public void Inicializador(string criterio)
@@ -72,6 +72,8 @@ namespace CapaPresentacion
 
         }
 
+       
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (dtgPerfilesTesis.CurrentRow != null)
@@ -79,7 +81,8 @@ namespace CapaPresentacion
                 int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
                 int cantidadRevisiones = 1;
                 FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
-                frm.Show();
+                frm.ShowDialog();
+               
             }
             else
             {

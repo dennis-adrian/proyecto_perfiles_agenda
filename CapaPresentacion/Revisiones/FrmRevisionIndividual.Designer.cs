@@ -535,7 +535,7 @@
             this.btnElegirTribunal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElegirTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnElegirTribunal.Location = new System.Drawing.Point(350, 112);
+            this.btnElegirTribunal.Location = new System.Drawing.Point(346, 113);
             this.btnElegirTribunal.Name = "btnElegirTribunal";
             this.btnElegirTribunal.Size = new System.Drawing.Size(88, 27);
             this.btnElegirTribunal.TabIndex = 27;

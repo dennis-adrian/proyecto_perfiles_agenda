@@ -41,6 +41,54 @@ namespace CapaPresentacion
 
         #endregion
 
+        private FrmCarreraExterna CarExt = null;
+        private FrmInstitucion insti = null;
+
+        #region instanciar 1 sola vez formularios
+
+        private FrmCarreraExterna FormInstance2
+        {
+            get
+            {
+                if (CarExt == null)
+                {
+                    CarExt = new FrmCarreraExterna();
+                    CarExt.Disposed += new EventHandler(form_Disposed2);
+                }
+
+                return CarExt;
+            }
+        }
+
+        void form_Disposed2(object sender, EventArgs e)
+        {
+            CarExt = null;
+
+        }
+
+        private FrmInstitucion FormInstance1
+        {
+            get
+            {
+                if (insti == null)
+                {
+                    insti = new FrmInstitucion();
+                    insti.Disposed += new EventHandler(form_Disposed1);
+                }
+
+                return insti;
+            }
+        }
+
+        void form_Disposed1(object sender, EventArgs e)
+        {
+            insti = null;
+
+        }
+
+        #endregion
+
+
         #region Instancias
 
         NegocioLicenciados obj = new NegocioLicenciados();
@@ -160,17 +208,20 @@ namespace CapaPresentacion
         }
         private void btnAgregarCarrera_Click(object sender, EventArgs e)
         {
-            FrmCarreraExterna frm = new FrmCarreraExterna();
-            if(frm.ShowDialog() == DialogResult.OK)
+            FrmCarreraExterna frm = this.FormInstance2;
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 ShowCarrerasLicenciado();
+                frm.BringToFront();
+
             }
         }
 
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
-            FrmInstitucion frmI = new FrmInstitucion();
-            frmI.Show();
+            FrmInstitucion frm = this.FormInstance1;
+            frm.Show();
+            frm.BringToFront();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

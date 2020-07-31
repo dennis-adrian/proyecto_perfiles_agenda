@@ -29,6 +29,31 @@ namespace CapaPresentacion
             FormsControls();
         }
         #endregion
+        private FrmTutor Tutor = null;
+        #region instancia 1 vez frm
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (Tutor == null)
+                {
+                    Tutor = new FrmTutor();
+                    Tutor.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return Tutor;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            Tutor = null;
+
+        }
+
+        #endregion
+
 
         #region Atributos
         int titulacion = 0;
@@ -53,17 +78,21 @@ namespace CapaPresentacion
         {
             tipolicenciado = 1;
             FirstButtonActive(btnElegirPresidente);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lblPresidente.Text;
+            frm.BringToFront();
         }
         private void btnElegirSecretario_Click(object sender, EventArgs e)
         {
             tipolicenciado = 4;
             FirstButtonActive(btnElegirSecretario);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lblSecretario.Text;
+            frm.BringToFront();
 
         }
 
@@ -71,45 +100,55 @@ namespace CapaPresentacion
         {
             tipolicenciado = 2;
             FirstButtonActive(btnElegirTribunal1);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lbltribiInterno1.Text;
+            frm.BringToFront();
         }
 
         private void btnElegirTribunal2_Click(object sender, EventArgs e)
         {
             tipolicenciado = 3;
             FirstButtonActive(btnElegirTribunal2);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lblTribuInterno2.Text;
+            frm.BringToFront();
         }
 
         private void btnElegirRepresentanteMinisterio_Click(object sender, EventArgs e)
         {
             tipolicenciado = 5;
             FirstButtonActive(btnElegirRepresentanteMinisterio);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lblRME.Text;
+            frm.BringToFront();
         }
 
         private void btnElegirRepresentanteUagrm1_Click(object sender, EventArgs e)
         {
             tipolicenciado = 6;
             FirstButtonActive(btnElegirRepresentanteUagrm1);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Elegir : " + lblRepreGaby1.Text;
+            frm.BringToFront();
         }
 
         private void btnElegirRepresentanteUagrm2_Click(object sender, EventArgs e)
         {
             tipolicenciado = 7;
             FirstButtonActive(btnElegirRepresentanteUagrm2);
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.lblLicen.Text = "Licenciado : " + lblRepreGaby2.Text;
+            frm.BringToFront();
         }
 
 

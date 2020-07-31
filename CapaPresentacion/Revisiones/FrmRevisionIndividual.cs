@@ -43,6 +43,29 @@ namespace CapaPresentacion
         #endregion
 
 
+        private FrmTutor Tutor = null;
+
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (Tutor == null)
+                {
+                    Tutor = new FrmTutor();
+                    Tutor.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return Tutor;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            Tutor = null;
+
+        }
+
         public void ShowData()
         {
             if(rbTribunal1.Checked == true)
@@ -159,10 +182,10 @@ namespace CapaPresentacion
         #region Buttons
         private void btnElegirTribunal_Click(object sender, EventArgs e)
         {
-
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.BringToFront();
         }
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarreraExterna));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.lbltitu = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNombreCarreraLic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevaInstitu = new System.Windows.Forms.Button();
+            this.btnCarreraExt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSelecInstitu = new System.Windows.Forms.Button();
-            this.btnEditarInstitu = new System.Windows.Forms.Button();
+            this.txtBuscarCarreraExt = new System.Windows.Forms.TextBox();
+            this.btnSelecCarreraExt = new System.Windows.Forms.Button();
+            this.btnEditarCarreraExt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtgInstitucion = new System.Windows.Forms.DataGridView();
+            this.dtgCarreraExterna = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgInstitucion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCarreraExterna)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBarraTitulo
@@ -64,7 +64,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(600, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(546, 27);
             this.pnlBarraTitulo.TabIndex = 28;
             this.pnlBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
@@ -79,7 +79,7 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(565, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(511, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
@@ -107,18 +107,18 @@
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 45);
+            this.panel2.Size = new System.Drawing.Size(546, 45);
             this.panel2.TabIndex = 32;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtNombreCarreraLic);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnNuevaInstitu);
+            this.groupBox2.Controls.Add(this.btnCarreraExt);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(37, 110);
+            this.groupBox2.Location = new System.Drawing.Point(11, 85);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 148);
+            this.groupBox2.Size = new System.Drawing.Size(520, 139);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar y agregar carrera externa";
@@ -141,32 +141,32 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Nombre de carrera externa";
             // 
-            // btnNuevaInstitu
+            // btnCarreraExt
             // 
-            this.btnNuevaInstitu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaInstitu.FlatAppearance.BorderSize = 0;
-            this.btnNuevaInstitu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaInstitu.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaInstitu.Image")));
-            this.btnNuevaInstitu.Location = new System.Drawing.Point(408, 97);
-            this.btnNuevaInstitu.Name = "btnNuevaInstitu";
-            this.btnNuevaInstitu.Size = new System.Drawing.Size(93, 29);
-            this.btnNuevaInstitu.TabIndex = 40;
-            this.btnNuevaInstitu.Text = "Guardar";
-            this.btnNuevaInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevaInstitu.UseVisualStyleBackColor = false;
+            this.btnCarreraExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnCarreraExt.FlatAppearance.BorderSize = 0;
+            this.btnCarreraExt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarreraExt.ForeColor = System.Drawing.Color.White;
+            this.btnCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnCarreraExt.Image")));
+            this.btnCarreraExt.Location = new System.Drawing.Point(408, 97);
+            this.btnCarreraExt.Name = "btnCarreraExt";
+            this.btnCarreraExt.Size = new System.Drawing.Size(93, 29);
+            this.btnCarreraExt.TabIndex = 40;
+            this.btnCarreraExt.Text = "Guardar";
+            this.btnCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCarreraExt.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.btnSelecInstitu);
-            this.groupBox1.Controls.Add(this.btnEditarInstitu);
+            this.groupBox1.Controls.Add(this.txtBuscarCarreraExt);
+            this.groupBox1.Controls.Add(this.btnSelecCarreraExt);
+            this.groupBox1.Controls.Add(this.btnEditarCarreraExt);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtgInstitucion);
+            this.groupBox1.Controls.Add(this.dtgCarreraExterna);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(37, 272);
+            this.groupBox1.Location = new System.Drawing.Point(11, 236);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(520, 298);
@@ -194,45 +194,45 @@
             this.btnBuscar.TabIndex = 54;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtBuscarCarreraExt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(85, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(416, 26);
-            this.textBox1.TabIndex = 52;
+            this.txtBuscarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCarreraExt.Location = new System.Drawing.Point(85, 33);
+            this.txtBuscarCarreraExt.Name = "txtBuscarCarreraExt";
+            this.txtBuscarCarreraExt.Size = new System.Drawing.Size(416, 26);
+            this.txtBuscarCarreraExt.TabIndex = 52;
             // 
-            // btnSelecInstitu
+            // btnSelecCarreraExt
             // 
-            this.btnSelecInstitu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnSelecInstitu.FlatAppearance.BorderSize = 0;
-            this.btnSelecInstitu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecInstitu.ForeColor = System.Drawing.Color.White;
-            this.btnSelecInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecInstitu.Image")));
-            this.btnSelecInstitu.Location = new System.Drawing.Point(408, 246);
-            this.btnSelecInstitu.Name = "btnSelecInstitu";
-            this.btnSelecInstitu.Size = new System.Drawing.Size(93, 29);
-            this.btnSelecInstitu.TabIndex = 43;
-            this.btnSelecInstitu.Text = "  Elegir";
-            this.btnSelecInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSelecInstitu.UseVisualStyleBackColor = false;
+            this.btnSelecCarreraExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnSelecCarreraExt.FlatAppearance.BorderSize = 0;
+            this.btnSelecCarreraExt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecCarreraExt.ForeColor = System.Drawing.Color.White;
+            this.btnSelecCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCarreraExt.Image")));
+            this.btnSelecCarreraExt.Location = new System.Drawing.Point(408, 246);
+            this.btnSelecCarreraExt.Name = "btnSelecCarreraExt";
+            this.btnSelecCarreraExt.Size = new System.Drawing.Size(93, 29);
+            this.btnSelecCarreraExt.TabIndex = 43;
+            this.btnSelecCarreraExt.Text = "  Elegir";
+            this.btnSelecCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSelecCarreraExt.UseVisualStyleBackColor = false;
             // 
-            // btnEditarInstitu
+            // btnEditarCarreraExt
             // 
-            this.btnEditarInstitu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnEditarInstitu.FlatAppearance.BorderSize = 0;
-            this.btnEditarInstitu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarInstitu.ForeColor = System.Drawing.Color.White;
-            this.btnEditarInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarInstitu.Image")));
-            this.btnEditarInstitu.Location = new System.Drawing.Point(305, 246);
-            this.btnEditarInstitu.Name = "btnEditarInstitu";
-            this.btnEditarInstitu.Size = new System.Drawing.Size(93, 29);
-            this.btnEditarInstitu.TabIndex = 43;
-            this.btnEditarInstitu.Text = "  Editar";
-            this.btnEditarInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditarInstitu.UseVisualStyleBackColor = false;
+            this.btnEditarCarreraExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEditarCarreraExt.FlatAppearance.BorderSize = 0;
+            this.btnEditarCarreraExt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCarreraExt.ForeColor = System.Drawing.Color.White;
+            this.btnEditarCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCarreraExt.Image")));
+            this.btnEditarCarreraExt.Location = new System.Drawing.Point(305, 246);
+            this.btnEditarCarreraExt.Name = "btnEditarCarreraExt";
+            this.btnEditarCarreraExt.Size = new System.Drawing.Size(93, 29);
+            this.btnEditarCarreraExt.TabIndex = 43;
+            this.btnEditarCarreraExt.Text = "  Editar";
+            this.btnEditarCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditarCarreraExt.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -244,53 +244,53 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Buscar :";
             // 
-            // dtgInstitucion
+            // dtgCarreraExterna
             // 
-            this.dtgInstitucion.AllowUserToDeleteRows = false;
-            this.dtgInstitucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgInstitucion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgInstitucion.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dtgInstitucion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgInstitucion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgInstitucion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgInstitucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgInstitucion.ColumnHeadersHeight = 24;
-            this.dtgInstitucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgInstitucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgCarreraExterna.AllowUserToDeleteRows = false;
+            this.dtgCarreraExterna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgCarreraExterna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgCarreraExterna.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dtgCarreraExterna.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgCarreraExterna.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgCarreraExterna.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCarreraExterna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgCarreraExterna.ColumnHeadersHeight = 24;
+            this.dtgCarreraExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgCarreraExterna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dtgInstitucion.EnableHeadersVisualStyles = false;
-            this.dtgInstitucion.GridColor = System.Drawing.Color.White;
-            this.dtgInstitucion.Location = new System.Drawing.Point(1, 76);
-            this.dtgInstitucion.Name = "dtgInstitucion";
-            this.dtgInstitucion.ReadOnly = true;
-            this.dtgInstitucion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgInstitucion.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dtgInstitucion.RowHeadersVisible = false;
-            this.dtgInstitucion.RowHeadersWidth = 52;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgInstitucion.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dtgInstitucion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgInstitucion.Size = new System.Drawing.Size(518, 164);
-            this.dtgInstitucion.TabIndex = 49;
+            this.dtgCarreraExterna.EnableHeadersVisualStyles = false;
+            this.dtgCarreraExterna.GridColor = System.Drawing.Color.White;
+            this.dtgCarreraExterna.Location = new System.Drawing.Point(1, 76);
+            this.dtgCarreraExterna.Name = "dtgCarreraExterna";
+            this.dtgCarreraExterna.ReadOnly = true;
+            this.dtgCarreraExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCarreraExterna.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgCarreraExterna.RowHeadersVisible = false;
+            this.dtgCarreraExterna.RowHeadersWidth = 52;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgCarreraExterna.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgCarreraExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCarreraExterna.Size = new System.Drawing.Size(518, 164);
+            this.dtgCarreraExterna.TabIndex = 49;
             // 
             // Column1
             // 
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(600, 589);
+            this.ClientSize = new System.Drawing.Size(546, 552);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -329,7 +329,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgInstitucion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCarreraExterna)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,14 +343,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNombreCarreraLic;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNuevaInstitu;
+        private System.Windows.Forms.Button btnCarreraExt;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSelecInstitu;
-        private System.Windows.Forms.Button btnEditarInstitu;
+        private System.Windows.Forms.TextBox txtBuscarCarreraExt;
+        private System.Windows.Forms.Button btnSelecCarreraExt;
+        private System.Windows.Forms.Button btnEditarCarreraExt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtgInstitucion;
+        private System.Windows.Forms.DataGridView dtgCarreraExterna;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
