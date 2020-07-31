@@ -89,6 +89,8 @@
             this.txtTutorGral = new System.Windows.Forms.TextBox();
             this.txtNombreGral = new System.Windows.Forms.TextBox();
             this.txtRegistroGral = new System.Windows.Forms.TextBox();
+            this.btnCancelarNuevop = new System.Windows.Forms.Button();
+            this.btnGuardarNuevoP = new System.Windows.Forms.Button();
             this.pnlBarraNuevoLicenciado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -547,6 +549,8 @@
             // pnlContenedorGral
             // 
             this.pnlContenedorGral.BackColor = System.Drawing.Color.LightGray;
+            this.pnlContenedorGral.Controls.Add(this.btnCancelarNuevop);
+            this.pnlContenedorGral.Controls.Add(this.btnGuardarNuevoP);
             this.pnlContenedorGral.Controls.Add(this.txtCarreraGral);
             this.pnlContenedorGral.Controls.Add(this.label3);
             this.pnlContenedorGral.Controls.Add(this.txtNumeroRevisiones);
@@ -844,6 +848,37 @@
             this.txtRegistroGral.Size = new System.Drawing.Size(144, 24);
             this.txtRegistroGral.TabIndex = 10;
             // 
+            // btnCancelarNuevop
+            // 
+            this.btnCancelarNuevop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelarNuevop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnCancelarNuevop.FlatAppearance.BorderSize = 0;
+            this.btnCancelarNuevop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarNuevop.Location = new System.Drawing.Point(567, 450);
+            this.btnCancelarNuevop.Name = "btnCancelarNuevop";
+            this.btnCancelarNuevop.Size = new System.Drawing.Size(100, 35);
+            this.btnCancelarNuevop.TabIndex = 41;
+            this.btnCancelarNuevop.Text = "Cancelar";
+            this.btnCancelarNuevop.UseVisualStyleBackColor = false;
+            this.btnCancelarNuevop.Click += new System.EventHandler(this.btnCancelarNuevop_Click);
+            // 
+            // btnGuardarNuevoP
+            // 
+            this.btnGuardarNuevoP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardarNuevoP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGuardarNuevoP.FlatAppearance.BorderSize = 0;
+            this.btnGuardarNuevoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarNuevoP.Location = new System.Drawing.Point(673, 450);
+            this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
+            this.btnGuardarNuevoP.Size = new System.Drawing.Size(100, 35);
+            this.btnGuardarNuevoP.TabIndex = 40;
+            this.btnGuardarNuevoP.Text = "Guardar";
+            this.btnGuardarNuevoP.UseVisualStyleBackColor = false;
+            // 
             // FrmRevisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -943,5 +978,7 @@
         private System.Windows.Forms.Panel pnlContainerTercera;
         private System.Windows.Forms.Panel pnlContainerSegunda;
         private System.Windows.Forms.Panel pnlContainerPrimera;
+        private System.Windows.Forms.Button btnCancelarNuevop;
+        private System.Windows.Forms.Button btnGuardarNuevoP;
     }
 }

@@ -487,5 +487,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnCancelarNuevop_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
