@@ -285,6 +285,15 @@ namespace test_project
             }
 
         }
+        [TestMethod]
+        public void Test3()
+        {
+            PerfilTesis pf = new PerfilTesis();
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            obj.test1(pf.LastId(), 1, 2);
+          
+
+        }
 
 
     }

@@ -352,64 +352,52 @@ namespace CapaNegocio
         public bool ValidarFechasEmpasteforNewInsert(int it, int t1, int t2)
         {
             bool result = true;
-            string empastet1 = "";
-            string empastet2 = "";
-            bool res = ValidateNextRevision(it, t1, t2);
-            if(res == true)
+            try
             {
-                var revt1 = revision.LastRevisionByTribunal(it, t1);
-                var revt2 = revision.LastRevisionByTribunal(it, t2);
-
-                for (int i = 0; i < revt1.Rows.Count; i++)
+               
+                string empastet1 = "";
+                string empastet2 = "";
+                bool res = ValidateNextRevision(it, t1, t2);
+                if (res == true)
                 {
-                    empastet1 = revt1.Rows[i][10].ToString();
-                }
-                for (int i = 0; i < revt2.Rows.Count; i++)
-                {
-                    empastet2 = revt2.Rows[i][10].ToString();
+                    var revt1 = revision.LastRevisionByTribunal(it, t1);
+                    var revt2 = revision.LastRevisionByTribunal(it, t2);
+
+                    for (int i = 0; i < revt1.Rows.Count; i++)
+                    {
+                        empastet1 = revt1.Rows[i][10].ToString();
+                    }
+                    for (int i = 0; i < revt2.Rows.Count; i++)
+                    {
+                        empastet2 = revt2.Rows[i][10].ToString();
+
+                    }
+
+
+                    if ((empastet1 == "" || empastet1 == null) || (empastet2 == "" || empastet2 == null))
+                    {
+                        result = false;
+                    }
+
 
                 }
-
-
-                if ((empastet1 == "" || empastet1 == null) || (empastet2 == "" || empastet2 == null))
+                else
                 {
                     result = false;
+
                 }
+               
 
-
+                return result;
             }
-            else
-            {
+            catch
+            {   
                 result = false;
+                return result;
+            }
 
             }
-            /* bool result = false;
-            string empastet1 = "";
-            string empastet2 = "";
-            bool res = ValidateNextRevision(it, t1, t2);
-            if(res == true)
-            {
-                var revt1 = revision.LastRevisionByTribunal(it, t1);
-                var revt2 = revision.LastRevisionByTribunal(it, t2);
-
-                for (int i = 0; i < revt1.Rows.Count; i++)
-                {
-                    empastet1 = revt1.Rows[i][10].ToString();
-                }
-                for (int i = 0; i < revt2.Rows.Count; i++)
-                {
-                    empastet2 = revt2.Rows[i][10].ToString();
-
-                }
-
-            if ((empastet1 != "" && empastet1 != null) && (empastet2 != "" && empastet2 != null))
-            {
-                result = true;
-            }
-        }*/
-
-            return result;
-        }
+           
 
         public bool ExisteAlgunaFechaEmpasteforNewInsert(int it, int t1, int t2)
         {
@@ -443,6 +431,45 @@ namespace CapaNegocio
             return result;
         }
         #endregion
+
+        public void test1(int it, int t1, int t2)
+        {
+
+            string empastet1 = "";
+            string empastet2 = "nada";
+            try
+            {
+                bool res = ValidateNextRevision(it, t1, t2);
+                if (res == true)
+                {
+                    var revt1 = revision.LastRevisionByTribunal(it, t1);
+                    var revt2 = revision.LastRevisionByTribunal(it, t2);
+
+                    for (int i = 0; i < revt1.Rows.Count; i++)
+                    {
+                        empastet1 = revt1.Rows[i][10].ToString();
+                    }
+                    for (int i = 0; i < revt2.Rows.Count; i++)
+                    {
+                        empastet2 = revt2.Rows[i][10].ToString();
+
+                    }
+                }
+                Console.WriteLine(empastet1);
+                Console.WriteLine(empastet2);
+            }
+            catch
+            {
+                Console.WriteLine("hbo un error");
+            }
+           
+
+              
+
+
+            
+
+        }
 
     }
 }

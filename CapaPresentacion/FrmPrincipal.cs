@@ -429,7 +429,6 @@ namespace CapaPresentacion
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-           
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmPerfiles(criterio));
@@ -996,5 +995,12 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnAgregrNew_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }

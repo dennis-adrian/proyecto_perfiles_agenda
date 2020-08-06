@@ -196,197 +196,61 @@ namespace CapaPresentacion
         {
             try
             {
-                if(this.id_revision <= 0)
+                if (this.id_revision <= 0)
                 {
-                    bool estado_insert = (chbEmpaste.Checked == true) ? true : false;
+                    Insert();
+                    MessageBox.Show("Datos de la revision guardados correctamente");
+                    InsertForNewDefensa();
+                    rbTribunal1.Checked = false;
+                    rbTribunal2.Checked = false;
+                    ClearForms();
+                   
 
-                    if (estado_insert == true)
-                    {
-                        bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
-                        bool res2 = obj.ExisteAlgunaFechaEmpasteforNewInsert(this.id_perfil, 1, 2);
-                        if ((res == true))
-                        {
-                            string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
-                            string title = "Nueva Defensa Externa";
-                            DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
-
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                Insert();
-                                rbTribunal1.Checked = false;
-                                rbTribunal2.Checked = false;
-                                ClearForms();
-                                MessageBox.Show("Datos de la revision guardados correctamente");
-
-
-                                Object[] datos = new Object[]
-                               { this.id_perfil};
-                                nuevadefensa.ControlInput(datos);
-                                nuevadefensa.Main(2);
-                                MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
-                                //hacer el insert aqui
-                            }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                                chbEmpaste.Checked = false;
-                                MessageBox.Show("Se Deshabilitó la fecha de empaste");
-                            }
-                           
-                        }
-                        else
-                        {
-                            if (res2 == true)
-                            {
-                                string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
-                                string title = "Nueva Defensa Externa";
-                                DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
-
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    Insert();
-                                    rbTribunal1.Checked = false;
-                                    rbTribunal2.Checked = false;
-                                    ClearForms();
-                                    MessageBox.Show("Datos de la revision guardados correctamente");
-
-
-                                    Object[] datos = new Object[]
-                                   { this.id_perfil};
-                                    nuevadefensa.ControlInput(datos);
-                                    nuevadefensa.Main(2);
-                                    MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
-                                    //hacer el insert aqui
-                                }
-                                else if (dialogResult == DialogResult.No)
-                                {
-                                    chbEmpaste.Checked = false;
-                                    MessageBox.Show("Se Deshabilitó la fecha de empaste");
-                                }
-
-                            }
-                            else
-                            {
-                                Insert();
-                                rbTribunal1.Checked = false;
-                                rbTribunal2.Checked = false;
-                                ClearForms();
-                                MessageBox.Show("2 Datos guardados correctamente");
-
-                            }
-                           
-                        }
-                    }
-                    else
-                    {
-                        Insert();
-                        rbTribunal1.Checked = false;
-                        rbTribunal2.Checked = false;
-                        ClearForms();
-                        MessageBox.Show("3 Datos guardados correctamente");
-
-                    }
-                    
                 }
                 else
                 {
-                    bool estado_update = (chbEmpaste.Checked == true) ? true : false;
-
-                    if (estado_update == true)
-                    {
-                        bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
-                        bool res2 = obj.ExisteAlgunaFechaEmpasteforNewInsert(this.id_perfil, 1, 2);
-                        if (res == true)
-                        {
-                            string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
-                            string title = "Nueva Defensa Externa";
-                            DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
-
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                Update(this.id_revision);
-
-                                rbTribunal1.Checked = false;
-                                rbTribunal2.Checked = false;
-                                ClearForms();
-                                MessageBox.Show("Datos de la revision actualizados correctamente");
+                    Update(this.id_revision);
+                    MessageBox.Show("Datos de la revision actualizados correctamente");
+                    InsertForNewDefensa();
+                    rbTribunal1.Checked = false;
+                    rbTribunal2.Checked = false;
+                    ClearForms();
+                   
 
 
-                                Object[] datos = new Object[]
-                               { this.id_perfil};
-                                nuevadefensa.ControlInput(datos);
-                                nuevadefensa.Main(2);
-                                MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
-                                //hacer el insert aqui
-                            }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                                chbEmpaste.Checked = false;
-                                MessageBox.Show(" Se Deshabilitó la fecha de empaste");
-                            }
-
-                        }
-                        else
-                        {
-                            if (res2 == true)
-                            {
-                                string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
-                                string title = "Nueva Defensa Externa";
-                                DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
-
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    Update(this.id_revision);
-
-                                    rbTribunal1.Checked = false;
-                                    rbTribunal2.Checked = false;
-                                    ClearForms();
-                                    MessageBox.Show("Datos de la revision actualizados correctamente");
-
-
-                                    Object[] datos = new Object[]
-                                   { this.id_perfil};
-                                    nuevadefensa.ControlInput(datos);
-                                    nuevadefensa.Main(2);
-                                    MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
-                                    //hacer el insert aqui
-                                }
-                                else if (dialogResult == DialogResult.No)
-                                {
-                                    chbEmpaste.Checked = false;
-                                    MessageBox.Show(" Se Deshabilitó la fecha de empaste");
-                                }
-
-                            }
-                            else
-                            {
-                                Update(this.id_revision);
-
-                                rbTribunal1.Checked = false;
-                                rbTribunal2.Checked = false;
-                                ClearForms();
-                                MessageBox.Show("2 Datos actualizados correctamente");
-
-                            }
-                           
-                        }
-                    }
-                    else
-                    {
-                        Update(this.id_revision);
-
-                        rbTribunal1.Checked = false;
-                        rbTribunal2.Checked = false;
-                        ClearForms();
-                        MessageBox.Show("3 Datos actualizados correctamente");
-
-                    }
-
-                    
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
+            }
+        }
+
+        public void InsertForNewDefensa()
+        {
+            bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
+            if (res == true)
+            {
+                string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
+                string title = "Nueva Defensa Externa";
+                DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+
+                    Object[] datos = new Object[]
+                   { this.id_perfil};
+                    nuevadefensa.ControlInput(datos);
+                    nuevadefensa.Main(2);
+                    MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
+                    //hacer el insert aqui
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                    MessageBox.Show("debera asignar manulamente despues");
+                }
+
             }
         }
 
