@@ -396,20 +396,13 @@ namespace CapaPresentacion
 
         private void rbTribunal2_CheckedChanged(object sender, EventArgs e)
         {
-            //this.nroTribunal = "2";
-            //reiniciarValores();
-            //txtTribunal.Text = nroTribunal;
             infoRevision(this.id_perfil, this.num_revision, 2);
         }
 
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
         {
-            //this.nroTribunal = "1";
-            //reiniciarValores();
-            //txtTribunal.Text = nroTribunal;
-            infoRevision(this.id_perfil, this.num_revision, 1);
+           infoRevision(this.id_perfil, this.num_revision, 1);
         }
-
 
         public void infoRevision(int i, int n, int t)
         {
@@ -485,6 +478,7 @@ namespace CapaPresentacion
                 check.Checked = true;
             }
         }
+
         public bool DateEnabled(DateTimePicker dtp)
         {
            
@@ -496,7 +490,6 @@ namespace CapaPresentacion
             return false;
 
         }
-
 
         public void Insert()
         {
@@ -548,6 +541,7 @@ namespace CapaPresentacion
             
 
         }
+
         public void Update(int idrevision)
         {
 
@@ -598,11 +592,6 @@ namespace CapaPresentacion
 
 
         }
-
-
-
-
-
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {

@@ -116,10 +116,7 @@ namespace CapaPresentacion
             pnlCuartaRev.BackColor = Color.FromArgb(64, 64, 64);
         }
 
-        
-
-
-
+       
         private void FrmRevisiones2_Load(object sender, EventArgs e)
         {
             pnlContenedorGralBackup = pnlContenedorGral;
@@ -254,9 +251,7 @@ namespace CapaPresentacion
             pnlSubMenus.Visible = true;
             ShowRevisiones(num);
         }
-
-       
-
+               
         public void ShowRevisiones(int num)
         {
             
@@ -307,7 +302,6 @@ namespace CapaPresentacion
             }
         }
         
-
         private void btnAddNewRev1_Click(object sender, EventArgs e)
         {
 
@@ -481,11 +475,6 @@ namespace CapaPresentacion
                 }
 
             }
-        }
-
-        private void pnlContenedorGral_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
