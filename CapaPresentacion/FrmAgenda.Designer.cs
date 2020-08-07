@@ -33,17 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgenda));
             this.pnlBuscar = new System.Windows.Forms.Panel();
-            this.btnFiltro = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnEditarAgenda = new System.Windows.Forms.Button();
             this.txtBuscarDefensa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnFiltro = new FontAwesome.Sharp.IconButton();
+            this.btnEditarAgenda = new System.Windows.Forms.Button();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
             this.pnlFiltroDefensa = new System.Windows.Forms.Panel();
             this.btnPorExecencia = new FontAwesome.Sharp.IconButton();
             this.btnTesis = new FontAwesome.Sharp.IconButton();
             this.btnExamenGrado = new FontAwesome.Sharp.IconButton();
+            this.btntTodasDefensas = new FontAwesome.Sharp.IconButton();
             this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
+            this.btnBuscarPerfil = new System.Windows.Forms.Button();
             this.pnlBuscar.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
             this.pnlFiltroDefensa.SuspendLayout();
@@ -53,10 +54,10 @@
             // pnlBuscar
             // 
             this.pnlBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlBuscar.Controls.Add(this.btnBuscarPerfil);
             this.pnlBuscar.Controls.Add(this.btnFiltro);
-            this.pnlBuscar.Controls.Add(this.btnBuscar);
-            this.pnlBuscar.Controls.Add(this.btnEditarAgenda);
             this.pnlBuscar.Controls.Add(this.txtBuscarDefensa);
+            this.pnlBuscar.Controls.Add(this.btnEditarAgenda);
             this.pnlBuscar.Controls.Add(this.label14);
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
@@ -64,6 +65,30 @@
             this.pnlBuscar.Name = "pnlBuscar";
             this.pnlBuscar.Size = new System.Drawing.Size(1620, 88);
             this.pnlBuscar.TabIndex = 1;
+            // 
+            // txtBuscarDefensa
+            // 
+            this.txtBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarDefensa.Location = new System.Drawing.Point(1000, 20);
+            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarDefensa.Name = "txtBuscarDefensa";
+            this.txtBuscarDefensa.Size = new System.Drawing.Size(370, 38);
+            this.txtBuscarDefensa.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(700, 20);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(281, 33);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Nombre Estudiante";
             // 
             // btnFiltro
             // 
@@ -77,38 +102,16 @@
             this.btnFiltro.IconColor = System.Drawing.Color.White;
             this.btnFiltro.IconSize = 32;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltro.Location = new System.Drawing.Point(603, 21);
+            this.btnFiltro.Location = new System.Drawing.Point(350, 20);
             this.btnFiltro.Margin = new System.Windows.Forms.Padding(6);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Rotation = 0D;
-            this.btnFiltro.Size = new System.Drawing.Size(130, 48);
+            this.btnFiltro.Size = new System.Drawing.Size(150, 50);
             this.btnFiltro.TabIndex = 56;
             this.btnFiltro.Text = " Filtro";
             this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFiltro.UseVisualStyleBackColor = false;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconSize = 24;
-            this.btnBuscar.Location = new System.Drawing.Point(1550, 31);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Rotation = 0D;
-            this.btnBuscar.Size = new System.Drawing.Size(44, 40);
-            this.btnBuscar.TabIndex = 55;
-            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnEditarAgenda
             // 
@@ -118,38 +121,14 @@
             this.btnEditarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarAgenda.Location = new System.Drawing.Point(22, 21);
+            this.btnEditarAgenda.Location = new System.Drawing.Point(30, 20);
             this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarAgenda.Name = "btnEditarAgenda";
-            this.btnEditarAgenda.Size = new System.Drawing.Size(510, 48);
+            this.btnEditarAgenda.Size = new System.Drawing.Size(300, 50);
             this.btnEditarAgenda.TabIndex = 27;
-            this.btnEditarAgenda.Text = "Editar Información de la Defensa";
+            this.btnEditarAgenda.Text = "Editar Defensa";
             this.btnEditarAgenda.UseVisualStyleBackColor = false;
             this.btnEditarAgenda.Click += new System.EventHandler(this.btnEditarAgenda_Click);
-            // 
-            // txtBuscarDefensa
-            // 
-            this.txtBuscarDefensa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDefensa.Location = new System.Drawing.Point(1206, 27);
-            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscarDefensa.Name = "txtBuscarDefensa";
-            this.txtBuscarDefensa.Size = new System.Drawing.Size(390, 41);
-            this.txtBuscarDefensa.TabIndex = 24;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(896, 33);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(281, 33);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Nombre Estudiante";
             // 
             // pnlDataGrid
             // 
@@ -169,11 +148,13 @@
             this.pnlFiltroDefensa.Controls.Add(this.btnPorExecencia);
             this.pnlFiltroDefensa.Controls.Add(this.btnTesis);
             this.pnlFiltroDefensa.Controls.Add(this.btnExamenGrado);
-            this.pnlFiltroDefensa.Location = new System.Drawing.Point(763, 0);
+            this.pnlFiltroDefensa.Controls.Add(this.btntTodasDefensas);
+            this.pnlFiltroDefensa.Location = new System.Drawing.Point(350, 0);
             this.pnlFiltroDefensa.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFiltroDefensa.Name = "pnlFiltroDefensa";
-            this.pnlFiltroDefensa.Size = new System.Drawing.Size(370, 180);
+            this.pnlFiltroDefensa.Size = new System.Drawing.Size(350, 240);
             this.pnlFiltroDefensa.TabIndex = 33;
+            this.pnlFiltroDefensa.Visible = false;
             // 
             // btnPorExecencia
             // 
@@ -191,12 +172,12 @@
             this.btnPorExecencia.IconColor = System.Drawing.Color.White;
             this.btnPorExecencia.IconSize = 10;
             this.btnPorExecencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPorExecencia.Location = new System.Drawing.Point(0, 120);
+            this.btnPorExecencia.Location = new System.Drawing.Point(0, 180);
             this.btnPorExecencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnPorExecencia.Name = "btnPorExecencia";
             this.btnPorExecencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPorExecencia.Rotation = 0D;
-            this.btnPorExecencia.Size = new System.Drawing.Size(370, 60);
+            this.btnPorExecencia.Size = new System.Drawing.Size(350, 60);
             this.btnPorExecencia.TabIndex = 16;
             this.btnPorExecencia.Text = "Graduacion por Excelencia";
             this.btnPorExecencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -219,12 +200,12 @@
             this.btnTesis.IconColor = System.Drawing.Color.White;
             this.btnTesis.IconSize = 10;
             this.btnTesis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTesis.Location = new System.Drawing.Point(0, 60);
+            this.btnTesis.Location = new System.Drawing.Point(0, 120);
             this.btnTesis.Margin = new System.Windows.Forms.Padding(4);
             this.btnTesis.Name = "btnTesis";
             this.btnTesis.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTesis.Rotation = 0D;
-            this.btnTesis.Size = new System.Drawing.Size(370, 60);
+            this.btnTesis.Size = new System.Drawing.Size(350, 60);
             this.btnTesis.TabIndex = 18;
             this.btnTesis.Text = "Tesis";
             this.btnTesis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,18 +229,46 @@
             this.btnExamenGrado.IconColor = System.Drawing.Color.White;
             this.btnExamenGrado.IconSize = 10;
             this.btnExamenGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamenGrado.Location = new System.Drawing.Point(0, 0);
+            this.btnExamenGrado.Location = new System.Drawing.Point(0, 60);
             this.btnExamenGrado.Margin = new System.Windows.Forms.Padding(4);
             this.btnExamenGrado.Name = "btnExamenGrado";
             this.btnExamenGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExamenGrado.Rotation = 0D;
-            this.btnExamenGrado.Size = new System.Drawing.Size(370, 60);
+            this.btnExamenGrado.Size = new System.Drawing.Size(350, 60);
             this.btnExamenGrado.TabIndex = 17;
             this.btnExamenGrado.Text = "Examen de Grado";
             this.btnExamenGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExamenGrado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExamenGrado.UseVisualStyleBackColor = false;
             this.btnExamenGrado.Click += new System.EventHandler(this.btnExamenGrado_Click);
+            // 
+            // btntTodasDefensas
+            // 
+            this.btntTodasDefensas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btntTodasDefensas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btntTodasDefensas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btntTodasDefensas.FlatAppearance.BorderSize = 0;
+            this.btntTodasDefensas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btntTodasDefensas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btntTodasDefensas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntTodasDefensas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btntTodasDefensas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntTodasDefensas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btntTodasDefensas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btntTodasDefensas.IconColor = System.Drawing.Color.White;
+            this.btntTodasDefensas.IconSize = 10;
+            this.btntTodasDefensas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btntTodasDefensas.Location = new System.Drawing.Point(0, 0);
+            this.btntTodasDefensas.Margin = new System.Windows.Forms.Padding(4);
+            this.btntTodasDefensas.Name = "btntTodasDefensas";
+            this.btntTodasDefensas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btntTodasDefensas.Rotation = 0D;
+            this.btntTodasDefensas.Size = new System.Drawing.Size(350, 60);
+            this.btntTodasDefensas.TabIndex = 19;
+            this.btntTodasDefensas.Text = "Todas las Defensas";
+            this.btntTodasDefensas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btntTodasDefensas.UseVisualStyleBackColor = false;
+            this.btntTodasDefensas.Click += new System.EventHandler(this.btntTodasDefensas_Click);
             // 
             // dtgDefensaExterna
             // 
@@ -280,9 +289,10 @@
             this.dtgDefensaExterna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgDefensaExterna.ColumnHeadersHeight = 34;
             this.dtgDefensaExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
             this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
-            this.dtgDefensaExterna.Location = new System.Drawing.Point(117, 227);
+            this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
             this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(6);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";
             this.dtgDefensaExterna.ReadOnly = true;
@@ -304,9 +314,27 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgDefensaExterna.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgDefensaExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDefensaExterna.Size = new System.Drawing.Size(1352, 731);
+            this.dtgDefensaExterna.Size = new System.Drawing.Size(1620, 831);
             this.dtgDefensaExterna.TabIndex = 0;
             this.dtgDefensaExterna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDefensaExterna_CellContentClick);
+            // 
+            // btnBuscarPerfil
+            // 
+            this.btnBuscarPerfil.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBuscarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnBuscarPerfil.FlatAppearance.BorderSize = 0;
+            this.btnBuscarPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnBuscarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscarPerfil.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(1400, 20);
+            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarPerfil.Name = "btnBuscarPerfil";
+            this.btnBuscarPerfil.Size = new System.Drawing.Size(144, 40);
+            this.btnBuscarPerfil.TabIndex = 26;
+            this.btnBuscarPerfil.Text = "Buscar";
+            this.btnBuscarPerfil.UseVisualStyleBackColor = false;
             // 
             // FrmAgenda
             // 
@@ -339,10 +367,11 @@
         private System.Windows.Forms.DataGridView dtgDefensaExterna;
         private System.Windows.Forms.Button btnEditarAgenda;
         private FontAwesome.Sharp.IconButton btnFiltro;
-        private FontAwesome.Sharp.IconButton btnBuscar;
         public System.Windows.Forms.Panel pnlFiltroDefensa;
         private FontAwesome.Sharp.IconButton btnPorExecencia;
         private FontAwesome.Sharp.IconButton btnTesis;
         private FontAwesome.Sharp.IconButton btnExamenGrado;
+        private FontAwesome.Sharp.IconButton btntTodasDefensas;
+        private System.Windows.Forms.Button btnBuscarPerfil;
     }
 }

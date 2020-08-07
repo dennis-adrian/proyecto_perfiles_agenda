@@ -12,9 +12,27 @@ namespace CapaPresentacion
 {
     public partial class FrmEditarDefensaExterna : Form
     {
-        public FrmEditarDefensaExterna()
+        string carrera;
+        int estudiante;
+        string tipo;
+
+
+        public FrmEditarDefensaExterna(int ES = 0,string CA = "",string TI = "")
         {
             InitializeComponent();
+            
+            this.carrera = CA;
+            this.estudiante = ES;
+            this.tipo = TI;
+            Inicializar();
+
+
+
+        }
+
+        public void Inicializar()
+        {
+            lblTituloDefensa.Text = tipo;
         }
 
         private void FrmEditarDefensaExterna_Load(object sender, EventArgs e)
@@ -58,5 +76,8 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+
+
     }
 }

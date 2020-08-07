@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaDatos.View;
+using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
@@ -18,7 +19,6 @@ namespace CapaPresentacion
         NegocioDefensaExterna obj = new NegocioDefensaExterna();
 
         string carrera = null;
-        string tipo= "";
        
         public FrmAgenda(string criterio)
         {
@@ -28,13 +28,11 @@ namespace CapaPresentacion
             carrera = criterio;
         }
 
-        /*
+        
         private void ocultarPaneles()
         {
             if (pnlFiltroDefensa.Visible == true)
                 pnlFiltroDefensa.Visible = false;
-            if (frp.pnlAgregar.Visible == true)
-                frp.pnlAgregar.Visible = false;
         }
 
         private void mostrarPaneles(Panel submenu)
@@ -46,7 +44,7 @@ namespace CapaPresentacion
             }
             else
                 submenu.Visible = false;
-        }*/
+        }
 
        
         public void Inicializador(string criterio)
@@ -76,8 +74,63 @@ namespace CapaPresentacion
        
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
-            FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna();
-            frm.Show();
+            string tipo = dtgDefensaExterna.CurrentRow.Cells[4].Value.ToString();
+            switch (tipo)
+            {
+                case "Tesis":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmTesisAgenda frm = new FrmTesisAgenda();
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+                    break;
+                case "Examen de Grado":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado,"",tipo);
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+
+                    break;
+                case "Graduacion por Excelencia":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+
+                    break;
+                default:
+                    break;
+
+
+            }
+
+           
 
         }
 
@@ -86,65 +139,85 @@ namespace CapaPresentacion
 
         }
 
-        private void btnFiltro_Click(object sender, EventArgs e)
+       
+   
+        public void DefensasTipo(IconButton btn)
         {
-            // mostrarPaneles(pnlFiltroDefensa);
-            if (pnlFiltroDefensa.Visible == false)
+            string tipo = btn.Text;
+            if(tipo == "Todas las Defensas")
             {
-               
-                pnlFiltroDefensa.Visible = true;
+
+                if (carrera == null)
+                {
+                    var list = obj.Defensas();
+
+                    var bindingList = new BindingList<ViewDefensas>(list);
+                    var source = new BindingSource(bindingList, null);
+                    dtgDefensaExterna.DataSource = source;
+
+                }
+                else
+                {
+                    var list2 = obj.DefensasCarrera(carrera);
+
+                    var bindingList = new BindingList<ViewDefensasCarrera>(list2);
+                    var source = new BindingSource(bindingList, null);
+                    dtgDefensaExterna.DataSource = source;
+                }
+
             }
             else
             {
-                pnlFiltroDefensa.Visible = false;
+                if (carrera == null)
+                {
+                    var list = obj.DefensasTipo(tipo);
 
+                    var bindingList = new BindingList<ViewDefensas>(list);
+                    var source = new BindingSource(bindingList, null);
+                    dtgDefensaExterna.DataSource = source;
+
+                }
+                else
+                {
+                    var list2 = obj.DefensasCarreraTipo(carrera,tipo);
+
+                    var bindingList = new BindingList<ViewDefensasCarrera>(list2);
+                    var source = new BindingSource(bindingList, null);
+                    dtgDefensaExterna.DataSource = source;
+                }
             }
-               
-        
+           
+
         }
 
         private void btnExamenGrado_Click(object sender, EventArgs e)
         {
-
-            // ocultarPaneles();
-            string tipo = btnExamenGrado.Text;
-            DefensasTipo(tipo);
+           
+            DefensasTipo(btnExamenGrado);
+            ocultarPaneles();
         }
 
         private void btnTesis_Click(object sender, EventArgs e)
         {
-
-            // ocultarPaneles();
-            string tipo = btnTesis.Text;
-            DefensasTipo(tipo);
+            DefensasTipo(btnTesis);
+            ocultarPaneles();
         }
 
         private void btnPorExecencia_Click(object sender, EventArgs e)
         {
-            // ocultarPaneles();
-           string tipo = btnPorExecencia.Text;
-            DefensasTipo(tipo);
+            DefensasTipo(btnPorExecencia);
+            ocultarPaneles();
         }
-        public void DefensasTipo(string tipo)
+
+        private void btnFiltro_Click(object sender, EventArgs e)
         {
-            if (carrera == null)
-            {
-                var list = obj.DefensasTipo(tipo);
+            mostrarPaneles(pnlFiltroDefensa);
+        }
 
-                var bindingList = new BindingList<ViewDefensas>(list);
-                var source = new BindingSource(bindingList, null);
-                dtgDefensaExterna.DataSource = source;
-
-            }
-            else
-            {
-                /*var list2 = obj.DefensasCarrera(criterio);
-
-                var bindingList = new BindingList<ViewDefensasCarrera>(list2);
-                var source = new BindingSource(bindingList, null);
-                dtgDefensaExterna.DataSource = source;*/
-            }
-
+        private void btntTodasDefensas_Click(object sender, EventArgs e)
+        {
+            DefensasTipo(btntTodasDefensas);
+            ocultarPaneles();
         }
     }
 }

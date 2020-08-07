@@ -59,7 +59,13 @@ namespace CapaDatos.View
 
         }
 
+        public DataTable SelectTipo(string carrera, string tipo)
+        {
 
+            string sql = " select * from ViewDefensasCarrera where  Carrera = @parametro0 and Tipo = @parametro1  ;";
+            return obj.SelectConexion(sql,carrera, tipo);
+
+        }
 
         #endregion
     }
