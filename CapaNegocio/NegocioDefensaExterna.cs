@@ -40,6 +40,7 @@ namespace CapaNegocio
             return ListaDefensas;
 
         }
+
         public List<ViewDefensas> Defensas(string estudiante)
         {
             List<ViewDefensas> ListaDefensas = new List<ViewDefensas>();
