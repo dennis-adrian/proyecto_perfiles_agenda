@@ -104,7 +104,7 @@
             this.btnFiltro.ForeColor = System.Drawing.Color.White;
             this.btnFiltro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnFiltro.IconColor = System.Drawing.Color.White;
-            this.btnFiltro.IconSize = 32;
+            this.btnFiltro.IconSize = 24;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltro.Location = new System.Drawing.Point(233, 13);
             this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -112,7 +112,7 @@
             this.btnFiltro.Rotation = 0D;
             this.btnFiltro.Size = new System.Drawing.Size(100, 32);
             this.btnFiltro.TabIndex = 56;
-            this.btnFiltro.Text = " Filtro";
+            this.btnFiltro.TabStop = false;
             this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFiltro.UseVisualStyleBackColor = false;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
