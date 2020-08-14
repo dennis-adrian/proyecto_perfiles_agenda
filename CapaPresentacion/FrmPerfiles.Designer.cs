@@ -38,6 +38,18 @@
             this.txtBuscarPerfil = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dtgPerfilesTesis = new System.Windows.Forms.DataGridView();
+            this.ColumnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEstado_Proyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFacultad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaTema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFecha_Recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBuscar2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPerfilesTesis)).BeginInit();
             this.SuspendLayout();
@@ -133,11 +145,24 @@
             this.dtgPerfilesTesis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgPerfilesTesis.ColumnHeadersHeight = 34;
             this.dtgPerfilesTesis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgPerfilesTesis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnaId,
+            this.ColumnaNumero,
+            this.ColumnaEstado_Proyecto,
+            this.ColumnaRegistro,
+            this.ColumnaEstudiante,
+            this.ColumnaCarrera,
+            this.ColumnaFacultad,
+            this.ColumnaTema,
+            this.ColumnaTutor,
+            this.ColumnaEmail,
+            this.ColumnaTelefono,
+            this.ColumnaFecha_Recepcion});
             this.dtgPerfilesTesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgPerfilesTesis.EnableHeadersVisualStyles = false;
             this.dtgPerfilesTesis.GridColor = System.Drawing.Color.Silver;
             this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 56);
-            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(4);
             this.dtgPerfilesTesis.Name = "dtgPerfilesTesis";
             this.dtgPerfilesTesis.ReadOnly = true;
             this.dtgPerfilesTesis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -160,6 +185,91 @@
             this.dtgPerfilesTesis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPerfilesTesis.Size = new System.Drawing.Size(1080, 744);
             this.dtgPerfilesTesis.TabIndex = 3;
+            // 
+            // ColumnaId
+            // 
+            this.ColumnaId.HeaderText = "Id";
+            this.ColumnaId.MinimumWidth = 6;
+            this.ColumnaId.Name = "ColumnaId";
+            this.ColumnaId.ReadOnly = true;
+            this.ColumnaId.Visible = false;
+            // 
+            // ColumnaNumero
+            // 
+            this.ColumnaNumero.HeaderText = "Nro";
+            this.ColumnaNumero.MinimumWidth = 6;
+            this.ColumnaNumero.Name = "ColumnaNumero";
+            this.ColumnaNumero.ReadOnly = true;
+            // 
+            // ColumnaEstado_Proyecto
+            // 
+            this.ColumnaEstado_Proyecto.HeaderText = "Estado_Proyecto";
+            this.ColumnaEstado_Proyecto.MinimumWidth = 6;
+            this.ColumnaEstado_Proyecto.Name = "ColumnaEstado_Proyecto";
+            this.ColumnaEstado_Proyecto.ReadOnly = true;
+            // 
+            // ColumnaRegistro
+            // 
+            this.ColumnaRegistro.HeaderText = "Registro";
+            this.ColumnaRegistro.MinimumWidth = 6;
+            this.ColumnaRegistro.Name = "ColumnaRegistro";
+            this.ColumnaRegistro.ReadOnly = true;
+            // 
+            // ColumnaEstudiante
+            // 
+            this.ColumnaEstudiante.HeaderText = "Estudiante";
+            this.ColumnaEstudiante.MinimumWidth = 6;
+            this.ColumnaEstudiante.Name = "ColumnaEstudiante";
+            this.ColumnaEstudiante.ReadOnly = true;
+            // 
+            // ColumnaCarrera
+            // 
+            this.ColumnaCarrera.HeaderText = "Carrera";
+            this.ColumnaCarrera.MinimumWidth = 6;
+            this.ColumnaCarrera.Name = "ColumnaCarrera";
+            this.ColumnaCarrera.ReadOnly = true;
+            // 
+            // ColumnaFacultad
+            // 
+            this.ColumnaFacultad.HeaderText = "Facultad";
+            this.ColumnaFacultad.MinimumWidth = 6;
+            this.ColumnaFacultad.Name = "ColumnaFacultad";
+            this.ColumnaFacultad.ReadOnly = true;
+            // 
+            // ColumnaTema
+            // 
+            this.ColumnaTema.HeaderText = "Tema";
+            this.ColumnaTema.MinimumWidth = 6;
+            this.ColumnaTema.Name = "ColumnaTema";
+            this.ColumnaTema.ReadOnly = true;
+            // 
+            // ColumnaTutor
+            // 
+            this.ColumnaTutor.HeaderText = "Tutor";
+            this.ColumnaTutor.MinimumWidth = 6;
+            this.ColumnaTutor.Name = "ColumnaTutor";
+            this.ColumnaTutor.ReadOnly = true;
+            // 
+            // ColumnaEmail
+            // 
+            this.ColumnaEmail.HeaderText = "Email";
+            this.ColumnaEmail.MinimumWidth = 6;
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.ReadOnly = true;
+            // 
+            // ColumnaTelefono
+            // 
+            this.ColumnaTelefono.HeaderText = "Telefono";
+            this.ColumnaTelefono.MinimumWidth = 6;
+            this.ColumnaTelefono.Name = "ColumnaTelefono";
+            this.ColumnaTelefono.ReadOnly = true;
+            // 
+            // ColumnaFecha_Recepcion
+            // 
+            this.ColumnaFecha_Recepcion.HeaderText = "Fecha_Recepcion";
+            this.ColumnaFecha_Recepcion.MinimumWidth = 6;
+            this.ColumnaFecha_Recepcion.Name = "ColumnaFecha_Recepcion";
+            this.ColumnaFecha_Recepcion.ReadOnly = true;
             // 
             // FrmPerfiles
             // 
@@ -187,5 +297,17 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dtgPerfilesTesis;
         private System.Windows.Forms.Button btnEditarRevisiones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstado_Proyecto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstudiante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCarrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFacultad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFecha_Recepcion;
     }
 }

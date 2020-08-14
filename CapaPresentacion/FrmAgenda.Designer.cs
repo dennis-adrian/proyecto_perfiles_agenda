@@ -107,7 +107,7 @@
             this.btnFiltro.IconSize = 24;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltro.Location = new System.Drawing.Point(233, 13);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Rotation = 0D;
             this.btnFiltro.Size = new System.Drawing.Size(100, 32);
@@ -162,7 +162,7 @@
             this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
             this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDataGrid.Location = new System.Drawing.Point(0, 56);
-            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataGrid.Name = "pnlDataGrid";
             this.pnlDataGrid.Size = new System.Drawing.Size(1080, 532);
             this.pnlDataGrid.TabIndex = 2;
@@ -325,7 +325,7 @@
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
             this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
-            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";
             this.dtgDefensaExterna.ReadOnly = true;
             this.dtgDefensaExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -360,7 +360,7 @@
             // 
             // ColumnaNumero
             // 
-            this.ColumnaNumero.HeaderText = "#";
+            this.ColumnaNumero.HeaderText = "Nro";
             this.ColumnaNumero.MinimumWidth = 6;
             this.ColumnaNumero.Name = "ColumnaNumero";
             this.ColumnaNumero.ReadOnly = true;
