@@ -67,7 +67,7 @@ namespace CapaPresentacion
                     string campo9 = item.Carrera;
                     string campo10 = item.Facultad;
 
-                    string[] row = new string[] {campo0, Convert.ToString(campo1),campo2,campo3,campo4,campo5,campo6,campo7,campo8,campo9, campo10 };
+                    string[] row = new string[] {campo0, Convert.ToString(campo1),campo3,campo4,campo5,campo6,campo7, campo2, campo8,campo9, campo10 };
                     this.dtgDefensaExterna.Rows.Add(row);
                     campo1++;
                   
@@ -97,7 +97,7 @@ namespace CapaPresentacion
                     string campo8 = item.Estudiante;
 
 
-                    string[] row = new string[] {campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8 };
+                    string[] row = new string[] {campo0, Convert.ToString(campo1), campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
                     this.dtgDefensaExterna.Rows.Add(row);
                     this.ColumnaCarrera.Visible = false;
                     this.ColumnaFacultad.Visible = false;
@@ -118,7 +118,7 @@ namespace CapaPresentacion
        
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
-            string tipo = dtgDefensaExterna.CurrentRow.Cells[6].Value.ToString();
+            string tipo = dtgDefensaExterna.CurrentRow.Cells[5].Value.ToString();
             switch (tipo)
             {
                 case "Tesis":
@@ -212,7 +212,7 @@ namespace CapaPresentacion
                         string campo9 = item.Carrera;
                         string campo10 = item.Facultad;
 
-                        string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10 };
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8, campo9, campo10 };
                         this.dtgDefensaExterna.Rows.Add(row);
                         campo1++;
 
@@ -237,7 +237,7 @@ namespace CapaPresentacion
                         string campo8 = item.Estudiante;
 
 
-                        string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8 };
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
                         this.dtgDefensaExterna.Rows.Add(row);
                         this.ColumnaCarrera.Visible = false;
                         this.ColumnaFacultad.Visible = false;
@@ -268,7 +268,7 @@ namespace CapaPresentacion
                         string campo9 = item.Carrera;
                         string campo10 = item.Facultad;
 
-                        string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10 };
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8, campo9, campo10 };
                         this.dtgDefensaExterna.Rows.Add(row);
                         campo1++;
 
@@ -293,7 +293,7 @@ namespace CapaPresentacion
                         string campo8 = item.Estudiante;
 
 
-                        string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8 };
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
                         this.dtgDefensaExterna.Rows.Add(row);
                         this.ColumnaCarrera.Visible = false;
                         this.ColumnaFacultad.Visible = false;

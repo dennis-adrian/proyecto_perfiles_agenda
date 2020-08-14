@@ -47,12 +47,12 @@
             this.dtgDefensaExterna = new System.Windows.Forms.DataGridView();
             this.ColumnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFecha_Defensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaAula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFacultad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,11 +106,11 @@
             this.btnFiltro.IconColor = System.Drawing.Color.White;
             this.btnFiltro.IconSize = 24;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltro.Location = new System.Drawing.Point(233, 13);
+            this.btnFiltro.Location = new System.Drawing.Point(298, 13);
             this.btnFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Rotation = 0D;
-            this.btnFiltro.Size = new System.Drawing.Size(100, 32);
+            this.btnFiltro.Size = new System.Drawing.Size(35, 32);
             this.btnFiltro.TabIndex = 56;
             this.btnFiltro.TabStop = false;
             this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -312,12 +312,12 @@
             this.dtgDefensaExterna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaId,
             this.ColumnaNumero,
-            this.ColumnaRegistro,
             this.ColumnaFecha_Defensa,
             this.ColumnaHora,
             this.ColumnaAula,
             this.ColumnaTipo,
             this.ColumnaTema,
+            this.ColumnaRegistro,
             this.ColumnaEstudiante,
             this.ColumnaCarrera,
             this.ColumnaFacultad});
@@ -365,13 +365,6 @@
             this.ColumnaNumero.Name = "ColumnaNumero";
             this.ColumnaNumero.ReadOnly = true;
             // 
-            // ColumnaRegistro
-            // 
-            this.ColumnaRegistro.HeaderText = "Registro";
-            this.ColumnaRegistro.MinimumWidth = 6;
-            this.ColumnaRegistro.Name = "ColumnaRegistro";
-            this.ColumnaRegistro.ReadOnly = true;
-            // 
             // ColumnaFecha_Defensa
             // 
             this.ColumnaFecha_Defensa.HeaderText = "Fecha_Defensa";
@@ -406,6 +399,13 @@
             this.ColumnaTema.MinimumWidth = 6;
             this.ColumnaTema.Name = "ColumnaTema";
             this.ColumnaTema.ReadOnly = true;
+            // 
+            // ColumnaRegistro
+            // 
+            this.ColumnaRegistro.HeaderText = "Registro";
+            this.ColumnaRegistro.MinimumWidth = 6;
+            this.ColumnaRegistro.Name = "ColumnaRegistro";
+            this.ColumnaRegistro.ReadOnly = true;
             // 
             // ColumnaEstudiante
             // 
@@ -466,12 +466,12 @@
         private System.Windows.Forms.Button btnBuscarPerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFecha_Defensa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaAula;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCarrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFacultad;
