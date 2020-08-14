@@ -95,7 +95,6 @@
             this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
             this.pnlNuevaDefensa.Size = new System.Drawing.Size(915, 617);
             this.pnlNuevaDefensa.TabIndex = 0;
-            this.pnlNuevaDefensa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNuevaDefensa_Paint);
             // 
             // groupBox2
             // 

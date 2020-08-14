@@ -77,7 +77,9 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

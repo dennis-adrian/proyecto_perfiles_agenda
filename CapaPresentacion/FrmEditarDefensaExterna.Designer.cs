@@ -156,9 +156,9 @@
             this.groupBox2.Controls.Add(this.dtHora);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(30, 370);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1155, 532);
             this.groupBox2.TabIndex = 109;
             this.groupBox2.TabStop = false;
@@ -167,7 +167,7 @@
             // txtNota
             // 
             this.txtNota.Location = new System.Drawing.Point(285, 481);
-            this.txtNota.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNota.Margin = new System.Windows.Forms.Padding(4);
             this.txtNota.Multiline = true;
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(57, 28);
@@ -502,6 +502,7 @@
             this.btnGuardarNuevaDefensa.TabIndex = 10;
             this.btnGuardarNuevaDefensa.Text = "Guardar";
             this.btnGuardarNuevaDefensa.UseVisualStyleBackColor = false;
+            this.btnGuardarNuevaDefensa.Click += new System.EventHandler(this.btnGuardarNuevaDefensa_Click);
             // 
             // label2
             // 
@@ -586,9 +587,9 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(49, 114);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1109, 228);
             this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
@@ -611,7 +612,7 @@
             this.txtTema.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTema.Location = new System.Drawing.Point(135, 58);
-            this.txtTema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTema.Margin = new System.Windows.Forms.Padding(4);
             this.txtTema.Name = "txtTema";
             this.txtTema.Size = new System.Drawing.Size(508, 29);
             this.txtTema.TabIndex = 0;
@@ -622,7 +623,7 @@
             this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarrera.FormattingEnabled = true;
             this.cmbCarrera.Location = new System.Drawing.Point(788, 164);
-            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(292, 32);
             this.cmbCarrera.TabIndex = 7;
@@ -644,7 +645,7 @@
             this.txtCelularAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularAlum.Location = new System.Drawing.Point(788, 129);
-            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(292, 29);
             this.txtCelularAlum.TabIndex = 6;
@@ -654,7 +655,7 @@
             this.txtTelefonoAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoAlum.Location = new System.Drawing.Point(788, 92);
-            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(292, 29);
             this.txtTelefonoAlum.TabIndex = 5;
@@ -688,7 +689,7 @@
             this.txtEmailAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmailAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAlum.Location = new System.Drawing.Point(135, 166);
-            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailAlum.Name = "txtEmailAlum";
             this.txtEmailAlum.Size = new System.Drawing.Size(508, 29);
             this.txtEmailAlum.TabIndex = 3;
@@ -710,7 +711,7 @@
             this.txtApellidoAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellidoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoAlum.Location = new System.Drawing.Point(135, 128);
-            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoAlum.Name = "txtApellidoAlum";
             this.txtApellidoAlum.Size = new System.Drawing.Size(508, 29);
             this.txtApellidoAlum.TabIndex = 2;
@@ -732,7 +733,7 @@
             this.txtNombreAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAlum.Location = new System.Drawing.Point(135, 93);
-            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreAlum.Name = "txtNombreAlum";
             this.txtNombreAlum.Size = new System.Drawing.Size(508, 29);
             this.txtNombreAlum.TabIndex = 1;
@@ -754,7 +755,7 @@
             this.txtRegistroAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRegistroAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistroAlum.Location = new System.Drawing.Point(788, 56);
-            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(292, 29);
             this.txtRegistroAlum.TabIndex = 4;
@@ -804,7 +805,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1215, 939);
             this.Name = "FrmEditarDefensaExterna";
             this.Text = "FrmEditarDefensaExterna";
