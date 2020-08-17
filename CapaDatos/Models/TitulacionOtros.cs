@@ -75,6 +75,14 @@ namespace CapaDatos.Models
 
             return LastIdConexion(TableName);
         }
+        public DataTable FindById(int Id)
+        {
+            string sql = " SELECT * FROM " + TableName + " WHERE id = " + Id + "  ;";
+
+            return SelectConexion(sql);
+
+        }
+
 
 
         #endregion

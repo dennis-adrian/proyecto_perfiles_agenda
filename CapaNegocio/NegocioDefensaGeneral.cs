@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -164,11 +165,47 @@ namespace CapaNegocio
             }
 
         }
-        public Object[] InfoDefensaOtros(int iddefensa)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">id de la defensa externa </param>
+        /// <returns>select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula, DE.id_tesis as Id_tesis, DE.id_titulacion_otro as Id_titulacion_otro from defensa_externa as DE inner join titulacion_otros AS TTO;</returns>
+        public Object[] InfoDefensaOtros(int id)
         {
-            Object[] datos = new Object[] { };
+            
+
+            TitulacionOtros container1 = new TitulacionOtros();
+            var dt = titulacionOtros.FindById(id);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                container1.Id = Convert.ToInt32(dt.Rows[i]["id"].ToString());
+                container1.Estado_defensa = dt.Rows[i]["estado_defensa"].ToString();
+                container1.Tema = dt.Rows[i]["tema"].ToString();
+                container1.Calificacion = Convert.ToDouble(dt.Rows[i]["calificacion"].ToString());
+                container1.Id_estudiante = Convert.ToInt32(dt.Rows[i]["id_estudiante"].ToString());
+                container1.Id_tipo_titulacion = Convert.ToInt32(dt.Rows[i]["id_tipo_titulacion"].ToString());
+
+
+            }
+            Estudiante container2 = new Estudiante();
+            var dt2 = estudiante.FindById(container1.Id_estudiante);
+            for(int i = 0; i<dt2.Rows.Count; i++)
+            {
+                container2.Id = Convert.ToInt32(dt.Rows[i]["id"].ToString());
+                container2.Nombre = dt.Rows[i]["nombre"].ToString();
+                container2.Apellido = dt.Rows[i]["apellido"].ToString();
+                container2.Registro = dt.Rows[i]["registro"].ToString();
+                container2.Email = dt.Rows[i]["email"].ToString();
+                container2.Telefono = dt.Rows[i]["telefono"].ToString();
+                container2.Celular = dt.Rows[i]["celular"].ToString();
+            }
+           
+
+            Object[] datos = new Object[] { container.Id, container.Estado_defensa, container.Tema, container.Calificacion, container.Id_estudiante, container.Id_tipo_titulacion };
 
             return datos;
+
+
 
         }
 

@@ -336,5 +336,10 @@ namespace CapaPresentacion
             DefensasTipo(btntTodasDefensas);
             ocultarPaneles();
         }
+
+        private void btnBuscarPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
