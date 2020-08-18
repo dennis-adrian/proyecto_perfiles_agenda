@@ -168,37 +168,83 @@ namespace CapaNegocio
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id">id de la defensa externa </param>
-        /// <returns>select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula, DE.id_tesis as Id_tesis, DE.id_titulacion_otro as Id_titulacion_otro from defensa_externa as DE inner join titulacion_otros AS TTO;
-        /// </returns>
-        public Object[] InfoDefensaOtros(int id)
+        /// <param name="iddefensa">id de la defensa externa </param>
+        /// <returns>un Array tipo Object con los datos de la consulta</returns>
+        public Object[] InfoDefensaOtros(int iddefensa)
         {
+            double Calificacion = 0 ;
+            int Id = 0;
+            int Id_titulacion_otro = 0;
+            int Id_estudiante = 0; 
+            int Id_carrera = 0;
+            int Id_tipo_titulacion = 0;
+            string Fecha_presentacion = "";
+            string Hora = ""; 
+            string Aula = "";
+            string Estado_defensa = "";
+            string Tema = "";
+            string Registro = "";
+            string Nombre = "";
+            string Apellido = "";
+            string Email = "";
+            string Telefono = "";
+            string Celular = "";
+            string Carrera = "" ;
             
-
-           
-            var dt = defensaExterna.InfoDefensaOtros(id);
+            var dt = defensaExterna.InfoDefensaOtros(iddefensa);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                container1.Id = Convert.ToInt32(dt.Rows[i]["id"].ToString());
-                container1.Estado_defensa = dt.Rows[i]["estado_defensa"].ToString();
-                container1.Tema = dt.Rows[i]["tema"].ToString();
-                container1.Calificacion = Convert.ToDouble(dt.Rows[i]["calificacion"].ToString());
-                container1.Id_estudiante = Convert.ToInt32(dt.Rows[i]["id_estudiante"].ToString());
-                container1.Id_tipo_titulacion = Convert.ToInt32(dt.Rows[i]["id_tipo_titulacion"].ToString());
-
-
+                Id = Convert.ToInt32(dt.Rows[i]["Id"].ToString());
+                Fecha_presentacion  = dt.Rows[i]["Fecha_presentacion"].ToString();
+                Hora = dt.Rows[i]["Hora"].ToString();
+                Aula = dt.Rows[i]["Aula"].ToString();
+                Id_titulacion_otro = Convert.ToInt32(dt.Rows[i]["Id_titulacion_otro"].ToString());
+                Estado_defensa = dt.Rows[i]["Estado_defensa"].ToString();
+                Tema = dt.Rows[i]["Tema"].ToString();
+                Calificacion = Convert.ToDouble(dt.Rows[i]["Calificacion"].ToString());
+                Id_tipo_titulacion = Convert.ToInt32(dt.Rows[i]["Id_tipo_titulacion"].ToString());
+                Id_estudiante = Convert.ToInt32(dt.Rows[i]["Id_estudiante"].ToString());
+                Registro = dt.Rows[i]["Registro"].ToString();
+                Nombre = dt.Rows[i]["Nombre"].ToString();
+                Apellido = dt.Rows[i]["Apellido"].ToString();
+                Email = dt.Rows[i]["Email"].ToString();
+                Telefono = dt.Rows[i]["Telefono"].ToString();
+                Celular = dt.Rows[i]["Celular"].ToString();
+                Id_carrera = Convert.ToInt32(dt.Rows[i]["Id_carrera"].ToString());
+                Carrera = dt.Rows[i]["Carrera"].ToString();
+             
             }
-         
-           
 
-            Object[] datos = new Object[] { /*/container.Id, container.Estado_defensa, container.Tema, container.Calificacion, container.Id_estudiante, container.Id_tipo_titulacion*/ };
+            Object[] datos = new Object[]
+            {
+                Id,
+                Fecha_presentacion,
+                Hora,
+                Aula,
+                Id_titulacion_otro,
+                Estado_defensa,
+                Tema,
+                Calificacion,
+                Id_tipo_titulacion,
+                Id_estudiante,
+                Registro,
+                Nombre,
+                Apellido,
+                Email,
+                Telefono,
+                Celular,
+                Id_carrera,
+                Carrera
+            };
 
             return datos;
-
-
-
         }
+        public DataTable cargarCarreras()
+        {
+            DataTable dt1 = carrera.Select();
 
+            return dt1;
+        }
 
         ~NegocioDefensaGeneral()
         {
