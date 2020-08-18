@@ -93,9 +93,9 @@ namespace CapaPresentacion
             txtTelefonoAlum.Text = InfoDefensa["Telefono"];
             txtCelularAlum.Text = InfoDefensa["Celular"];
             cmbCarrera.SelectedValue = Convert.ToInt32(InfoDefensa["Id_carrera"]);
-           dtFechaDefensa.Value = DateTime.Parse(InfoDefensa["Fecha_presentacion"], new CultureInfo("en-GB"));
+            dtFechaDefensa.Value = DateTime.Parse(InfoDefensa["Fecha_presentacion"], new CultureInfo("en-GB"));
 
-           dtHora.Value = DateTime.Parse(InfoDefensa["Hora"], new CultureInfo("en-GB"));
+            dtHora.Value = DateTime.Parse(InfoDefensa["Hora"], new CultureInfo("en-GB"));
             txtAula.Text = InfoDefensa["Aula"];
 
 
