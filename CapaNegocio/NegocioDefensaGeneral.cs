@@ -169,13 +169,14 @@ namespace CapaNegocio
         /// 
         /// </summary>
         /// <param name="id">id de la defensa externa </param>
-        /// <returns>select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula, DE.id_tesis as Id_tesis, DE.id_titulacion_otro as Id_titulacion_otro from defensa_externa as DE inner join titulacion_otros AS TTO;</returns>
+        /// <returns>select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula, DE.id_tesis as Id_tesis, DE.id_titulacion_otro as Id_titulacion_otro from defensa_externa as DE inner join titulacion_otros AS TTO;
+        /// </returns>
         public Object[] InfoDefensaOtros(int id)
         {
             
 
-            TitulacionOtros container1 = new TitulacionOtros();
-            var dt = titulacionOtros.FindById(id);
+           
+            var dt = defensaExterna.InfoDefensaOtros(id);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 container1.Id = Convert.ToInt32(dt.Rows[i]["id"].ToString());
@@ -187,21 +188,10 @@ namespace CapaNegocio
 
 
             }
-            Estudiante container2 = new Estudiante();
-            var dt2 = estudiante.FindById(container1.Id_estudiante);
-            for(int i = 0; i<dt2.Rows.Count; i++)
-            {
-                container2.Id = Convert.ToInt32(dt.Rows[i]["id"].ToString());
-                container2.Nombre = dt.Rows[i]["nombre"].ToString();
-                container2.Apellido = dt.Rows[i]["apellido"].ToString();
-                container2.Registro = dt.Rows[i]["registro"].ToString();
-                container2.Email = dt.Rows[i]["email"].ToString();
-                container2.Telefono = dt.Rows[i]["telefono"].ToString();
-                container2.Celular = dt.Rows[i]["celular"].ToString();
-            }
+         
            
 
-            Object[] datos = new Object[] { container.Id, container.Estado_defensa, container.Tema, container.Calificacion, container.Id_estudiante, container.Id_tipo_titulacion };
+            Object[] datos = new Object[] { /*/container.Id, container.Estado_defensa, container.Tema, container.Calificacion, container.Id_estudiante, container.Id_tipo_titulacion*/ };
 
             return datos;
 

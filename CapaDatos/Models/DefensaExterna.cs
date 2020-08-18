@@ -104,6 +104,20 @@ namespace CapaDatos.Models
             return LastIdConexion(TableName);
         }
 
+        public DataTable InfoDefensaOtros(int iddefensa)
+        {
+            string sql = " select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula,  DE.id_titulacion_otro as Id_titulacion_otro, TOS.estado_defensa as Defensa_externa, TOS.tema as Tema, TOS.calificacion as calificacion, TOS.id_estudiante as id_estudiante, ES.registro, ES.nombre as Nombre , ES.apellido as Apellido, ES.email as Email, ES.telefono as Telefono, ES.celular as Celular, ES.id_carrera as Id_carrera, CA.nombre as Carrera from defensa_externa as DE inner join titulacion_otros AS TOS on  TOS.id = DE.id_titulacion_otro inner join estudiante as ES on ES.id = TOS.id_estudiante inner join carrera as CA on ES.id_carrera = CA.id where DE.id = "+ iddefensa + " ;";
+
+            return SelectConexion(sql);
+
+        }
+        public DataTable InfoDetalleDenfensa()
+        {
+            string sql = " select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula,  DE.id_titulacion_otro as Id_titulacion_otro, TOS.estado_defensa as Defensa_externa, TOS.tema as Tema, TOS.calificacion as calificacion, TOS.id_estudiante as id_estudiante, ES.registro, ES.nombre as Nombre , ES.apellido as Apellido, ES.email as Email, ES.telefono as Telefono, ES.celular as Celular, ES.id_carrera as Id_carrera, CA.nombre as Carrera from defensa_externa as DE inner join titulacion_otros AS TOS on  TOS.id = DE.id_titulacion_otro inner join estudiante as ES on ES.id = TOS.id_estudiante inner join carrera as CA on ES.id_carrera = CA.id;";
+
+            return SelectConexion(sql);
+
+        }
 
         #endregion
     }
