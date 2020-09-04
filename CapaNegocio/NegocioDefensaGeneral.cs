@@ -245,11 +245,55 @@ namespace CapaNegocio
 
             return dt1;
         }
-
+        public List<LicenciadoDefensa> getLicenciadosDefensa(int id_defensa)
+        {
+            List<LicenciadoDefensa> licenciado_list = new List<LicenciadoDefensa>();          
+            var cursor = detalleDefensa.getLicenciadosDefensa(id_defensa);
+            for (int i = 0; i < cursor.Rows.Count; i++)
+            {
+                int id_det = Convert.ToInt32(cursor.Rows[i][0].ToString());
+                int id_def = Convert.ToInt32(cursor.Rows[i][1].ToString()); 
+                int id_lic = Convert.ToInt32(cursor.Rows[i][2].ToString());
+                string nom = cursor.Rows[i][3].ToString(); 
+                string ape = cursor.Rows[i][4].ToString();
+                string fun = cursor.Rows[i][5].ToString();
+                licenciado_list.Add(new LicenciadoDefensa(id_det, id_def,id_lic,nom, ape, fun));
+            }
+            return licenciado_list;
+        }
         ~NegocioDefensaGeneral()
         {
 
         }
 
     }
+}
+public class LicenciadoDefensa
+{
+    private int id_detalle;
+    private int id_defensa;
+    private int id_licenciado;
+    private string nombre;
+    private string apellido;
+    private string funcion;
+
+    public LicenciadoDefensa(int id_det,int id_def,int id_lic, string  nom, string ape, string fun)
+    {
+        Id_detalle = id_det;
+        Id_defensa = id_def;
+        Id_licenciado = id_lic;
+        Nombre = nom;
+        Apellido = ape;
+        Funcion = fun;
+
+    }
+
+    public string Funcion { get => funcion; set => funcion = value; }
+    public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
+    public string Nombre { get => nombre; set => nombre = value; }
+    public string Apellido { get => apellido; set => apellido = value; }
+    public int Id_detalle { get => id_detalle; set => id_detalle = value; }
+    public int Id_defensa { get => id_defensa; set => id_defensa = value; }
+
+    
 }

@@ -9,10 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaPresentacion.ContractForms;
+using CapaPresentacion.Resources;
 
 namespace CapaPresentacion
 {
-    public partial class FrmEditarDefensaExterna : Form
+    public partial class FrmEditarDefensaExterna : Form, IContractLicenciado
     {
         
         #region Instancias
@@ -97,9 +99,62 @@ namespace CapaPresentacion
 
             dtHora.Value = DateTime.Parse(InfoDefensa["Hora"], new CultureInfo("en-GB"));
             txtAula.Text = InfoDefensa["Aula"];
+            getLicenciado();
+            idtestdefensa.Text = InfoDefensa["Id"];
 
 
+        }
+        public void getLicenciado()
+        {
+            int id_defensa = Convert.ToInt32(InfoDefensa["Id"]);
+            var obj = defensa.getLicenciadosDefensa(id_defensa);
+            foreach(var item in obj)
+            {                
+                //int id_det = item.Id_detalle;
+                //int id_def = item.Id_defensa;
+                int id_lic = item.Id_licenciado;
+                string ape = item.Apellido;
+                string nom = item.Nombre;
+                string fun = item.Funcion;
+                switch (fun)
+                {
+                    case "Presidente":
+                        loadComboLicenciado(cmbPresidente, nom, ape, id_lic);
+                        break;
+                    case "Tribunal Interno 1":
+                        loadComboLicenciado(cmbTribunalInterno1, nom, ape, id_lic);
+                        break;
+                    case "Tribunal Interno 2":
+                        loadComboLicenciado(cmbTribunalInterno2, nom, ape, id_lic);
+                        break;
+                    case "Representante Uagrm 1":
+                        loadComboLicenciado(cmbRepresentanteUagrm1, nom, ape, id_lic);
+                        break;
+                    case "Representante Uagrm 2":
+                        loadComboLicenciado(cmbRepresentanteUagrm2, nom, ape, id_lic);
+                        break;
+                    case "Secretario":
+                        loadComboLicenciado(cmbSecretario, nom, ape, id_lic);
+                        break;
+                    case "Representante del Ministerio de Educacion":
+                        loadComboLicenciado(cmbRepresentanteMinisterio, nom, ape, id_lic);
+                        break;
+                    default:
+                        break;
 
+
+                }
+                
+            }
+        }
+        public void loadComboLicenciado(ComboBox cmb,string nombre="", string apellido="",int id_licenciado=0)
+        {
+            ComboBoxItem cmb_item = new ComboBoxItem();
+            cmb_item.Text = $"{nombre} {apellido}";
+            cmb_item.Value = id_licenciado;
+            cmb.Items.Clear();
+            cmb.Items.Add(cmb_item);
+            cmb.SelectedIndex = 0;
         }
 
 
@@ -151,6 +206,9 @@ namespace CapaPresentacion
 
         }
 
-
+        public void Ejecutar(int id, string nombre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

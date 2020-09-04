@@ -73,6 +73,12 @@ namespace CapaDatos.Models
 
             return LastIdConexion(TableName);
         }
+        public DataTable getLicenciadosDefensa(int id_defensa)
+        {
+            string sql = $"select DD.id as Id, DD.id_defensa_externa as Id_defensa, DD.id_licenciado as Id_licenciado,L.nombre as Nombre,L.apellido as Apellido, FL.funcion as Funcion from detalle_defensa as DD inner join funcion_licenciado as FL on FL.id = DD.id_funcion_licenciado inner join licenciado as L on L.id = DD.id_licenciado  WHERE id_defensa_externa = {id_defensa}";
+            
+            return SelectConexion(sql);
+        }
         #endregion
     }
 }

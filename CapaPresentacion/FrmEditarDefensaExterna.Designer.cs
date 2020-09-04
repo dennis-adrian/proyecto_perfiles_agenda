@@ -81,6 +81,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTituloDefensa = new System.Windows.Forms.Label();
+            this.idtestdefensa = new System.Windows.Forms.Label();
             this.pnlBarraTitulo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -775,6 +776,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.idtestdefensa);
             this.panel2.Controls.Add(this.lblTituloDefensa);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 36);
@@ -793,6 +795,17 @@
             this.lblTituloDefensa.TabIndex = 24;
             this.lblTituloDefensa.Text = "Título";
             this.lblTituloDefensa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // idtestdefensa
+            // 
+            this.idtestdefensa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.idtestdefensa.AutoSize = true;
+            this.idtestdefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idtestdefensa.Location = new System.Drawing.Point(129, 21);
+            this.idtestdefensa.Name = "idtestdefensa";
+            this.idtestdefensa.Size = new System.Drawing.Size(179, 24);
+            this.idtestdefensa.TabIndex = 111;
+            this.idtestdefensa.Text = "IDTESTDEFENSA";
             // 
             // FrmEditarDefensaExterna
             // 
@@ -816,6 +829,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -875,5 +889,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTituloDefensa;
+        private System.Windows.Forms.Label idtestdefensa;
     }
 }
