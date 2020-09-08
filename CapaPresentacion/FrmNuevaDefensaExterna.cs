@@ -15,6 +15,15 @@ namespace CapaPresentacion
 {
     public partial class FrmNuevaDefensaExterna : Form, IContractLicenciado
     {
+        #region Instancias
+        NegocioNuevaDefensa obj = new NegocioNuevaDefensa();
+        #endregion
+        #region Atributos
+        private FrmTutor Tutor = null;
+        int titulacion = 0;
+        int tipolicenciado = 0;
+
+        #endregion
         #region Constructor
 
         public FrmNuevaDefensaExterna(int titulacion)
@@ -29,9 +38,8 @@ namespace CapaPresentacion
             FormsControls();
         }
         #endregion
-        private FrmTutor Tutor = null;
-        #region instancia 1 vez frm
 
+        //Patron Singleton
         private FrmTutor FormInstance3
         {
             get
@@ -52,21 +60,7 @@ namespace CapaPresentacion
 
         }
 
-        #endregion
-
-
-        #region Atributos
-        int titulacion = 0;
-
-        int tipolicenciado = 0;
-
-        #endregion
-
-        #region Instancias
-
-        NegocioNuevaDefensa obj = new NegocioNuevaDefensa();
-
-        #endregion
+        
 
         #region Buttons
 
@@ -277,7 +271,6 @@ namespace CapaPresentacion
                 fechadefensa,//input 9
                 hora,//input 10
                 aula,//input 11
-
                 id_presidente,//input 12
                 f_presidente,//input 13
                 id_secretario,//input 14

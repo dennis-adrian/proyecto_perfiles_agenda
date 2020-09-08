@@ -19,17 +19,16 @@ namespace CapaDatos.Models
             id_estudiante = 0;
             id_tipo_titulacion = 0;
         }
-        #region Atributos 
+        #region Atributos
         private int id;
         private string estado_defensa;
         private string tema;
         private double calificacion;
         private int id_estudiante;
         private int id_tipo_titulacion;
-
-
+        private static string table_name = "titulacion_otros";
         #endregion
-        #region Propiedades 
+        #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Estado_defensa { get => estado_defensa; set => estado_defensa = value; }
         public double Calificacion { get => calificacion; set => calificacion = value; }
@@ -38,28 +37,24 @@ namespace CapaDatos.Models
         public string Tema { get => tema; set => tema = value; }
 
         #endregion
-        #region Metodos 
-
-
-        private static string TableName = "titulacion_otros";
+        #region Metodos
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  estado_defensa,tema,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4); ";
+            string sql = $"  INSERT INTO {table_name} (  estado_defensa,tema,calificacion,id_estudiante,id_tipo_titulacion  ) VALUES ( @parametro0,@parametro1,@parametro2,@parametro3,@parametro4); ";
             Object[] Parametros = new Object[] { Estado_defensa,Tema,Calificacion,Id_estudiante,id_tipo_titulacion };
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM {table_name} WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET estado_defensa = @parametro0 , tema = @parametro1 ,calificacion=@parametro2,id_estudiante=@parmetro3,id_tipo_titulacion=@parametro4  WHERE id = @parametro5 ; ";
-
+            string sql = $" UPDATE  {table_name}  SET estado_defensa = @parametro0 , tema = @parametro1 ,calificacion=@parametro2,id_estudiante=@parmetro3,id_tipo_titulacion=@parametro4  WHERE id = @parametro5 ; ";
             Object[] Parametros = new Object[] { Estado_defensa, Calificacion, Id_estudiante, id_tipo_titulacion, id };
             QueryBuilder(sql, Parametros);
 
@@ -67,18 +62,16 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = $" SELECT * FROM " + table_name + " ; ";
             return SelectConexion(sql);
         }
         public int LastId()
         {
-
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
         public DataTable FindById(int Id)
         {
-            string sql = " SELECT * FROM " + TableName + " WHERE id = " + Id + "  ;";
-
+            string sql = $" SELECT * FROM {table_name} WHERE id = {Id}  ;";
             return SelectConexion(sql);
 
         }

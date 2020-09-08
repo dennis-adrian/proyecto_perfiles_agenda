@@ -18,35 +18,26 @@ namespace CapaPresentacion
     {
         
         #region Instancias
-
         NegocioDefensaGeneral defensa = new NegocioDefensaGeneral ();
-
         #endregion
         #region Atributos
         string carrera;
         int estudiante;
         string tipo;
-
-
+        int tipolicenciado = 0;
         Dictionary<string, string> InfoDefensa = new Dictionary<string, string>();
         #endregion
 
         public FrmEditarDefensaExterna(int ES = 0,string CA = "",string TI = "")
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
             this.carrera = CA;
             this.estudiante = ES;
             this.tipo = TI;
             Inicializar();
-            LoadDictionary(ES);
+            loadDictionary(ES);
             ShowInfo();
-
-
-
-
         }
-
         public void Inicializar()
         {
             lblTituloDefensa.Text = tipo;
@@ -60,7 +51,7 @@ namespace CapaPresentacion
            
 
         }
-        public void LoadDictionary(int id)
+        public void loadDictionary(int id)
         {
             var list = defensa.InfoDefensaOtros(id);
             InfoDefensa.Add("Id", list[0].ToString());
@@ -96,22 +87,18 @@ namespace CapaPresentacion
             txtCelularAlum.Text = InfoDefensa["Celular"];
             cmbCarrera.SelectedValue = Convert.ToInt32(InfoDefensa["Id_carrera"]);
             dtFechaDefensa.Value = DateTime.Parse(InfoDefensa["Fecha_presentacion"], new CultureInfo("en-GB"));
-
             dtHora.Value = DateTime.Parse(InfoDefensa["Hora"], new CultureInfo("en-GB"));
             txtAula.Text = InfoDefensa["Aula"];
-            getLicenciado();
-            idtestdefensa.Text = InfoDefensa["Id"];
+            getLicenciados();
 
 
         }
-        public void getLicenciado()
+        public void getLicenciados()
         {
             int id_defensa = Convert.ToInt32(InfoDefensa["Id"]);
             var obj = defensa.getLicenciadosDefensa(id_defensa);
             foreach(var item in obj)
-            {                
-                //int id_det = item.Id_detalle;
-                //int id_def = item.Id_defensa;
+            {   
                 int id_lic = item.Id_licenciado;
                 string ape = item.Apellido;
                 string nom = item.Nombre;
@@ -156,9 +143,6 @@ namespace CapaPresentacion
             cmb.Items.Add(cmb_item);
             cmb.SelectedIndex = 0;
         }
-
-
-
         private void FrmEditarDefensaExterna_Load(object sender, EventArgs e)
         {
 
@@ -166,7 +150,6 @@ namespace CapaPresentacion
 
 
         }
-
         private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             
@@ -190,25 +173,91 @@ namespace CapaPresentacion
                 ArrastrarForm.ReleaseCapture();
                 ArrastrarForm.SendMessage(this.Handle, 0x112, 0xf012, 0);
             }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
                 this.Close();
         }
-
         private void btnCancelarNuevaDefensa_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
 
         }
-
         public void Ejecutar(int id, string nombre)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                ComboBoxItem item = new ComboBoxItem();
+                switch (tipolicenciado)
+                {
+                    case 1:
+                        cmbPresidente.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbPresidente.Items.Add(item);
+                        cmbPresidente.SelectedIndex = 0;
+
+                        break;
+                    case 2:
+                        cmbTribunalInterno1.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunalInterno1.Items.Add(item);
+                        cmbTribunalInterno1.SelectedIndex = 0;
+                        break;
+                    case 3:
+                        cmbTribunalInterno2.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunalInterno2.Items.Add(item);
+                        cmbTribunalInterno2.SelectedIndex = 0;
+
+                        break;
+                    case 4:
+                        cmbSecretario.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbSecretario.Items.Add(item);
+                        cmbSecretario.SelectedIndex = 0;
+
+                        break;
+                    case 5:
+                        cmbRepresentanteMinisterio.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbRepresentanteMinisterio.Items.Add(item);
+                        cmbRepresentanteMinisterio.SelectedIndex = 0;
+                        break;
+                    case 6:
+                        cmbRepresentanteUagrm1.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbRepresentanteUagrm1.Items.Add(item);
+                        cmbRepresentanteUagrm1.SelectedIndex = 0;
+
+                        break;
+                    case 7:
+                        cmbRepresentanteUagrm2.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbRepresentanteUagrm2.Items.Add(item);
+                        cmbRepresentanteUagrm2.SelectedIndex = 0;
+                        break;
+
+                    default:
+                        throw new ArgumentException();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
         }
+    
     }
 }

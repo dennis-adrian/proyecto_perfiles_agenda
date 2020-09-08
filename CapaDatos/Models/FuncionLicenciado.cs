@@ -13,48 +13,41 @@ namespace CapaDatos.Models
         public FuncionLicenciado()
         {
             id = 0;
-            
             funcion = "";
             descripcion = "";
-
         }
-        #region Atributos 
+        #region Atributos
         private int id;
         private string funcion;
         private string descripcion;
-
-
-
+        private static string table_name = "funcion_licenciado";
         #endregion
-        #region Propiedades 
+        #region Propiedades
         public int Id { get => id; set => id = value; }
-        
+
         public string Funcion { get => funcion; set => funcion = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
 
 
         #endregion
-        #region Metodos 
-       
-           private static string TableName = "funcion_licenciado";
+        #region Metodos
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (   funcion,descripcion  ) VALUES ( @parametro0,@paramtro1); ";
+            string sql = $"  INSERT INTO {table_name} (   funcion,descripcion  ) VALUES ( @parametro0,@paramtro1); ";
             Object[] Parametros = new Object[] { Funcion,Descripcion };
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM  {table_name} WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET    funcion=@parametro0,descripcion  = @parametro1  WHERE id = @parametro2 ; ";
-
+            string sql = $" UPDATE   {table_name}  SET    funcion=@parametro0,descripcion  = @parametro1  WHERE id = @parametro2 ; ";
             Object[] Parametros = new Object[] {  Funcion, Descripcion, id };
             QueryBuilder(sql, Parametros);
 
@@ -62,18 +55,18 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
         public int FindIdBySearch(string criterio)
         {
-            string sql = " SELECT id FROM " + TableName + "  WHERE funcion  LIKE '%"+criterio+"%'   ; ";
+            string sql = $" SELECT id FROM {table_name}  WHERE funcion  LIKE '%"+criterio+"%'   ; ";
             return FindIdBySearchConexion(sql);
         }
         public int LastId()
         {
 
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
 
         #endregion

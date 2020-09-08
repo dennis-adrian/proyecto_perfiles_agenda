@@ -19,7 +19,7 @@ namespace CapaDatos.Models
 
         }
 
-        #region Atributos 
+        #region Atributos
 
         private int id;
         private int id_revision;
@@ -30,7 +30,7 @@ namespace CapaDatos.Models
 
 
         #endregion
-        #region Propiedades 
+        #region Propiedades
         public int Id { get => id; set => id = value; }
         public int Id_revision { get => id_revision; set => id_revision = value; }
         public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
@@ -38,26 +38,26 @@ namespace CapaDatos.Models
 
 
         #endregion
-        #region Metodos 
-         
-        private static string TableName = "detalle_revision";
+        #region Metodos
+
+        private static string table_name = "detalle_revision";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  id_revision, id_licenciado,id_funcion_licenciado  ) VALUES ( @parametro0,@parametro1,@parametro2); ";
+            string sql = "  INSERT INTO " + table_name + " (  id_revision, id_licenciado,id_funcion_licenciado  ) VALUES ( @parametro0,@parametro1,@parametro2); ";
             Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_funcion_licenciado };
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = " DELETE FROM " + table_name + " WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  id_revision = @parametro0, id_licenciado = @parametro1 ,id_funcion_licenciado  = @parametro2  WHERE id = @parametro3 ; ";
+            string sql = " UPDATE " + table_name + "  SET  id_revision = @parametro0, id_licenciado = @parametro1 ,id_funcion_licenciado  = @parametro2  WHERE id = @parametro3 ; ";
 
             Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_funcion_licenciado, id };
             QueryBuilder(sql, Parametros);
@@ -66,13 +66,13 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = " SELECT * FROM " + table_name + " ; ";
             return SelectConexion(sql);
         }
         public int LastId()
         {
 
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
         #endregion
     }

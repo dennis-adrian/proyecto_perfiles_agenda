@@ -21,12 +21,11 @@ namespace CapaDatos.Models
             celular = "";
             tipo = ""; //interno o externo
             docente = 0;// 0 no 1 si
-           
             id_institucion_representada = 0;
             id_carrera_licenciado = 0;
 
         }
-        #region Atributos 
+        #region Atributos
         private int id;
         private string nombre;
         private string apellido;
@@ -38,12 +37,9 @@ namespace CapaDatos.Models
         private int docente;
         private int id_institucion_representada;
         private int id_carrera_licenciado;
-
-
-
-
+                private static string table_name = "licenciado";
         #endregion
-        #region Propiedades 
+        #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
@@ -55,32 +51,25 @@ namespace CapaDatos.Models
         public int Docente { get => docente; set => docente = value; }
         public int Id_institucion_representada { get => id_institucion_representada; set => id_institucion_representada = value; }
         public int Id_carrera_licenciado { get => id_carrera_licenciado; set => id_carrera_licenciado = value; }
-
-
         #endregion
-        #region Metodos 
-        
-
-        private static string TableName = "licenciado";
+        #region Metodos
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  nombre,apellido,descripcion,email,telefono,celular,tipo,docente,id_institucion_representada,id_carrera_licenciado  ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8,@parametro9); ";
-
+            string sql = $"  INSERT INTO " + table_name + " (  nombre,apellido,descripcion,email,telefono,celular,tipo,docente,id_institucion_representada,id_carrera_licenciado  ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8,@parametro9); ";
             Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Tipo,Docente,Id_institucion_representada,Id_carrera_licenciado };
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM {table_name} WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  nombre = @parametro0 ,apellido = @parametro1, descripcion = @parametro2 , email = @parametro3 , telefono = @parametro4 , celular = @parametro5, tipo = @parametro6, docente = @parametro7,id_institucion_representada = @parametro8  ,id_carrera_licenciado = @parametro9   WHERE id = @parametro10 ; ";
-
+            string sql = $" UPDATE {table_name}  SET  nombre = @parametro0 ,apellido = @parametro1, descripcion = @parametro2 , email = @parametro3 , telefono = @parametro4 , celular = @parametro5, tipo = @parametro6, docente = @parametro7,id_institucion_representada = @parametro8  ,id_carrera_licenciado = @parametro9   WHERE id = @parametro10 ; ";
             Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Tipo ,Docente, Id_institucion_representada, Id_carrera_licenciado, id };
             QueryBuilder(sql, Parametros);
 
@@ -88,18 +77,16 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
         public int LastId()
         {
-
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
         public DataTable FindById(int Id)
         {
-            string sql = " SELECT * FROM " + TableName + " WHERE id = "+Id+"  ;";
-
+            string sql = $" SELECT * FROM {table_name} WHERE id = {Id}  ;";
             return SelectConexion(sql);
 
         }
