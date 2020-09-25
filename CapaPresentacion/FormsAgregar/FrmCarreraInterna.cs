@@ -12,7 +12,7 @@ using CapaNegocio.src;
 
 namespace CapaPresentacion.FormsAgregar
 {
-    public partial class FrmInstitucion : Form
+    public partial class FrmCarreraInterna : Form
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -31,7 +31,7 @@ namespace CapaPresentacion.FormsAgregar
 
         #region Constructor
 
-        public FrmInstitucion()
+        public FrmCarreraInterna()
         {
             InitializeComponent();
         }
@@ -60,7 +60,7 @@ namespace CapaPresentacion.FormsAgregar
             try
             {
                 Insert();
-                txtNuevaInstitucion.Clear();
+                txtNombreCarrera.Clear();
                 this.DialogResult = DialogResult.OK;
 
             }
@@ -89,7 +89,7 @@ namespace CapaPresentacion.FormsAgregar
         #region Metodos
         public void Insert()
         {
-            string nombre = txtNuevaInstitucion.Text;
+            string nombre = txtNombreCarrera.Text;
             Object[] datos = new Object[] { nombre };
             helper.ControlInput(datos);
             helper.MainInsertInstitucion();
@@ -133,9 +133,10 @@ namespace CapaPresentacion.FormsAgregar
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            this.btnBuscar.IconColor = Color.White;
+            this.btnBuscar.IconColor = Color.Black;
         }
     }
 }

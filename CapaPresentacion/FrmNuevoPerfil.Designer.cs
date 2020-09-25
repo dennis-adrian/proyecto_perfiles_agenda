@@ -76,7 +76,7 @@
             this.pnlNuevoPerfil.Location = new System.Drawing.Point(2, 2);
             this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
-            this.pnlNuevoPerfil.Size = new System.Drawing.Size(806, 474);
+            this.pnlNuevoPerfil.Size = new System.Drawing.Size(911, 613);
             this.pnlNuevoPerfil.TabIndex = 34;
             this.pnlNuevoPerfil.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNuevoPerfil_Paint);
             // 
@@ -94,13 +94,12 @@
             this.grbPerfilTesis.Controls.Add(this.label3);
             this.grbPerfilTesis.Controls.Add(this.label6);
             this.grbPerfilTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbPerfilTesis.Location = new System.Drawing.Point(10, 187);
+            this.grbPerfilTesis.Location = new System.Drawing.Point(62, 271);
             this.grbPerfilTesis.Name = "grbPerfilTesis";
             this.grbPerfilTesis.Size = new System.Drawing.Size(759, 201);
             this.grbPerfilTesis.TabIndex = 36;
             this.grbPerfilTesis.TabStop = false;
             this.grbPerfilTesis.Text = "PERFIL TESIS";
-            this.grbPerfilTesis.Enter += new System.EventHandler(this.grbPerfilTesis_Enter);
             // 
             // cmbTutorElegido
             // 
@@ -201,7 +200,7 @@
             this.btnCancelarNuevop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarNuevop.Location = new System.Drawing.Point(561, 410);
+            this.btnCancelarNuevop.Location = new System.Drawing.Point(613, 489);
             this.btnCancelarNuevop.Name = "btnCancelarNuevop";
             this.btnCancelarNuevop.Size = new System.Drawing.Size(100, 35);
             this.btnCancelarNuevop.TabIndex = 39;
@@ -217,7 +216,7 @@
             this.btnGuardarNuevoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarNuevoP.Location = new System.Drawing.Point(667, 410);
+            this.btnGuardarNuevoP.Location = new System.Drawing.Point(719, 489);
             this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
             this.btnGuardarNuevoP.Size = new System.Drawing.Size(100, 35);
             this.btnGuardarNuevoP.TabIndex = 38;
@@ -244,7 +243,7 @@
             this.grbAlumno.Controls.Add(this.txtRegistroAlum);
             this.grbAlumno.Controls.Add(this.label13);
             this.grbAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAlumno.Location = new System.Drawing.Point(10, 5);
+            this.grbAlumno.Location = new System.Drawing.Point(62, 74);
             this.grbAlumno.Margin = new System.Windows.Forms.Padding(10);
             this.grbAlumno.Name = "grbAlumno";
             this.grbAlumno.Padding = new System.Windows.Forms.Padding(5);
@@ -252,7 +251,6 @@
             this.grbAlumno.TabIndex = 35;
             this.grbAlumno.TabStop = false;
             this.grbAlumno.Text = "ALUMNO";
-            this.grbAlumno.Enter += new System.EventHandler(this.grbAlumno_Enter);
             // 
             // cmbCarrera
             // 
@@ -392,7 +390,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(810, 478);
+            this.ClientSize = new System.Drawing.Size(915, 617);
             this.Controls.Add(this.pnlNuevoPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

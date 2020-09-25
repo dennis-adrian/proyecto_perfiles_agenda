@@ -25,7 +25,7 @@ namespace CapaPresentacion
         #region instancias
 
         NegocioRevisiones obj = new NegocioRevisiones();
-
+        NegocioNuevaDefensa nuevadefensa = new NegocioNuevaDefensa();
 
         #endregion
 
@@ -42,6 +42,29 @@ namespace CapaPresentacion
         }
         #endregion
 
+
+        private FrmTutor Tutor = null;
+
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (Tutor == null)
+                {
+                    Tutor = new FrmTutor();
+                    Tutor.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return Tutor;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            Tutor = null;
+
+        }
 
         public void ShowData()
         {
@@ -159,10 +182,10 @@ namespace CapaPresentacion
         #region Buttons
         private void btnElegirTribunal_Click(object sender, EventArgs e)
         {
-
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.BringToFront();
         }
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
@@ -173,28 +196,61 @@ namespace CapaPresentacion
         {
             try
             {
-                if(this.id_revision <= 0)
+                if (this.id_revision <= 0)
                 {
                     Insert();
-
+                    MessageBox.Show("Datos de la revision guardados correctamente");
+                    InsertForNewDefensa();
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                    MessageBox.Show("Datos guardados correctamente");
+                   
+
                 }
                 else
                 {
                     Update(this.id_revision);
-
+                    MessageBox.Show("Datos de la revision actualizados correctamente");
+                    InsertForNewDefensa();
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                    MessageBox.Show("Datos actualizados correctamente");
+                   
+
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
+            }
+        }
+
+        public void InsertForNewDefensa()
+        {
+            bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
+            if (res == true)
+            {
+                string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
+                string title = "Nueva Defensa Externa";
+                DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+
+                    Object[] datos = new Object[]
+                   { this.id_perfil};
+                    nuevadefensa.ControlInput(datos);
+                    nuevadefensa.Main(2);
+                    MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
+                    //hacer el insert aqui
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                    MessageBox.Show("debera asignar manulamente despues");
+                }
+
             }
         }
 
@@ -204,20 +260,13 @@ namespace CapaPresentacion
 
         private void rbTribunal2_CheckedChanged(object sender, EventArgs e)
         {
-            //this.nroTribunal = "2";
-            //reiniciarValores();
-            //txtTribunal.Text = nroTribunal;
             infoRevision(this.id_perfil, this.num_revision, 2);
         }
 
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
         {
-            //this.nroTribunal = "1";
-            //reiniciarValores();
-            //txtTribunal.Text = nroTribunal;
-            infoRevision(this.id_perfil, this.num_revision, 1);
+           infoRevision(this.id_perfil, this.num_revision, 1);
         }
-
 
         public void infoRevision(int i, int n, int t)
         {
@@ -293,6 +342,7 @@ namespace CapaPresentacion
                 check.Checked = true;
             }
         }
+
         public bool DateEnabled(DateTimePicker dtp)
         {
            
@@ -304,7 +354,6 @@ namespace CapaPresentacion
             return false;
 
         }
-
 
         public void Insert()
         {
@@ -356,6 +405,7 @@ namespace CapaPresentacion
             
 
         }
+
         public void Update(int idrevision)
         {
 
@@ -406,11 +456,6 @@ namespace CapaPresentacion
 
 
         }
-
-
-
-
-
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {

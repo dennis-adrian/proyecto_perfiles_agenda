@@ -10,9 +10,10 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.src;
 
+
 namespace CapaPresentacion.FormsAgregar
 {
-    public partial class FrmInstitucion : Form
+    public partial class FrmCarreraExterna : Form
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -28,22 +29,20 @@ namespace CapaPresentacion.FormsAgregar
                 return cp;
             }
         }
-
         #region Constructor
 
-        public FrmInstitucion()
+        public FrmCarreraExterna()
         {
             InitializeComponent();
         }
-
         #endregion
 
         #region Instancias
-
         Helpers helper = new Helpers();
         #endregion
 
         #region Atributos
+
 
         int posY = 0;
         int posX = 0;
@@ -55,19 +54,20 @@ namespace CapaPresentacion.FormsAgregar
         {
             this.Close();
         }
-        private void btnNuevaInstitucion_Click(object sender, EventArgs e)
+        private void btnNuevaCarreraLicenciado_Click(object sender, EventArgs e)
         {
             try
             {
                 Insert();
-                txtNuevaInstitucion.Clear();
+                txtNombreCarreraLic.Clear();
                 this.DialogResult = DialogResult.OK;
 
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
+
         }
 
         private void pnlBarraTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -84,56 +84,30 @@ namespace CapaPresentacion.FormsAgregar
             }
         }
 
+
         #endregion
 
         #region Metodos
+
         public void Insert()
         {
-            string nombre = txtNuevaInstitucion.Text;
+            string nombre = txtNombreCarreraLic.Text;
             Object[] datos = new Object[] { nombre };
             helper.ControlInput(datos);
-            helper.MainInsertInstitucion();
+            helper.MainInsertCarreraLicenciado();
+
+
         }
 
 
         #endregion
 
-        private void FrmInstitucion_Load(object sender, EventArgs e)
+        private void FrmCarrera_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dtgInstitucion_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnNuevaInstitu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -12,7 +12,7 @@ using CapaNegocio.src;
 
 namespace CapaPresentacion.FormsAgregar
 {
-    public partial class FrmInstitucion : Form
+    public partial class FrmAgregarGenerico : Form
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -31,7 +31,7 @@ namespace CapaPresentacion.FormsAgregar
 
         #region Constructor
 
-        public FrmInstitucion()
+        public FrmAgregarGenerico()
         {
             InitializeComponent();
         }
@@ -133,9 +133,10 @@ namespace CapaPresentacion.FormsAgregar
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            this.btnBuscar.IconColor = Color.White;
+            this.btnBuscar.IconColor = Color.Black;
         }
     }
 }

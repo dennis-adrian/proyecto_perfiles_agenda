@@ -48,7 +48,7 @@ namespace CapaDatos.View
 
         public DataTable Select(string carrera)
         {
-            string sql = " SELECT * FROM ViewDefensasCarrera where Carrera LIKE '%@parametro0%' ; ";
+            string sql = " SELECT * FROM ViewDefensasCarrera where Carrera = @parametro0 ; ";
             return obj.SelectConexion(sql, carrera);
         }
         public DataTable Select(string carrera, string estudiante)
@@ -59,7 +59,13 @@ namespace CapaDatos.View
 
         }
 
+        public DataTable SelectTipo(string carrera, string tipo)
+        {
 
+            string sql = " select * from ViewDefensasCarrera where  Carrera = @parametro0 and Tipo = @parametro1  ;";
+            return obj.SelectConexion(sql,carrera, tipo);
+
+        }
 
         #endregion
     }

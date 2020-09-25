@@ -23,7 +23,7 @@ namespace CapaDatos.Models
             id_licenciado = 0;
             id_funcion_licenciado = 0;
         }
-        #region Atributos 
+        #region Atributos
         private int id;
         private string tema;
         private string estado;
@@ -34,11 +34,9 @@ namespace CapaDatos.Models
         private int id_estudiante;
         private int id_licenciado;
         private int id_funcion_licenciado;
-
-
+        private static string table_name = "perfil_tesis";
         #endregion
-        #region Propiedades 
-
+        #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Tema { get => tema; set => tema = value; }
         public string Estado { get => estado; set => estado = value; }
@@ -51,26 +49,24 @@ namespace CapaDatos.Models
         public int Id_estudiante { get => id_estudiante; set => id_estudiante = value; }
 
         #endregion
-        #region Metodos 
-        //tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_tipo_licenciado
-        private static string TableName = "perfil_tesis";
+        #region Metodos
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_funcion_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
+            string sql = $"  INSERT INTO {table_name} (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_funcion_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
             Object[] Parametros = new Object[] { Tema,Estado,Fecha_aprobacion_jefe_carrera,Fecha_recepcion_titulacion,Estado_defensa,Calificacion,Id_estudiante,Id_licenciado, Id_funcion_licenciado };
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM {table_name} WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET tema = @parametro0,estado=@parametro1,fecha_aprobacion_jefe_carrera=@parametro2,fecha_recepcion_titulacion=@parametro3,estado_defensa=@parametro4,calificacion=@parametro5,id_estudiante=@parametro6,id_licenciado=@parametro7,id_funcion_licenciado=@parametro8  WHERE id = @parametro9 ; ";
+            string sql = $" UPDATE {table_name}  SET tema = @parametro0,estado=@parametro1,fecha_aprobacion_jefe_carrera=@parametro2,fecha_recepcion_titulacion=@parametro3,estado_defensa=@parametro4,calificacion=@parametro5,id_estudiante=@parametro6,id_licenciado=@parametro7,id_funcion_licenciado=@parametro8  WHERE id = @parametro9 ; ";
 
             Object[] Parametros = new Object[] { Tema, Estado, Fecha_aprobacion_jefe_carrera, Fecha_recepcion_titulacion, Estado_defensa, Calificacion, Id_estudiante, Id_licenciado, Id_funcion_licenciado, id };
             QueryBuilder(sql, Parametros);
@@ -79,13 +75,12 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
         public int LastId()
         {
-
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
 
         #endregion

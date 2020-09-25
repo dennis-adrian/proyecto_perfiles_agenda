@@ -277,7 +277,199 @@ namespace CapaNegocio
 
 
         }
+
+        public bool ValidarFechasTribunal(int it, int nt)
+        {
+            string[] fechas = new string[5]; 
+            bool result = true;
+            var rev = revision.LastRevisionByTribunal(it, nt);
+            for (int i = 0; i < rev.Rows.Count; i++)
+            {              
+                fechas[0] = rev.Rows[i][2].ToString();
+                fechas[1] = rev.Rows[i][3].ToString();
+                fechas[2] = rev.Rows[i][4].ToString();
+                fechas[3] = rev.Rows[i][5].ToString();
+                fechas[4] = rev.Rows[i][6].ToString();
+            }
+            bool fec_vacio = fechas.Contains("");
+            bool fec_null = fechas.Contains(null);
+            if(fec_vacio == true || fec_null == true)
+            {
+                result = false;
+            }
+            return result;
+        }
+        public bool ValidarFechaEmpasteTribunal(int it, int nt)
+        {
+            string fec_empaste = "" ;
+            bool result = true;
+            var rev = revision.LastRevisionByTribunal(it, nt);
+
+            for (int i = 0; i < rev.Rows.Count; i++)
+            {
+                fec_empaste = rev.Rows[i][10].ToString();
+
+            }
+                        
+            if (fec_empaste == "" || fec_empaste == null)
+            {
+                result = false;
+            }
+
+            return result;
+
+
+        }
+
+        public bool ValidateNextRevision(int it, int t1,int t2)
+        {
+            bool result = false;
+            var rev1 =  revision.MaxNumberOfRevsionesByTribunal(it,t1);
+            var rev2 = revision.MaxNumberOfRevsionesByTribunal(it, t2);
+            
+            int max1 = 0;
+            int max2 = 0;
+            for (int i = 0; i < rev1.Rows.Count; i++)
+            {
+                max1 = Convert.ToInt32(rev1.Rows[i][0].ToString());
+
+            }
+            for (int i = 0; i < rev2.Rows.Count; i++)
+            {
+                max2 = Convert.ToInt32(rev2.Rows[i][0].ToString());
+
+            }
+
+            if(max1 == max2)
+            {
+                result = true;
+            }
+            return result;
+
+
+        }
+
+        public bool ValidarFechasEmpasteforNewInsert(int it, int t1, int t2)
+        {
+            bool result = true;
+            try
+            {
+               
+                string empastet1 = "";
+                string empastet2 = "";
+                bool res = ValidateNextRevision(it, t1, t2);
+                if (res == true)
+                {
+                    var revt1 = revision.LastRevisionByTribunal(it, t1);
+                    var revt2 = revision.LastRevisionByTribunal(it, t2);
+
+                    for (int i = 0; i < revt1.Rows.Count; i++)
+                    {
+                        empastet1 = revt1.Rows[i][10].ToString();
+                    }
+                    for (int i = 0; i < revt2.Rows.Count; i++)
+                    {
+                        empastet2 = revt2.Rows[i][10].ToString();
+
+                    }
+
+
+                    if ((empastet1 == "" || empastet1 == null) || (empastet2 == "" || empastet2 == null))
+                    {
+                        result = false;
+                    }
+
+
+                }
+                else
+                {
+                    result = false;
+
+                }
+               
+
+                return result;
+            }
+            catch
+            {   
+                result = false;
+                return result;
+            }
+
+            }
+           
+
+        public bool ExisteAlgunaFechaEmpasteforNewInsert(int it, int t1, int t2)
+        {
+            bool result = false;
+            string empastet1 = "";
+            string empastet2 = "";
+            bool res = ValidateNextRevision(it, t1, t2);
+            if (res == true)
+            {
+                var revt1 = revision.LastRevisionByTribunal(it, t1);
+                var revt2 = revision.LastRevisionByTribunal(it, t2);
+
+                for (int i = 0; i < revt1.Rows.Count; i++)
+                {
+                    empastet1 = revt1.Rows[i][10].ToString();
+                }
+                for (int i = 0; i < revt2.Rows.Count; i++)
+                {
+                    empastet2 = revt2.Rows[i][10].ToString();
+
+                }
+
+
+                if ((empastet1 != "" && empastet1 != null) || (empastet2 != "" && empastet2 != null))
+                {
+                    result = true;
+                }
+
+
+            }   
+            return result;
+        }
         #endregion
+
+        public void test1(int it, int t1, int t2)
+        {
+
+            string empastet1 = "";
+            string empastet2 = "nada";
+            try
+            {
+                bool res = ValidateNextRevision(it, t1, t2);
+                if (res == true)
+                {
+                    var revt1 = revision.LastRevisionByTribunal(it, t1);
+                    var revt2 = revision.LastRevisionByTribunal(it, t2);
+
+                    for (int i = 0; i < revt1.Rows.Count; i++)
+                    {
+                        empastet1 = revt1.Rows[i][10].ToString();
+                    }
+                    for (int i = 0; i < revt2.Rows.Count; i++)
+                    {
+                        empastet2 = revt2.Rows[i][10].ToString();
+
+                    }
+                }
+                Console.WriteLine(empastet1);
+                Console.WriteLine(empastet2);
+            }
+            catch
+            {
+                Console.WriteLine("hbo un error");
+            }
+           
+
+              
+
+
+            
+
+        }
 
     }
 }

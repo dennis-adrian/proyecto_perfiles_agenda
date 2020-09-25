@@ -40,13 +40,14 @@
             this.btnTecnologiaPerfiles = new FontAwesome.Sharp.IconButton();
             this.btnEmpresarialesPefiles = new FontAwesome.Sharp.IconButton();
             this.btnPerfiles = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlNuevoPerfil = new System.Windows.Forms.Panel();
-            this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
-            this.pnlNuevaDefensa = new System.Windows.Forms.Panel();
             this.btnNuevaDefensa = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnNuevoPerfil = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnImagenUtepsa = new System.Windows.Forms.PictureBox();
+            this.pnlSubMenuNuevaDefensa = new System.Windows.Forms.Panel();
+            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
+            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.btnMinimizar = new FontAwesome.Sharp.IconButton();
@@ -57,11 +58,14 @@
             this.btnRelInter = new FontAwesome.Sharp.IconButton();
             this.btnDerecho = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregrNew = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.paneldefensa = new System.Windows.Forms.Panel();
-            this.btnGraduacionExcelencia = new FontAwesome.Sharp.IconButton();
-            this.btnExamendeGrado = new FontAwesome.Sharp.IconButton();
+            this.pnlAgregar = new System.Windows.Forms.Panel();
+            this.btnNuevaCareraIn = new FontAwesome.Sharp.IconButton();
+            this.btnNuevaCarreraEx = new FontAwesome.Sharp.IconButton();
+            this.btnNuevaFacultad = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoLicen = new FontAwesome.Sharp.IconButton();
             this.pnlCarrerasEmpresariales = new System.Windows.Forms.Panel();
             this.btnComunicacion = new FontAwesome.Sharp.IconButton();
             this.btnFinanciera = new FontAwesome.Sharp.IconButton();
@@ -83,15 +87,14 @@
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnlNuevoPerfil.SuspendLayout();
-            this.pnlNuevaDefensa.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).BeginInit();
+            this.pnlSubMenuNuevaDefensa.SuspendLayout();
             this.pnlBarraTitulo.SuspendLayout();
             this.pnlCarrerasJuridicas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFrmHijo.SuspendLayout();
-            this.paneldefensa.SuspendLayout();
+            this.pnlAgregar.SuspendLayout();
             this.pnlCarrerasEmpresariales.SuspendLayout();
             this.pnlCarrerasTenologia.SuspendLayout();
             this.SuspendLayout();
@@ -104,13 +107,14 @@
             this.panel1.Controls.Add(this.btnDefensaExterna);
             this.panel1.Controls.Add(this.pnlSubMenuPerfiles);
             this.panel1.Controls.Add(this.btnPerfiles);
+            this.panel1.Controls.Add(this.btnNuevaDefensa);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pnlLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(258, 654);
+            this.panel1.Size = new System.Drawing.Size(333, 939);
             this.panel1.TabIndex = 0;
             // 
             // pnlSubMenuDefensa
@@ -119,10 +123,9 @@
             this.pnlSubMenuDefensa.Controls.Add(this.btnTecnologiaAgenda);
             this.pnlSubMenuDefensa.Controls.Add(this.btnEmpresarialesAgenda);
             this.pnlSubMenuDefensa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 422);
-            this.pnlSubMenuDefensa.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSubMenuDefensa.Location = new System.Drawing.Point(0, 481);
             this.pnlSubMenuDefensa.Name = "pnlSubMenuDefensa";
-            this.pnlSubMenuDefensa.Size = new System.Drawing.Size(258, 95);
+            this.pnlSubMenuDefensa.Size = new System.Drawing.Size(333, 117);
             this.pnlSubMenuDefensa.TabIndex = 2;
             // 
             // btnJuridicasAgenda
@@ -141,13 +144,12 @@
             this.btnJuridicasAgenda.IconColor = System.Drawing.Color.White;
             this.btnJuridicasAgenda.IconSize = 32;
             this.btnJuridicasAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJuridicasAgenda.Location = new System.Drawing.Point(0, 62);
-            this.btnJuridicasAgenda.Margin = new System.Windows.Forms.Padding(2);
+            this.btnJuridicasAgenda.Location = new System.Drawing.Point(0, 76);
             this.btnJuridicasAgenda.Name = "btnJuridicasAgenda";
-            this.btnJuridicasAgenda.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnJuridicasAgenda.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnJuridicasAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnJuridicasAgenda.Rotation = 0D;
-            this.btnJuridicasAgenda.Size = new System.Drawing.Size(258, 31);
+            this.btnJuridicasAgenda.Size = new System.Drawing.Size(333, 38);
             this.btnJuridicasAgenda.TabIndex = 17;
             this.btnJuridicasAgenda.Text = "Ciencias Jurídicas y Sociales";
             this.btnJuridicasAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,13 +173,12 @@
             this.btnTecnologiaAgenda.IconColor = System.Drawing.Color.White;
             this.btnTecnologiaAgenda.IconSize = 32;
             this.btnTecnologiaAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnologiaAgenda.Location = new System.Drawing.Point(0, 31);
-            this.btnTecnologiaAgenda.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTecnologiaAgenda.Location = new System.Drawing.Point(0, 38);
             this.btnTecnologiaAgenda.Name = "btnTecnologiaAgenda";
-            this.btnTecnologiaAgenda.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnTecnologiaAgenda.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnTecnologiaAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTecnologiaAgenda.Rotation = 0D;
-            this.btnTecnologiaAgenda.Size = new System.Drawing.Size(258, 31);
+            this.btnTecnologiaAgenda.Size = new System.Drawing.Size(333, 38);
             this.btnTecnologiaAgenda.TabIndex = 6;
             this.btnTecnologiaAgenda.Text = "Ciencias y Tecnología";
             this.btnTecnologiaAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,12 +203,11 @@
             this.btnEmpresarialesAgenda.IconSize = 32;
             this.btnEmpresarialesAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpresarialesAgenda.Location = new System.Drawing.Point(0, 0);
-            this.btnEmpresarialesAgenda.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpresarialesAgenda.Name = "btnEmpresarialesAgenda";
-            this.btnEmpresarialesAgenda.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEmpresarialesAgenda.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnEmpresarialesAgenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnEmpresarialesAgenda.Rotation = 0D;
-            this.btnEmpresarialesAgenda.Size = new System.Drawing.Size(258, 31);
+            this.btnEmpresarialesAgenda.Size = new System.Drawing.Size(333, 38);
             this.btnEmpresarialesAgenda.TabIndex = 1;
             this.btnEmpresarialesAgenda.Text = "Ciencias Empresariales";
             this.btnEmpresarialesAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,13 +232,12 @@
             this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
             this.btnDefensaExterna.IconSize = 32;
             this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 380);
-            this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDefensaExterna.Location = new System.Drawing.Point(0, 429);
             this.btnDefensaExterna.Name = "btnDefensaExterna";
-            this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnDefensaExterna.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDefensaExterna.Rotation = 0D;
-            this.btnDefensaExterna.Size = new System.Drawing.Size(258, 42);
+            this.btnDefensaExterna.Size = new System.Drawing.Size(333, 52);
             this.btnDefensaExterna.TabIndex = 17;
             this.btnDefensaExterna.Text = "Defensa Externa";
             this.btnDefensaExterna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,10 +251,9 @@
             this.pnlSubMenuPerfiles.Controls.Add(this.btnTecnologiaPerfiles);
             this.pnlSubMenuPerfiles.Controls.Add(this.btnEmpresarialesPefiles);
             this.pnlSubMenuPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 286);
-            this.pnlSubMenuPerfiles.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSubMenuPerfiles.Location = new System.Drawing.Point(0, 313);
             this.pnlSubMenuPerfiles.Name = "pnlSubMenuPerfiles";
-            this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(258, 94);
+            this.pnlSubMenuPerfiles.Size = new System.Drawing.Size(333, 116);
             this.pnlSubMenuPerfiles.TabIndex = 1;
             // 
             // btnJuridicasPerfiles
@@ -274,13 +272,12 @@
             this.btnJuridicasPerfiles.IconColor = System.Drawing.Color.White;
             this.btnJuridicasPerfiles.IconSize = 32;
             this.btnJuridicasPerfiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJuridicasPerfiles.Location = new System.Drawing.Point(0, 62);
-            this.btnJuridicasPerfiles.Margin = new System.Windows.Forms.Padding(2);
+            this.btnJuridicasPerfiles.Location = new System.Drawing.Point(0, 76);
             this.btnJuridicasPerfiles.Name = "btnJuridicasPerfiles";
-            this.btnJuridicasPerfiles.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnJuridicasPerfiles.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnJuridicasPerfiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnJuridicasPerfiles.Rotation = 0D;
-            this.btnJuridicasPerfiles.Size = new System.Drawing.Size(258, 31);
+            this.btnJuridicasPerfiles.Size = new System.Drawing.Size(333, 38);
             this.btnJuridicasPerfiles.TabIndex = 7;
             this.btnJuridicasPerfiles.Text = "Ciencias Jurídicas y Sociales";
             this.btnJuridicasPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,13 +301,12 @@
             this.btnTecnologiaPerfiles.IconColor = System.Drawing.Color.White;
             this.btnTecnologiaPerfiles.IconSize = 32;
             this.btnTecnologiaPerfiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnologiaPerfiles.Location = new System.Drawing.Point(0, 31);
-            this.btnTecnologiaPerfiles.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTecnologiaPerfiles.Location = new System.Drawing.Point(0, 38);
             this.btnTecnologiaPerfiles.Name = "btnTecnologiaPerfiles";
-            this.btnTecnologiaPerfiles.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnTecnologiaPerfiles.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnTecnologiaPerfiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTecnologiaPerfiles.Rotation = 0D;
-            this.btnTecnologiaPerfiles.Size = new System.Drawing.Size(258, 31);
+            this.btnTecnologiaPerfiles.Size = new System.Drawing.Size(333, 38);
             this.btnTecnologiaPerfiles.TabIndex = 6;
             this.btnTecnologiaPerfiles.Text = "Ciencias y Tecnología";
             this.btnTecnologiaPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -335,12 +331,11 @@
             this.btnEmpresarialesPefiles.IconSize = 32;
             this.btnEmpresarialesPefiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpresarialesPefiles.Location = new System.Drawing.Point(0, 0);
-            this.btnEmpresarialesPefiles.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpresarialesPefiles.Name = "btnEmpresarialesPefiles";
-            this.btnEmpresarialesPefiles.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEmpresarialesPefiles.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnEmpresarialesPefiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnEmpresarialesPefiles.Rotation = 0D;
-            this.btnEmpresarialesPefiles.Size = new System.Drawing.Size(258, 31);
+            this.btnEmpresarialesPefiles.Size = new System.Drawing.Size(333, 38);
             this.btnEmpresarialesPefiles.TabIndex = 1;
             this.btnEmpresarialesPefiles.Text = "Ciencias Empresariales";
             this.btnEmpresarialesPefiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,13 +360,12 @@
             this.btnPerfiles.IconColor = System.Drawing.Color.White;
             this.btnPerfiles.IconSize = 32;
             this.btnPerfiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfiles.Location = new System.Drawing.Point(0, 244);
-            this.btnPerfiles.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPerfiles.Location = new System.Drawing.Point(0, 261);
             this.btnPerfiles.Name = "btnPerfiles";
-            this.btnPerfiles.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPerfiles.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnPerfiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPerfiles.Rotation = 0D;
-            this.btnPerfiles.Size = new System.Drawing.Size(258, 42);
+            this.btnPerfiles.Size = new System.Drawing.Size(333, 52);
             this.btnPerfiles.TabIndex = 0;
             this.btnPerfiles.Text = "Perfiles";
             this.btnPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,31 +373,50 @@
             this.btnPerfiles.UseVisualStyleBackColor = false;
             this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
+            // btnNuevaDefensa
+            // 
+            this.btnNuevaDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnNuevaDefensa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaDefensa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevaDefensa.FlatAppearance.BorderSize = 0;
+            this.btnNuevaDefensa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaDefensa.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaDefensa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
+            this.btnNuevaDefensa.IconSize = 32;
+            this.btnNuevaDefensa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 209);
+            this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNuevaDefensa.Name = "btnNuevaDefensa";
+            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnNuevaDefensa.Rotation = 0D;
+            this.btnNuevaDefensa.Size = new System.Drawing.Size(333, 52);
+            this.btnNuevaDefensa.TabIndex = 1;
+            this.btnNuevaDefensa.Text = "Nueva Defensa";
+            this.btnNuevaDefensa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaDefensa.UseVisualStyleBackColor = false;
+            this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pnlNuevoPerfil);
-            this.panel3.Controls.Add(this.pnlNuevaDefensa);
+            this.panel3.Controls.Add(this.btnNuevoPerfil);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 128);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 157);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(258, 116);
+            this.panel3.Size = new System.Drawing.Size(333, 52);
             this.panel3.TabIndex = 4;
-            // 
-            // pnlNuevoPerfil
-            // 
-            this.pnlNuevoPerfil.Controls.Add(this.btnNuevoPerfil);
-            this.pnlNuevoPerfil.Location = new System.Drawing.Point(0, 15);
-            this.pnlNuevoPerfil.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
-            this.pnlNuevoPerfil.Name = "pnlNuevoPerfil";
-            this.pnlNuevoPerfil.Size = new System.Drawing.Size(258, 40);
-            this.pnlNuevoPerfil.TabIndex = 2;
             // 
             // btnNuevoPerfil
             // 
             this.btnNuevoPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnNuevoPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNuevoPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNuevoPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNuevoPerfil.FlatAppearance.BorderSize = 0;
             this.btnNuevoPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
@@ -414,55 +427,20 @@
             this.btnNuevoPerfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNuevoPerfil.IconChar = FontAwesome.Sharp.IconChar.File;
             this.btnNuevoPerfil.IconColor = System.Drawing.Color.White;
-            this.btnNuevoPerfil.IconSize = 28;
+            this.btnNuevoPerfil.IconSize = 32;
+            this.btnNuevoPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoPerfil.Location = new System.Drawing.Point(0, 0);
             this.btnNuevoPerfil.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevoPerfil.Name = "btnNuevoPerfil";
-            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(4);
+            this.btnNuevoPerfil.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnNuevoPerfil.Rotation = 0D;
-            this.btnNuevoPerfil.Size = new System.Drawing.Size(258, 40);
+            this.btnNuevoPerfil.Size = new System.Drawing.Size(333, 52);
             this.btnNuevoPerfil.TabIndex = 1;
             this.btnNuevoPerfil.Text = "Nuevo Perfil";
+            this.btnNuevoPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevoPerfil.UseVisualStyleBackColor = false;
             this.btnNuevoPerfil.Click += new System.EventHandler(this.btnNuevoPerfil_Click);
-            // 
-            // pnlNuevaDefensa
-            // 
-            this.pnlNuevaDefensa.Controls.Add(this.btnNuevaDefensa);
-            this.pnlNuevaDefensa.Location = new System.Drawing.Point(0, 64);
-            this.pnlNuevaDefensa.Margin = new System.Windows.Forms.Padding(38, 2, 38, 41);
-            this.pnlNuevaDefensa.Name = "pnlNuevaDefensa";
-            this.pnlNuevaDefensa.Size = new System.Drawing.Size(258, 40);
-            this.pnlNuevaDefensa.TabIndex = 3;
-            // 
-            // btnNuevaDefensa
-            // 
-            this.btnNuevaDefensa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnNuevaDefensa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaDefensa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNuevaDefensa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevaDefensa.FlatAppearance.BorderSize = 0;
-            this.btnNuevaDefensa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaDefensa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnNuevaDefensa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaDefensa.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaDefensa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevaDefensa.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.btnNuevaDefensa.IconColor = System.Drawing.Color.White;
-            this.btnNuevaDefensa.IconSize = 28;
-            this.btnNuevaDefensa.Location = new System.Drawing.Point(0, 0);
-            this.btnNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNuevaDefensa.Name = "btnNuevaDefensa";
-            this.btnNuevaDefensa.Padding = new System.Windows.Forms.Padding(4);
-            this.btnNuevaDefensa.Rotation = 0D;
-            this.btnNuevaDefensa.Size = new System.Drawing.Size(258, 40);
-            this.btnNuevaDefensa.TabIndex = 1;
-            this.btnNuevaDefensa.Text = "Nueva Defensa";
-            this.btnNuevaDefensa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevaDefensa.UseVisualStyleBackColor = false;
-            this.btnNuevaDefensa.Click += new System.EventHandler(this.btnNuevaDefensa_Click);
             // 
             // pnlLogo
             // 
@@ -470,22 +448,89 @@
             this.pnlLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(258, 128);
+            this.pnlLogo.Size = new System.Drawing.Size(333, 157);
             this.pnlLogo.TabIndex = 0;
             // 
             // btnImagenUtepsa
             // 
             this.btnImagenUtepsa.Image = ((System.Drawing.Image)(resources.GetObject("btnImagenUtepsa.Image")));
-            this.btnImagenUtepsa.Location = new System.Drawing.Point(32, 11);
-            this.btnImagenUtepsa.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnImagenUtepsa.Location = new System.Drawing.Point(43, 13);
+            this.btnImagenUtepsa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnImagenUtepsa.Name = "btnImagenUtepsa";
-            this.btnImagenUtepsa.Size = new System.Drawing.Size(184, 97);
+            this.btnImagenUtepsa.Size = new System.Drawing.Size(245, 120);
             this.btnImagenUtepsa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnImagenUtepsa.TabIndex = 0;
             this.btnImagenUtepsa.TabStop = false;
             this.btnImagenUtepsa.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // pnlSubMenuNuevaDefensa
+            // 
+            this.pnlSubMenuNuevaDefensa.BackColor = System.Drawing.Color.Gray;
+            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnExamendeGrado);
+            this.pnlSubMenuNuevaDefensa.Controls.Add(this.btnGraduacionExcelencia);
+            this.pnlSubMenuNuevaDefensa.Location = new System.Drawing.Point(0, 109);
+            this.pnlSubMenuNuevaDefensa.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSubMenuNuevaDefensa.Name = "pnlSubMenuNuevaDefensa";
+            this.pnlSubMenuNuevaDefensa.Size = new System.Drawing.Size(367, 76);
+            this.pnlSubMenuNuevaDefensa.TabIndex = 18;
+            this.pnlSubMenuNuevaDefensa.Visible = false;
+            // 
+            // btnExamendeGrado
+            // 
+            this.btnExamendeGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExamendeGrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExamendeGrado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExamendeGrado.FlatAppearance.BorderSize = 0;
+            this.btnExamendeGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnExamendeGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamendeGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnExamendeGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExamendeGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExamendeGrado.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnExamendeGrado.IconColor = System.Drawing.Color.White;
+            this.btnExamendeGrado.IconSize = 32;
+            this.btnExamendeGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.Location = new System.Drawing.Point(0, 38);
+            this.btnExamendeGrado.Name = "btnExamendeGrado";
+            this.btnExamendeGrado.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
+            this.btnExamendeGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnExamendeGrado.Rotation = 0D;
+            this.btnExamendeGrado.Size = new System.Drawing.Size(367, 38);
+            this.btnExamendeGrado.TabIndex = 7;
+            this.btnExamendeGrado.Text = "Examen de Grado";
+            this.btnExamendeGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamendeGrado.UseVisualStyleBackColor = false;
+            this.btnExamendeGrado.Click += new System.EventHandler(this.btnExamendeGrado_Click);
+            // 
+            // btnGraduacionExcelencia
+            // 
+            this.btnGraduacionExcelencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGraduacionExcelencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraduacionExcelencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGraduacionExcelencia.FlatAppearance.BorderSize = 0;
+            this.btnGraduacionExcelencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnGraduacionExcelencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraduacionExcelencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGraduacionExcelencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraduacionExcelencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGraduacionExcelencia.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGraduacionExcelencia.IconColor = System.Drawing.Color.White;
+            this.btnGraduacionExcelencia.IconSize = 32;
+            this.btnGraduacionExcelencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.Location = new System.Drawing.Point(0, 0);
+            this.btnGraduacionExcelencia.Name = "btnGraduacionExcelencia";
+            this.btnGraduacionExcelencia.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
+            this.btnGraduacionExcelencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGraduacionExcelencia.Rotation = 0D;
+            this.btnGraduacionExcelencia.Size = new System.Drawing.Size(367, 38);
+            this.btnGraduacionExcelencia.TabIndex = 8;
+            this.btnGraduacionExcelencia.Text = "Graduacion por Excelencia";
+            this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
+            this.btnGraduacionExcelencia.Click += new System.EventHandler(this.btnGraduacionExcelencia_Click);
             // 
             // pnlBarraTitulo
             // 
@@ -495,10 +540,10 @@
             this.pnlBarraTitulo.Controls.Add(this.btnMaximizar);
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarraTitulo.Location = new System.Drawing.Point(258, 0);
+            this.pnlBarraTitulo.Location = new System.Drawing.Point(333, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(876, 29);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1267, 36);
             this.pnlBarraTitulo.TabIndex = 0;
             this.pnlBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseDown);
             // 
@@ -513,11 +558,11 @@
             this.btnRestaurar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             this.btnRestaurar.IconColor = System.Drawing.Color.Black;
             this.btnRestaurar.IconSize = 16;
-            this.btnRestaurar.Location = new System.Drawing.Point(805, 2);
+            this.btnRestaurar.Location = new System.Drawing.Point(1172, 3);
             this.btnRestaurar.Margin = new System.Windows.Forms.Padding(0);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Rotation = 0D;
-            this.btnRestaurar.Size = new System.Drawing.Size(34, 29);
+            this.btnRestaurar.Size = new System.Drawing.Size(45, 36);
             this.btnRestaurar.TabIndex = 3;
             this.btnRestaurar.UseVisualStyleBackColor = true;
             this.btnRestaurar.Visible = false;
@@ -534,11 +579,11 @@
             this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimizar.IconColor = System.Drawing.Color.Black;
             this.btnMinimizar.IconSize = 16;
-            this.btnMinimizar.Location = new System.Drawing.Point(768, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(1123, 3);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Rotation = 0D;
-            this.btnMinimizar.Size = new System.Drawing.Size(34, 29);
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 36);
             this.btnMinimizar.TabIndex = 2;
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -554,11 +599,11 @@
             this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximizar.IconColor = System.Drawing.Color.Black;
             this.btnMaximizar.IconSize = 16;
-            this.btnMaximizar.Location = new System.Drawing.Point(805, 2);
+            this.btnMaximizar.Location = new System.Drawing.Point(1172, 3);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Rotation = 0D;
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 29);
+            this.btnMaximizar.Size = new System.Drawing.Size(45, 36);
             this.btnMaximizar.TabIndex = 1;
             this.btnMaximizar.UseVisualStyleBackColor = true;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
@@ -574,11 +619,11 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(842, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(1222, 3);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
-            this.btnCerrar.Size = new System.Drawing.Size(34, 29);
+            this.btnCerrar.Size = new System.Drawing.Size(45, 36);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -589,10 +634,10 @@
             this.pnlCarrerasJuridicas.Controls.Add(this.btnPsicologia);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnRelInter);
             this.pnlCarrerasJuridicas.Controls.Add(this.btnDerecho);
-            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(0, 265);
+            this.pnlCarrerasJuridicas.Location = new System.Drawing.Point(0, 292);
             this.pnlCarrerasJuridicas.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCarrerasJuridicas.Name = "pnlCarrerasJuridicas";
-            this.pnlCarrerasJuridicas.Size = new System.Drawing.Size(275, 94);
+            this.pnlCarrerasJuridicas.Size = new System.Drawing.Size(367, 116);
             this.pnlCarrerasJuridicas.TabIndex = 1;
             this.pnlCarrerasJuridicas.Visible = false;
             // 
@@ -612,12 +657,12 @@
             this.btnPsicologia.IconColor = System.Drawing.Color.White;
             this.btnPsicologia.IconSize = 10;
             this.btnPsicologia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPsicologia.Location = new System.Drawing.Point(0, 62);
-            this.btnPsicologia.Margin = new System.Windows.Forms.Padding(256, 2, 2, 2);
+            this.btnPsicologia.Location = new System.Drawing.Point(0, 76);
+            this.btnPsicologia.Margin = new System.Windows.Forms.Padding(341, 3, 3, 3);
             this.btnPsicologia.Name = "btnPsicologia";
             this.btnPsicologia.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPsicologia.Rotation = 0D;
-            this.btnPsicologia.Size = new System.Drawing.Size(275, 31);
+            this.btnPsicologia.Size = new System.Drawing.Size(367, 38);
             this.btnPsicologia.TabIndex = 9;
             this.btnPsicologia.Text = "Psicología";
             this.btnPsicologia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -641,12 +686,11 @@
             this.btnRelInter.IconColor = System.Drawing.Color.White;
             this.btnRelInter.IconSize = 10;
             this.btnRelInter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelInter.Location = new System.Drawing.Point(0, 31);
-            this.btnRelInter.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRelInter.Location = new System.Drawing.Point(0, 38);
             this.btnRelInter.Name = "btnRelInter";
             this.btnRelInter.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRelInter.Rotation = 0D;
-            this.btnRelInter.Size = new System.Drawing.Size(275, 31);
+            this.btnRelInter.Size = new System.Drawing.Size(367, 38);
             this.btnRelInter.TabIndex = 8;
             this.btnRelInter.Text = "Relaciones Internacionales";
             this.btnRelInter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -671,11 +715,10 @@
             this.btnDerecho.IconSize = 10;
             this.btnDerecho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDerecho.Location = new System.Drawing.Point(0, 0);
-            this.btnDerecho.Margin = new System.Windows.Forms.Padding(2);
             this.btnDerecho.Name = "btnDerecho";
             this.btnDerecho.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDerecho.Rotation = 0D;
-            this.btnDerecho.Size = new System.Drawing.Size(275, 31);
+            this.btnDerecho.Size = new System.Drawing.Size(367, 38);
             this.btnDerecho.TabIndex = 7;
             this.btnDerecho.Text = "Derecho";
             this.btnDerecho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -686,23 +729,38 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnAgregrNew);
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(258, 29);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(333, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(876, 45);
+            this.panel2.Size = new System.Drawing.Size(1267, 56);
             this.panel2.TabIndex = 15;
+            // 
+            // btnAgregrNew
+            // 
+            this.btnAgregrNew.FlatAppearance.BorderSize = 0;
+            this.btnAgregrNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAgregrNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnAgregrNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregrNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregrNew.Image")));
+            this.btnAgregrNew.Location = new System.Drawing.Point(0, 0);
+            this.btnAgregrNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregrNew.Name = "btnAgregrNew";
+            this.btnAgregrNew.Size = new System.Drawing.Size(51, 44);
+            this.btnAgregrNew.TabIndex = 28;
+            this.btnAgregrNew.UseVisualStyleBackColor = true;
+            this.btnAgregrNew.Click += new System.EventHandler(this.btnAgregrNew_Click);
+            this.btnAgregrNew.MouseHover += new System.EventHandler(this.btnAgregrNew_MouseHover);
             // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(133, 9);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(226, 11);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(598, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(797, 36);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Título";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -710,87 +768,141 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
-            this.pnlFrmHijo.Controls.Add(this.paneldefensa);
+            this.pnlFrmHijo.Controls.Add(this.pnlAgregar);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasJuridicas);
+            this.pnlFrmHijo.Controls.Add(this.pnlSubMenuNuevaDefensa);
             this.pnlFrmHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFrmHijo.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.pnlFrmHijo.Location = new System.Drawing.Point(258, 74);
-            this.pnlFrmHijo.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlFrmHijo.Location = new System.Drawing.Point(333, 92);
             this.pnlFrmHijo.Name = "pnlFrmHijo";
-            this.pnlFrmHijo.Size = new System.Drawing.Size(876, 580);
+            this.pnlFrmHijo.Size = new System.Drawing.Size(1267, 847);
             this.pnlFrmHijo.TabIndex = 16;
+            this.pnlFrmHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmHijo_Paint);
             // 
-            // paneldefensa
+            // pnlAgregar
             // 
-            this.paneldefensa.BackColor = System.Drawing.Color.Gray;
-            this.paneldefensa.Controls.Add(this.btnGraduacionExcelencia);
-            this.paneldefensa.Controls.Add(this.btnExamendeGrado);
-            this.paneldefensa.Location = new System.Drawing.Point(0, 107);
-            this.paneldefensa.Margin = new System.Windows.Forms.Padding(0);
-            this.paneldefensa.Name = "paneldefensa";
-            this.paneldefensa.Size = new System.Drawing.Size(275, 59);
-            this.paneldefensa.TabIndex = 18;
-            this.paneldefensa.Visible = false;
+            this.pnlAgregar.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlAgregar.Controls.Add(this.btnNuevaCareraIn);
+            this.pnlAgregar.Controls.Add(this.btnNuevaCarreraEx);
+            this.pnlAgregar.Controls.Add(this.btnNuevaFacultad);
+            this.pnlAgregar.Controls.Add(this.btnNuevoLicen);
+            this.pnlAgregar.Location = new System.Drawing.Point(0, 0);
+            this.pnlAgregar.Name = "pnlAgregar";
+            this.pnlAgregar.Size = new System.Drawing.Size(367, 156);
+            this.pnlAgregar.TabIndex = 20;
             // 
-            // btnGraduacionExcelencia
+            // btnNuevaCareraIn
             // 
-            this.btnGraduacionExcelencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGraduacionExcelencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGraduacionExcelencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGraduacionExcelencia.FlatAppearance.BorderSize = 0;
-            this.btnGraduacionExcelencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnGraduacionExcelencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnGraduacionExcelencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGraduacionExcelencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGraduacionExcelencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGraduacionExcelencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGraduacionExcelencia.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnGraduacionExcelencia.IconColor = System.Drawing.Color.White;
-            this.btnGraduacionExcelencia.IconSize = 10;
-            this.btnGraduacionExcelencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraduacionExcelencia.Location = new System.Drawing.Point(0, 31);
-            this.btnGraduacionExcelencia.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGraduacionExcelencia.Name = "btnGraduacionExcelencia";
-            this.btnGraduacionExcelencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnGraduacionExcelencia.Rotation = 0D;
-            this.btnGraduacionExcelencia.Size = new System.Drawing.Size(275, 31);
-            this.btnGraduacionExcelencia.TabIndex = 8;
-            this.btnGraduacionExcelencia.Text = "Graduacion por Excelencia";
-            this.btnGraduacionExcelencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraduacionExcelencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGraduacionExcelencia.UseVisualStyleBackColor = false;
-            this.btnGraduacionExcelencia.Click += new System.EventHandler(this.btnGraduacionExcelencia_Click);
+            this.btnNuevaCareraIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaCareraIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaCareraIn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaCareraIn.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCareraIn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCareraIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCareraIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCareraIn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaCareraIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCareraIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaCareraIn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaCareraIn.IconColor = System.Drawing.Color.White;
+            this.btnNuevaCareraIn.IconSize = 10;
+            this.btnNuevaCareraIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCareraIn.Location = new System.Drawing.Point(0, 114);
+            this.btnNuevaCareraIn.Name = "btnNuevaCareraIn";
+            this.btnNuevaCareraIn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaCareraIn.Rotation = 0D;
+            this.btnNuevaCareraIn.Size = new System.Drawing.Size(367, 38);
+            this.btnNuevaCareraIn.TabIndex = 19;
+            this.btnNuevaCareraIn.Text = "Nueva Carrera Interna";
+            this.btnNuevaCareraIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCareraIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaCareraIn.UseVisualStyleBackColor = false;
+            this.btnNuevaCareraIn.Click += new System.EventHandler(this.btnNuevaCareraIn_Click);
             // 
-            // btnExamendeGrado
+            // btnNuevaCarreraEx
             // 
-            this.btnExamendeGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnExamendeGrado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExamendeGrado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExamendeGrado.FlatAppearance.BorderSize = 0;
-            this.btnExamendeGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnExamendeGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnExamendeGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamendeGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnExamendeGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExamendeGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExamendeGrado.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnExamendeGrado.IconColor = System.Drawing.Color.White;
-            this.btnExamendeGrado.IconSize = 10;
-            this.btnExamendeGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamendeGrado.Location = new System.Drawing.Point(0, 0);
-            this.btnExamendeGrado.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExamendeGrado.Name = "btnExamendeGrado";
-            this.btnExamendeGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnExamendeGrado.Rotation = 0D;
-            this.btnExamendeGrado.Size = new System.Drawing.Size(275, 31);
-            this.btnExamendeGrado.TabIndex = 7;
-            this.btnExamendeGrado.Text = "Examen de Grado";
-            this.btnExamendeGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamendeGrado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExamendeGrado.UseVisualStyleBackColor = false;
-            this.btnExamendeGrado.Click += new System.EventHandler(this.btnExamendeGrado_Click);
+            this.btnNuevaCarreraEx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaCarreraEx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaCarreraEx.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaCarreraEx.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCarreraEx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaCarreraEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCarreraEx.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaCarreraEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCarreraEx.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaCarreraEx.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaCarreraEx.IconColor = System.Drawing.Color.White;
+            this.btnNuevaCarreraEx.IconSize = 10;
+            this.btnNuevaCarreraEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCarreraEx.Location = new System.Drawing.Point(0, 76);
+            this.btnNuevaCarreraEx.Name = "btnNuevaCarreraEx";
+            this.btnNuevaCarreraEx.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaCarreraEx.Rotation = 0D;
+            this.btnNuevaCarreraEx.Size = new System.Drawing.Size(367, 38);
+            this.btnNuevaCarreraEx.TabIndex = 16;
+            this.btnNuevaCarreraEx.Text = "Nueva Carrera Externa";
+            this.btnNuevaCarreraEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaCarreraEx.UseVisualStyleBackColor = false;
+            this.btnNuevaCarreraEx.Click += new System.EventHandler(this.btnNuevaCarreraEx_Click);
+            // 
+            // btnNuevaFacultad
+            // 
+            this.btnNuevaFacultad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaFacultad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaFacultad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevaFacultad.FlatAppearance.BorderSize = 0;
+            this.btnNuevaFacultad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaFacultad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevaFacultad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaFacultad.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevaFacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaFacultad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevaFacultad.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevaFacultad.IconColor = System.Drawing.Color.White;
+            this.btnNuevaFacultad.IconSize = 10;
+            this.btnNuevaFacultad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaFacultad.Location = new System.Drawing.Point(0, 38);
+            this.btnNuevaFacultad.Name = "btnNuevaFacultad";
+            this.btnNuevaFacultad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevaFacultad.Rotation = 0D;
+            this.btnNuevaFacultad.Size = new System.Drawing.Size(367, 38);
+            this.btnNuevaFacultad.TabIndex = 18;
+            this.btnNuevaFacultad.Text = "Nueva Faculdad";
+            this.btnNuevaFacultad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaFacultad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaFacultad.UseVisualStyleBackColor = false;
+            this.btnNuevaFacultad.Click += new System.EventHandler(this.btnNuevaFacultad_Click);
+            // 
+            // btnNuevoLicen
+            // 
+            this.btnNuevoLicen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevoLicen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoLicen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoLicen.FlatAppearance.BorderSize = 0;
+            this.btnNuevoLicen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoLicen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnNuevoLicen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoLicen.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnNuevoLicen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoLicen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevoLicen.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNuevoLicen.IconColor = System.Drawing.Color.White;
+            this.btnNuevoLicen.IconSize = 10;
+            this.btnNuevoLicen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoLicen.Location = new System.Drawing.Point(0, 0);
+            this.btnNuevoLicen.Name = "btnNuevoLicen";
+            this.btnNuevoLicen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNuevoLicen.Rotation = 0D;
+            this.btnNuevoLicen.Size = new System.Drawing.Size(367, 38);
+            this.btnNuevoLicen.TabIndex = 17;
+            this.btnNuevoLicen.Text = "Nuevo Licenciado";
+            this.btnNuevoLicen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoLicen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoLicen.UseVisualStyleBackColor = false;
+            this.btnNuevoLicen.Click += new System.EventHandler(this.btnNuevoLicen_Click);
             // 
             // pnlCarrerasEmpresariales
             // 
@@ -803,10 +915,9 @@
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnComercial);
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnMarketing);
             this.pnlCarrerasEmpresariales.Controls.Add(this.btnComInternacional);
-            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(0, 208);
-            this.pnlCarrerasEmpresariales.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCarrerasEmpresariales.Location = new System.Drawing.Point(0, 221);
             this.pnlCarrerasEmpresariales.Name = "pnlCarrerasEmpresariales";
-            this.pnlCarrerasEmpresariales.Size = new System.Drawing.Size(275, 250);
+            this.pnlCarrerasEmpresariales.Size = new System.Drawing.Size(367, 308);
             this.pnlCarrerasEmpresariales.TabIndex = 17;
             // 
             // btnComunicacion
@@ -825,12 +936,11 @@
             this.btnComunicacion.IconColor = System.Drawing.Color.White;
             this.btnComunicacion.IconSize = 10;
             this.btnComunicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComunicacion.Location = new System.Drawing.Point(0, 217);
-            this.btnComunicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComunicacion.Location = new System.Drawing.Point(0, 266);
             this.btnComunicacion.Name = "btnComunicacion";
             this.btnComunicacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComunicacion.Rotation = 0D;
-            this.btnComunicacion.Size = new System.Drawing.Size(275, 31);
+            this.btnComunicacion.Size = new System.Drawing.Size(367, 38);
             this.btnComunicacion.TabIndex = 21;
             this.btnComunicacion.Text = "Comunicación Estratégica y Digital";
             this.btnComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -854,12 +964,11 @@
             this.btnFinanciera.IconColor = System.Drawing.Color.White;
             this.btnFinanciera.IconSize = 10;
             this.btnFinanciera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinanciera.Location = new System.Drawing.Point(0, 186);
-            this.btnFinanciera.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFinanciera.Location = new System.Drawing.Point(0, 228);
             this.btnFinanciera.Name = "btnFinanciera";
             this.btnFinanciera.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnFinanciera.Rotation = 0D;
-            this.btnFinanciera.Size = new System.Drawing.Size(275, 31);
+            this.btnFinanciera.Size = new System.Drawing.Size(367, 38);
             this.btnFinanciera.TabIndex = 20;
             this.btnFinanciera.Text = "Ingeniería Financiera";
             this.btnFinanciera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -883,12 +992,12 @@
             this.btnTurismo.IconColor = System.Drawing.Color.White;
             this.btnTurismo.IconSize = 10;
             this.btnTurismo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTurismo.Location = new System.Drawing.Point(0, 155);
+            this.btnTurismo.Location = new System.Drawing.Point(0, 190);
             this.btnTurismo.Margin = new System.Windows.Forms.Padding(0);
             this.btnTurismo.Name = "btnTurismo";
             this.btnTurismo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTurismo.Rotation = 0D;
-            this.btnTurismo.Size = new System.Drawing.Size(275, 31);
+            this.btnTurismo.Size = new System.Drawing.Size(367, 38);
             this.btnTurismo.TabIndex = 15;
             this.btnTurismo.Text = "Administración de Turismo";
             this.btnTurismo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -912,12 +1021,12 @@
             this.btnAdministracion.IconColor = System.Drawing.Color.White;
             this.btnAdministracion.IconSize = 10;
             this.btnAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministracion.Location = new System.Drawing.Point(0, 124);
-            this.btnAdministracion.Margin = new System.Windows.Forms.Padding(2, 8, 2, 2);
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 152);
+            this.btnAdministracion.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnAdministracion.Name = "btnAdministracion";
             this.btnAdministracion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAdministracion.Rotation = 0D;
-            this.btnAdministracion.Size = new System.Drawing.Size(275, 31);
+            this.btnAdministracion.Size = new System.Drawing.Size(367, 38);
             this.btnAdministracion.TabIndex = 10;
             this.btnAdministracion.Text = "Administración General";
             this.btnAdministracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -940,12 +1049,11 @@
             this.btnContaduria.IconColor = System.Drawing.Color.White;
             this.btnContaduria.IconSize = 10;
             this.btnContaduria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContaduria.Location = new System.Drawing.Point(0, 93);
-            this.btnContaduria.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContaduria.Location = new System.Drawing.Point(0, 114);
             this.btnContaduria.Name = "btnContaduria";
             this.btnContaduria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnContaduria.Rotation = 0D;
-            this.btnContaduria.Size = new System.Drawing.Size(275, 31);
+            this.btnContaduria.Size = new System.Drawing.Size(367, 38);
             this.btnContaduria.TabIndex = 19;
             this.btnContaduria.Text = "Contaduría Pública";
             this.btnContaduria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -969,12 +1077,11 @@
             this.btnComercial.IconColor = System.Drawing.Color.White;
             this.btnComercial.IconSize = 10;
             this.btnComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComercial.Location = new System.Drawing.Point(0, 62);
-            this.btnComercial.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComercial.Location = new System.Drawing.Point(0, 76);
             this.btnComercial.Name = "btnComercial";
             this.btnComercial.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComercial.Rotation = 0D;
-            this.btnComercial.Size = new System.Drawing.Size(275, 31);
+            this.btnComercial.Size = new System.Drawing.Size(367, 38);
             this.btnComercial.TabIndex = 16;
             this.btnComercial.Text = "Ingeniería Comercial";
             this.btnComercial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -997,12 +1104,11 @@
             this.btnMarketing.IconColor = System.Drawing.Color.White;
             this.btnMarketing.IconSize = 10;
             this.btnMarketing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarketing.Location = new System.Drawing.Point(0, 31);
-            this.btnMarketing.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMarketing.Location = new System.Drawing.Point(0, 38);
             this.btnMarketing.Name = "btnMarketing";
             this.btnMarketing.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnMarketing.Rotation = 0D;
-            this.btnMarketing.Size = new System.Drawing.Size(275, 31);
+            this.btnMarketing.Size = new System.Drawing.Size(367, 38);
             this.btnMarketing.TabIndex = 18;
             this.btnMarketing.Text = "Marketing y Publicidad";
             this.btnMarketing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1027,11 +1133,10 @@
             this.btnComInternacional.IconSize = 10;
             this.btnComInternacional.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComInternacional.Location = new System.Drawing.Point(0, 0);
-            this.btnComInternacional.Margin = new System.Windows.Forms.Padding(2);
             this.btnComInternacional.Name = "btnComInternacional";
             this.btnComInternacional.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnComInternacional.Rotation = 0D;
-            this.btnComInternacional.Size = new System.Drawing.Size(275, 31);
+            this.btnComInternacional.Size = new System.Drawing.Size(367, 38);
             this.btnComInternacional.TabIndex = 17;
             this.btnComInternacional.Text = "Comercio Internacional";
             this.btnComInternacional.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1049,11 +1154,11 @@
             this.pnlCarrerasTenologia.Controls.Add(this.btnElectronica);
             this.pnlCarrerasTenologia.Controls.Add(this.btnPetrolera);
             this.pnlCarrerasTenologia.Controls.Add(this.btnIndustrial);
-            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(0, 224);
+            this.pnlCarrerasTenologia.Location = new System.Drawing.Point(0, 241);
             this.pnlCarrerasTenologia.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(274, 193);
+            this.pnlCarrerasTenologia.MinimumSize = new System.Drawing.Size(365, 237);
             this.pnlCarrerasTenologia.Name = "pnlCarrerasTenologia";
-            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(275, 218);
+            this.pnlCarrerasTenologia.Size = new System.Drawing.Size(367, 268);
             this.pnlCarrerasTenologia.TabIndex = 15;
             this.pnlCarrerasTenologia.Visible = false;
             // 
@@ -1073,12 +1178,11 @@
             this.btnElectrica.IconColor = System.Drawing.Color.White;
             this.btnElectrica.IconSize = 10;
             this.btnElectrica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectrica.Location = new System.Drawing.Point(0, 186);
-            this.btnElectrica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnElectrica.Location = new System.Drawing.Point(0, 228);
             this.btnElectrica.Name = "btnElectrica";
             this.btnElectrica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnElectrica.Rotation = 0D;
-            this.btnElectrica.Size = new System.Drawing.Size(275, 31);
+            this.btnElectrica.Size = new System.Drawing.Size(367, 38);
             this.btnElectrica.TabIndex = 20;
             this.btnElectrica.Text = "Ingeniería Eléctrica";
             this.btnElectrica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1102,12 +1206,11 @@
             this.btnRedes.IconColor = System.Drawing.Color.White;
             this.btnRedes.IconSize = 10;
             this.btnRedes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRedes.Location = new System.Drawing.Point(0, 155);
-            this.btnRedes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRedes.Location = new System.Drawing.Point(0, 190);
             this.btnRedes.Name = "btnRedes";
             this.btnRedes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRedes.Rotation = 0D;
-            this.btnRedes.Size = new System.Drawing.Size(275, 31);
+            this.btnRedes.Size = new System.Drawing.Size(367, 38);
             this.btnRedes.TabIndex = 19;
             this.btnRedes.Text = "Ingeniería en Redes y Telecomunicaciones";
             this.btnRedes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1131,12 +1234,11 @@
             this.btnMecanica.IconColor = System.Drawing.Color.White;
             this.btnMecanica.IconSize = 10;
             this.btnMecanica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMecanica.Location = new System.Drawing.Point(0, 124);
-            this.btnMecanica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMecanica.Location = new System.Drawing.Point(0, 152);
             this.btnMecanica.Name = "btnMecanica";
             this.btnMecanica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnMecanica.Rotation = 0D;
-            this.btnMecanica.Size = new System.Drawing.Size(275, 31);
+            this.btnMecanica.Size = new System.Drawing.Size(367, 38);
             this.btnMecanica.TabIndex = 18;
             this.btnMecanica.Text = "Ingeniería en Sistemas";
             this.btnMecanica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1160,12 +1262,11 @@
             this.iconButton5.IconColor = System.Drawing.Color.White;
             this.iconButton5.IconSize = 10;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 93);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton5.Location = new System.Drawing.Point(0, 114);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(275, 31);
+            this.iconButton5.Size = new System.Drawing.Size(367, 38);
             this.iconButton5.TabIndex = 17;
             this.iconButton5.Text = "Ingeniería Mecánica Automotríz y Agroindustrial";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1189,12 +1290,11 @@
             this.btnElectronica.IconColor = System.Drawing.Color.White;
             this.btnElectronica.IconSize = 10;
             this.btnElectronica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectronica.Location = new System.Drawing.Point(0, 62);
-            this.btnElectronica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnElectronica.Location = new System.Drawing.Point(0, 76);
             this.btnElectronica.Name = "btnElectronica";
             this.btnElectronica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnElectronica.Rotation = 0D;
-            this.btnElectronica.Size = new System.Drawing.Size(275, 31);
+            this.btnElectronica.Size = new System.Drawing.Size(367, 38);
             this.btnElectronica.TabIndex = 16;
             this.btnElectronica.Text = "Ingeniería Electrónica y Sistemas";
             this.btnElectronica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1217,12 +1317,11 @@
             this.btnPetrolera.IconColor = System.Drawing.Color.White;
             this.btnPetrolera.IconSize = 10;
             this.btnPetrolera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPetrolera.Location = new System.Drawing.Point(0, 31);
-            this.btnPetrolera.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPetrolera.Location = new System.Drawing.Point(0, 38);
             this.btnPetrolera.Name = "btnPetrolera";
             this.btnPetrolera.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPetrolera.Rotation = 0D;
-            this.btnPetrolera.Size = new System.Drawing.Size(275, 31);
+            this.btnPetrolera.Size = new System.Drawing.Size(367, 38);
             this.btnPetrolera.TabIndex = 15;
             this.btnPetrolera.Text = "Ingeniería en Administración Petrolera";
             this.btnPetrolera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1247,11 +1346,10 @@
             this.btnIndustrial.IconSize = 10;
             this.btnIndustrial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIndustrial.Location = new System.Drawing.Point(0, 0);
-            this.btnIndustrial.Margin = new System.Windows.Forms.Padding(2);
             this.btnIndustrial.Name = "btnIndustrial";
             this.btnIndustrial.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIndustrial.Rotation = 0D;
-            this.btnIndustrial.Size = new System.Drawing.Size(275, 31);
+            this.btnIndustrial.Size = new System.Drawing.Size(367, 38);
             this.btnIndustrial.TabIndex = 14;
             this.btnIndustrial.Text = "Ingeniería Industrial y Comercial";
             this.btnIndustrial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1261,10 +1359,10 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1134, 654);
+            this.ClientSize = new System.Drawing.Size(1600, 939);
             this.ControlBox = false;
             this.Controls.Add(this.pnlFrmHijo);
             this.Controls.Add(this.panel2);
@@ -1272,8 +1370,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(799, 446);
+            this.MinimumSize = new System.Drawing.Size(1600, 939);
             this.Name = "FrmPrincipal";
             this.Text = "UTEPSA";
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
@@ -1281,15 +1378,14 @@
             this.pnlSubMenuDefensa.ResumeLayout(false);
             this.pnlSubMenuPerfiles.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.pnlNuevoPerfil.ResumeLayout(false);
-            this.pnlNuevaDefensa.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnImagenUtepsa)).EndInit();
+            this.pnlSubMenuNuevaDefensa.ResumeLayout(false);
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlCarrerasJuridicas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlFrmHijo.ResumeLayout(false);
-            this.paneldefensa.ResumeLayout(false);
+            this.pnlAgregar.ResumeLayout(false);
             this.pnlCarrerasEmpresariales.ResumeLayout(false);
             this.pnlCarrerasTenologia.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1300,7 +1396,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlBarraTitulo;
-        private System.Windows.Forms.Panel pnlNuevoPerfil;
         private FontAwesome.Sharp.IconButton btnNuevoPerfil;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.PictureBox btnImagenUtepsa;
@@ -1308,7 +1403,6 @@
         private FontAwesome.Sharp.IconButton btnEmpresarialesPefiles;
         private FontAwesome.Sharp.IconButton btnJuridicasPerfiles;
         private FontAwesome.Sharp.IconButton btnTecnologiaPerfiles;
-        private System.Windows.Forms.Panel pnlCarrerasJuridicas;
         private FontAwesome.Sharp.IconButton btnPsicologia;
         private FontAwesome.Sharp.IconButton btnRelInter;
         private FontAwesome.Sharp.IconButton btnDerecho;
@@ -1316,7 +1410,6 @@
         private FontAwesome.Sharp.IconButton btnEmpresarialesAgenda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlFrmHijo;
-        private System.Windows.Forms.Panel pnlCarrerasTenologia;
         private FontAwesome.Sharp.IconButton btnElectrica;
         private FontAwesome.Sharp.IconButton btnRedes;
         private FontAwesome.Sharp.IconButton btnMecanica;
@@ -1336,7 +1429,6 @@
         private FontAwesome.Sharp.IconButton btnMaximizar;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton btnRestaurar;
-        private System.Windows.Forms.Panel pnlNuevaDefensa;
         private FontAwesome.Sharp.IconButton btnNuevaDefensa;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel pnlSubMenuPerfiles;
@@ -1344,10 +1436,18 @@
         private System.Windows.Forms.Panel pnlSubMenuDefensa;
         private FontAwesome.Sharp.IconButton btnDefensaExterna;
         private FontAwesome.Sharp.IconButton btnJuridicasAgenda;
-        private System.Windows.Forms.Panel pnlCarrerasEmpresariales;
-        private System.Windows.Forms.Panel paneldefensa;
         private FontAwesome.Sharp.IconButton btnGraduacionExcelencia;
         private FontAwesome.Sharp.IconButton btnExamendeGrado;
+        private System.Windows.Forms.Button btnAgregrNew;
+        private FontAwesome.Sharp.IconButton btnNuevaCareraIn;
+        private FontAwesome.Sharp.IconButton btnNuevaCarreraEx;
+        private FontAwesome.Sharp.IconButton btnNuevaFacultad;
+        private FontAwesome.Sharp.IconButton btnNuevoLicen;
+        public System.Windows.Forms.Panel pnlCarrerasJuridicas;
+        public System.Windows.Forms.Panel pnlCarrerasTenologia;
+        public System.Windows.Forms.Panel pnlCarrerasEmpresariales;
+        public System.Windows.Forms.Panel pnlSubMenuNuevaDefensa;
+        public System.Windows.Forms.Panel pnlAgregar;
     }
 }
 

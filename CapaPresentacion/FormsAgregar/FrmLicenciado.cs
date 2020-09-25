@@ -41,6 +41,54 @@ namespace CapaPresentacion
 
         #endregion
 
+        private FrmCarreraExterna CarExt = null;
+        private FrmInstitucion insti = null;
+
+        #region instanciar 1 sola vez formularios
+
+        private FrmCarreraExterna FormInstance2
+        {
+            get
+            {
+                if (CarExt == null)
+                {
+                    CarExt = new FrmCarreraExterna();
+                    CarExt.Disposed += new EventHandler(form_Disposed2);
+                }
+
+                return CarExt;
+            }
+        }
+
+        void form_Disposed2(object sender, EventArgs e)
+        {
+            CarExt = null;
+
+        }
+
+        private FrmInstitucion FormInstance1
+        {
+            get
+            {
+                if (insti == null)
+                {
+                    insti = new FrmInstitucion();
+                    insti.Disposed += new EventHandler(form_Disposed1);
+                }
+
+                return insti;
+            }
+        }
+
+        void form_Disposed1(object sender, EventArgs e)
+        {
+            insti = null;
+
+        }
+
+        #endregion
+
+
         #region Instancias
 
         NegocioLicenciados obj = new NegocioLicenciados();
@@ -101,31 +149,31 @@ namespace CapaPresentacion
             contrato.Ejecutar(id_seleccionado, tutor);
             this.Close();
         }
-        private void btnEliminarLicenciado_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogo = MessageBox.Show("¿Quiere eliminar este registro?", "Eliminar Licenciado", MessageBoxButtons.YesNo);
-            if(dialogo == DialogResult.Yes)
-            {
-                try
-                {
-                    int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-                    delete(id_seleccionado);
-                    ShowLicenciados();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(""+ex);
-                    //mike :)
+        //private void btnEliminarLicenciado_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult dialogo = MessageBox.Show("¿Quiere eliminar este registro?", "Eliminar Licenciado", MessageBoxButtons.YesNo);
+        //    if(dialogo == DialogResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+        //            delete(id_seleccionado);
+        //            ShowLicenciados();
+        //        }
+        //        catch(Exception ex)
+        //        {
+        //            MessageBox.Show(""+ex);
+        //            //mike :)
 
-                }
+        //        }
 
-            }
-            else if(dialogo == DialogResult.No)
-            {
+        //    }
+        //    else if(dialogo == DialogResult.No)
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
         private void btnGuardarLicenciado_Click(object sender, EventArgs e)
         {
             try
@@ -160,20 +208,20 @@ namespace CapaPresentacion
         }
         private void btnAgregarCarrera_Click(object sender, EventArgs e)
         {
-            FrmCarrera frm = new FrmCarrera();
-            if(frm.ShowDialog() == DialogResult.OK)
+            FrmCarreraExterna frm = this.FormInstance2;
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 ShowCarrerasLicenciado();
+                frm.BringToFront();
+
             }
         }
 
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
-            FrmInstitucion frm1 = new FrmInstitucion();
-            if (frm1.ShowDialog() == DialogResult.OK)
-            {
-                ShowInstituciones();
-            }
+            FrmInstitucion frm = this.FormInstance1;
+            frm.Show();
+            frm.BringToFront();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -196,7 +244,8 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            string tipo = cmbTipo.Text;//txtTipo.Text;// input 7
+            //string tipo = cmbTipo.Text;//txtTipo.Text;// input 7
+            string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
             int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
@@ -227,7 +276,8 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            string tipo = cmbTipo.Text;// txtTipo.Text;// input 7
+            //string tipo = cmbTipo.Text;// txtTipo.Text;// input 7
+            string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
             int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
@@ -290,8 +340,8 @@ namespace CapaPresentacion
             ShowCarrerasLicenciado();
             ShowInstituciones();
             cmbTipo.SelectedItem = null;
-            cmbTipo.Items.Insert(0,"externo");
-            cmbTipo.Items.Insert(1,"interno");
+            cmbTipo.Items.Insert(0, "Trabaja fuera de Utepsa");
+            cmbTipo.Items.Insert(1, "Trabaja en Utepsa");
             cmbTipo.SelectedIndex = 0;
 
 
@@ -336,6 +386,21 @@ namespace CapaPresentacion
         private void FrmTutor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipo.SelectedIndex == 1)
+            {
+                rbDocenteSi.Enabled = true;
+                rbDocenteNo.Enabled = true;
+            }
+            if (cmbTipo.SelectedIndex == 0)
+            {
+                rbDocenteSi.Enabled = false;
+                rbDocenteNo.Enabled = false;
+                rbDocenteNo.Checked = true;
+            }
         }
     }
 }

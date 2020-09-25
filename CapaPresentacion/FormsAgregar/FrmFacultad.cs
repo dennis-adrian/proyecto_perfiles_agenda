@@ -7,13 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
-using CapaNegocio.src;
-
 
 namespace CapaPresentacion.FormsAgregar
 {
-    public partial class FrmCarrera : Form
+    public partial class FrmFacultad : Form
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -29,45 +26,17 @@ namespace CapaPresentacion.FormsAgregar
                 return cp;
             }
         }
-        #region Constructor
 
-        public FrmCarrera()
+        public FrmFacultad()
         {
             InitializeComponent();
         }
-        #endregion
-
-        #region Instancias
-        Helpers helper = new Helpers();
-        #endregion
-
-        #region Atributos
-
 
         int posY = 0;
         int posX = 0;
-
-        #endregion
-
-        #region Buttons y Controls
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void btnNuevaCarreraLicenciado_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Insert();
-                txtNombreCarreraLic.Clear();
-                this.DialogResult = DialogResult.OK;
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-
         }
 
         private void pnlBarraTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -84,25 +53,7 @@ namespace CapaPresentacion.FormsAgregar
             }
         }
 
-
-        #endregion
-
-        #region Metodos
-
-        public void Insert()
-        {
-            string nombre = txtNombreCarreraLic.Text;
-            Object[] datos = new Object[] { nombre };
-            helper.ControlInput(datos);
-            helper.MainInsertCarreraLicenciado();
-
-
-        }
-
-
-        #endregion
-
-        private void FrmCarrera_Load(object sender, EventArgs e)
+        private void FrmFacultad_Load(object sender, EventArgs e)
         {
 
         }

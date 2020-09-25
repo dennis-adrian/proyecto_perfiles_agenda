@@ -26,27 +26,67 @@ namespace CapaPresentacion
 
         #region propiedades
 
-       
+
 
         #endregion
         public void Inicializador(string criterio)
         {
             if (criterio == null)
             {
-               
+
+                int campo1 = 1;
                 var list = obj.Perfiles();
-                var bindingList = new BindingList<ViewPerfiles>(list);
-                var source = new BindingSource(bindingList, null);
-                dtgPerfilesTesis.DataSource = source;
+                foreach (var item in list)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Estado_Proyecto;
+                    string campo3 = item.Registro;
+                    string campo4 = item.Estudiante;
+                    string campo5 = item.Carrera;
+                    string campo6 = item.Facultad;
+                    string campo7 = item.Tema;
+                    string campo8 = item.Tutor;
+                    string campo9 = item.Email;
+                    string campo10 = item.Telefono;
+                    string campo11 = item.Fecha_Recepcion;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                    this.dtgPerfilesTesis.Rows.Add(row);
+                    campo1++;
+
+                }
+                
 
             }
             else
             {
-              
+
+                dtgPerfilesTesis.Rows.Clear();
                 var list2 = obj.PerfilesCarrera(criterio);
-                var bindingList = new BindingList<ViewPerfilesCarrera>(list2);
-                var source = new BindingSource(bindingList, null);
-                dtgPerfilesTesis.DataSource = source;
+                int campo1 = 1;
+                foreach (var item in list2)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Estado_Proyecto;
+                    string campo3 = item.Registro;
+                    string campo4 = item.Estudiante;
+                    string campo5 = "";
+                    string campo6 = "";
+                    string campo7 = item.Tema;
+                    string campo8 = item.Tutor;
+                    string campo9 = item.Email;
+                    string campo10 = item.Telefono;
+                    string campo11 = item.Fecha_Recepcion;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                    this.dtgPerfilesTesis.Rows.Add(row);
+                    this.ColumnaFacultad.Visible = false;
+                    this.ColumnaCarrera.Visible = false;
+                    campo1++;
+
+                }
             }
         }
 
@@ -55,22 +95,63 @@ namespace CapaPresentacion
             string nombre = txtBuscarPerfil.Text;
             if (carrera == null)
             {
-                
+                dtgPerfilesTesis.Rows.Clear();
+                int campo1 = 1;
                 var list = obj.Perfiles(nombre);
-                var bindingList = new BindingList<ViewPerfiles>(list);
-                var source = new BindingSource(bindingList, null);
-                dtgPerfilesTesis.DataSource = source;
+                foreach (var item in list)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Estado_Proyecto;
+                    string campo3 = item.Registro;
+                    string campo4 = item.Estudiante;
+                    string campo5 = item.Carrera;
+                    string campo6 = item.Facultad;
+                    string campo7 = item.Tema;
+                    string campo8 = item.Tutor;
+                    string campo9 = item.Email;
+                    string campo10 = item.Telefono;
+                    string campo11 = item.Fecha_Recepcion;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                    this.dtgPerfilesTesis.Rows.Add(row);
+                    campo1++;
+
+                }
 
             }
             else
             {
+                dtgPerfilesTesis.Rows.Clear();
                 var list2 = obj.PerfilesCarrera(carrera,nombre);
-                var bindingList = new BindingList<ViewPerfilesCarrera>(list2);
-                var source = new BindingSource(bindingList, null);
-                dtgPerfilesTesis.DataSource = source;
+                int campo1 = 1;
+                foreach (var item in list2)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Estado_Proyecto;
+                    string campo3 = item.Registro;
+                    string campo4 = item.Estudiante;
+                    string campo5 = "";
+                    string campo6 = "";
+                    string campo7 = item.Tema;
+                    string campo8 = item.Tutor;
+                    string campo9 = item.Email;
+                    string campo10 = item.Telefono;
+                    string campo11 = item.Fecha_Recepcion;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                    this.dtgPerfilesTesis.Rows.Add(row);
+                    this.ColumnaFacultad.Visible = false;
+                    this.ColumnaCarrera.Visible = false;
+                    campo1++;
+
+                }
             }
 
         }
+
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -79,7 +160,8 @@ namespace CapaPresentacion
                 int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
                 int cantidadRevisiones = 1;
                 FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
-                frm.Show();
+                frm.ShowDialog();
+               
             }
             else
             {

@@ -33,14 +33,36 @@ namespace CapaPresentacion
 
         #endregion
 
+        private FrmTutor tuto = null;
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (tuto == null)
+                {
+                    tuto = new FrmTutor();
+                    tuto.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return tuto;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            tuto = null;
+
+        }
 
         #region Buttons
 
         private void btnElegirTutor_Click(object sender, EventArgs e)
         {
-            FrmTutor frm = new FrmTutor();
+            FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
+            frm.BringToFront();
         }
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
@@ -186,17 +208,7 @@ namespace CapaPresentacion
             Validate(txtRegistroAlum, msg);
         }
 
-        private void grbPerfilTesis_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void pnlNuevoPerfil_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void grbAlumno_Enter(object sender, EventArgs e)
         {
 
         }

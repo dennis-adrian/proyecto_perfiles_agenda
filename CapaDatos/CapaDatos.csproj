@@ -72,6 +72,7 @@
     <Compile Include="Models\IMetodos.cs" />
     <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\Licenciado.cs" />
+    <Compile Include="Models\Notificaciones.cs" />
     <Compile Include="Models\PerfilTesis.cs" />
     <Compile Include="Models\Revision.cs" />
     <Compile Include="Models\TipoTitulacionOtros.cs" />

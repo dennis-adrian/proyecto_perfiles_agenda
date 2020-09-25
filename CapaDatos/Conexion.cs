@@ -15,6 +15,7 @@ namespace CapaDatos
 
         private SQLiteConnection cnx;
         private string pathBd;
+        private string ENV = "dev";
 
         #endregion
         #region Propiedades
@@ -25,13 +26,27 @@ namespace CapaDatos
 
 
         public Conexion()
-        {//correcion en conexion , se debe hacer un a conexion con llaaves foraneas activadas
-            pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
-            cnx = new SQLiteConnection("data source=" + pathBd + @"\bd\perfiles.db;foreign keys=true;");
+        {
+            determinarConexion();
         }
 
         #region Metodos
 
+        public void determinarConexion()
+        {
+            if (ENV == "dev")
+            {
+                //correcion en conexion , se debe hacer un a conexion con llaaves foraneas activadas
+                pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
+                cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
+            }
+            if (ENV == "prod")
+            {
+                pathBd = @"C:\Temp\";
+                cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
+            }
+
+        }
         public SQLiteConnection AbrirConexion()
         {
             if (cnx.State == ConnectionState.Closed)
@@ -78,11 +93,11 @@ namespace CapaDatos
                 {
                     throw new ArgumentException("datos no afectados");
                 }
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                throw new ArgumentException("Error: "+e);
+                throw new ArgumentException("Error en  QueryBuilder: " + e);
             }
             finally
             {
@@ -104,9 +119,9 @@ namespace CapaDatos
                 //cerrarConexion();
                 return items;
             }
-            catch
+            catch (Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error en  Select conexion"+ e);
             }
             finally
             {
@@ -128,9 +143,9 @@ namespace CapaDatos
                 cerrarConexion();
                 return items;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                throw new ArgumentException("Error" + e);
+                throw new ArgumentException("Error  en  Select conexion over2" + e);
             }
             finally
             {
@@ -153,9 +168,9 @@ namespace CapaDatos
                 cerrarConexion();
                 return items;
             }
-            catch
+            catch(Exception e)
             {
-                throw new ArgumentException("Error");
+                throw new ArgumentException("Error  en  Select conexion over3"+e);
             }
             finally
             {
@@ -168,7 +183,7 @@ namespace CapaDatos
         public int LastIdConexion(string tabla)
         {
 
-            
+
             string sql = "SELECT * FROM " + tabla + " WHERE ID = (SELECT MAX(ID) FROM " + tabla + ");";
 
             try
@@ -196,8 +211,8 @@ namespace CapaDatos
         }
         public int FindIdBySearchConexion(string sql)
         {
-                                 
-            
+
+
             try
             {
                 int findId = 0;

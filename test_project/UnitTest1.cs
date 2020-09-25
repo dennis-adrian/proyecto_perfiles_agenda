@@ -245,6 +245,56 @@ namespace test_project
 
 
         }
+        [TestMethod]
+        public void Test1()
+        {
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            bool res1 = obj.ValidarFechasTribunal(1, 1);
+            bool res2 = obj.ValidarFechaEmpasteTribunal(1, 1);
+            if (res1 ==  true && res2 == true)
+            {
+                Console.WriteLine("tienes las fechas asignadas y la fecha de empaste tambien");
+            }
+            else if(res1 == true)
+            {
+                
+                Console.WriteLine("no hay fecha de empaste");
+
+                
+            }
+            else
+            {
+                Console.WriteLine("las fechas estan incompletas");
+
+            }
+
+        }
+        [TestMethod]
+        public void Test2()
+        {
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            bool res1 = obj.ValidarFechasEmpasteforNewInsert(1, 1, 2);
+            if (res1 == true )
+            {
+                Console.WriteLine("puedes hacer el insert");
+            }
+            else
+            {
+                Console.WriteLine("no puedes hace un insert");
+
+            }
+
+        }
+        [TestMethod]
+        public void Test3()
+        {
+            PerfilTesis pf = new PerfilTesis();
+            CapaNegocio.NegocioRevisiones obj = new CapaNegocio.NegocioRevisiones();
+            obj.test1(pf.LastId(), 1, 2);
+          
+
+        }
+
 
     }
 }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.FormsAgregar;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -22,7 +23,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CustomizeDesing();
-            personalizarDefensa();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -32,10 +32,99 @@ namespace CapaPresentacion
 
         #endregion
 
+        #region Instancia frmHijo Unasolo vez
+
+        private FrmCarreraInterna CarInt = null;
+        private FrmCarreraExterna CarExt = null;
+        private FrmTutor Tutor = null;
+        private FrmFacultad facu = null;
+
+
+        private FrmFacultad FormInstance4
+        {
+            get
+            {
+                if (facu == null)
+                {
+                    facu = new FrmFacultad();
+                    facu.Disposed += new EventHandler(form_Disposed4);
+                }
+
+                return facu;
+            }
+        }
+
+        void form_Disposed4(object sender, EventArgs e)
+        {
+            facu = null;
+
+        }
+
+        private FrmCarreraInterna FormInstance1
+        {
+            get
+            {
+                if (CarInt== null)
+                {
+                    CarInt = new FrmCarreraInterna();
+                    CarInt.Disposed += new EventHandler(form_Disposed1);
+                }
+
+                return CarInt;
+            }
+        }
+
+        void form_Disposed1(object sender, EventArgs e)
+        {
+            CarInt = null;
+
+        }
+
+        private FrmCarreraExterna FormInstance2
+        {
+            get
+            {
+                if (CarExt == null)
+                {
+                    CarExt = new FrmCarreraExterna();
+                    CarExt.Disposed += new EventHandler(form_Disposed2);
+                }
+
+                return CarExt;
+            }
+        }
+
+        void form_Disposed2(object sender, EventArgs e)
+        {
+            CarExt = null;
+
+        }
+
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (Tutor == null)
+                {
+                    Tutor = new FrmTutor();
+                    Tutor.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return Tutor;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            Tutor = null;
+
+        }
+        #endregion
+
 
         #region Atributos
 
-      
+
         private IconButton btnFacultadActual;//guarda la facultad actual seleccionada
         private IconButton btnCarreraActual;//guarda la carrera actual seleccionada
         private IconButton btnActual;//valor entre los buttons perfiles y defensa externa
@@ -121,8 +210,18 @@ namespace CapaPresentacion
             btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn.TextAlign = ContentAlignment.MiddleLeft;
             btn.ImageAlign = ContentAlignment.MiddleLeft;
-        }        
+        }
 
+        public void showSubMenus(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                HidenMenus();
+                submenu.Visible = true;
+            }
+            else
+                submenu.Visible = false;
+        }
         public void HidenMenus()
         {
             if (pnlSubMenuPerfiles.Visible == true)
@@ -136,10 +235,34 @@ namespace CapaPresentacion
                 pnlSubMenuDefensa.Visible = false;
                 FirstButtonDesactive(btnDefensaExterna);
             }
+            if (pnlSubMenuNuevaDefensa.Visible == true)
+            {
+
+                pnlSubMenuNuevaDefensa.Visible = false;
+                FirstButtonDesactive(btnNuevaDefensa);
+            }
+
+            if (pnlAgregar.Visible == true)
+            {
+
+                pnlAgregar.Visible = false;
+
+            }
 
 
         }
 
+        public void HiddenAgregar()
+        {
+            //  FirstButtonDesactive(btnAgregrNew);
+            SecondButtonDesactive(btnNuevoLicen);
+            SecondButtonDesactive(btnNuevaFacultad);
+            SecondButtonDesactive(btnNuevaCarreraEx);
+            SecondButtonDesactive(btnNuevaCareraIn);
+            if (pnlAgregar.Visible == true)
+                pnlAgregar.Visible = false;
+
+        }
         public void HiddenNuevoperfil()
         {
             FirstButtonDesactive(btnNuevoPerfil);
@@ -153,12 +276,17 @@ namespace CapaPresentacion
         public void HiddenNuevaDefensa()
         {
             FirstButtonDesactive(btnNuevaDefensa);
+            SecondButtonDesactive(btnExamendeGrado);
+            SecondButtonDesactive(btnGraduacionExcelencia);
+            if (pnlSubMenuNuevaDefensa.Visible == true)
+                pnlSubMenuNuevaDefensa.Visible = false;
 
         }
         public void ShowNuevaDefensa()
         {
             HidenMenus();
             HidenCarreras();
+            HiddenAgregar();
             FirstButtonActive(btnNuevaDefensa);
         }
 
@@ -166,8 +294,10 @@ namespace CapaPresentacion
         {
             if (Submenu.Visible == false)
             {
+
                 HiddenNuevoperfil();
                 HiddenNuevaDefensa();
+                HiddenAgregar();
                 HidenCarreras();
                 HidenMenus();
                 Submenu.Visible = true;
@@ -185,7 +315,9 @@ namespace CapaPresentacion
 
         public void CustomizeDesing()
         {
-            paneldefensa.Visible = false;
+
+            pnlAgregar.Visible = false;
+            pnlSubMenuNuevaDefensa.Visible = false;
             FirstButtonDesactive(btnNuevaDefensa);
             pnlSubMenuPerfiles.Visible = false;
             FirstButtonDesactive(btnPerfiles);
@@ -244,11 +376,13 @@ namespace CapaPresentacion
             {
                 Submenu.Visible = false;
                 SecondButtonDesactive(iconbtn);
-
             }
 
 
         }
+
+        
+        
 
         #endregion
 
@@ -261,7 +395,7 @@ namespace CapaPresentacion
             
             HiddenNuevaDefensa();
             ShowNuevoPerfil();
-            /////este codigo controla que no se abra dos veces el formulario
+            /*/////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
 
             if (frmNuevoPerfil != null)
@@ -272,40 +406,29 @@ namespace CapaPresentacion
             }
 
             //sino existe la instancia se crea una nueva
-            lblTitulo.Text = "NUEVO PERFIL";
+            
             frmNuevoPerfil = new FrmNuevoPerfil();
-            abrirFrmHijo(frmNuevoPerfil);
-        }
-        #region BOTON NUEVA DEFENSA
-        private void personalizarDefensa()
-        {
-            paneldefensa.Visible = false;
-        }
-        public void hiddeDefensa()
-        {
-            if (paneldefensa.Visible == true)
-                paneldefensa.Visible = false;
-        }
-        public void ShowSubDefensa(Panel subDefensa)
-        {
-            if (subDefensa.Visible == false)
-            {
-                hiddeDefensa();
-                subDefensa.Visible = true;
-            }
-            else
-                subDefensa.Visible = false;
-        }
-        #endregion
+            abrirFrmHijo(frmNuevoPerfil);*/
 
+            lblTitulo.Text = "NUEVO PERFIL";
+            abrirFrmHijo(new FrmNuevoPerfil());
+        }
+       
+        
+        
+       
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            ShowMenus(btnNuevaDefensa, paneldefensa);
+            
+                ShowMenus(btnNuevaDefensa, pnlSubMenuNuevaDefensa);
+
+           
+           
+            
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            hiddeDefensa();
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmPerfiles(criterio));
@@ -315,7 +438,7 @@ namespace CapaPresentacion
         }
         private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
-            hiddeDefensa();
+           
             btnActual = (IconButton)sender;
             string criterio = null;
             abrirFrmHijo(new FrmAgenda(criterio));
@@ -797,16 +920,87 @@ namespace CapaPresentacion
 
         private void btnExamendeGrado_Click(object sender, EventArgs e)
         {
-            //....
-            //...
-            hiddeDefensa();
+           
+           
+            SecondButtonDesactive(btnGraduacionExcelencia);
+            lblTitulo.Text = btnExamendeGrado.Text;
+            HidenCarreras();
+            abrirFrmHijo(new FrmNuevaDefensaExterna(1));
+            SecondButtonActive(btnExamendeGrado);
+            pnlSubMenuNuevaDefensa.Visible = false;
+
+
+
+
         }
 
         private void btnGraduacionExcelencia_Click(object sender, EventArgs e)
         {
-            //....
-            //...
-            hiddeDefensa();
+
+            SecondButtonDesactive(btnExamendeGrado);
+            lblTitulo.Text = btnGraduacionExcelencia.Text;
+            HidenCarreras();
+            abrirFrmHijo(new FrmNuevaDefensaExterna(2));
+            SecondButtonActive(btnGraduacionExcelencia);
+            pnlSubMenuNuevaDefensa.Visible = false;
+         
+            
         }
+
+        private void btnAgregrNew_Click(object sender, EventArgs e)
+        {
+            HidenCarreras();
+            showSubMenus(pnlAgregar);
+        }
+
+        private void btnNuevoLicen_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmTutor frm = this.FormInstance3;
+            frm.btnSeleccionarLicenciado.Visible = false;
+            frm.Show();
+            frm.BringToFront();
+        }
+
+        private void btnNuevaFacultad_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmFacultad frm = this.FormInstance4;
+            frm.Show();
+            frm.BringToFront();
+        }
+
+        private void btnNuevaCarreraEx_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmCarreraExterna frm = this.FormInstance2;
+            HidenCarreras();
+            frm.Show();
+            frm.BringToFront();
+            pnlAgregar.Visible = false;
+        }
+
+        private void btnNuevaCareraIn_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmCarreraInterna frm = this.FormInstance1;
+           // HiddenAgregar();
+            HidenCarreras();
+            frm.Show();
+            frm.BringToFront();
+            pnlAgregar.Visible = false;
+        }
+
+        private void pnlFrmHijo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAgregrNew_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }
