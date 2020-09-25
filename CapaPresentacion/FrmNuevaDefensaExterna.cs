@@ -15,6 +15,15 @@ namespace CapaPresentacion
 {
     public partial class FrmNuevaDefensaExterna : Form, IContractLicenciado
     {
+        #region Instancias
+        NegocioNuevaDefensa obj = new NegocioNuevaDefensa();
+        #endregion
+        #region Atributos
+        private FrmTutor Tutor = null;
+        int titulacion = 0;
+        int tipolicenciado = 0;
+
+        #endregion
         #region Constructor
 
         public FrmNuevaDefensaExterna(int titulacion)
@@ -29,9 +38,8 @@ namespace CapaPresentacion
             FormsControls();
         }
         #endregion
-        private FrmTutor Tutor = null;
-        #region instancia 1 vez frm
 
+        //Patron Singleton
         private FrmTutor FormInstance3
         {
             get
@@ -52,21 +60,7 @@ namespace CapaPresentacion
 
         }
 
-        #endregion
-
-
-        #region Atributos
-        int titulacion = 0;
-
-        int tipolicenciado = 0;
-
-        #endregion
-
-        #region Instancias
-
-        NegocioNuevaDefensa obj = new NegocioNuevaDefensa();
-
-        #endregion
+        
 
         #region Buttons
 
@@ -262,6 +256,7 @@ namespace CapaPresentacion
             int uagrm2 = Convert.ToInt32((cmbRepresentanteUagrm2.SelectedItem as ComboBoxItem).Value.ToString());
             string f_uagram2 = "Representante Uagrm 2";
 
+
             Object[] datos = new Object[]
            {
                registro,//input 0
@@ -276,7 +271,6 @@ namespace CapaPresentacion
                 fechadefensa,//input 9
                 hora,//input 10
                 aula,//input 11
-
                 id_presidente,//input 12
                 f_presidente,//input 13
                 id_secretario,//input 14
@@ -409,19 +403,61 @@ namespace CapaPresentacion
         {
             try
             {
+                bool validacion = validarLicenciado(cmbPresidente.Text.ToString(), cmbSecretario.Text.ToString(), cmbTribunalInterno1.Text.ToString(), cmbTribunalInterno2.Text.ToString(), cmbRepresentanteMinisterio.Text.ToString(), cmbRepresentanteUagrm1.Text.ToString(), cmbRepresentanteUagrm2.Text.ToString());
+
+                if (!validacion)
+                {
+                    throw new Exception("No puede repetir nombres de licenciados.");
+                }
                 Insert();
                 ClearForms();
-
             }
             catch(Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
         }
-
-        private void pnlNuevaDefensa_Paint(object sender, PaintEventArgs e)
+        #region validacionDeLicenciados
+        List<string> listaLicenciados = new List<string>();
+        private bool validarLicenciado(string presidente = null, string secretario = null, string tribunal1 = null, string tribunal2 = null, string repMinisterio = null, string repUagrm1 = null, string repUagrm2 = null)
         {
+            List<string> temporal = new List<string>();
+            agregarALista(presidente);
+            agregarALista(secretario);
+            agregarALista(tribunal1);
+            agregarALista(tribunal2);
+            agregarALista(repMinisterio);
+            agregarALista(repUagrm1);
+            agregarALista(repUagrm2);
+            
+            listaLicenciados.Sort();
 
+            foreach (var item in listaLicenciados)
+            {
+                if (temporal.Count == 0)
+                {
+                    temporal.Add(item);
+                }
+                else if (item != temporal[temporal.Count - 1])
+                {
+                    temporal.Add(item);
+                }
+                else
+                {
+                    listaLicenciados.Clear();
+                    return false;
+                }
+            }
+            listaLicenciados.Clear();
+            return true;
         }
+        private void agregarALista(string valor)
+        {
+            if (valor != null)
+            {
+                listaLicenciados.Add(valor);
+            }
+        }
+        #endregion
     }
 }

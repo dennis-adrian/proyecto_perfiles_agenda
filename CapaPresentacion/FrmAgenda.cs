@@ -52,19 +52,63 @@ namespace CapaPresentacion
             if(criterio == null)
             {
                 var list = obj.Defensas();
+                int campo1 = 1;
+                foreach (var item in list)
+                {
+                    
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Registro;
+                    string campo3 = item.Fecha_Defensa;
+                    string campo4 = item.Hora;
+                    string campo5 = item.Aula;
+                    string campo6 = item.Tipo;
+                    string campo7 = item.Tema;
+                    string campo8 = item.Estudiante;
+                    string campo9 = item.Carrera;
+                    string campo10 = item.Facultad;
 
-                var bindingList = new BindingList<ViewDefensas>(list);
+                    string[] row = new string[] {campo0, Convert.ToString(campo1),campo3,campo4,campo5,campo6,campo7, campo2, campo8,campo9, campo10 };
+                    this.dtgDefensaExterna.Rows.Add(row);
+                    campo1++;
+                  
+                }
+               
+               /* var bindingList = new BindingList<ViewDefensas>(list);
                 var source = new BindingSource(bindingList, null);
-                dtgDefensaExterna.DataSource = source;
+                dtgDefensaExterna.DataSource = source;*/
+
+
 
             }
             else
             {
                 var list2 = obj.DefensasCarrera(criterio);
+                int campo1 = 1;
+                foreach (var item in list2)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Registro;
+                    string campo3 = item.Fecha_Defensa;
+                    string campo4 = item.Hora;
+                    string campo5 = item.Aula;
+                    string campo6 = item.Tipo;
+                    string campo7 = item.Tema;
+                    string campo8 = item.Estudiante;
+
+
+                    string[] row = new string[] {campo0, Convert.ToString(campo1), campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
+                    this.dtgDefensaExterna.Rows.Add(row);
+                    this.ColumnaCarrera.Visible = false;
+                    this.ColumnaFacultad.Visible = false;
+                    campo1++;
+
+                }
+                /*
 
                 var bindingList = new BindingList<ViewDefensasCarrera>(list2);
                 var source = new BindingSource(bindingList, null);
-                dtgDefensaExterna.DataSource = source;
+                dtgDefensaExterna.DataSource = source;*/
             }
 
            
@@ -74,7 +118,7 @@ namespace CapaPresentacion
        
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
-            string tipo = dtgDefensaExterna.CurrentRow.Cells[4].Value.ToString();
+            string tipo = dtgDefensaExterna.CurrentRow.Cells[5].Value.ToString();
             switch (tipo)
             {
                 case "Tesis":
@@ -149,20 +193,57 @@ namespace CapaPresentacion
 
                 if (carrera == null)
                 {
-                    var list = obj.Defensas();
+                    this.dtgDefensaExterna.Rows.Clear();
 
-                    var bindingList = new BindingList<ViewDefensas>(list);
-                    var source = new BindingSource(bindingList, null);
-                    dtgDefensaExterna.DataSource = source;
+                    var list = obj.Defensas();
+                    //for(int x = 0; x < list.Count ; x++  )
+                    int campo1 = 1;
+                    foreach (var item in list)
+                    {
+
+                        string campo0 = Convert.ToString(item.Id);
+                        string campo2 = item.Registro;
+                        string campo3 = item.Fecha_Defensa;
+                        string campo4 = item.Hora;
+                        string campo5 = item.Aula;
+                        string campo6 = item.Tipo;
+                        string campo7 = item.Tema;
+                        string campo8 = item.Estudiante;
+                        string campo9 = item.Carrera;
+                        string campo10 = item.Facultad;
+
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8, campo9, campo10 };
+                        this.dtgDefensaExterna.Rows.Add(row);
+                        campo1++;
+
+                    }
 
                 }
                 else
                 {
+                    this.dtgDefensaExterna.Rows.Clear();
                     var list2 = obj.DefensasCarrera(carrera);
+                    int campo1 = 1;
+                    foreach (var item in list2)
+                    {
 
-                    var bindingList = new BindingList<ViewDefensasCarrera>(list2);
-                    var source = new BindingSource(bindingList, null);
-                    dtgDefensaExterna.DataSource = source;
+                        string campo0 = Convert.ToString(item.Id);
+                        string campo2 = item.Registro;
+                        string campo3 = item.Fecha_Defensa;
+                        string campo4 = item.Hora;
+                        string campo5 = item.Aula;
+                        string campo6 = item.Tipo;
+                        string campo7 = item.Tema;
+                        string campo8 = item.Estudiante;
+
+
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
+                        this.dtgDefensaExterna.Rows.Add(row);
+                        this.ColumnaCarrera.Visible = false;
+                        this.ColumnaFacultad.Visible = false;
+                        campo1++;
+
+                    }
                 }
 
             }
@@ -170,25 +251,61 @@ namespace CapaPresentacion
             {
                 if (carrera == null)
                 {
+                    this.dtgDefensaExterna.Rows.Clear();
                     var list = obj.DefensasTipo(tipo);
+                    int campo1 = 1;
+                    foreach (var item in list)
+                    {
 
-                    var bindingList = new BindingList<ViewDefensas>(list);
-                    var source = new BindingSource(bindingList, null);
-                    dtgDefensaExterna.DataSource = source;
+                        string campo0 = Convert.ToString(item.Id);
+                        string campo2 = item.Registro;
+                        string campo3 = item.Fecha_Defensa;
+                        string campo4 = item.Hora;
+                        string campo5 = item.Aula;
+                        string campo6 = item.Tipo;
+                        string campo7 = item.Tema;
+                        string campo8 = item.Estudiante;
+                        string campo9 = item.Carrera;
+                        string campo10 = item.Facultad;
+
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8, campo9, campo10 };
+                        this.dtgDefensaExterna.Rows.Add(row);
+                        campo1++;
+
+                    }
 
                 }
                 else
                 {
+                    this.dtgDefensaExterna.Rows.Clear();
                     var list2 = obj.DefensasCarreraTipo(carrera,tipo);
+                    int campo1 = 1;
+                    foreach (var item in list2)
+                    {
 
-                    var bindingList = new BindingList<ViewDefensasCarrera>(list2);
-                    var source = new BindingSource(bindingList, null);
-                    dtgDefensaExterna.DataSource = source;
+                        string campo0 = Convert.ToString(item.Id);
+                        string campo2 = item.Registro;
+                        string campo3 = item.Fecha_Defensa;
+                        string campo4 = item.Hora;
+                        string campo5 = item.Aula;
+                        string campo6 = item.Tipo;
+                        string campo7 = item.Tema;
+                        string campo8 = item.Estudiante;
+
+
+                        string[] row = new string[] { campo0, Convert.ToString(campo1),  campo3, campo4, campo5, campo6, campo7, campo2, campo8 };
+                        this.dtgDefensaExterna.Rows.Add(row);
+                        this.ColumnaCarrera.Visible = false;
+                        this.ColumnaFacultad.Visible = false;
+                        campo1++;
+
+                    }
                 }
             }
            
 
         }
+       
 
         private void btnExamenGrado_Click(object sender, EventArgs e)
         {
@@ -218,6 +335,11 @@ namespace CapaPresentacion
         {
             DefensasTipo(btntTodasDefensas);
             ocultarPaneles();
+        }
+
+        private void btnBuscarPerfil_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

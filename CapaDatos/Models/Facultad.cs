@@ -15,41 +15,35 @@ namespace CapaDatos.Models
             id = 0;
             nombre = "";
         }
-        #region Atributos 
+        #region Atributos
         private int id;
         private string nombre;
-
-
         #endregion
-        #region Propiedades 
+        #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
 
 
         #endregion
-        #region Metodos 
-
-        
-           
-
-        private static string TableName = "facultad";
+        #region Metodos
+        private static string table_name = "facultad";
         public void Insert()
         {
-            string sql = "  INSERT INTO " + TableName + " (  nombre  ) VALUES ( @parametro0); ";
+            string sql = $"  INSERT INTO {table_name} (  nombre  ) VALUES ( @parametro0); ";
             Object[] Parametros = new Object[] { Nombre};
             QueryBuilder(sql, Parametros);
 
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + " WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM {table_name} WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET  nombre = @parametro0   WHERE id = @parametro1 ; ";
+            string sql = $" UPDATE {table_name} SET  nombre = @parametro0   WHERE id = @parametro1 ; ";
 
             Object[] Parametros = new Object[] {  Nombre, id };
             QueryBuilder(sql, Parametros);
@@ -58,15 +52,14 @@ namespace CapaDatos.Models
 
         public DataTable Select()
         {
-            string sql = " SELECT * FROM " + TableName + " ; ";
+            string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
         public int LastId()
         {
-
-            return LastIdConexion(TableName);
+            return LastIdConexion(table_name);
         }
-       
+
         #endregion
 
     }

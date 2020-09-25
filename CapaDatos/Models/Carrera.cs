@@ -10,61 +10,54 @@ namespace CapaDatos.Models
 {
     public class Carrera : Conexion, IMetodos
     {
-
         public Carrera()
         {
             id = 0;
             nombre = "";
             id_facultad = 0;
-
-            
-          
         }
-        #region Atributos 
+
+        #region Atributos
         private int id;
         private string nombre;
         private int id_facultad;
-
-        private static string TableName = "carrera";
-
-
+        private static string table_name = "carrera";
         #endregion
         #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int Id_facultad { get => id_facultad; set => id_facultad = value; }
-
         #endregion
-        #region Metodos 
+        #region Metodos
         public void Insert()
         {
-            string sql = " INSERT INTO "+TableName+" (nombre, id_facultad ) VALUES(@parametro0,@parametro1); ";
+            string sql = $" INSERT INTO {table_name} (nombre, id_facultad ) VALUES(@parametro0,@parametro1); ";
             Object[] Parametros = new Object[] { Nombre, Id_facultad };
             QueryBuilder(sql, Parametros);
-                                          
+
         }
         public void Delete(int id)
         {
-            string sql = " DELETE FROM " + TableName + "  WHERE id = @parametro0 ; ";
+            string sql = $" DELETE FROM {table_name}  WHERE id = @parametro0 ; ";
             Object[] Parametros = new Object[] { id };
             QueryBuilder(sql, Parametros);
 
         }
         public void Update(int id)
         {
-            string sql = " UPDATE " + TableName + "  SET nombre = @parametro0 , id_facultad = @parametro1 WHERE id = @parametro2 ; ";
+            string sql = $" UPDATE {table_name}  SET nombre = @parametro0 , id_facultad = @parametro1 WHERE id = @parametro2 ; ";
             Object[] Parametros = new Object[] {Nombre,Id_facultad, id };
             QueryBuilder(sql, Parametros);
 
         }
         public DataTable Select()
         {
-            string sql = $" SELECT * FROM {TableName} ; ";
+            string sql = $" SELECT * FROM  {table_name} ; ";
             return SelectConexion(sql);
         }
         public int LastId()
-        {          
-            return LastIdConexion(TableName);
+        {
+            return LastIdConexion(table_name);
         }
 
 
