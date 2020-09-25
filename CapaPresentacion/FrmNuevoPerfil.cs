@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
+using CapaNegocio.nuevoPerfil;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
 
@@ -28,7 +28,7 @@ namespace CapaPresentacion
 
         #region Instancias
 
-        NegocioNuevoPerfil obj = new NegocioNuevoPerfil();
+        index obj = new index();
 
 
         #endregion
@@ -167,8 +167,7 @@ namespace CapaPresentacion
                 id_tutor
            };
 
-            obj.ControlInput(datos);
-            obj.Main();
+            obj.inputController(datos, obj.main);
 
         }
 

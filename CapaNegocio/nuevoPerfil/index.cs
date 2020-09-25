@@ -5,62 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
-using CapaNegocio.src;
 
-namespace CapaNegocio
+namespace CapaNegocio.nuevoPerfil
 {
-    public class NegocioNuevoPerfil : ValidationInputUI
+    public class index : src.Controller
     {
-
-        #region Construct
-
-        public NegocioNuevoPerfil()
+        PerfilTesis perfilTesis;
+        Estudiante estudiante;
+        Carrera carrera;
+        FuncionLicenciado funcionLicenciado;
+        src.DataTypes type;
+        public index()
         {
-
+            perfilTesis = new PerfilTesis();
+            estudiante = new Estudiante();
+            carrera  = new Carrera();
+            funcionLicenciado =  new FuncionLicenciado();
+            type = new src.DataTypes();
         }
-        #endregion
-
-        #region Instancias
-        PerfilTesis perfilTesis = new PerfilTesis();
-        Estudiante estudiante = new Estudiante();
-        Carrera carrera = new Carrera();
-        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
-        DataTypes type = new DataTypes();
-        #endregion
-
-        #region Atributos
-
-        Object[] parametros;
-        #endregion
-
-        #region Metodos
-        public void ControlInput(Object[] Collection)
-        {
-            try
-            {
-                Validation(Collection);
-                parametros = Collection;
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
-
-        }
-        public void Main()
-        {
-            try
-            {
-                NuevoPerfil(parametros);
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
-           
-
-        }
-        public void NuevoPerfil(Object[] Collection)
+       
+        public void main(Object[] Collection)
         {
             try
             {
@@ -97,18 +61,18 @@ namespace CapaNegocio
 
                 perfilTesis.Estado_defensa = "Sin Asignar";
                 perfilTesis.Calificacion = 0;
-                
+
 
                 perfilTesis.Id_licenciado = Convert.ToInt32(Collection[10]);//input
 
                 estudiante.Insert();
                 int id = estudiante.LastId();
                 perfilTesis.Id_estudiante = id;
-                int id_funcion = funcionLicenciado.FindIdBySearch("Tutor");//Convert.ToInt32(funcionLicenciado.Select("Tutor").Rows[1][1].ToString());
+                int id_funcion = funcionLicenciado.FindIdBySearch("Tutor");
                 perfilTesis.Id_funcion_licenciado = id_funcion;
                 perfilTesis.Insert();
-                
-                                                          
+
+
             }
             catch (Exception e)
             {
@@ -119,28 +83,13 @@ namespace CapaNegocio
         public DataTable cargarCarreras()
         {
             DataTable dt1 = carrera.Select();
-            
+
             return dt1;
         }
 
-        public Object[] InitialForms()
-        {
-             Object[] collection = new Object[] { 1 };
-            return collection;
-        }
-        
-        #endregion
-
-        #region Destruct
-
-        ~NegocioNuevoPerfil()
+        ~index()
         {
 
         }
-
-
-        #endregion
-
-
     }
 }

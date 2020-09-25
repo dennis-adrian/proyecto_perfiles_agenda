@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaNegocio;
+using CapaNegocio.licenciados;
 using CapaDatos.View;
 
 namespace CapaPresentacion
@@ -244,7 +245,6 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            //string tipo = cmbTipo.Text;//txtTipo.Text;// input 7
             string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
@@ -262,10 +262,9 @@ namespace CapaPresentacion
                 docente,
                 id_institucion ,
                 id_carrera
-            };
-
-            obj.ControlInput(datos);
-            obj.MainInsert();
+            };            
+            AgregarLicenciado obj = new AgregarLicenciado();
+            obj.inputController(datos, obj.main); 
 
         }
         public void Update(int i)
@@ -296,8 +295,8 @@ namespace CapaPresentacion
                 id_carrera
             };
 
-            obj.ControlInput(datos);
-            obj.MainUpdate(i);///
+            ActualizarLicenciado obj = new ActualizarLicenciado(i);
+            obj.inputController(datos, obj.main);
 
         }
         public void info(int i)
@@ -317,11 +316,7 @@ namespace CapaPresentacion
             cmbCarreraLicenciado.SelectedValue = Convert.ToInt32(Collection[10]);
         }
         
-        public void delete(int i) 
-        {
-            obj.DeleteLicenciado(i);
-
-        }
+       
         public void ClearForms()
         {
             txtNombreLicenciado.Clear();
