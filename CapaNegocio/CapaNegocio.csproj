@@ -64,10 +64,10 @@
     <Compile Include="licenciados\ActualizarLicenciado.cs" />
     <Compile Include="licenciados\AgregarLicenciado.cs" />
     <Compile Include="licenciados\Index.cs" />
+    <Compile Include="licenciados\InfoLicenciado.cs" />
     <Compile Include="licenciados\MostrarLicenciados.cs" />
     <Compile Include="NegocioDefensaExterna.cs" />
     <Compile Include="NegocioDefensaGeneral.cs" />
-    <Compile Include="NegocioLicenciados.cs" />
     <Compile Include="NegocioNuevaDefensa.cs" />
     <Compile Include="NegocioPerfiles.cs" />
     <Compile Include="NegocioPerfilGeneral.cs" />
