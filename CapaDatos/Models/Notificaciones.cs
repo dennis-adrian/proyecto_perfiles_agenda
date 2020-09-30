@@ -12,17 +12,17 @@ namespace CapaDatos.Models
         {
 
         }
-        #region Atributos
-        private int id;
-        private string tipo_notificacion;
-        private string fecha;
-        private string hora;
-        private string titulo;
-        private string texto;
-        private string estado; //unread or read
+        //#region Atributos
+        //private int id;
+        //private string tipo_notificacion;
+        //private string fecha;
+        //private string hora;
+        //private string titulo;
+        //private string texto;
+        //private string estado; //unread or read
 
 
-        #endregion
+        //#endregion
         #region Metodos
         public void getNewNotifications()
         {

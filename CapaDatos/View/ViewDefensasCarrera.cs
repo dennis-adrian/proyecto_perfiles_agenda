@@ -46,25 +46,28 @@ namespace CapaDatos.View
 
         #region Metodos
 
-        public DataTable Select(string carrera)
+  
+        public DataTable Select(string carrera, string tipo = null, string estudiante = null)
         {
-            string sql = " SELECT * FROM ViewDefensasCarrera where Carrera = @parametro0 ; ";
-            return obj.SelectConexion(sql, carrera);
-        }
-        public DataTable Select(string carrera, string estudiante)
-        {
+            string sql = "";
+            if (estudiante == null && tipo == null)
+            {
+                sql = $" SELECT * FROM ViewDefensas where Carrera = {carrera}  ; ";
+            }
+            else if (estudiante != null && tipo == null)
+            {
+                sql = $" SELECT * FROM ViewDefensas  WHERE Carrera = {carrera} and Estudiante LIKE '%{estudiante}%' ; ";
+            }
+            else if (estudiante == null && tipo != null)
+            {
+                sql = $" select * from ViewDefensas WHERE Carrera = {carrera} and Tipo = {tipo} ;";
+            }
+            else
+            {
+                sql = $" select * from ViewDefensas WHERE Carrera = {carrera} and Tipo = {tipo} and Estudiante LIKE '%{estudiante}%';";
+            }
 
-            string sql = " SELECT * FROM ViewDefensasCarrera  where Carrera LIKE '%@parametro0%' and Estudiante LIKE '%@parametro1%' ; ";
-            return obj.SelectConexion(sql, carrera, estudiante);
-
-        }
-
-        public DataTable SelectTipo(string carrera, string tipo)
-        {
-
-            string sql = " select * from ViewDefensasCarrera where  Carrera = @parametro0 and Tipo = @parametro1  ;";
-            return obj.SelectConexion(sql,carrera, tipo);
-
+            return obj.SelectConexion(sql);
         }
 
         #endregion

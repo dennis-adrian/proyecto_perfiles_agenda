@@ -52,25 +52,27 @@ namespace CapaDatos.View
 
         #region Metodos
 
-        public DataTable Select()
+        public DataTable Select(string tipo = null, string estudiante =null)
         {
-            string sql = " SELECT * FROM ViewDefensas ; ";
+            string sql="";
+            if(estudiante == null && tipo == null)
+            {
+                sql = " SELECT * FROM ViewDefensas ; ";
+            }else if(estudiante != null && tipo == null)
+            {
+                sql = $" SELECT * FROM ViewDefensas  WHERE Estudiante LIKE '%{estudiante}%' ; ";
+            }else if(estudiante == null && tipo != null)
+            {
+                sql = $" select * from ViewDefensas where Tipo like '%{tipo}%' ;";
+            }
+            else
+            {
+                sql = $" select * from ViewDefensas where Tipo = {tipo} Estudiante LIKE '%{estudiante}%';";
+            }
+             
             return obj.SelectConexion(sql);
         }
-        public DataTable Select(string estudiante)
-        {
-
-            string sql = " SELECT * FROM ViewDefensas  WHERE Estudiante LIKE '%"+estudiante+"%' ; ";
-            return obj.SelectConexion(sql, estudiante);
-
-        }
-        public DataTable SelectTipo(string tipo)
-        {
-
-            string sql = " select * from ViewDefensas where Tipo = @parametro0 ;";
-            return obj.SelectConexion(sql, tipo);
-
-        }
+       
 
 
         #endregion
