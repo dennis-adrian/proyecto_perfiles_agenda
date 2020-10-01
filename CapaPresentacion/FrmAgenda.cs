@@ -171,6 +171,67 @@ namespace CapaPresentacion
         {
             app.main(1, dtgDefensaExterna);
         }
+
+        private void dtgDefensaExterna_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string tipo = dtgDefensaExterna.CurrentRow.Cells[5].Value.ToString();
+            switch (tipo)
+            {
+                case "Tesis":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmTesisAgenda frm = new FrmTesisAgenda();
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+                    break;
+                case "Examen de Grado":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+
+                    break;
+                case "Graduacion por Excelencia":
+                    if (dtgDefensaExterna.CurrentRow != null)
+                    {
+                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
+                        frm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha seleccionado ninguna revisión");
+                    }
+
+
+
+                    break;
+                default:
+                    break;
+
+
+            }
+
+
+        }
     }
     public class App
     {
