@@ -565,6 +565,7 @@
             this.Controls.Add(this.btnSeleccionarLicenciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1104, 498);
             this.Name = "FrmTutor";
             this.Text = "FrmTutor";
             this.Load += new System.EventHandler(this.FrmTutor_Load);

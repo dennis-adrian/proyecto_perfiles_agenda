@@ -188,7 +188,6 @@
             this.dtgPerfilesTesis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPerfilesTesis.Size = new System.Drawing.Size(810, 604);
             this.dtgPerfilesTesis.TabIndex = 3;
-            this.dtgPerfilesTesis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPerfilesTesis_CellDoubleClick);
             // 
             // ColumnaId
             // 
@@ -285,6 +284,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(810, 650);
             this.Name = "FrmPerfiles";
             this.Text = "FrmPerfiles";
             this.pnlBuscar2.ResumeLayout(false);

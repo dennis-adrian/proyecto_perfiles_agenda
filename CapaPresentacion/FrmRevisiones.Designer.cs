@@ -33,6 +33,32 @@
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSubMenus = new System.Windows.Forms.Panel();
+            this.pnlAdd4 = new System.Windows.Forms.Panel();
+            this.btnAddNewRev4 = new System.Windows.Forms.Button();
+            this.pnlAdd3 = new System.Windows.Forms.Panel();
+            this.btnAddNewRev3 = new System.Windows.Forms.Button();
+            this.pnlAdd2 = new System.Windows.Forms.Panel();
+            this.btnAddNewRev2 = new System.Windows.Forms.Button();
+            this.pnlAdd1 = new System.Windows.Forms.Panel();
+            this.btnAddNewRev1 = new System.Windows.Forms.Button();
+            this.pnlContainerCuarta = new System.Windows.Forms.Panel();
+            this.pnlCuartaRev = new System.Windows.Forms.Panel();
+            this.btnCuartaRev = new System.Windows.Forms.Button();
+            this.pnlContainerTercera = new System.Windows.Forms.Panel();
+            this.pnlTerceraRev = new System.Windows.Forms.Panel();
+            this.btnTerceraRev = new System.Windows.Forms.Button();
+            this.pnlContainerSegunda = new System.Windows.Forms.Panel();
+            this.pnlSegundaRev = new System.Windows.Forms.Panel();
+            this.btnSegundaRev = new System.Windows.Forms.Button();
+            this.pnlContainerPrimera = new System.Windows.Forms.Panel();
+            this.pnlPrimeraRev = new System.Windows.Forms.Panel();
+            this.btnPrimeraRev = new System.Windows.Forms.Button();
+            this.pnlContainerRevisiones = new System.Windows.Forms.Panel();
+            this.pnlRevisiones = new System.Windows.Forms.Panel();
+            this.btnRevisiones = new System.Windows.Forms.Button();
+            this.pnlContainerGeneral = new System.Windows.Forms.Panel();
             this.pnlGeneral = new System.Windows.Forms.Panel();
             this.btnGeneralRev = new System.Windows.Forms.Button();
             this.pnlContenedorRev = new System.Windows.Forms.Panel();
@@ -65,48 +91,22 @@
             this.txtTutorGral = new System.Windows.Forms.TextBox();
             this.txtNombreGral = new System.Windows.Forms.TextBox();
             this.txtRegistroGral = new System.Windows.Forms.TextBox();
-            this.pnlContainerGeneral = new System.Windows.Forms.Panel();
-            this.pnlContainerRevisiones = new System.Windows.Forms.Panel();
-            this.btnRevisiones = new System.Windows.Forms.Button();
-            this.pnlRevisiones = new System.Windows.Forms.Panel();
-            this.pnlSubMenus = new System.Windows.Forms.Panel();
-            this.pnlContainerPrimera = new System.Windows.Forms.Panel();
-            this.btnPrimeraRev = new System.Windows.Forms.Button();
-            this.pnlPrimeraRev = new System.Windows.Forms.Panel();
-            this.pnlContainerSegunda = new System.Windows.Forms.Panel();
-            this.btnSegundaRev = new System.Windows.Forms.Button();
-            this.pnlSegundaRev = new System.Windows.Forms.Panel();
-            this.pnlContainerTercera = new System.Windows.Forms.Panel();
-            this.btnTerceraRev = new System.Windows.Forms.Button();
-            this.pnlTerceraRev = new System.Windows.Forms.Panel();
-            this.pnlContainerCuarta = new System.Windows.Forms.Panel();
-            this.btnCuartaRev = new System.Windows.Forms.Button();
-            this.pnlCuartaRev = new System.Windows.Forms.Panel();
-            this.pnlAdd1 = new System.Windows.Forms.Panel();
-            this.btnAddNewRev1 = new System.Windows.Forms.Button();
-            this.pnlAdd2 = new System.Windows.Forms.Panel();
-            this.btnAddNewRev2 = new System.Windows.Forms.Button();
-            this.pnlAdd3 = new System.Windows.Forms.Panel();
-            this.btnAddNewRev3 = new System.Windows.Forms.Button();
-            this.pnlAdd4 = new System.Windows.Forms.Panel();
-            this.btnAddNewRev4 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBarraNuevoLicenciado.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnlSubMenus.SuspendLayout();
+            this.pnlAdd4.SuspendLayout();
+            this.pnlAdd3.SuspendLayout();
+            this.pnlAdd2.SuspendLayout();
+            this.pnlAdd1.SuspendLayout();
+            this.pnlContainerCuarta.SuspendLayout();
+            this.pnlContainerTercera.SuspendLayout();
+            this.pnlContainerSegunda.SuspendLayout();
+            this.pnlContainerPrimera.SuspendLayout();
+            this.pnlContainerRevisiones.SuspendLayout();
+            this.pnlContainerGeneral.SuspendLayout();
             this.pnlContenedorRev.SuspendLayout();
             this.pnlContenedorGral.SuspendLayout();
-            this.pnlContainerGeneral.SuspendLayout();
-            this.pnlContainerRevisiones.SuspendLayout();
-            this.pnlSubMenus.SuspendLayout();
-            this.pnlContainerPrimera.SuspendLayout();
-            this.pnlContainerSegunda.SuspendLayout();
-            this.pnlContainerTercera.SuspendLayout();
-            this.pnlContainerCuarta.SuspendLayout();
-            this.pnlAdd1.SuspendLayout();
-            this.pnlAdd2.SuspendLayout();
-            this.pnlAdd3.SuspendLayout();
-            this.pnlAdd4.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraNuevoLicenciado
@@ -164,9 +164,354 @@
             this.lblTitulo.Text = "Revisiones";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pnlSubMenus);
+            this.panel1.Controls.Add(this.pnlContainerRevisiones);
+            this.panel1.Controls.Add(this.pnlContainerGeneral);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 81);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1050, 47);
+            this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pnlSubMenus
+            // 
+            this.pnlSubMenus.Controls.Add(this.pnlAdd4);
+            this.pnlSubMenus.Controls.Add(this.pnlAdd3);
+            this.pnlSubMenus.Controls.Add(this.pnlAdd2);
+            this.pnlSubMenus.Controls.Add(this.pnlAdd1);
+            this.pnlSubMenus.Controls.Add(this.pnlContainerCuarta);
+            this.pnlSubMenus.Controls.Add(this.pnlContainerTercera);
+            this.pnlSubMenus.Controls.Add(this.pnlContainerSegunda);
+            this.pnlSubMenus.Controls.Add(this.pnlContainerPrimera);
+            this.pnlSubMenus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSubMenus.Location = new System.Drawing.Point(250, 0);
+            this.pnlSubMenus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSubMenus.Name = "pnlSubMenus";
+            this.pnlSubMenus.Size = new System.Drawing.Size(690, 47);
+            this.pnlSubMenus.TabIndex = 26;
+            // 
+            // pnlAdd4
+            // 
+            this.pnlAdd4.Controls.Add(this.btnAddNewRev4);
+            this.pnlAdd4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlAdd4.Location = new System.Drawing.Point(635, 0);
+            this.pnlAdd4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAdd4.Name = "pnlAdd4";
+            this.pnlAdd4.Size = new System.Drawing.Size(45, 47);
+            this.pnlAdd4.TabIndex = 27;
+            // 
+            // btnAddNewRev4
+            // 
+            this.btnAddNewRev4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddNewRev4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddNewRev4.FlatAppearance.BorderSize = 0;
+            this.btnAddNewRev4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnAddNewRev4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewRev4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewRev4.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev4.Image")));
+            this.btnAddNewRev4.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewRev4.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewRev4.Name = "btnAddNewRev4";
+            this.btnAddNewRev4.Size = new System.Drawing.Size(45, 47);
+            this.btnAddNewRev4.TabIndex = 7;
+            this.btnAddNewRev4.UseVisualStyleBackColor = false;
+            this.btnAddNewRev4.Click += new System.EventHandler(this.btnAddNewRev4_Click);
+            // 
+            // pnlAdd3
+            // 
+            this.pnlAdd3.Controls.Add(this.btnAddNewRev3);
+            this.pnlAdd3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlAdd3.Location = new System.Drawing.Point(590, 0);
+            this.pnlAdd3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAdd3.Name = "pnlAdd3";
+            this.pnlAdd3.Size = new System.Drawing.Size(45, 47);
+            this.pnlAdd3.TabIndex = 27;
+            // 
+            // btnAddNewRev3
+            // 
+            this.btnAddNewRev3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddNewRev3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddNewRev3.FlatAppearance.BorderSize = 0;
+            this.btnAddNewRev3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnAddNewRev3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewRev3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewRev3.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev3.Image")));
+            this.btnAddNewRev3.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewRev3.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewRev3.Name = "btnAddNewRev3";
+            this.btnAddNewRev3.Size = new System.Drawing.Size(45, 47);
+            this.btnAddNewRev3.TabIndex = 20;
+            this.btnAddNewRev3.UseVisualStyleBackColor = false;
+            this.btnAddNewRev3.Click += new System.EventHandler(this.btnAddNewRev3_Click_1);
+            // 
+            // pnlAdd2
+            // 
+            this.pnlAdd2.Controls.Add(this.btnAddNewRev2);
+            this.pnlAdd2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlAdd2.Location = new System.Drawing.Point(545, 0);
+            this.pnlAdd2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAdd2.Name = "pnlAdd2";
+            this.pnlAdd2.Size = new System.Drawing.Size(45, 47);
+            this.pnlAdd2.TabIndex = 27;
+            // 
+            // btnAddNewRev2
+            // 
+            this.btnAddNewRev2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddNewRev2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddNewRev2.FlatAppearance.BorderSize = 0;
+            this.btnAddNewRev2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnAddNewRev2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewRev2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewRev2.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev2.Image")));
+            this.btnAddNewRev2.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewRev2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewRev2.Name = "btnAddNewRev2";
+            this.btnAddNewRev2.Size = new System.Drawing.Size(45, 47);
+            this.btnAddNewRev2.TabIndex = 20;
+            this.btnAddNewRev2.UseVisualStyleBackColor = false;
+            this.btnAddNewRev2.Click += new System.EventHandler(this.btnAddNewRev2_Click);
+            // 
+            // pnlAdd1
+            // 
+            this.pnlAdd1.Controls.Add(this.btnAddNewRev1);
+            this.pnlAdd1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlAdd1.Location = new System.Drawing.Point(500, 0);
+            this.pnlAdd1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAdd1.Name = "pnlAdd1";
+            this.pnlAdd1.Size = new System.Drawing.Size(45, 47);
+            this.pnlAdd1.TabIndex = 27;
+            // 
+            // btnAddNewRev1
+            // 
+            this.btnAddNewRev1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddNewRev1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddNewRev1.FlatAppearance.BorderSize = 0;
+            this.btnAddNewRev1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnAddNewRev1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewRev1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewRev1.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev1.Image")));
+            this.btnAddNewRev1.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewRev1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewRev1.Name = "btnAddNewRev1";
+            this.btnAddNewRev1.Size = new System.Drawing.Size(45, 47);
+            this.btnAddNewRev1.TabIndex = 20;
+            this.btnAddNewRev1.UseVisualStyleBackColor = false;
+            this.btnAddNewRev1.Click += new System.EventHandler(this.btnAddNewRev1_Click);
+            // 
+            // pnlContainerCuarta
+            // 
+            this.pnlContainerCuarta.Controls.Add(this.pnlCuartaRev);
+            this.pnlContainerCuarta.Controls.Add(this.btnCuartaRev);
+            this.pnlContainerCuarta.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerCuarta.Location = new System.Drawing.Point(375, 0);
+            this.pnlContainerCuarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerCuarta.Name = "pnlContainerCuarta";
+            this.pnlContainerCuarta.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerCuarta.TabIndex = 27;
+            // 
+            // pnlCuartaRev
+            // 
+            this.pnlCuartaRev.BackColor = System.Drawing.Color.Crimson;
+            this.pnlCuartaRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCuartaRev.Location = new System.Drawing.Point(0, 39);
+            this.pnlCuartaRev.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCuartaRev.Name = "pnlCuartaRev";
+            this.pnlCuartaRev.Size = new System.Drawing.Size(125, 8);
+            this.pnlCuartaRev.TabIndex = 13;
+            // 
+            // btnCuartaRev
+            // 
+            this.btnCuartaRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCuartaRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCuartaRev.FlatAppearance.BorderSize = 0;
+            this.btnCuartaRev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnCuartaRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuartaRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuartaRev.ForeColor = System.Drawing.Color.White;
+            this.btnCuartaRev.Location = new System.Drawing.Point(0, 0);
+            this.btnCuartaRev.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCuartaRev.Name = "btnCuartaRev";
+            this.btnCuartaRev.Size = new System.Drawing.Size(125, 39);
+            this.btnCuartaRev.TabIndex = 4;
+            this.btnCuartaRev.Text = "Cuarta Revision";
+            this.btnCuartaRev.UseVisualStyleBackColor = false;
+            this.btnCuartaRev.Click += new System.EventHandler(this.btnCuartaRev_Click);
+            // 
+            // pnlContainerTercera
+            // 
+            this.pnlContainerTercera.Controls.Add(this.pnlTerceraRev);
+            this.pnlContainerTercera.Controls.Add(this.btnTerceraRev);
+            this.pnlContainerTercera.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerTercera.Location = new System.Drawing.Point(250, 0);
+            this.pnlContainerTercera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerTercera.Name = "pnlContainerTercera";
+            this.pnlContainerTercera.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerTercera.TabIndex = 27;
+            // 
+            // pnlTerceraRev
+            // 
+            this.pnlTerceraRev.BackColor = System.Drawing.Color.Crimson;
+            this.pnlTerceraRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTerceraRev.Location = new System.Drawing.Point(0, 39);
+            this.pnlTerceraRev.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTerceraRev.Name = "pnlTerceraRev";
+            this.pnlTerceraRev.Size = new System.Drawing.Size(125, 8);
+            this.pnlTerceraRev.TabIndex = 12;
+            // 
+            // btnTerceraRev
+            // 
+            this.btnTerceraRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTerceraRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTerceraRev.FlatAppearance.BorderSize = 0;
+            this.btnTerceraRev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnTerceraRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerceraRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerceraRev.ForeColor = System.Drawing.Color.White;
+            this.btnTerceraRev.Location = new System.Drawing.Point(0, 0);
+            this.btnTerceraRev.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTerceraRev.Name = "btnTerceraRev";
+            this.btnTerceraRev.Size = new System.Drawing.Size(125, 39);
+            this.btnTerceraRev.TabIndex = 3;
+            this.btnTerceraRev.Text = "Tercera Revision";
+            this.btnTerceraRev.UseVisualStyleBackColor = false;
+            this.btnTerceraRev.Click += new System.EventHandler(this.btnTerceraRev_Click);
+            // 
+            // pnlContainerSegunda
+            // 
+            this.pnlContainerSegunda.Controls.Add(this.pnlSegundaRev);
+            this.pnlContainerSegunda.Controls.Add(this.btnSegundaRev);
+            this.pnlContainerSegunda.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerSegunda.Location = new System.Drawing.Point(125, 0);
+            this.pnlContainerSegunda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerSegunda.Name = "pnlContainerSegunda";
+            this.pnlContainerSegunda.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerSegunda.TabIndex = 27;
+            // 
+            // pnlSegundaRev
+            // 
+            this.pnlSegundaRev.BackColor = System.Drawing.Color.Crimson;
+            this.pnlSegundaRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSegundaRev.Location = new System.Drawing.Point(0, 39);
+            this.pnlSegundaRev.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSegundaRev.Name = "pnlSegundaRev";
+            this.pnlSegundaRev.Size = new System.Drawing.Size(125, 8);
+            this.pnlSegundaRev.TabIndex = 11;
+            // 
+            // btnSegundaRev
+            // 
+            this.btnSegundaRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSegundaRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSegundaRev.FlatAppearance.BorderSize = 0;
+            this.btnSegundaRev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnSegundaRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSegundaRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSegundaRev.ForeColor = System.Drawing.Color.White;
+            this.btnSegundaRev.Location = new System.Drawing.Point(0, 0);
+            this.btnSegundaRev.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSegundaRev.Name = "btnSegundaRev";
+            this.btnSegundaRev.Size = new System.Drawing.Size(125, 39);
+            this.btnSegundaRev.TabIndex = 2;
+            this.btnSegundaRev.Text = "Segunda Revision";
+            this.btnSegundaRev.UseVisualStyleBackColor = false;
+            this.btnSegundaRev.Click += new System.EventHandler(this.btnSegundaRev_Click);
+            // 
+            // pnlContainerPrimera
+            // 
+            this.pnlContainerPrimera.Controls.Add(this.pnlPrimeraRev);
+            this.pnlContainerPrimera.Controls.Add(this.btnPrimeraRev);
+            this.pnlContainerPrimera.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerPrimera.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainerPrimera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerPrimera.Name = "pnlContainerPrimera";
+            this.pnlContainerPrimera.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerPrimera.TabIndex = 27;
+            // 
+            // pnlPrimeraRev
+            // 
+            this.pnlPrimeraRev.BackColor = System.Drawing.Color.Crimson;
+            this.pnlPrimeraRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPrimeraRev.Location = new System.Drawing.Point(0, 39);
+            this.pnlPrimeraRev.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlPrimeraRev.Name = "pnlPrimeraRev";
+            this.pnlPrimeraRev.Size = new System.Drawing.Size(125, 8);
+            this.pnlPrimeraRev.TabIndex = 10;
+            // 
+            // btnPrimeraRev
+            // 
+            this.btnPrimeraRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrimeraRev.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrimeraRev.FlatAppearance.BorderSize = 0;
+            this.btnPrimeraRev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnPrimeraRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimeraRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimeraRev.ForeColor = System.Drawing.Color.White;
+            this.btnPrimeraRev.Location = new System.Drawing.Point(0, 0);
+            this.btnPrimeraRev.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrimeraRev.Name = "btnPrimeraRev";
+            this.btnPrimeraRev.Size = new System.Drawing.Size(125, 39);
+            this.btnPrimeraRev.TabIndex = 1;
+            this.btnPrimeraRev.Text = "Primera Revision";
+            this.btnPrimeraRev.UseVisualStyleBackColor = false;
+            this.btnPrimeraRev.Click += new System.EventHandler(this.btnPrimeraRev_Click);
+            // 
+            // pnlContainerRevisiones
+            // 
+            this.pnlContainerRevisiones.Controls.Add(this.pnlRevisiones);
+            this.pnlContainerRevisiones.Controls.Add(this.btnRevisiones);
+            this.pnlContainerRevisiones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerRevisiones.Location = new System.Drawing.Point(125, 0);
+            this.pnlContainerRevisiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerRevisiones.Name = "pnlContainerRevisiones";
+            this.pnlContainerRevisiones.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerRevisiones.TabIndex = 22;
+            // 
+            // pnlRevisiones
+            // 
+            this.pnlRevisiones.BackColor = System.Drawing.Color.Crimson;
+            this.pnlRevisiones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRevisiones.Location = new System.Drawing.Point(0, 39);
+            this.pnlRevisiones.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRevisiones.Name = "pnlRevisiones";
+            this.pnlRevisiones.Size = new System.Drawing.Size(125, 8);
+            this.pnlRevisiones.TabIndex = 21;
+            // 
+            // btnRevisiones
+            // 
+            this.btnRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRevisiones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRevisiones.FlatAppearance.BorderSize = 0;
+            this.btnRevisiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.btnRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevisiones.ForeColor = System.Drawing.Color.White;
+            this.btnRevisiones.Location = new System.Drawing.Point(0, 0);
+            this.btnRevisiones.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRevisiones.Name = "btnRevisiones";
+            this.btnRevisiones.Size = new System.Drawing.Size(125, 39);
+            this.btnRevisiones.TabIndex = 0;
+            this.btnRevisiones.Text = "Revisiones";
+            this.btnRevisiones.UseVisualStyleBackColor = false;
+            this.btnRevisiones.Click += new System.EventHandler(this.btnRevisiones_Click);
+            // 
+            // pnlContainerGeneral
+            // 
+            this.pnlContainerGeneral.Controls.Add(this.pnlGeneral);
+            this.pnlContainerGeneral.Controls.Add(this.btnGeneralRev);
+            this.pnlContainerGeneral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerGeneral.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainerGeneral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainerGeneral.Name = "pnlContainerGeneral";
+            this.pnlContainerGeneral.Size = new System.Drawing.Size(125, 47);
+            this.pnlContainerGeneral.TabIndex = 20;
+            // 
             // pnlGeneral
             // 
             this.pnlGeneral.BackColor = System.Drawing.Color.Crimson;
+            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlGeneral.Location = new System.Drawing.Point(0, 39);
             this.pnlGeneral.Margin = new System.Windows.Forms.Padding(0);
             this.pnlGeneral.Name = "pnlGeneral";
@@ -178,6 +523,7 @@
             this.btnGeneralRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGeneralRev.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGeneralRev.FlatAppearance.BorderSize = 0;
+            this.btnGeneralRev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
             this.btnGeneralRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGeneralRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGeneralRev.ForeColor = System.Drawing.Color.White;
@@ -532,345 +878,6 @@
             this.txtRegistroGral.Size = new System.Drawing.Size(144, 24);
             this.txtRegistroGral.TabIndex = 10;
             // 
-            // pnlContainerGeneral
-            // 
-            this.pnlContainerGeneral.Controls.Add(this.pnlGeneral);
-            this.pnlContainerGeneral.Controls.Add(this.btnGeneralRev);
-            this.pnlContainerGeneral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerGeneral.Location = new System.Drawing.Point(0, 0);
-            this.pnlContainerGeneral.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerGeneral.Name = "pnlContainerGeneral";
-            this.pnlContainerGeneral.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerGeneral.TabIndex = 20;
-            // 
-            // pnlContainerRevisiones
-            // 
-            this.pnlContainerRevisiones.Controls.Add(this.pnlRevisiones);
-            this.pnlContainerRevisiones.Controls.Add(this.btnRevisiones);
-            this.pnlContainerRevisiones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerRevisiones.Location = new System.Drawing.Point(125, 0);
-            this.pnlContainerRevisiones.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerRevisiones.Name = "pnlContainerRevisiones";
-            this.pnlContainerRevisiones.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerRevisiones.TabIndex = 22;
-            // 
-            // btnRevisiones
-            // 
-            this.btnRevisiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRevisiones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRevisiones.FlatAppearance.BorderSize = 0;
-            this.btnRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRevisiones.ForeColor = System.Drawing.Color.White;
-            this.btnRevisiones.Location = new System.Drawing.Point(0, 0);
-            this.btnRevisiones.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRevisiones.Name = "btnRevisiones";
-            this.btnRevisiones.Size = new System.Drawing.Size(125, 39);
-            this.btnRevisiones.TabIndex = 0;
-            this.btnRevisiones.Text = "Revisiones";
-            this.btnRevisiones.UseVisualStyleBackColor = false;
-            this.btnRevisiones.Click += new System.EventHandler(this.btnRevisiones_Click);
-            // 
-            // pnlRevisiones
-            // 
-            this.pnlRevisiones.BackColor = System.Drawing.Color.Crimson;
-            this.pnlRevisiones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRevisiones.Location = new System.Drawing.Point(0, 39);
-            this.pnlRevisiones.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlRevisiones.Name = "pnlRevisiones";
-            this.pnlRevisiones.Size = new System.Drawing.Size(125, 8);
-            this.pnlRevisiones.TabIndex = 21;
-            // 
-            // pnlSubMenus
-            // 
-            this.pnlSubMenus.Controls.Add(this.pnlAdd4);
-            this.pnlSubMenus.Controls.Add(this.pnlAdd3);
-            this.pnlSubMenus.Controls.Add(this.pnlAdd2);
-            this.pnlSubMenus.Controls.Add(this.pnlAdd1);
-            this.pnlSubMenus.Controls.Add(this.pnlContainerCuarta);
-            this.pnlSubMenus.Controls.Add(this.pnlContainerTercera);
-            this.pnlSubMenus.Controls.Add(this.pnlContainerSegunda);
-            this.pnlSubMenus.Controls.Add(this.pnlContainerPrimera);
-            this.pnlSubMenus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSubMenus.Location = new System.Drawing.Point(250, 0);
-            this.pnlSubMenus.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlSubMenus.Name = "pnlSubMenus";
-            this.pnlSubMenus.Size = new System.Drawing.Size(690, 47);
-            this.pnlSubMenus.TabIndex = 26;
-            // 
-            // pnlContainerPrimera
-            // 
-            this.pnlContainerPrimera.Controls.Add(this.pnlPrimeraRev);
-            this.pnlContainerPrimera.Controls.Add(this.btnPrimeraRev);
-            this.pnlContainerPrimera.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerPrimera.Location = new System.Drawing.Point(0, 0);
-            this.pnlContainerPrimera.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerPrimera.Name = "pnlContainerPrimera";
-            this.pnlContainerPrimera.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerPrimera.TabIndex = 27;
-            // 
-            // btnPrimeraRev
-            // 
-            this.btnPrimeraRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrimeraRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPrimeraRev.FlatAppearance.BorderSize = 0;
-            this.btnPrimeraRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrimeraRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrimeraRev.ForeColor = System.Drawing.Color.White;
-            this.btnPrimeraRev.Location = new System.Drawing.Point(0, 0);
-            this.btnPrimeraRev.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrimeraRev.Name = "btnPrimeraRev";
-            this.btnPrimeraRev.Size = new System.Drawing.Size(125, 39);
-            this.btnPrimeraRev.TabIndex = 1;
-            this.btnPrimeraRev.Text = "Primera Revision";
-            this.btnPrimeraRev.UseVisualStyleBackColor = false;
-            this.btnPrimeraRev.Click += new System.EventHandler(this.btnPrimeraRev_Click);
-            // 
-            // pnlPrimeraRev
-            // 
-            this.pnlPrimeraRev.BackColor = System.Drawing.Color.Crimson;
-            this.pnlPrimeraRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPrimeraRev.Location = new System.Drawing.Point(0, 39);
-            this.pnlPrimeraRev.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlPrimeraRev.Name = "pnlPrimeraRev";
-            this.pnlPrimeraRev.Size = new System.Drawing.Size(125, 8);
-            this.pnlPrimeraRev.TabIndex = 10;
-            // 
-            // pnlContainerSegunda
-            // 
-            this.pnlContainerSegunda.Controls.Add(this.pnlSegundaRev);
-            this.pnlContainerSegunda.Controls.Add(this.btnSegundaRev);
-            this.pnlContainerSegunda.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerSegunda.Location = new System.Drawing.Point(125, 0);
-            this.pnlContainerSegunda.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerSegunda.Name = "pnlContainerSegunda";
-            this.pnlContainerSegunda.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerSegunda.TabIndex = 27;
-            // 
-            // btnSegundaRev
-            // 
-            this.btnSegundaRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSegundaRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSegundaRev.FlatAppearance.BorderSize = 0;
-            this.btnSegundaRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSegundaRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSegundaRev.ForeColor = System.Drawing.Color.White;
-            this.btnSegundaRev.Location = new System.Drawing.Point(0, 0);
-            this.btnSegundaRev.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSegundaRev.Name = "btnSegundaRev";
-            this.btnSegundaRev.Size = new System.Drawing.Size(125, 39);
-            this.btnSegundaRev.TabIndex = 2;
-            this.btnSegundaRev.Text = "Segunda Revision";
-            this.btnSegundaRev.UseVisualStyleBackColor = false;
-            this.btnSegundaRev.Click += new System.EventHandler(this.btnSegundaRev_Click);
-            // 
-            // pnlSegundaRev
-            // 
-            this.pnlSegundaRev.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSegundaRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSegundaRev.Location = new System.Drawing.Point(0, 39);
-            this.pnlSegundaRev.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSegundaRev.Name = "pnlSegundaRev";
-            this.pnlSegundaRev.Size = new System.Drawing.Size(125, 8);
-            this.pnlSegundaRev.TabIndex = 11;
-            // 
-            // pnlContainerTercera
-            // 
-            this.pnlContainerTercera.Controls.Add(this.pnlTerceraRev);
-            this.pnlContainerTercera.Controls.Add(this.btnTerceraRev);
-            this.pnlContainerTercera.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerTercera.Location = new System.Drawing.Point(250, 0);
-            this.pnlContainerTercera.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerTercera.Name = "pnlContainerTercera";
-            this.pnlContainerTercera.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerTercera.TabIndex = 27;
-            // 
-            // btnTerceraRev
-            // 
-            this.btnTerceraRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTerceraRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTerceraRev.FlatAppearance.BorderSize = 0;
-            this.btnTerceraRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerceraRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerceraRev.ForeColor = System.Drawing.Color.White;
-            this.btnTerceraRev.Location = new System.Drawing.Point(0, 0);
-            this.btnTerceraRev.Margin = new System.Windows.Forms.Padding(0);
-            this.btnTerceraRev.Name = "btnTerceraRev";
-            this.btnTerceraRev.Size = new System.Drawing.Size(125, 39);
-            this.btnTerceraRev.TabIndex = 3;
-            this.btnTerceraRev.Text = "Tercera Revision";
-            this.btnTerceraRev.UseVisualStyleBackColor = false;
-            this.btnTerceraRev.Click += new System.EventHandler(this.btnTerceraRev_Click);
-            // 
-            // pnlTerceraRev
-            // 
-            this.pnlTerceraRev.BackColor = System.Drawing.Color.Crimson;
-            this.pnlTerceraRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTerceraRev.Location = new System.Drawing.Point(0, 39);
-            this.pnlTerceraRev.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlTerceraRev.Name = "pnlTerceraRev";
-            this.pnlTerceraRev.Size = new System.Drawing.Size(125, 8);
-            this.pnlTerceraRev.TabIndex = 12;
-            // 
-            // pnlContainerCuarta
-            // 
-            this.pnlContainerCuarta.Controls.Add(this.pnlCuartaRev);
-            this.pnlContainerCuarta.Controls.Add(this.btnCuartaRev);
-            this.pnlContainerCuarta.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContainerCuarta.Location = new System.Drawing.Point(375, 0);
-            this.pnlContainerCuarta.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerCuarta.Name = "pnlContainerCuarta";
-            this.pnlContainerCuarta.Size = new System.Drawing.Size(125, 47);
-            this.pnlContainerCuarta.TabIndex = 27;
-            // 
-            // btnCuartaRev
-            // 
-            this.btnCuartaRev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCuartaRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCuartaRev.FlatAppearance.BorderSize = 0;
-            this.btnCuartaRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCuartaRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuartaRev.ForeColor = System.Drawing.Color.White;
-            this.btnCuartaRev.Location = new System.Drawing.Point(0, 0);
-            this.btnCuartaRev.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCuartaRev.Name = "btnCuartaRev";
-            this.btnCuartaRev.Size = new System.Drawing.Size(125, 39);
-            this.btnCuartaRev.TabIndex = 4;
-            this.btnCuartaRev.Text = "Cuarta Revision";
-            this.btnCuartaRev.UseVisualStyleBackColor = false;
-            this.btnCuartaRev.Click += new System.EventHandler(this.btnCuartaRev_Click);
-            // 
-            // pnlCuartaRev
-            // 
-            this.pnlCuartaRev.BackColor = System.Drawing.Color.Crimson;
-            this.pnlCuartaRev.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCuartaRev.Location = new System.Drawing.Point(0, 39);
-            this.pnlCuartaRev.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCuartaRev.Name = "pnlCuartaRev";
-            this.pnlCuartaRev.Size = new System.Drawing.Size(125, 8);
-            this.pnlCuartaRev.TabIndex = 13;
-            // 
-            // pnlAdd1
-            // 
-            this.pnlAdd1.Controls.Add(this.btnAddNewRev1);
-            this.pnlAdd1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAdd1.Location = new System.Drawing.Point(500, 0);
-            this.pnlAdd1.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAdd1.Name = "pnlAdd1";
-            this.pnlAdd1.Size = new System.Drawing.Size(45, 47);
-            this.pnlAdd1.TabIndex = 27;
-            // 
-            // btnAddNewRev1
-            // 
-            this.btnAddNewRev1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddNewRev1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddNewRev1.FlatAppearance.BorderSize = 0;
-            this.btnAddNewRev1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
-            this.btnAddNewRev1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewRev1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewRev1.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev1.Image")));
-            this.btnAddNewRev1.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewRev1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddNewRev1.Name = "btnAddNewRev1";
-            this.btnAddNewRev1.Size = new System.Drawing.Size(45, 47);
-            this.btnAddNewRev1.TabIndex = 20;
-            this.btnAddNewRev1.UseVisualStyleBackColor = false;
-            this.btnAddNewRev1.Click += new System.EventHandler(this.btnAddNewRev1_Click);
-            // 
-            // pnlAdd2
-            // 
-            this.pnlAdd2.Controls.Add(this.btnAddNewRev2);
-            this.pnlAdd2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAdd2.Location = new System.Drawing.Point(545, 0);
-            this.pnlAdd2.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAdd2.Name = "pnlAdd2";
-            this.pnlAdd2.Size = new System.Drawing.Size(45, 47);
-            this.pnlAdd2.TabIndex = 27;
-            // 
-            // btnAddNewRev2
-            // 
-            this.btnAddNewRev2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddNewRev2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddNewRev2.FlatAppearance.BorderSize = 0;
-            this.btnAddNewRev2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
-            this.btnAddNewRev2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewRev2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewRev2.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev2.Image")));
-            this.btnAddNewRev2.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewRev2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddNewRev2.Name = "btnAddNewRev2";
-            this.btnAddNewRev2.Size = new System.Drawing.Size(45, 47);
-            this.btnAddNewRev2.TabIndex = 20;
-            this.btnAddNewRev2.UseVisualStyleBackColor = false;
-            this.btnAddNewRev2.Click += new System.EventHandler(this.btnAddNewRev2_Click);
-            // 
-            // pnlAdd3
-            // 
-            this.pnlAdd3.Controls.Add(this.btnAddNewRev3);
-            this.pnlAdd3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAdd3.Location = new System.Drawing.Point(590, 0);
-            this.pnlAdd3.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAdd3.Name = "pnlAdd3";
-            this.pnlAdd3.Size = new System.Drawing.Size(45, 47);
-            this.pnlAdd3.TabIndex = 27;
-            // 
-            // btnAddNewRev3
-            // 
-            this.btnAddNewRev3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddNewRev3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddNewRev3.FlatAppearance.BorderSize = 0;
-            this.btnAddNewRev3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
-            this.btnAddNewRev3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewRev3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewRev3.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev3.Image")));
-            this.btnAddNewRev3.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewRev3.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddNewRev3.Name = "btnAddNewRev3";
-            this.btnAddNewRev3.Size = new System.Drawing.Size(45, 47);
-            this.btnAddNewRev3.TabIndex = 20;
-            this.btnAddNewRev3.UseVisualStyleBackColor = false;
-            this.btnAddNewRev3.Click += new System.EventHandler(this.btnAddNewRev3_Click_1);
-            // 
-            // pnlAdd4
-            // 
-            this.pnlAdd4.Controls.Add(this.btnAddNewRev4);
-            this.pnlAdd4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAdd4.Location = new System.Drawing.Point(635, 0);
-            this.pnlAdd4.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlAdd4.Name = "pnlAdd4";
-            this.pnlAdd4.Size = new System.Drawing.Size(45, 47);
-            this.pnlAdd4.TabIndex = 27;
-            // 
-            // btnAddNewRev4
-            // 
-            this.btnAddNewRev4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddNewRev4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddNewRev4.FlatAppearance.BorderSize = 0;
-            this.btnAddNewRev4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
-            this.btnAddNewRev4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewRev4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewRev4.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewRev4.Image")));
-            this.btnAddNewRev4.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewRev4.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddNewRev4.Name = "btnAddNewRev4";
-            this.btnAddNewRev4.Size = new System.Drawing.Size(45, 47);
-            this.btnAddNewRev4.TabIndex = 7;
-            this.btnAddNewRev4.UseVisualStyleBackColor = false;
-            this.btnAddNewRev4.Click += new System.EventHandler(this.btnAddNewRev4_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pnlSubMenus);
-            this.panel1.Controls.Add(this.pnlContainerRevisiones);
-            this.panel1.Controls.Add(this.pnlContainerGeneral);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 81);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 47);
-            this.panel1.TabIndex = 18;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // FrmRevisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,27 +890,28 @@
             this.Controls.Add(this.pnlBarraNuevoLicenciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1050, 731);
             this.Name = "FrmRevisiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRevisiones2";
             this.Load += new System.EventHandler(this.FrmRevisiones2_Load);
             this.pnlBarraNuevoLicenciado.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.pnlSubMenus.ResumeLayout(false);
+            this.pnlAdd4.ResumeLayout(false);
+            this.pnlAdd3.ResumeLayout(false);
+            this.pnlAdd2.ResumeLayout(false);
+            this.pnlAdd1.ResumeLayout(false);
+            this.pnlContainerCuarta.ResumeLayout(false);
+            this.pnlContainerTercera.ResumeLayout(false);
+            this.pnlContainerSegunda.ResumeLayout(false);
+            this.pnlContainerPrimera.ResumeLayout(false);
+            this.pnlContainerRevisiones.ResumeLayout(false);
+            this.pnlContainerGeneral.ResumeLayout(false);
             this.pnlContenedorRev.ResumeLayout(false);
             this.pnlContenedorGral.ResumeLayout(false);
             this.pnlContenedorGral.PerformLayout();
-            this.pnlContainerGeneral.ResumeLayout(false);
-            this.pnlContainerRevisiones.ResumeLayout(false);
-            this.pnlSubMenus.ResumeLayout(false);
-            this.pnlContainerPrimera.ResumeLayout(false);
-            this.pnlContainerSegunda.ResumeLayout(false);
-            this.pnlContainerTercera.ResumeLayout(false);
-            this.pnlContainerCuarta.ResumeLayout(false);
-            this.pnlAdd1.ResumeLayout(false);
-            this.pnlAdd2.ResumeLayout(false);
-            this.pnlAdd3.ResumeLayout(false);
-            this.pnlAdd4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -914,7 +922,13 @@
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnTerceraRev;
+        private System.Windows.Forms.Button btnSegundaRev;
+        private System.Windows.Forms.Button btnPrimeraRev;
         private System.Windows.Forms.Button btnGeneralRev;
+        private System.Windows.Forms.Button btnCuartaRev;
+        private System.Windows.Forms.Button btnAddNewRev4;
         private System.Windows.Forms.Panel pnlContenedorRev;
         private System.Windows.Forms.Panel pnlContenedorGral;
         private System.Windows.Forms.TextBox txtCarreraGral;
@@ -943,34 +957,28 @@
         private System.Windows.Forms.TextBox txtTutorGral;
         private System.Windows.Forms.TextBox txtNombreGral;
         private System.Windows.Forms.TextBox txtRegistroGral;
-        private System.Windows.Forms.Panel pnlGeneral;
-        private System.Windows.Forms.Button btnCancelarNuevop;
-        private System.Windows.Forms.Button btnGuardarNuevoP;
         private System.Windows.Forms.Panel pnlContainerGeneral;
+        private System.Windows.Forms.Panel pnlGeneral;
+        private System.Windows.Forms.Panel pnlPrimeraRev;
+        private System.Windows.Forms.Panel pnlSegundaRev;
+        private System.Windows.Forms.Panel pnlTerceraRev;
         private System.Windows.Forms.Panel pnlContainerRevisiones;
         private System.Windows.Forms.Panel pnlRevisiones;
         private System.Windows.Forms.Button btnRevisiones;
+        private System.Windows.Forms.Button btnAddNewRev3;
+        private System.Windows.Forms.Button btnAddNewRev2;
+        private System.Windows.Forms.Button btnAddNewRev1;
+        private System.Windows.Forms.Panel pnlCuartaRev;
         private System.Windows.Forms.Panel pnlSubMenus;
         private System.Windows.Forms.Panel pnlAdd4;
-        private System.Windows.Forms.Button btnAddNewRev4;
         private System.Windows.Forms.Panel pnlAdd3;
-        private System.Windows.Forms.Button btnAddNewRev3;
         private System.Windows.Forms.Panel pnlAdd2;
-        private System.Windows.Forms.Button btnAddNewRev2;
         private System.Windows.Forms.Panel pnlAdd1;
-        private System.Windows.Forms.Button btnAddNewRev1;
         private System.Windows.Forms.Panel pnlContainerCuarta;
-        private System.Windows.Forms.Panel pnlCuartaRev;
-        private System.Windows.Forms.Button btnCuartaRev;
         private System.Windows.Forms.Panel pnlContainerTercera;
-        private System.Windows.Forms.Panel pnlTerceraRev;
-        private System.Windows.Forms.Button btnTerceraRev;
         private System.Windows.Forms.Panel pnlContainerSegunda;
-        private System.Windows.Forms.Panel pnlSegundaRev;
-        private System.Windows.Forms.Button btnSegundaRev;
         private System.Windows.Forms.Panel pnlContainerPrimera;
-        private System.Windows.Forms.Panel pnlPrimeraRev;
-        private System.Windows.Forms.Button btnPrimeraRev;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCancelarNuevop;
+        private System.Windows.Forms.Button btnGuardarNuevoP;
     }
 }
