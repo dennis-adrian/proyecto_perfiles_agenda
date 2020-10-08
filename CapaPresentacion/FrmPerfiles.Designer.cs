@@ -65,7 +65,7 @@
             this.pnlBuscar2.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar2.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBuscar2.Name = "pnlBuscar2";
-            this.pnlBuscar2.Size = new System.Drawing.Size(1080, 56);
+            this.pnlBuscar2.Size = new System.Drawing.Size(810, 46);
             this.pnlBuscar2.TabIndex = 2;
             // 
             // btnEditarRevisiones
@@ -76,9 +76,10 @@
             this.btnEditarRevisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarRevisiones.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarRevisiones.Location = new System.Drawing.Point(15, 13);
+            this.btnEditarRevisiones.Location = new System.Drawing.Point(11, 11);
+            this.btnEditarRevisiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditarRevisiones.Name = "btnEditarRevisiones";
-            this.btnEditarRevisiones.Size = new System.Drawing.Size(240, 33);
+            this.btnEditarRevisiones.Size = new System.Drawing.Size(180, 27);
             this.btnEditarRevisiones.TabIndex = 26;
             this.btnEditarRevisiones.Text = "Editar Revisiones";
             this.btnEditarRevisiones.UseVisualStyleBackColor = false;
@@ -94,9 +95,10 @@
             this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarPerfil.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscarPerfil.Location = new System.Drawing.Point(933, 13);
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(700, 11);
+            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
-            this.btnBuscarPerfil.Size = new System.Drawing.Size(96, 26);
+            this.btnBuscarPerfil.Size = new System.Drawing.Size(72, 21);
             this.btnBuscarPerfil.TabIndex = 25;
             this.btnBuscarPerfil.Text = "Buscar";
             this.btnBuscarPerfil.UseVisualStyleBackColor = false;
@@ -107,9 +109,10 @@
             this.txtBuscarPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarPerfil.Location = new System.Drawing.Point(667, 13);
+            this.txtBuscarPerfil.Location = new System.Drawing.Point(500, 11);
+            this.txtBuscarPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscarPerfil.Name = "txtBuscarPerfil";
-            this.txtBuscarPerfil.Size = new System.Drawing.Size(247, 27);
+            this.txtBuscarPerfil.Size = new System.Drawing.Size(186, 23);
             this.txtBuscarPerfil.TabIndex = 24;
             this.txtBuscarPerfil.TextChanged += new System.EventHandler(this.txtBuscarPerfil_TextChanged);
             // 
@@ -119,9 +122,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(467, 13);
+            this.label14.Location = new System.Drawing.Point(350, 11);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 24);
+            this.label14.Size = new System.Drawing.Size(152, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Nombre Estudiante";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -161,8 +165,7 @@
             this.dtgPerfilesTesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgPerfilesTesis.EnableHeadersVisualStyles = false;
             this.dtgPerfilesTesis.GridColor = System.Drawing.Color.Silver;
-            this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 56);
-            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 46);
             this.dtgPerfilesTesis.Name = "dtgPerfilesTesis";
             this.dtgPerfilesTesis.ReadOnly = true;
             this.dtgPerfilesTesis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -183,7 +186,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgPerfilesTesis.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgPerfilesTesis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgPerfilesTesis.Size = new System.Drawing.Size(1080, 744);
+            this.dtgPerfilesTesis.Size = new System.Drawing.Size(810, 604);
             this.dtgPerfilesTesis.TabIndex = 3;
             // 
             // ColumnaId
@@ -273,13 +276,15 @@
             // 
             // FrmPerfiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 800);
+            this.ClientSize = new System.Drawing.Size(810, 650);
             this.Controls.Add(this.dtgPerfilesTesis);
             this.Controls.Add(this.pnlBuscar2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(810, 650);
             this.Name = "FrmPerfiles";
             this.Text = "FrmPerfiles";
             this.pnlBuscar2.ResumeLayout(false);
