@@ -22,13 +22,30 @@ namespace CapaNegocio.defensaExterna
     {
         public ViewDefensas viewDefensas;
         public ViewDefensasCarrera viewDefensasCarrera;
+
+        private string tipo;
+        private string estudiante;
+        private string id_estudiante;
+        private string carrera;
+
+
         public Index()
         {
             viewDefensas = new ViewDefensas();
             viewDefensasCarrera = new ViewDefensasCarrera();
+            tipo = "";
+            estudiante = "";
+            id_estudiante = "";
+            carrera = "";
         }
-             
+
+        public string Tipo { get => tipo; set => tipo = value; }
+        public string Estudiante { get => estudiante; set => estudiante = value; }
+        public string Id_estudiante { get => id_estudiante; set => id_estudiante = value; }
+        public string Carrera { get => carrera; set => carrera = value; }
+
 
         ~Index(){ }
+
     }
 }

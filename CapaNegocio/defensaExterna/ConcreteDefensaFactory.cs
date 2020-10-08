@@ -12,8 +12,8 @@ namespace CapaNegocio.defensaExterna
         {
             switch (type)
             {
-                case "general":
-                    return new DefensaGeneral();
+                //case "general":
+                //    return new DefensaGeneral();
                 case "general_tipo":
                     return new DefensaGeneralTipo();
                 case "general_estudiante":

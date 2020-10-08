@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.defensaExterna
 {
-    public class DefensaGeneral : Index,IDefensa
+    public class DefensaGeneral : Index
     {
       
 

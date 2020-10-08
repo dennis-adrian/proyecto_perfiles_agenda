@@ -52,7 +52,7 @@ namespace CapaDatos.View
             string sql = "";
             if (estudiante == null && tipo == null)
             {
-                sql = $" SELECT * FROM ViewDefensas where Carrera = {carrera}  ; ";
+                sql = $" SELECT * FROM ViewDefensas where Carrera Like '%{carrera}%'  ; ";
             }
             else if (estudiante != null && tipo == null)
             {

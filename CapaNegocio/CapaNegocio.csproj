@@ -67,11 +67,15 @@
     <Compile Include="defensaExterna\DefensaCarreraEstudiante.cs" />
     <Compile Include="defensaExterna\DefensaCarreraTipo.cs" />
     <Compile Include="defensaExterna\DefensaCarreraTipoEstudiante.cs" />
+    <Compile Include="defensaExterna\defensaCarrera\Main.cs" />
     <Compile Include="defensaExterna\DefensaFactory.cs" />
     <Compile Include="defensaExterna\DefensaGeneral.cs" />
     <Compile Include="defensaExterna\DefensaGeneralEstudiante.cs" />
     <Compile Include="defensaExterna\DefensaGeneralTipo.cs" />
     <Compile Include="defensaExterna\DefensaGeneralTipoEstudiante.cs" />
+    <Compile Include="defensaExterna\defensaGeneral\Main.cs" />
+    <Compile Include="defensaExterna\editarDefensa\LoadInfo.cs" />
+    <Compile Include="defensaExterna\editarDefensa\UpdateDefensa.cs" />
     <Compile Include="defensaExterna\IDefensa.cs" />
     <Compile Include="defensaExterna\Index.cs" />
     <Compile Include="facultad\Index.cs" />

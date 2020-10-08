@@ -67,7 +67,7 @@ namespace CapaDatos.View
             }
             else
             {
-                sql = $" select * from ViewDefensas where Tipo = {tipo} Estudiante LIKE '%{estudiante}%';";
+                sql = $" select * from ViewDefensas where Tipo LIKE  '%{tipo}%' and Estudiante LIKE '%{estudiante}%';";
             }
              
             return obj.SelectConexion(sql);
