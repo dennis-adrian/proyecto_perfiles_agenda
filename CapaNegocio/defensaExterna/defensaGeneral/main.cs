@@ -7,18 +7,36 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.defensaExterna.defensaGeneral
 {
-    public class Main : Index
+    public class Main 
     {
-        public Main()
-        {
+        CapaDatos.View.DaoDefensas dao = new CapaDatos.View.DaoDefensas();
+    
 
+
+        private string tipo;
+        private string estudiante;
+        private string id_estudiante;
+        private string carrera;
+
+
+        public Main()
+        {        
+            tipo = "";
+            estudiante = "";
+            id_estudiante = "";
+            carrera = null;
         }
+
+        public string Tipo { get => tipo; set => tipo = value; }
+        public string Estudiante { get => estudiante; set => estudiante = value; }
+        public string Id_estudiante { get => id_estudiante; set => id_estudiante = value; }
+        public string Carrera { get => carrera; set => carrera = value; }
 
 
         public List<dynamic> defensas()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensas.Select();
+            var tabla = dao.getDenfensas();
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -39,7 +57,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasTipo()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensas.Select(Tipo);
+            var tabla = dao.getDenfensasTipo(Tipo);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -60,7 +78,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasEstudiante()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensas.Select(estudiante:Estudiante);
+            var tabla = dao.getDenfensaEstudiante(estudiante:Estudiante);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -81,7 +99,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasTipoEstudiante()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensas.Select(tipo:Tipo, estudiante: Estudiante);
+            var tabla = dao.getDenfensasTipoEstudiante(tipo:Tipo, estudiante: Estudiante);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -104,7 +122,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasCarrera()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensasCarrera.Select(Carrera);
+            var tabla = dao.getDenfensasCarrera(carrera:Carrera);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -123,7 +141,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasCarreraTipo()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensasCarrera.Select(carrera:Carrera,tipo:Tipo);
+            var tabla = dao.getDenfensasCarreraTipo(carrera:Carrera,tipo:Tipo);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -143,7 +161,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasCarreraEstudiante()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensasCarrera.Select(carrera: Carrera, estudiante: Estudiante);
+            var tabla = dao.getDenfensasCarreraEstudiante(carrera: Carrera, estudiante: Estudiante);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -162,7 +180,7 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         public List<dynamic> defensasCarreraTipoEstudiante()
         {
             List<dynamic> lista_defensa = new List<dynamic>();
-            var tabla = viewDefensasCarrera.Select(carrera: Carrera, estudiante: Estudiante,tipo:Tipo);
+            var tabla = dao.getDenfensasCarreraTipoEstudiante(carrera: Carrera, estudiante: Estudiante,tipo:Tipo);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dynamic obj = new ExpandoObject();
@@ -180,5 +198,11 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
         }
 
         #endregion
+
+
+        ~Main()
+        {
+
+        }
     }
 }

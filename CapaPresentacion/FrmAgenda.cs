@@ -26,136 +26,71 @@ namespace CapaPresentacion
     /// </summary>
     public partial class FrmAgenda : Form
     {
+        #region Instancias y atributos
+        Main general = new Main();
+        string carrera = null;
+        string tipo = null;
+        #endregion
 
-        CapaNegocio.defensaExterna.defensaGeneral.Main general = new CapaNegocio.defensaExterna.defensaGeneral.Main();
-        public FrmAgenda(string carrera)
+
+        #region Constructor
+        public FrmAgenda(string criterio)
         {
-            general.Carrera = carrera;
             InitializeComponent();
+            this.carrera = criterio;
             InitializeDefensas();
         }
-        /// <summary>
-        /// LOGICA DEL FORMULARIO
-        /// </summary>
+        #endregion
+
+
+        #region Logica
+
+
         public void InitializeDefensas()
         {
-            //if(general.Carrera != "" || general.Carrera != null)
-            //{
-
-            //    ClearDatagrid();
-
-            //    defensaGeneralCarrera();
-            //}
-            //else
-            //{
-            
-                ClearDatagrid();
-                DefensaGeneral();
-            
-
-            //}
-        }
-        /// <summary>
-        /// PRIMER METODO
-        /// </summary>
-        public void DefensaGeneral()
-        {
-            var lista =  general.defensas();
-            int count = 1;
-            foreach (var item in lista)
-            {
-                string[] row = new string[] {
-
-                            item.Id,
-                            count.ToString(),
-                            item.Fecha_Defensa,
-                            item.Hora,
-                            item.Aula,
-                            item.Tipo,
-                            item.Tema,
-                            item.Registro,
-                            item.Estudiante,
-                            item.Carrera,
-                            item.Facultad
-
-                        };
-                dtgDefensaExterna.Rows.Add(row);
-                count++;
-            }
-
+            general.Carrera = this.carrera;
+            ClearDatagrid();
+            Defensa();
         
         }
-        
-        public void DefensaGeneralTipo(string tipo)
+        public void Defensa()
         {
-            general.Tipo = tipo;
-
-            var lista = general.defensasTipo();
-            int count = 1;
-            foreach (var item in lista)
+            if(general.Carrera == null)
             {
-                string[] row = new string[] {
 
-                            item.Id,
-                            count.ToString(),
-                            item.Fecha_Defensa,
-                            item.Hora,
-                            item.Aula,
-                            item.Tipo,
-                            item.Tema,
-                            item.Registro,
-                            item.Estudiante,
-                            item.Carrera,
-                            item.Facultad
+                var lista = general.defensas();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                        item.Id,
+                        count.ToString(),
+                        item.Fecha_Defensa,
+                        item.Hora,
+                        item.Aula,
+                        item.Tipo,
+                        item.Tema,
+                        item.Registro,
+                        item.Estudiante,
+                        item.Carrera,
+                        item.Facultad
 
                         };
-                dtgDefensaExterna.Rows.Add(row);
-                count++;
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+
+                }
             }
-
-        }
-
-        public void DefensaGeneralEstudiante(string estudiante)
-        {
-            general.Estudiante = estudiante;
-
-            var lista = general.defensasEstudiante();
-            int count = 1;
-            foreach (var item in lista)
+            else
             {
-                string[] row = new string[] {
-
-                            item.Id,
-                            count.ToString(),
-                            item.Fecha_Defensa,
-                            item.Hora,
-                            item.Aula,
-                            item.Tipo,
-                            item.Tema,
-                            item.Registro,
-                            item.Estudiante,
-                            item.Carrera,
-                            item.Facultad
-
-                        };
-                dtgDefensaExterna.Rows.Add(row);
-                count++;
-            }
-
-        }
-        public void ClearDatagrid()
-        {
-            dtgDefensaExterna.Rows.Clear();
-        }
-
-
-        public void defensaGeneralCarrera()
-        {
-            var lista = general.defensasCarrera();
-            int count = 1;
-            foreach (var item in lista)
-            {
-                string[] row = new string[] {
+                dtgDefensaExterna.Columns["ColumnaCarrera"].Visible = false;
+                dtgDefensaExterna.Columns["ColumnaFacultad"].Visible = false;
+                var lista = general.defensasCarrera();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
 
                             item.Id,
                             count.ToString(),
@@ -167,18 +102,217 @@ namespace CapaPresentacion
                             item.Registro,
                             item.Estudiante
 
+
                         };
-                dtgDefensaExterna.Rows.Add(row);
-                count++;
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+                }
             }
+
+        
+        }
+        
+        public void DefensaTipo(string tipo)
+        {
+            general.Tipo = tipo;
+            if (general.Carrera == null)
+            {
+
+                var lista = general.defensasTipo();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                        item.Id,
+                        count.ToString(),
+                        item.Fecha_Defensa,
+                        item.Hora,
+                        item.Aula,
+                        item.Tipo,
+                        item.Tema,
+                        item.Registro,
+                        item.Estudiante,
+                        item.Carrera,
+                        item.Facultad
+
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+
+                }
+            }
+            else
+            {
+                dtgDefensaExterna.Columns["ColumnaCarrera"].Visible = false;
+                dtgDefensaExterna.Columns["ColumnaFacultad"].Visible = false;
+                var lista = general.defensasCarreraTipo();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                            item.Id,
+                            count.ToString(),
+                            item.Fecha_Defensa,
+                            item.Hora,
+                            item.Aula,
+                            item.Tipo,
+                            item.Tema,
+                            item.Registro,
+                            item.Estudiante
+
+
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+                }
+            }
+
 
         }
 
+        public void DefensaEstudiante(string estudiante)
+        {
+
+            general.Estudiante = estudiante;
+            if (general.Carrera == null)
+            {
+
+                var lista = general.defensasEstudiante();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                        item.Id,
+                        count.ToString(),
+                        item.Fecha_Defensa,
+                        item.Hora,
+                        item.Aula,
+                        item.Tipo,
+                        item.Tema,
+                        item.Registro,
+                        item.Estudiante,
+                        item.Carrera,
+                        item.Facultad
+
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+
+                }
+            }
+            else
+            {
+                dtgDefensaExterna.Columns["ColumnaCarrera"].Visible = false;
+                dtgDefensaExterna.Columns["ColumnaFacultad"].Visible = false;
+                var lista = general.defensasCarreraEstudiante();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                            item.Id,
+                            count.ToString(),
+                            item.Fecha_Defensa,
+                            item.Hora,
+                            item.Aula,
+                            item.Tipo,
+                            item.Tema,
+                            item.Registro,
+                            item.Estudiante
 
 
-        /// <summary>
-        /// DISEÑO Y EFECTOS
-        /// </summary>
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+                }
+            }
+
+
+        }
+        public void DefensaTipoEstudiante(string tipo ,string estudiante)
+        {
+            general.Tipo = tipo;
+            general.Estudiante = estudiante;
+            if (general.Carrera == null)
+            {
+
+                var lista = general.defensasTipoEstudiante();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                        item.Id,
+                        count.ToString(),
+                        item.Fecha_Defensa,
+                        item.Hora,
+                        item.Aula,
+                        item.Tipo,
+                        item.Tema,
+                        item.Registro,
+                        item.Estudiante,
+                        item.Carrera,
+                        item.Facultad
+
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+
+                }
+            }
+            else
+            {
+                dtgDefensaExterna.Columns["ColumnaCarrera"].Visible = false;
+                dtgDefensaExterna.Columns["ColumnaFacultad"].Visible = false;
+                var lista = general.defensasCarreraTipoEstudiante();
+                int count = 1;
+                foreach (var item in lista)
+                {
+                    string[] row = new string[] {
+
+                            item.Id,
+                            count.ToString(),
+                            item.Fecha_Defensa,
+                            item.Hora,
+                            item.Aula,
+                            item.Tipo,
+                            item.Tema,
+                            item.Registro,
+                            item.Estudiante
+
+
+                        };
+                    dtgDefensaExterna.Rows.Add(row);
+                    count++;
+                }
+            }
+
+
+        }
+
+        public void typeButtonAction(IconButton btn)
+        {
+            string type = btn.Text == "Todas las Defensas" ? null : btn.Text;
+            this.tipo = type;
+            ClearDatagrid();
+            DefensaTipo(type);
+            ocultarPaneles();
+
+        }
+
+        public void ClearDatagrid()
+        {
+            dtgDefensaExterna.Rows.Clear();
+        }
+
+
+        #endregion
+
+
+        #region Diseño
         private void ocultarPaneles()
         {
             if (pnlFiltroDefensa.Visible == true)
@@ -266,33 +400,21 @@ namespace CapaPresentacion
         }
 
        
- 
-       
 
         private void btnExamenGrado_Click(object sender, EventArgs e)
         {
-            string tipo = btnExamenGrado.Text;
-            ClearDatagrid();
-            DefensaGeneralTipo(tipo);
-            ocultarPaneles();
+
+            typeButtonAction(btnExamenGrado);
         }
 
         private void btnTesis_Click(object sender, EventArgs e)
         {
-
-            string tipo = btnTesis.Text;
-            ClearDatagrid();
-            DefensaGeneralTipo(tipo);
-            ocultarPaneles();
+            typeButtonAction(btnTesis);
         }
 
         private void btnPorExecencia_Click(object sender, EventArgs e)
         {
-
-            string tipo = btnPorExecencia.Text;
-            ClearDatagrid();
-            DefensaGeneralTipo(tipo);
-            ocultarPaneles();
+            typeButtonAction(btnPorExecencia);
         }
 
         private void btnFiltro_Click(object sender, EventArgs e)
@@ -302,111 +424,28 @@ namespace CapaPresentacion
 
         private void btntTodasDefensas_Click(object sender, EventArgs e)
         {
-            ClearDatagrid();
-            DefensaGeneral();
-            ocultarPaneles();
+            typeButtonAction(btntTodasDefensas);
         }
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
             string estudiante = txtBuscarDefensa.Text;
-            ClearDatagrid();
-            DefensaGeneralEstudiante(estudiante);
+            if(this.tipo == null)
+            {
 
+                ClearDatagrid();
+                DefensaEstudiante(estudiante);
+
+            }
+            else
+            {
+
+                ClearDatagrid();
+                DefensaTipoEstudiante(this.tipo,estudiante);
+
+            }
         }
 
+        #endregion
     }
-    //public class App
-    //{
-    //    string carrera = null;
-    //    string tipo = null;
-    //    string estudiante = null;
-    //    public App()
-    //    {
-
-    //    }
-
-
-    //    DefensaFactory factory = new ConcreteDefensaFactory();
-
-    //    public string Tipo { get => tipo; set => tipo = value; }
-    //    public string Estudiante { get => estudiante; set => estudiante = value; }
-    //    public string Carrera { get => carrera; set => carrera = value; }
-
-    //    public void fillcarrera()
-    //    {
-
-    //    }
-    //    public void fillDefensa(DataGridView dtg,
-    //        List<dynamic> lista)
-    //    {
-
-    //        int count = 1;
-    //        foreach (var item in lista)
-    //        {
-    //            string[] row = new string[] {
-
-    //                item.Id,
-    //                count.ToString(),
-    //                item.Fecha_Defensa,
-    //                item.Hora,
-    //                item.Aula,
-    //                item.Tipo,
-    //                item.Tema,
-    //                item.Registro,
-    //                item.Estudiante,
-    //                item.Carrera,
-    //                item.Facultad
-
-    //            };
-    //            dtg.Rows.Add(row);
-    //            count++;
-    //        }
-
-    //    }
-    //    public void main(int type, DataGridView dtg)
-    //    {
-    //        try
-    //        {
-    //            List<dynamic> lista = new List<dynamic>();
-    //            switch (type)
-    //            {
-
-    //                case 1:
-    //                    IDefensa general = factory.GetDefensas("general");
-    //                    lista = general.defensas();
-    //                    fillDefensa(dtg, lista);
-    //                    break;
-    //                case 2:
-
-    //                    IDefensa general_tipo = factory.GetDefensas("general_tipo");
-    //                    lista = general_tipo.defensas(Tipo);
-    //                    fillDefensa(dtg, lista);
-    //                    break;
-    //                case 3:
-    //                    IDefensa general_estudiante = factory.GetDefensas("general_estudiante");
-    //                    lista = general_estudiante.defensas(null, Tipo);
-    //                    fillDefensa(dtg, lista);
-    //                    break;
-    //                case 4:
-    //                    IDefensa general_tipo_estudiante = factory.GetDefensas("general_tipo_estudiante");
-    //                    lista = general_tipo_estudiante.defensas(Tipo, Estudiante);
-    //                    fillDefensa(dtg, lista);
-    //                    break;
-
-    //                default:
-    //                    throw new ApplicationException(string.Format("error de operacion"));
-
-
-    //            }
-    //        }
-    //        catch(Exception e)
-    //        {
-    //            MessageBox.Show(e.Message+"XD");
-    //        }
-            
-    //    }
-
-
-    //}
 }
