@@ -330,66 +330,51 @@ namespace CapaPresentacion
                 submenu.Visible = false;
         }
 
-        
+        public void actionEdit(Form form, DataGridView dtg)
+        {
+
+
+            if (dtg.CurrentRow != null)
+            {
+                form.ShowDialog();
+
+            }
+            else
+            {;
+            }
+        }
         
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
+            
             string tipo = dtgDefensaExterna.CurrentRow.Cells[5].Value.ToString();
-            switch (tipo)
+            if (tipo != null)
             {
-                case "Tesis":
-                    if (dtgDefensaExterna.CurrentRow != null)
-                    {
-                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
-                        FrmTesisAgenda frm = new FrmTesisAgenda();
-                        frm.ShowDialog();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("No ha seleccionado ninguna revisión");
-                    }
-
-
-                    break;
-                case "Examen de Grado":
-                    if (dtgDefensaExterna.CurrentRow != null)
-                    {
-                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
-                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado,"",tipo);
-                        frm.ShowDialog();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("No ha seleccionado ninguna revisión");
-                    }
-
-
-
-                    break;
-                case "Graduacion por Excelencia":
-                    if (dtgDefensaExterna.CurrentRow != null)
-                    {
-                        int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
-                        FrmEditarDefensaExterna frm = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
-                        frm.ShowDialog();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("No ha seleccionado ninguna revisión");
-                    }
-
-
-
-                    break;
-                default:
-                    break;
-
-
+                int id_seleccionado = Convert.ToInt32(dtgDefensaExterna.CurrentRow.Cells[0].Value.ToString());
+                switch (tipo)
+                {
+                    case "Tesis":
+                        FrmTesisAgenda formTesis = new FrmTesisAgenda(id_seleccionado,"","Tesis");
+                        formTesis.ShowDialog();
+                        break;
+                    case "Examen de Grado":
+                        FrmEditarDefensaExterna formExamen = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
+                        formExamen.ShowDialog();
+                        break;
+                    case "Graduacion por Excelencia":
+                        FrmEditarDefensaExterna formGraduacion = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
+                        formGraduacion.ShowDialog();
+                        break;
+                    default:
+                        break;
+                }
             }
+            else
+            {
 
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
            
 
         }

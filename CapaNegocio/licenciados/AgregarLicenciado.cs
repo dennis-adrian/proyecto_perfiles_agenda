@@ -8,7 +8,7 @@ namespace CapaNegocio.licenciados
 {
     public class AgregarLicenciado : Index
     {
-        public AgregarLicenciado()
+        public AgregarLicenciado() : base()
         {
         }
 

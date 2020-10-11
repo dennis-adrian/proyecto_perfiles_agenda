@@ -1,85 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos.Models;
-using CapaNegocio.src;
 
-
-
-namespace CapaNegocio
+namespace CapaNegocio.defensaExterna.defensaPerfil.otros
 {
-    public class NegocioNuevaDefensa : ValidationInputUI
+    public class AgregarDefensa:defensaPerfil.Index
     {
-        #region  Construct
-        public NegocioNuevaDefensa(){
-
-        }
-
-        #endregion
-
-
-        #region Instancias
-        Carrera carrera = new Carrera();
-        Estudiante estudiante = new Estudiante();
-        DefensaExterna defensaExterna = new DefensaExterna();
-        DetalleDefensa detalleDefensa = new DetalleDefensa();
-        TitulacionOtros titulacionOtros = new TitulacionOtros();
-        TipoTitulacionOtros tipoTitulacionOtros = new TipoTitulacionOtros();
-        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
-        DataTypes type = new DataTypes();
-
-
-        #endregion
-
-        #region Atributos
-
-        Object[] parametros;
-
-        #endregion
-
-        #region  Metodos
-        public void ControlInput(Object[] Collection)
+        public AgregarDefensa() : base()
         {
-            try
-            {
-                Validation(Collection);
-                parametros = Collection;
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
 
         }
-        public void Main(int operacion = 1)
-        {
-            try
-            {
-                switch (operacion)
-                {
-                    case 1:
-                        InsertDefensaTitulacionOtros(parametros);
-                        break;
-                    case 2:
-                        NuevaDefensaTesis(parametros);
-                        break;
-                    default:
-                        break;
-                }
-                
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("" + e);
-            }
-           
 
-        }
-       
-        public void InsertDefensaTitulacionOtros(Object[] Collection)
+        public void mainOtros(Object[] Collection)
         {
             try
             {
@@ -96,7 +30,7 @@ namespace CapaNegocio
                 string cel = Convert.ToString(Collection[5]);
                 estudiante.Celular = (cel == "") ? "" : cel;
                 estudiante.Id_carrera = Convert.ToInt32(Collection[6]);
-                
+
                 titulacionOtros.Estado_defensa = "pendiente";
                 titulacionOtros.Tema = Convert.ToString(Collection[7]);
 
@@ -112,13 +46,13 @@ namespace CapaNegocio
 
 
 
-                type.Fecha =  Convert.ToString(Collection[9]);
+                type.Fecha = Convert.ToString(Collection[9]);
                 defensaExterna.Fecha_presentacion = type.Fecha;
                 string hr = Convert.ToString(Collection[10]);
                 defensaExterna.Hora = hr;
                 type.Aula = Convert.ToString(Collection[11]);
                 defensaExterna.Aula = type.Aula;
-                
+
                 defensaExterna.Id_tesis = 0;
                 defensaExterna.Id_titulacion_otro = titulacionOtros.LastId();
                 defensaExterna.Insert();
@@ -162,7 +96,7 @@ namespace CapaNegocio
                 detalleDefensa.Insert();
 
 
-                
+
 
 
 
@@ -174,13 +108,13 @@ namespace CapaNegocio
             }
         }
 
-        public void NuevaDefensaTesis(Object[] Collection)
+        public void mainTesis(Object[] Collection)
         {
             try
             {
                 defensaExterna.Fecha_presentacion = "";
 
-                defensaExterna.Hora = "";               
+                defensaExterna.Hora = "";
                 defensaExterna.Aula = "";
                 int idtesis = Convert.ToInt32(Collection[0]);
                 defensaExterna.Id_tesis = idtesis;
@@ -194,25 +128,7 @@ namespace CapaNegocio
             }
         }
 
-        
 
 
-        public DataTable cargarCarreras()
-        {
-            DataTable dt1 = carrera.Select();
-
-            return dt1;
-        }
-        #endregion
-
-
-
-
-        #region Destruct
-
-        ~NegocioNuevaDefensa(){
-
-        }
-        #endregion
     }
 }

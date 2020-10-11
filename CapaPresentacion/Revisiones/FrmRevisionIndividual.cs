@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
+using CapaNegocio.defensaExterna.defensaPerfil.otros;
 using CapaNegocio;
 using System.Globalization;
 
@@ -25,7 +26,7 @@ namespace CapaPresentacion
         #region instancias
 
         NegocioRevisiones obj = new NegocioRevisiones();
-        NegocioNuevaDefensa nuevadefensa = new NegocioNuevaDefensa();
+        AgregarDefensa nuevadefensa = new AgregarDefensa();
 
         #endregion
 
@@ -265,8 +266,7 @@ namespace CapaPresentacion
 
                     Object[] datos = new Object[]
                    { this.id_perfil};
-                    nuevadefensa.ControlInput(datos);
-                    nuevadefensa.Main(2);
+                    nuevadefensa.inputController(datos,nuevadefensa.mainTesis);
                     MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
                     //hacer el insert aqui
                 }

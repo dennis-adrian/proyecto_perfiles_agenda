@@ -10,19 +10,21 @@ namespace CapaNegocio.defensaExterna.defensaPerfil
 {
     public class Index : src.Controller
     {
-        Carrera carrera = new Carrera();
-        Estudiante estudiante = new Estudiante();
-        DefensaExterna defensaExterna = new DefensaExterna();
-        DetalleDefensa detalleDefensa = new DetalleDefensa();
-        TitulacionOtros titulacionOtros = new TitulacionOtros();
-        TipoTitulacionOtros tipoTitulacionOtros = new TipoTitulacionOtros();
-        FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
-        src.DataTypes type = new src.DataTypes();
+        public Estudiante estudiante = new Estudiante();
+        public Carrera carrera;
+        public DefensaExterna defensaExterna;
+        public DetalleDefensa detalleDefensa;
+        public TitulacionOtros titulacionOtros = new TitulacionOtros();
+        public TipoTitulacionOtros tipoTitulacionOtros = new TipoTitulacionOtros();
+        public FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
+        public src.DataTypes type = new src.DataTypes();
 
 
         public Index()
         {
-
+            carrera = new Carrera();
+            defensaExterna = new DefensaExterna();
+            detalleDefensa = new DetalleDefensa();
         }
 
 
