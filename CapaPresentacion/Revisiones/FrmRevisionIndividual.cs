@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
+using CapaNegocio.defensaExterna.defensaPerfil.otros;
 using CapaNegocio;
 using System.Globalization;
 
@@ -25,7 +26,7 @@ namespace CapaPresentacion
         #region instancias
 
         NegocioRevisiones obj = new NegocioRevisiones();
-        NegocioNuevaDefensa nuevadefensa = new NegocioNuevaDefensa();
+        AgregarDefensa nuevadefensa = new AgregarDefensa();
 
         #endregion
 
@@ -37,6 +38,7 @@ namespace CapaPresentacion
             InitializeComponent();
             this.id_perfil = id;
             this.num_revision = nro;
+            cargarNombreTribunales();
             inicializarDateTimePickers();
             ShowData();
         }
@@ -66,16 +68,40 @@ namespace CapaPresentacion
 
         }
 
+        public void cargarNombreTribunales()
+        {
+            try
+            {
+                var trib1 = obj.InfoRevisionTribunal(id_perfil, num_revision, 1)[13];
+                var trib2 = obj.InfoRevisionTribunal(id_perfil, num_revision, 2)[13];
+                btnTribunal1.Text = trib1.ToString();
+                btnTribunal2.Text = trib2.ToString();
+
+                if (btnTribunal1.Text == "" || btnTribunal1.Text == null)
+                {
+                    btnTribunal1.Text = "Tribunal 1";
+                }
+                if (btnTribunal2.Text == "" || btnTribunal2.Text == null)
+                {
+                    btnTribunal2.Text = "Tribunal 2";
+                }
+            }
+            catch (Exception e)
+            {
+                throw (e);
+            }
+        }
         public void ShowData()
         {
-            if(rbTribunal1.Checked == true)
+            infoRevision(this.id_perfil, this.num_revision, 1);
+            /*if (rbTribunal1.Checked == true)
             {
                 infoRevision(this.id_perfil, this.num_revision, 1);
             }
             else if(rbTribunal2.Checked == true)
             {
                 infoRevision(this.id_perfil, this.num_revision, 2);
-            }
+            }*/
         }
 
         
@@ -240,8 +266,7 @@ namespace CapaPresentacion
 
                     Object[] datos = new Object[]
                    { this.id_perfil};
-                    nuevadefensa.ControlInput(datos);
-                    nuevadefensa.Main(2);
+                    nuevadefensa.inputController(datos,nuevadefensa.mainTesis);
                     MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
                     //hacer el insert aqui
                 }
@@ -276,7 +301,7 @@ namespace CapaPresentacion
 
             if (registro <= 0)
             {
-               txtEstadoDatos.Text = "sin datos asignados";
+                txtEstadoDatos.Text = "sin datos asignados";
                 this.id_revision = 0;
                 lbIdRevision.Text = Convert.ToString(0);
                 ClearForms();
@@ -469,5 +494,23 @@ namespace CapaPresentacion
 
         }
         #endregion
+
+
+        private void btnTribunal1_Click(object sender, EventArgs e)
+        {
+            rbTribunal2.Checked = false;
+            rbTribunal1.Checked = true;
+            pnlResaltadoTrib1.Visible = true;
+            pnlResaltadoTrib2.Visible = false;
+        }
+
+        private void btnTribunal2_Click(object sender, EventArgs e)
+        {
+            rbTribunal1.Checked = false;
+            rbTribunal2.Checked = true;
+            pnlResaltadoTrib2.Visible = true;
+            pnlResaltadoTrib1.Visible = false;
+            Console.WriteLine(btnTribunal2.Text);
+        }
     }
 }

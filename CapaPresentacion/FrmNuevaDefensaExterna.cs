@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
+using CapaNegocio.defensaExterna.defensaPerfil.otros;
 using CapaPresentacion.ContractForms;
 using CapaPresentacion.Resources;
 
@@ -16,7 +16,9 @@ namespace CapaPresentacion
     public partial class FrmNuevaDefensaExterna : Form, IContractLicenciado
     {
         #region Instancias
-        NegocioNuevaDefensa obj = new NegocioNuevaDefensa();
+
+        AgregarDefensa obj = new AgregarDefensa();
+        
         #endregion
         #region Atributos
         private FrmTutor Tutor = null;
@@ -287,8 +289,7 @@ namespace CapaPresentacion
                 f_uagram2 //input 25
 
            };
-            obj.ControlInput(datos);
-            obj.Main();
+            obj.inputController(datos,obj.mainOtros);
         }
 
 

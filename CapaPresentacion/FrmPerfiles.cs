@@ -178,5 +178,21 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dtgPerfilesTesis_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgPerfilesTesis.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
+                int cantidadRevisiones = 1;
+                FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
+                frm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
+        }
     }
 }

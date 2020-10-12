@@ -91,8 +91,8 @@ namespace CapaPresentacion
 
 
         #region Instancias
-
-        NegocioLicenciados obj = new NegocioLicenciados();
+        Index obj = new Index();
+        //NegocioLicenciados obj = new NegocioLicenciados();
 
         #endregion
 
@@ -302,7 +302,8 @@ namespace CapaPresentacion
         public void info(int i)
         {
 
-            var Collection = obj.InfoLicenciado(i);
+            InfoLicenciado obj = new InfoLicenciado(i);
+            var Collection = obj.main();
 
             txtNombreLicenciado.Text = Convert.ToString(Collection[1]);
             txtApellidoLicenciado.Text = Convert.ToString(Collection[2]);
@@ -356,13 +357,14 @@ namespace CapaPresentacion
         {
             cmbInstitucion.DataSource = null;
             cmbInstitucion.Items.Clear();
-            cmbInstitucion.DataSource = obj.cargarInstitucio();
+            cmbInstitucion.DataSource = obj.cargarInstitucion();
             cmbInstitucion.ValueMember = "id";
             cmbInstitucion.DisplayMember = "nombre";
 
         }
         public void ShowLicenciados()
         {
+            MostrarLicenciados obj = new MostrarLicenciados();
             var list = obj.Licenciados();
             var bindingList = new BindingList<ViewLicenciados>(list);
             var source = new BindingSource(bindingList, null);
@@ -396,6 +398,16 @@ namespace CapaPresentacion
                 rbDocenteNo.Enabled = false;
                 rbDocenteNo.Checked = true;
             }
+        }
+
+        private void dtgLicenciados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+            string tutor = (dtgLicenciados.CurrentRow.Cells[1].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[2].Value.ToString());
+
+            //usando el contrato interfaz
+            contrato.Ejecutar(id_seleccionado, tutor);
+            this.Close();
         }
     }
 }

@@ -96,12 +96,87 @@ namespace CapaDatos.Models
             return LastIdConexion(table_name);
         }
 
-        public DataTable InfoDefensaOtros(int iddefensa)
+        public DataTable infoDefensaOtros(int iddefensa)
         {
-            string sql = $" select DE.id as Id, DE.fecha_presentacion as Fecha_presentacion, DE.hora as Hora, DE.aula as Aula,  DE.id_titulacion_otro as Id_titulacion_otro, TOS.estado_defensa as Estado_defensa, TOS.tema as Tema, TOS.calificacion as Calificacion, TOS.id_tipo_titulacion as Id_tipo_titulacion, TOS.id_estudiante as Id_estudiante, ES.registro as Registro, ES.nombre as Nombre , ES.apellido as Apellido, ES.email as Email, ES.telefono as Telefono, ES.celular as Celular, ES.id_carrera as Id_carrera, CA.nombre as Carrera from defensa_externa as DE inner join titulacion_otros AS TOS on  TOS.id = DE.id_titulacion_otro inner join estudiante as ES on ES.id = TOS.id_estudiante inner join carrera as CA on ES.id_carrera = CA.id where DE.id = { iddefensa } ;";
+            string sql = $@" select 
+                            DE.id as Id, 
+                            DE.fecha_presentacion as Fecha_presentacion, 
+                            DE.hora as Hora, 
+                            DE.aula as Aula,  
+                            DE.id_titulacion_otro as Id_titulacion_otro, 
+                            TOS.estado_defensa as Estado_defensa, 
+                            TOS.tema as Tema, 
+                            TOS.calificacion as Calificacion, 
+                            TOS.id_tipo_titulacion as Id_tipo_titulacion, 
+                            TOS.id_estudiante as Id_estudiante, 
+                            ES.registro as Registro, 
+                            ES.nombre as Nombre , 
+                            ES.apellido as Apellido, 
+                            ES.email as Email, 
+                            ES.telefono as Telefono, 
+                            ES.celular as Celular, 
+                            ES.id_carrera as Id_carrera, 
+                            CA.nombre as Carrera 
+
+                            from 
+                            defensa_externa as DE 
+                            inner join titulacion_otros AS TOS 
+                            on  TOS.id = DE.id_titulacion_otro 
+                            inner join estudiante as ES 
+                            on ES.id = TOS.id_estudiante 
+                            inner join carrera as CA 
+                            on ES.id_carrera = CA.id 
+                            where DE.id = { iddefensa } ;  ";
 
             return SelectConexion(sql);
 
+        }
+
+        public DataTable infoDefensaTesis(int id_defensa)
+        {
+            string sql = $@"   select 
+                                   DE.id as Id, 
+                                   DE.fecha_presentacion as Fecha_presentacion, 
+                                   DE.hora as Hora, 
+                                   DE.aula as Aula,  
+                                   DE.id_tesis as Id_tesis,
+                                   PF.estado as Estado,
+                                   PF.fecha_aprobacion_jefe_carrera as Fecha_aprobacion_jefe_carrera,
+                                   PF.fecha_recepcion_titulacion as Fecha_recepcion_titulacion,
+                                   PF.estado_defensa as Estado_defensa, 
+                                   PF.tema as Tema, 
+                                   PF.calificacion as Calificacion, 
+                                   PF.id_estudiante as Id_estudiante, 
+                                   ES.registro as Registro, 
+                                   ES.nombre as Nombre , 
+                                   ES.apellido as Apellido, 
+                                   ES.email as Email, 
+                                   ES.telefono as Telefono, 
+                                   ES.celular as Celular, 
+                                   ES.id_carrera as Id_carrera, 
+                                   CA.nombre as Carrera ,
+                                   PF.id_licenciado as Id_licenciado,
+                                   LI.nombre as NombreLicenciado,
+                                   LI.apellido as ApellidoLicenciado,
+                                   PF.id_funcion_licenciado as Id_funcion_licenciado,
+                                   FL.funcion as Funcion
+
+                                   from 
+                                   defensa_externa as DE 
+                                   inner join 
+                                   perfil_tesis AS PF 
+                                   on  PF.id = DE.id_tesis 
+                                   inner join estudiante as ES 
+                                   on ES.id = PF.id_estudiante 
+                                   inner join carrera as CA 
+                                   on ES.id_carrera = CA.id 
+                                   inner join licenciado as LI 
+                                   on LI.id = PF.id_licenciado
+                                   inner join funcion_licenciado as FL 
+                                   on FL.id = PF.id_funcion_licenciado 
+                            WHERE DE.id = {id_defensa} ; ";
+
+            return SelectConexion(sql);
         }
 
         #endregion

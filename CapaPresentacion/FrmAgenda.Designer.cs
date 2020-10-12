@@ -122,7 +122,7 @@
             this.txtBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDefensa.Location = new System.Drawing.Point(667, 14);
+            this.txtBuscarDefensa.Location = new System.Drawing.Point(690, 18);
             this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarDefensa.Name = "txtBuscarDefensa";
             this.txtBuscarDefensa.Size = new System.Drawing.Size(247, 27);
@@ -300,13 +300,15 @@
             // dtgDefensaExterna
             // 
             this.dtgDefensaExterna.AllowUserToAddRows = false;
+            this.dtgDefensaExterna.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDefensaExterna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDefensaExterna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgDefensaExterna.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgDefensaExterna.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgDefensaExterna.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgDefensaExterna.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
@@ -314,7 +316,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgDefensaExterna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgDefensaExterna.ColumnHeadersHeight = 34;
+            this.dtgDefensaExterna.ColumnHeadersHeight = 40;
             this.dtgDefensaExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgDefensaExterna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaId,
@@ -328,7 +330,6 @@
             this.ColumnaEstudiante,
             this.ColumnaCarrera,
             this.ColumnaFacultad});
-            this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
             this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
@@ -346,14 +347,15 @@
             this.dtgDefensaExterna.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgDefensaExterna.RowHeadersVisible = false;
             this.dtgDefensaExterna.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgDefensaExterna.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgDefensaExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDefensaExterna.Size = new System.Drawing.Size(1080, 531);
+            this.dtgDefensaExterna.Size = new System.Drawing.Size(1080, 532);
             this.dtgDefensaExterna.TabIndex = 0;
             this.dtgDefensaExterna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDefensaExterna_CellContentClick);
             // 
@@ -447,6 +449,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1080, 588);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
             this.pnlBuscar.ResumeLayout(false);

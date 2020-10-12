@@ -1001,6 +1001,10 @@ namespace CapaPresentacion
 
         }
 
-     
+        private void btnNotificaciones_Click(object sender, EventArgs e)
+        {
+            showSubMenus(pnlNotificaciones);
+            
+        }
     }
 }

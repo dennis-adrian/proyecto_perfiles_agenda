@@ -93,7 +93,7 @@ namespace CapaNegocio.src
 
             set
             {
-                if (Regex.IsMatch(value, @"^[0-9a-zA-Z]{6,10}$"))
+                if (Regex.IsMatch(value, @"^[0-9a-zA-Z]{5,10}$"))
                 {
                     this.registro = value;
                 }
