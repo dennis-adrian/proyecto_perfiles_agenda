@@ -58,6 +58,11 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
                 obj.Hora = dt.Rows[i]["Hora"].ToString();
                 obj.Aula = dt.Rows[i]["Aula"].ToString();
                 obj.Id_tesis = Convert.ToInt32(dt.Rows[i]["Id_tesis"].ToString());
+                obj.Estado = dt.Rows[i]["Estado"].ToString();
+                obj.Fecha_aprobacion_jefe_carrera= dt.Rows[i]["Fecha_aprobacion_jefe_carrera"].ToString();
+                obj.Fecha_recepcion_titulacion = dt.Rows[i]["Fecha_recepcion_titulacion"].ToString();
+
+
                 obj.Estado_defensa = dt.Rows[i]["Estado_defensa"].ToString();
                 obj.Tema = dt.Rows[i]["Tema"].ToString();
                 obj.Calificacion = Convert.ToDouble(dt.Rows[i]["Calificacion"].ToString());
@@ -70,6 +75,14 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
                 obj.Celular = dt.Rows[i]["Celular"].ToString();
                 obj.Id_carrera = Convert.ToInt32(dt.Rows[i]["Id_carrera"].ToString());
                 obj.Carrera = dt.Rows[i]["Carrera"].ToString();
+                obj.Id_licenciado = dt.Rows[i]["Id_licenciado"].ToString();
+                obj.NombreLicenciado = dt.Rows[i]["NombreLicenciado"].ToString();
+                obj.ApellidoLicenciado = dt.Rows[i]["ApellidoLicenciado"].ToString();
+                obj.Id_funcion_licenciado = dt.Rows[i]["Id_funcion_licenciado"].ToString();
+                obj.Funcion = dt.Rows[i]["Funcion"].ToString();
+
+
+
             }
 
             return obj;

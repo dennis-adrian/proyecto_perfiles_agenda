@@ -128,7 +128,19 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
         }
 
+        public void mainTesisDetalle(List<dynamic> list)
+        {
+            foreach(var item in list)
+            {
 
+                detalleDefensa.Id_defensa_externa = Convert.ToInt32(item.Id_defensa_externa);
+                detalleDefensa.Id_licenciado = Convert.ToInt32(item.Id_licenciado);
+                detalleDefensa.Id_funcion_licenciado = Convert.ToInt32(item.Id_funcion_licenciado); 
+                detalleDefensa.Insert();
+
+            }
+
+        }
 
     }
 }

@@ -44,15 +44,16 @@ namespace CapaPresentacion
         #region constructor
         public FrmEditarDefensaExterna(int ES = 0,string CA = "",string TI = "")
         {
-            InitializeComponent();            
+            InitializeComponent();
+            FirstButtonDesactiveAll();
             this.carrera = CA;
             this.student = ES;
             this.tipo = TI;
             Inicializar();
             loadDictionary(ES);
             ShowInfo();
-            getLicenciados();
-            showLinceciados();
+            //getLicenciados();
+            //showLinceciados();
         }
         #endregion
 
@@ -90,12 +91,7 @@ namespace CapaPresentacion
             InfoDefensa.Add("Id_carrera", Convert.ToString(list.Id_carrera));
             InfoDefensa.Add("Carrera", Convert.ToString(list.Carrera));
             
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// 
-
+        }        
         public string SetAndEval(TextBox txt,string key,Dictionary<string,string> dic)
         {
             
@@ -114,8 +110,6 @@ namespace CapaPresentacion
             string text = (cmb.SelectedItem as ComboBoxItem).Value.ToString() == dic[key] ? dic[key] : (cmb.SelectedItem as ComboBoxItem).Value.ToString();
             return text;
         }
-
-
         public string SetAndEvalDatetime(DateTimePicker dtp, string key, Dictionary<string, string> dic,string tipo = "F")
         {
 
@@ -134,7 +128,6 @@ namespace CapaPresentacion
 
             
         }
-
         public string setAndEvalEstadoDefensa()
         {
             string estado = InfoDefensa["Estado_defensa"];
@@ -160,12 +153,11 @@ namespace CapaPresentacion
         public void recolectData()
         {
 
-            defensa_externa.Id = listLicenciados[0]["Id_defensa_externa"];
+            defensa_externa.Id = InfoDefensa["Id"];
             defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa,"Fecha_presentacion",InfoDefensa);
             defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa,"H");
             defensa_externa.Aula = SetAndEval(txtAula, "Aula", InfoDefensa);
             defensa_externa.Id_titulacion_otro = InfoDefensa["Id_titulacion_otro"];
-
             estudiante.Id = InfoDefensa["Id_estudiante"];
             estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
             estudiante.Apellido = SetAndEval(txtApellidoAlum, "Apellido", InfoDefensa);
@@ -174,18 +166,13 @@ namespace CapaPresentacion
             estudiante.Telefono = SetAndEval(txtTelefonoAlum,"Telefono",InfoDefensa);
             estudiante.Celular = SetAndEval(txtCelularAlum,"Celular",InfoDefensa);
             estudiante.Id_carrera = SetAndEvalCombo(cmbCarrera, "Id_carrera", InfoDefensa);
-
-
             titulacion_otros.Id = InfoDefensa["Id_titulacion_otro"];
             titulacion_otros.Estado_defensa = setAndEvalEstadoDefensa();
             titulacion_otros.Tema = SetAndEval(txtTema, "Tema", InfoDefensa);
             titulacion_otros.Calificacion = SetAndEval(txtNota, "Calificacion", InfoDefensa);
             titulacion_otros.Id_estudiante = InfoDefensa["Id_estudiante"];
             titulacion_otros.Id_tipo_titulacion = InfoDefensa["Id_tipo_titulacion"];
-
-           ////recolecion y evaluacion de licenciados
-            recolectDataDetalleDefensa();
-            
+            recolectDataDetalleDefensa();            
             
         }
         public string setAndEvalIdLicenciado(string funcion,Dictionary<string,string> dic)
@@ -260,10 +247,7 @@ namespace CapaPresentacion
                 detalle_defensa.Id = item["Id_detalle_defensa"];
                 detalle_defensa.Id_defensa_externa = item["Id_defensa_externa"];
                 detalle_defensa.Id_funcion_licenciado = item["Id_funcion_licenciado"];
-                //works
-                //MessageBox.Show(SetAndEvalComboLicenciado(cmbPresidente, "Id_licenciado", listLicenciados[0]));
                 detalle_defensa.Id_licenciado = setAndEvalIdLicenciado(Convert.ToString(item["Funcion"]),item);
-
                 lista_detalle_defensa.Add(detalle_defensa);
 
             }
@@ -287,6 +271,7 @@ namespace CapaPresentacion
             txtAula.Text = InfoDefensa["Aula"];
             txtNota.Text = InfoDefensa["Calificacion"];
             getLicenciados();
+            showLinceciados();
 
 
         }
@@ -366,14 +351,12 @@ namespace CapaPresentacion
             btnElegirRepresentanteUagrm1.BackColor = Color.FromArgb(102, 102, 102);
             btnElegirRepresentanteUagrm2.BackColor = Color.FromArgb(102, 102, 102);
         }
-
         public void FirstButtonActive(Button btn)
         {
             FirstButtonDesactiveAll();
             btn.BackColor = Color.FromArgb(178, 8, 55);
 
         }
-
         private FrmTutor FormInstance3
         {
             get
@@ -395,6 +378,7 @@ namespace CapaPresentacion
         }
 
         #endregion
+
 
 
         #region Diseño
@@ -436,30 +420,9 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-        /// <summary>
-        /// TEST DE METODOS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
-            //string s = SetAndEvalCombo(cmbCarrera,"Id_carrera",InfoDefensa);
-            //try
-            //{
-            //    string s = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa, "H");
-            //    MessageBox.Show(s);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
-            //defensa_externa.Id = listLicenciados[0]["Id_defensa_externa"];
-            //MessageBox.Show(defensa_externa.Id);
-
-            //MessageBox.Show(listLicenciados[0]["Funcion"]);
-            //----------------------------------
-
             recolectData();
             ActualizarDefensa actualizar = new ActualizarDefensa();
             actualizar.updateOtros(estudiante,titulacion_otros,defensa_externa,lista_detalle_defensa);
@@ -551,7 +514,7 @@ namespace CapaPresentacion
             FrmTutor frm = this.FormInstance3;
             frm.contrato = this;
             frm.Show();
-            //frm.lblLicen.Text = "Licenciado : " + lblPresidente.Text;
+            frm.lblLicen.Text = "Licenciado : ";//+ lblPresidente.Text;(falta nombrar los labels)
             frm.BringToFront();
         }
 

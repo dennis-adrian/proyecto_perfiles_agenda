@@ -10,6 +10,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil
 {
     public class Index : src.Controller
     {
+        public PerfilTesis perfilTesis = new PerfilTesis();
         public Estudiante estudiante = new Estudiante();
         public Carrera carrera;
         public DefensaExterna defensaExterna;
