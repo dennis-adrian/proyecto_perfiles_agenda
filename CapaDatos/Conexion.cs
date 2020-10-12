@@ -97,7 +97,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new ArgumentException("Error en  QueryBuilder: " + e);
+                throw new ArgumentException("Error en  QueryBuilder: " + e.Message);
             }
             finally
             {
@@ -237,6 +237,11 @@ namespace CapaDatos
             {
                 cerrarConexion();
             }
+        }
+
+        public string modificadoDate()
+        {
+            return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
         #endregion
 

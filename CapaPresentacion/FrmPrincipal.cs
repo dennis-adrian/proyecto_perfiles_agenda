@@ -450,6 +450,7 @@ namespace CapaPresentacion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            TestNot();
             if (frmHijoActual != null)
             {
                 frmHijoActual.Close();
@@ -1005,6 +1006,26 @@ namespace CapaPresentacion
         {
             showSubMenus(pnlNotificaciones);
             
+        }
+        public void TestNot()
+        {
+            CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
+            obj.main();
+            var notificaciones = obj.notificaciones();
+            foreach(var item in notificaciones)
+            {
+                MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} ");
+                /**
+                id
+                Titulo
+                Mensaje
+                Fecha
+                Hora
+                Leido
+
+                   
+                 */
+            }
         }
     }
 }
