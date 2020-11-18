@@ -1001,12 +1001,7 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void btnNotificaciones_Click(object sender, EventArgs e)
-        {
-            showSubMenus(pnlNotificaciones);
-            
-        }
+        
         public void TestNot()
         {
             CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
@@ -1014,7 +1009,7 @@ namespace CapaPresentacion
             var notificaciones = obj.notificaciones();
             foreach(var item in notificaciones)
             {
-                MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} ");
+                MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} {item.Leido}");
                 /**
                 id
                 Titulo
@@ -1026,6 +1021,32 @@ namespace CapaPresentacion
                    
                  */
             }
+        }
+        //Trabajando las notificaciones
+        public void obtenerNotificaciones()
+        {
+            CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
+            obj.main();
+            var notificaciones = obj.notificaciones();
+            foreach (var item in notificaciones)
+            {
+                FrmNotificaciones frmNotif = new FrmNotificaciones();
+                frmNotif.mostrarNotificaciones(item.Id, item.Titulo, item.Mensaje, item.Prioridad, item.Tipo, item.Hora, item.Fecha, item.Id_perfil);
+            }
+        }
+        private void btnNotificaciones_Click(object sender, EventArgs e)
+        {
+            obtenerNotificaciones();
+            btnNotificaciones.Enabled = false;
+            timer1.Interval = 10000;
+            timer1.Start();
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            btnNotificaciones.Enabled = true;
+            timer1.Stop();
         }
     }
 }

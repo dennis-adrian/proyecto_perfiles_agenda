@@ -231,6 +231,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaDatos.Models.DetalleDefensa.datasource" />
@@ -260,6 +261,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\ver_light.png" />
+    <None Include="Resources\icons8_eye_26px.png" />
+    <None Include="Resources\icons8_cancel_26px.png" />
+    <None Include="Resources\close_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
