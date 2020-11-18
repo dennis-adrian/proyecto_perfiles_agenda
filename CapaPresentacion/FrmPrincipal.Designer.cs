@@ -566,6 +566,7 @@
             // 
             // btnNotificaciones
             // 
+            this.btnNotificaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNotificaciones.FlatAppearance.BorderSize = 0;
             this.btnNotificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
             this.btnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -816,6 +817,7 @@
             // 
             // pnlNotificaciones
             // 
+            this.pnlNotificaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnlNotificaciones.Location = new System.Drawing.Point(675, 0);
             this.pnlNotificaciones.Margin = new System.Windows.Forms.Padding(2);
