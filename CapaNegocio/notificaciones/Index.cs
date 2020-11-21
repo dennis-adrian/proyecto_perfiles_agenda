@@ -19,7 +19,7 @@ namespace CapaNegocio.notificaciones
     public class Index                                     
     {
         #region Atributos
-        Notificacion notificacion = new Notificacion();
+        protected Notificacion notificacion;
 
 
         #endregion
@@ -28,6 +28,7 @@ namespace CapaNegocio.notificaciones
 
         public Index()
         {
+            notificacion = new Notificacion();
         }
 
         #endregion

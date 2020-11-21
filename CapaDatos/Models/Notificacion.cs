@@ -42,7 +42,7 @@ namespace CapaDatos.Models
         #region Metodos
         public DataTable findUnread()
         {
-            string sql = $"  select * from {table_name} where leido = 0 ;";
+            string sql = $"  select * from {table_name} where leido = 0 limit 10;";
             return SelectConexion(sql);
         }
         public DataTable findRead()
@@ -59,6 +59,13 @@ namespace CapaDatos.Models
         public DataTable findById(int id)
         {
             string sql = $"  select * from {table_name} WHERE id = {id} ; ";
+            return SelectConexion(sql);
+        }
+
+        public DataTable getData(string table)
+        {
+
+            string sql = $"  select * from {table} ;";
             return SelectConexion(sql);
         }
 
