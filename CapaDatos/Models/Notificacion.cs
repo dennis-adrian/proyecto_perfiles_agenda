@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class Notificacion
+    public class Notificacion: CapaDatos.Conexion
     {
-        Conexion cnx = new Conexion();
-        public Notificacion() : base()
+        public Notificacion()
         {
 
         }
@@ -26,9 +25,7 @@ namespace CapaDatos.Models
         private int id_perfil;
         string table_name = "notificacion";
         #endregion
-
-
-
+        
         #region Propiedades
         public int Id { get => id; set => id = value; }
         public string Titulo { get => titulo; set => titulo = value; }
@@ -43,29 +40,35 @@ namespace CapaDatos.Models
         #endregion
 
         #region Metodos
-        protected DataTable getNotificaciones()
+        public DataTable findUnread()
+        {
+            string sql = $"  select * from {table_name} where leido = 0 ;";
+            return SelectConexion(sql);
+        }
+        public DataTable findRead()
+        {
+            string sql = $"  select * from {table_name} where leido = 1 ;";
+            return SelectConexion(sql);
+        }
+        public DataTable find()
         {
             string sql = $"  select * from {table_name} ;";
-            return cnx.SelectConexion(sql);
+            return SelectConexion(sql);
         }
-
-        protected DataTable getPerfilTesis()
+ 
+        public DataTable findById(int id)
         {
-            string sql = $"  select * from perfil_tesis ;";
-            return cnx.SelectConexion(sql);
-
+            string sql = $"  select * from {table_name} WHERE id = {id} ; ";
+            return SelectConexion(sql);
         }
-        protected DataTable getRevisiones()
+
+        public void updateLeido(int id)
         {
-            string sql = $"  select * from revision ;";
-            return cnx.SelectConexion(sql);
+            string sql = $" update notificacion set leido = 1 where id = @parametro0 ; ";
+            Object[] Parametros = new Object[] { id };
+            QueryBuilder(sql,Parametros);
         }
-        protected void AllNotifications()
-        {
-
-        }
-
-        protected void Insert()
+        public void Insert()
         {
 
             string sql = $@"    INSERT INTO {table_name} 
@@ -99,7 +102,7 @@ namespace CapaDatos.Models
                                                     Prioridad,
                                                     Tipo,
                                                     Id_perfil };
-            cnx.QueryBuilder(sql, Parametros);
+            QueryBuilder(sql, Parametros);
         }
         #endregion
         ~Notificacion()

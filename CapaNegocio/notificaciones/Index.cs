@@ -9,187 +9,125 @@ using CapaDatos.Models;
 
 namespace CapaNegocio.notificaciones
 {
-    public class Index : CapaDatos.Models.Notificacion
+
+    /*
+    P1	Critical 5 days
+    P2	Important 10 days
+    P3	Normal 15 days
+    P4	Low	25 days
+    */
+    public class Index                                     
     {
+        #region Atributos
+        Notificacion notificacion = new Notificacion();
+
+
+        #endregion
+
+        #region Constructor
 
         public Index()
         {
         }
-        /*
-            P1	Critical 5 days
-            P2	Important 10 days
-            P3	Normal 15 days
-            P4	Low	25 days
 
-             */
+        #endregion
 
-        List<Dictionary<int, string>> list_fecha_recepecion = new List<Dictionary<int, string>>();
-        List<int> id_perfil_notificaciones = new List<int>();
+        #region Metodos
 
 
-        private void dataPerfilTesis()
+
+        protected string getDateNow()
         {
-            var pf = getPerfilTesis();
-
-            for (int i = 0; i < pf.Rows.Count; i++)
+            return DateTime.Now.ToString("dd-MM-yyyy");
+        }
+        protected string getHourNow()
+        {
+            return DateTime.Now.ToString("HH:mm");
+        }
+        protected bool createNotification(string titulo, string mensaje, string fecha, string hora, int leido, string prioridad, string tipo, int idp)
+        {
+            try
             {
-                Dictionary<int, string> perfil = new Dictionary<int, string>();
-                int key = Convert.ToInt32(pf.Rows[i]["id"].ToString());
-                string value = pf.Rows[i]["fecha_recepcion_titulacion"].ToString();
-
-
-                perfil.Add(key, value);
-                list_fecha_recepecion.Add(perfil);
+                notificacion.Titulo = titulo;
+                notificacion.Mensaje = mensaje;
+                notificacion.Fecha = fecha;
+                notificacion.Hora = hora;
+                notificacion.Leido = leido;
+                notificacion.Prioridad = prioridad;
+                notificacion.Tipo = tipo;
+                notificacion.Id_perfil = idp;
+                notificacion.Insert();
+                return true;
 
             }
-
-
-        }
-
-        private void setIdPerfilNotificaciones()
-        {
-            var cursor = getNotificaciones();
-            for (int i = 0; i < cursor.Rows.Count; i++)
+            catch (Exception ex)
             {
-                int id = Convert.ToInt32(cursor.Rows[i]["id_perfil"].ToString());
-                id_perfil_notificaciones.Add(id);
+               Console.WriteLine(ex.Message);
+                return false;
             }
-
         }
 
-
-        private string determinarPrioridad(string input_fec)
+        public string determinarPrioridad(string inicio, string final)
         {
-            
-            string dateString = input_fec;
+
             string format = "dd-MM-yyyy";
-            DateTime oldDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
-            DateTime newDate = DateTime.Now;
-            TimeSpan ts = newDate - oldDate;
-            int diff = 364 - (ts.Days);
-            if (diff <= 5)
-            {
-                return "critical";
-            }
-            else if (diff <= 10)
-            {
+            DateTime fecha_inicio = DateTime.ParseExact(inicio, format, CultureInfo.InvariantCulture);
 
-                return "important";
-            }
+            DateTime fecha_final = DateTime.ParseExact(final, format, CultureInfo.InvariantCulture);
 
-            else if (diff <= 15)
+            DateTime fecha_actual = DateTime.Now;
+
+            TimeSpan rango_inicial =  fecha_final - fecha_inicio;
+
+            TimeSpan rango_actual =  fecha_actual - fecha_inicio;
+
+            int diff = rango_inicial.Days - rango_actual.Days; 
+
+
+            //Console.WriteLine(fecha_inicio);
+            //Console.WriteLine(fecha_final);
+            //Console.WriteLine(fecha_actual);
+            //Console.WriteLine(rango_actual.Days);
+            //Console.WriteLine(rango_inicial.Days);
+            //Console.WriteLine(diff);
+
+            if (diff > 25)
             {
-                return "normal";
+                return "nothing";
 
-            }
-            else if (diff <= 25)
+            }else if(diff <= 25 && diff > 15)
             {
 
                 return "low";
             }
+            else if(diff <=15 && diff > 10)
+            {
+
+                return "normal";
+            }
+            else if(diff <= 10 && diff > 5)
+            {
+                return "important";
+            }
+            else if (diff <= 5 && diff > 0)
+            {
+                return "critical";
+            }
             else
             {
-                return "nothing";
+                return "time out";
             }
 
+
         }
 
-
-
-
-        public void main()
-        {
-            dataPerfilTesis();
-            setIdPerfilNotificaciones();
-
-            revisar();
-        }
-        
-        private void revisar()
-        {
-            foreach (var dic in list_fecha_recepecion)
-            {
-                foreach (var item in dic)
-                {
-                    int key = item.Key;
-                    if (id_perfil_notificaciones.Contains(key))
-                    {
-
-                    }
-                    else
-                    {
-                        string prioridad = determinarPrioridad(item.Value);
-                        if(prioridad == "nothing")
-                        {
-
-                        }
-                        else
-                        {
-                            CreateNewNotificacion
-                            (
-                                perfil_titulo[prioridad],
-                                perfil_msg[prioridad],
-                                getDateNow(), 
-                                getHourNow(), 
-                                0, 
-                                prioridad, 
-                                "perfil", 
-                                key
-                            );
-                        }
-                        
-                    }
-                }
-            }
-        }
-
-        
-
-        Dictionary<string, string> perfil_titulo = new Dictionary<string, string>()
-        {
-            ["critical"] = "titulo de estado critico o alerta",
-            ["important"] = "titulo de estado importante",
-            ["normal"] = "normal",
-            ["low"] = "titulo de prioridad baja"
-        };
-        Dictionary<string, string> perfil_msg = new Dictionary<string, string>()
-        {
-            ["critical"] = "msg 1",
-            ["important"] = "msg 2 ",
-            ["normal"] = "msg 3",
-            ["low"] = "msg de prioridad baja"
-        };
-
-        string getDateNow()
-        {
-            return DateTime.Now.ToString("dd-MM-yyyy");
-        }
-        string getHourNow()
-        {
-
-            return DateTime.Now.ToString("HH:mm");
-        }
-        public void CreateNewNotificacion(string tit,string msg,string fec,string hor,int lei, string pri,string tip,int idp)
-        {
-            Titulo = tit;
-            Mensaje = msg;
-            Fecha = fec;
-            Hora = hor;
-            Leido = lei;
-            Prioridad = pri;
-            Tipo = tip;
-            Id_perfil = idp;
-            Insert();
-        }
-
-
-
-
-        public List<Notificacion> notificaciones()
+        public List<Notificacion> notificaciones(string tipo="unread")
         {
             List<Notificacion> list = new List<Notificacion>();
+            var nt = tipo == "read"? notificacion.findRead()
+                    : tipo == "all"? notificacion.find() 
+                    : notificacion.findUnread();
 
-            var nt = getNotificaciones();
             for (int i = 0; i < nt.Rows.Count; i++)
             {
                 Notificacion obj = new Notificacion();
@@ -208,7 +146,22 @@ namespace CapaNegocio.notificaciones
             return list;
         }
 
+        public bool markAsRead(int id)
+        {
+            try
+            {
+                notificacion.updateLeido(id);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
 
 
+        #endregion
     }
 }
