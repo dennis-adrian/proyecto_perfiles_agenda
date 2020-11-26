@@ -112,6 +112,12 @@ namespace CapaPresentacion
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
+            CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
+            bool result = obj.markAsRead(perfil);
+
+            MessageBox.Show(perfil.ToString());
+            MessageBox.Show(result.ToString());
+            
             timer1.Interval = 1;
             accion = enmAcciones.eliminar;
         }
