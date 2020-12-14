@@ -14,6 +14,7 @@ namespace CapaPresentacion
     public partial class FrmNotificaciones : Form
     {
         private int perfil;
+        private int idnotificacion;
         public enum enmAcciones
         {
             esperar,
@@ -72,6 +73,7 @@ namespace CapaPresentacion
         public void mostrarNotificaciones(int idNotficacion, string titulo, string mensaje, string prioridad, string tipo, string hora, string fecha, int idPerfil)
         {
             this.perfil = idPerfil;
+            this.idnotificacion = idNotficacion;
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
             string fnombre;
@@ -113,20 +115,31 @@ namespace CapaPresentacion
         private void btnClose_Click(object sender, EventArgs e)
         {
             CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
-            bool result = obj.markAsRead(perfil);
+            bool result = obj.markAsRead(idnotificacion);
 
-            MessageBox.Show(perfil.ToString());
-            MessageBox.Show(result.ToString());
+            //MessageBox.Show(perfil.ToString());
+            //MessageBox.Show(result.ToString());
             
             timer1.Interval = 1;
             accion = enmAcciones.eliminar;
         }
         private void btnVerPerfil_Click(object sender, EventArgs e)
         {
-            FrmRevisiones frm = new FrmRevisiones(perfil);
-            frm.Show();
-            timer1.Interval = 1;
-            accion = enmAcciones.eliminar;
+            
+
+            CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
+            bool result = obj.markAsRead(idnotificacion);
+            if (result)
+            {
+                FrmRevisiones frm = new FrmRevisiones(perfil);
+                frm.Show();
+                timer1.Interval = 1;
+                accion = enmAcciones.eliminar;
+
+            }
+            //MessageBox.Show(perfil.ToString());
+            //MessageBox.Show(result.ToString());
+
         }
         #endregion
     }

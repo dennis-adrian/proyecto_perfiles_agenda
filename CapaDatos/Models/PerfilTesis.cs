@@ -22,8 +22,10 @@ namespace CapaDatos.Models
             id_estudiante = 0;
             id_licenciado = 0;
             id_funcion_licenciado = 0;
+            fecha_limite = "";
         }
         #region Atributos
+        private string fecha_limite;
         private int id;
         private string tema;
         private string estado;
@@ -37,6 +39,7 @@ namespace CapaDatos.Models
         private static string table_name = "perfil_tesis";
         #endregion
         #region Propiedades
+        public string Fecha_limite { get => fecha_limite; set => fecha_limite = value; }
         public int Id { get => id; set => id = value; }
         public string Tema { get => tema; set => tema = value; }
         public string Estado { get => estado; set => estado = value; }
@@ -52,8 +55,45 @@ namespace CapaDatos.Models
         #region Metodos
         public void Insert()
         {
-            string sql = $"  INSERT INTO {table_name} (tema,estado,fecha_aprobacion_jefe_carrera,fecha_recepcion_titulacion,estado_defensa,calificacion,id_estudiante,id_licenciado,id_funcion_licenciado ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8); ";
-            Object[] Parametros = new Object[] { Tema,Estado,Fecha_aprobacion_jefe_carrera,Fecha_recepcion_titulacion,Estado_defensa,Calificacion,Id_estudiante,Id_licenciado, Id_funcion_licenciado };
+
+
+            string sql = $@" INSERT INTO {table_name} ( 
+                                tema,
+                                estado,
+                                fecha_aprobacion_jefe_carrera,
+                                fecha_recepcion_titulacion,
+                                estado_defensa,
+                                calificacion,
+                                id_estudiante,
+                                id_licenciado,
+                                id_funcion_licenciado,
+                                fecha_limite
+                            ) 
+                            VALUES ( 
+                                @parametro0,
+                                @parametro1,
+                                @parametro2,
+                                @parametro3,
+                                @parametro4, 
+                                @parametro5, 
+                                @parametro6,
+                                @parametro7,
+                                @parametro8,
+                                @parametro9
+                            ); ";
+            Object[] Parametros = new Object[] { 
+                Tema, 
+                Estado, 
+                Fecha_aprobacion_jefe_carrera, 
+                Fecha_recepcion_titulacion,                
+                Estado_defensa,
+                
+                Calificacion,
+                Id_estudiante,                
+                Id_licenciado, 
+                Id_funcion_licenciado, 
+                Fecha_limite 
+            };
             QueryBuilder(sql, Parametros);
 
         }

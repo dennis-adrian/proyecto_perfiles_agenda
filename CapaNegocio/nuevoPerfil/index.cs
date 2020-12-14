@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,11 @@ namespace CapaNegocio.nuevoPerfil
         {
             perfilTesis = new PerfilTesis();
             estudiante = new Estudiante();
-            carrera  = new Carrera();
-            funcionLicenciado =  new FuncionLicenciado();
+            carrera = new Carrera();
+            funcionLicenciado = new FuncionLicenciado();
             type = new src.DataTypes();
         }
-       
+
         public void main(Object[] Collection)
         {
             try
@@ -64,6 +65,7 @@ namespace CapaNegocio.nuevoPerfil
 
 
                 perfilTesis.Id_licenciado = Convert.ToInt32(Collection[10]);//input
+                perfilTesis.Fecha_limite = dateLimit(perfilTesis.Fecha_recepcion_titulacion);
 
                 estudiante.Insert();
                 int id = estudiante.LastId();
@@ -78,6 +80,14 @@ namespace CapaNegocio.nuevoPerfil
             {
                 throw new ArgumentException("" + e);
             }
+        }
+        public string dateLimit(string fecha)
+        {
+            string format = "dd-MM-yyyy";
+            DateTime date_begin = DateTime.ParseExact(fecha, format, CultureInfo.InvariantCulture);
+            DateTime date_end = date_begin.AddYears(1);
+            string limit = date_end.ToString(format);
+            return limit;
         }
 
         public DataTable cargarCarreras()

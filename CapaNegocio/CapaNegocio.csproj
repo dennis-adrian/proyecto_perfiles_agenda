@@ -79,9 +79,6 @@
     <Compile Include="NegocioNuevaRevision.cs" />
     <Compile Include="NegocioRevisiones.cs" />
     <Compile Include="notificaciones\Index.cs" />
-    <Compile Include="notificaciones\main.cs" />
-    <Compile Include="notificaciones\perfilNotificacion.cs" />
-    <Compile Include="notificaciones\revisionNotificacion.cs" />
     <Compile Include="nuevaDefensa\Class1.cs" />
     <Compile Include="nuevoPerfil\index.cs" />
     <Compile Include="perfilTesis\Index.cs" />

@@ -275,7 +275,6 @@ namespace CapaPresentacion
             string email = txtEmailLicenciado.Text;// input 4
             string telefono = txtTelefono.Text;// input 5
             string celular = txtCelular.Text;// input 6
-            //string tipo = cmbTipo.Text;// txtTipo.Text;// input 7
             string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
             int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
             int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9

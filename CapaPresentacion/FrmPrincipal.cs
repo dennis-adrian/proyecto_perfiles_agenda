@@ -1005,7 +1005,7 @@ namespace CapaPresentacion
         public void TestNot()
         {
             CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
-            //obj.main();
+            obj.main();
             var notificaciones = obj.notificaciones();
             foreach(var item in notificaciones)
             {
@@ -1027,7 +1027,7 @@ namespace CapaPresentacion
         {
             CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
             //COMENTADO TEMPORALMENTE
-            //obj.main();
+            obj.main();
             var notificaciones = obj.notificaciones();
             foreach (var item in notificaciones)
             {
