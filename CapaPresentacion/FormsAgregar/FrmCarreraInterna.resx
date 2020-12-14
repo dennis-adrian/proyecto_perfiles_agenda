@@ -156,6 +156,18 @@
   <metadata name="columnFacultad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnEliminarCarrera.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAB3RJ
+        TUUH5AcZBBMBz9Hu6QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADoSURBVDhP
+        lZM7DgFRGEZn1JYwlcQGNApKtVZjATQWoGIPohB6K7ACWoVkSisQEXoZ57v3BjfzcJ3kZGb+xzePZKJ/
+        yLIsxjneMMW2in084rnEE9ZRy0v8JlXABafYK7GLRcviqgDRdE+Zg17ZsphVBlDX8sJM5FlhrTSA2u9l
+        Nyi8AK7DloWtfQI4D18Wtu4FjGwphz6kwge4ceOFAQdb8njfmeMEd2ZYqAsmgGOCT1P54D0255UBagqF
+        7FGvE5tBB9eVAR3UQGKaBbh+cUAIzOYCHjjERqBr3Lp1EzDGO4aiP7Rlt6PoBWs9dXyc6yLJAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="btnSelecCarrera.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

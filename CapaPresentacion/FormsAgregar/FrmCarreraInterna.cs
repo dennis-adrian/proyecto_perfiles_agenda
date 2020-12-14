@@ -247,5 +247,20 @@ namespace CapaPresentacion.FormsAgregar
                 MessageBox.Show("No ha seleccionado ninguna revisión");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dtgCarrera.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgCarrera.CurrentRow.Cells[0].Value.ToString());
+                obj.deleteCarrera(id_seleccionado);
+                cargarCarreras();
+
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
+        }
     }
 }
