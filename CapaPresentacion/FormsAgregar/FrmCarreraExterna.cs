@@ -17,7 +17,7 @@ namespace CapaPresentacion.FormsAgregar
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
-
+        CapaNegocio.carreraExterna.Index obj = new CapaNegocio.carreraExterna.Index();
         protected override CreateParams CreateParams
         {
             get
@@ -34,6 +34,7 @@ namespace CapaPresentacion.FormsAgregar
         public FrmCarreraExterna()
         {
             InitializeComponent();
+            cargarCarrerasExternas();
         }
         #endregion
 
@@ -53,21 +54,6 @@ namespace CapaPresentacion.FormsAgregar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void btnNuevaCarreraLicenciado_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Insert();
-                txtNombreCarreraLic.Clear();
-                this.DialogResult = DialogResult.OK;
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-
         }
 
         private void pnlBarraTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -89,15 +75,43 @@ namespace CapaPresentacion.FormsAgregar
 
         #region Metodos
 
-        public void Insert()
+       
+
+        void cargarCarrerasExternas(string criterio = null)
         {
-            string nombre = txtNombreCarreraLic.Text;
-            Object[] datos = new Object[] { nombre };
-            helper.ControlInput(datos);
-            helper.MainInsertCarreraLicenciado();
+            bool pass = String.IsNullOrEmpty(criterio);
+            if (pass)
+            {
 
+                dtgCarreraExterna.Rows.Clear();
+                int campo1 = 1;
+                var list = obj.showCarreraExterna();
+                foreach (var item in list)
+                {
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2 };
+                    this.dtgCarreraExterna.Rows.Add(row);
+                    campo1++;
+                }
+            }
+            else
+            {
+                dtgCarreraExterna.Rows.Clear();
+                int campo1 = 1;
+                var list = obj.showCarreraExterna(criterio);
+                foreach (var item in list)
+                {
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2 };
+                    this.dtgCarreraExterna.Rows.Add(row);
+                    campo1++;
+                }
 
+            }
         }
+
 
 
         #endregion
@@ -110,6 +124,81 @@ namespace CapaPresentacion.FormsAgregar
         private void pnlBarraTitulo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCarreraExt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int id = Convert.ToInt32(idlbl.Text);
+                if (id > 0)
+                {
+                    string nombre = txtNombreCarreraLic.Text;
+                    obj.updateCarreraExterna(id, nombre);
+                    cargarCarrerasExternas();
+                    txtNombreCarreraLic.Clear();
+                    idlbl.Text = "0";
+                }
+                else
+                {
+
+                    string nombre = txtNombreCarreraLic.Text;
+                    obj.createCarreraExterna(nombre);
+                    cargarCarrerasExternas();
+                    txtNombreCarreraLic.Clear();
+                    idlbl.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEditarCarreraExt_Click(object sender, EventArgs e)
+        {
+            if (dtgCarreraExterna.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgCarreraExterna.CurrentRow.Cells[0].Value.ToString());
+                string nombre = dtgCarreraExterna.CurrentRow.Cells[2].Value.ToString();
+                idlbl.Text = Convert.ToString(id_seleccionado);
+                txtNombreCarreraLic.Text = nombre;
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dtgCarreraExterna.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgCarreraExterna.CurrentRow.Cells[0].Value.ToString());
+                obj.deleteCarreraExterna(id_seleccionado);
+                cargarCarrerasExternas();
+
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string criterio = txtBuscarCarreraExt.Text;
+                cargarCarrerasExternas(criterio);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -185,14 +185,14 @@ namespace CapaPresentacion
                 {
                     Insert();
                     ClearForms();
-                    ShowLicenciados();
+                    cargarLicenciados();
 
                 }
                 else if(id_parametro > 0 && id_parametro == referencia)
                 {
                     Update(id_parametro);
                     ClearForms();
-                    ShowLicenciados();
+                    cargarLicenciados();
                     id_parametro = 0;
                 }
                 else
@@ -340,7 +340,7 @@ namespace CapaPresentacion
             cmbTipo.SelectedIndex = 0;
 
 
-            ShowLicenciados();
+            cargarLicenciados();
         }
         public void ShowCarrerasLicenciado()
         {
@@ -361,13 +361,61 @@ namespace CapaPresentacion
             cmbInstitucion.DisplayMember = "nombre";
 
         }
-        public void ShowLicenciados()
+        public void cargarLicenciados(string criterio=null)
         {
-            MostrarLicenciados obj = new MostrarLicenciados();
-            var list = obj.Licenciados();
-            var bindingList = new BindingList<ViewLicenciados>(list);
-            var source = new BindingSource(bindingList, null);
-            dtgLicenciados.DataSource = source;
+            bool pass = String.IsNullOrEmpty(criterio);
+            if (pass)
+            {
+
+                dtgLicenciados.Rows.Clear();
+                MostrarLicenciados obj = new MostrarLicenciados();
+                var list = obj.showLicenciados();
+
+
+                int campo1 = 1;
+                foreach (var item in list)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string campo3 = item.Apellido;
+                    string campo4 = item.Tipo;
+                    string campo5 = item.Telefono;
+                    string campo6 = item.Calular;
+                    string campo7 = item.Email;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7 };
+                    this.dtgLicenciados.Rows.Add(row);
+                    campo1++;
+
+                }
+            }
+            else
+            {
+                dtgLicenciados.Rows.Clear();
+                MostrarLicenciados obj = new MostrarLicenciados();
+                var list = obj.showLicenciados(criterio);
+
+
+                int campo1 = 1;
+                foreach (var item in list)
+                {
+
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string campo3 = item.Apellido;
+                    string campo4 = item.Tipo;
+                    string campo5 = item.Telefono;
+                    string campo6 = item.Calular;
+                    string campo7 = item.Email;
+
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7 };
+                    this.dtgLicenciados.Rows.Add(row);
+                    campo1++;
+
+                }
+            }
+
         }
 
 
@@ -407,6 +455,21 @@ namespace CapaPresentacion
             //usando el contrato interfaz
             contrato.Ejecutar(id_seleccionado, tutor);
             this.Close();
+        }
+
+        private void btnBuscarLicenciado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string criterio = txtBuscarLicenciado.Text;
+                cargarLicenciados(criterio);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

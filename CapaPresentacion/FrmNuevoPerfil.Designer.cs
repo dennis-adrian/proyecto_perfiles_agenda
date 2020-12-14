@@ -95,9 +95,9 @@
             this.grbPerfilTesis.Controls.Add(this.label6);
             this.grbPerfilTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbPerfilTesis.Location = new System.Drawing.Point(144, 606);
-            this.grbPerfilTesis.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.grbPerfilTesis.Margin = new System.Windows.Forms.Padding(7);
             this.grbPerfilTesis.Name = "grbPerfilTesis";
-            this.grbPerfilTesis.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.grbPerfilTesis.Padding = new System.Windows.Forms.Padding(7);
             this.grbPerfilTesis.Size = new System.Drawing.Size(1771, 448);
             this.grbPerfilTesis.TabIndex = 36;
             this.grbPerfilTesis.TabStop = false;
@@ -108,7 +108,7 @@
             this.cmbTutorElegido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTutorElegido.FormattingEnabled = true;
             this.cmbTutorElegido.Location = new System.Drawing.Point(478, 335);
-            this.cmbTutorElegido.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.cmbTutorElegido.Margin = new System.Windows.Forms.Padding(7);
             this.cmbTutorElegido.Name = "cmbTutorElegido";
             this.cmbTutorElegido.Size = new System.Drawing.Size(618, 47);
             this.cmbTutorElegido.TabIndex = 8;
@@ -122,7 +122,7 @@
             this.btnElegirTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTutor.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnElegirTutor.Location = new System.Drawing.Point(1176, 335);
-            this.btnElegirTutor.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnElegirTutor.Margin = new System.Windows.Forms.Padding(7);
             this.btnElegirTutor.Name = "btnElegirTutor";
             this.btnElegirTutor.Size = new System.Drawing.Size(201, 58);
             this.btnElegirTutor.TabIndex = 4;
@@ -135,7 +135,7 @@
             this.dtFechaAprobacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaAprobacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaAprobacion.Location = new System.Drawing.Point(1115, 219);
-            this.dtFechaAprobacion.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dtFechaAprobacion.Margin = new System.Windows.Forms.Padding(7);
             this.dtFechaAprobacion.Name = "dtFechaAprobacion";
             this.dtFechaAprobacion.Size = new System.Drawing.Size(256, 46);
             this.dtFechaAprobacion.TabIndex = 3;
@@ -145,7 +145,7 @@
             this.dtFechaRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaRecepcion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaRecepcion.Location = new System.Drawing.Point(478, 219);
-            this.dtFechaRecepcion.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dtFechaRecepcion.Margin = new System.Windows.Forms.Padding(7);
             this.dtFechaRecepcion.Name = "dtFechaRecepcion";
             this.dtFechaRecepcion.Size = new System.Drawing.Size(256, 46);
             this.dtFechaRecepcion.TabIndex = 2;
@@ -154,7 +154,7 @@
             // 
             this.txtTemaTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTemaTesis.Location = new System.Drawing.Point(478, 105);
-            this.txtTemaTesis.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTemaTesis.Margin = new System.Windows.Forms.Padding(7);
             this.txtTemaTesis.Name = "txtTemaTesis";
             this.txtTemaTesis.Size = new System.Drawing.Size(893, 46);
             this.txtTemaTesis.TabIndex = 1;
@@ -212,7 +212,7 @@
             this.btnCancelarNuevop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevop.ForeColor = System.Drawing.Color.White;
             this.btnCancelarNuevop.Location = new System.Drawing.Point(1429, 1092);
-            this.btnCancelarNuevop.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnCancelarNuevop.Margin = new System.Windows.Forms.Padding(7);
             this.btnCancelarNuevop.Name = "btnCancelarNuevop";
             this.btnCancelarNuevop.Size = new System.Drawing.Size(233, 78);
             this.btnCancelarNuevop.TabIndex = 39;
@@ -229,7 +229,7 @@
             this.btnGuardarNuevoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoP.ForeColor = System.Drawing.Color.White;
             this.btnGuardarNuevoP.Location = new System.Drawing.Point(1677, 1092);
-            this.btnGuardarNuevoP.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnGuardarNuevoP.Margin = new System.Windows.Forms.Padding(7);
             this.btnGuardarNuevoP.Name = "btnGuardarNuevoP";
             this.btnGuardarNuevoP.Size = new System.Drawing.Size(233, 78);
             this.btnGuardarNuevoP.TabIndex = 38;
@@ -271,10 +271,11 @@
             this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarrera.FormattingEnabled = true;
             this.cmbCarrera.Location = new System.Drawing.Point(1192, 114);
-            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(7);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(508, 47);
             this.cmbCarrera.TabIndex = 5;
+            this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.cmbCarrera_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -291,7 +292,7 @@
             // 
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularAlum.Location = new System.Drawing.Point(1192, 230);
-            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtCelularAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(508, 46);
             this.txtCelularAlum.TabIndex = 7;
@@ -300,7 +301,7 @@
             // 
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoAlum.Location = new System.Drawing.Point(1192, 172);
-            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTelefonoAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtTelefonoAlum.MaxLength = 10;
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(508, 46);
@@ -332,7 +333,7 @@
             // 
             this.txtEmailAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAlum.Location = new System.Drawing.Point(303, 288);
-            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtEmailAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtEmailAlum.Name = "txtEmailAlum";
             this.txtEmailAlum.Size = new System.Drawing.Size(583, 46);
             this.txtEmailAlum.TabIndex = 4;
@@ -352,7 +353,7 @@
             // 
             this.txtApellidoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoAlum.Location = new System.Drawing.Point(303, 230);
-            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtApellidoAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtApellidoAlum.Name = "txtApellidoAlum";
             this.txtApellidoAlum.Size = new System.Drawing.Size(583, 46);
             this.txtApellidoAlum.TabIndex = 3;
@@ -372,7 +373,7 @@
             // 
             this.txtNombreAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAlum.Location = new System.Drawing.Point(303, 172);
-            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtNombreAlum.Name = "txtNombreAlum";
             this.txtNombreAlum.Size = new System.Drawing.Size(583, 46);
             this.txtNombreAlum.TabIndex = 2;
@@ -392,7 +393,7 @@
             // 
             this.txtRegistroAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistroAlum.Location = new System.Drawing.Point(303, 114);
-            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtRegistroAlum.Margin = new System.Windows.Forms.Padding(7);
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(583, 46);
             this.txtRegistroAlum.TabIndex = 1;
@@ -422,7 +423,7 @@
             this.Controls.Add(this.pnlNuevoPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(2135, 1376);

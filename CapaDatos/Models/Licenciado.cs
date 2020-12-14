@@ -80,6 +80,12 @@ namespace CapaDatos.Models
             string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
+        public DataTable Select(string criterio)
+        {
+            string search = criterio.Trim();
+            string sql = $" SELECT * FROM {table_name} WHERE nombre LIKE '%{search}%' or apellido LIKE '%{search}%'  ; ";
+            return SelectConexion(sql);
+        }
         public int LastId()
         {
             return LastIdConexion(table_name);

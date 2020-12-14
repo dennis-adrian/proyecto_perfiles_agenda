@@ -57,10 +57,6 @@ namespace CapaPresentacion.FormsAgregar
         {
             cargarfacultades();
         }
-        private void FrmFacultad_Load(object sender, EventArgs e)
-        {
-
-        }
 
         void cargarfacultades(string criterio = null)
         {
@@ -170,6 +166,26 @@ namespace CapaPresentacion.FormsAgregar
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSelecFacu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscarFacultad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idlbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

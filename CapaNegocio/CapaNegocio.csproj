@@ -60,8 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="carreraExterna\Class1.cs" />
-    <Compile Include="carreraInterna\Class1.cs" />
+    <Compile Include="carreraExterna\Index.cs" />
+    <Compile Include="carreraInterna\Index.cs" />
     <Compile Include="defensaExterna\defensaGeneral\Main.cs" />
     <Compile Include="defensaExterna\defensaPerfil\Index.cs" />
     <Compile Include="defensaExterna\defensaPerfil\otros\ActualizarDefensa.cs" />
