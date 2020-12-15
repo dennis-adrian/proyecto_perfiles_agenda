@@ -34,6 +34,11 @@ namespace CapaPresentacion
 
         #region Instancia frmHijo Unasolo vez
 
+        public bool switchNuevoPerfil = false;
+        public bool switchPerfiles = false;
+        public bool switchNuevaDefensa = false;
+        public bool switchDefensas = false;
+
         private FrmCarreraInterna CarInt = null;
         private FrmCarreraExterna CarExt = null;
         private FrmTutor Tutor = null;
@@ -410,10 +415,34 @@ namespace CapaPresentacion
 
         private void btnNuevoPerfil_Click(object sender, EventArgs e)
         {
-            
-            
-            HiddenNuevaDefensa();
-            ShowNuevoPerfil();
+            if (switchNuevoPerfil == false)
+            {
+                switchNuevoPerfil = true;
+                HiddenNuevaDefensa();
+                ShowNuevoPerfil();
+
+                lblTitulo.Text = "NUEVO PERFIL";
+                abrirFrmHijo(new FrmNuevoPerfil());
+            }
+            else
+            {
+                if (frmHijoActual != null)
+                {
+                    frmHijoActual.Close();
+
+                    switchNuevoPerfil = false;
+                }
+                CustomizeDesing();
+                lblTitulo.Text = "Titulo";
+
+            }
+
+
+
+
+
+
+
             /*/////este codigo controla que no se abra dos veces el formulario
             Form frmNuevoPerfil = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is FrmNuevoPerfil);
 
@@ -429,8 +458,6 @@ namespace CapaPresentacion
             frmNuevoPerfil = new FrmNuevoPerfil();
             abrirFrmHijo(frmNuevoPerfil);*/
 
-            lblTitulo.Text = "NUEVO PERFIL";
-            abrirFrmHijo(new FrmNuevoPerfil());
         }
        
         
@@ -438,8 +465,24 @@ namespace CapaPresentacion
        
         private void btnNuevaDefensa_Click(object sender, EventArgs e)
         {
-            
+            if (switchNuevaDefensa == false)
+            {
+                switchNuevaDefensa = true;
                 ShowMenus(btnNuevaDefensa, pnlSubMenuNuevaDefensa);
+                
+            }
+            else
+            {
+                if (frmHijoActual != null)
+                {
+                    frmHijoActual.Close();
+
+                    switchNuevaDefensa = false;
+                }
+                CustomizeDesing();
+                lblTitulo.Text = "Titulo";
+
+            }
 
            
            
@@ -448,28 +491,66 @@ namespace CapaPresentacion
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            btnActual = (IconButton)sender;
-            string criterio = null;
-            abrirFrmHijo(new FrmPerfiles(criterio));
-            lblTitulo.Text = "Todos los Perfiles";
-            ShowMenus(btnPerfiles, pnlSubMenuPerfiles);
-           
+
+            if (switchPerfiles == false)
+            {
+                switchPerfiles = true;
+                btnActual = (IconButton)sender;
+                string criterio = null;
+                abrirFrmHijo(new FrmPerfiles(criterio));
+                lblTitulo.Text = "Todos los Perfiles";
+                ShowMenus(btnPerfiles, pnlSubMenuPerfiles);
+
+
+            }
+            else
+            {
+                if (frmHijoActual != null)
+                {
+                    frmHijoActual.Close();
+
+                    switchPerfiles = false;
+                }
+                CustomizeDesing();
+                lblTitulo.Text = "Titulo";
+
+            }
+            
         }
         private void btnDefensaExterna_Click(object sender, EventArgs e)
         {
+            if (switchDefensas == false)
+            {
+                switchDefensas = true;
+                btnActual = (IconButton)sender;
+                string criterio = null;
+                abrirFrmHijo(new FrmAgenda(criterio));
+                lblTitulo.Text = "Todos las Defensas";
+                ShowMenus(btnDefensaExterna, pnlSubMenuDefensa);
+
+
+            }
+            else
+            {
+                if (frmHijoActual != null)
+                {
+                    frmHijoActual.Close();
+
+                    switchDefensas = false;
+                }
+                CustomizeDesing();
+                lblTitulo.Text = "Titulo";
+
+            }
+
            
-            btnActual = (IconButton)sender;
-            string criterio = null;
-            abrirFrmHijo(new FrmAgenda(criterio));
-            lblTitulo.Text = "Todos las Defensas";
-            ShowMenus(btnDefensaExterna, pnlSubMenuDefensa);
           
 
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            TestNot();
+            //TestNot();
             if (frmHijoActual != null)
             {
                 frmHijoActual.Close();
@@ -1021,26 +1102,26 @@ namespace CapaPresentacion
 
         }
         
-        public void TestNot()
-        {
-            CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
-            obj.main();
-            var notificaciones = obj.notificaciones();
-            foreach(var item in notificaciones)
-            {
-                MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} {item.Leido}");
-                /**
-                id
-                Titulo
-                Mensaje
-                Fecha
-                Hora
-                Leido
+        //public void TestNot()
+        //{
+        //    CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
+        //    obj.main();
+        //    var notificaciones = obj.notificaciones();
+        //    foreach(var item in notificaciones)
+        //    {
+        //        MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} {item.Leido}");
+        //        /**
+        //        id
+        //        Titulo
+        //        Mensaje
+        //        Fecha
+        //        Hora
+        //        Leido
 
                    
-                 */
-            }
-        }
+        //         */
+        //    }
+        //}
         //Trabajando las notificaciones
         public void obtenerNotificaciones()
         {
