@@ -113,6 +113,36 @@ namespace CapaDatos.Models
             QueryBuilder(sql, Parametros);
         }
         #endregion
+
+
+        public DataTable notificacionExistente(string prioridad,int idperfil,string tipo)
+        {
+            string sql = $" SELECT * FROM notificacion where prioridad='{prioridad}' and  tipo = '{tipo}' and id_perfil={idperfil} ; ";
+            return SelectConexion(sql);
+        }
+
+
+        public bool ifExistsNotificacion(string prioridad, int idperfil, string tipo)
+        {
+            string sql = $" SELECT * FROM notificacion where prioridad='{prioridad}' and  tipo = '{tipo}' and id_perfil={idperfil} ; ";
+            var res =  SelectConexion(sql);
+            if (res.Rows.Count > 0)
+            {
+
+
+                //for (int i = 0; i < res.Rows.Count; i++)
+                //{
+                //    Console.WriteLine(res.Rows[i]["id_perfil"].ToString());
+                //}
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("sin notificacion");
+                return false;
+            }
+        }
+
         ~Notificacion()
         {
 

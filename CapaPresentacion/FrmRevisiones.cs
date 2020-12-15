@@ -37,7 +37,7 @@ namespace CapaPresentacion
         #region Instancias
 
         NegocioPerfilGeneral obj = new NegocioPerfilGeneral();
-        NegocioRevisiones rev = new NegocioRevisiones();
+        CapaNegocio.revisionPerfil.Index rev = new CapaNegocio.revisionPerfil.Index();
         #endregion
 
         #region Constructores

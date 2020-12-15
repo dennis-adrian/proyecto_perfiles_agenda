@@ -106,6 +106,16 @@ namespace CapaDatos.Models
             return SelectConexion(sql, idtesis, nrotribunal);
         }
 
+        public DataTable SelectView(int idtesis)
+        {
+            string sql = $" SELECT * FROM ViewRevisiones WHERE Id_tesis = {idtesis} ; ";
+            return SelectConexion(sql);
+        }
+        public DataTable infoRevisionByTribunal(int idtesis, int nrorevision, int nrotribunal)
+        {
+            string sql = $" SELECT * FROM ViewRevisiones WHERE Id_tesis = {idtesis} AND Nro_revision ={nrorevision} AND Nro_tribunal = {nrotribunal}; ";
+            return SelectConexion(sql);
+        }
         #endregion
     }
 }

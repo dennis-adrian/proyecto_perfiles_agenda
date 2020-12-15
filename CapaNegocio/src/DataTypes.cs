@@ -119,13 +119,13 @@ namespace CapaNegocio.src
 
 
 
-                if (Regex.IsMatch(value, @"^[NES][0-9]{1,3}$"))
+                if (Regex.IsMatch(value, @"^[NESO][0-9]{1,4}$"))
                 {
                     this.aula = value;
                 }
                 else
                 {
-                    throw new ArgumentException("ingrese un numero válido de Registro");
+                    throw new ArgumentException("ingrese un numero válido de aula sin guinoes eje. 'N500' ");
                 }
 
 

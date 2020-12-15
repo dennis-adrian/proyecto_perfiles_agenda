@@ -113,6 +113,11 @@ namespace CapaDatos.Models
 
         }
 
+        public void updateStatus(int id,string estado)
+        {
+            string sql = $" UPDATE {table_name}  SET estado='{estado}'  WHERE id = {id} ; ";
+            execQuery(sql);
+        }
         public DataTable Select()
         {
             string sql = $" SELECT * FROM {table_name} ; ";

@@ -283,16 +283,46 @@ namespace CapaNegocio.notificaciones
         {
             var all_notificaciones = notificaciones("all");
 
-
-            foreach (var pf in list_perfil)
+            if (all_notificaciones.Count == 0)
             {
-                string prioridad = determinarPrioridad(pf.Fecha_recepcion, pf.Fecha_limite);
-                if (prioridad != "nothing")
+                foreach (var pf in list_perfil)
                 {
-                    createNotification(title_perfil[prioridad], message_perfil[prioridad], getDateNow(), getHourNow(), 0, prioridad, "perfil", pf.Id);
+
+                    string prioridad = determinarPrioridad(pf.Fecha_recepcion, pf.Fecha_limite);
+                    if (prioridad != "nothing")
+                    {
+
+                        createNotification(title_perfil[prioridad], message_perfil[prioridad], getDateNow(), getHourNow(), 0, prioridad, "perfil", pf.Id);
+                       
+                    }
+
                 }
 
             }
+            else
+            {
+                foreach (var pf in list_perfil)
+                {
+
+                    string prioridad = determinarPrioridad(pf.Fecha_recepcion, pf.Fecha_limite);
+                    if (prioridad != "nothing")
+                    {
+                        bool exist = notificacion.ifExistsNotificacion(prioridad, pf.Id, "perfil");
+                        if (exist)
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+
+                            createNotification(title_perfil[prioridad], message_perfil[prioridad], getDateNow(), getHourNow(), 0, prioridad, "perfil", pf.Id);
+                        }
+
+                    }
+
+                }
+            }
+
 
         }
         public async Task setDataFromListRevision()

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTutor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSeleccionarLicenciado = new System.Windows.Forms.Button();
             this.btnEditarLicenciado = new System.Windows.Forms.Button();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
@@ -69,10 +69,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgLicenciados = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBuscarLicenciado = new FontAwesome.Sharp.IconButton();
-            this.txtBuscarLicenciado = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +77,10 @@
             this.columnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscarLicenciado = new FontAwesome.Sharp.IconButton();
+            this.txtBuscarLicenciado = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,8 +94,8 @@
             this.btnSeleccionarLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarLicenciado.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarLicenciado.Location = new System.Drawing.Point(845, 1017);
-            this.btnSeleccionarLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnSeleccionarLicenciado.Location = new System.Drawing.Point(826, 1015);
+            this.btnSeleccionarLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.btnSeleccionarLicenciado.Name = "btnSeleccionarLicenciado";
             this.btnSeleccionarLicenciado.Size = new System.Drawing.Size(285, 67);
             this.btnSeleccionarLicenciado.TabIndex = 24;
@@ -111,7 +111,7 @@
             this.btnEditarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarLicenciado.ForeColor = System.Drawing.Color.White;
             this.btnEditarLicenciado.Location = new System.Drawing.Point(1148, 1017);
-            this.btnEditarLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnEditarLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.btnEditarLicenciado.Name = "btnEditarLicenciado";
             this.btnEditarLicenciado.Size = new System.Drawing.Size(285, 67);
             this.btnEditarLicenciado.TabIndex = 25;
@@ -196,7 +196,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1456, 60);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1120, 1051);
             this.panel1.TabIndex = 28;
@@ -210,7 +210,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(945, 656);
-            this.button6.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button6.Margin = new System.Windows.Forms.Padding(7);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 71);
             this.button6.TabIndex = 73;
@@ -224,7 +224,7 @@
             this.rbDocenteNo.Enabled = false;
             this.rbDocenteNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDocenteNo.Location = new System.Drawing.Point(817, 665);
-            this.rbDocenteNo.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.rbDocenteNo.Margin = new System.Windows.Forms.Padding(7);
             this.rbDocenteNo.Name = "rbDocenteNo";
             this.rbDocenteNo.Size = new System.Drawing.Size(96, 44);
             this.rbDocenteNo.TabIndex = 38;
@@ -238,7 +238,7 @@
             this.rbDocenteSi.Enabled = false;
             this.rbDocenteSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDocenteSi.Location = new System.Drawing.Point(628, 663);
-            this.rbDocenteSi.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.rbDocenteSi.Margin = new System.Windows.Forms.Padding(7);
             this.rbDocenteSi.Name = "rbDocenteSi";
             this.rbDocenteSi.Size = new System.Drawing.Size(82, 44);
             this.rbDocenteSi.TabIndex = 37;
@@ -265,7 +265,7 @@
             "Trabaja en UTEPSA",
             "Trabaja fuera de UTEPSA"});
             this.cmbTipo.Location = new System.Drawing.Point(492, 569);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(7);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(480, 47);
             this.cmbTipo.TabIndex = 8;
@@ -279,7 +279,7 @@
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(287, 948);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(7);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(301, 74);
             this.btnLimpiar.TabIndex = 12;
@@ -317,7 +317,7 @@
             this.btnAgregarInstitucion.Font = new System.Drawing.Font("Bernard MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInstitucion.ForeColor = System.Drawing.Color.White;
             this.btnAgregarInstitucion.Location = new System.Drawing.Point(985, 752);
-            this.btnAgregarInstitucion.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnAgregarInstitucion.Margin = new System.Windows.Forms.Padding(7);
             this.btnAgregarInstitucion.Name = "btnAgregarInstitucion";
             this.btnAgregarInstitucion.Size = new System.Drawing.Size(68, 58);
             this.btnAgregarInstitucion.TabIndex = 33;
@@ -333,7 +333,7 @@
             this.btnAgregarCarrera.Font = new System.Drawing.Font("Bernard MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCarrera.ForeColor = System.Drawing.Color.White;
             this.btnAgregarCarrera.Location = new System.Drawing.Point(985, 850);
-            this.btnAgregarCarrera.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnAgregarCarrera.Margin = new System.Windows.Forms.Padding(7);
             this.btnAgregarCarrera.Name = "btnAgregarCarrera";
             this.btnAgregarCarrera.Size = new System.Drawing.Size(68, 58);
             this.btnAgregarCarrera.TabIndex = 32;
@@ -347,7 +347,7 @@
             this.cmbInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbInstitucion.FormattingEnabled = true;
             this.cmbInstitucion.Location = new System.Drawing.Point(485, 752);
-            this.cmbInstitucion.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.cmbInstitucion.Margin = new System.Windows.Forms.Padding(7);
             this.cmbInstitucion.Name = "cmbInstitucion";
             this.cmbInstitucion.Size = new System.Drawing.Size(480, 47);
             this.cmbInstitucion.TabIndex = 9;
@@ -358,7 +358,7 @@
             this.cmbCarreraLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreraLicenciado.FormattingEnabled = true;
             this.cmbCarreraLicenciado.Location = new System.Drawing.Point(485, 850);
-            this.cmbCarreraLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.cmbCarreraLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.cmbCarreraLicenciado.Name = "cmbCarreraLicenciado";
             this.cmbCarreraLicenciado.Size = new System.Drawing.Size(480, 47);
             this.cmbCarreraLicenciado.TabIndex = 10;
@@ -382,7 +382,7 @@
             this.btnGuardarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarLicenciado.ForeColor = System.Drawing.Color.White;
             this.btnGuardarLicenciado.Location = new System.Drawing.Point(625, 948);
-            this.btnGuardarLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnGuardarLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.btnGuardarLicenciado.Name = "btnGuardarLicenciado";
             this.btnGuardarLicenciado.Size = new System.Drawing.Size(301, 74);
             this.btnGuardarLicenciado.TabIndex = 11;
@@ -405,7 +405,7 @@
             // 
             this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Location = new System.Drawing.Point(492, 477);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(7);
             this.txtCelular.MaxLength = 12;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(480, 46);
@@ -426,7 +426,7 @@
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(492, 395);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(7);
             this.txtTelefono.MaxLength = 12;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(480, 46);
@@ -447,7 +447,7 @@
             // 
             this.txtEmailLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailLicenciado.Location = new System.Drawing.Point(492, 299);
-            this.txtEmailLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtEmailLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.txtEmailLicenciado.Name = "txtEmailLicenciado";
             this.txtEmailLicenciado.Size = new System.Drawing.Size(480, 46);
             this.txtEmailLicenciado.TabIndex = 3;
@@ -467,7 +467,7 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(492, 212);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(7);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(480, 46);
             this.txtDescripcion.TabIndex = 2;
@@ -487,7 +487,7 @@
             // 
             this.txtApellidoLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoLicenciado.Location = new System.Drawing.Point(492, 120);
-            this.txtApellidoLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtApellidoLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.txtApellidoLicenciado.Name = "txtApellidoLicenciado";
             this.txtApellidoLicenciado.Size = new System.Drawing.Size(480, 46);
             this.txtApellidoLicenciado.TabIndex = 1;
@@ -507,7 +507,7 @@
             // 
             this.txtNombreLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreLicenciado.Location = new System.Drawing.Point(492, 33);
-            this.txtNombreLicenciado.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtNombreLicenciado.Margin = new System.Windows.Forms.Padding(7);
             this.txtNombreLicenciado.Name = "txtNombreLicenciado";
             this.txtNombreLicenciado.Size = new System.Drawing.Size(480, 46);
             this.txtNombreLicenciado.TabIndex = 0;
@@ -554,14 +554,14 @@
             this.dtgLicenciados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgLicenciados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgLicenciados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLicenciados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLicenciados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgLicenciados.ColumnHeadersHeight = 34;
             this.dtgLicenciados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgLicenciados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -577,72 +577,31 @@
             this.dtgLicenciados.EnableHeadersVisualStyles = false;
             this.dtgLicenciados.GridColor = System.Drawing.Color.White;
             this.dtgLicenciados.Location = new System.Drawing.Point(0, 0);
-            this.dtgLicenciados.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dtgLicenciados.Margin = new System.Windows.Forms.Padding(7);
             this.dtgLicenciados.Name = "dtgLicenciados";
             this.dtgLicenciados.ReadOnly = true;
             this.dtgLicenciados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLicenciados.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLicenciados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgLicenciados.RowHeadersVisible = false;
             this.dtgLicenciados.RowHeadersWidth = 52;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgLicenciados.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgLicenciados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgLicenciados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgLicenciados.Size = new System.Drawing.Size(1391, 671);
             this.dtgLicenciados.TabIndex = 0;
             this.dtgLicenciados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLicenciados_CellContentClick);
             this.dtgLicenciados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLicenciados_CellDoubleClick);
-            // 
-            // btnBuscarLicenciado
-            // 
-            this.btnBuscarLicenciado.BackColor = System.Drawing.Color.White;
-            this.btnBuscarLicenciado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBuscarLicenciado.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBuscarLicenciado.FlatAppearance.BorderSize = 0;
-            this.btnBuscarLicenciado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnBuscarLicenciado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnBuscarLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarLicenciado.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscarLicenciado.IconColor = System.Drawing.Color.Black;
-            this.btnBuscarLicenciado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarLicenciado.IconSize = 24;
-            this.btnBuscarLicenciado.Location = new System.Drawing.Point(1040, 177);
-            this.btnBuscarLicenciado.Margin = new System.Windows.Forms.Padding(7);
-            this.btnBuscarLicenciado.Name = "btnBuscarLicenciado";
-            this.btnBuscarLicenciado.Size = new System.Drawing.Size(56, 54);
-            this.btnBuscarLicenciado.TabIndex = 57;
-            this.btnBuscarLicenciado.UseVisualStyleBackColor = false;
-            this.btnBuscarLicenciado.Click += new System.EventHandler(this.btnBuscarLicenciado_Click);
-            // 
-            // txtBuscarLicenciado
-            // 
-            this.txtBuscarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarLicenciado.Location = new System.Drawing.Point(184, 178);
-            this.txtBuscarLicenciado.Margin = new System.Windows.Forms.Padding(7);
-            this.txtBuscarLicenciado.Name = "txtBuscarLicenciado";
-            this.txtBuscarLicenciado.Size = new System.Drawing.Size(816, 48);
-            this.txtBuscarLicenciado.TabIndex = 56;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 184);
-            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 40);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Buscar :";
             // 
             // columnId
             // 
@@ -651,7 +610,7 @@
             this.columnId.Name = "columnId";
             this.columnId.ReadOnly = true;
             this.columnId.Visible = false;
-            this.columnId.Width = 96;
+            this.columnId.Width = 98;
             // 
             // columnNro
             // 
@@ -709,6 +668,47 @@
             this.columnEmail.ReadOnly = true;
             this.columnEmail.Width = 152;
             // 
+            // btnBuscarLicenciado
+            // 
+            this.btnBuscarLicenciado.BackColor = System.Drawing.Color.White;
+            this.btnBuscarLicenciado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBuscarLicenciado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnBuscarLicenciado.FlatAppearance.BorderSize = 0;
+            this.btnBuscarLicenciado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnBuscarLicenciado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnBuscarLicenciado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarLicenciado.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscarLicenciado.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarLicenciado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarLicenciado.IconSize = 24;
+            this.btnBuscarLicenciado.Location = new System.Drawing.Point(1040, 177);
+            this.btnBuscarLicenciado.Margin = new System.Windows.Forms.Padding(7);
+            this.btnBuscarLicenciado.Name = "btnBuscarLicenciado";
+            this.btnBuscarLicenciado.Size = new System.Drawing.Size(56, 54);
+            this.btnBuscarLicenciado.TabIndex = 57;
+            this.btnBuscarLicenciado.UseVisualStyleBackColor = false;
+            this.btnBuscarLicenciado.Click += new System.EventHandler(this.btnBuscarLicenciado_Click);
+            // 
+            // txtBuscarLicenciado
+            // 
+            this.txtBuscarLicenciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarLicenciado.Location = new System.Drawing.Point(184, 178);
+            this.txtBuscarLicenciado.Margin = new System.Windows.Forms.Padding(7);
+            this.txtBuscarLicenciado.Name = "txtBuscarLicenciado";
+            this.txtBuscarLicenciado.Size = new System.Drawing.Size(816, 48);
+            this.txtBuscarLicenciado.TabIndex = 56;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 184);
+            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(149, 40);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Buscar :";
+            // 
             // FrmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -726,7 +726,7 @@
             this.Controls.Add(this.btnSeleccionarLicenciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.MinimumSize = new System.Drawing.Size(2576, 1111);
             this.Name = "FrmTutor";
             this.Text = "FrmTutor";
