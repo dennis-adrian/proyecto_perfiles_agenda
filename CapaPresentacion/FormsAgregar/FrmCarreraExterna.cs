@@ -130,24 +130,34 @@ namespace CapaPresentacion.FormsAgregar
         {
             try
             {
+                string nombre = txtNombreCarreraLic.Text;
+                bool passnombre = String.IsNullOrEmpty(nombre);
 
-                int id = Convert.ToInt32(idlbl.Text);
-                if (id > 0)
+                if (passnombre)
                 {
-                    string nombre = txtNombreCarreraLic.Text;
-                    obj.updateCarreraExterna(id, nombre);
-                    cargarCarrerasExternas();
-                    txtNombreCarreraLic.Clear();
-                    idlbl.Text = "0";
+                    MessageBox.Show("el Campo nombre esta vacio");
                 }
                 else
                 {
 
-                    string nombre = txtNombreCarreraLic.Text;
-                    obj.createCarreraExterna(nombre);
-                    cargarCarrerasExternas();
-                    txtNombreCarreraLic.Clear();
-                    idlbl.Text = "0";
+
+                    int id = Convert.ToInt32(idlbl.Text);
+                    if (id > 0)
+                    {
+                    
+                        obj.updateCarreraExterna(id, nombre);
+                        cargarCarrerasExternas();
+                        txtNombreCarreraLic.Clear();
+                        idlbl.Text = "0";
+                    }
+                    else
+                    {
+
+                        obj.createCarreraExterna(nombre);
+                        cargarCarrerasExternas();
+                        txtNombreCarreraLic.Clear();
+                        idlbl.Text = "0";
+                    }
                 }
             }
             catch (Exception ex)

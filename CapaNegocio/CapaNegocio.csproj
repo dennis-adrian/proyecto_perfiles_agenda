@@ -69,6 +69,7 @@
     <Compile Include="defensaExterna\defensaPerfil\otros\InfoDefensa.cs" />
     <Compile Include="facultad\Index.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="institucion\Index.cs" />
     <Compile Include="licenciados\ActualizarLicenciado.cs" />
     <Compile Include="licenciados\AgregarLicenciado.cs" />
     <Compile Include="licenciados\Index.cs" />

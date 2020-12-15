@@ -38,6 +38,7 @@ namespace CapaPresentacion
         private FrmCarreraExterna CarExt = null;
         private FrmTutor Tutor = null;
         private FrmFacultad facu = null;
+        private FrmInstitucion inst = null;
 
 
         private FrmFacultad FormInstance4
@@ -53,10 +54,28 @@ namespace CapaPresentacion
                 return facu;
             }
         }
+        private FrmInstitucion FormInstance5
+        {
+            get
+            {
+                if (inst == null)
+                {
+                    inst = new FrmInstitucion();
+                    inst.Disposed += new EventHandler(form_Disposed5);
+                }
+
+                return inst;
+            }
+        }
 
         void form_Disposed4(object sender, EventArgs e)
         {
             facu = null;
+
+        }
+        void form_Disposed5(object sender, EventArgs e)
+        {
+            inst = null;
 
         }
 
@@ -1048,6 +1067,14 @@ namespace CapaPresentacion
         {
             btnNotificaciones.Enabled = true;
             timer1.Stop();
+        }
+
+        private void btnInstituciones_Click(object sender, EventArgs e)
+        {
+            HiddenAgregar();
+            FrmInstitucion frm = this.FormInstance5;
+            frm.Show();
+            frm.BringToFront();
         }
     }
 }

@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarreraExterna));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.lbltitu = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.idlbl = new System.Windows.Forms.Label();
             this.txtNombreCarreraLic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCarreraExt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBuscarCarreraExt = new System.Windows.Forms.TextBox();
             this.btnSelecCarreraExt = new System.Windows.Forms.Button();
             this.btnEditarCarreraExt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgCarreraExterna = new System.Windows.Forms.DataGridView();
-            this.idlbl = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtnro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.pnlBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,19 +121,28 @@
             this.groupBox2.Controls.Add(this.btnCarreraExt);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(26, 190);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox2.Size = new System.Drawing.Size(1213, 310);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar y agregar carrera externa";
             // 
+            // idlbl
+            // 
+            this.idlbl.AutoSize = true;
+            this.idlbl.Location = new System.Drawing.Point(514, 76);
+            this.idlbl.Name = "idlbl";
+            this.idlbl.Size = new System.Drawing.Size(38, 40);
+            this.idlbl.TabIndex = 54;
+            this.idlbl.Text = "0";
+            // 
             // txtNombreCarreraLic
             // 
             this.txtNombreCarreraLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCarreraLic.Location = new System.Drawing.Point(40, 123);
-            this.txtNombreCarreraLic.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtNombreCarreraLic.Margin = new System.Windows.Forms.Padding(7);
             this.txtNombreCarreraLic.Name = "txtNombreCarreraLic";
             this.txtNombreCarreraLic.Size = new System.Drawing.Size(817, 48);
             this.txtNombreCarreraLic.TabIndex = 52;
@@ -158,7 +167,7 @@
             this.btnCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnCarreraExt.Image")));
             this.btnCarreraExt.Location = new System.Drawing.Point(897, 123);
-            this.btnCarreraExt.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnCarreraExt.Margin = new System.Windows.Forms.Padding(7);
             this.btnCarreraExt.Name = "btnCarreraExt";
             this.btnCarreraExt.Size = new System.Drawing.Size(217, 65);
             this.btnCarreraExt.TabIndex = 40;
@@ -178,13 +187,31 @@
             this.groupBox1.Controls.Add(this.dtgCarreraExterna);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(26, 526);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(1213, 665);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar carrera";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(450, 558);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(217, 65);
+            this.btnEliminar.TabIndex = 55;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -200,7 +227,7 @@
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 24;
             this.btnBuscar.Location = new System.Drawing.Point(1086, 74);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(7);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 54);
             this.btnBuscar.TabIndex = 54;
@@ -211,7 +238,7 @@
             // 
             this.txtBuscarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarCarreraExt.Location = new System.Drawing.Point(189, 74);
-            this.txtBuscarCarreraExt.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtBuscarCarreraExt.Margin = new System.Windows.Forms.Padding(7);
             this.txtBuscarCarreraExt.Name = "txtBuscarCarreraExt";
             this.txtBuscarCarreraExt.Size = new System.Drawing.Size(843, 48);
             this.txtBuscarCarreraExt.TabIndex = 52;
@@ -225,7 +252,7 @@
             this.btnSelecCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnSelecCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCarreraExt.Image")));
             this.btnSelecCarreraExt.Location = new System.Drawing.Point(952, 558);
-            this.btnSelecCarreraExt.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnSelecCarreraExt.Margin = new System.Windows.Forms.Padding(7);
             this.btnSelecCarreraExt.Name = "btnSelecCarreraExt";
             this.btnSelecCarreraExt.Size = new System.Drawing.Size(217, 65);
             this.btnSelecCarreraExt.TabIndex = 43;
@@ -242,7 +269,7 @@
             this.btnEditarCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnEditarCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCarreraExt.Image")));
             this.btnEditarCarreraExt.Location = new System.Drawing.Point(699, 558);
-            this.btnEditarCarreraExt.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnEditarCarreraExt.Margin = new System.Windows.Forms.Padding(7);
             this.btnEditarCarreraExt.Name = "btnEditarCarreraExt";
             this.btnEditarCarreraExt.Size = new System.Drawing.Size(217, 65);
             this.btnEditarCarreraExt.TabIndex = 43;
@@ -271,14 +298,14 @@
             this.dtgCarreraExterna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgCarreraExterna.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgCarreraExterna.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCarreraExterna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCarreraExterna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgCarreraExterna.ColumnHeadersHeight = 24;
             this.dtgCarreraExterna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgCarreraExterna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -288,38 +315,29 @@
             this.dtgCarreraExterna.EnableHeadersVisualStyles = false;
             this.dtgCarreraExterna.GridColor = System.Drawing.Color.White;
             this.dtgCarreraExterna.Location = new System.Drawing.Point(-10, 157);
-            this.dtgCarreraExterna.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dtgCarreraExterna.Margin = new System.Windows.Forms.Padding(7);
             this.dtgCarreraExterna.Name = "dtgCarreraExterna";
             this.dtgCarreraExterna.ReadOnly = true;
             this.dtgCarreraExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCarreraExterna.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCarreraExterna.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgCarreraExterna.RowHeadersVisible = false;
             this.dtgCarreraExterna.RowHeadersWidth = 52;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgCarreraExterna.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgCarreraExterna.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgCarreraExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCarreraExterna.Size = new System.Drawing.Size(1209, 366);
             this.dtgCarreraExterna.TabIndex = 49;
-            // 
-            // idlbl
-            // 
-            this.idlbl.AutoSize = true;
-            this.idlbl.Location = new System.Drawing.Point(514, 76);
-            this.idlbl.Name = "idlbl";
-            this.idlbl.Size = new System.Drawing.Size(38, 40);
-            this.idlbl.TabIndex = 54;
-            this.idlbl.Text = "0";
             // 
             // txtid
             // 
@@ -345,24 +363,6 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.ReadOnly = true;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(450, 558);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(7);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(217, 65);
-            this.btnEliminar.TabIndex = 55;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // FrmCarreraExterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -375,7 +375,7 @@
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.MinimumSize = new System.Drawing.Size(1274, 1231);
             this.Name = "FrmCarreraExterna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

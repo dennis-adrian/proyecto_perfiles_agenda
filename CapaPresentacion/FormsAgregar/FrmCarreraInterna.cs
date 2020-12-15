@@ -177,26 +177,37 @@ namespace CapaPresentacion.FormsAgregar
         {
             try
             {
+                string nombre = txtNombreCarrera.Text;
+                bool passnombre = String.IsNullOrEmpty(nombre);
 
-                int id = Convert.ToInt32(idlbl.Text);
-                if (id > 0)
+                if (passnombre)
                 {
-                    string nombre = txtNombreCarrera.Text; 
-                    int id_facultad = Convert.ToInt32(cmbFacultad.SelectedValue.ToString());
-                    obj.updateCarrera(id, nombre,id_facultad);
-                    cargarCarreras();
-                    txtNombreCarrera.Clear();
-                    idlbl.Text = "0";
+                    MessageBox.Show("el Campo nombre esta vacio");
                 }
                 else
-                {
+                { 
+                
 
-                    string nombre = txtNombreCarrera.Text;
-                    int id_facultad = Convert.ToInt32(cmbFacultad.SelectedValue.ToString());
-                    obj.createCarrera(nombre,id_facultad);
-                    cargarCarreras();
-                    txtNombreCarrera.Clear();
-                    idlbl.Text = "0";
+                    int id = Convert.ToInt32(idlbl.Text);
+                    if (id > 0)
+                    {
+                    
+                        int id_facultad = Convert.ToInt32(cmbFacultad.SelectedValue.ToString());
+                        obj.updateCarrera(id, nombre,id_facultad);
+                        cargarCarreras();
+                        txtNombreCarrera.Clear();
+                        idlbl.Text = "0";
+                    }
+                    else
+                    {
+
+                    
+                        int id_facultad = Convert.ToInt32(cmbFacultad.SelectedValue.ToString());
+                        obj.createCarrera(nombre,id_facultad);
+                        cargarCarreras();
+                        txtNombreCarrera.Clear();
+                        idlbl.Text = "0";
+                    }
                 }
             }
             catch (Exception ex)

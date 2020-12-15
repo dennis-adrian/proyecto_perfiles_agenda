@@ -16,7 +16,7 @@ namespace CapaPresentacion.FormsAgregar
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
-
+        CapaNegocio.institucion.Index obj = new CapaNegocio.institucion.Index();
         protected override CreateParams CreateParams
         {
             get
@@ -34,6 +34,7 @@ namespace CapaPresentacion.FormsAgregar
         public FrmInstitucion()
         {
             InitializeComponent();
+            cargarInstituciones();
         }
 
         #endregion
@@ -136,6 +137,111 @@ namespace CapaPresentacion.FormsAgregar
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+
+        void cargarInstituciones(string criterio = null)
+        {
+            bool pass = String.IsNullOrEmpty(criterio);
+            if (pass)
+            {
+
+                dtgInstitucion.Rows.Clear();
+                int campo1 = 1;
+                var list = obj.showInstituciones();
+                foreach (var item in list)
+                {
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2 };
+                    this.dtgInstitucion.Rows.Add(row);
+                    campo1++;
+                }
+            }
+            else
+            {
+                dtgInstitucion.Rows.Clear();
+                int campo1 = 1;
+                var list = obj.showInstituciones(criterio);
+                foreach (var item in list)
+                {
+                    string campo0 = Convert.ToString(item.Id);
+                    string campo2 = item.Nombre;
+                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2 };
+                    this.dtgInstitucion.Rows.Add(row);
+                    campo1++;
+                }
+
+            }
+        }
+        private void btnNuevaInstitu_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = txtNuevaInstitucion.Text;
+                bool passnombre = String.IsNullOrEmpty(nombre);
+
+                if (passnombre)
+                {
+                    MessageBox.Show("el Campo nombre esta vacio");
+                }
+                else
+                {
+
+
+                    int id = Convert.ToInt32(idlbl.Text);
+                    if (id > 0)
+                    {
+
+                        obj.updateInstitucion(id, nombre);
+                        cargarInstituciones();
+                        txtNuevaInstitucion.Clear();
+                        idlbl.Text = "0";
+                    }
+                    else
+                    {
+
+                        obj.createInstitucion(nombre);
+                        cargarInstituciones();
+                        txtNuevaInstitucion.Clear();
+                        idlbl.Text = "0";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEditarInstitu_Click(object sender, EventArgs e)
+        {
+            if (dtgInstitucion.CurrentRow != null)
+            {
+                int id_seleccionado = Convert.ToInt32(dtgInstitucion.CurrentRow.Cells[0].Value.ToString());
+                string nombre = dtgInstitucion.CurrentRow.Cells[2].Value.ToString();
+                idlbl.Text = Convert.ToString(id_seleccionado);
+                txtNuevaInstitucion.Text = nombre;
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna revisión");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string criterio = txtBuscarInstitu.Text;
+                cargarInstituciones(criterio);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

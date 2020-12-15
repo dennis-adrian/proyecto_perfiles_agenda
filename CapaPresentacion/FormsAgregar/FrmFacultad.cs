@@ -98,23 +98,33 @@ namespace CapaPresentacion.FormsAgregar
             try
             {
 
-                int id = Convert.ToInt32(idlbl.Text);
-                if(id > 0)
+
+                string nombre = txtNombreFacultad.Text;
+                bool passnombre = String.IsNullOrEmpty(nombre);
+
+                if (passnombre)
                 {
-                    string nombre = txtNombreFacultad.Text;
-                    obj.updateFacultad(id, nombre);
-                    cargarfacultades();
-                    txtNombreFacultad.Clear();
-                    idlbl.Text = "0";
+                    MessageBox.Show("el Campo nombre esta vacio");
                 }
                 else
-                {
+                {                
 
-                    string nombre = txtNombreFacultad.Text;
-                    obj.createFacultad(nombre);
-                    cargarfacultades();
-                    txtNombreFacultad.Clear();
-                    idlbl.Text = "0";
+                    int id = Convert.ToInt32(idlbl.Text);
+                    if(id > 0)
+                    {
+                        obj.updateFacultad(id, nombre);
+                        cargarfacultades();
+                        txtNombreFacultad.Clear();
+                        idlbl.Text = "0";
+                    }
+                    else
+                    {
+
+                        obj.createFacultad(nombre);
+                        cargarfacultades();
+                        txtNombreFacultad.Clear();
+                        idlbl.Text = "0";
+                    }
                 }
             }
             catch(Exception ex)
