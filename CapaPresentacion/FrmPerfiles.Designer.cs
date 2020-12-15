@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerfiles));
             this.pnlBuscar2 = new System.Windows.Forms.Panel();
+            this.txtCarreraSeleccionada = new System.Windows.Forms.TextBox();
             this.btnEditarRevisiones = new System.Windows.Forms.Button();
             this.btnBuscarPerfil = new System.Windows.Forms.Button();
             this.txtBuscarPerfil = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFecha_Recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCarreraSeleccionada = new System.Windows.Forms.TextBox();
             this.pnlBuscar2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPerfilesTesis)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,13 @@
             this.pnlBuscar2.Name = "pnlBuscar2";
             this.pnlBuscar2.Size = new System.Drawing.Size(1890, 103);
             this.pnlBuscar2.TabIndex = 2;
+            // 
+            // txtCarreraSeleccionada
+            // 
+            this.txtCarreraSeleccionada.Location = new System.Drawing.Point(476, 30);
+            this.txtCarreraSeleccionada.Name = "txtCarreraSeleccionada";
+            this.txtCarreraSeleccionada.Size = new System.Drawing.Size(313, 35);
+            this.txtCarreraSeleccionada.TabIndex = 27;
             // 
             // btnEditarRevisiones
             // 
@@ -97,7 +104,7 @@
             this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarPerfil.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscarPerfil.Location = new System.Drawing.Point(1633, 25);
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(1637, 25);
             this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
             this.btnBuscarPerfil.Size = new System.Drawing.Size(168, 47);
@@ -168,7 +175,7 @@
             this.dtgPerfilesTesis.EnableHeadersVisualStyles = false;
             this.dtgPerfilesTesis.GridColor = System.Drawing.Color.Silver;
             this.dtgPerfilesTesis.Location = new System.Drawing.Point(0, 103);
-            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dtgPerfilesTesis.Margin = new System.Windows.Forms.Padding(7);
             this.dtgPerfilesTesis.Name = "dtgPerfilesTesis";
             this.dtgPerfilesTesis.ReadOnly = true;
             this.dtgPerfilesTesis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -276,13 +283,6 @@
             this.ColumnaFecha_Recepcion.MinimumWidth = 6;
             this.ColumnaFecha_Recepcion.Name = "ColumnaFecha_Recepcion";
             this.ColumnaFecha_Recepcion.ReadOnly = true;
-            // 
-            // txtCarreraSeleccionada
-            // 
-            this.txtCarreraSeleccionada.Location = new System.Drawing.Point(476, 30);
-            this.txtCarreraSeleccionada.Name = "txtCarreraSeleccionada";
-            this.txtCarreraSeleccionada.Size = new System.Drawing.Size(313, 35);
-            this.txtCarreraSeleccionada.TabIndex = 27;
             // 
             // FrmPerfiles
             // 

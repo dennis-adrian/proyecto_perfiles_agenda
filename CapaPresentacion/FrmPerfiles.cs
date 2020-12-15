@@ -167,17 +167,28 @@ namespace CapaPresentacion
             bool passnombre = String.IsNullOrEmpty(nombre);
             if (passnombre)
             {
-                if (carr != "Todas las Carreras")
+                bool passcarr = String.IsNullOrEmpty(carr);
+                if(passcarr)
                 {
-                    dtgPerfilesTesis.Rows.Clear();
-                    carreraPerfil(carr);
-                }
-                else
-                {
-
                     dtgPerfilesTesis.Rows.Clear();
                     generalPerfil();
                 }
+                else
+                {
+                    if (carr != "Todas las Carreras")
+                    {
+                        dtgPerfilesTesis.Rows.Clear();
+                        carreraPerfil(carr);
+                    }
+                    else
+                    {
+
+                        dtgPerfilesTesis.Rows.Clear();
+                        generalPerfil();
+                    }
+
+                }
+               
 
             }
             else
