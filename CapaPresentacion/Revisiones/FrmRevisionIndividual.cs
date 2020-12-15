@@ -181,7 +181,8 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                   
+                    cargarNombreTribunales();
+
 
                 }
                 else
@@ -192,7 +193,10 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                   
+
+                    cargarNombreTribunales();
+
+
 
 
                 }

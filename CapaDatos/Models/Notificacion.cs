@@ -65,7 +65,7 @@ namespace CapaDatos.Models
         public DataTable getData(string table)
         {
             string perfil = "select * from perfil_tesis as p where p.id not in (SELECT pf.id from perfil_tesis as pf inner join defensa_externa as de on de.id_tesis = pf.id) ;  ";
-            string revision = "SELECT *  from revision as rv where rv.id_tesis not in (SELECT id_tesis from defensa_externa);";
+            string revision = "SELECT *  from revision where fecha_entrega_tribunal <> '' and fecha_limite_devolucion <> '' ;";
             string sql = table == "perfil_tesis" ? perfil : revision; 
             return SelectConexion(sql);
         }

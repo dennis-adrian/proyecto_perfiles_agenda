@@ -52,18 +52,24 @@ namespace CapaNegocio.notificaciones
         }
         public struct revision
         {
-            #region Atributos
+            private int id;
+            private int id_tesis;
+            private string fecha_entrega_tribunal;
+            private string fecha_limite_devolucion;
 
+            public revision(int id,int id_tesis,string fecha_entrega_tribunal,string fecha_limite_devolucion) 
+            {
+                this.id = id;
+                this.id_tesis = id_tesis;
+                this.fecha_entrega_tribunal = fecha_entrega_tribunal;
+                this.fecha_limite_devolucion = fecha_limite_devolucion;
+            
+            }
 
-            #endregion
-
-            #region Propiedades
-
-
-            #endregion
-
-            #region Constructor
-            #endregion
+            public int Id { get => id; set => id = value; }
+            public int Id_tesis { get => id_tesis; set => id_tesis = value; }
+            public string Fecha_entrega_tribunal { get => fecha_entrega_tribunal; set => fecha_entrega_tribunal = value; }
+            public string Fecha_limite_devolucion { get => fecha_limite_devolucion; set => fecha_limite_devolucion = value; }
         }
 
 
@@ -88,7 +94,6 @@ namespace CapaNegocio.notificaciones
             ["important"] = "msg 2 ",
             ["normal"] = "msg 3",
             ["low"] = "msg de prioridad baja",
-
             ["time-out"] = "tiempo muerto"
         };
         Dictionary<string, string> title_revision = new Dictionary<string, string>()
@@ -96,14 +101,16 @@ namespace CapaNegocio.notificaciones
             ["critical"] = "titulo de estado critico o alerta",
             ["important"] = "titulo de estado importante",
             ["normal"] = "normal",
-            ["low"] = "titulo de prioridad baja"
+            ["low"] = "titulo de prioridad baja",
+            ["time-out"] = "tiempo muerto"
         };
         Dictionary<string, string> message_revision = new Dictionary<string, string>()
         {
             ["critical"] = "msg 1",
             ["important"] = "msg 2 ",
             ["normal"] = "msg 3",
-            ["low"] = "msg de prioridad baja"
+            ["low"] = "msg de prioridad baja",
+            ["time-out"] = "tiempo muerto"
         };
         List<perfil> list_perfil = new List<perfil>();
         List<revision> list_revision = new List<revision>();
@@ -258,26 +265,7 @@ namespace CapaNegocio.notificaciones
 
 
         }
-        public async Task dataRevision()
-        {
-            await Task.Run(() => {
-
-                var dt = notificacion.getData("revision");
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    //int id = Convert.ToInt32(dt.Rows[i]["id"]);
-                    //string fec_recepcion = Convert.ToString(dt.Rows[i]["fecha_recepcion_titulacion"]);
-                    //string fec_aprobacion = Convert.ToString(dt.Rows[i]["fecha_aprobacion_jefe_carrera"]);
-                    //string fec_limite = Convert.ToString(dt.Rows[i]["fecha_limite"]);
-
-                    //revision obj = new revision(id: id, fecha_recepcion: fec_recepcion, fecha_aprobacion: fec_aprobacion, fecha_limite: fec_limite);
-
-                    //list_revision.Add(obj);
-                }
-            });
-
-
-        }
+        
 
         public void setDataFromListPerfil()
         {
@@ -325,27 +313,84 @@ namespace CapaNegocio.notificaciones
 
 
         }
-        public async Task setDataFromListRevision()
+
+        public void  dataRevision()
         {
-            await Task.Run(() => {
+            try
+            {
+                var dt = notificacion.getData("revision");
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int id = Convert.ToInt32(dt.Rows[i]["id"]);
+                    int id_tesis = Convert.ToInt32(dt.Rows[i]["id_tesis"]);
+                    string fecha_entrega_tribunal = Convert.ToString(dt.Rows[i]["fecha_entrega_tribunal"]);
+                    string fecha_limite_devolucion = dt.Rows[i]["fecha_limite_devolucion"].ToString();
+
+                    revision obj = new revision(id, id_tesis, fecha_entrega_tribunal, fecha_limite_devolucion);
+
+                    list_revision.Add(obj);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+
+
+        }
+        public void setDataFromListRevision()
+        {
+           
+            var all_notificaciones = notificaciones("all");
+
+            if (all_notificaciones.Count == 0)
+            {
                 foreach (var rv in list_revision)
                 {
-                    //string prioridad = determinarPrioridad(pf.Fecha_recepcion, pf.Fecha_limite);
-                    //if (prioridad != "nothing")
-                    //{
-                    //    createNotification(titulo[prioridad], msg[prioridad], getDateNow(), getHourNow(), 0, prioridad, "perfil", pf.Id);
-                    //}
+
+                    string prioridad = determinarPrioridad(rv.Fecha_entrega_tribunal, rv.Fecha_limite_devolucion);
+                    if (prioridad != "nothing")
+                    {
+
+                        createNotification(title_revision[prioridad], message_revision[prioridad], getDateNow(), getHourNow(), 0, prioridad, "revision", rv.Id_tesis);
+
+                    }
 
                 }
-            });
+
+            }
+            else
+            {
+                foreach (var rv in list_revision)
+                {
+
+                    string prioridad = determinarPrioridad(rv.Fecha_entrega_tribunal, rv.Fecha_limite_devolucion);
+                    if (prioridad != "nothing")
+                    {
+                        bool exist = notificacion.ifExistsNotificacion(prioridad, rv.Id_tesis, "revision");
+                        if (exist)
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+                            createNotification(title_revision[prioridad], message_revision[prioridad], getDateNow(), getHourNow(), 0, prioridad, "revision", rv.Id_tesis);
+                        }
+
+                    }
+
+                }
+                
+            }
+
         }
 
         public void main()
         {
             dataPerfil();
-            //await dataRevision();
+            dataRevision();
             setDataFromListPerfil();
-            //await setDataFromListRevision();
+            setDataFromListRevision();
         }
         #endregion
 
