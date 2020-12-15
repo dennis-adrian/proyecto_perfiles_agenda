@@ -52,7 +52,18 @@ namespace CapaDatos.Models
         }
         public DataTable Select()
         {
-            string sql = $" SELECT * FROM  {table_name} ; ";
+            string sql = $" SELECT C.id as id,C.nombre as nombre,C.id_facultad as id_facultad, F.nombre as facultad FROM  {table_name} as C INNER JOIN facultad as F on C.id_facultad = F.id; ";
+            return SelectConexion(sql);
+        }
+        public DataTable Select(string criterio)
+        {
+            string search = criterio.Trim();
+            string sql = $" SELECT C.id as id,C.nombre as nombre,C.id_facultad as id_facultad, F.nombre as facultad FROM  {table_name} as C INNER JOIN facultad as F on C.id_facultad = F.id WHERE C.nombre LIKE '%{search}%' ; ";
+            return SelectConexion(sql);
+        }
+        public DataTable loadFacultades()
+        {
+            string sql = $" SELECT * FROM facultad ; ";
             return SelectConexion(sql);
         }
         public int LastId()

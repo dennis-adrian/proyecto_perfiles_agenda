@@ -158,8 +158,7 @@ namespace CapaPresentacion
             if (dtgPerfilesTesis.CurrentRow != null)
             {
                 int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
-                int cantidadRevisiones = 1;
-                FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
+                FrmRevisiones frm = new FrmRevisiones(id_seleccionado);
                 frm.ShowDialog();
                
             }
@@ -184,8 +183,7 @@ namespace CapaPresentacion
             if (dtgPerfilesTesis.CurrentRow != null)
             {
                 int id_seleccionado = Convert.ToInt32(dtgPerfilesTesis.CurrentRow.Cells[0].Value.ToString());
-                int cantidadRevisiones = 1;
-                FrmRevisiones frm = new FrmRevisiones(cantidadRevisiones, id_seleccionado);
+                FrmRevisiones frm = new FrmRevisiones(id_seleccionado);
                 frm.ShowDialog();
 
             }

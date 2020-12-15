@@ -14,7 +14,6 @@ namespace CapaNegocio.licenciados
         #region Instancias
 
         public Licenciado licenciado;
-        public ViewLicenciados viewlicenciados;
         public Institucion institucion;
         public CarreraLicenciado carreraLicenciado;
         public src.DataTypes type;
@@ -22,7 +21,6 @@ namespace CapaNegocio.licenciados
 
         public Index()
         {
-            viewlicenciados = new ViewLicenciados();
             licenciado = new Licenciado();
             institucion = new Institucion();
             carreraLicenciado = new CarreraLicenciado();

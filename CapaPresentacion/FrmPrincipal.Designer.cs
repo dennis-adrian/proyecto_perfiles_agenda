@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlSubMenuDefensa = new System.Windows.Forms.Panel();
@@ -62,7 +63,6 @@
             this.btnAgregrNew = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
-            this.pnlNotificaciones = new System.Windows.Forms.Panel();
             this.pnlAgregar = new System.Windows.Forms.Panel();
             this.btnNuevaCareraIn = new FontAwesome.Sharp.IconButton();
             this.btnNuevaCarreraEx = new FontAwesome.Sharp.IconButton();
@@ -85,6 +85,7 @@
             this.btnElectronica = new FontAwesome.Sharp.IconButton();
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
@@ -566,6 +567,7 @@
             // 
             // btnNotificaciones
             // 
+            this.btnNotificaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNotificaciones.FlatAppearance.BorderSize = 0;
             this.btnNotificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(9)))), ((int)(((byte)(71)))));
             this.btnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -799,7 +801,6 @@
             // pnlFrmHijo
             // 
             this.pnlFrmHijo.BackColor = System.Drawing.Color.Silver;
-            this.pnlFrmHijo.Controls.Add(this.pnlNotificaciones);
             this.pnlFrmHijo.Controls.Add(this.pnlAgregar);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasEmpresariales);
             this.pnlFrmHijo.Controls.Add(this.pnlCarrerasTenologia);
@@ -813,15 +814,6 @@
             this.pnlFrmHijo.Size = new System.Drawing.Size(950, 688);
             this.pnlFrmHijo.TabIndex = 16;
             this.pnlFrmHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmHijo_Paint);
-            // 
-            // pnlNotificaciones
-            // 
-            this.pnlNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlNotificaciones.Location = new System.Drawing.Point(675, 0);
-            this.pnlNotificaciones.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlNotificaciones.Name = "pnlNotificaciones";
-            this.pnlNotificaciones.Size = new System.Drawing.Size(275, 366);
-            this.pnlNotificaciones.TabIndex = 22;
             // 
             // pnlAgregar
             // 
@@ -1418,6 +1410,10 @@
             this.btnIndustrial.UseVisualStyleBackColor = false;
             this.btnIndustrial.Click += new System.EventHandler(this.btnIndustrial_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1511,7 +1507,7 @@
         public System.Windows.Forms.Panel pnlSubMenuNuevaDefensa;
         public System.Windows.Forms.Panel pnlAgregar;
         private System.Windows.Forms.Button btnNotificaciones;
-        public System.Windows.Forms.Panel pnlNotificaciones;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

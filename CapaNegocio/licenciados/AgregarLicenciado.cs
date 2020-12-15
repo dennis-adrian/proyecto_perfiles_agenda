@@ -34,8 +34,8 @@ namespace CapaNegocio.licenciados
                 string tel = Convert.ToString(Collection[4]);
                 licenciado.Telefono = (tel == "") ? "" : tel;
 
-                type.Celular = Convert.ToString(Collection[5]);
-                licenciado.Celular = type.Celular;
+                string cel = Convert.ToString(Collection[5]);
+                licenciado.Celular = (cel == "") ? "" : cel;
 
                 type.Texto1 = Convert.ToString(Collection[6]);
                 licenciado.Tipo = type.Texto1;

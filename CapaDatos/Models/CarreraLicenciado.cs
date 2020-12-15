@@ -21,13 +21,13 @@ namespace CapaDatos.Models
         private static string table_name = "carrera_licenciado";
 
         #endregion
+
         #region Propiedades
         public string Nombre { get => nombre; set => nombre = value; }
         public int Id { get => id; set => id = value; }
 
 
         #endregion
-
 
         #region Metodos
         public void Insert()
@@ -56,6 +56,12 @@ namespace CapaDatos.Models
         public DataTable Select()
         {
             string sql = $" SELECT * FROM {table_name} ; ";
+            return SelectConexion(sql);
+        }
+        public DataTable Select(string criterio)
+        {
+            string search = criterio.Trim();
+            string sql = $" SELECT * FROM {table_name} WHERE nombre LIKE '%{search}%' ; ";
             return SelectConexion(sql);
         }
         public int LastId()

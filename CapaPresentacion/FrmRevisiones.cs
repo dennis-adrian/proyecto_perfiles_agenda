@@ -15,7 +15,6 @@ namespace CapaPresentacion
 {
     public partial class FrmRevisiones : Form
     {
-        int cantRevisiones = 0;
         int idperfil;
         Panel pnlContenedorGralBackup;
 
@@ -38,7 +37,7 @@ namespace CapaPresentacion
         #region Instancias
 
         NegocioPerfilGeneral obj = new NegocioPerfilGeneral();
-        NegocioRevisiones rev = new NegocioRevisiones();
+        CapaNegocio.revisionPerfil.Index rev = new CapaNegocio.revisionPerfil.Index();
         #endregion
 
         #region Constructores
@@ -46,10 +45,9 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        public FrmRevisiones(int cantRevisiones, int idperfil)
+        public FrmRevisiones(int idperfil)
         {
             InitializeComponent();
-            this.cantRevisiones = cantRevisiones;
             this.idperfil = idperfil;
             ShowPerfilGeneral(idperfil);
             //HiddenRevision();

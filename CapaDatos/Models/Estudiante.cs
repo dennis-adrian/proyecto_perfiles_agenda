@@ -66,7 +66,8 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            string sql = $" UPDATE {table_name}  SET  registro = @parametro0 ,nombre = @parametro1, apellido=@parametro2 ,email = @parametro3 ,telefono = @parametro4 , celular = @parametro5 ,id_carrera = @parametro6   WHERE id = @parametro7 ; ";
+            string mod = modificadoDate();
+            string sql = $" UPDATE {table_name}  SET modificado_en = '{mod}',  registro = @parametro0 ,nombre = @parametro1, apellido=@parametro2 ,email = @parametro3 ,telefono = @parametro4 , celular = @parametro5 ,id_carrera = @parametro6   WHERE id = @parametro7 ; ";
 
             Object[] Parametros = new Object[] { Registro, Nombre, Apellido, Email, Telefono, Celular, Id_carrera, id };
             QueryBuilder(sql, Parametros);

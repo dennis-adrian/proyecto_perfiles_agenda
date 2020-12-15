@@ -11,8 +11,6 @@ namespace CapaNegocio.defensaExterna.defensaGeneral
     {
         CapaDatos.View.DaoDefensas dao = new CapaDatos.View.DaoDefensas();
     
-
-
         private string tipo;
         private string estudiante;
         private string id_estudiante;

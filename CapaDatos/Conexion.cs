@@ -97,7 +97,40 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new ArgumentException("Error en  QueryBuilder: " + e);
+                throw new ArgumentException("Error en  QueryBuilder: " + e.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+        public void execQuery(string sql)
+        {
+            try
+            {
+                SQLiteConnection cnx = AbrirConexion();
+                SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
+                SQLiteCommand command = cnx.CreateCommand();
+                command.CommandText = sql;
+
+
+                int filas = command.ExecuteNonQuery();
+                if (filas > 0)
+                {
+                    sqlTransaction.Commit();
+                    cerrarConexion();
+
+                }
+                else
+                {
+                    throw new ArgumentException("datos no afectados");
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("Error en  QueryBuilder: " + e.Message);
             }
             finally
             {
@@ -237,6 +270,11 @@ namespace CapaDatos
             {
                 cerrarConexion();
             }
+        }
+
+        public string modificadoDate()
+        {
+            return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
         #endregion
 
