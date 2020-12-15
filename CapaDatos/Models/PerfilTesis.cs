@@ -123,11 +123,45 @@ namespace CapaDatos.Models
             string sql = $" SELECT * FROM {table_name} ; ";
             return SelectConexion(sql);
         }
+
+        public DataTable perfilesById(int i)
+        {
+            string sql = $" SELECT * FROM ViewPerfilGeneral WHERE Id = {i} ; ";
+            return SelectConexion(sql);
+        }
+
         public int LastId()
         {
             return LastIdConexion(table_name);
         }
 
+        public DataTable perfilesAll()
+        {
+            string sql = " SELECT * FROM ViewPerfilGeneral ; ";
+            return SelectConexion(sql);
+        }
+        public DataTable perfilesAllByEstudiante(string criterio)
+        {
+
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Nombre LIKE '%{criterio}%' or Apellido LIKE '%{criterio}%' ; ";
+            return SelectConexion(sql);
+
+        }
+
+        public DataTable perfilesAllByCarrera(string criterio)
+        {
+
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' ; ";
+            return SelectConexion(sql);
+
+        }
+        public DataTable perfilesAllByCarreraAndEstudiante(string criterio,string estudiante)
+        {
+
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' and  (Nombre LIKE '%{estudiante}%' or Apellido LIKE '%{estudiante}%') ;  ";
+            return SelectConexion(sql);
+
+        }
         #endregion
     }
 }

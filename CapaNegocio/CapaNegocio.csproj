@@ -74,8 +74,6 @@
     <Compile Include="licenciados\Index.cs" />
     <Compile Include="licenciados\InfoLicenciado.cs" />
     <Compile Include="licenciados\MostrarLicenciados.cs" />
-    <Compile Include="NegocioPerfiles.cs" />
-    <Compile Include="NegocioPerfilGeneral.cs" />
     <Compile Include="notificaciones\Index.cs" />
     <Compile Include="nuevaDefensa\Class1.cs" />
     <Compile Include="nuevoPerfil\index.cs" />

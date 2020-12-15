@@ -15,7 +15,8 @@ namespace CapaPresentacion
 {
     public partial class FrmPerfiles : Form
     {
-       NegocioPerfiles obj = new NegocioPerfiles();
+        CapaNegocio.perfilTesis.Index obj = new CapaNegocio.perfilTesis.Index();
+       //NegocioPerfiles obj = new NegocioPerfiles();
         string carrera = null;
         public FrmPerfiles(string criterio)
         {
@@ -29,125 +30,184 @@ namespace CapaPresentacion
 
 
         #endregion
+
+
+        void generalPerfil()
+        {
+            int campo1 = 1;
+            var list = obj.Perfiles();
+            foreach (var item in list)
+            {
+
+                string campo0 = Convert.ToString(item.Id);
+                string campo2 = item.Estado_Proyecto;
+                string campo3 = item.Registro;
+                string campo4 = item.Nombre + " " + item.Apellido;
+                string campo5 = item.Carrera;
+                string campo6 = item.Facultad;
+                string campo7 = item.Tema;
+                string campo8 = item.Licenciado;
+                string campo9 = item.Email;
+                string campo10 = item.Telefono;
+                string campo11 = item.Fecha_Recepcion;
+
+                string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                this.dtgPerfilesTesis.Rows.Add(row);
+                campo1++;
+
+            }
+            txtCarreraSeleccionada.Text = "Todas las Carreras";
+        }
+
+        void generalPerfilEstudiante(string nombre)
+        {
+            dtgPerfilesTesis.Rows.Clear();
+            int campo1 = 1;
+            var list = obj.PerfilesEstudiante(nombre);
+            foreach (var item in list)
+            {
+
+                string campo0 = Convert.ToString(item.Id);
+                string campo2 = item.Estado_Proyecto;
+                string campo3 = item.Registro;
+                string campo4 = item.Nombre + " " + item.Apellido;
+                string campo5 = item.Carrera;
+                string campo6 = item.Facultad;
+                string campo7 = item.Tema;
+                string campo8 = item.Licenciado;
+                string campo9 = item.Email;
+                string campo10 = item.Telefono;
+                string campo11 = item.Fecha_Recepcion;
+
+                string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                this.dtgPerfilesTesis.Rows.Add(row);
+                campo1++;
+
+            }
+            txtCarreraSeleccionada.Text = "Todas las Carreras";
+        }
+        void carreraPerfil(string criterio)
+        {
+            string carreraSeleccionada = "";
+            dtgPerfilesTesis.Rows.Clear();
+            var list2 = obj.PerfilesCarrera(criterio);
+            int campo1 = 1;
+            foreach (var item in list2)
+            {
+                carreraSeleccionada = item.Carrera;
+                string campo0 = Convert.ToString(item.Id);
+                string campo2 = item.Estado_Proyecto;
+                string campo3 = item.Registro;
+                string campo4 = item.Nombre + " " + item.Apellido;
+                string campo5 = "";
+                string campo6 = "";
+                string campo7 = item.Tema;
+                string campo8 = item.Licenciado;
+                string campo9 = item.Email;
+                string campo10 = item.Telefono;
+                string campo11 = item.Fecha_Recepcion;
+
+                string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                this.dtgPerfilesTesis.Rows.Add(row);
+                this.ColumnaFacultad.Visible = false;
+                this.ColumnaCarrera.Visible = false;
+                campo1++;
+
+            }
+            txtCarreraSeleccionada.Text =carreraSeleccionada;
+        }
+
+        void carreraPerfilEstudiante(string carrera,string estudiante)
+        {
+            string carreraSeleccionada = "";
+            dtgPerfilesTesis.Rows.Clear();
+            var list2 = obj.PerfilesCarreraEstudiante(carrera, estudiante);
+            int campo1 = 1;
+            foreach (var item in list2)
+            {
+                carreraSeleccionada = item.Carrera;
+                string campo0 = Convert.ToString(item.Id);
+                string campo2 = item.Estado_Proyecto;
+                string campo3 = item.Registro;
+                string campo4 = item.Nombre + " " + item.Apellido;
+                string campo5 = "";
+                string campo6 = "";
+                string campo7 = item.Tema;
+                string campo8 = item.Licenciado;
+                string campo9 = item.Email;
+                string campo10 = item.Telefono;
+                string campo11 = item.Fecha_Recepcion;
+
+                string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
+                this.dtgPerfilesTesis.Rows.Add(row);
+                this.ColumnaFacultad.Visible = false;
+                this.ColumnaCarrera.Visible = false;
+                campo1++;
+
+            }
+            txtCarreraSeleccionada.Text = carreraSeleccionada;
+        }
         public void Inicializador(string criterio)
         {
             if (criterio == null)
             {
-
-                int campo1 = 1;
-                var list = obj.Perfiles();
-                foreach (var item in list)
-                {
-
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Estado_Proyecto;
-                    string campo3 = item.Registro;
-                    string campo4 = item.Estudiante;
-                    string campo5 = item.Carrera;
-                    string campo6 = item.Facultad;
-                    string campo7 = item.Tema;
-                    string campo8 = item.Tutor;
-                    string campo9 = item.Email;
-                    string campo10 = item.Telefono;
-                    string campo11 = item.Fecha_Recepcion;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
-                    this.dtgPerfilesTesis.Rows.Add(row);
-                    campo1++;
-
-                }
-                
-
+                generalPerfil();
             }
             else
             {
-
-                dtgPerfilesTesis.Rows.Clear();
-                var list2 = obj.PerfilesCarrera(criterio);
-                int campo1 = 1;
-                foreach (var item in list2)
-                {
-
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Estado_Proyecto;
-                    string campo3 = item.Registro;
-                    string campo4 = item.Estudiante;
-                    string campo5 = "";
-                    string campo6 = "";
-                    string campo7 = item.Tema;
-                    string campo8 = item.Tutor;
-                    string campo9 = item.Email;
-                    string campo10 = item.Telefono;
-                    string campo11 = item.Fecha_Recepcion;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
-                    this.dtgPerfilesTesis.Rows.Add(row);
-                    this.ColumnaFacultad.Visible = false;
-                    this.ColumnaCarrera.Visible = false;
-                    campo1++;
-
-                }
+                carreraPerfil(criterio);
+               
             }
         }
 
         private void btnBuscarPerfil_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarPerfil.Text;
-            if (carrera == null)
+            string carr = txtCarreraSeleccionada.Text;
+            bool passnombre = String.IsNullOrEmpty(nombre);
+            if (passnombre)
             {
-                dtgPerfilesTesis.Rows.Clear();
-                int campo1 = 1;
-                var list = obj.Perfiles(nombre);
-                foreach (var item in list)
+                if (carr != "Todas las Carreras")
+                {
+                    dtgPerfilesTesis.Rows.Clear();
+                    carreraPerfil(carr);
+                }
+                else
                 {
 
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Estado_Proyecto;
-                    string campo3 = item.Registro;
-                    string campo4 = item.Estudiante;
-                    string campo5 = item.Carrera;
-                    string campo6 = item.Facultad;
-                    string campo7 = item.Tema;
-                    string campo8 = item.Tutor;
-                    string campo9 = item.Email;
-                    string campo10 = item.Telefono;
-                    string campo11 = item.Fecha_Recepcion;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
-                    this.dtgPerfilesTesis.Rows.Add(row);
-                    campo1++;
-
+                    dtgPerfilesTesis.Rows.Clear();
+                    generalPerfil();
                 }
 
             }
             else
             {
-                dtgPerfilesTesis.Rows.Clear();
-                var list2 = obj.PerfilesCarrera(carrera,nombre);
-                int campo1 = 1;
-                foreach (var item in list2)
+                if (carr != "Todas las Carreras")
                 {
 
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Estado_Proyecto;
-                    string campo3 = item.Registro;
-                    string campo4 = item.Estudiante;
-                    string campo5 = "";
-                    string campo6 = "";
-                    string campo7 = item.Tema;
-                    string campo8 = item.Tutor;
-                    string campo9 = item.Email;
-                    string campo10 = item.Telefono;
-                    string campo11 = item.Fecha_Recepcion;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
-                    this.dtgPerfilesTesis.Rows.Add(row);
-                    this.ColumnaFacultad.Visible = false;
-                    this.ColumnaCarrera.Visible = false;
-                    campo1++;
-
+                    dtgPerfilesTesis.Rows.Clear();
+                    carreraPerfilEstudiante(carrera, nombre);
                 }
+                else
+                {
+                    dtgPerfilesTesis.Rows.Clear();
+                    generalPerfilEstudiante(nombre);
+
+                   
+                }
+
             }
+           
+            //if (carrera == null)
+            //{
+
+            //    generalPerfilEstudiante(nombre);
+
+            //}
+            //else
+            //{
+            //    carreraPerfilEstudiante(carrera, nombre);
+            //}
 
         }
 
