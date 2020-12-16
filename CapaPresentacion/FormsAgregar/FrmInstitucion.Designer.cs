@@ -64,9 +64,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1279, 60);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(548, 27);
             this.pnlBarraTitulo.TabIndex = 29;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -80,10 +80,10 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(1197, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(513, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(79, 65);
+            this.btnCerrar.Size = new System.Drawing.Size(34, 29);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -93,10 +93,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(212, 33);
-            this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label10.Location = new System.Drawing.Point(91, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(671, 39);
+            this.label10.Size = new System.Drawing.Size(312, 18);
             this.label10.TabIndex = 29;
             this.label10.Text = "Institución que el Licenciado Representa";
             // 
@@ -105,10 +104,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1279, 100);
+            this.panel2.Size = new System.Drawing.Size(548, 45);
             this.panel2.TabIndex = 35;
             // 
             // groupBox2
@@ -118,11 +117,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnNuevaInstitu);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(21, 181);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox2.Location = new System.Drawing.Point(9, 81);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(1213, 308);
+            this.groupBox2.Size = new System.Drawing.Size(520, 138);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar y Editar Institución";
@@ -131,29 +128,28 @@
             // idlbl
             // 
             this.idlbl.AutoSize = true;
-            this.idlbl.Location = new System.Drawing.Point(467, 67);
+            this.idlbl.Location = new System.Drawing.Point(200, 30);
+            this.idlbl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.idlbl.Name = "idlbl";
-            this.idlbl.Size = new System.Drawing.Size(38, 40);
+            this.idlbl.Size = new System.Drawing.Size(19, 20);
             this.idlbl.TabIndex = 54;
             this.idlbl.Text = "0";
             // 
             // txtNuevaInstitucion
             // 
             this.txtNuevaInstitucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaInstitucion.Location = new System.Drawing.Point(42, 123);
-            this.txtNuevaInstitucion.Margin = new System.Windows.Forms.Padding(7);
+            this.txtNuevaInstitucion.Location = new System.Drawing.Point(18, 55);
             this.txtNuevaInstitucion.Name = "txtNuevaInstitucion";
-            this.txtNuevaInstitucion.Size = new System.Drawing.Size(1119, 48);
+            this.txtNuevaInstitucion.Size = new System.Drawing.Size(482, 26);
             this.txtNuevaInstitucion.TabIndex = 52;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(15, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 40);
+            this.label1.Size = new System.Drawing.Size(164, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "Nombre de Institución";
             // 
@@ -165,10 +161,9 @@
             this.btnNuevaInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaInstitu.ForeColor = System.Drawing.Color.White;
             this.btnNuevaInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaInstitu.Image")));
-            this.btnNuevaInstitu.Location = new System.Drawing.Point(952, 216);
-            this.btnNuevaInstitu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnNuevaInstitu.Location = new System.Drawing.Point(408, 97);
             this.btnNuevaInstitu.Name = "btnNuevaInstitu";
-            this.btnNuevaInstitu.Size = new System.Drawing.Size(217, 65);
+            this.btnNuevaInstitu.Size = new System.Drawing.Size(93, 29);
             this.btnNuevaInstitu.TabIndex = 40;
             this.btnNuevaInstitu.Text = "Guardar";
             this.btnNuevaInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -184,11 +179,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtgInstitucion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 502);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox1.Location = new System.Drawing.Point(9, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(1213, 685);
+            this.groupBox1.Size = new System.Drawing.Size(520, 307);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Y Elegir Institución";
@@ -206,10 +200,9 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 24;
-            this.btnBuscar.Location = new System.Drawing.Point(1074, 70);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnBuscar.Location = new System.Drawing.Point(460, 31);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 54);
+            this.btnBuscar.Size = new System.Drawing.Size(24, 24);
             this.btnBuscar.TabIndex = 54;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -217,10 +210,9 @@
             // txtBuscarInstitu
             // 
             this.txtBuscarInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarInstitu.Location = new System.Drawing.Point(198, 74);
-            this.txtBuscarInstitu.Margin = new System.Windows.Forms.Padding(7);
+            this.txtBuscarInstitu.Location = new System.Drawing.Point(85, 33);
             this.txtBuscarInstitu.Name = "txtBuscarInstitu";
-            this.txtBuscarInstitu.Size = new System.Drawing.Size(839, 48);
+            this.txtBuscarInstitu.Size = new System.Drawing.Size(362, 26);
             this.txtBuscarInstitu.TabIndex = 52;
             // 
             // btnSelecInstitu
@@ -231,10 +223,9 @@
             this.btnSelecInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecInstitu.ForeColor = System.Drawing.Color.White;
             this.btnSelecInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecInstitu.Image")));
-            this.btnSelecInstitu.Location = new System.Drawing.Point(952, 567);
-            this.btnSelecInstitu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnSelecInstitu.Location = new System.Drawing.Point(408, 254);
             this.btnSelecInstitu.Name = "btnSelecInstitu";
-            this.btnSelecInstitu.Size = new System.Drawing.Size(217, 65);
+            this.btnSelecInstitu.Size = new System.Drawing.Size(93, 29);
             this.btnSelecInstitu.TabIndex = 43;
             this.btnSelecInstitu.Text = "  Elegir";
             this.btnSelecInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -248,10 +239,9 @@
             this.btnEditarInstitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarInstitu.ForeColor = System.Drawing.Color.White;
             this.btnEditarInstitu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarInstitu.Image")));
-            this.btnEditarInstitu.Location = new System.Drawing.Point(721, 567);
-            this.btnEditarInstitu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEditarInstitu.Location = new System.Drawing.Point(309, 254);
             this.btnEditarInstitu.Name = "btnEditarInstitu";
-            this.btnEditarInstitu.Size = new System.Drawing.Size(217, 65);
+            this.btnEditarInstitu.Size = new System.Drawing.Size(93, 29);
             this.btnEditarInstitu.TabIndex = 43;
             this.btnEditarInstitu.Text = "  Editar";
             this.btnEditarInstitu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -262,10 +252,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Location = new System.Drawing.Point(16, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 40);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 51;
             this.label2.Text = "Buscar :";
             // 
@@ -294,8 +283,7 @@
             this.columnNombre});
             this.dtgInstitucion.EnableHeadersVisualStyles = false;
             this.dtgInstitucion.GridColor = System.Drawing.Color.White;
-            this.dtgInstitucion.Location = new System.Drawing.Point(35, 170);
-            this.dtgInstitucion.Margin = new System.Windows.Forms.Padding(7);
+            this.dtgInstitucion.Location = new System.Drawing.Point(15, 76);
             this.dtgInstitucion.Name = "dtgInstitucion";
             this.dtgInstitucion.ReadOnly = true;
             this.dtgInstitucion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -316,7 +304,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dtgInstitucion.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgInstitucion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgInstitucion.Size = new System.Drawing.Size(1134, 366);
+            this.dtgInstitucion.Size = new System.Drawing.Size(486, 164);
             this.dtgInstitucion.TabIndex = 49;
             // 
             // columnId
@@ -345,18 +333,17 @@
             // 
             // FrmInstitucion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1279, 1214);
+            this.ClientSize = new System.Drawing.Size(548, 551);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7);
-            this.MinimumSize = new System.Drawing.Size(1279, 1214);
+            this.MinimumSize = new System.Drawing.Size(548, 551);
             this.Name = "FrmInstitucion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInstitucion";

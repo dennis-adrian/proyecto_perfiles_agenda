@@ -61,10 +61,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.lbltitu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1276, 100);
+            this.panel2.Size = new System.Drawing.Size(547, 45);
             this.panel2.TabIndex = 34;
             // 
             // lbltitu
@@ -72,10 +72,9 @@
             this.lbltitu.AutoSize = true;
             this.lbltitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitu.ForeColor = System.Drawing.Color.White;
-            this.lbltitu.Location = new System.Drawing.Point(425, 31);
-            this.lbltitu.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lbltitu.Location = new System.Drawing.Point(182, 14);
             this.lbltitu.Name = "lbltitu";
-            this.lbltitu.Size = new System.Drawing.Size(402, 39);
+            this.lbltitu.Size = new System.Drawing.Size(184, 18);
             this.lbltitu.TabIndex = 29;
             this.lbltitu.Text = "Agregar nueva Facultad";
             // 
@@ -85,9 +84,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1276, 60);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(547, 27);
             this.pnlBarraTitulo.TabIndex = 33;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -101,10 +100,10 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(1195, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(512, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(79, 65);
+            this.btnCerrar.Size = new System.Drawing.Size(34, 29);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -116,11 +115,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnGuardarFacu);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(21, 183);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox2.Location = new System.Drawing.Point(9, 82);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(1213, 219);
+            this.groupBox2.Size = new System.Drawing.Size(520, 98);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar y editar facultad";
@@ -128,9 +125,10 @@
             // idlbl
             // 
             this.idlbl.AutoSize = true;
-            this.idlbl.Location = new System.Drawing.Point(392, 71);
+            this.idlbl.Location = new System.Drawing.Point(168, 32);
+            this.idlbl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.idlbl.Name = "idlbl";
-            this.idlbl.Size = new System.Drawing.Size(38, 40);
+            this.idlbl.Size = new System.Drawing.Size(19, 20);
             this.idlbl.TabIndex = 53;
             this.idlbl.Text = "0";
             this.idlbl.Click += new System.EventHandler(this.idlbl_Click);
@@ -138,20 +136,18 @@
             // txtNombreFacultad
             // 
             this.txtNombreFacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFacultad.Location = new System.Drawing.Point(42, 124);
-            this.txtNombreFacultad.Margin = new System.Windows.Forms.Padding(7);
+            this.txtNombreFacultad.Location = new System.Drawing.Point(18, 56);
             this.txtNombreFacultad.Name = "txtNombreFacultad";
-            this.txtNombreFacultad.Size = new System.Drawing.Size(792, 48);
+            this.txtNombreFacultad.Size = new System.Drawing.Size(342, 26);
             this.txtNombreFacultad.TabIndex = 52;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(14, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 40);
+            this.label1.Size = new System.Drawing.Size(148, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "Nombre de facultad";
             // 
@@ -163,10 +159,9 @@
             this.btnGuardarFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarFacu.ForeColor = System.Drawing.Color.White;
             this.btnGuardarFacu.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarFacu.Image")));
-            this.btnGuardarFacu.Location = new System.Drawing.Point(873, 123);
-            this.btnGuardarFacu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnGuardarFacu.Location = new System.Drawing.Point(374, 55);
             this.btnGuardarFacu.Name = "btnGuardarFacu";
-            this.btnGuardarFacu.Size = new System.Drawing.Size(252, 48);
+            this.btnGuardarFacu.Size = new System.Drawing.Size(108, 27);
             this.btnGuardarFacu.TabIndex = 40;
             this.btnGuardarFacu.Text = "Guardar";
             this.btnGuardarFacu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -183,11 +178,10 @@
             this.groupBox1.Controls.Add(this.btnEditarFacu);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 416);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox1.Location = new System.Drawing.Point(9, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(1213, 742);
+            this.groupBox1.Size = new System.Drawing.Size(520, 333);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar facultad";
@@ -200,10 +194,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(502, 659);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEliminar.Location = new System.Drawing.Point(215, 295);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(217, 65);
+            this.btnEliminar.Size = new System.Drawing.Size(93, 29);
             this.btnEliminar.TabIndex = 56;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -217,11 +210,12 @@
             this.idtxt,
             this.nrotxt,
             this.nombretxt});
-            this.dtgFacultad.Location = new System.Drawing.Point(30, 186);
+            this.dtgFacultad.Location = new System.Drawing.Point(13, 83);
+            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dtgFacultad.Name = "dtgFacultad";
             this.dtgFacultad.RowHeadersWidth = 92;
             this.dtgFacultad.RowTemplate.Height = 37;
-            this.dtgFacultad.Size = new System.Drawing.Size(1133, 423);
+            this.dtgFacultad.Size = new System.Drawing.Size(486, 190);
             this.dtgFacultad.TabIndex = 55;
             // 
             // idtxt
@@ -259,10 +253,9 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 24;
-            this.btnBuscar.Location = new System.Drawing.Point(1054, 73);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnBuscar.Location = new System.Drawing.Point(452, 33);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 54);
+            this.btnBuscar.Size = new System.Drawing.Size(24, 24);
             this.btnBuscar.TabIndex = 54;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -270,10 +263,9 @@
             // txtBuscarFacultad
             // 
             this.txtBuscarFacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarFacultad.Location = new System.Drawing.Point(198, 74);
-            this.txtBuscarFacultad.Margin = new System.Windows.Forms.Padding(7);
+            this.txtBuscarFacultad.Location = new System.Drawing.Point(85, 33);
             this.txtBuscarFacultad.Name = "txtBuscarFacultad";
-            this.txtBuscarFacultad.Size = new System.Drawing.Size(816, 48);
+            this.txtBuscarFacultad.Size = new System.Drawing.Size(352, 26);
             this.txtBuscarFacultad.TabIndex = 52;
             this.txtBuscarFacultad.TextChanged += new System.EventHandler(this.txtBuscarFacultad_TextChanged);
             // 
@@ -285,10 +277,9 @@
             this.btnSelecFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecFacu.ForeColor = System.Drawing.Color.White;
             this.btnSelecFacu.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecFacu.Image")));
-            this.btnSelecFacu.Location = new System.Drawing.Point(964, 659);
-            this.btnSelecFacu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnSelecFacu.Location = new System.Drawing.Point(413, 295);
             this.btnSelecFacu.Name = "btnSelecFacu";
-            this.btnSelecFacu.Size = new System.Drawing.Size(217, 65);
+            this.btnSelecFacu.Size = new System.Drawing.Size(93, 29);
             this.btnSelecFacu.TabIndex = 43;
             this.btnSelecFacu.Text = "  Elegir";
             this.btnSelecFacu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -303,10 +294,9 @@
             this.btnEditarFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarFacu.ForeColor = System.Drawing.Color.White;
             this.btnEditarFacu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarFacu.Image")));
-            this.btnEditarFacu.Location = new System.Drawing.Point(733, 659);
-            this.btnEditarFacu.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEditarFacu.Location = new System.Drawing.Point(314, 295);
             this.btnEditarFacu.Name = "btnEditarFacu";
-            this.btnEditarFacu.Size = new System.Drawing.Size(217, 65);
+            this.btnEditarFacu.Size = new System.Drawing.Size(93, 29);
             this.btnEditarFacu.TabIndex = 43;
             this.btnEditarFacu.Text = "  Editar";
             this.btnEditarFacu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -317,27 +307,25 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Location = new System.Drawing.Point(15, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 40);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 51;
             this.label2.Text = "Buscar :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FrmFacultad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1276, 1222);
+            this.ClientSize = new System.Drawing.Size(547, 537);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(7);
-            this.MinimumSize = new System.Drawing.Size(1276, 1222);
+            this.MinimumSize = new System.Drawing.Size(547, 537);
             this.Name = "FrmFacultad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFacultad";

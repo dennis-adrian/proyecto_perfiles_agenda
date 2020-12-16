@@ -65,9 +65,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1274, 60);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(546, 27);
             this.pnlBarraTitulo.TabIndex = 28;
             this.pnlBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
@@ -82,10 +82,10 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(1192, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(511, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(79, 65);
+            this.btnCerrar.Size = new System.Drawing.Size(34, 29);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -95,10 +95,9 @@
             this.lbltitu.AutoSize = true;
             this.lbltitu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitu.ForeColor = System.Drawing.Color.White;
-            this.lbltitu.Location = new System.Drawing.Point(469, 29);
-            this.lbltitu.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lbltitu.Location = new System.Drawing.Point(201, 13);
             this.lbltitu.Name = "lbltitu";
-            this.lbltitu.Size = new System.Drawing.Size(375, 39);
+            this.lbltitu.Size = new System.Drawing.Size(174, 18);
             this.lbltitu.TabIndex = 29;
             this.lbltitu.Text = "Nueva carrera externa";
             // 
@@ -107,10 +106,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.lbltitu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1274, 100);
+            this.panel2.Size = new System.Drawing.Size(546, 45);
             this.panel2.TabIndex = 32;
             // 
             // groupBox2
@@ -120,11 +119,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnCarreraExt);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(26, 190);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox2.Location = new System.Drawing.Point(11, 85);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(1213, 310);
+            this.groupBox2.Size = new System.Drawing.Size(520, 139);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar y agregar carrera externa";
@@ -132,29 +129,28 @@
             // idlbl
             // 
             this.idlbl.AutoSize = true;
-            this.idlbl.Location = new System.Drawing.Point(514, 76);
+            this.idlbl.Location = new System.Drawing.Point(220, 34);
+            this.idlbl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.idlbl.Name = "idlbl";
-            this.idlbl.Size = new System.Drawing.Size(38, 40);
+            this.idlbl.Size = new System.Drawing.Size(19, 20);
             this.idlbl.TabIndex = 54;
             this.idlbl.Text = "0";
             // 
             // txtNombreCarreraLic
             // 
             this.txtNombreCarreraLic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCarreraLic.Location = new System.Drawing.Point(40, 123);
-            this.txtNombreCarreraLic.Margin = new System.Windows.Forms.Padding(7);
+            this.txtNombreCarreraLic.Location = new System.Drawing.Point(17, 55);
             this.txtNombreCarreraLic.Name = "txtNombreCarreraLic";
-            this.txtNombreCarreraLic.Size = new System.Drawing.Size(817, 48);
+            this.txtNombreCarreraLic.Size = new System.Drawing.Size(352, 26);
             this.txtNombreCarreraLic.TabIndex = 52;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(14, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 40);
+            this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "Nombre de carrera externa";
             // 
@@ -166,10 +162,9 @@
             this.btnCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnCarreraExt.Image")));
-            this.btnCarreraExt.Location = new System.Drawing.Point(897, 123);
-            this.btnCarreraExt.Margin = new System.Windows.Forms.Padding(7);
+            this.btnCarreraExt.Location = new System.Drawing.Point(384, 55);
             this.btnCarreraExt.Name = "btnCarreraExt";
-            this.btnCarreraExt.Size = new System.Drawing.Size(217, 65);
+            this.btnCarreraExt.Size = new System.Drawing.Size(93, 29);
             this.btnCarreraExt.TabIndex = 40;
             this.btnCarreraExt.Text = "Guardar";
             this.btnCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -186,11 +181,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtgCarreraExterna);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 526);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBox1.Location = new System.Drawing.Point(11, 236);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(1213, 665);
+            this.groupBox1.Size = new System.Drawing.Size(520, 298);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar carrera";
@@ -203,10 +197,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(450, 558);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEliminar.Location = new System.Drawing.Point(193, 250);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(217, 65);
+            this.btnEliminar.Size = new System.Drawing.Size(93, 29);
             this.btnEliminar.TabIndex = 55;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -226,10 +219,9 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 24;
-            this.btnBuscar.Location = new System.Drawing.Point(1086, 74);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(7);
+            this.btnBuscar.Location = new System.Drawing.Point(465, 33);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 54);
+            this.btnBuscar.Size = new System.Drawing.Size(24, 24);
             this.btnBuscar.TabIndex = 54;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -237,10 +229,9 @@
             // txtBuscarCarreraExt
             // 
             this.txtBuscarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCarreraExt.Location = new System.Drawing.Point(189, 74);
-            this.txtBuscarCarreraExt.Margin = new System.Windows.Forms.Padding(7);
+            this.txtBuscarCarreraExt.Location = new System.Drawing.Point(81, 33);
             this.txtBuscarCarreraExt.Name = "txtBuscarCarreraExt";
-            this.txtBuscarCarreraExt.Size = new System.Drawing.Size(843, 48);
+            this.txtBuscarCarreraExt.Size = new System.Drawing.Size(364, 26);
             this.txtBuscarCarreraExt.TabIndex = 52;
             // 
             // btnSelecCarreraExt
@@ -251,10 +242,9 @@
             this.btnSelecCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnSelecCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCarreraExt.Image")));
-            this.btnSelecCarreraExt.Location = new System.Drawing.Point(952, 558);
-            this.btnSelecCarreraExt.Margin = new System.Windows.Forms.Padding(7);
+            this.btnSelecCarreraExt.Location = new System.Drawing.Point(408, 250);
             this.btnSelecCarreraExt.Name = "btnSelecCarreraExt";
-            this.btnSelecCarreraExt.Size = new System.Drawing.Size(217, 65);
+            this.btnSelecCarreraExt.Size = new System.Drawing.Size(93, 29);
             this.btnSelecCarreraExt.TabIndex = 43;
             this.btnSelecCarreraExt.Text = "  Elegir";
             this.btnSelecCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -268,10 +258,9 @@
             this.btnEditarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCarreraExt.ForeColor = System.Drawing.Color.White;
             this.btnEditarCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCarreraExt.Image")));
-            this.btnEditarCarreraExt.Location = new System.Drawing.Point(699, 558);
-            this.btnEditarCarreraExt.Margin = new System.Windows.Forms.Padding(7);
+            this.btnEditarCarreraExt.Location = new System.Drawing.Point(300, 250);
             this.btnEditarCarreraExt.Name = "btnEditarCarreraExt";
-            this.btnEditarCarreraExt.Size = new System.Drawing.Size(217, 65);
+            this.btnEditarCarreraExt.Size = new System.Drawing.Size(93, 29);
             this.btnEditarCarreraExt.TabIndex = 43;
             this.btnEditarCarreraExt.Text = "  Editar";
             this.btnEditarCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -282,10 +271,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Location = new System.Drawing.Point(11, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 40);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 51;
             this.label2.Text = "Buscar :";
             // 
@@ -314,8 +302,7 @@
             this.txtnombre});
             this.dtgCarreraExterna.EnableHeadersVisualStyles = false;
             this.dtgCarreraExterna.GridColor = System.Drawing.Color.White;
-            this.dtgCarreraExterna.Location = new System.Drawing.Point(-10, 157);
-            this.dtgCarreraExterna.Margin = new System.Windows.Forms.Padding(7);
+            this.dtgCarreraExterna.Location = new System.Drawing.Point(-4, 70);
             this.dtgCarreraExterna.Name = "dtgCarreraExterna";
             this.dtgCarreraExterna.ReadOnly = true;
             this.dtgCarreraExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -336,7 +323,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dtgCarreraExterna.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgCarreraExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCarreraExterna.Size = new System.Drawing.Size(1209, 366);
+            this.dtgCarreraExterna.Size = new System.Drawing.Size(518, 164);
             this.dtgCarreraExterna.TabIndex = 49;
             // 
             // txtid
@@ -365,18 +352,17 @@
             // 
             // FrmCarreraExterna
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1274, 1231);
+            this.ClientSize = new System.Drawing.Size(546, 550);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7);
-            this.MinimumSize = new System.Drawing.Size(1274, 1231);
+            this.MinimumSize = new System.Drawing.Size(546, 550);
             this.Name = "FrmCarreraExterna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCarrera";
