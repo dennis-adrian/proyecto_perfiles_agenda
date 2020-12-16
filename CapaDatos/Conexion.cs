@@ -15,7 +15,7 @@ namespace CapaDatos
 
         private SQLiteConnection cnx;
         private string pathBd;
-        private string ENV = "dev";
+        private string ENV = "prod";
 
         #endregion
         #region Propiedades
@@ -36,13 +36,12 @@ namespace CapaDatos
         {
             if (ENV == "dev")
             {
-                //correcion en conexion , se debe hacer un a conexion con llaaves foraneas activadas
                 pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
                 cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
             }
             if (ENV == "prod")
             {
-                pathBd = @"C:\Temp\";
+                pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\"));
                 cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
             }
 
