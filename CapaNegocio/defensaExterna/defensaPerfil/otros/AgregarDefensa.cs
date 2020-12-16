@@ -120,6 +120,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
                 defensaExterna.Id_tesis = idtesis;
                 defensaExterna.Id_titulacion_otro = 0;
                 defensaExterna.Insert();
+                perfilTesis.updateStatus(idtesis,"En Defensa");
 
             }
             catch (Exception e)

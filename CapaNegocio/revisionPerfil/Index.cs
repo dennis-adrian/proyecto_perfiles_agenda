@@ -406,6 +406,21 @@ namespace CapaNegocio.revisionPerfil
 
         }
 
+        
+        public Revision.byPassDefensa getDataForDefensaExterna(int idtesis)
+        {
+            //try
+            //{
+            //}
+            //catch(Exception ex)
+            //{
+            //    throw new ArgumentException(ex.Message);
+            //}
+
+            Revision.byPassDefensa bypass = revision.byPassDefensaExterna(idtesis);
+            return bypass;
+
+        }
 
         public void deleteRevision(int id)
         {

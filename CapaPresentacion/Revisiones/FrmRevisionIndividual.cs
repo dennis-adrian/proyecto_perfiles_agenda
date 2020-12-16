@@ -22,7 +22,8 @@ namespace CapaPresentacion
 
         //id del perfil de tesis
         int id_perfil;
-
+        string estadoSinDatos = "Sin Datos Asignados";
+        string estadoConDatos = "Datos Asignados";
         //id y numero de revision
         int num_revision;
         int id_revision = 0;
@@ -50,9 +51,65 @@ namespace CapaPresentacion
             cargarNombreTribunales();
             inicializarDateTimePickers();
             ShowData();
-        }
-       
+            setActionButtonDefensa();
 
+            
+        }
+        public void setActionButtonDefensa()
+        {
+            var data = obj.getDataForDefensaExterna(this.id_perfil);
+
+            if (data.Id_defensa == 0 && data.Id_tesis == 0)
+            {
+               
+                btnDefensaExterna.Visible = false;
+                txtIdDefensa.Text = Convert.ToString(data.Id_defensa);
+                txtIdTesis.Text= Convert.ToString(this.id_perfil);
+            }
+            else
+            {
+                if(data.Id_defensa ==0 && data.Id_tesis > 0)
+                {
+                    //tesis sin defensa
+                    if(btnDefensaExterna.Visible == false)
+                    {
+                        btnDefensaExterna.Visible = true;
+                        
+                    }
+                    btnDefensaExterna.Text = "Agregar Defensa";
+
+                    btnDefensaExterna.BackColor = Color.FromArgb(102, 102, 102);
+
+                    btnDefensaExterna.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+
+                    txtIdDefensa.Text = Convert.ToString(data.Id_defensa);
+
+                    txtIdTesis.Text = Convert.ToString(data.Id_tesis);
+
+                }
+                else if (data.Id_defensa > 0 && data.Id_tesis > 0)
+                {
+                    //tesis con defensa
+                    if (btnDefensaExterna.Visible == false)
+                    {
+                        btnDefensaExterna.Visible = true;
+                        
+                    }
+                    btnDefensaExterna.Text = "Ir a Defensa";
+                    btnDefensaExterna.BackColor = Color.FromArgb(178, 8, 55);
+                    btnDefensaExterna.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+
+                    txtIdDefensa.Text = Convert.ToString(data.Id_defensa);
+
+                    txtIdTesis.Text = Convert.ToString(data.Id_tesis);
+
+                }
+            }
+
+
+        }
+
+       
 
 
         //controles del formulario licenciado
@@ -173,33 +230,49 @@ namespace CapaPresentacion
         {
             try
             {
-                if (this.id_revision <= 0)
+                int idrev = Convert.ToInt32(txtIdRevision.Text);
+
+                if (txtEstadoDatos.Text == estadoSinDatos && idrev > 0)
+                {
+                    MessageBox.Show("cargue previamente los datos");
+                }else if(txtEstadoDatos.Text == estadoSinDatos && idrev<=0)
                 {
                     Insert();
                     MessageBox.Show("Datos de la revision guardados correctamente");
+
+                    setActionButtonDefensa();
                     InsertForNewDefensa();
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
                     cargarNombreTribunales();
+                    txtEstadoDatos.Text = estadoSinDatos;
 
 
                 }
-                else
+                else if(txtEstadoDatos.Text == estadoConDatos && idrev > 0)
                 {
                     Update(this.id_revision);
                     MessageBox.Show("Datos de la revision actualizados correctamente");
+
+                    setActionButtonDefensa();
                     InsertForNewDefensa();
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
 
                     cargarNombreTribunales();
-
-
-
-
+                    txtEstadoDatos.Text = estadoSinDatos;
                 }
+
+
+                
+
+
+
+
+
+                
             }
             catch (Exception ex)
             {
@@ -345,31 +418,23 @@ namespace CapaPresentacion
 
 
         
+        
         void InsertForNewDefensa()
         {
-            bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
-            if (res == true)
+            if(btnDefensaExterna.Visible == true)
             {
-                string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, ¿Quiere agregar una defensa de este perfil?";
-                string title = "Nueva Defensa Externa";
-                DialogResult dialogResult = MessageBox.Show(msg, title, MessageBoxButtons.YesNo);
-
-                if (dialogResult == DialogResult.Yes)
+                bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
+                if (res == true)
                 {
-
-                    Object[] datos = new Object[]
-                   { this.id_perfil};
-                    nuevadefensa.inputController(datos, nuevadefensa.mainTesis);
-                    MessageBox.Show("Se Agregó una defensa de este perfil, para editar los detalles seleccione el perfil en 'Defensa Externa' ");
-                    //hacer el insert aqui
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-
-                    MessageBox.Show("debera asignar manulamente despues");
+                    string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
+                    MessageBox.Show(msg);
+                    //setActionButtonDefensa();
+                    
                 }
 
             }
+           
+           
         }
 
 
@@ -391,10 +456,13 @@ namespace CapaPresentacion
 
             if(info.Id <= 0)
             {
-                txtEstadoDatos.Text = "sin datos asignados";
+                txtEstadoDatos.Text = estadoSinDatos;
                 this.id_revision = 0;
                 lbIdRevision.Text = Convert.ToString(0);
+                txtIdRevision.Text = Convert.ToString(0);
+                txtIdDetalleRevision.Text = Convert.ToString(0);
                 ClearForms();
+
             }
             else
             {
@@ -416,8 +484,10 @@ namespace CapaPresentacion
                 txtIdRevision.Text = Convert.ToString(info.Id);
                 this.id_revision = info.Id;
                 txtIdDetalleRevision.Text= Convert.ToString(info.Id_detalle_revision);
-                txtEstadoDatos.Text = "Datos Asignados";
+                txtEstadoDatos.Text =estadoConDatos;
 
+
+                lbIdRevision.Text = Convert.ToString(info.Id);
             }
             
         }
@@ -539,5 +609,30 @@ namespace CapaPresentacion
 
         }
         #endregion
+
+        void createDefensaExterna()
+        {
+            Object[] datos = new Object[]
+                   { this.id_perfil};
+            nuevadefensa.inputController(datos, nuevadefensa.mainTesis);
+        }
+        private void btnDefensaExterna_Click(object sender, EventArgs e)
+        {
+            if (btnDefensaExterna.Text == "Agregar Defensa")
+            {
+                createDefensaExterna();
+                setActionButtonDefensa();
+                MessageBox.Show("La defensa del perfil de tesis ha sido agregada exitosamente, ahora puede agregar la hora, aula y los respectivos licenciados");
+            }
+            else if(btnDefensaExterna.Text == "Ir a Defensa")
+            {
+                int iddefensa = Convert.ToInt32(txtIdDefensa.Text);
+                FrmTesisAgenda formTesis = new FrmTesisAgenda(iddefensa, "", "Tesis");
+                formTesis.ShowDialog();
+            }
+
+        }
+
+        
     }
 }

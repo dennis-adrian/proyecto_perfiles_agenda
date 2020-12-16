@@ -38,5 +38,14 @@ namespace test_backend
                 Console.WriteLine("sin notificacion");
             }
         }
+        [TestMethod]
+        public void test12()
+        {
+            CapaDatos.Models.Revision obj = new CapaDatos.Models.Revision();
+
+            int res = obj.getMaxRevisionByIdAndTribunal(5, 1);
+
+            Console.WriteLine(res);
+        }
     }
 }

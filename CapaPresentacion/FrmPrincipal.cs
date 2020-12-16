@@ -34,6 +34,7 @@ namespace CapaPresentacion
 
         #region Instancia frmHijo Unasolo vez
 
+        public string title_home = "Inicio";
         public bool switchNuevoPerfil = false;
         public bool switchPerfiles = false;
         public bool switchNuevaDefensa = false;
@@ -433,7 +434,7 @@ namespace CapaPresentacion
                     switchNuevoPerfil = false;
                 }
                 CustomizeDesing();
-                lblTitulo.Text = "Titulo";
+                lblTitulo.Text = title_home;
 
             }
 
@@ -480,7 +481,7 @@ namespace CapaPresentacion
                     switchNuevaDefensa = false;
                 }
                 CustomizeDesing();
-                lblTitulo.Text = "Titulo";
+                lblTitulo.Text = title_home;
 
             }
 
@@ -512,7 +513,7 @@ namespace CapaPresentacion
                     switchPerfiles = false;
                 }
                 CustomizeDesing();
-                lblTitulo.Text = "Titulo";
+                lblTitulo.Text =title_home;
 
             }
             
@@ -539,7 +540,7 @@ namespace CapaPresentacion
                     switchDefensas = false;
                 }
                 CustomizeDesing();
-                lblTitulo.Text = "Titulo";
+                lblTitulo.Text =title_home;
 
             }
 
@@ -556,7 +557,7 @@ namespace CapaPresentacion
                 frmHijoActual.Close();
             }
             CustomizeDesing();
-            lblTitulo.Text = "Titulo";
+            lblTitulo.Text = title_home;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -1102,26 +1103,7 @@ namespace CapaPresentacion
 
         }
         
-        //public void TestNot()
-        //{
-        //    CapaNegocio.notificaciones.Index obj = new CapaNegocio.notificaciones.Index();
-        //    obj.main();
-        //    var notificaciones = obj.notificaciones();
-        //    foreach(var item in notificaciones)
-        //    {
-        //        MessageBox.Show($"{item.Id} {item.Titulo} {item.Mensaje} {item.Prioridad} {item.Tipo} {item.Id_perfil} {item.Leido}");
-        //        /**
-        //        id
-        //        Titulo
-        //        Mensaje
-        //        Fecha
-        //        Hora
-        //        Leido
-
-                   
-        //         */
-        //    }
-        //}
+        
         //Trabajando las notificaciones
         public void obtenerNotificaciones()
         {

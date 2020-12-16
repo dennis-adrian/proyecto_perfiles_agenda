@@ -64,6 +64,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlFrmHijo = new System.Windows.Forms.Panel();
             this.pnlAgregar = new System.Windows.Forms.Panel();
+            this.btnInstituciones = new FontAwesome.Sharp.IconButton();
             this.btnNuevaCareraIn = new FontAwesome.Sharp.IconButton();
             this.btnNuevaCarreraEx = new FontAwesome.Sharp.IconButton();
             this.btnNuevaFacultad = new FontAwesome.Sharp.IconButton();
@@ -86,7 +87,6 @@
             this.btnPetrolera = new FontAwesome.Sharp.IconButton();
             this.btnIndustrial = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnInstituciones = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.pnlSubMenuDefensa.SuspendLayout();
             this.pnlSubMenuPerfiles.SuspendLayout();
@@ -562,7 +562,7 @@
             this.btnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotificaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnNotificaciones.Image")));
             this.btnNotificaciones.Location = new System.Drawing.Point(1869, 0);
-            this.btnNotificaciones.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnNotificaciones.Margin = new System.Windows.Forms.Padding(7);
             this.btnNotificaciones.Name = "btnNotificaciones";
             this.btnNotificaciones.Size = new System.Drawing.Size(61, 65);
             this.btnNotificaciones.TabIndex = 29;
@@ -761,7 +761,7 @@
             this.btnAgregrNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregrNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregrNew.Image")));
             this.btnAgregrNew.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregrNew.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnAgregrNew.Margin = new System.Windows.Forms.Padding(7);
             this.btnAgregrNew.Name = "btnAgregrNew";
             this.btnAgregrNew.Size = new System.Drawing.Size(89, 80);
             this.btnAgregrNew.TabIndex = 28;
@@ -779,7 +779,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(1395, 65);
             this.lblTitulo.TabIndex = 24;
-            this.lblTitulo.Text = "Título";
+            this.lblTitulo.Text = "Inicio";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlFrmHijo
@@ -812,6 +812,34 @@
             this.pnlAgregar.Name = "pnlAgregar";
             this.pnlAgregar.Size = new System.Drawing.Size(653, 337);
             this.pnlAgregar.TabIndex = 20;
+            // 
+            // btnInstituciones
+            // 
+            this.btnInstituciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInstituciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInstituciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInstituciones.FlatAppearance.BorderSize = 0;
+            this.btnInstituciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnInstituciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnInstituciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInstituciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstituciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInstituciones.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnInstituciones.IconColor = System.Drawing.Color.White;
+            this.btnInstituciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInstituciones.IconSize = 10;
+            this.btnInstituciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInstituciones.Location = new System.Drawing.Point(0, 276);
+            this.btnInstituciones.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnInstituciones.Name = "btnInstituciones";
+            this.btnInstituciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnInstituciones.Size = new System.Drawing.Size(653, 69);
+            this.btnInstituciones.TabIndex = 20;
+            this.btnInstituciones.Text = "Instituciones";
+            this.btnInstituciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInstituciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInstituciones.UseVisualStyleBackColor = false;
+            this.btnInstituciones.Click += new System.EventHandler(this.btnInstituciones_Click);
             // 
             // btnNuevaCareraIn
             // 
@@ -1379,34 +1407,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnInstituciones
-            // 
-            this.btnInstituciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInstituciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInstituciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInstituciones.FlatAppearance.BorderSize = 0;
-            this.btnInstituciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnInstituciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.btnInstituciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstituciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInstituciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInstituciones.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnInstituciones.IconColor = System.Drawing.Color.White;
-            this.btnInstituciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInstituciones.IconSize = 10;
-            this.btnInstituciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInstituciones.Location = new System.Drawing.Point(0, 276);
-            this.btnInstituciones.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnInstituciones.Name = "btnInstituciones";
-            this.btnInstituciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnInstituciones.Size = new System.Drawing.Size(653, 69);
-            this.btnInstituciones.TabIndex = 20;
-            this.btnInstituciones.Text = "Instituciones";
-            this.btnInstituciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInstituciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInstituciones.UseVisualStyleBackColor = false;
-            this.btnInstituciones.Click += new System.EventHandler(this.btnInstituciones_Click);
             // 
             // FrmPrincipal
             // 

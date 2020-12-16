@@ -71,12 +71,17 @@
             this.txtEstadoDatos = new System.Windows.Forms.TextBox();
             this.pnlResaltadoTrib1 = new System.Windows.Forms.Panel();
             this.pnlRevision = new System.Windows.Forms.Panel();
-            this.rbTribunal2 = new System.Windows.Forms.RadioButton();
-            this.rbTribunal1 = new System.Windows.Forms.RadioButton();
-            this.txtIdDetalleRevision = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnDefensaExterna = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIdRevision = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIdDetalleRevision = new System.Windows.Forms.TextBox();
+            this.rbTribunal2 = new System.Windows.Forms.RadioButton();
+            this.rbTribunal1 = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtIdDefensa = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtIdTesis = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnlRevision.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +97,7 @@
             this.chbEntregaAlumno.AutoSize = true;
             this.chbEntregaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbEntregaAlumno.Location = new System.Drawing.Point(756, 560);
-            this.chbEntregaAlumno.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbEntregaAlumno.Margin = new System.Windows.Forms.Padding(7);
             this.chbEntregaAlumno.Name = "chbEntregaAlumno";
             this.chbEntregaAlumno.Size = new System.Drawing.Size(146, 35);
             this.chbEntregaAlumno.TabIndex = 61;
@@ -106,7 +111,7 @@
             this.chbEntregaTribunal.AutoSize = true;
             this.chbEntregaTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbEntregaTribunal.Location = new System.Drawing.Point(756, 703);
-            this.chbEntregaTribunal.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbEntregaTribunal.Margin = new System.Windows.Forms.Padding(7);
             this.chbEntregaTribunal.Name = "chbEntregaTribunal";
             this.chbEntregaTribunal.Size = new System.Drawing.Size(146, 35);
             this.chbEntregaTribunal.TabIndex = 62;
@@ -120,7 +125,7 @@
             this.chbDevolucionTribunal.AutoSize = true;
             this.chbDevolucionTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDevolucionTribunal.Location = new System.Drawing.Point(756, 850);
-            this.chbDevolucionTribunal.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbDevolucionTribunal.Margin = new System.Windows.Forms.Padding(7);
             this.chbDevolucionTribunal.Name = "chbDevolucionTribunal";
             this.chbDevolucionTribunal.Size = new System.Drawing.Size(146, 35);
             this.chbDevolucionTribunal.TabIndex = 63;
@@ -134,7 +139,7 @@
             this.chbDevolucionAlumno.AutoSize = true;
             this.chbDevolucionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbDevolucionAlumno.Location = new System.Drawing.Point(756, 995);
-            this.chbDevolucionAlumno.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbDevolucionAlumno.Margin = new System.Windows.Forms.Padding(7);
             this.chbDevolucionAlumno.Name = "chbDevolucionAlumno";
             this.chbDevolucionAlumno.Size = new System.Drawing.Size(146, 35);
             this.chbDevolucionAlumno.TabIndex = 64;
@@ -148,7 +153,7 @@
             this.chbLimiteSugerido.AutoSize = true;
             this.chbLimiteSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbLimiteSugerido.Location = new System.Drawing.Point(1801, 767);
-            this.chbLimiteSugerido.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbLimiteSugerido.Margin = new System.Windows.Forms.Padding(7);
             this.chbLimiteSugerido.Name = "chbLimiteSugerido";
             this.chbLimiteSugerido.Size = new System.Drawing.Size(146, 35);
             this.chbLimiteSugerido.TabIndex = 65;
@@ -161,8 +166,8 @@
             // 
             this.chbEmpaste.AutoSize = true;
             this.chbEmpaste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEmpaste.Location = new System.Drawing.Point(1941, 332);
-            this.chbEmpaste.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbEmpaste.Location = new System.Drawing.Point(1858, 398);
+            this.chbEmpaste.Margin = new System.Windows.Forms.Padding(7);
             this.chbEmpaste.Name = "chbEmpaste";
             this.chbEmpaste.Size = new System.Drawing.Size(146, 35);
             this.chbEmpaste.TabIndex = 66;
@@ -180,7 +185,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(261, 540);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 71);
             this.button1.TabIndex = 67;
@@ -196,7 +201,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(261, 685);
-            this.button2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button2.Margin = new System.Windows.Forms.Padding(7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 71);
             this.button2.TabIndex = 68;
@@ -212,7 +217,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(261, 830);
-            this.button3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button3.Margin = new System.Windows.Forms.Padding(7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 71);
             this.button3.TabIndex = 69;
@@ -228,7 +233,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(261, 977);
-            this.button4.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button4.Margin = new System.Windows.Forms.Padding(7);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 71);
             this.button4.TabIndex = 70;
@@ -243,8 +248,8 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1451, 315);
-            this.button5.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button5.Location = new System.Drawing.Point(1368, 381);
+            this.button5.Margin = new System.Windows.Forms.Padding(7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 71);
             this.button5.TabIndex = 71;
@@ -260,7 +265,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(1302, 750);
-            this.button6.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button6.Margin = new System.Windows.Forms.Padding(7);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 71);
             this.button6.TabIndex = 72;
@@ -319,7 +324,7 @@
             this.btnElegirTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnElegirTribunal.Location = new System.Drawing.Point(919, 386);
-            this.btnElegirTribunal.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnElegirTribunal.Margin = new System.Windows.Forms.Padding(7);
             this.btnElegirTribunal.Name = "btnElegirTribunal";
             this.btnElegirTribunal.Size = new System.Drawing.Size(205, 60);
             this.btnElegirTribunal.TabIndex = 27;
@@ -331,7 +336,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1437, 245);
+            this.label1.Location = new System.Drawing.Point(1354, 311);
             this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 39);
@@ -344,8 +349,8 @@
             this.dttEmpaste.CustomFormat = "dd-MM-yyyy";
             this.dttEmpaste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttEmpaste.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttEmpaste.Location = new System.Drawing.Point(1540, 321);
-            this.dttEmpaste.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttEmpaste.Location = new System.Drawing.Point(1457, 387);
+            this.dttEmpaste.Margin = new System.Windows.Forms.Padding(7);
             this.dttEmpaste.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEmpaste.Name = "dttEmpaste";
             this.dttEmpaste.Size = new System.Drawing.Size(361, 46);
@@ -414,7 +419,7 @@
             this.dttEntregaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttEntregaAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttEntregaAlumno.Location = new System.Drawing.Point(350, 544);
-            this.dttEntregaAlumno.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttEntregaAlumno.Margin = new System.Windows.Forms.Padding(7);
             this.dttEntregaAlumno.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEntregaAlumno.Name = "dttEntregaAlumno";
             this.dttEntregaAlumno.Size = new System.Drawing.Size(361, 46);
@@ -428,7 +433,7 @@
             this.dttEntregaTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttEntregaTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttEntregaTribunal.Location = new System.Drawing.Point(350, 687);
-            this.dttEntregaTribunal.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttEntregaTribunal.Margin = new System.Windows.Forms.Padding(7);
             this.dttEntregaTribunal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttEntregaTribunal.Name = "dttEntregaTribunal";
             this.dttEntregaTribunal.Size = new System.Drawing.Size(361, 46);
@@ -442,7 +447,7 @@
             this.dttLimiteSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttLimiteSugerido.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttLimiteSugerido.Location = new System.Drawing.Point(1393, 752);
-            this.dttLimiteSugerido.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttLimiteSugerido.Margin = new System.Windows.Forms.Padding(7);
             this.dttLimiteSugerido.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttLimiteSugerido.Name = "dttLimiteSugerido";
             this.dttLimiteSugerido.Size = new System.Drawing.Size(361, 46);
@@ -456,7 +461,7 @@
             this.dttDevolucionTribunal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttDevolucionTribunal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttDevolucionTribunal.Location = new System.Drawing.Point(350, 834);
-            this.dttDevolucionTribunal.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttDevolucionTribunal.Margin = new System.Windows.Forms.Padding(7);
             this.dttDevolucionTribunal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttDevolucionTribunal.Name = "dttDevolucionTribunal";
             this.dttDevolucionTribunal.Size = new System.Drawing.Size(361, 46);
@@ -470,7 +475,7 @@
             this.dttDevolucionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttDevolucionAlumno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dttDevolucionAlumno.Location = new System.Drawing.Point(350, 984);
-            this.dttDevolucionAlumno.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dttDevolucionAlumno.Margin = new System.Windows.Forms.Padding(7);
             this.dttDevolucionAlumno.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dttDevolucionAlumno.Name = "dttDevolucionAlumno";
             this.dttDevolucionAlumno.Size = new System.Drawing.Size(361, 46);
@@ -501,7 +506,7 @@
             this.btnTribunal1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTribunal1.IconSize = 16;
             this.btnTribunal1.Location = new System.Drawing.Point(0, 0);
-            this.btnTribunal1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnTribunal1.Margin = new System.Windows.Forms.Padding(7);
             this.btnTribunal1.Name = "btnTribunal1";
             this.btnTribunal1.Size = new System.Drawing.Size(1225, 136);
             this.btnTribunal1.TabIndex = 25;
@@ -522,7 +527,7 @@
             this.btnTribunal2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTribunal2.IconSize = 16;
             this.btnTribunal2.Location = new System.Drawing.Point(1225, 0);
-            this.btnTribunal2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnTribunal2.Margin = new System.Windows.Forms.Padding(7);
             this.btnTribunal2.Name = "btnTribunal2";
             this.btnTribunal2.Size = new System.Drawing.Size(1225, 136);
             this.btnTribunal2.TabIndex = 26;
@@ -544,7 +549,7 @@
             // 
             this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservaciones.Location = new System.Drawing.Point(1297, 872);
-            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(7);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(816, 180);
@@ -582,7 +587,6 @@
             this.lbIdRevision.Size = new System.Drawing.Size(46, 39);
             this.lbIdRevision.TabIndex = 73;
             this.lbIdRevision.Text = "id";
-            this.lbIdRevision.Visible = false;
             // 
             // lbEstado
             // 
@@ -616,6 +620,11 @@
             // pnlRevision
             // 
             this.pnlRevision.BackColor = System.Drawing.Color.LightGray;
+            this.pnlRevision.Controls.Add(this.label9);
+            this.pnlRevision.Controls.Add(this.txtIdDefensa);
+            this.pnlRevision.Controls.Add(this.label10);
+            this.pnlRevision.Controls.Add(this.txtIdTesis);
+            this.pnlRevision.Controls.Add(this.btnDefensaExterna);
             this.pnlRevision.Controls.Add(this.label8);
             this.pnlRevision.Controls.Add(this.txtIdRevision);
             this.pnlRevision.Controls.Add(this.label7);
@@ -661,65 +670,39 @@
             this.pnlRevision.Controls.Add(this.btnGuardar);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
-            this.pnlRevision.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.pnlRevision.Margin = new System.Windows.Forms.Padding(9);
             this.pnlRevision.Name = "pnlRevision";
             this.pnlRevision.Size = new System.Drawing.Size(2450, 1318);
             this.pnlRevision.TabIndex = 35;
             // 
-            // rbTribunal2
+            // btnDefensaExterna
             // 
-            this.rbTribunal2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbTribunal2.AutoSize = true;
-            this.rbTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.rbTribunal2.Location = new System.Drawing.Point(1918, 480);
-            this.rbTribunal2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.rbTribunal2.Name = "rbTribunal2";
-            this.rbTribunal2.Size = new System.Drawing.Size(218, 44);
-            this.rbTribunal2.TabIndex = 24;
-            this.rbTribunal2.Text = "Tribunal 2";
-            this.rbTribunal2.UseVisualStyleBackColor = true;
-            this.rbTribunal2.Visible = false;
-            this.rbTribunal2.CheckedChanged += new System.EventHandler(this.rbTribunal2_CheckedChanged);
-            // 
-            // rbTribunal1
-            // 
-            this.rbTribunal1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbTribunal1.AutoSize = true;
-            this.rbTribunal1.Checked = true;
-            this.rbTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.rbTribunal1.Location = new System.Drawing.Point(1360, 480);
-            this.rbTribunal1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.rbTribunal1.Name = "rbTribunal1";
-            this.rbTribunal1.Size = new System.Drawing.Size(218, 44);
-            this.rbTribunal1.TabIndex = 23;
-            this.rbTribunal1.TabStop = true;
-            this.rbTribunal1.Text = "Tribunal 1";
-            this.rbTribunal1.UseVisualStyleBackColor = true;
-            this.rbTribunal1.Visible = false;
-            this.rbTribunal1.CheckedChanged += new System.EventHandler(this.rbTribunal1_CheckedChanged);
-            // 
-            // txtIdDetalleRevision
-            // 
-            this.txtIdDetalleRevision.Location = new System.Drawing.Point(326, 1157);
-            this.txtIdDetalleRevision.Name = "txtIdDetalleRevision";
-            this.txtIdDetalleRevision.ReadOnly = true;
-            this.txtIdDetalleRevision.Size = new System.Drawing.Size(100, 35);
-            this.txtIdDetalleRevision.TabIndex = 76;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 1151);
-            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(300, 39);
-            this.label7.TabIndex = 77;
-            this.label7.Text = "idDetalleRevision";
+            this.btnDefensaExterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnDefensaExterna.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDefensaExterna.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDefensaExterna.FlatAppearance.BorderSize = 0;
+            this.btnDefensaExterna.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnDefensaExterna.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnDefensaExterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefensaExterna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefensaExterna.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDefensaExterna.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.btnDefensaExterna.IconColor = System.Drawing.Color.White;
+            this.btnDefensaExterna.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDefensaExterna.IconSize = 32;
+            this.btnDefensaExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDefensaExterna.Location = new System.Drawing.Point(2090, 155);
+            this.btnDefensaExterna.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnDefensaExterna.Name = "btnDefensaExterna";
+            this.btnDefensaExterna.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDefensaExterna.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDefensaExterna.Size = new System.Drawing.Size(330, 90);
+            this.btnDefensaExterna.TabIndex = 80;
+            this.btnDefensaExterna.Text = "Agregar Defensa";
+            this.btnDefensaExterna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDefensaExterna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDefensaExterna.UseVisualStyleBackColor = false;
+            this.btnDefensaExterna.Click += new System.EventHandler(this.btnDefensaExterna_Click);
             // 
             // label8
             // 
@@ -739,6 +722,103 @@
             this.txtIdRevision.ReadOnly = true;
             this.txtIdRevision.Size = new System.Drawing.Size(100, 35);
             this.txtIdRevision.TabIndex = 78;
+            this.txtIdRevision.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(16, 1151);
+            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(300, 39);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "idDetalleRevision";
+            // 
+            // txtIdDetalleRevision
+            // 
+            this.txtIdDetalleRevision.Location = new System.Drawing.Point(326, 1157);
+            this.txtIdDetalleRevision.Name = "txtIdDetalleRevision";
+            this.txtIdDetalleRevision.ReadOnly = true;
+            this.txtIdDetalleRevision.Size = new System.Drawing.Size(100, 35);
+            this.txtIdDetalleRevision.TabIndex = 76;
+            this.txtIdDetalleRevision.Text = "0";
+            // 
+            // rbTribunal2
+            // 
+            this.rbTribunal2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbTribunal2.AutoSize = true;
+            this.rbTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.rbTribunal2.Location = new System.Drawing.Point(1835, 546);
+            this.rbTribunal2.Margin = new System.Windows.Forms.Padding(7);
+            this.rbTribunal2.Name = "rbTribunal2";
+            this.rbTribunal2.Size = new System.Drawing.Size(218, 44);
+            this.rbTribunal2.TabIndex = 24;
+            this.rbTribunal2.Text = "Tribunal 2";
+            this.rbTribunal2.UseVisualStyleBackColor = true;
+            this.rbTribunal2.Visible = false;
+            this.rbTribunal2.CheckedChanged += new System.EventHandler(this.rbTribunal2_CheckedChanged);
+            // 
+            // rbTribunal1
+            // 
+            this.rbTribunal1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbTribunal1.AutoSize = true;
+            this.rbTribunal1.Checked = true;
+            this.rbTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.rbTribunal1.Location = new System.Drawing.Point(1277, 546);
+            this.rbTribunal1.Margin = new System.Windows.Forms.Padding(7);
+            this.rbTribunal1.Name = "rbTribunal1";
+            this.rbTribunal1.Size = new System.Drawing.Size(218, 44);
+            this.rbTribunal1.TabIndex = 23;
+            this.rbTribunal1.TabStop = true;
+            this.rbTribunal1.Text = "Tribunal 1";
+            this.rbTribunal1.UseVisualStyleBackColor = true;
+            this.rbTribunal1.Visible = false;
+            this.rbTribunal1.CheckedChanged += new System.EventHandler(this.rbTribunal1_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(525, 1211);
+            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(180, 39);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "idDefensa";
+            // 
+            // txtIdDefensa
+            // 
+            this.txtIdDefensa.Location = new System.Drawing.Point(835, 1217);
+            this.txtIdDefensa.Name = "txtIdDefensa";
+            this.txtIdDefensa.ReadOnly = true;
+            this.txtIdDefensa.Size = new System.Drawing.Size(100, 35);
+            this.txtIdDefensa.TabIndex = 83;
+            this.txtIdDefensa.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(525, 1157);
+            this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(133, 39);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "idTesis";
+            // 
+            // txtIdTesis
+            // 
+            this.txtIdTesis.Location = new System.Drawing.Point(835, 1163);
+            this.txtIdTesis.Name = "txtIdTesis";
+            this.txtIdTesis.ReadOnly = true;
+            this.txtIdTesis.Size = new System.Drawing.Size(100, 35);
+            this.txtIdTesis.TabIndex = 81;
+            this.txtIdTesis.Text = "0";
             // 
             // FrmRevisionIndividual
             // 
@@ -808,5 +888,10 @@
         private System.Windows.Forms.TextBox txtIdDetalleRevision;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIdRevision;
+        private FontAwesome.Sharp.IconButton btnDefensaExterna;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtIdDefensa;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtIdTesis;
     }
 }

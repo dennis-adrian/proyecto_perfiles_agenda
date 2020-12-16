@@ -116,6 +116,256 @@ namespace CapaDatos.Models
             string sql = $" SELECT * FROM ViewRevisiones WHERE Id_tesis = {idtesis} AND Nro_revision ={nrorevision} AND Nro_tribunal = {nrotribunal}; ";
             return SelectConexion(sql);
         }
+
+
+        //este metodo no hace nada
+        public void validarAgregarDefensa()
+        {
+
+            // select * from revision where id_tesis = 6;
+
+            //select* from revision where id_tesis = 5 and nro_tribunal = 1;
+
+            //select* from revision where id_tesis = 5 and nro_tribunal = 2;
+
+            //select count(nro_revision) as Num_revisiones from revision where id_tesis = 5 and nro_tribunal = 1;
+
+            //select count(nro_revision) as Num_revisiones from revision where id_tesis = 5 and nro_tribunal = 2;
+
+            //select MAX(nro_revision) as Ultima_revision from revision where id_tesis = 5 and nro_tribunal = 1;
+
+            //select MAX(nro_revision) as Ultima_revision from revision where id_tesis = 5 and nro_tribunal = 2;
+
+            //select* from revision where id_tesis = 5 and nro_tribunal = 2 and nro_revision = 3;
+//            string sql = @" select* from revision
+//           where id_tesis = 5
+//and nro_tribunal = 2
+//and nro_revision = 3
+//and fecha_entrega_alumno<>""
+//and fecha_entrega_tribunal<>""
+//and fecha_limite_devolucion<>""
+//and fecha_devolucion_tribunal<>""
+//and fecha_devolucion_alumno<>""
+//and fecha_empaste<>"";";
+
+           // select* from defensa_externa where id_tesis = 5;
+        }
+
+        public int getCantidadRevisionByIdAndTribunal(int idtesis,int nrotribunal)
+        {
+
+            string sql = $" select count(nro_revision) as Num_revisiones from revision where id_tesis = {idtesis} and nro_tribunal = {nrotribunal} ;";
+            var cursor = SelectConexion(sql);
+            if (cursor.Rows.Count<=0)
+            {
+                return 0;
+            }
+            else
+            {
+                int num = 0;
+                string response = null;
+                for (int i = 0; i < cursor.Rows.Count; i++)
+                {
+                    response = cursor.Rows[i][0].ToString();
+
+                }
+                bool passresponse = String.IsNullOrEmpty(response);
+                if (passresponse)
+                {
+                    Console.WriteLine("esta vacio");
+                    return num;
+
+                }
+                else
+                {
+                    num = Convert.ToInt32(response);
+                    Console.WriteLine("esta definido");
+                    return num;
+                }
+            }
+        }
+        public int getMaxRevisionByIdAndTribunal(int idtesis, int nrotribunal)
+        {
+            string sql = $" select MAX(nro_revision) as last from revision where id_tesis = {idtesis} and nro_tribunal = {nrotribunal} ; ";
+            var cursor = SelectConexion(sql);
+            if (cursor.Rows.Count <= 0)
+            {
+                Console.WriteLine("primer if ");
+                return 0;
+            }
+            else
+            {
+                int num = 0;
+                string response = null;
+                for (int i = 0; i < cursor.Rows.Count; i++)
+                {
+                    response = cursor.Rows[i][0].ToString();
+                   
+                }
+                bool passresponse = String.IsNullOrEmpty(response);
+                if (passresponse)
+                {
+                    Console.WriteLine("esta vacio");
+                    return num;
+
+                }
+                else
+                {
+                    num = Convert.ToInt32(response);
+                    Console.WriteLine("esta definido");
+                    return num;
+                }
+                
+            }
+        }
+
+        public int verifyCantidadAndMax(int idtesis)
+        {
+            //try
+            //{
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    throw new ArgumentException(ex.Message);
+            //}
+            int cantidad_t1 = getCantidadRevisionByIdAndTribunal(idtesis, 1);
+            int cantidad_t2 = getCantidadRevisionByIdAndTribunal(idtesis, 2);
+
+            int max_t1 = getMaxRevisionByIdAndTribunal(idtesis, 1);
+            int max_t2 = getMaxRevisionByIdAndTribunal(idtesis, 2);
+
+            if (cantidad_t1 == 0 || cantidad_t2 == 0 || max_t1 == 0 || max_t2 == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                if (max_t1 == max_t2 && cantidad_t1 == cantidad_t2)
+                {
+                    return max_t1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+        }
+
+        public bool verifyAllFechas(int idtesis,int nrotribunal)
+        {
+            //try
+            //{
+
+            //}catch(Exception ex)
+            //{
+            //    throw new ArgumentException(ex.Message);
+            //}
+            int num_rev = verifyCantidadAndMax(idtesis);
+
+            if (num_rev == 0)
+            {
+                return false;
+            }
+            else
+            {
+                string sql = $" select * from revision where id_tesis = {idtesis} and nro_tribunal = {nrotribunal} and nro_revision = {num_rev} and fecha_entrega_alumno <> '' and fecha_entrega_tribunal <> '' and fecha_limite_devolucion <> '' and fecha_devolucion_tribunal <> '' and fecha_devolucion_alumno <> '' and fecha_empaste <> '' ;  ";
+
+                var cursor = SelectConexion(sql);
+                if (cursor.Rows.Count <= 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+
+            }
+
+        }
+
+        public bool byPassAllFechasDefensExterna(int idtesis)
+        {
+            //try
+            //{
+            //}catch(Exception ex)
+            //{
+            //    throw new ArgumentException(ex.Message);
+            //}
+
+            bool t1 = verifyAllFechas(idtesis, 1);
+
+            bool t2 = verifyAllFechas(idtesis, 2);
+
+            if (t1 == true && t2 == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+        public struct byPassDefensa
+        {
+            private int id_defensa;
+            private int id_tesis;
+            public byPassDefensa(int id_defensa,int id_tesis)
+            {
+                this.id_defensa = id_defensa;
+                this.id_tesis = id_tesis;
+            }
+
+            public int Id_defensa { get => id_defensa; set => id_defensa = value; }
+            public int Id_tesis { get => id_tesis; set => id_tesis = value; }
+        }
+        public byPassDefensa byPassDefensaExterna(int idtesis)
+        {
+            //try
+            //{
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    throw new ArgumentException(ex.Message);
+            //}
+            byPassDefensa pass = new byPassDefensa();
+            bool res = byPassAllFechasDefensExterna(idtesis);
+            if (res == true)
+            {
+                string sql = $" select * from defensa_externa where id_tesis = {idtesis} ; ";
+
+                var cursor = SelectConexion(sql);
+                if (cursor.Rows.Count <= 0)
+                {
+                    pass.Id_tesis = idtesis;
+                    pass.Id_defensa = 0;
+                    return pass;
+                }
+                else
+                {
+                    for (int i = 0; i < cursor.Rows.Count; i++)
+                    {
+                        pass.Id_tesis = idtesis;
+                        pass.Id_defensa = Convert.ToInt32(cursor.Rows[i][0].ToString());
+                    }
+
+                    return pass;
+                }
+            }
+            else
+            {
+                pass.Id_defensa = 0;
+                pass.Id_tesis = 0;
+                return pass;
+            }
+        }
+
         #endregion
     }
 }
