@@ -62,9 +62,9 @@
             this.panel2.Controls.Add(this.lbltitu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(547, 45);
+            this.panel2.Size = new System.Drawing.Size(614, 45);
             this.panel2.TabIndex = 34;
             // 
             // lbltitu
@@ -84,9 +84,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(547, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(614, 27);
             this.pnlBarraTitulo.TabIndex = 33;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -100,7 +100,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(512, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(579, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(34, 29);
@@ -117,7 +117,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 82);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 98);
+            this.groupBox2.Size = new System.Drawing.Size(593, 98);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar y editar facultad";
@@ -181,7 +181,7 @@
             this.groupBox1.Location = new System.Drawing.Point(9, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(520, 333);
+            this.groupBox1.Size = new System.Drawing.Size(593, 333);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar facultad";
@@ -193,8 +193,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(215, 295);
+            this.btnEliminar.Location = new System.Drawing.Point(484, 289);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 29);
             this.btnEliminar.TabIndex = 56;
@@ -211,11 +210,11 @@
             this.nrotxt,
             this.nombretxt});
             this.dtgFacultad.Location = new System.Drawing.Point(13, 83);
-            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(1);
             this.dtgFacultad.Name = "dtgFacultad";
             this.dtgFacultad.RowHeadersWidth = 92;
             this.dtgFacultad.RowTemplate.Height = 37;
-            this.dtgFacultad.Size = new System.Drawing.Size(486, 190);
+            this.dtgFacultad.Size = new System.Drawing.Size(564, 190);
             this.dtgFacultad.TabIndex = 55;
             // 
             // idtxt
@@ -276,12 +275,11 @@
             this.btnSelecFacu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecFacu.ForeColor = System.Drawing.Color.White;
-            this.btnSelecFacu.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecFacu.Image")));
-            this.btnSelecFacu.Location = new System.Drawing.Point(413, 295);
+            this.btnSelecFacu.Location = new System.Drawing.Point(264, 289);
             this.btnSelecFacu.Name = "btnSelecFacu";
-            this.btnSelecFacu.Size = new System.Drawing.Size(93, 29);
+            this.btnSelecFacu.Size = new System.Drawing.Size(115, 29);
             this.btnSelecFacu.TabIndex = 43;
-            this.btnSelecFacu.Text = "  Elegir";
+            this.btnSelecFacu.Text = "Seleccionar";
             this.btnSelecFacu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSelecFacu.UseVisualStyleBackColor = false;
             this.btnSelecFacu.Click += new System.EventHandler(this.btnSelecFacu_Click);
@@ -293,12 +291,11 @@
             this.btnEditarFacu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarFacu.ForeColor = System.Drawing.Color.White;
-            this.btnEditarFacu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarFacu.Image")));
-            this.btnEditarFacu.Location = new System.Drawing.Point(314, 295);
+            this.btnEditarFacu.Location = new System.Drawing.Point(385, 289);
             this.btnEditarFacu.Name = "btnEditarFacu";
             this.btnEditarFacu.Size = new System.Drawing.Size(93, 29);
             this.btnEditarFacu.TabIndex = 43;
-            this.btnEditarFacu.Text = "  Editar";
+            this.btnEditarFacu.Text = "Editar";
             this.btnEditarFacu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarFacu.UseVisualStyleBackColor = false;
             this.btnEditarFacu.Click += new System.EventHandler(this.btnEditarFacu_Click);
@@ -319,7 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(547, 537);
+            this.ClientSize = new System.Drawing.Size(614, 537);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -354,7 +351,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.TextBox txtBuscarFacultad;
-        private System.Windows.Forms.Button btnSelecFacu;
         private System.Windows.Forms.Button btnEditarFacu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgFacultad;
@@ -363,5 +359,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombretxt;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label idlbl;
+        public System.Windows.Forms.Button btnSelecFacu;
     }
 }

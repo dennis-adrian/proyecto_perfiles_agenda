@@ -808,7 +808,7 @@
             this.pnlAgregar.Location = new System.Drawing.Point(0, 0);
             this.pnlAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAgregar.Name = "pnlAgregar";
-            this.pnlAgregar.Size = new System.Drawing.Size(280, 151);
+            this.pnlAgregar.Size = new System.Drawing.Size(280, 156);
             this.pnlAgregar.TabIndex = 20;
             // 
             // btnInstituciones

@@ -1064,6 +1064,7 @@ namespace CapaPresentacion
         {
             HiddenAgregar();
             FrmFacultad frm = this.FormInstance4;
+            frm.btnSelecFacu.Visible = false;
             frm.Show();
             frm.BringToFront();
         }
@@ -1073,6 +1074,7 @@ namespace CapaPresentacion
             HiddenAgregar();
             FrmCarreraExterna frm = this.FormInstance2;
             HidenCarreras();
+            frm.btnSelecCarreraExt.Visible = false;
             frm.Show();
             frm.BringToFront();
             pnlAgregar.Visible = false;
@@ -1084,6 +1086,7 @@ namespace CapaPresentacion
             FrmCarreraInterna frm = this.FormInstance1;
            // HiddenAgregar();
             HidenCarreras();
+            frm.btnSelecCarrera.Visible = false;
             frm.Show();
             frm.BringToFront();
             pnlAgregar.Visible = false;
@@ -1132,6 +1135,7 @@ namespace CapaPresentacion
         {
             HiddenAgregar();
             FrmInstitucion frm = this.FormInstance5;
+            frm.btnSelecInstitu.Visible = false;
             frm.Show();
             frm.BringToFront();
         }

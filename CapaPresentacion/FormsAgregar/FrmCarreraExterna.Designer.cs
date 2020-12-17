@@ -65,9 +65,9 @@
             this.pnlBarraTitulo.Controls.Add(this.btnCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(546, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(612, 27);
             this.pnlBarraTitulo.TabIndex = 28;
             this.pnlBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
@@ -82,7 +82,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(511, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(577, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(34, 29);
@@ -107,9 +107,9 @@
             this.panel2.Controls.Add(this.lbltitu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(546, 45);
+            this.panel2.Size = new System.Drawing.Size(612, 45);
             this.panel2.TabIndex = 32;
             // 
             // groupBox2
@@ -119,9 +119,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnCarreraExt);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 85);
+            this.groupBox2.Location = new System.Drawing.Point(11, 92);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 139);
+            this.groupBox2.Size = new System.Drawing.Size(589, 115);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Editar y agregar carrera externa";
@@ -181,10 +181,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtgCarreraExterna);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 236);
+            this.groupBox1.Location = new System.Drawing.Point(12, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(520, 298);
+            this.groupBox1.Size = new System.Drawing.Size(589, 298);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar carrera";
@@ -196,8 +196,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(193, 250);
+            this.btnEliminar.Location = new System.Drawing.Point(482, 251);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 29);
             this.btnEliminar.TabIndex = 55;
@@ -241,12 +240,11 @@
             this.btnSelecCarreraExt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecCarreraExt.ForeColor = System.Drawing.Color.White;
-            this.btnSelecCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCarreraExt.Image")));
-            this.btnSelecCarreraExt.Location = new System.Drawing.Point(408, 250);
+            this.btnSelecCarreraExt.Location = new System.Drawing.Point(263, 251);
             this.btnSelecCarreraExt.Name = "btnSelecCarreraExt";
-            this.btnSelecCarreraExt.Size = new System.Drawing.Size(93, 29);
+            this.btnSelecCarreraExt.Size = new System.Drawing.Size(114, 29);
             this.btnSelecCarreraExt.TabIndex = 43;
-            this.btnSelecCarreraExt.Text = "  Elegir";
+            this.btnSelecCarreraExt.Text = "Seleccionar";
             this.btnSelecCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSelecCarreraExt.UseVisualStyleBackColor = false;
             // 
@@ -257,12 +255,11 @@
             this.btnEditarCarreraExt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCarreraExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCarreraExt.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCarreraExt.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCarreraExt.Image")));
-            this.btnEditarCarreraExt.Location = new System.Drawing.Point(300, 250);
+            this.btnEditarCarreraExt.Location = new System.Drawing.Point(383, 251);
             this.btnEditarCarreraExt.Name = "btnEditarCarreraExt";
             this.btnEditarCarreraExt.Size = new System.Drawing.Size(93, 29);
             this.btnEditarCarreraExt.TabIndex = 43;
-            this.btnEditarCarreraExt.Text = "  Editar";
+            this.btnEditarCarreraExt.Text = "Editar";
             this.btnEditarCarreraExt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarCarreraExt.UseVisualStyleBackColor = false;
             this.btnEditarCarreraExt.Click += new System.EventHandler(this.btnEditarCarreraExt_Click);
@@ -302,7 +299,7 @@
             this.txtnombre});
             this.dtgCarreraExterna.EnableHeadersVisualStyles = false;
             this.dtgCarreraExterna.GridColor = System.Drawing.Color.White;
-            this.dtgCarreraExterna.Location = new System.Drawing.Point(-4, 70);
+            this.dtgCarreraExterna.Location = new System.Drawing.Point(15, 73);
             this.dtgCarreraExterna.Name = "dtgCarreraExterna";
             this.dtgCarreraExterna.ReadOnly = true;
             this.dtgCarreraExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -323,7 +320,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dtgCarreraExterna.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgCarreraExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCarreraExterna.Size = new System.Drawing.Size(518, 164);
+            this.dtgCarreraExterna.Size = new System.Drawing.Size(560, 164);
             this.dtgCarreraExterna.TabIndex = 49;
             // 
             // txtid
@@ -355,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(546, 550);
+            this.ClientSize = new System.Drawing.Size(612, 550);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -392,7 +389,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.TextBox txtBuscarCarreraExt;
-        private System.Windows.Forms.Button btnSelecCarreraExt;
         private System.Windows.Forms.Button btnEditarCarreraExt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgCarreraExterna;
@@ -401,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txtnro;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtnombre;
         private System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.Button btnSelecCarreraExt;
     }
 }
