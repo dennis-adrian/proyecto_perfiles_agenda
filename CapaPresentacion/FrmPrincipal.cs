@@ -1065,6 +1065,7 @@ namespace CapaPresentacion
             HiddenAgregar();
             FrmFacultad frm = this.FormInstance4;
             frm.btnSelecFacu.Visible = false;
+            frm.idlbl.Visible = false;
             frm.Show();
             frm.BringToFront();
         }
