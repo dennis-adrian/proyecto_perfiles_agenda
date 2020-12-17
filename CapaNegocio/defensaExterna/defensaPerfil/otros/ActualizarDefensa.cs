@@ -13,7 +13,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
 
         }
         
-        public void updateOtros( dynamic estudiante_obj, dynamic titulcion_otros_obj, dynamic defensa_externa_obj,List<dynamic> lista_detalle_defensa_obj)
+        public bool updateOtros( dynamic estudiante_obj, dynamic titulcion_otros_obj, dynamic defensa_externa_obj,List<dynamic> lista_detalle_defensa_obj)
         {
             try
             {
@@ -93,11 +93,13 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
                     detalleDefensa.Id_licenciado = Convert.ToInt32(item.Id_licenciado);
                     detalleDefensa.Update(detalleDefensa.Id);
                 }
+                return true;
 
             }
             catch (Exception e)
             {
-                throw new ArgumentException("" + e);
+                return false;
+                //throw new ArgumentException("" + e);
             }
 
         }

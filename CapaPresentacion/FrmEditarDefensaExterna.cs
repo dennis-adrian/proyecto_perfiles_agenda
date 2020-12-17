@@ -156,7 +156,9 @@ namespace CapaPresentacion
             defensa_externa.Id = InfoDefensa["Id"];
             defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa,"Fecha_presentacion",InfoDefensa);
             defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa,"H");
-            defensa_externa.Aula = SetAndEval(txtAula, "Aula", InfoDefensa);
+            string aula = cbbLetraAula.Text + txtAula.Text;
+            //defensa_externa.Aula = SetAndEval(aula, "Aula", InfoDefensa);
+            defensa_externa.Aula = aula;
             defensa_externa.Id_titulacion_otro = InfoDefensa["Id_titulacion_otro"];
             estudiante.Id = InfoDefensa["Id_estudiante"];
             estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
@@ -268,7 +270,9 @@ namespace CapaPresentacion
             string hor_defensa = (string.IsNullOrEmpty(InfoDefensa["Hora"])) ? "00:00:00" : InfoDefensa["Hora"];
 
             dtHora.Value = DateTime.Parse(hor_defensa, new CultureInfo("en-GB"));
-            txtAula.Text = InfoDefensa["Aula"];
+            cbbLetraAula.Text = string.IsNullOrEmpty(InfoDefensa["Aula"]) ? 'N'.ToString() : InfoDefensa["Aula"][0].ToString();
+            char[] charsToTrim = { 'N', 'S', 'O', 'E' };
+            txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
             txtNota.Text = InfoDefensa["Calificacion"];
             getLicenciados();
             showLinceciados();
@@ -425,7 +429,14 @@ namespace CapaPresentacion
         {
             recolectData();
             ActualizarDefensa actualizar = new ActualizarDefensa();
-            actualizar.updateOtros(estudiante,titulacion_otros,defensa_externa,lista_detalle_defensa);
+            if(actualizar.updateOtros(estudiante,titulacion_otros,defensa_externa,lista_detalle_defensa))
+            {
+                MessageBox.Show("Datos guardados correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al guardar los datos");
+            }
           
         }
         public void Ejecutar(int id, string nombre)

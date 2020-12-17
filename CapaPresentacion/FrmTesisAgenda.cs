@@ -491,17 +491,18 @@ namespace CapaPresentacion
 
                     actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
                     insertLicenciados();
+                    MessageBox.Show("Datos guardados correctamente");
 
                 }
                 else
                 {
 
                     actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
-
                 }
             }
             else
             {
+                MessageBox.Show("Hubo un error al momento de guardar los datos");
                 return;
             }
             
