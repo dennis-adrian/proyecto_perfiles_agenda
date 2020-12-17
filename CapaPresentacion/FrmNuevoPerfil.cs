@@ -70,17 +70,18 @@ namespace CapaPresentacion
         }
         private void btnGuardarNuevoP_Click(object sender, EventArgs e)
         {
-             try
-             {
-                Insert();
-                ClearForms();
-               
-
+            try
+            {
+                if (Insert())
+                {
+                    ClearForms();
+                }
             }
-             catch(Exception ex)
-             {
-                 MessageBox.Show("" + ex);
-             }
+            catch (Exception)
+            {
+                MessageBox.Show("Verifique que ingresó los datos correctamente");
+            }
+
         }
 
 
@@ -138,37 +139,46 @@ namespace CapaPresentacion
 
         }
 
-        public void Insert()
+        public bool Insert()
         {
-            string registro = txtRegistroAlum.Text;//input 0
-            string nombre = txtNombreAlum.Text;//input 1
-            string apellido = txtApellidoAlum.Text;//input 2
-            string email = txtEmailAlum.Text;//input 3
-            string telefono = txtTelefonoAlum.Text;//input 4
-            string celular = txtCelularAlum.Text;//input 5
-            int id_carrera = Convert.ToInt32(cmbCarrera.SelectedValue.ToString());//input 6
-            string tema = txtTemaTesis.Text;//input 7
-            string fecha_aprobacion = dtFechaAprobacion.Value.Date.ToString("dd-MM-yyyy");//input 8
-            string fecha_recepcion = dtFechaRecepcion.Value.Date.ToString("dd-MM-yyyy");//input 9
-            int id_tutor = Convert.ToInt32((cmbTutorElegido.SelectedItem as ComboBoxItem).Value.ToString());//input 10
+            try
+            {
+                string registro = txtRegistroAlum.Text;//input 0
+                string nombre = txtNombreAlum.Text;//input 1
+                string apellido = txtApellidoAlum.Text;//input 2
+                string email = txtEmailAlum.Text;//input 3
+                string telefono = txtTelefonoAlum.Text;//input 4
+                string celular = txtCelularAlum.Text;//input 5
+                int id_carrera = Convert.ToInt32(cmbCarrera.SelectedValue.ToString());//input 6
+                string tema = txtTemaTesis.Text;//input 7
+                string fecha_aprobacion = dtFechaAprobacion.Value.Date.ToString("dd-MM-yyyy");//input 8
+                string fecha_recepcion = dtFechaRecepcion.Value.Date.ToString("dd-MM-yyyy");//input 9
+                int id_tutor = cmbTutorElegido.SelectedItem != null ? Convert.ToInt32((cmbTutorElegido.SelectedItem as ComboBoxItem).Value.ToString()) : 1;//input 10
 
-            Object[] datos = new Object[]
-           {
-               registro,
-                nombre,
-                apellido,
-                email,
-                telefono,
-                celular,
-                id_carrera,
-                tema,
-                fecha_aprobacion,
-                fecha_recepcion,
-                id_tutor
-           };
+                Object[] datos = new Object[]
+                {
+                   registro,
+                    nombre,
+                    apellido,
+                    email,
+                    telefono,
+                    celular,
+                    id_carrera,
+                    tema,
+                    fecha_aprobacion,
+                    fecha_recepcion,
+                    id_tutor
+                };
 
-            obj.inputController(datos, obj.main);
-
+                obj.inputController(datos, obj.main);
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Verifique que ingresó los datos correctamente");
+                Console.WriteLine(e);
+                return false;
+            }
         }
 
 

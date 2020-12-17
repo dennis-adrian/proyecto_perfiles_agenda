@@ -103,6 +103,7 @@
             // 
             // cmbTutorElegido
             // 
+            this.cmbTutorElegido.Enabled = false;
             this.cmbTutorElegido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTutorElegido.FormattingEnabled = true;
             this.cmbTutorElegido.Location = new System.Drawing.Point(205, 150);
