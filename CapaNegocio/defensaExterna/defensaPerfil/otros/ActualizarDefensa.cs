@@ -98,6 +98,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
             catch (Exception e)
             {
+                Console.WriteLine(e);
                 return false;
                 //throw new ArgumentException("" + e);
             }
