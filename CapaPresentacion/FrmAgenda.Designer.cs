@@ -74,7 +74,7 @@
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(1080, 57);
+            this.pnlBuscar.Size = new System.Drawing.Size(810, 46);
             this.pnlBuscar.TabIndex = 1;
             // 
             // btnBuscarPerfil
@@ -87,10 +87,10 @@
             this.btnBuscarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPerfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarPerfil.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscarPerfil.Location = new System.Drawing.Point(943, 10);
-            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarPerfil.Location = new System.Drawing.Point(707, 8);
+            this.btnBuscarPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarPerfil.Name = "btnBuscarPerfil";
-            this.btnBuscarPerfil.Size = new System.Drawing.Size(96, 41);
+            this.btnBuscarPerfil.Size = new System.Drawing.Size(72, 33);
             this.btnBuscarPerfil.TabIndex = 26;
             this.btnBuscarPerfil.Text = "Buscar";
             this.btnBuscarPerfil.UseVisualStyleBackColor = false;
@@ -101,17 +101,15 @@
             this.btnFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnFiltro.FlatAppearance.BorderSize = 0;
             this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltro.ForeColor = System.Drawing.Color.White;
             this.btnFiltro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnFiltro.IconColor = System.Drawing.Color.White;
+            this.btnFiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFiltro.IconSize = 20;
-            this.btnFiltro.Location = new System.Drawing.Point(233, 14);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltro.Location = new System.Drawing.Point(175, 11);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Rotation = 0D;
-            this.btnFiltro.Size = new System.Drawing.Size(35, 32);
+            this.btnFiltro.Size = new System.Drawing.Size(26, 26);
             this.btnFiltro.TabIndex = 56;
             this.btnFiltro.TabStop = false;
             this.btnFiltro.UseVisualStyleBackColor = false;
@@ -122,10 +120,10 @@
             this.txtBuscarDefensa.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtBuscarDefensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDefensa.Location = new System.Drawing.Point(690, 18);
-            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscarDefensa.Location = new System.Drawing.Point(518, 15);
+            this.txtBuscarDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscarDefensa.Name = "txtBuscarDefensa";
-            this.txtBuscarDefensa.Size = new System.Drawing.Size(247, 27);
+            this.txtBuscarDefensa.Size = new System.Drawing.Size(186, 23);
             this.txtBuscarDefensa.TabIndex = 24;
             // 
             // btnEditarAgenda
@@ -136,10 +134,10 @@
             this.btnEditarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAgenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarAgenda.Location = new System.Drawing.Point(20, 14);
-            this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditarAgenda.Location = new System.Drawing.Point(15, 11);
+            this.btnEditarAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditarAgenda.Name = "btnEditarAgenda";
-            this.btnEditarAgenda.Size = new System.Drawing.Size(200, 32);
+            this.btnEditarAgenda.Size = new System.Drawing.Size(150, 26);
             this.btnEditarAgenda.TabIndex = 27;
             this.btnEditarAgenda.Text = "Editar Defensa";
             this.btnEditarAgenda.UseVisualStyleBackColor = false;
@@ -151,9 +149,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(467, 14);
+            this.label14.Location = new System.Drawing.Point(350, 11);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 24);
+            this.label14.Size = new System.Drawing.Size(152, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Nombre Estudiante";
             // 
@@ -163,10 +162,9 @@
             this.pnlDataGrid.Controls.Add(this.pnlFiltroDefensa);
             this.pnlDataGrid.Controls.Add(this.dtgDefensaExterna);
             this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDataGrid.Location = new System.Drawing.Point(0, 57);
-            this.pnlDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataGrid.Location = new System.Drawing.Point(0, 46);
             this.pnlDataGrid.Name = "pnlDataGrid";
-            this.pnlDataGrid.Size = new System.Drawing.Size(1080, 531);
+            this.pnlDataGrid.Size = new System.Drawing.Size(810, 571);
             this.pnlDataGrid.TabIndex = 2;
             // 
             // pnlFiltroDefensa
@@ -176,10 +174,10 @@
             this.pnlFiltroDefensa.Controls.Add(this.btnTesis);
             this.pnlFiltroDefensa.Controls.Add(this.btnExamenGrado);
             this.pnlFiltroDefensa.Controls.Add(this.btntTodasDefensas);
-            this.pnlFiltroDefensa.Location = new System.Drawing.Point(233, 0);
-            this.pnlFiltroDefensa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlFiltroDefensa.Location = new System.Drawing.Point(175, 0);
+            this.pnlFiltroDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlFiltroDefensa.Name = "pnlFiltroDefensa";
-            this.pnlFiltroDefensa.Size = new System.Drawing.Size(233, 154);
+            this.pnlFiltroDefensa.Size = new System.Drawing.Size(175, 125);
             this.pnlFiltroDefensa.TabIndex = 33;
             this.pnlFiltroDefensa.Visible = false;
             // 
@@ -192,19 +190,18 @@
             this.btnPorExecencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnPorExecencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnPorExecencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPorExecencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnPorExecencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPorExecencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPorExecencia.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnPorExecencia.IconColor = System.Drawing.Color.White;
+            this.btnPorExecencia.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPorExecencia.IconSize = 10;
             this.btnPorExecencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPorExecencia.Location = new System.Drawing.Point(0, 114);
-            this.btnPorExecencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPorExecencia.Location = new System.Drawing.Point(0, 93);
+            this.btnPorExecencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPorExecencia.Name = "btnPorExecencia";
             this.btnPorExecencia.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPorExecencia.Rotation = 0D;
-            this.btnPorExecencia.Size = new System.Drawing.Size(233, 38);
+            this.btnPorExecencia.Size = new System.Drawing.Size(175, 31);
             this.btnPorExecencia.TabIndex = 16;
             this.btnPorExecencia.Text = "Graduacion por Excelencia";
             this.btnPorExecencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -220,19 +217,18 @@
             this.btnTesis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnTesis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTesis.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTesis.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnTesis.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnTesis.IconColor = System.Drawing.Color.White;
+            this.btnTesis.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTesis.IconSize = 10;
             this.btnTesis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTesis.Location = new System.Drawing.Point(0, 76);
-            this.btnTesis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTesis.Location = new System.Drawing.Point(0, 62);
+            this.btnTesis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTesis.Name = "btnTesis";
             this.btnTesis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTesis.Rotation = 0D;
-            this.btnTesis.Size = new System.Drawing.Size(233, 38);
+            this.btnTesis.Size = new System.Drawing.Size(175, 31);
             this.btnTesis.TabIndex = 18;
             this.btnTesis.Text = "Tesis";
             this.btnTesis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,19 +245,18 @@
             this.btnExamenGrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnExamenGrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnExamenGrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamenGrado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnExamenGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamenGrado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnExamenGrado.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExamenGrado.IconColor = System.Drawing.Color.White;
+            this.btnExamenGrado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExamenGrado.IconSize = 10;
             this.btnExamenGrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamenGrado.Location = new System.Drawing.Point(0, 38);
-            this.btnExamenGrado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExamenGrado.Location = new System.Drawing.Point(0, 31);
+            this.btnExamenGrado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExamenGrado.Name = "btnExamenGrado";
             this.btnExamenGrado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnExamenGrado.Rotation = 0D;
-            this.btnExamenGrado.Size = new System.Drawing.Size(233, 38);
+            this.btnExamenGrado.Size = new System.Drawing.Size(175, 31);
             this.btnExamenGrado.TabIndex = 17;
             this.btnExamenGrado.Text = "Examen de Grado";
             this.btnExamenGrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,19 +273,18 @@
             this.btntTodasDefensas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btntTodasDefensas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btntTodasDefensas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntTodasDefensas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btntTodasDefensas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntTodasDefensas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btntTodasDefensas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btntTodasDefensas.IconColor = System.Drawing.Color.White;
+            this.btntTodasDefensas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btntTodasDefensas.IconSize = 10;
             this.btntTodasDefensas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntTodasDefensas.Location = new System.Drawing.Point(0, 0);
-            this.btntTodasDefensas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btntTodasDefensas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btntTodasDefensas.Name = "btntTodasDefensas";
             this.btntTodasDefensas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btntTodasDefensas.Rotation = 0D;
-            this.btntTodasDefensas.Size = new System.Drawing.Size(233, 38);
+            this.btntTodasDefensas.Size = new System.Drawing.Size(175, 31);
             this.btntTodasDefensas.TabIndex = 19;
             this.btntTodasDefensas.Text = "Todas las Defensas";
             this.btntTodasDefensas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -300,8 +294,6 @@
             // dtgDefensaExterna
             // 
             this.dtgDefensaExterna.AllowUserToAddRows = false;
-            this.dtgDefensaExterna.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgDefensaExterna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDefensaExterna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgDefensaExterna.BackgroundColor = System.Drawing.Color.Silver;
@@ -330,10 +322,10 @@
             this.ColumnaEstudiante,
             this.ColumnaCarrera,
             this.ColumnaFacultad});
+            this.dtgDefensaExterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDefensaExterna.EnableHeadersVisualStyles = false;
             this.dtgDefensaExterna.GridColor = System.Drawing.Color.Silver;
             this.dtgDefensaExterna.Location = new System.Drawing.Point(0, 0);
-            this.dtgDefensaExterna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgDefensaExterna.Name = "dtgDefensaExterna";
             this.dtgDefensaExterna.ReadOnly = true;
             this.dtgDefensaExterna.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -355,7 +347,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgDefensaExterna.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgDefensaExterna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDefensaExterna.Size = new System.Drawing.Size(1080, 532);
+            this.dtgDefensaExterna.Size = new System.Drawing.Size(810, 571);
             this.dtgDefensaExterna.TabIndex = 0;
             this.dtgDefensaExterna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDefensaExterna_CellContentClick);
             // 
@@ -439,17 +431,17 @@
             // 
             // FrmAgenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1080, 588);
+            this.ClientSize = new System.Drawing.Size(810, 617);
             this.Controls.Add(this.pnlDataGrid);
             this.Controls.Add(this.pnlBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1080, 588);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(810, 617);
             this.Name = "FrmAgenda";
             this.Text = "Agenda";
             this.pnlBuscar.ResumeLayout(false);

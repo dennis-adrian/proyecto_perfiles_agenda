@@ -92,10 +92,12 @@ namespace CapaPresentacion
             txtCelularAlum.Text = InfoDefensa["Celular"];
             cmbCarrera.SelectedValue = Convert.ToInt32(InfoDefensa["Id_carrera"]);
             string fec_defensa = (string.IsNullOrEmpty(InfoDefensa["Fecha_presentacion"])) ? "01/01/1970" : InfoDefensa["Fecha_presentacion"];
-            dtFechaDefensa.Value = DateTime.Parse(fec_defensa, new CultureInfo("en-GB"));            
+            dtFechaDefensa.Value = DateTime.Parse(fec_defensa, new CultureInfo("en-GB"));
             string hor_defensa = (string.IsNullOrEmpty(InfoDefensa["Hora"])) ? "00:00:00" : InfoDefensa["Hora"];
             dtHora.Value = DateTime.Parse(hor_defensa, new CultureInfo("en-GB"));
-            txtAula.Text = InfoDefensa["Aula"];
+            cbbLetraAula.Text = string.IsNullOrEmpty(InfoDefensa["Aula"]) ? 'N'.ToString() : InfoDefensa["Aula"][0].ToString();
+            char[] charsToTrim = { 'N', 'S', 'O', 'E' };
+            txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
             txtNota.Text = InfoDefensa["Calificacion"];
             txtTutorGral.Text = $"{InfoDefensa["NombreLicenciado"]} {InfoDefensa["ApellidoLicenciado"]}";
 
@@ -246,42 +248,46 @@ namespace CapaPresentacion
             }
             return estado;
         }
-        public void recolectData()
+        public bool recolectData()
         {
-                defensa_externa.Id = InfoDefensa["Id"];
-                defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa, "Fecha_presentacion", InfoDefensa);
-                defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa, "H");
-                defensa_externa.Aula = SetAndEval(txtAula, "Aula", InfoDefensa);
-                defensa_externa.Id_tesis = InfoDefensa["Id_tesis"];
-                estudiante.Id = InfoDefensa["Id_estudiante"];
-                estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
-                estudiante.Apellido = SetAndEval(txtApellidoAlum, "Apellido", InfoDefensa);
-                estudiante.Nombre = SetAndEval(txtNombreAlum, "Nombre", InfoDefensa);
-                estudiante.Email = SetAndEval(txtEmailAlum, "Email", InfoDefensa);
-                estudiante.Telefono = SetAndEval(txtTelefonoAlum, "Telefono", InfoDefensa);
-                estudiante.Celular = SetAndEval(txtCelularAlum, "Celular", InfoDefensa);
-                estudiante.Id_carrera = SetAndEvalCombo(cmbCarrera, "Id_carrera", InfoDefensa);
-                perfil_tesis.Id = InfoDefensa["Id_tesis"];
-                perfil_tesis.Estado_defensa = setAndEvalEstadoDefensa();
-                perfil_tesis.Tema = SetAndEval(txtTemaGral, "Tema", InfoDefensa);
-                perfil_tesis.Calificacion = SetAndEval(txtNota, "Calificacion", InfoDefensa);
-                perfil_tesis.Id_estudiante = InfoDefensa["Id_estudiante"];
-                perfil_tesis.Id_licenciado = InfoDefensa["Id_licenciado"];
-                perfil_tesis.Id_funcion_licenciado = InfoDefensa["Id_funcion_licenciado"];
-                perfil_tesis.Estado = InfoDefensa["Estado"];
-                perfil_tesis.Fecha_aprobacion_jefe_carrera = InfoDefensa["Fecha_aprobacion_jefe_carrera"];
-                perfil_tesis.Fecha_recepcion_titulacion = InfoDefensa["Fecha_recepcion_titulacion"];
+            defensa_externa.Id = InfoDefensa["Id"];
+            defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa, "Fecha_presentacion", InfoDefensa);
+            defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa, "H");
+            string aula = cbbLetraAula.Text + txtAula.Text;
+            //defensa_externa.Aula = SetAndEval(aula, "Aula", InfoDefensa);
+            defensa_externa.Aula = aula;
+            defensa_externa.Id_tesis = InfoDefensa["Id_tesis"];
+            estudiante.Id = InfoDefensa["Id_estudiante"];
+            estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
+            estudiante.Apellido = SetAndEval(txtApellidoAlum, "Apellido", InfoDefensa);
+            estudiante.Nombre = SetAndEval(txtNombreAlum, "Nombre", InfoDefensa);
+            estudiante.Email = SetAndEval(txtEmailAlum, "Email", InfoDefensa);
+            estudiante.Telefono = SetAndEval(txtTelefonoAlum, "Telefono", InfoDefensa);
+            estudiante.Celular = SetAndEval(txtCelularAlum, "Celular", InfoDefensa);
+            estudiante.Id_carrera = SetAndEvalCombo(cmbCarrera, "Id_carrera", InfoDefensa);
+            perfil_tesis.Id = InfoDefensa["Id_tesis"];
+            perfil_tesis.Estado_defensa = setAndEvalEstadoDefensa();
+            perfil_tesis.Tema = SetAndEval(txtTemaGral, "Tema", InfoDefensa);
+            perfil_tesis.Calificacion = SetAndEval(txtNota, "Calificacion", InfoDefensa);
+            perfil_tesis.Id_estudiante = InfoDefensa["Id_estudiante"];
+            perfil_tesis.Id_licenciado = InfoDefensa["Id_licenciado"];
+            perfil_tesis.Id_funcion_licenciado = InfoDefensa["Id_funcion_licenciado"];
+            perfil_tesis.Estado = InfoDefensa["Estado"];
+            perfil_tesis.Fecha_aprobacion_jefe_carrera = InfoDefensa["Fecha_aprobacion_jefe_carrera"];
+            perfil_tesis.Fecha_recepcion_titulacion = InfoDefensa["Fecha_recepcion_titulacion"];
 
 
             if (!this.isEmpty)
             {
                 ////recolecion y evaluacion de licenciados
                 recolectDataDetalleDefensa();
+                return true;
             }
-            //else
-            //{
-            //    MessageBox.Show("no se ha asignado a ningun licenciado para esta defensa");
-            //}
+            else
+            {
+                MessageBox.Show("Necesita llenar todos los datos correspondientes a la defensa para guardar sus cambios");
+                return false;
+            }
 
         }
         public void recolectDataDetalleDefensa()
@@ -433,17 +439,16 @@ namespace CapaPresentacion
         
         public void insertLicenciados()
         {
-
             List<dynamic> setListLicenciados = new List<dynamic>();
             Dictionary<ComboBox, int> key_cmb = new Dictionary<ComboBox, int>();
 
-            key_cmb.Add(cmbPresidente,3);
-            key_cmb.Add(cmbSecretario,4);
-            key_cmb.Add(cmbTribunalInterno1,5);
-            key_cmb.Add(cmbTribunalInterno2,6);
-            key_cmb.Add(cmbRepresentanteUagrm1,8);
-            key_cmb.Add(cmbRepresentanteUagrm2,9);
-            key_cmb.Add(cmbRepresentanteMinisterio,7);
+            key_cmb.Add(cmbPresidente, 3);
+            key_cmb.Add(cmbSecretario, 4);
+            key_cmb.Add(cmbTribunalInterno1, 5);
+            key_cmb.Add(cmbTribunalInterno2, 6);
+            key_cmb.Add(cmbRepresentanteUagrm1, 8);
+            key_cmb.Add(cmbRepresentanteUagrm2, 9);
+            key_cmb.Add(cmbRepresentanteMinisterio, 7);
             List<ComboBox> cmb_licenciados = new List<ComboBox>();
             cmb_licenciados.Add(cmbPresidente);
             cmb_licenciados.Add(cmbSecretario);
@@ -453,38 +458,54 @@ namespace CapaPresentacion
             cmb_licenciados.Add(cmbRepresentanteUagrm2);
             cmb_licenciados.Add(cmbRepresentanteMinisterio);
 
-            foreach(var item in cmb_licenciados)
+            if (cmb_licenciados.Count < 0)
             {
-                dynamic obj = new ExpandoObject();
-                obj.Id_defensa_externa = InfoDefensa["Id"];
-                obj.Id_licenciado = (item.SelectedItem as ComboBoxItem).Value.ToString();
-                obj.Id_funcion_licenciado = Convert.ToString(key_cmb[item]);
-                setListLicenciados.Add(obj);
-            }
-            AgregarDefensa addLicenciadosDefensa = new AgregarDefensa();
+                foreach (var item in cmb_licenciados)
+                {
+                    dynamic obj = new ExpandoObject();
+                    obj.Id_defensa_externa = InfoDefensa["Id"];
+                    obj.Id_licenciado = (item.SelectedItem as ComboBoxItem).Value.ToString();
+                    obj.Id_funcion_licenciado = Convert.ToString(key_cmb[item]);
+                    setListLicenciados.Add(obj);
+                }
+                AgregarDefensa addLicenciadosDefensa = new AgregarDefensa();
 
-            addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
+                addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
+            }
+            else
+            {
+                MessageBox.Show("Necesita llenar todos los datos necesarios");
+            }
+            
 
         }
 
 
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
-            recolectData();
-            ActualizarDefensa actualizar = new ActualizarDefensa();
-            if (this.isEmpty)
+            if(recolectData())
             {
+                ActualizarDefensa actualizar = new ActualizarDefensa();
+                if (this.isEmpty)
+                {
 
-                actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
-                insertLicenciados();
+                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
+                    insertLicenciados();
 
+                }
+                else
+                {
+
+                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
+
+                }
             }
             else
             {
-
-            actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
-
+                return;
             }
+            
+            
         }
 
         public void Ejecutar(int id, string nombre)

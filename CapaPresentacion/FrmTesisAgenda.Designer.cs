@@ -38,6 +38,7 @@
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.pnlPrincipalTesisAgenda = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbLetraAula = new System.Windows.Forms.ComboBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTituloTesis = new System.Windows.Forms.Label();
-            this.cbbLetraAula = new System.Windows.Forms.ComboBox();
             this.pnlBarraTitulo.SuspendLayout();
             this.pnlPrincipalTesisAgenda.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -191,7 +191,7 @@
             this.pnlPrincipalTesisAgenda.Controls.Add(this.groupBox1);
             this.pnlPrincipalTesisAgenda.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPrincipalTesisAgenda.Location = new System.Drawing.Point(0, 72);
-            this.pnlPrincipalTesisAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPrincipalTesisAgenda.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPrincipalTesisAgenda.Name = "pnlPrincipalTesisAgenda";
             this.pnlPrincipalTesisAgenda.Size = new System.Drawing.Size(900, 749);
             this.pnlPrincipalTesisAgenda.TabIndex = 58;
@@ -239,6 +239,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de la Defensa";
             // 
+            // cbbLetraAula
+            // 
+            this.cbbLetraAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbLetraAula.FormattingEnabled = true;
+            this.cbbLetraAula.Items.AddRange(new object[] {
+            "N",
+            "S",
+            "E",
+            "O"});
+            this.cbbLetraAula.Location = new System.Drawing.Point(214, 317);
+            this.cbbLetraAula.Name = "cbbLetraAula";
+            this.cbbLetraAula.Size = new System.Drawing.Size(40, 26);
+            this.cbbLetraAula.TabIndex = 63;
+            this.cbbLetraAula.Text = "N";
+            // 
             // txtNota
             // 
             this.txtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,7 +283,7 @@
             this.btnElegirTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal2.ForeColor = System.Drawing.Color.White;
             this.btnElegirTribunal2.Location = new System.Drawing.Point(326, 200);
-            this.btnElegirTribunal2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirTribunal2.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirTribunal2.Name = "btnElegirTribunal2";
             this.btnElegirTribunal2.Size = new System.Drawing.Size(88, 29);
             this.btnElegirTribunal2.TabIndex = 60;
@@ -285,7 +300,7 @@
             this.btnElegirRepresentanteUagrm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirRepresentanteUagrm1.ForeColor = System.Drawing.Color.White;
             this.btnElegirRepresentanteUagrm1.Location = new System.Drawing.Point(738, 200);
-            this.btnElegirRepresentanteUagrm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirRepresentanteUagrm1.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirRepresentanteUagrm1.Name = "btnElegirRepresentanteUagrm1";
             this.btnElegirRepresentanteUagrm1.Size = new System.Drawing.Size(88, 29);
             this.btnElegirRepresentanteUagrm1.TabIndex = 59;
@@ -302,7 +317,7 @@
             this.btnElegirRepresentanteUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirRepresentanteUagrm2.ForeColor = System.Drawing.Color.White;
             this.btnElegirRepresentanteUagrm2.Location = new System.Drawing.Point(738, 265);
-            this.btnElegirRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirRepresentanteUagrm2.Name = "btnElegirRepresentanteUagrm2";
             this.btnElegirRepresentanteUagrm2.Size = new System.Drawing.Size(88, 29);
             this.btnElegirRepresentanteUagrm2.TabIndex = 57;
@@ -319,7 +334,7 @@
             this.btnElegirTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirTribunal1.ForeColor = System.Drawing.Color.White;
             this.btnElegirTribunal1.Location = new System.Drawing.Point(326, 132);
-            this.btnElegirTribunal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirTribunal1.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirTribunal1.Name = "btnElegirTribunal1";
             this.btnElegirTribunal1.Size = new System.Drawing.Size(88, 29);
             this.btnElegirTribunal1.TabIndex = 56;
@@ -336,7 +351,7 @@
             this.btnElegirRepresentanteMinisterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirRepresentanteMinisterio.ForeColor = System.Drawing.Color.White;
             this.btnElegirRepresentanteMinisterio.Location = new System.Drawing.Point(738, 132);
-            this.btnElegirRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirRepresentanteMinisterio.Name = "btnElegirRepresentanteMinisterio";
             this.btnElegirRepresentanteMinisterio.Size = new System.Drawing.Size(88, 29);
             this.btnElegirRepresentanteMinisterio.TabIndex = 55;
@@ -353,7 +368,7 @@
             this.btnElegirSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirSecretario.ForeColor = System.Drawing.Color.White;
             this.btnElegirSecretario.Location = new System.Drawing.Point(738, 61);
-            this.btnElegirSecretario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirSecretario.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirSecretario.Name = "btnElegirSecretario";
             this.btnElegirSecretario.Size = new System.Drawing.Size(88, 29);
             this.btnElegirSecretario.TabIndex = 54;
@@ -370,7 +385,7 @@
             this.btnElegirPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElegirPresidente.ForeColor = System.Drawing.Color.White;
             this.btnElegirPresidente.Location = new System.Drawing.Point(326, 61);
-            this.btnElegirPresidente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElegirPresidente.Margin = new System.Windows.Forms.Padding(2);
             this.btnElegirPresidente.Name = "btnElegirPresidente";
             this.btnElegirPresidente.Size = new System.Drawing.Size(88, 29);
             this.btnElegirPresidente.TabIndex = 53;
@@ -389,7 +404,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbRepresentanteUagrm2.Location = new System.Drawing.Point(454, 269);
-            this.cmbRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRepresentanteUagrm2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteUagrm2.Name = "cmbRepresentanteUagrm2";
             this.cmbRepresentanteUagrm2.Size = new System.Drawing.Size(280, 25);
             this.cmbRepresentanteUagrm2.TabIndex = 9;
@@ -405,7 +420,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbTribunalInterno1.Location = new System.Drawing.Point(38, 134);
-            this.cmbTribunalInterno1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTribunalInterno1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTribunalInterno1.Name = "cmbTribunalInterno1";
             this.cmbTribunalInterno1.Size = new System.Drawing.Size(280, 25);
             this.cmbTribunalInterno1.TabIndex = 1;
@@ -421,7 +436,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbTribunalInterno2.Location = new System.Drawing.Point(38, 202);
-            this.cmbTribunalInterno2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTribunalInterno2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTribunalInterno2.Name = "cmbTribunalInterno2";
             this.cmbTribunalInterno2.Size = new System.Drawing.Size(280, 25);
             this.cmbTribunalInterno2.TabIndex = 2;
@@ -437,7 +452,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbSecretario.Location = new System.Drawing.Point(454, 64);
-            this.cmbSecretario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSecretario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSecretario.Name = "cmbSecretario";
             this.cmbSecretario.Size = new System.Drawing.Size(280, 25);
             this.cmbSecretario.TabIndex = 6;
@@ -453,7 +468,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbPresidente.Location = new System.Drawing.Point(40, 64);
-            this.cmbPresidente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPresidente.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPresidente.Name = "cmbPresidente";
             this.cmbPresidente.Size = new System.Drawing.Size(280, 25);
             this.cmbPresidente.TabIndex = 0;
@@ -469,7 +484,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbRepresentanteUagrm1.Location = new System.Drawing.Point(454, 202);
-            this.cmbRepresentanteUagrm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRepresentanteUagrm1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteUagrm1.Name = "cmbRepresentanteUagrm1";
             this.cmbRepresentanteUagrm1.Size = new System.Drawing.Size(280, 25);
             this.cmbRepresentanteUagrm1.TabIndex = 8;
@@ -485,7 +500,7 @@
             "examen de grado",
             "proyecto de grado"});
             this.cmbRepresentanteMinisterio.Location = new System.Drawing.Point(454, 134);
-            this.cmbRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRepresentanteMinisterio.Name = "cmbRepresentanteMinisterio";
             this.cmbRepresentanteMinisterio.Size = new System.Drawing.Size(280, 25);
             this.cmbRepresentanteMinisterio.TabIndex = 7;
@@ -583,7 +598,7 @@
             this.btnCancelarNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarNuevaDefensa.ForeColor = System.Drawing.Color.White;
             this.btnCancelarNuevaDefensa.Location = new System.Drawing.Point(573, 347);
-            this.btnCancelarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarNuevaDefensa.Name = "btnCancelarNuevaDefensa";
             this.btnCancelarNuevaDefensa.Size = new System.Drawing.Size(111, 38);
             this.btnCancelarNuevaDefensa.TabIndex = 11;
@@ -600,7 +615,7 @@
             this.btnGuardarNuevaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevaDefensa.ForeColor = System.Drawing.Color.White;
             this.btnGuardarNuevaDefensa.Location = new System.Drawing.Point(713, 347);
-            this.btnGuardarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarNuevaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarNuevaDefensa.Name = "btnGuardarNuevaDefensa";
             this.btnGuardarNuevaDefensa.Size = new System.Drawing.Size(111, 38);
             this.btnGuardarNuevaDefensa.TabIndex = 10;
@@ -624,8 +639,8 @@
             // 
             this.txtAula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAula.Location = new System.Drawing.Point(259, 317);
-            this.txtAula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAula.Location = new System.Drawing.Point(259, 319);
+            this.txtAula.Margin = new System.Windows.Forms.Padding(2);
             this.txtAula.Name = "txtAula";
             this.txtAula.Size = new System.Drawing.Size(77, 24);
             this.txtAula.TabIndex = 5;
@@ -660,7 +675,7 @@
             this.dtFechaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaDefensa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaDefensa.Location = new System.Drawing.Point(214, 246);
-            this.dtFechaDefensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaDefensa.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaDefensa.Name = "dtFechaDefensa";
             this.dtFechaDefensa.Size = new System.Drawing.Size(108, 24);
             this.dtFechaDefensa.TabIndex = 3;
@@ -671,7 +686,7 @@
             this.dtHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHora.Location = new System.Drawing.Point(214, 280);
-            this.dtHora.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtHora.Margin = new System.Windows.Forms.Padding(2);
             this.dtHora.Name = "dtHora";
             this.dtHora.ShowUpDown = true;
             this.dtHora.Size = new System.Drawing.Size(108, 24);
@@ -855,7 +870,7 @@
             this.panel2.Controls.Add(this.lblTituloTesis);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 31);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 41);
             this.panel2.TabIndex = 111;
@@ -872,21 +887,6 @@
             this.lblTituloTesis.TabIndex = 24;
             this.lblTituloTesis.Text = "Tesis";
             this.lblTituloTesis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbbLetraAula
-            // 
-            this.cbbLetraAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbLetraAula.FormattingEnabled = true;
-            this.cbbLetraAula.Items.AddRange(new object[] {
-            "N",
-            "S",
-            "E",
-            "O"});
-            this.cbbLetraAula.Location = new System.Drawing.Point(214, 317);
-            this.cbbLetraAula.Name = "cbbLetraAula";
-            this.cbbLetraAula.Size = new System.Drawing.Size(40, 26);
-            this.cbbLetraAula.TabIndex = 63;
-            this.cbbLetraAula.Text = "N";
             // 
             // FrmTesisAgenda
             // 
