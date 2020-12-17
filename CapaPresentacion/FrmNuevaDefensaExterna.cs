@@ -230,7 +230,7 @@ namespace CapaPresentacion
 
             string fechadefensa = dtFechaDefensa.Value.ToString("dd-MM-yyyy");
             string hora = dtHora.Value.ToString("HH:mm");
-            string aula = txtAula.Text;
+            string aula = cbbLetraAula.Text + txtAula.Text;
 
 
 
@@ -411,9 +411,11 @@ namespace CapaPresentacion
                     throw new Exception("No puede repetir nombres de licenciados.");
                 }
                 Insert();
+                MessageBox.Show("Datos guardados correctamente");
                 ClearForms();
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }

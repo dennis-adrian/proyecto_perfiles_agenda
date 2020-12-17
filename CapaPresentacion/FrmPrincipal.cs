@@ -543,10 +543,6 @@ namespace CapaPresentacion
                 lblTitulo.Text =title_home;
 
             }
-
-           
-          
-
         }
 
         private void btnHome_Click(object sender, EventArgs e)

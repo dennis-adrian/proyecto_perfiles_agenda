@@ -55,7 +55,6 @@
             this.btnCancelarNuevaDefensa = new System.Windows.Forms.Button();
             this.btnGuardarNuevaDefensa = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtFechaDefensa = new System.Windows.Forms.DateTimePicker();
@@ -77,6 +76,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtRegistroAlum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.cbbLetraAula = new System.Windows.Forms.ComboBox();
+            this.txtAula = new System.Windows.Forms.TextBox();
             this.pnlNuevaDefensa.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -99,6 +100,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.cbbLetraAula);
+            this.groupBox2.Controls.Add(this.txtAula);
             this.groupBox2.Controls.Add(this.btnElegirTribunal2);
             this.groupBox2.Controls.Add(this.btnElegirRepresentanteUagrm1);
             this.groupBox2.Controls.Add(this.btnElegirRepresentanteUagrm2);
@@ -123,7 +126,6 @@
             this.groupBox2.Controls.Add(this.btnCancelarNuevaDefensa);
             this.groupBox2.Controls.Add(this.btnGuardarNuevaDefensa);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtAula);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dtFechaDefensa);
@@ -497,15 +499,6 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Aula";
             // 
-            // txtAula
-            // 
-            this.txtAula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAula.Location = new System.Drawing.Point(214, 313);
-            this.txtAula.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAula.Name = "txtAula";
-            this.txtAula.Size = new System.Drawing.Size(108, 29);
-            this.txtAula.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -741,6 +734,31 @@
             this.label18.TabIndex = 95;
             this.label18.Text = "Registro:";
             // 
+            // cbbLetraAula
+            // 
+            this.cbbLetraAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbLetraAula.FormattingEnabled = true;
+            this.cbbLetraAula.Items.AddRange(new object[] {
+            "N",
+            "S",
+            "E",
+            "O"});
+            this.cbbLetraAula.Location = new System.Drawing.Point(213, 313);
+            this.cbbLetraAula.Name = "cbbLetraAula";
+            this.cbbLetraAula.Size = new System.Drawing.Size(40, 26);
+            this.cbbLetraAula.TabIndex = 65;
+            this.cbbLetraAula.Text = "N";
+            // 
+            // txtAula
+            // 
+            this.txtAula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAula.Location = new System.Drawing.Point(258, 313);
+            this.txtAula.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAula.Name = "txtAula";
+            this.txtAula.Size = new System.Drawing.Size(77, 24);
+            this.txtAula.TabIndex = 64;
+            // 
             // FrmNuevaDefensaExterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,7 +787,6 @@
         private System.Windows.Forms.DateTimePicker dtFechaDefensa;
         private System.Windows.Forms.DateTimePicker dtHora;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelarNuevaDefensa;
@@ -813,5 +830,7 @@
         private System.Windows.Forms.TextBox txtTema;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cbbLetraAula;
+        private System.Windows.Forms.TextBox txtAula;
     }
 }
