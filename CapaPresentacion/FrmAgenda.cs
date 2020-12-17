@@ -347,7 +347,7 @@ namespace CapaPresentacion
         private void btnEditarAgenda_Click(object sender, EventArgs e)
         {
             
-            string tipo = dtgDefensaExterna.CurrentRow.Cells[5].Value.ToString();
+            string tipo = dtgDefensaExterna.CurrentRow?.Cells[5].Value.ToString();
             if (tipo != null)
             {
 
