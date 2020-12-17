@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacultad));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbltitu = new System.Windows.Forms.Label();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
@@ -40,15 +43,15 @@
             this.btnGuardarFacu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dtgFacultad = new System.Windows.Forms.DataGridView();
-            this.idtxt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrotxt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombretxt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBuscarFacultad = new System.Windows.Forms.TextBox();
             this.btnSelecFacu = new System.Windows.Forms.Button();
             this.btnEditarFacu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtgFacultad = new System.Windows.Forms.DataGridView();
+            this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.pnlBarraTitulo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,7 +67,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 45);
+            this.panel2.Size = new System.Drawing.Size(555, 45);
             this.panel2.TabIndex = 34;
             // 
             // lbltitu
@@ -86,7 +89,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(614, 27);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(555, 27);
             this.pnlBarraTitulo.TabIndex = 33;
             this.pnlBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseMove);
             // 
@@ -100,7 +103,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(579, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(520, 1);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(34, 29);
@@ -117,7 +120,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 82);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(593, 98);
+            this.groupBox2.Size = new System.Drawing.Size(516, 98);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar y editar facultad";
@@ -170,8 +173,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.dtgFacultad);
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtBuscarFacultad);
             this.groupBox1.Controls.Add(this.btnSelecFacu);
@@ -181,7 +184,7 @@
             this.groupBox1.Location = new System.Drawing.Point(9, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(593, 333);
+            this.groupBox1.Size = new System.Drawing.Size(516, 333);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar facultad";
@@ -193,7 +196,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(484, 289);
+            this.btnEliminar.Location = new System.Drawing.Point(396, 301);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 29);
             this.btnEliminar.TabIndex = 56;
@@ -201,43 +204,6 @@
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // dtgFacultad
-            // 
-            this.dtgFacultad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgFacultad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idtxt,
-            this.nrotxt,
-            this.nombretxt});
-            this.dtgFacultad.Location = new System.Drawing.Point(13, 83);
-            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(1);
-            this.dtgFacultad.Name = "dtgFacultad";
-            this.dtgFacultad.RowHeadersWidth = 92;
-            this.dtgFacultad.RowTemplate.Height = 37;
-            this.dtgFacultad.Size = new System.Drawing.Size(564, 190);
-            this.dtgFacultad.TabIndex = 55;
-            // 
-            // idtxt
-            // 
-            this.idtxt.HeaderText = "Id";
-            this.idtxt.MinimumWidth = 11;
-            this.idtxt.Name = "idtxt";
-            this.idtxt.Visible = false;
-            this.idtxt.Width = 225;
-            // 
-            // nrotxt
-            // 
-            this.nrotxt.HeaderText = "Nro";
-            this.nrotxt.MinimumWidth = 11;
-            this.nrotxt.Name = "nrotxt";
-            this.nrotxt.Width = 225;
-            // 
-            // nombretxt
-            // 
-            this.nombretxt.HeaderText = "Nombre";
-            this.nombretxt.MinimumWidth = 11;
-            this.nombretxt.Name = "nombretxt";
-            this.nombretxt.Width = 225;
             // 
             // btnBuscar
             // 
@@ -275,7 +241,7 @@
             this.btnSelecFacu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecFacu.ForeColor = System.Drawing.Color.White;
-            this.btnSelecFacu.Location = new System.Drawing.Point(264, 289);
+            this.btnSelecFacu.Location = new System.Drawing.Point(176, 301);
             this.btnSelecFacu.Name = "btnSelecFacu";
             this.btnSelecFacu.Size = new System.Drawing.Size(115, 29);
             this.btnSelecFacu.TabIndex = 43;
@@ -291,7 +257,7 @@
             this.btnEditarFacu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarFacu.ForeColor = System.Drawing.Color.White;
-            this.btnEditarFacu.Location = new System.Drawing.Point(385, 289);
+            this.btnEditarFacu.Location = new System.Drawing.Point(297, 301);
             this.btnEditarFacu.Name = "btnEditarFacu";
             this.btnEditarFacu.Size = new System.Drawing.Size(93, 29);
             this.btnEditarFacu.TabIndex = 43;
@@ -311,12 +277,85 @@
             this.label2.Text = "Buscar :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // dtgFacultad
+            // 
+            this.dtgFacultad.AllowUserToDeleteRows = false;
+            this.dtgFacultad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgFacultad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgFacultad.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dtgFacultad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgFacultad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgFacultad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgFacultad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgFacultad.ColumnHeadersHeight = 24;
+            this.dtgFacultad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgFacultad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnId,
+            this.columnNro,
+            this.columnNombre});
+            this.dtgFacultad.EnableHeadersVisualStyles = false;
+            this.dtgFacultad.GridColor = System.Drawing.Color.White;
+            this.dtgFacultad.Location = new System.Drawing.Point(19, 75);
+            this.dtgFacultad.Name = "dtgFacultad";
+            this.dtgFacultad.ReadOnly = true;
+            this.dtgFacultad.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgFacultad.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgFacultad.RowHeadersVisible = false;
+            this.dtgFacultad.RowHeadersWidth = 52;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgFacultad.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgFacultad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgFacultad.Size = new System.Drawing.Size(463, 191);
+            this.dtgFacultad.TabIndex = 57;
+            // 
+            // columnId
+            // 
+            this.columnId.HeaderText = "Id";
+            this.columnId.MinimumWidth = 11;
+            this.columnId.Name = "columnId";
+            this.columnId.ReadOnly = true;
+            this.columnId.Visible = false;
+            // 
+            // columnNro
+            // 
+            this.columnNro.FillWeight = 30.45685F;
+            this.columnNro.HeaderText = "Nro.";
+            this.columnNro.MinimumWidth = 11;
+            this.columnNro.Name = "columnNro";
+            this.columnNro.ReadOnly = true;
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.FillWeight = 169.5432F;
+            this.columnNombre.HeaderText = "Nombre";
+            this.columnNombre.MinimumWidth = 11;
+            this.columnNombre.Name = "columnNombre";
+            this.columnNombre.ReadOnly = true;
+            // 
             // FrmFacultad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(614, 537);
+            this.ClientSize = new System.Drawing.Size(555, 537);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -353,12 +392,12 @@
         private System.Windows.Forms.TextBox txtBuscarFacultad;
         private System.Windows.Forms.Button btnEditarFacu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtgFacultad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrotxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombretxt;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label idlbl;
         public System.Windows.Forms.Button btnSelecFacu;
+        private System.Windows.Forms.DataGridView dtgFacultad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnNro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnNombre;
+        public System.Windows.Forms.Label idlbl;
     }
 }
