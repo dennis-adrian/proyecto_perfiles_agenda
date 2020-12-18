@@ -216,7 +216,7 @@ namespace CapaPresentacion
 
         }
 
-        public void Insert()
+        public bool Insert()
         {
             string tema = txtTema.Text;
             string nombre = txtNombreAlum.Text;
@@ -289,7 +289,17 @@ namespace CapaPresentacion
                 f_uagram2 //input 25
 
            };
-            obj.inputController(datos,obj.mainOtros);
+            try
+            {
+                obj.inputController(datos, obj.mainOtros);
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al guardar los datos");
+                return false;
+                Console.WriteLine(e);
+            }
         }
 
 
@@ -408,12 +418,15 @@ namespace CapaPresentacion
 
                 if (!validacion)
                 {
-                    throw new Exception("No puede repetir nombres de licenciados.");
+                    MessageBox.Show("Verifique que ingresó todos los datos correctamente.\n\n" +
+                        "1. Necesita ingresar el nombre de todos los licenciados que van a participar de la defensa.\n\n" +
+                        "2. No puede repetir nombres.");
                 }
-                Insert();
-                MessageBox.Show("Datos guardados correctamente");
-                ClearForms();
-
+                if (Insert())
+                {
+                    MessageBox.Show("Datos guardados correctamente");
+                    ClearForms();
+                }
             }
             catch (Exception ex)
             {

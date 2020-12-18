@@ -432,6 +432,7 @@ namespace CapaPresentacion
             if(actualizar.updateOtros(estudiante,titulacion_otros,defensa_externa,lista_detalle_defensa))
             {
                 MessageBox.Show("Datos guardados correctamente");
+                MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
             }
             else
             {
@@ -529,6 +530,72 @@ namespace CapaPresentacion
             frm.BringToFront();
         }
 
+
+        private void btnElegirTribunal1_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 2;
+            FirstButtonActive(btnElegirTribunal1);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Licenciado : " + lbltribiInterno1.Text;
+            frm.BringToFront();
+        }
+
+        private void btnElegirTribunal2_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 3;
+            FirstButtonActive(btnElegirTribunal2);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Licenciado : " + lblTribuInterno2.Text;
+            frm.BringToFront();
+        }
+
+        private void btnElegirSecretario_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 4;
+            FirstButtonActive(btnElegirSecretario);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Licenciado : " + lblSecretario.Text;
+            frm.BringToFront();
+        }
+
+        private void btnElegirRepresentanteMinisterio_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 5;
+            FirstButtonActive(btnElegirRepresentanteMinisterio);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Licenciado : " + lblRME.Text;
+            frm.BringToFront();
+        }
+
+        private void btnElegirRepresentanteUagrm1_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 6;
+            FirstButtonActive(btnElegirRepresentanteUagrm1);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Elegir : " + lblRepreGaby1.Text;
+            frm.BringToFront();
+        }
+
+        private void btnElegirRepresentanteUagrm2_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 7;
+            FirstButtonActive(btnElegirRepresentanteUagrm2);
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            //frm.lblLicen.Text = "Licenciado : " + lblRepreGaby2.Text;
+            frm.BringToFront();
+        }
         #endregion
     }
 }

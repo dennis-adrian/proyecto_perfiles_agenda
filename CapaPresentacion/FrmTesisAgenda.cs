@@ -248,14 +248,12 @@ namespace CapaPresentacion
             }
             return estado;
         }
-        public bool recolectData()
+        public void recolectData()
         {
             defensa_externa.Id = InfoDefensa["Id"];
             defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa, "Fecha_presentacion", InfoDefensa);
             defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa, "H");
-            string aula = cbbLetraAula.Text + txtAula.Text;
-            //defensa_externa.Aula = SetAndEval(aula, "Aula", InfoDefensa);
-            defensa_externa.Aula = aula;
+            defensa_externa.Aula = SetAndEval(txtAula, "Aula", InfoDefensa);
             defensa_externa.Id_tesis = InfoDefensa["Id_tesis"];
             estudiante.Id = InfoDefensa["Id_estudiante"];
             estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
@@ -281,14 +279,11 @@ namespace CapaPresentacion
             {
                 ////recolecion y evaluacion de licenciados
                 recolectDataDetalleDefensa();
-                return true;
             }
-            else
-            {
-                MessageBox.Show("Necesita llenar todos los datos correspondientes a la defensa para guardar sus cambios");
-                return false;
-            }
-
+            //else
+            //{
+            //    MessageBox.Show("no se ha asignado a ningun licenciado para esta defensa");
+            //}
         }
         public void recolectDataDetalleDefensa()
         {
@@ -362,7 +357,7 @@ namespace CapaPresentacion
             cmb.SelectedIndex = 0;
         }
         public void loadDictionary(int id)
-        {           
+        {
             var list = info.getInfoDefensaTesis(id);
             InfoDefensa.Add("Id", Convert.ToString(list.Id));
             InfoDefensa.Add("Fecha_presentacion", Convert.ToString(list.Fecha_presentacion));
@@ -389,7 +384,6 @@ namespace CapaPresentacion
             InfoDefensa.Add("ApellidoLicenciado", Convert.ToString(list.ApellidoLicenciado));
             InfoDefensa.Add("Id_funcion_licenciado", Convert.ToString(list.Id_funcion_licenciado));
             InfoDefensa.Add("Funcion", Convert.ToString(list.Funcion));
-
         }
 
         #endregion
@@ -458,33 +452,34 @@ namespace CapaPresentacion
             cmb_licenciados.Add(cmbRepresentanteUagrm2);
             cmb_licenciados.Add(cmbRepresentanteMinisterio);
 
-            if (cmb_licenciados.Count < 0)
+            foreach (var item in cmb_licenciados)
             {
-                foreach (var item in cmb_licenciados)
-                {
-                    dynamic obj = new ExpandoObject();
-                    obj.Id_defensa_externa = InfoDefensa["Id"];
-                    obj.Id_licenciado = (item.SelectedItem as ComboBoxItem).Value.ToString();
-                    obj.Id_funcion_licenciado = Convert.ToString(key_cmb[item]);
-                    setListLicenciados.Add(obj);
-                }
-                AgregarDefensa addLicenciadosDefensa = new AgregarDefensa();
-
-                addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
+                dynamic obj = new ExpandoObject();
+                obj.Id_defensa_externa = InfoDefensa["Id"];
+                obj.Id_licenciado = (item.SelectedItem as ComboBoxItem).Value.ToString();
+                obj.Id_funcion_licenciado = Convert.ToString(key_cmb[item]);
+                setListLicenciados.Add(obj);
             }
-            else
-            {
-                MessageBox.Show("Necesita llenar todos los datos necesarios");
-            }
-            
+            AgregarDefensa addLicenciadosDefensa = new AgregarDefensa();
 
+            addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
         }
 
 
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
-            if(recolectData())
+            try
             {
+                bool validacion = validarLicenciado(cmbPresidente.Text.ToString(), cmbSecretario.Text.ToString(), cmbTribunalInterno1.Text.ToString(), cmbTribunalInterno2.Text.ToString(), cmbRepresentanteMinisterio.Text.ToString(), cmbRepresentanteUagrm1.Text.ToString(), cmbRepresentanteUagrm2.Text.ToString());
+
+                if (!validacion)
+                {
+                    MessageBox.Show("Verifique que ingresó todos los datos correctamente.\n\n" +
+                        "1. Necesita ingresar el nombre de todos los licenciados que van a participar de la defensa.\n\n" +
+                        "2. No puede repetir nombres.");
+                    return;
+                }
+                recolectData();
                 ActualizarDefensa actualizar = new ActualizarDefensa();
                 if (this.isEmpty)
                 {
@@ -492,20 +487,21 @@ namespace CapaPresentacion
                     actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
                     insertLicenciados();
                     MessageBox.Show("Datos guardados correctamente");
-
+                    MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
                 }
                 else
                 {
 
                     actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
+                    MessageBox.Show("Datos guardados correctamente");
+                    MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
                 }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Hubo un error al momento de guardar los datos");
-                return;
+
+                throw;
             }
-            
             
         }
 
@@ -663,6 +659,49 @@ namespace CapaPresentacion
         }
 
 
+        #endregion
+
+        #region validacionDeLicenciados
+        List<string> listaLicenciados = new List<string>();
+        private bool validarLicenciado(string presidente = null, string secretario = null, string tribunal1 = null, string tribunal2 = null, string repMinisterio = null, string repUagrm1 = null, string repUagrm2 = null)
+        {
+            List<string> temporal = new List<string>();
+            agregarALista(presidente);
+            agregarALista(secretario);
+            agregarALista(tribunal1);
+            agregarALista(tribunal2);
+            agregarALista(repMinisterio);
+            agregarALista(repUagrm1);
+            agregarALista(repUagrm2);
+
+            listaLicenciados.Sort();
+
+            foreach (var item in listaLicenciados)
+            {
+                if (temporal.Count == 0)
+                {
+                    temporal.Add(item);
+                }
+                else if (item != temporal[temporal.Count - 1])
+                {
+                    temporal.Add(item);
+                }
+                else
+                {
+                    listaLicenciados.Clear();
+                    return false;
+                }
+            }
+            listaLicenciados.Clear();
+            return true;
+        }
+        private void agregarALista(string valor)
+        {
+            if (valor != null)
+            {
+                listaLicenciados.Add(valor);
+            }
+        }
         #endregion
     }
 }
