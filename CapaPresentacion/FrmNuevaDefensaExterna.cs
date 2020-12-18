@@ -297,8 +297,8 @@ namespace CapaPresentacion
             catch (Exception e)
             {
                 MessageBox.Show("Error al guardar los datos");
-                return false;
                 Console.WriteLine(e);
+                return false;
             }
         }
 

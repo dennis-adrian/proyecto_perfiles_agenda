@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.ContractForms;
 using CapaNegocio;
 using CapaNegocio.src;
 
@@ -45,6 +46,9 @@ namespace CapaPresentacion.FormsAgregar
         #endregion
 
         #region Atributos
+
+        //utilizo la interface como propiedad
+        public IContractInstitucion contratoInst { get; set; }
 
         int posY = 0;
         int posX = 0;
@@ -242,6 +246,17 @@ namespace CapaPresentacion.FormsAgregar
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSelecInstitu_Click(object sender, EventArgs e)
+        {
+            int id_seleccionado = Convert.ToInt32(dtgInstitucion.CurrentRow.Cells[0].Value.ToString());
+            string institucion = (dtgInstitucion.CurrentRow.Cells[2].Value.ToString());
+
+            //MessageBox.Show(id_seleccionado + " " + institucion);
+            //usando el contrato interfaz
+            contratoInst.EjecutarInstitucion(id_seleccionado, institucion);
+            this.Close();
         }
     }
 }

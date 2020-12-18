@@ -12,10 +12,11 @@ using CapaPresentacion.ContractForms;
 using CapaNegocio;
 using CapaNegocio.licenciados;
 using CapaDatos.View;
+using CapaPresentacion.Resources;
 
 namespace CapaPresentacion
 {
-    public partial class FrmTutor : Form
+    public partial class FrmTutor : Form, IContractInstitucion, IContractCarreras
     {
         //BORDE SOMBREADO FORMULAR
         private const int CS_DROPSHADOW = 0x20000;
@@ -210,17 +211,19 @@ namespace CapaPresentacion
         private void btnAgregarCarrera_Click(object sender, EventArgs e)
         {
             FrmCarreraExterna frm = this.FormInstance2;
+            frm.contratoCarr = this;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 ShowCarrerasLicenciado();
                 frm.BringToFront();
-
             }
         }
 
         private void btnAgregarInstitucion_Click(object sender, EventArgs e)
         {
             FrmInstitucion frm = this.FormInstance1;
+            //se crea la instancia del contrato
+            frm.contratoInst = this;
             frm.Show();
             frm.BringToFront();
         }
@@ -344,7 +347,6 @@ namespace CapaPresentacion
         }
         public void ShowCarrerasLicenciado()
         {
-            ///
             cmbCarreraLicenciado.DataSource = null;
             cmbCarreraLicenciado.Items.Clear();
             cmbCarreraLicenciado.DataSource = obj.cargarCarrerasLicenciados();
@@ -469,6 +471,39 @@ namespace CapaPresentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void EjecutarInstitucion(int id, string nombre)
+        {
+            try
+            {
+                cmbInstitucion.DataSource = null;
+                cmbInstitucion.Items.Clear();
+                cmbInstitucion.DataSource = obj.cargarInstitucion();
+                cmbInstitucion.ValueMember = "id";
+                cmbInstitucion.DisplayMember = "nombre";
+                cmbInstitucion.SelectedIndex = id - 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+        public void EjecutarCarreraExterna(int id, string nombre)
+        {
+            try
+            {
+                cmbCarreraLicenciado.DataSource = null;
+                cmbCarreraLicenciado.Items.Clear();
+                cmbCarreraLicenciado.DataSource = obj.cargarCarrerasLicenciados();
+                cmbCarreraLicenciado.ValueMember = "id";
+                cmbCarreraLicenciado.DisplayMember = "nombre";
+                cmbCarreraLicenciado.SelectedIndex = id - 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
             }
         }
     }

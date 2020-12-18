@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.src;
+using CapaPresentacion.ContractForms;
 
 
 namespace CapaPresentacion.FormsAgregar
@@ -44,6 +45,8 @@ namespace CapaPresentacion.FormsAgregar
 
         #region Atributos
 
+        //utilizo la interface como propiedad
+        public IContractCarreras contratoCarr { get; set; }
 
         int posY = 0;
         int posX = 0;
@@ -209,6 +212,17 @@ namespace CapaPresentacion.FormsAgregar
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSelecCarreraExt_Click(object sender, EventArgs e)
+        {
+            int id_seleccionado = Convert.ToInt32(dtgCarreraExterna.CurrentRow.Cells[0].Value.ToString());
+            string carrera = (dtgCarreraExterna.CurrentRow.Cells[2].Value.ToString());
+
+            //MessageBox.Show(id_seleccionado + " " + carrera);
+            //usando el contrato interfaz
+            contratoCarr.EjecutarCarreraExterna(id_seleccionado, carrera);
+            this.Close();
         }
     }
 }

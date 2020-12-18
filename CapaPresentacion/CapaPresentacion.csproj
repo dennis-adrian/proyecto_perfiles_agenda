@@ -168,7 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrastrarForm.cs" />
+    <Compile Include="ContractForms\IContractCarreras.cs" />
     <Compile Include="ContractForms\IContractLicenciado.cs" />
+    <Compile Include="ContractForms\IContractInstitucion.cs" />
     <Compile Include="FormsAgregar\FrmCarreraInterna.cs">
       <SubType>Form</SubType>
     </Compile>
