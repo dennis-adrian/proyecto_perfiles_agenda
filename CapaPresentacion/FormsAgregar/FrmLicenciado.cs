@@ -184,9 +184,17 @@ namespace CapaPresentacion
 
                 if (id_parametro <= 0)
                 {
-                    Insert();
-                    ClearForms();
-                    cargarLicenciados();
+                    if(Insert())
+                    {
+                        MessageBox.Show("Datos guardados correctamente");
+                        ClearForms();
+                        cargarLicenciados();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Revise que ingresó los datos correctamente. \n" +
+                            "Los únicos datos opcionales son la descripción y el teléfono");
+                    }
 
                 }
                 else if(id_parametro > 0 && id_parametro == referencia)
@@ -195,6 +203,7 @@ namespace CapaPresentacion
                     ClearForms();
                     cargarLicenciados();
                     id_parametro = 0;
+                    MessageBox.Show("Datos guardados correctamente");
                 }
                 else
                 {
@@ -240,21 +249,23 @@ namespace CapaPresentacion
 
         #region Metodos
 
-        public void Insert()
+        public bool Insert()
         {
-            string nombre = txtNombreLicenciado.Text; //input 0
-            string apellido = txtApellidoLicenciado.Text;//input 1
-            string descripcion = txtDescripcion.Text;//input 3
-            string email = txtEmailLicenciado.Text;// input 4
-            string telefono = txtTelefono.Text;// input 5
-            string celular = txtCelular.Text;// input 6
-            string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
-            int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
-            int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
-            int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
-
-            Object[] datos = new Object[]
+            try
             {
+                string nombre = txtNombreLicenciado.Text; //input 0
+                string apellido = txtApellidoLicenciado.Text;//input 1
+                string descripcion = txtDescripcion.Text;//input 3
+                string email = txtEmailLicenciado.Text;// input 4
+                string telefono = txtTelefono.Text;// input 5
+                string celular = txtCelular.Text;// input 6
+                string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
+                int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
+                int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
+                int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
+
+                Object[] datos = new Object[]
+                {
                 nombre,
                 apellido,
                 descripcion,
@@ -265,9 +276,16 @@ namespace CapaPresentacion
                 docente,
                 id_institucion ,
                 id_carrera
-            };            
-            AgregarLicenciado obj = new AgregarLicenciado();
-            obj.inputController(datos, obj.main); 
+                };
+                AgregarLicenciado obj = new AgregarLicenciado();
+                obj.inputController(datos, obj.main);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
 
         }
         public void Update(int i)
@@ -451,12 +469,12 @@ namespace CapaPresentacion
 
         private void dtgLicenciados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-            string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
+            //int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+            //string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
 
-            //usando el contrato interfaz
-            contrato.Ejecutar(id_seleccionado, tutor);
-            this.Close();
+            ////usando el contrato interfaz
+            //contrato.Ejecutar(id_seleccionado, tutor);
+            //this.Close();
         }
 
         private void btnBuscarLicenciado_Click(object sender, EventArgs e)
