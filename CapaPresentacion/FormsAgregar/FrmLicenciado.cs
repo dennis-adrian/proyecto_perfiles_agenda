@@ -450,7 +450,7 @@ namespace CapaPresentacion
         private void dtgLicenciados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-            string tutor = (dtgLicenciados.CurrentRow.Cells[1].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[2].Value.ToString());
+            string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
 
             //usando el contrato interfaz
             contrato.Ejecutar(id_seleccionado, tutor);

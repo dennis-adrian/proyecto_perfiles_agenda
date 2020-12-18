@@ -276,33 +276,50 @@ namespace CapaPresentacion
             perfil_tesis.Fecha_aprobacion_jefe_carrera = InfoDefensa["Fecha_aprobacion_jefe_carrera"];
             perfil_tesis.Fecha_recepcion_titulacion = InfoDefensa["Fecha_recepcion_titulacion"];
 
-
-            if (!this.isEmpty)
+            try
             {
-                ////recolecion y evaluacion de licenciados
                 recolectDataDetalleDefensa();
                 return true;
             }
-            else
+            catch(Exception e)
             {
-                MessageBox.Show("Necesita llenar todos los datos correspondientes a la defensa para guardar sus cambios");
-                return false;
+                throw e;
             }
+            //if (!this.isEmpty)
+            //{
+            //    ////recolecion y evaluacion de licenciados
+            //    recolectDataDetalleDefensa();
+            //    return true;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Necesita llenar todos los datos correspondientes a la defensa para guardar sus cambios");
+            //    return false;
+            //}
 
         }
         public void recolectDataDetalleDefensa()
         {
-
-            foreach (var item in listLicenciados)
+            try
             {
-                dynamic detalle_defensa = new ExpandoObject();
-                detalle_defensa.Id = item["Id_detalle_defensa"];
-                detalle_defensa.Id_defensa_externa = item["Id_defensa_externa"];
-                detalle_defensa.Id_funcion_licenciado = item["Id_funcion_licenciado"];
-                detalle_defensa.Id_licenciado = setAndEvalIdLicenciado(Convert.ToString(item["Funcion"]), item);
-                lista_detalle_defensa.Add(detalle_defensa);
+                foreach (var item in listLicenciados)
+                {
+                    dynamic detalle_defensa = new ExpandoObject();
+                    detalle_defensa.Id = item["Id_detalle_defensa"];
+                    detalle_defensa.Id_defensa_externa = item["Id_defensa_externa"];
+                    detalle_defensa.Id_funcion_licenciado = item["Id_funcion_licenciado"];
+                    detalle_defensa.Id_licenciado = setAndEvalIdLicenciado(Convert.ToString(item["Funcion"]), item);
+                    lista_detalle_defensa.Add(detalle_defensa);
 
+                }
             }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            
 
         }
         public string setAndEvalIdLicenciado(string funcion, Dictionary<string, string> dic)
@@ -457,7 +474,7 @@ namespace CapaPresentacion
             cmb_licenciados.Add(cmbRepresentanteUagrm1);
             cmb_licenciados.Add(cmbRepresentanteUagrm2);
             cmb_licenciados.Add(cmbRepresentanteMinisterio);
-
+            
             if (cmb_licenciados.Count < 0)
             {
                 foreach (var item in cmb_licenciados)
@@ -471,41 +488,34 @@ namespace CapaPresentacion
                 AgregarDefensa addLicenciadosDefensa = new AgregarDefensa();
 
                 addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
+                MessageBox.Show("todo en orden con los licenciados");
             }
             else
             {
                 MessageBox.Show("Necesita llenar todos los datos necesarios");
             }
-            
+
 
         }
 
 
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
-            if(recolectData())
+            recolectData();
+            ActualizarDefensa actualizar = new ActualizarDefensa();
+            if (this.isEmpty)
             {
-                ActualizarDefensa actualizar = new ActualizarDefensa();
-                if (this.isEmpty)
-                {
 
-                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
-                    insertLicenciados();
-                    MessageBox.Show("Datos guardados correctamente");
+                actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
+                insertLicenciados();
+                MessageBox.Show("Datos guardados correctamente");
 
-                }
-                else
-                {
-
-                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
-                }
             }
             else
             {
-                MessageBox.Show("Hubo un error al momento de guardar los datos");
-                return;
+
+                actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
             }
-            
             
         }
 
