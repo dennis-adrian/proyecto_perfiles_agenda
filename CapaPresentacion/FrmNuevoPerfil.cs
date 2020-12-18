@@ -74,6 +74,7 @@ namespace CapaPresentacion
             {
                 if (Insert())
                 {
+                    MessageBox.Show("Datos guardados correctamente.");
                     ClearForms();
                 }
             }
@@ -154,6 +155,12 @@ namespace CapaPresentacion
                 string fecha_aprobacion = dtFechaAprobacion.Value.Date.ToString("dd-MM-yyyy");//input 8
                 string fecha_recepcion = dtFechaRecepcion.Value.Date.ToString("dd-MM-yyyy");//input 9
                 int id_tutor = cmbTutorElegido.SelectedItem != null ? Convert.ToInt32((cmbTutorElegido.SelectedItem as ComboBoxItem).Value.ToString()) : 1;//input 10
+
+                if (Convert.ToDateTime(fecha_aprobacion) < Convert.ToDateTime(fecha_recepcion))
+                {
+                    MessageBox.Show("La fecha de recepción del perfil no puede ser mayor a la fecha de aprobación");
+                    return false;
+                }
 
                 Object[] datos = new Object[]
                 {
