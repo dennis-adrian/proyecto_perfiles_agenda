@@ -78,9 +78,10 @@ namespace CapaPresentacion
                     ClearForms();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Verifique que ingresó los datos correctamente");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -183,6 +184,7 @@ namespace CapaPresentacion
             catch (Exception e)
             {
                 MessageBox.Show("Verifique que ingresó los datos correctamente");
+                MessageBox.Show(e.Message);
                 Console.WriteLine(e);
                 return false;
             }
