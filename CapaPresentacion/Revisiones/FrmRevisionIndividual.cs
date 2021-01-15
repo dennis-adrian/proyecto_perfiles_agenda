@@ -210,13 +210,13 @@ namespace CapaPresentacion
         }
      
         //button elegir licenciado
-        private void btnElegirTribunal_Click(object sender, EventArgs e)
-        {
-            FrmTutor frm = this.FormInstance3;
-            frm.contrato = this;
-            frm.Show();
-            frm.BringToFront();
-        }
+        //private void btnElegirTribunal_Click(object sender, EventArgs e)
+        //{
+        //    FrmTutor frm = this.FormInstance3;
+        //    frm.contrato = this;
+        //    frm.Show();
+        //    frm.BringToFront();
+        //}
         
         //button cancelar 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
@@ -458,7 +458,7 @@ namespace CapaPresentacion
             {
                 txtEstadoDatos.Text = estadoSinDatos;
                 this.id_revision = 0;
-                lbIdRevision.Text = Convert.ToString(0);
+                //lbIdRevision.Text = Convert.ToString(0);
                 txtIdRevision.Text = Convert.ToString(0);
                 txtIdDetalleRevision.Text = Convert.ToString(0);
                 ClearForms();
@@ -487,7 +487,7 @@ namespace CapaPresentacion
                 txtEstadoDatos.Text =estadoConDatos;
 
 
-                lbIdRevision.Text = Convert.ToString(info.Id);
+                //lbIdRevision.Text = Convert.ToString(info.Id);
             }
             
         }

@@ -94,17 +94,35 @@ namespace CapaPresentacion
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
-            switch (tipo)
+            switch (prioridad)
             {
-                case "perfil":
-                    this.BackColor = Color.FromArgb(102,102,102);
+                case "low":
+                    this.BackColor = Color.FromArgb(102, 102, 102);
+                    this.lblTitulo.Text = $"Notificación de {tipo}";
+                    this.lblMsg.Text = $"Al perfil de nombre le quedan 25 días.";
                     break;
-                case "perfils":
+                case "normal":
+                    this.BackColor = Color.FromArgb(102,102,102);
+                    this.lblTitulo.Text = $"Notificación de {tipo}";
+                    this.lblMsg.Text = $"Al perfil de nombre le quedan 15 días.";
+                    break;
+                case "important":
+                    this.BackColor = Color.FromArgb(102, 102, 102);
+                    this.lblTitulo.Text = $"Notificación de {tipo}";
+                    this.lblMsg.Text = $"Al perfil de nombre le quedan 10 días.";
+                    break;
+                case "critical":
                     this.BackColor = Color.DarkRed;
+                    this.lblTitulo.Text = $"Notificación de {tipo}";
+                    this.lblMsg.Text = $"Al perfil de nombre le quedan 5 días.";
+                    break;
+                case "time-out":
+                    this.BackColor = Color.Green;
+                    this.lblTitulo.Text = $"Notificación de {tipo}";
+                    this.lblMsg.Text = $"El perfil de nombre ya venció el plazo.";
                     break;
             }
-            this.lblTitulo.Text = $"{idNotficacion} {titulo}";
-            this.lblMsg.Text = mensaje;
+            
             this.lblHora.Text = $"{hora} / {fecha.Substring(0, fecha.Length - 5)}";
 
             this.Show();
