@@ -142,7 +142,7 @@ namespace CapaPresentacion
             this.lblTitulo.Text = generarTituloNotificacion(tipo);
             generarMensajeYBackground(tipo, prioridad, "dennis");
             var fechaConvertida = DateTime.ParseExact(fecha, "dd-MM-yyyy", new CultureInfo("es-ES"));
-            this.lblHora.Text = $"{fechaConvertida.ToString("dd MMM")} {hora}";
+            this.lblHora.Text = $"{fechaConvertida.ToString("dd MMM", new CultureInfo("es-ES"))} {hora}";
 
             this.Show();
             this.accion = enmAcciones.empezar;
