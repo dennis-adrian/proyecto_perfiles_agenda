@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,7 +141,7 @@ namespace CapaPresentacion
 
             this.lblTitulo.Text = generarTituloNotificacion(tipo);
             generarMensajeYBackground(tipo, prioridad, "dennis");
-            var fechaConvertida = DateTime.Parse(fecha);
+            var fechaConvertida = DateTime.ParseExact(fecha, "dd-MM-yyyy", new CultureInfo("es-ES"));
             this.lblHora.Text = $"{fechaConvertida.ToString("dd MMM")} {hora}";
 
             this.Show();
