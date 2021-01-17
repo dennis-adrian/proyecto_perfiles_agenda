@@ -143,7 +143,7 @@ namespace CapaDatos.Models
         public DataTable perfilesAllByEstudiante(string criterio)
         {
 
-            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Nombre LIKE '%{criterio}%' or Apellido LIKE '%{criterio}%' ; ";
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Alumno LIKE '%{criterio}%' ; ";
             return SelectConexion(sql);
 
         }
@@ -158,7 +158,7 @@ namespace CapaDatos.Models
         public DataTable perfilesAllByCarreraAndEstudiante(string criterio,string estudiante)
         {
 
-            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' and  (Nombre LIKE '%{estudiante}%' or Apellido LIKE '%{estudiante}%') ;  ";
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' and  (Alumno LIKE '%{estudiante}%') ;  ";
             return SelectConexion(sql);
 
         }
