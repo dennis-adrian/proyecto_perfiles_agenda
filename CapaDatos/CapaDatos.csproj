@@ -71,6 +71,7 @@
     <Compile Include="Models\Revision.cs" />
     <Compile Include="Models\TipoTitulacionOtros.cs" />
     <Compile Include="Models\TitulacionOtros.cs" />
+    <Compile Include="Models\TribunalPerfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\DaoDefensas.cs" />
   </ItemGroup>
