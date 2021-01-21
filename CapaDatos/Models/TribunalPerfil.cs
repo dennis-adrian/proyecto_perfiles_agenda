@@ -43,20 +43,10 @@ namespace CapaDatos.Models
 
         #region Metodos
 
-
-
-        #endregion
-
-        #region Destructor
-        ~TribunalPerfil()
-        {
-
-        }
-
         public void Insert()
         {
             string sql = $" INSERT INTO {table_name} (id_perfil, id_licenciado, nro_tribunal ) VALUES(@parametro0,@parametro1,@parametro2); ";
-            Object[] Parametros = new Object[] { Id_perfil, Id_licenciado,Nro_tribunal};
+            Object[] Parametros = new Object[] { Id_perfil, Id_licenciado, Nro_tribunal };
             QueryBuilder(sql, Parametros);
         }
 
@@ -69,28 +59,38 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
-            //string sql = $" UPDATE {table_name}  SET id_perfil = @parametro0 , id_licenciado = @parametro1 WHERE id = @parametro2 ; ";
-            //Object[] Parametros = new Object[] { Nombre, Id_facultad, id };
-            //QueryBuilder(sql, Parametros);
+            string sql = $" UPDATE {table_name}  SET  id_licenciado = @parametro0 WHERE id_perfil = @parametro1 AND nro_tribunal = @parametro2 ; ";
+            Object[] Parametros = new Object[] 
+            { 
+                Id_licenciado,  
+                id,
+                Nro_tribunal
+            };
+            QueryBuilder(sql, Parametros);
 
         }
-        public DataTable Select()
+
+        public DataTable Select(int idperfil)
         {
-            string sql = $" SELECT C.id as id,C.nombre as nombre,C.id_facultad as id_facultad, F.nombre as facultad FROM  {table_name} as C INNER JOIN facultad as F on C.id_facultad = F.id; ";
+            string sql = $" select TP.id_perfil as Id_perfil,TP.id_licenciado as Id_licenciado,TP.nro_tribunal as Nro_tribunal,L.nombre||' '||L.apellido as  Licenciado from tribunal_perfil as TP inner join licenciado as L on TP.id_licenciado = L.id where id_perfil= {idperfil} ; ";
             return SelectConexion(sql);
         }
-        public DataTable Select(string criterio)
-        {
-            string search = criterio.Trim();
-            string sql = $" SELECT C.id as id,C.nombre as nombre,C.id_facultad as id_facultad, F.nombre as facultad FROM  {table_name} as C INNER JOIN facultad as F on C.id_facultad = F.id WHERE C.nombre LIKE '%{search}%' ; ";
-            return SelectConexion(sql);
-        }
-       
+        
         public int LastId()
         {
             return LastIdConexion(table_name);
         }
 
+
+        #endregion
+
+        #region Destructor
+        ~TribunalPerfil()
+        {
+
+        }
+
+       
 
 
         #endregion

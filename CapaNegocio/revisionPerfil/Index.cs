@@ -21,6 +21,7 @@ namespace CapaNegocio.revisionPerfil
         FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
         DataTypes type = new DataTypes();
 
+        TribunalPerfil tribunalPerfil = new TribunalPerfil();
         #endregion
 
 
@@ -434,6 +435,95 @@ namespace CapaNegocio.revisionPerfil
                 throw new ArgumentException("" + e);
             }
 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void createTribunalRevision(int idperfil,int idlicenciado,int nrotribunal)
+        {
+            try
+            {
+                tribunalPerfil.Id_perfil = idperfil;
+                tribunalPerfil.Id_licenciado = idlicenciado;
+                tribunalPerfil.Nro_tribunal = nrotribunal;
+
+                tribunalPerfil.Insert();
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+            
+        }
+   
+        public struct TribunalStruct
+        {
+            private int id_perfil;
+            private int id_licenciado;
+            private string licenciado;
+            private int nro_tribunal;
+            public TribunalStruct(int id_perfil,int id_licenciado,string licenciado,int nro_tribunal)
+            {
+                this.id_perfil = id_perfil;
+                this.id_licenciado = id_licenciado;
+                this.licenciado = licenciado;
+                this.nro_tribunal = nro_tribunal;
+            }
+
+            public int Id_perfil { get => id_perfil; set => id_perfil = value; }
+            public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
+            public string Licenciado { get => licenciado; set => licenciado = value; }
+            public int Nro_tribunal { get => nro_tribunal; set => nro_tribunal = value; }
+        }
+        
+        public List<TribunalStruct> listTribunalByIdPerfil(int idperfil)
+        {
+            try
+            {
+                List<TribunalStruct> list = new List<TribunalStruct>();
+                var cursor = tribunalPerfil.Select(idperfil);
+                for (int i = 0; i < cursor.Rows.Count; i++)
+                {
+
+                    TribunalStruct tribunalStruct = new TribunalStruct();
+                    tribunalStruct.Id_perfil = Convert.ToInt32(cursor.Rows[i]["Id_perfil"].ToString());
+                    tribunalStruct.Id_licenciado = Convert.ToInt32(cursor.Rows[i]["Id_licenciado"].ToString());
+                    tribunalStruct.Licenciado = cursor.Rows[i]["Licenciado"].ToString();
+                    tribunalStruct.Nro_tribunal = Convert.ToInt32(cursor.Rows[i]["Nro_tribunal"].ToString());
+                    list.Add(tribunalStruct);
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex + "");
+            }
+        }
+
+        public void updateTribunalRevision(int idlicenciado, int idperfil, int nrotribunal)
+        {
+            try
+            {
+                tribunalPerfil.Id_perfil = idperfil;
+                tribunalPerfil.Id_licenciado = idlicenciado;
+                tribunalPerfil.Nro_tribunal = nrotribunal;
+
+                tribunalPerfil.Update(idperfil);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
         }
     }
 }

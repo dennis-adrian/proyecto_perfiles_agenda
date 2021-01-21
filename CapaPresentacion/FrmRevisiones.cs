@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaNegocio;
-
+using CapaPresentacion.Resources;
 
 namespace CapaPresentacion
 {
-    public partial class FrmRevisiones : Form
+    public partial class FrmRevisiones : Form, IContractLicenciado
     {
         int idperfil;
         Panel pnlContenedorGralBackup;
@@ -53,6 +53,7 @@ namespace CapaPresentacion
             //HiddenRevision();
             pnlSubMenus.Visible = false;
             DesactiveColors();
+            loadTribunales();
         }
         #endregion
 
@@ -477,6 +478,184 @@ namespace CapaPresentacion
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnElegirTribunal1_Click(object sender, EventArgs e)
+        {
+            
+            nro_tribunal = 1;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : "; 
+            frm.BringToFront();
+        }
+
+        private void btnElegirTribunal2_Click(object sender, EventArgs e)
+        {
+            nro_tribunal = 2;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : ";
+            frm.BringToFront();
+        }
+
+        #region Tribunales
+        private int nro_tribunal = 0;
+        private FrmTutor tribunal = null;
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (tribunal == null)
+                {
+                    tribunal = new FrmTutor();
+                    tribunal.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return tribunal;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            tribunal = null;
+
+        }
+
+        public void Ejecutar(int id, string nombre)
+        {
+            try
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                switch (nro_tribunal)
+                {
+                    case 1:
+                        cmbTribunal1.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunal1.Items.Add(item);
+                        cmbTribunal1.SelectedIndex = 0;
+
+                        break;
+                    case 2:
+                        cmbTribunal2.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunal2.Items.Add(item);
+                        cmbTribunal2.SelectedIndex = 0;
+                        break;                 
+
+                    default:
+                        throw new ArgumentException();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+
+
+        #endregion
+
+
+        #region validacion_tribunales
+
+        void loadTribunales()
+        {
+            var cursor = rev.listTribunalByIdPerfil(idperfil);
+            if (cursor.Count <= 0)
+            {
+                //do nothing...
+                txtDatosTribunales.Text = "Sin Datos Asignados";
+            }
+            else
+            {
+
+                txtDatosTribunales.Text = "Datos Asignados";
+
+                foreach (var obj in cursor)
+                {
+                    ComboBoxItem item = new ComboBoxItem();
+                    if (obj.Nro_tribunal == 1)
+                    {
+                        cmbTribunal1.Items.Clear();
+                        item.Text = obj.Licenciado;
+                        item.Value = obj.Id_licenciado;
+                        cmbTribunal1.Items.Add(item);
+                        cmbTribunal1.SelectedIndex = 0;
+                    }
+                    else if (obj.Nro_tribunal == 2)
+                    {
+                        cmbTribunal2.Items.Clear();
+                        item.Text = obj.Licenciado;
+                        item.Value = obj.Id_licenciado;
+                        cmbTribunal2.Items.Add(item);
+                        cmbTribunal2.SelectedIndex = 0;
+                    }
+                }
+            }
+        }
+        void validatingTribunales()
+        {
+            //validar combos vacios 
+            bool tri1 = String.IsNullOrEmpty(cmbTribunal1.Text.ToString());
+            bool tri2 = String.IsNullOrEmpty(cmbTribunal2.Text.ToString());
+
+            if (tri1 == true || tri2 == true)
+            {
+                MessageBox.Show("esta sin asignar uno de los tribunales");
+            }
+            else
+            {
+                int tribunal1 = Convert.ToInt32((cmbTribunal1.SelectedItem as ComboBoxItem).Value.ToString());
+                int tribunal2 = Convert.ToInt32((cmbTribunal2.SelectedItem as ComboBoxItem).Value.ToString());
+                if (tribunal1 == tribunal2)
+                {
+                    MessageBox.Show("tribunales repetidos");
+                }
+                else
+                {
+
+                    MessageBox.Show(tribunal1 + "");
+                    MessageBox.Show(tribunal2 + "");
+                    tribunales(idperfil, tribunal1, 1);
+                    tribunales(idperfil, tribunal2, 2);
+
+                    MessageBox.Show("datos guardados");
+
+                }
+            }
+        }       
+
+        void tribunales(int idperfil, int idlicenciado, int nrotribunal)
+        {
+            string datos = txtDatosTribunales.Text;
+            if (datos == "Datos Asignados")
+            {
+                rev.updateTribunalRevision(idlicenciado,idperfil,nrotribunal);
+            }else if(datos == "Sin Datos Asignados")
+            {
+                rev.createTribunalRevision(idperfil, idlicenciado, nrotribunal);
+            }
+        
+        }
+
+
+        #endregion
+
+        //test validating
+        private void button1_Click(object sender, EventArgs e)
+        {
+            validatingTribunales();
+        }
+
+        private void btnGuardarNuevoP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
