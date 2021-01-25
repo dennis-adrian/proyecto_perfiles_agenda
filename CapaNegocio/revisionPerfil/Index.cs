@@ -43,10 +43,14 @@ namespace CapaNegocio.revisionPerfil
                 revision.Fecha_empaste = fec_empaste;
                 revision.Id_tesis = id_tesis;
                 revision.Insert();
+
+                //Detalle Revision
                 detalleRevision.Id_revision = revision.LastId();
                 detalleRevision.Id_licenciado = id_licenciado;
                 detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
                 detalleRevision.Insert();
+
+                //
                 perfilTesis.updateStatus(id_tesis, estado);
             }
             catch (Exception e)
@@ -72,10 +76,14 @@ namespace CapaNegocio.revisionPerfil
                 revision.Fecha_empaste = fec_empaste;
                 revision.Id_tesis = id_tesis;
                 revision.Update(idRevision);
+
+                //Detalle Revision
                 detalleRevision.Id_revision = idRevision;
                 detalleRevision.Id_licenciado = id_licenciado;
                 detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
                 detalleRevision.Update(idDetalleRevision);
+                //
+                //
                 perfilTesis.updateStatus(id_tesis, estado);
             }
             catch (Exception e)
@@ -98,7 +106,10 @@ namespace CapaNegocio.revisionPerfil
             private int nro_revision;
             private string fecha_empaste;
             private int id_tesis;
+            //detalle revision
             private int id_detalle_revision;
+            //
+
             private int id_licenciado;
             private string licenciado;
             private string tipo;
@@ -212,6 +223,16 @@ namespace CapaNegocio.revisionPerfil
 
             }
             return revisionStruct;
+        }
+
+        public struct TribunalRevisionStruct
+        {
+            private int id_perfil;
+            public TribunalRevisionStruct(int id_perfil)
+            {
+                this.id_perfil = id_perfil;
+            }
+
         }
 
         public bool ValidarFechasTribunal(int it, int nt)
@@ -368,45 +389,6 @@ namespace CapaNegocio.revisionPerfil
         }
 
 
-        public void test1(int it, int t1, int t2)
-        {
-
-            string empastet1 = "";
-            string empastet2 = "nada";
-            try
-            {
-                bool res = ValidateNextRevision(it, t1, t2);
-                if (res == true)
-                {
-                    var revt1 = revision.LastRevisionByTribunal(it, t1);
-                    var revt2 = revision.LastRevisionByTribunal(it, t2);
-
-                    for (int i = 0; i < revt1.Rows.Count; i++)
-                    {
-                        empastet1 = revt1.Rows[i][10].ToString();
-                    }
-                    for (int i = 0; i < revt2.Rows.Count; i++)
-                    {
-                        empastet2 = revt2.Rows[i][10].ToString();
-
-                    }
-                }
-                Console.WriteLine(empastet1);
-                Console.WriteLine(empastet2);
-            }
-            catch
-            {
-                Console.WriteLine("hbo un error");
-            }
-
-
-
-
-
-
-
-        }
-
         
         public Revision.byPassDefensa getDataForDefensaExterna(int idtesis)
         {
@@ -438,16 +420,7 @@ namespace CapaNegocio.revisionPerfil
         }
 
 
-
-
-
-
-
-
-
-
-
-
+        #region Tribunal
 
         public void createTribunalRevision(int idperfil,int idlicenciado,int nrotribunal)
         {
@@ -525,5 +498,8 @@ namespace CapaNegocio.revisionPerfil
                 throw new ArgumentException("" + e);
             }
         }
+
+
+        #endregion
     }
 }

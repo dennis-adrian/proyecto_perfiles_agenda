@@ -39,8 +39,50 @@ namespace CapaPresentacion
 
         #endregion
 
+        void loadTribunales()
+        {
+           var cursor = obj.listTribunalByIdPerfil(id_perfil);
+            if (cursor.Count <= 0)
+            {
+                btnTribunal1.Text = "Tribunal 1";
+                btnTribunal2.Text = "Tribunal 2";
+            }
+            else
+            {
+                foreach (var item in cursor)
+                {
+                    if (item.Nro_tribunal == 1)
+                    {
+                        btnTribunal1.Text = item.Licenciado;
+                        //cmbTribunal.Items.Clear();
+                        //ComboBoxItem cmbitem = new ComboBoxItem();
+                        //cmbitem.Text = item.Licenciado;
+                        //cmbitem.Value = item.Id_licenciado;
+                        //cmbTribunal.Items.Add(item);
+                        //cmbTribunal.SelectedIndex = 0;
+                    }
+                    else if (item.Nro_tribunal == 2)
+                    {
 
-       //Constructor
+                        btnTribunal2.Text = item.Licenciado;
+                    }
+                    //int idlicenciado = item.Id_licenciado;
+                    //int idperfil = item.Id_perfil;
+                    //string licenciado = item.Licenciado;
+                    //int nrotribunal = item.Nro_tribunal;
+
+
+                }
+            }
+
+            
+        }
+        #region Constructor
+
+
+        #endregion
+
+        //Constructor
         public FrmRevisionIndividual(int id, int nro)
         {
             InitializeComponent();
@@ -52,6 +94,7 @@ namespace CapaPresentacion
             inicializarDateTimePickers();
             ShowData();
             setActionButtonDefensa();
+            loadTribunales();
 
             
         }
@@ -499,8 +542,6 @@ namespace CapaPresentacion
         {
             try
             {
-               
-
                 var trib1 = obj.infoRevision(id_perfil, num_revision, 1);
                 var trib2 = obj.infoRevision(id_perfil, num_revision, 2);
                 btnTribunal1.Text = trib1.Licenciado;
