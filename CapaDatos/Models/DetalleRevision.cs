@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class DetalleRevision : Conexion, IMetodos
+    public class DetalleRevision : Conexion
     {
         public DetalleRevision()
         {
@@ -61,6 +61,44 @@ namespace CapaDatos.Models
 
             Object[] Parametros = new Object[] { Id_revision, Id_licenciado, Id_funcion_licenciado, id };
             QueryBuilder(sql, Parametros);
+
+        }
+        
+        public List<int> RevisionesPerfilTribunal(int idtesis, int nrotribunal)
+        {
+            try
+            {
+                List<int> list = new List<int>();
+                string sql = $" select * from revision where id_tesis = {idtesis} and nro_tribunal = {nrotribunal} ";
+                var cursor = SelectConexion(sql);
+                for (int i = 0; i < cursor.Rows.Count; i++)
+                {
+                    list.Add(Convert.ToInt32(cursor.Rows[i]["id"].ToString()));
+                }
+                return list;
+            }
+            catch(Exception ex)
+            {
+                throw new ArgumentException(ex+"");
+            }
+        }
+        public void updateTribunales(int idtesis,int nrotribunal,int idlicenciado)
+        {
+            try
+            {
+                var list = RevisionesPerfilTribunal(idtesis, nrotribunal);
+                foreach (var idrevision in list)
+                {
+                    string sql = $" UPDATE {table_name} SET id_licenciado = {idlicenciado} WHERE id_revision = {idrevision} ; ";
+                    execQuery(sql);
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw new ArgumentException(ex + "");
+            }
 
         }
 

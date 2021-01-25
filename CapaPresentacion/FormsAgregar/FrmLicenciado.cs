@@ -176,40 +176,92 @@ namespace CapaPresentacion
         //    }
 
         //}
+
         private void btnGuardarLicenciado_Click(object sender, EventArgs e)
         {
             try
             {
-                int referencia = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-
-                if (id_parametro <= 0)
+                if(dtgLicenciados.CurrentRow == null)
                 {
-                    if(Insert())
+                    if (id_parametro <= 0)
                     {
-                        MessageBox.Show("Datos guardados correctamente");
-                        ClearForms();
-                        cargarLicenciados();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Revise que ingresó los datos correctamente. \n" +
-                            "Los únicos datos opcionales son la descripción y el teléfono");
+                        if (Insert())
+                        {
+                            MessageBox.Show("Datos guardados correctamente");
+                            ClearForms();
+                            cargarLicenciados();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Revise que ingresó los datos correctamente. \n" +
+                                "Los únicos datos opcionales son la descripción y el teléfono");
+                        }
+
                     }
 
-                }
-                else if(id_parametro > 0 && id_parametro == referencia)
-                {
-                    Update(id_parametro);
-                    ClearForms();
-                    cargarLicenciados();
-                    id_parametro = 0;
-                    MessageBox.Show("Datos guardados correctamente");
                 }
                 else
                 {
-                    throw new ArgumentException("sin referencia para actualizar");
+                    int referencia = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+                    if (id_parametro <= 0)
+                    {
+                        if (Insert())
+                        {
+                            MessageBox.Show("Datos guardados correctamente");
+                            ClearForms();
+                            cargarLicenciados();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Revise que ingresó los datos correctamente. \n" +
+                                "Los únicos datos opcionales son la descripción y el teléfono");
+                        }
+
+                    }
+                    else if (id_parametro > 0 && id_parametro == referencia)
+                    {
+                        Update(id_parametro);
+                        ClearForms();
+                        cargarLicenciados();
+                        id_parametro = 0;
+                        MessageBox.Show("Datos actualizados correctamente");
+                    }
+                    else
+                    {
+                        throw new ArgumentException("sin referencia para actualizar");
+                    }
+
                 }
-                
+                //int referencia = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
+
+                //if (id_parametro <= 0)
+                //{
+                //    if(Insert())
+                //    {
+                //        MessageBox.Show("Datos guardados correctamente");
+                //        ClearForms();
+                //        cargarLicenciados();
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Revise que ingresó los datos correctamente. \n" +
+                //            "Los únicos datos opcionales son la descripción y el teléfono");
+                //    }
+
+                //}
+                //else if(id_parametro > 0 && id_parametro == referencia)
+                //{
+                //    Update(id_parametro);
+                //    ClearForms();
+                //    cargarLicenciados();
+                //    id_parametro = 0;
+                //    MessageBox.Show("Datos guardados correctamente");
+                //}
+                //else
+                //{
+                //    throw new ArgumentException("sin referencia para actualizar");
+                //}
+
             }
             catch(Exception ex)
             {
@@ -346,7 +398,9 @@ namespace CapaPresentacion
             txtEmailLicenciado.Clear();
             txtTelefono.Clear();
             txtCelular.Clear();
-            if (rbDocenteNo.Checked) { rbDocenteNo.Checked = false; } else { rbDocenteSi.Checked = false; }
+
+            cmbTipo.SelectedIndex = 0;
+            //if (rbDocenteNo.Checked) { rbDocenteNo.Checked = false; } else { rbDocenteSi.Checked = false; }
         }
         public void InitialForms()
         {
@@ -391,7 +445,7 @@ namespace CapaPresentacion
                 MostrarLicenciados obj = new MostrarLicenciados();
                 var list = obj.showLicenciados();
 
-
+               
                 int campo1 = 1;
                 foreach (var item in list)
                 {
@@ -409,6 +463,10 @@ namespace CapaPresentacion
                     campo1++;
 
                 }
+
+                
+
+               
             }
             else
             {

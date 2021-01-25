@@ -245,9 +245,18 @@ namespace CapaPresentacion
 
         private void btnRevisiones_Click(object sender, EventArgs e)
         {
-            int num = Convert.ToInt32(txtNumeroRevisiones.Text);
-            pnlSubMenus.Visible = true;
-            ShowRevisiones(num);
+            if (txtDatosTribunales.Text == "Sin Datos Asignados")
+            {
+                MessageBox.Show("Falta información de los tribunales");
+            }
+            else if (txtDatosTribunales.Text == "Datos Asignados")
+            {
+                int num = Convert.ToInt32(txtNumeroRevisiones.Text);
+                pnlSubMenus.Visible = true;
+                ShowRevisiones(num);
+            }
+      
+            
         }
                
         public void ShowRevisiones(int num)
@@ -608,6 +617,7 @@ namespace CapaPresentacion
             if (tri1 == true || tri2 == true)
             {
                 MessageBox.Show("esta sin asignar uno de los tribunales");
+                
             }
             else
             {
@@ -616,28 +626,42 @@ namespace CapaPresentacion
                 if (tribunal1 == tribunal2)
                 {
                     MessageBox.Show("tribunales repetidos");
+                    
                 }
                 else
                 {
 
-                    MessageBox.Show(tribunal1 + "");
-                    MessageBox.Show(tribunal2 + "");
+                    //MessageBox.Show(tribunal1 + "");
+                    //MessageBox.Show(tribunal2 + "");
+
                     tribunales(idperfil, tribunal1, 1);
                     tribunales(idperfil, tribunal2, 2);
 
-                    MessageBox.Show("datos guardados");
+
+                    MessageBox.Show("datos actualizados correctamente");
+
+                    clearForms();
+                    loadTribunales();
+
 
                 }
             }
         }       
+        void clearForms()
+        {
+            txtDatosTribunales.Clear();
 
+        }
+       
         void tribunales(int idperfil, int idlicenciado, int nrotribunal)
         {
             string datos = txtDatosTribunales.Text;
             if (datos == "Datos Asignados")
             {
                 rev.updateTribunalRevision(idlicenciado,idperfil,nrotribunal);
-            }else if(datos == "Sin Datos Asignados")
+                rev.actualizarTribunalesByRevision(idperfil, nrotribunal, idlicenciado);
+            }
+            else if(datos == "Sin Datos Asignados")
             {
                 rev.createTribunalRevision(idperfil, idlicenciado, nrotribunal);
             }
@@ -650,12 +674,13 @@ namespace CapaPresentacion
         //test validating
         private void button1_Click(object sender, EventArgs e)
         {
-            validatingTribunales();
+            //validatingTribunales();
         }
 
         private void btnGuardarNuevoP_Click(object sender, EventArgs e)
         {
-
+           
+            validatingTribunales();
         }
     }
 }

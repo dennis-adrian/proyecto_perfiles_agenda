@@ -63,8 +63,8 @@
             this.btnGeneralRev = new System.Windows.Forms.Button();
             this.pnlContenedorRev = new System.Windows.Forms.Panel();
             this.pnlContenedorGral = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDatosTribunales = new System.Windows.Forms.TextBox();
             this.cmbTribunal2 = new System.Windows.Forms.ComboBox();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
             this.cmbTribunal1 = new System.Windows.Forms.ComboBox();
@@ -100,7 +100,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDatosTribunales = new System.Windows.Forms.TextBox();
+            this.cmbTutor = new System.Windows.Forms.ComboBox();
             this.pnlBarraNuevoLicenciado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -561,7 +561,6 @@
             // pnlContenedorGral
             // 
             this.pnlContenedorGral.BackColor = System.Drawing.Color.LightGray;
-            this.pnlContenedorGral.Controls.Add(this.button1);
             this.pnlContenedorGral.Controls.Add(this.groupBox2);
             this.pnlContenedorGral.Controls.Add(this.btnCancelarNuevop);
             this.pnlContenedorGral.Controls.Add(this.btnGuardarNuevoP);
@@ -572,16 +571,6 @@
             this.pnlContenedorGral.Name = "pnlContenedorGral";
             this.pnlContenedorGral.Size = new System.Drawing.Size(2450, 1346);
             this.pnlContenedorGral.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(929, 1227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 56);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -602,8 +591,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Designación de Tribunales";
             // 
+            // txtDatosTribunales
+            // 
+            this.txtDatosTribunales.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDatosTribunales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatosTribunales.Location = new System.Drawing.Point(455, 0);
+            this.txtDatosTribunales.Margin = new System.Windows.Forms.Padding(7);
+            this.txtDatosTribunales.Name = "txtDatosTribunales";
+            this.txtDatosTribunales.ReadOnly = true;
+            this.txtDatosTribunales.Size = new System.Drawing.Size(331, 46);
+            this.txtDatosTribunales.TabIndex = 45;
+            // 
             // cmbTribunal2
             // 
+            this.cmbTribunal2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTribunal2.FormattingEnabled = true;
             this.cmbTribunal2.Location = new System.Drawing.Point(445, 189);
             this.cmbTribunal2.Name = "cmbTribunal2";
@@ -629,6 +630,7 @@
             // 
             // cmbTribunal1
             // 
+            this.cmbTribunal1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTribunal1.FormattingEnabled = true;
             this.cmbTribunal1.Location = new System.Drawing.Point(445, 89);
             this.cmbTribunal1.Name = "cmbTribunal1";
@@ -712,6 +714,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbTutor);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRegistroGral);
             this.groupBox1.Controls.Add(this.txtCarreraGral);
@@ -788,6 +791,7 @@
             this.txtNumeroRevisiones.Location = new System.Drawing.Point(1494, 497);
             this.txtNumeroRevisiones.Margin = new System.Windows.Forms.Padding(7);
             this.txtNumeroRevisiones.Name = "txtNumeroRevisiones";
+            this.txtNumeroRevisiones.ReadOnly = true;
             this.txtNumeroRevisiones.Size = new System.Drawing.Size(111, 46);
             this.txtNumeroRevisiones.TabIndex = 19;
             // 
@@ -820,7 +824,7 @@
             this.txtTutorGral.Location = new System.Drawing.Point(472, 497);
             this.txtTutorGral.Margin = new System.Windows.Forms.Padding(7);
             this.txtTutorGral.Name = "txtTutorGral";
-            this.txtTutorGral.Size = new System.Drawing.Size(641, 46);
+            this.txtTutorGral.Size = new System.Drawing.Size(175, 46);
             this.txtTutorGral.TabIndex = 18;
             // 
             // txtTemaGral
@@ -850,6 +854,7 @@
             this.txtEstadoProyectoGral.Location = new System.Drawing.Point(469, 82);
             this.txtEstadoProyectoGral.Margin = new System.Windows.Forms.Padding(7);
             this.txtEstadoProyectoGral.Name = "txtEstadoProyectoGral";
+            this.txtEstadoProyectoGral.ReadOnly = true;
             this.txtEstadoProyectoGral.Size = new System.Drawing.Size(331, 46);
             this.txtEstadoProyectoGral.TabIndex = 9;
             // 
@@ -901,10 +906,10 @@
             this.dttFechaRecepcionGral.CustomFormat = "dd-MM-yyyy";
             this.dttFechaRecepcionGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttFechaRecepcionGral.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttFechaRecepcionGral.Location = new System.Drawing.Point(530, 674);
+            this.dttFechaRecepcionGral.Location = new System.Drawing.Point(445, 686);
             this.dttFechaRecepcionGral.Margin = new System.Windows.Forms.Padding(7);
             this.dttFechaRecepcionGral.Name = "dttFechaRecepcionGral";
-            this.dttFechaRecepcionGral.Size = new System.Drawing.Size(242, 46);
+            this.dttFechaRecepcionGral.Size = new System.Drawing.Size(331, 46);
             this.dttFechaRecepcionGral.TabIndex = 20;
             // 
             // label13
@@ -912,7 +917,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(947, 587);
+            this.label13.Location = new System.Drawing.Point(899, 597);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(360, 39);
@@ -925,10 +930,10 @@
             this.dttFechaAprobacionGral.CustomFormat = "dd-MM-yyyy";
             this.dttFechaAprobacionGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttFechaAprobacionGral.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttFechaAprobacionGral.Location = new System.Drawing.Point(1017, 674);
+            this.dttFechaAprobacionGral.Location = new System.Drawing.Point(906, 686);
             this.dttFechaAprobacionGral.Margin = new System.Windows.Forms.Padding(7);
             this.dttFechaAprobacionGral.Name = "dttFechaAprobacionGral";
-            this.dttFechaAprobacionGral.Size = new System.Drawing.Size(242, 46);
+            this.dttFechaAprobacionGral.Size = new System.Drawing.Size(331, 46);
             this.dttFechaAprobacionGral.TabIndex = 21;
             // 
             // label12
@@ -1039,16 +1044,14 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Tutor :";
             // 
-            // txtDatosTribunales
+            // cmbTutor
             // 
-            this.txtDatosTribunales.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDatosTribunales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatosTribunales.Location = new System.Drawing.Point(455, 0);
-            this.txtDatosTribunales.Margin = new System.Windows.Forms.Padding(7);
-            this.txtDatosTribunales.Name = "txtDatosTribunales";
-            this.txtDatosTribunales.ReadOnly = true;
-            this.txtDatosTribunales.Size = new System.Drawing.Size(331, 46);
-            this.txtDatosTribunales.TabIndex = 45;
+            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTutor.FormattingEnabled = true;
+            this.cmbTutor.Location = new System.Drawing.Point(674, 496);
+            this.cmbTutor.Name = "cmbTutor";
+            this.cmbTutor.Size = new System.Drawing.Size(352, 45);
+            this.cmbTutor.TabIndex = 45;
             // 
             // FrmRevisiones
             // 
@@ -1164,7 +1167,7 @@
         private System.Windows.Forms.Button btnElegirTribunal1;
         private System.Windows.Forms.ComboBox cmbTribunal2;
         private System.Windows.Forms.ComboBox cmbTribunal1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtDatosTribunales;
+        private System.Windows.Forms.ComboBox cmbTutor;
     }
 }

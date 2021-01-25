@@ -20,23 +20,18 @@ namespace CapaPresentacion
 
         #region atributos
 
-        //id del perfil de tesis
+        int tribunal_actual = 1;
         int id_perfil;
         string estadoSinDatos = "Sin Datos Asignados";
         string estadoConDatos = "Datos Asignados";
-        //id y numero de revision
         int num_revision;
         int id_revision = 0;
-
-        //?????
         private FrmTutor Tutor = null;
-
-
-        //instancia de la capa negocios
-        //NegocioRevisiones obj = new NegocioRevisiones();
         CapaNegocio.revisionPerfil.Index obj = new CapaNegocio.revisionPerfil.Index();
         AgregarDefensa nuevadefensa = new AgregarDefensa();
 
+        Dictionary<string, string> tribunal1 = new Dictionary<string, string>();
+        Dictionary<string, string> tribunal2 = new Dictionary<string, string>();
         #endregion
 
         void loadTribunales()
@@ -54,35 +49,30 @@ namespace CapaPresentacion
                     if (item.Nro_tribunal == 1)
                     {
                         btnTribunal1.Text = item.Licenciado;
-                        //cmbTribunal.Items.Clear();
-                        //ComboBoxItem cmbitem = new ComboBoxItem();
-                        //cmbitem.Text = item.Licenciado;
-                        //cmbitem.Value = item.Id_licenciado;
-                        //cmbTribunal.Items.Add(item);
-                        //cmbTribunal.SelectedIndex = 0;
+
+                        tribunal1.Add("idlicenciado", Convert.ToString(item.Id_licenciado));
+                        tribunal1.Add("idperfil", Convert.ToString(item.Id_perfil));
+                        tribunal1.Add("licenciado", item.Licenciado);
+                        tribunal1.Add("nrotribunal", Convert.ToString(item.Nro_tribunal));
+                        
                     }
                     else if (item.Nro_tribunal == 2)
                     {
 
                         btnTribunal2.Text = item.Licenciado;
+                        tribunal2.Add("idlicenciado", Convert.ToString(item.Id_licenciado));
+                        tribunal2.Add("idperfil", Convert.ToString(item.Id_perfil));
+                        tribunal2.Add("licenciado", item.Licenciado);
+                        tribunal2.Add("nrotribunal", Convert.ToString(item.Nro_tribunal));
                     }
-                    //int idlicenciado = item.Id_licenciado;
-                    //int idperfil = item.Id_perfil;
-                    //string licenciado = item.Licenciado;
-                    //int nrotribunal = item.Nro_tribunal;
-
 
                 }
             }
-
+            loadComboTribunalActual();
             
         }
-        #region Constructor
+       
 
-
-        #endregion
-
-        //Constructor
         public FrmRevisionIndividual(int id, int nro)
         {
             InitializeComponent();
@@ -151,9 +141,7 @@ namespace CapaPresentacion
 
 
         }
-
-       
-
+      
 
         //controles del formulario licenciado
         void form_Disposed3(object sender, EventArgs e)
@@ -308,14 +296,6 @@ namespace CapaPresentacion
                     txtEstadoDatos.Text = estadoSinDatos;
                 }
 
-
-                
-
-
-
-
-
-                
             }
             catch (Exception ex)
             {
@@ -323,48 +303,78 @@ namespace CapaPresentacion
             }
         }
 
-               
+          
+        //evento de los radiobuttons tribunales
         private void rbTribunal2_CheckedChanged(object sender, EventArgs e)
         {
+            this.tribunal_actual = 2;
             infoRevision(this.id_perfil, this.num_revision, 2);
         }
 
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
         {
+            this.tribunal_actual = 1;
            infoRevision(this.id_perfil, this.num_revision, 1);
         }
-
        
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
         }
 
+        void loadComboTribunalActual()
+        {
+            if (this.tribunal_actual == 1)
+            {
+                //if (tribunal1.Count <= 0)
+                //{
 
+                //}
+                cmbTribunalActual.Items.Clear();
+                ComboBoxItem cmbitem = new ComboBoxItem();
+                cmbitem.Text = tribunal1["licenciado"];
+                cmbitem.Value = Convert.ToInt32(tribunal1["idlicenciado"]);
+                cmbTribunalActual.Items.Add(cmbitem);
+                cmbTribunalActual.SelectedIndex = 0;
+            }
+            else if (this.tribunal_actual == 2)
+            {
+                cmbTribunalActual.Items.Clear();
+                ComboBoxItem cmbitem = new ComboBoxItem();
+                cmbitem.Text = tribunal2["licenciado"];
+                cmbitem.Value = Convert.ToInt32(tribunal2["idlicenciado"]);
+                cmbTribunalActual.Items.Add(cmbitem);
+                cmbTribunalActual.SelectedIndex = 0;
+            }
 
+        }
         private void btnTribunal1_Click(object sender, EventArgs e)
         {
+
+            //this.tribunal_actual = 1;
+            //infoRevision(this.id_perfil, this.num_revision, 1);
+
             rbTribunal2.Checked = false;
             rbTribunal1.Checked = true;
             pnlResaltadoTrib1.Visible = true;
             pnlResaltadoTrib2.Visible = false;
+            loadComboTribunalActual();
+           
         }
 
         private void btnTribunal2_Click(object sender, EventArgs e)
         {
+            //this.tribunal_actual = 2;
+            //infoRevision(this.id_perfil, this.num_revision, 2);
+
             rbTribunal1.Checked = false;
             rbTribunal2.Checked = true;
             pnlResaltadoTrib2.Visible = true;
             pnlResaltadoTrib1.Visible = false;
-            Console.WriteLine(btnTribunal2.Text);
+            loadComboTribunalActual();
+            
         }
-
-    
-
-       
-        /// <summary>
-        /// modificacion ultima
-        /// </summary>
+        
         void Insert()
         {
 
@@ -390,7 +400,7 @@ namespace CapaPresentacion
 
             int id_tesis = id_perfil;
 
-            int id_licenciado = Convert.ToInt32((cmbTribunal.SelectedItem as ComboBoxItem).Value.ToString());//input 10
+            int id_licenciado = Convert.ToInt32((cmbTribunalActual.SelectedItem as ComboBoxItem).Value.ToString());//input 10
 
             obj.createRevision(estado,
                fec_entrega_alumno,
@@ -406,10 +416,6 @@ namespace CapaPresentacion
                 id_licenciado);
         }
        
-        /// <summary>
-        /// modificacion ultima
-        /// </summary>
-        /// <param name="idrevision"></param>
         void Update(int idrevision)
         {
 
@@ -435,7 +441,7 @@ namespace CapaPresentacion
 
             int id_tesis = id_perfil;
 
-            int id_licenciado = Convert.ToInt32((cmbTribunal.SelectedItem as ComboBoxItem).Value.ToString());//input 10
+            int id_licenciado = Convert.ToInt32((cmbTribunalActual.SelectedItem as ComboBoxItem).Value.ToString());//input 10
             int idRevision = Convert.ToInt32(txtIdRevision.Text);
             int idDetalleRevision = Convert.ToInt32(txtIdDetalleRevision.Text);
 
@@ -455,12 +461,7 @@ namespace CapaPresentacion
            
         }
         
-        
-
-
-
-
-        
+               
         
         void InsertForNewDefensa()
         {

@@ -78,15 +78,27 @@ namespace CapaNegocio.revisionPerfil
                 revision.Update(idRevision);
 
                 //Detalle Revision
-                detalleRevision.Id_revision = idRevision;
-                detalleRevision.Id_licenciado = id_licenciado;
-                detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
-                detalleRevision.Update(idDetalleRevision);
+                detalleRevision.updateTribunales(id_tesis, nro_tribunal, id_licenciado);
+                //detalleRevision.Id_revision = idRevision;
+                //detalleRevision.Id_licenciado = id_licenciado;
+                //detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
+                //detalleRevision.Update(idDetalleRevision);
                 //
                 //
                 perfilTesis.updateStatus(id_tesis, estado);
             }
             catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+        }
+        public void actualizarTribunalesByRevision(int id_tesis,int nro_tribunal,int id_licenciado)
+        {
+            try
+            {
+                detalleRevision.updateTribunales(id_tesis, nro_tribunal, id_licenciado);
+            }
+            catch(Exception e)
             {
                 throw new ArgumentException("" + e);
             }
