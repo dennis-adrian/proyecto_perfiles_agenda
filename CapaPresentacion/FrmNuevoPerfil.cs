@@ -230,10 +230,5 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

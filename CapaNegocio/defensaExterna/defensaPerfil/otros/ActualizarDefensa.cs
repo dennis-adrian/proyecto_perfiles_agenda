@@ -17,41 +17,6 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
         {
             try
             {
-                /*
-                defensa externa-----------------
-                id
-                fecha_presentacion
-                hora
-                aula
-                id_titulacion_otro
-
-                estudiante-----------------------
-                id
-                registro
-                nombre
-                apellido
-                email
-                telefono
-                celular
-                id_carrera 
-
-                titulacion_otros---------------
-                id
-                estado_defensa
-                tema
-                calificacion
-                id_estudiante
-                id_tipo_titulacion
-
-                detalle_defensa----------------*7
-                id
-                id_defensa_externa
-                id_licenciado
-                id_funcion_licenciado
-
-
-                 
-                 */
                 estudiante.Id = Convert.ToInt32(estudiante_obj.Id);
                 estudiante.Registro = Convert.ToString(estudiante_obj.Registro);
                 estudiante.Apellido = Convert.ToString(estudiante_obj.Apellido);
@@ -104,63 +69,11 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
 
         }
-
-
-
-
-        /// <summary>
-        /// PENDIENTE
-        /// </summary>
-        /// <param name="estudiante_obj"></param>
-        /// <param name="titulcion_otros_obj"></param>
-        /// <param name="defensa_externa_obj"></param>
-
-
         public void updateTesis(dynamic estudiante_obj, dynamic perfil_tesis_obj, dynamic defensa_externa_obj)
         {
             try
             {
-                /*
-                defensa externa-----------------
-                id
-                fecha_presentacion
-                hora
-                aula
-                id_tesis
-
-                estudiante-----------------------
-                id
-                registro
-                nombre
-                apellido
-                email
-                telefono
-                celular
-                id_carrera 
-
-                ----------------------------------------
-                perfil_tesis
-                id*
-                tema*
-                estado
-                fecha_aprobacion_jefe_carrera
-                fecha_recepcion_titulacion
-                estado_defensa*
-                calificacion*
-                id_estudiante*
-                id_licenciado*
-                id_funcion_licenciado*
-                ------------------------------
-
-                detalle_defensa----------------*7
-                id
-                id_defensa_externa
-                id_licenciado
-                id_funcion_licenciado
-
-
-                 
-                 */
+                
                 estudiante.Id = Convert.ToInt32(estudiante_obj.Id);
                 estudiante.Registro = Convert.ToString(estudiante_obj.Registro);
                 estudiante.Apellido = Convert.ToString(estudiante_obj.Apellido);
@@ -191,6 +104,8 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
 
                 perfilTesis.Update(perfilTesis.Id);
 
+               
+
                 defensaExterna.Id = Convert.ToInt32(defensa_externa_obj.Id);
                 defensaExterna.Fecha_presentacion = Convert.ToString(defensa_externa_obj.Fecha_presentacion);
                 defensaExterna.Hora = Convert.ToString(defensa_externa_obj.Hora);
@@ -216,47 +131,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
         {
             try
             {
-                /*
-                defensa externa-----------------
-                id
-                fecha_presentacion
-                hora
-                aula
-                id_tesis
-
-                estudiante-----------------------
-                id
-                registro
-                nombre
-                apellido
-                email
-                telefono
-                celular
-                id_carrera 
-
-                ----------------------------------------
-                perfil_tesis
-                id*
-                tema*
-                estado
-                fecha_aprobacion_jefe_carrera
-                fecha_recepcion_titulacion
-                estado_defensa*
-                calificacion*
-                id_estudiante*
-                id_licenciado*
-                id_funcion_licenciado*
-                ------------------------------
-
-                detalle_defensa----------------*7
-                id
-                id_defensa_externa
-                id_licenciado
-                id_funcion_licenciado
-
-
-                 
-                 */
+                
                 estudiante.Id = Convert.ToInt32(estudiante_obj.Id);
                 estudiante.Registro = Convert.ToString(estudiante_obj.Registro);
                 estudiante.Apellido = Convert.ToString(estudiante_obj.Apellido);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class PerfilTesis : Conexion, IMetodos
+    public class PerfilTesis : Conexion
     {
         public PerfilTesis()
         {
@@ -115,8 +115,9 @@ namespace CapaDatos.Models
 
         public void updateStatus(int id,string estado)
         {
-            string sql = $" UPDATE {table_name}  SET estado='{estado}'  WHERE id = {id} ; ";
-            execQuery(sql);
+            string sql = $" UPDATE {table_name}  SET estado ='{estado}'  WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] {  id };
+            QueryBuilder(sql, Parametros);
         }
         public DataTable Select()
         {

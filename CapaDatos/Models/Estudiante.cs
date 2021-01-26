@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class Estudiante : Conexion, IMetodos
+    public class Estudiante : Conexion
     {
         public Estudiante()
         {

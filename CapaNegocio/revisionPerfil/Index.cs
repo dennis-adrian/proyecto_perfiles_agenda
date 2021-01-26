@@ -24,7 +24,18 @@ namespace CapaNegocio.revisionPerfil
         TribunalPerfil tribunalPerfil = new TribunalPerfil();
         #endregion
 
+        public void updateStatus(int idtesis,string estado)
+        {
+            try
+            {
+            perfilTesis.updateStatus(idtesis,estado);
 
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
 
         public void createRevision(string estado, string fec_entrega_alumno, string fec_entrega_tribunal, string fec_limite_devolucion, string fec_devolucion_tribunal, string fec_devolucion_alumno, string observacion, int nro_tribunal, int nro_revision, string fec_empaste, int id_tesis, int id_licenciado)
         {

@@ -74,15 +74,16 @@
             this.btnCancelarNuevop = new System.Windows.Forms.Button();
             this.btnGuardarNuevoP = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTutor = new System.Windows.Forms.Button();
+            this.cmbCarrera = new System.Windows.Forms.ComboBox();
+            this.cmbTutor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRegistroGral = new System.Windows.Forms.TextBox();
-            this.txtCarreraGral = new System.Windows.Forms.TextBox();
             this.txtNumeroRevisiones = new System.Windows.Forms.TextBox();
             this.txtNombreGral = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTutorGral = new System.Windows.Forms.TextBox();
-            this.txtTemaGral = new System.Windows.Forms.TextBox();
             this.txtEmailGral = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTemaGral = new System.Windows.Forms.TextBox();
             this.txtEstadoProyectoGral = new System.Windows.Forms.TextBox();
             this.txtTelefonoGral = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbTutor = new System.Windows.Forms.ComboBox();
             this.pnlBarraNuevoLicenciado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -714,16 +714,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTutor);
+            this.groupBox1.Controls.Add(this.cmbCarrera);
             this.groupBox1.Controls.Add(this.cmbTutor);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRegistroGral);
-            this.groupBox1.Controls.Add(this.txtCarreraGral);
             this.groupBox1.Controls.Add(this.txtNumeroRevisiones);
             this.groupBox1.Controls.Add(this.txtNombreGral);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtTutorGral);
-            this.groupBox1.Controls.Add(this.txtTemaGral);
             this.groupBox1.Controls.Add(this.txtEmailGral);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtTemaGral);
             this.groupBox1.Controls.Add(this.txtEstadoProyectoGral);
             this.groupBox1.Controls.Add(this.txtTelefonoGral);
             this.groupBox1.Controls.Add(this.label1);
@@ -751,6 +751,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Perfil";
             // 
+            // btnTutor
+            // 
+            this.btnTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnTutor.FlatAppearance.BorderSize = 0;
+            this.btnTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTutor.ForeColor = System.Drawing.Color.White;
+            this.btnTutor.Location = new System.Drawing.Point(1102, 506);
+            this.btnTutor.Margin = new System.Windows.Forms.Padding(7);
+            this.btnTutor.Name = "btnTutor";
+            this.btnTutor.Size = new System.Drawing.Size(222, 45);
+            this.btnTutor.TabIndex = 46;
+            this.btnTutor.Text = "Elegir";
+            this.btnTutor.UseVisualStyleBackColor = false;
+            this.btnTutor.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbCarrera
+            // 
+            this.cmbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Location = new System.Drawing.Point(1054, 242);
+            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(7);
+            this.cmbCarrera.Name = "cmbCarrera";
+            this.cmbCarrera.Size = new System.Drawing.Size(557, 47);
+            this.cmbCarrera.TabIndex = 46;
+            // 
+            // cmbTutor
+            // 
+            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTutor.FormattingEnabled = true;
+            this.cmbTutor.Location = new System.Drawing.Point(469, 506);
+            this.cmbTutor.Name = "cmbTutor";
+            this.cmbTutor.Size = new System.Drawing.Size(582, 45);
+            this.cmbTutor.TabIndex = 45;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -773,22 +810,12 @@
             this.txtRegistroGral.Size = new System.Drawing.Size(331, 46);
             this.txtRegistroGral.TabIndex = 10;
             // 
-            // txtCarreraGral
-            // 
-            this.txtCarreraGral.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCarreraGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarreraGral.Location = new System.Drawing.Point(1054, 243);
-            this.txtCarreraGral.Margin = new System.Windows.Forms.Padding(7);
-            this.txtCarreraGral.Name = "txtCarreraGral";
-            this.txtCarreraGral.Size = new System.Drawing.Size(557, 46);
-            this.txtCarreraGral.TabIndex = 15;
-            // 
             // txtNumeroRevisiones
             // 
             this.txtNumeroRevisiones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumeroRevisiones.Enabled = false;
             this.txtNumeroRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroRevisiones.Location = new System.Drawing.Point(1494, 497);
+            this.txtNumeroRevisiones.Location = new System.Drawing.Point(1179, 673);
             this.txtNumeroRevisiones.Margin = new System.Windows.Forms.Padding(7);
             this.txtNumeroRevisiones.Name = "txtNumeroRevisiones";
             this.txtNumeroRevisiones.ReadOnly = true;
@@ -805,27 +832,27 @@
             this.txtNombreGral.Size = new System.Drawing.Size(557, 46);
             this.txtNombreGral.TabIndex = 13;
             // 
+            // txtEmailGral
+            // 
+            this.txtEmailGral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmailGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailGral.Location = new System.Drawing.Point(1054, 331);
+            this.txtEmailGral.Margin = new System.Windows.Forms.Padding(7);
+            this.txtEmailGral.Name = "txtEmailGral";
+            this.txtEmailGral.Size = new System.Drawing.Size(557, 46);
+            this.txtEmailGral.TabIndex = 16;
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1130, 502);
+            this.label3.Location = new System.Drawing.Point(1166, 601);
             this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(343, 39);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nro. de Revisiones :";
-            // 
-            // txtTutorGral
-            // 
-            this.txtTutorGral.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTutorGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTutorGral.Location = new System.Drawing.Point(472, 497);
-            this.txtTutorGral.Margin = new System.Windows.Forms.Padding(7);
-            this.txtTutorGral.Name = "txtTutorGral";
-            this.txtTutorGral.Size = new System.Drawing.Size(175, 46);
-            this.txtTutorGral.TabIndex = 18;
             // 
             // txtTemaGral
             // 
@@ -834,18 +861,8 @@
             this.txtTemaGral.Location = new System.Drawing.Point(469, 410);
             this.txtTemaGral.Margin = new System.Windows.Forms.Padding(7);
             this.txtTemaGral.Name = "txtTemaGral";
-            this.txtTemaGral.Size = new System.Drawing.Size(1136, 46);
+            this.txtTemaGral.Size = new System.Drawing.Size(1142, 46);
             this.txtTemaGral.TabIndex = 17;
-            // 
-            // txtEmailGral
-            // 
-            this.txtEmailGral.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmailGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailGral.Location = new System.Drawing.Point(1054, 328);
-            this.txtEmailGral.Margin = new System.Windows.Forms.Padding(7);
-            this.txtEmailGral.Name = "txtEmailGral";
-            this.txtEmailGral.Size = new System.Drawing.Size(557, 46);
-            this.txtEmailGral.TabIndex = 16;
             // 
             // txtEstadoProyectoGral
             // 
@@ -864,9 +881,11 @@
             this.txtTelefonoGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoGral.Location = new System.Drawing.Point(472, 243);
             this.txtTelefonoGral.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTelefonoGral.MaxLength = 10;
             this.txtTelefonoGral.Name = "txtTelefonoGral";
             this.txtTelefonoGral.Size = new System.Drawing.Size(331, 46);
             this.txtTelefonoGral.TabIndex = 11;
+            this.txtTelefonoGral.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoGral_KeyPress);
             // 
             // label1
             // 
@@ -886,9 +905,11 @@
             this.txtCelularGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularGral.Location = new System.Drawing.Point(472, 328);
             this.txtCelularGral.Margin = new System.Windows.Forms.Padding(7);
+            this.txtCelularGral.MaxLength = 10;
             this.txtCelularGral.Name = "txtCelularGral";
             this.txtCelularGral.Size = new System.Drawing.Size(331, 46);
             this.txtCelularGral.TabIndex = 12;
+            this.txtCelularGral.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelularGral_KeyPress);
             // 
             // txtApellidoGral
             // 
@@ -906,10 +927,10 @@
             this.dttFechaRecepcionGral.CustomFormat = "dd-MM-yyyy";
             this.dttFechaRecepcionGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttFechaRecepcionGral.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttFechaRecepcionGral.Location = new System.Drawing.Point(445, 686);
+            this.dttFechaRecepcionGral.Location = new System.Drawing.Point(332, 670);
             this.dttFechaRecepcionGral.Margin = new System.Windows.Forms.Padding(7);
             this.dttFechaRecepcionGral.Name = "dttFechaRecepcionGral";
-            this.dttFechaRecepcionGral.Size = new System.Drawing.Size(331, 46);
+            this.dttFechaRecepcionGral.Size = new System.Drawing.Size(300, 46);
             this.dttFechaRecepcionGral.TabIndex = 20;
             // 
             // label13
@@ -917,7 +938,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(899, 597);
+            this.label13.Location = new System.Drawing.Point(744, 601);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(360, 39);
@@ -930,10 +951,10 @@
             this.dttFechaAprobacionGral.CustomFormat = "dd-MM-yyyy";
             this.dttFechaAprobacionGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttFechaAprobacionGral.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dttFechaAprobacionGral.Location = new System.Drawing.Point(906, 686);
+            this.dttFechaAprobacionGral.Location = new System.Drawing.Point(751, 673);
             this.dttFechaAprobacionGral.Margin = new System.Windows.Forms.Padding(7);
             this.dttFechaAprobacionGral.Name = "dttFechaAprobacionGral";
-            this.dttFechaAprobacionGral.Size = new System.Drawing.Size(331, 46);
+            this.dttFechaAprobacionGral.Size = new System.Drawing.Size(300, 46);
             this.dttFechaAprobacionGral.TabIndex = 21;
             // 
             // label12
@@ -941,7 +962,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(438, 587);
+            this.label12.Location = new System.Drawing.Point(284, 601);
             this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(348, 39);
@@ -1044,15 +1065,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Tutor :";
             // 
-            // cmbTutor
-            // 
-            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTutor.FormattingEnabled = true;
-            this.cmbTutor.Location = new System.Drawing.Point(674, 496);
-            this.cmbTutor.Name = "cmbTutor";
-            this.cmbTutor.Size = new System.Drawing.Size(352, 45);
-            this.cmbTutor.TabIndex = 45;
-            // 
             // FrmRevisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -1110,7 +1122,6 @@
         private System.Windows.Forms.Button btnAddNewRev4;
         private System.Windows.Forms.Panel pnlContenedorRev;
         private System.Windows.Forms.Panel pnlContenedorGral;
-        private System.Windows.Forms.TextBox txtCarreraGral;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNumeroRevisiones;
         private System.Windows.Forms.Label label2;
@@ -1133,7 +1144,6 @@
         private System.Windows.Forms.TextBox txtTelefonoGral;
         private System.Windows.Forms.TextBox txtEmailGral;
         private System.Windows.Forms.TextBox txtTemaGral;
-        private System.Windows.Forms.TextBox txtTutorGral;
         private System.Windows.Forms.TextBox txtNombreGral;
         private System.Windows.Forms.TextBox txtRegistroGral;
         private System.Windows.Forms.Panel pnlContainerGeneral;
@@ -1169,5 +1179,7 @@
         private System.Windows.Forms.ComboBox cmbTribunal1;
         private System.Windows.Forms.TextBox txtDatosTribunales;
         private System.Windows.Forms.ComboBox cmbTutor;
+        private System.Windows.Forms.ComboBox cmbCarrera;
+        private System.Windows.Forms.Button btnTutor;
     }
 }

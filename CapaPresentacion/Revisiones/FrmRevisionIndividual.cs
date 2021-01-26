@@ -46,30 +46,56 @@ namespace CapaPresentacion
             {
                 foreach (var item in cursor)
                 {
+                    string idlicenciado = Convert.ToString(item.Id_licenciado);
+                    string iperfil = Convert.ToString(item.Id_perfil);
+                    string licenciado = item.Licenciado;
+                    string nrotribunal = Convert.ToString(item.Nro_tribunal);
+
+                   
                     if (item.Nro_tribunal == 1)
                     {
                         btnTribunal1.Text = item.Licenciado;
-
-                        tribunal1.Add("idlicenciado", Convert.ToString(item.Id_licenciado));
-                        tribunal1.Add("idperfil", Convert.ToString(item.Id_perfil));
-                        tribunal1.Add("licenciado", item.Licenciado);
-                        tribunal1.Add("nrotribunal", Convert.ToString(item.Nro_tribunal));
+                        fillDictionary(tribunal1, idlicenciado, iperfil, licenciado, nrotribunal);
                         
                     }
                     else if (item.Nro_tribunal == 2)
                     {
 
                         btnTribunal2.Text = item.Licenciado;
-                        tribunal2.Add("idlicenciado", Convert.ToString(item.Id_licenciado));
-                        tribunal2.Add("idperfil", Convert.ToString(item.Id_perfil));
-                        tribunal2.Add("licenciado", item.Licenciado);
-                        tribunal2.Add("nrotribunal", Convert.ToString(item.Nro_tribunal));
+                        fillDictionary(tribunal2, idlicenciado, iperfil, licenciado, nrotribunal);
+
+
                     }
 
                 }
             }
             loadComboTribunalActual();
+
             
+        }
+        bool fillDictionary(Dictionary<string, string> dic, string idlicenciado, string idperfil, string licenciado, string nrotribunal)
+        {
+            List<string> keys = new List<string>();
+            keys.Add("idlicenciado");
+            keys.Add("idperfil");
+            keys.Add("licenciado");
+            keys.Add("nrotribunal");
+
+            foreach(var k in keys)
+            {
+                bool res = dic.ContainsKey(k);
+                if (res)
+                {
+                    return false;
+                }
+                
+            }
+           
+            dic.Add("idlicenciado",idlicenciado);
+            dic.Add("idperfil", idperfil);
+            dic.Add("licenciado", licenciado);
+            dic.Add("nrotribunal", nrotribunal);
+            return true;
         }
        
 
@@ -80,7 +106,7 @@ namespace CapaPresentacion
             this.num_revision = nro;
 
 
-            cargarNombreTribunales();
+            //cargarNombreTribunales();
             inicializarDateTimePickers();
             ShowData();
             setActionButtonDefensa();
@@ -276,7 +302,8 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                    cargarNombreTribunales();
+                    //cargarNombreTribunales();
+                    loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
 
 
@@ -292,7 +319,8 @@ namespace CapaPresentacion
                     rbTribunal2.Checked = false;
                     ClearForms();
 
-                    cargarNombreTribunales();
+                    //cargarNombreTribunales();
+                    loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
                 }
 
@@ -467,10 +495,21 @@ namespace CapaPresentacion
         {
             if(btnDefensaExterna.Visible == true)
             {
+                string msg = "";
+                if(btnDefensaExterna.Text == "Agregar Defensa")
+                {
+                    msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
+
+                }
+                else if (btnDefensaExterna.Text == "Ir a Defensa")
+                {
+                    msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede ir a la defensa para este perfil";
+
+                }
                 bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
                 if (res == true)
                 {
-                    string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
+                    
                     MessageBox.Show(msg);
                     //setActionButtonDefensa();
                     
@@ -517,6 +556,7 @@ namespace CapaPresentacion
                 item.Value = id_licenciado;
                 cmbTribunal.Items.Add(item);
                 cmbTribunal.SelectedIndex = 0;
+
 
                 DateChecked(dttEmpaste, chbEmpaste, info.Fecha_empaste);
                 DateChecked(dttEntregaAlumno, chbEntregaAlumno, info.Fecha_entrega_alumno);                
@@ -663,6 +703,8 @@ namespace CapaPresentacion
             if (btnDefensaExterna.Text == "Agregar Defensa")
             {
                 createDefensaExterna();
+                obj.updateStatus(this.id_perfil, "En Defensa");
+
                 setActionButtonDefensa();
                 MessageBox.Show("La defensa del perfil de tesis ha sido agregada exitosamente, ahora puede agregar la hora, aula y los respectivos licenciados");
             }
