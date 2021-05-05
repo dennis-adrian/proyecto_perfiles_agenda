@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNumeroRevisiones = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbTema = new System.Windows.Forms.Label();
             this.txtTemaGral = new System.Windows.Forms.TextBox();
             this.txtTutorGral = new System.Windows.Forms.TextBox();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.pnlPrincipalTesisAgenda = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbbLetraAula = new System.Windows.Forms.ComboBox();
             this.txtNota = new System.Windows.Forms.TextBox();
+            this.chHoraDefensa = new System.Windows.Forms.CheckBox();
+            this.chFechaDefensa = new System.Windows.Forms.CheckBox();
+            this.chCalificacion = new System.Windows.Forms.CheckBox();
+            this.cmbAula = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.btnElegirTribunal2 = new System.Windows.Forms.Button();
             this.btnElegirRepresentanteUagrm1 = new System.Windows.Forms.Button();
@@ -55,13 +56,13 @@
             this.cmbPresidente = new System.Windows.Forms.ComboBox();
             this.cmbRepresentanteUagrm1 = new System.Windows.Forms.ComboBox();
             this.cmbRepresentanteMinisterio = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbUagrm1 = new System.Windows.Forms.Label();
+            this.lbRepresentanteMinisterio = new System.Windows.Forms.Label();
+            this.lbPresidente = new System.Windows.Forms.Label();
+            this.lbSecretario = new System.Windows.Forms.Label();
+            this.lbUagrm2 = new System.Windows.Forms.Label();
+            this.lbTribunal2 = new System.Windows.Forms.Label();
+            this.lbTribunal1 = new System.Windows.Forms.Label();
             this.btnCancelarNuevaDefensa = new System.Windows.Forms.Button();
             this.btnGuardarNuevaDefensa = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -71,20 +72,22 @@
             this.dtFechaDefensa = new System.Windows.Forms.DateTimePicker();
             this.dtHora = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnElegirTutor = new System.Windows.Forms.Button();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmbTutor = new System.Windows.Forms.ComboBox();
             this.txtCelularAlum = new System.Windows.Forms.TextBox();
             this.txtTelefonoAlum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmailAlum = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
             this.txtApellidoAlum = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbApellido = new System.Windows.Forms.Label();
             this.txtNombreAlum = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.txtRegistroAlum = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbRegistro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTituloTesis = new System.Windows.Forms.Label();
             this.pnlBarraTitulo.SuspendLayout();
@@ -93,26 +96,6 @@
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(411, 212);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 18);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Numero de Revisiones";
-            // 
-            // txtNumeroRevisiones
-            // 
-            this.txtNumeroRevisiones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNumeroRevisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroRevisiones.Location = new System.Drawing.Point(591, 210);
-            this.txtNumeroRevisiones.Name = "txtNumeroRevisiones";
-            this.txtNumeroRevisiones.Size = new System.Drawing.Size(86, 24);
-            this.txtNumeroRevisiones.TabIndex = 10;
             // 
             // label7
             // 
@@ -125,34 +108,35 @@
             this.label7.TabIndex = 31;
             this.label7.Text = "Tutor";
             // 
-            // label8
+            // lbTema
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 173);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 18);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Tema";
+            this.lbTema.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTema.AutoSize = true;
+            this.lbTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTema.Location = new System.Drawing.Point(20, 173);
+            this.lbTema.Name = "lbTema";
+            this.lbTema.Size = new System.Drawing.Size(50, 18);
+            this.lbTema.TabIndex = 30;
+            this.lbTema.Text = "Tema";
             // 
             // txtTemaGral
             // 
             this.txtTemaGral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTemaGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTemaGral.Location = new System.Drawing.Point(76, 169);
+            this.txtTemaGral.Location = new System.Drawing.Point(98, 169);
             this.txtTemaGral.Name = "txtTemaGral";
-            this.txtTemaGral.Size = new System.Drawing.Size(735, 24);
+            this.txtTemaGral.Size = new System.Drawing.Size(713, 24);
             this.txtTemaGral.TabIndex = 8;
             // 
             // txtTutorGral
             // 
             this.txtTutorGral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTutorGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTutorGral.Location = new System.Drawing.Point(76, 210);
+            this.txtTutorGral.Location = new System.Drawing.Point(479, 213);
             this.txtTutorGral.Name = "txtTutorGral";
-            this.txtTutorGral.Size = new System.Drawing.Size(330, 24);
+            this.txtTutorGral.Size = new System.Drawing.Size(137, 24);
             this.txtTutorGral.TabIndex = 9;
+            this.txtTutorGral.Visible = false;
             // 
             // pnlBarraTitulo
             // 
@@ -162,7 +146,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(900, 31);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1024, 31);
             this.pnlBarraTitulo.TabIndex = 57;
             this.pnlBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraTitulo_MouseDown);
             // 
@@ -177,7 +161,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 16;
-            this.btnCerrar.Location = new System.Drawing.Point(866, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(990, 2);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(34, 29);
@@ -193,14 +177,17 @@
             this.pnlPrincipalTesisAgenda.Location = new System.Drawing.Point(0, 72);
             this.pnlPrincipalTesisAgenda.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPrincipalTesisAgenda.Name = "pnlPrincipalTesisAgenda";
-            this.pnlPrincipalTesisAgenda.Size = new System.Drawing.Size(900, 749);
+            this.pnlPrincipalTesisAgenda.Size = new System.Drawing.Size(1024, 749);
             this.pnlPrincipalTesisAgenda.TabIndex = 58;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.cbbLetraAula);
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.txtNota);
+            this.groupBox2.Controls.Add(this.chHoraDefensa);
+            this.groupBox2.Controls.Add(this.chFechaDefensa);
+            this.groupBox2.Controls.Add(this.chCalificacion);
+            this.groupBox2.Controls.Add(this.cmbAula);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.btnElegirTribunal2);
             this.groupBox2.Controls.Add(this.btnElegirRepresentanteUagrm1);
@@ -216,13 +203,13 @@
             this.groupBox2.Controls.Add(this.cmbPresidente);
             this.groupBox2.Controls.Add(this.cmbRepresentanteUagrm1);
             this.groupBox2.Controls.Add(this.cmbRepresentanteMinisterio);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.lbUagrm1);
+            this.groupBox2.Controls.Add(this.lbRepresentanteMinisterio);
+            this.groupBox2.Controls.Add(this.lbPresidente);
+            this.groupBox2.Controls.Add(this.lbSecretario);
+            this.groupBox2.Controls.Add(this.lbUagrm2);
+            this.groupBox2.Controls.Add(this.lbTribunal2);
+            this.groupBox2.Controls.Add(this.lbTribunal1);
             this.groupBox2.Controls.Add(this.btnCancelarNuevaDefensa);
             this.groupBox2.Controls.Add(this.btnGuardarNuevaDefensa);
             this.groupBox2.Controls.Add(this.label15);
@@ -232,36 +219,73 @@
             this.groupBox2.Controls.Add(this.dtFechaDefensa);
             this.groupBox2.Controls.Add(this.dtHora);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 295);
+            this.groupBox2.Location = new System.Drawing.Point(97, 294);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(866, 422);
             this.groupBox2.TabIndex = 110;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de la Defensa";
             // 
-            // cbbLetraAula
-            // 
-            this.cbbLetraAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbLetraAula.FormattingEnabled = true;
-            this.cbbLetraAula.Items.AddRange(new object[] {
-            "N",
-            "S",
-            "E",
-            "O"});
-            this.cbbLetraAula.Location = new System.Drawing.Point(214, 317);
-            this.cbbLetraAula.Name = "cbbLetraAula";
-            this.cbbLetraAula.Size = new System.Drawing.Size(40, 26);
-            this.cbbLetraAula.TabIndex = 63;
-            this.cbbLetraAula.Text = "N";
-            // 
             // txtNota
             // 
+            this.txtNota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNota.Enabled = false;
             this.txtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota.Location = new System.Drawing.Point(214, 365);
-            this.txtNota.Multiline = true;
+            this.txtNota.Location = new System.Drawing.Point(209, 364);
+            this.txtNota.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNota.MaxLength = 6;
             this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(44, 24);
-            this.txtNota.TabIndex = 61;
+            this.txtNota.Size = new System.Drawing.Size(49, 24);
+            this.txtNota.TabIndex = 74;
+            this.txtNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota_KeyPress);
+            // 
+            // chHoraDefensa
+            // 
+            this.chHoraDefensa.AutoSize = true;
+            this.chHoraDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chHoraDefensa.Location = new System.Drawing.Point(327, 283);
+            this.chHoraDefensa.Name = "chHoraDefensa";
+            this.chHoraDefensa.Size = new System.Drawing.Size(72, 19);
+            this.chHoraDefensa.TabIndex = 73;
+            this.chHoraDefensa.Text = "Habilitar";
+            this.chHoraDefensa.UseVisualStyleBackColor = true;
+            this.chHoraDefensa.CheckedChanged += new System.EventHandler(this.chHoraDefensa_CheckedChanged);
+            // 
+            // chFechaDefensa
+            // 
+            this.chFechaDefensa.AutoSize = true;
+            this.chFechaDefensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chFechaDefensa.Location = new System.Drawing.Point(327, 247);
+            this.chFechaDefensa.Name = "chFechaDefensa";
+            this.chFechaDefensa.Size = new System.Drawing.Size(72, 19);
+            this.chFechaDefensa.TabIndex = 72;
+            this.chFechaDefensa.Text = "Habilitar";
+            this.chFechaDefensa.UseVisualStyleBackColor = true;
+            this.chFechaDefensa.CheckedChanged += new System.EventHandler(this.chFechaDefensa_CheckedChanged);
+            // 
+            // chCalificacion
+            // 
+            this.chCalificacion.AutoSize = true;
+            this.chCalificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chCalificacion.Location = new System.Drawing.Point(261, 368);
+            this.chCalificacion.Name = "chCalificacion";
+            this.chCalificacion.Size = new System.Drawing.Size(72, 19);
+            this.chCalificacion.TabIndex = 71;
+            this.chCalificacion.Text = "Habilitar";
+            this.chCalificacion.UseVisualStyleBackColor = true;
+            this.chCalificacion.CheckedChanged += new System.EventHandler(this.chCalificacion_CheckedChanged);
+            // 
+            // cmbAula
+            // 
+            this.cmbAula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbAula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAula.FormattingEnabled = true;
+            this.cmbAula.Location = new System.Drawing.Point(214, 321);
+            this.cmbAula.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbAula.Name = "cmbAula";
+            this.cmbAula.Size = new System.Drawing.Size(38, 25);
+            this.cmbAula.TabIndex = 68;
             // 
             // label19
             // 
@@ -396,6 +420,7 @@
             // cmbRepresentanteUagrm2
             // 
             this.cmbRepresentanteUagrm2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbRepresentanteUagrm2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRepresentanteUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRepresentanteUagrm2.FormattingEnabled = true;
             this.cmbRepresentanteUagrm2.Items.AddRange(new object[] {
@@ -412,6 +437,7 @@
             // cmbTribunalInterno1
             // 
             this.cmbTribunalInterno1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTribunalInterno1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTribunalInterno1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTribunalInterno1.FormattingEnabled = true;
             this.cmbTribunalInterno1.Items.AddRange(new object[] {
@@ -428,6 +454,7 @@
             // cmbTribunalInterno2
             // 
             this.cmbTribunalInterno2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTribunalInterno2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTribunalInterno2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTribunalInterno2.FormattingEnabled = true;
             this.cmbTribunalInterno2.Items.AddRange(new object[] {
@@ -444,6 +471,7 @@
             // cmbSecretario
             // 
             this.cmbSecretario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbSecretario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSecretario.FormattingEnabled = true;
             this.cmbSecretario.Items.AddRange(new object[] {
@@ -460,6 +488,7 @@
             // cmbPresidente
             // 
             this.cmbPresidente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbPresidente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPresidente.FormattingEnabled = true;
             this.cmbPresidente.Items.AddRange(new object[] {
@@ -476,6 +505,7 @@
             // cmbRepresentanteUagrm1
             // 
             this.cmbRepresentanteUagrm1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbRepresentanteUagrm1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRepresentanteUagrm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRepresentanteUagrm1.FormattingEnabled = true;
             this.cmbRepresentanteUagrm1.Items.AddRange(new object[] {
@@ -492,6 +522,7 @@
             // cmbRepresentanteMinisterio
             // 
             this.cmbRepresentanteMinisterio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbRepresentanteMinisterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRepresentanteMinisterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRepresentanteMinisterio.FormattingEnabled = true;
             this.cmbRepresentanteMinisterio.Items.AddRange(new object[] {
@@ -505,89 +536,89 @@
             this.cmbRepresentanteMinisterio.Size = new System.Drawing.Size(280, 25);
             this.cmbRepresentanteMinisterio.TabIndex = 7;
             // 
-            // label13
+            // lbUagrm1
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(450, 174);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(279, 18);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Primer Representante de la UAGRM";
+            this.lbUagrm1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbUagrm1.AutoSize = true;
+            this.lbUagrm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUagrm1.Location = new System.Drawing.Point(450, 174);
+            this.lbUagrm1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUagrm1.Name = "lbUagrm1";
+            this.lbUagrm1.Size = new System.Drawing.Size(279, 18);
+            this.lbUagrm1.TabIndex = 44;
+            this.lbUagrm1.Text = "Primer Representante de la UAGRM";
             // 
-            // label12
+            // lbRepresentanteMinisterio
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(450, 106);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(330, 18);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Representante del Ministerio de Educación";
+            this.lbRepresentanteMinisterio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbRepresentanteMinisterio.AutoSize = true;
+            this.lbRepresentanteMinisterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRepresentanteMinisterio.Location = new System.Drawing.Point(450, 106);
+            this.lbRepresentanteMinisterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRepresentanteMinisterio.Name = "lbRepresentanteMinisterio";
+            this.lbRepresentanteMinisterio.Size = new System.Drawing.Size(330, 18);
+            this.lbRepresentanteMinisterio.TabIndex = 43;
+            this.lbRepresentanteMinisterio.Text = "Representante del Ministerio de Educación";
             // 
-            // label11
+            // lbPresidente
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(38, 36);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 18);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Presidente";
+            this.lbPresidente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbPresidente.AutoSize = true;
+            this.lbPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPresidente.Location = new System.Drawing.Point(38, 36);
+            this.lbPresidente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPresidente.Name = "lbPresidente";
+            this.lbPresidente.Size = new System.Drawing.Size(88, 18);
+            this.lbPresidente.TabIndex = 42;
+            this.lbPresidente.Text = "Presidente";
             // 
-            // label10
+            // lbSecretario
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(452, 36);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 18);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Secretario";
+            this.lbSecretario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbSecretario.AutoSize = true;
+            this.lbSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSecretario.Location = new System.Drawing.Point(452, 36);
+            this.lbSecretario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSecretario.Name = "lbSecretario";
+            this.lbSecretario.Size = new System.Drawing.Size(86, 18);
+            this.lbSecretario.TabIndex = 41;
+            this.lbSecretario.Text = "Secretario";
             // 
-            // label9
+            // lbUagrm2
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(450, 236);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(295, 18);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "Segundo Representante de la UAGRM";
+            this.lbUagrm2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbUagrm2.AutoSize = true;
+            this.lbUagrm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUagrm2.Location = new System.Drawing.Point(450, 236);
+            this.lbUagrm2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUagrm2.Name = "lbUagrm2";
+            this.lbUagrm2.Size = new System.Drawing.Size(295, 18);
+            this.lbUagrm2.TabIndex = 40;
+            this.lbUagrm2.Text = "Segundo Representante de la UAGRM";
             // 
-            // label1
+            // lbTribunal2
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 174);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 18);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Segundo Tribunal Interno";
+            this.lbTribunal2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTribunal2.AutoSize = true;
+            this.lbTribunal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTribunal2.Location = new System.Drawing.Point(38, 174);
+            this.lbTribunal2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTribunal2.Name = "lbTribunal2";
+            this.lbTribunal2.Size = new System.Drawing.Size(196, 18);
+            this.lbTribunal2.TabIndex = 38;
+            this.lbTribunal2.Text = "Segundo Tribunal Interno";
             // 
-            // label14
+            // lbTribunal1
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 106);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(180, 18);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "Primer Tribunal Interno";
+            this.lbTribunal1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTribunal1.AutoSize = true;
+            this.lbTribunal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTribunal1.Location = new System.Drawing.Point(36, 106);
+            this.lbTribunal1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTribunal1.Name = "lbTribunal1";
+            this.lbTribunal1.Size = new System.Drawing.Size(180, 18);
+            this.lbTribunal1.TabIndex = 37;
+            this.lbTribunal1.Text = "Primer Tribunal Interno";
             // 
             // btnCancelarNuevaDefensa
             // 
@@ -639,11 +670,13 @@
             // 
             this.txtAula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAula.Location = new System.Drawing.Point(259, 319);
+            this.txtAula.Location = new System.Drawing.Point(254, 321);
             this.txtAula.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAula.MaxLength = 4;
             this.txtAula.Name = "txtAula";
-            this.txtAula.Size = new System.Drawing.Size(77, 24);
+            this.txtAula.Size = new System.Drawing.Size(68, 24);
             this.txtAula.TabIndex = 5;
+            this.txtAula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAula_KeyPress);
             // 
             // label20
             // 
@@ -694,11 +727,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.btnElegirTutor);
             this.groupBox1.Controls.Add(this.cmbCarrera);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtNumeroRevisiones);
+            this.groupBox1.Controls.Add(this.cmbTutor);
             this.groupBox1.Controls.Add(this.txtCelularAlum);
             this.groupBox1.Controls.Add(this.txtTelefonoAlum);
             this.groupBox1.Controls.Add(this.txtTutorGral);
@@ -706,29 +739,47 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtEmailAlum);
             this.groupBox1.Controls.Add(this.txtTemaGral);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lbEmail);
             this.groupBox1.Controls.Add(this.txtApellidoAlum);
-            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.lbApellido);
             this.groupBox1.Controls.Add(this.txtNombreAlum);
-            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.lbNombre);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtRegistroAlum);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lbRegistro);
+            this.groupBox1.Controls.Add(this.lbTema);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(35, 21);
+            this.groupBox1.Location = new System.Drawing.Point(97, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(832, 252);
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alumno";
             // 
+            // btnElegirTutor
+            // 
+            this.btnElegirTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnElegirTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnElegirTutor.FlatAppearance.BorderSize = 0;
+            this.btnElegirTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElegirTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElegirTutor.ForeColor = System.Drawing.Color.White;
+            this.btnElegirTutor.Location = new System.Drawing.Point(372, 212);
+            this.btnElegirTutor.Margin = new System.Windows.Forms.Padding(2);
+            this.btnElegirTutor.Name = "btnElegirTutor";
+            this.btnElegirTutor.Size = new System.Drawing.Size(90, 23);
+            this.btnElegirTutor.TabIndex = 97;
+            this.btnElegirTutor.Text = "Elegir";
+            this.btnElegirTutor.UseVisualStyleBackColor = false;
+            this.btnElegirTutor.Click += new System.EventHandler(this.btnElegirTutor_Click);
+            // 
             // cmbCarrera
             // 
             this.cmbCarrera.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarrera.FormattingEnabled = true;
-            this.cmbCarrera.Location = new System.Drawing.Point(591, 132);
+            this.cmbCarrera.Location = new System.Drawing.Point(591, 134);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(220, 26);
             this.cmbCarrera.TabIndex = 7;
@@ -738,29 +789,50 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(517, 132);
+            this.label4.Location = new System.Drawing.Point(514, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 89;
             this.label4.Text = "Carrera:";
+            // 
+            // cmbTutor
+            // 
+            this.cmbTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTutor.FormattingEnabled = true;
+            this.cmbTutor.Items.AddRange(new object[] {
+            "",
+            "tesis",
+            "examen de grado",
+            "proyecto de grado"});
+            this.cmbTutor.Location = new System.Drawing.Point(98, 212);
+            this.cmbTutor.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTutor.Name = "cmbTutor";
+            this.cmbTutor.Size = new System.Drawing.Size(258, 25);
+            this.cmbTutor.TabIndex = 96;
             // 
             // txtCelularAlum
             // 
             this.txtCelularAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularAlum.Location = new System.Drawing.Point(591, 103);
+            this.txtCelularAlum.MaxLength = 10;
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(220, 24);
             this.txtCelularAlum.TabIndex = 6;
+            this.txtCelularAlum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelularAlum_KeyPress);
             // 
             // txtTelefonoAlum
             // 
             this.txtTelefonoAlum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoAlum.Location = new System.Drawing.Point(591, 73);
+            this.txtTelefonoAlum.MaxLength = 10;
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(220, 24);
             this.txtTelefonoAlum.TabIndex = 5;
+            this.txtTelefonoAlum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlum_KeyPress);
             // 
             // label5
             // 
@@ -793,16 +865,16 @@
             this.txtEmailAlum.Size = new System.Drawing.Size(382, 24);
             this.txtEmailAlum.TabIndex = 3;
             // 
-            // label6
+            // lbEmail
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 102);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 18);
-            this.label6.TabIndex = 92;
-            this.label6.Text = "Email:";
+            this.lbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(20, 102);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(55, 18);
+            this.lbEmail.TabIndex = 92;
+            this.lbEmail.Text = "Email:";
             // 
             // txtApellidoAlum
             // 
@@ -813,16 +885,16 @@
             this.txtApellidoAlum.Size = new System.Drawing.Size(382, 24);
             this.txtApellidoAlum.TabIndex = 2;
             // 
-            // label16
+            // lbApellido
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(20, 75);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 18);
-            this.label16.TabIndex = 93;
-            this.label16.Text = "Apellido:";
+            this.lbApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbApellido.AutoSize = true;
+            this.lbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApellido.Location = new System.Drawing.Point(20, 75);
+            this.lbApellido.Name = "lbApellido";
+            this.lbApellido.Size = new System.Drawing.Size(72, 18);
+            this.lbApellido.TabIndex = 93;
+            this.lbApellido.Text = "Apellido:";
             // 
             // txtNombreAlum
             // 
@@ -833,16 +905,16 @@
             this.txtNombreAlum.Size = new System.Drawing.Size(382, 24);
             this.txtNombreAlum.TabIndex = 1;
             // 
-            // label17
+            // lbNombre
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(20, 46);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 18);
-            this.label17.TabIndex = 94;
-            this.label17.Text = "Nombre:";
+            this.lbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Location = new System.Drawing.Point(20, 46);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(73, 18);
+            this.lbNombre.TabIndex = 94;
+            this.lbNombre.Text = "Nombre:";
             // 
             // txtRegistroAlum
             // 
@@ -853,16 +925,16 @@
             this.txtRegistroAlum.Size = new System.Drawing.Size(220, 24);
             this.txtRegistroAlum.TabIndex = 4;
             // 
-            // label18
+            // lbRegistro
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(509, 46);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 18);
-            this.label18.TabIndex = 95;
-            this.label18.Text = "Registro:";
+            this.lbRegistro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbRegistro.AutoSize = true;
+            this.lbRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistro.Location = new System.Drawing.Point(509, 46);
+            this.lbRegistro.Name = "lbRegistro";
+            this.lbRegistro.Size = new System.Drawing.Size(77, 18);
+            this.lbRegistro.TabIndex = 95;
+            this.lbRegistro.Text = "Registro:";
             // 
             // panel2
             // 
@@ -872,7 +944,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 31);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(900, 41);
+            this.panel2.Size = new System.Drawing.Size(1024, 41);
             this.panel2.TabIndex = 111;
             // 
             // lblTituloTesis
@@ -880,7 +952,7 @@
             this.lblTituloTesis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTituloTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloTesis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTituloTesis.Location = new System.Drawing.Point(145, 7);
+            this.lblTituloTesis.Location = new System.Drawing.Point(207, 7);
             this.lblTituloTesis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloTesis.Name = "lblTituloTesis";
             this.lblTituloTesis.Size = new System.Drawing.Size(598, 29);
@@ -893,14 +965,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(900, 812);
+            this.ClientSize = new System.Drawing.Size(1024, 800);
             this.Controls.Add(this.pnlPrincipalTesisAgenda);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(900, 812);
+            this.MinimumSize = new System.Drawing.Size(723, 364);
             this.Name = "FrmTesisAgenda";
             this.Text = "FrmTesis";
+            this.Load += new System.EventHandler(this.FrmTesisAgenda_Load);
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlPrincipalTesisAgenda.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -913,10 +986,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNumeroRevisiones;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbTema;
         private System.Windows.Forms.TextBox txtTemaGral;
         private System.Windows.Forms.TextBox txtTutorGral;
         private System.Windows.Forms.Panel pnlBarraTitulo;
@@ -932,15 +1003,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmailAlum;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox txtApellidoAlum;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbApellido;
         private System.Windows.Forms.TextBox txtNombreAlum;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.TextBox txtRegistroAlum;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbRegistro;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnElegirTribunal2;
         private System.Windows.Forms.Button btnElegirRepresentanteUagrm1;
@@ -956,21 +1026,27 @@
         private System.Windows.Forms.ComboBox cmbPresidente;
         private System.Windows.Forms.ComboBox cmbRepresentanteUagrm1;
         private System.Windows.Forms.ComboBox cmbRepresentanteMinisterio;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbUagrm1;
+        private System.Windows.Forms.Label lbRepresentanteMinisterio;
+        private System.Windows.Forms.Label lbPresidente;
+        private System.Windows.Forms.Label lbSecretario;
+        private System.Windows.Forms.Label lbUagrm2;
+        private System.Windows.Forms.Label lbTribunal2;
+        private System.Windows.Forms.Label lbTribunal1;
         private System.Windows.Forms.Button btnCancelarNuevaDefensa;
         private System.Windows.Forms.Button btnGuardarNuevaDefensa;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtAula;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DateTimePicker dtFechaDefensa;
         private System.Windows.Forms.DateTimePicker dtHora;
-        private System.Windows.Forms.ComboBox cbbLetraAula;
+        private System.Windows.Forms.Button btnElegirTutor;
+        private System.Windows.Forms.ComboBox cmbTutor;
+        private System.Windows.Forms.ComboBox cmbAula;
+        private System.Windows.Forms.TextBox txtAula;
+        private System.Windows.Forms.CheckBox chHoraDefensa;
+        private System.Windows.Forms.CheckBox chFechaDefensa;
+        private System.Windows.Forms.CheckBox chCalificacion;
+        private System.Windows.Forms.TextBox txtNota;
     }
 }

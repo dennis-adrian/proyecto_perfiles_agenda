@@ -168,14 +168,15 @@ namespace CapaNegocio.src
             get { return texto2; }
             set
             {
-                if (Regex.IsMatch(value, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ]*$"))
-                {
-                    this.texto2 = value;
-                }
-                else
-                {
-                    throw new ArgumentException("datos invalidos solo aceptan letras");
-                }
+                //if (Regex.IsMatch(value, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ]*$"))
+                //{
+                //    this.texto2 = value;
+                //}
+                //else
+                //{
+                //    throw new ArgumentException("datos invalidos solo aceptan letras");
+                //}
+                this.texto2 = value;
             }
         }
 

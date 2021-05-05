@@ -21,9 +21,28 @@ namespace CapaNegocio.revisionPerfil
         FuncionLicenciado funcionLicenciado = new FuncionLicenciado();
         DataTypes type = new DataTypes();
 
+        TribunalPerfil tribunalPerfil = new TribunalPerfil();
         #endregion
 
 
+        public int getTotalRevision(int id)
+        {
+
+            var tot = perfilTesis.perfilTotalRevision(id);
+            return tot;
+        }
+        public void updateStatus(int idtesis,string estado)
+        {
+            try
+            {
+            perfilTesis.updateStatus(idtesis,estado);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
 
         public void createRevision(string estado, string fec_entrega_alumno, string fec_entrega_tribunal, string fec_limite_devolucion, string fec_devolucion_tribunal, string fec_devolucion_alumno, string observacion, int nro_tribunal, int nro_revision, string fec_empaste, int id_tesis, int id_licenciado)
         {
@@ -42,10 +61,14 @@ namespace CapaNegocio.revisionPerfil
                 revision.Fecha_empaste = fec_empaste;
                 revision.Id_tesis = id_tesis;
                 revision.Insert();
+
+                //Detalle Revision
                 detalleRevision.Id_revision = revision.LastId();
                 detalleRevision.Id_licenciado = id_licenciado;
                 detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
                 detalleRevision.Insert();
+
+                //
                 perfilTesis.updateStatus(id_tesis, estado);
             }
             catch (Exception e)
@@ -71,13 +94,29 @@ namespace CapaNegocio.revisionPerfil
                 revision.Fecha_empaste = fec_empaste;
                 revision.Id_tesis = id_tesis;
                 revision.Update(idRevision);
-                detalleRevision.Id_revision = idRevision;
-                detalleRevision.Id_licenciado = id_licenciado;
-                detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
-                detalleRevision.Update(idDetalleRevision);
+
+                //Detalle Revision
+                detalleRevision.updateTribunales(id_tesis, nro_tribunal, id_licenciado);
+                //detalleRevision.Id_revision = idRevision;
+                //detalleRevision.Id_licenciado = id_licenciado;
+                //detalleRevision.Id_funcion_licenciado = funcionLicenciado.FindIdBySearch("Tribunal de Revision");
+                //detalleRevision.Update(idDetalleRevision);
+                //
+                //
                 perfilTesis.updateStatus(id_tesis, estado);
             }
             catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+        }
+        public void actualizarTribunalesByRevision(int id_tesis,int nro_tribunal,int id_licenciado)
+        {
+            try
+            {
+                detalleRevision.updateTribunales(id_tesis, nro_tribunal, id_licenciado);
+            }
+            catch(Exception e)
             {
                 throw new ArgumentException("" + e);
             }
@@ -97,7 +136,10 @@ namespace CapaNegocio.revisionPerfil
             private int nro_revision;
             private string fecha_empaste;
             private int id_tesis;
+            //detalle revision
             private int id_detalle_revision;
+            //
+
             private int id_licenciado;
             private string licenciado;
             private string tipo;
@@ -211,6 +253,16 @@ namespace CapaNegocio.revisionPerfil
 
             }
             return revisionStruct;
+        }
+
+        public struct TribunalRevisionStruct
+        {
+            private int id_perfil;
+            public TribunalRevisionStruct(int id_perfil)
+            {
+                this.id_perfil = id_perfil;
+            }
+
         }
 
         public bool ValidarFechasTribunal(int it, int nt)
@@ -367,45 +419,6 @@ namespace CapaNegocio.revisionPerfil
         }
 
 
-        public void test1(int it, int t1, int t2)
-        {
-
-            string empastet1 = "";
-            string empastet2 = "nada";
-            try
-            {
-                bool res = ValidateNextRevision(it, t1, t2);
-                if (res == true)
-                {
-                    var revt1 = revision.LastRevisionByTribunal(it, t1);
-                    var revt2 = revision.LastRevisionByTribunal(it, t2);
-
-                    for (int i = 0; i < revt1.Rows.Count; i++)
-                    {
-                        empastet1 = revt1.Rows[i][10].ToString();
-                    }
-                    for (int i = 0; i < revt2.Rows.Count; i++)
-                    {
-                        empastet2 = revt2.Rows[i][10].ToString();
-
-                    }
-                }
-                Console.WriteLine(empastet1);
-                Console.WriteLine(empastet2);
-            }
-            catch
-            {
-                Console.WriteLine("hbo un error");
-            }
-
-
-
-
-
-
-
-        }
-
         
         public Revision.byPassDefensa getDataForDefensaExterna(int idtesis)
         {
@@ -435,5 +448,88 @@ namespace CapaNegocio.revisionPerfil
             }
 
         }
+
+
+        #region Tribunal
+
+        public void createTribunalRevision(int idperfil,int idlicenciado,int nrotribunal)
+        {
+            try
+            {
+                tribunalPerfil.Id_perfil = idperfil;
+                tribunalPerfil.Id_licenciado = idlicenciado;
+                tribunalPerfil.Nro_tribunal = nrotribunal;
+
+                tribunalPerfil.Insert();
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+            
+        }
+   
+        public struct TribunalStruct
+        {
+            private int id_perfil;
+            private int id_licenciado;
+            private string licenciado;
+            private int nro_tribunal;
+            public TribunalStruct(int id_perfil,int id_licenciado,string licenciado,int nro_tribunal)
+            {
+                this.id_perfil = id_perfil;
+                this.id_licenciado = id_licenciado;
+                this.licenciado = licenciado;
+                this.nro_tribunal = nro_tribunal;
+            }
+
+            public int Id_perfil { get => id_perfil; set => id_perfil = value; }
+            public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
+            public string Licenciado { get => licenciado; set => licenciado = value; }
+            public int Nro_tribunal { get => nro_tribunal; set => nro_tribunal = value; }
+        }
+        
+        public List<TribunalStruct> listTribunalByIdPerfil(int idperfil)
+        {
+            try
+            {
+                List<TribunalStruct> list = new List<TribunalStruct>();
+                var cursor = tribunalPerfil.Select(idperfil);
+                for (int i = 0; i < cursor.Rows.Count; i++)
+                {
+
+                    TribunalStruct tribunalStruct = new TribunalStruct();
+                    tribunalStruct.Id_perfil = Convert.ToInt32(cursor.Rows[i]["Id_perfil"].ToString());
+                    tribunalStruct.Id_licenciado = Convert.ToInt32(cursor.Rows[i]["Id_licenciado"].ToString());
+                    tribunalStruct.Licenciado = cursor.Rows[i]["Licenciado"].ToString();
+                    tribunalStruct.Nro_tribunal = Convert.ToInt32(cursor.Rows[i]["Nro_tribunal"].ToString());
+                    list.Add(tribunalStruct);
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex + "");
+            }
+        }
+
+        public void updateTribunalRevision(int idlicenciado, int idperfil, int nrotribunal)
+        {
+            try
+            {
+                tribunalPerfil.Id_perfil = idperfil;
+                tribunalPerfil.Id_licenciado = idlicenciado;
+                tribunalPerfil.Nro_tribunal = nrotribunal;
+
+                tribunalPerfil.Update(idperfil);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("" + e);
+            }
+        }
+
+
+        #endregion
     }
 }

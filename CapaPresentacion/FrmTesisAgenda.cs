@@ -79,6 +79,7 @@ namespace CapaPresentacion
             cmbCarrera.DataSource = info.cargarCarreras();
             cmbCarrera.ValueMember = "id";
             cmbCarrera.DisplayMember = "nombre";
+            loadAula();
 
         }
         public void ShowInfo()
@@ -91,14 +92,59 @@ namespace CapaPresentacion
             txtTelefonoAlum.Text = InfoDefensa["Telefono"];
             txtCelularAlum.Text = InfoDefensa["Celular"];
             cmbCarrera.SelectedValue = Convert.ToInt32(InfoDefensa["Id_carrera"]);
-            string fec_defensa = (string.IsNullOrEmpty(InfoDefensa["Fecha_presentacion"])) ? "01/01/1970" : InfoDefensa["Fecha_presentacion"];
-            dtFechaDefensa.Value = DateTime.Parse(fec_defensa, new CultureInfo("en-GB"));
-            string hor_defensa = (string.IsNullOrEmpty(InfoDefensa["Hora"])) ? "00:00:00" : InfoDefensa["Hora"];
-            dtHora.Value = DateTime.Parse(hor_defensa, new CultureInfo("en-GB"));
-            cbbLetraAula.Text = string.IsNullOrEmpty(InfoDefensa["Aula"]) ? 'N'.ToString() : InfoDefensa["Aula"][0].ToString();
-            char[] charsToTrim = { 'N', 'S', 'O', 'E' };
-            txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
-            txtNota.Text = InfoDefensa["Calificacion"];
+
+
+            DateChecked(dtFechaDefensa,chFechaDefensa, InfoDefensa["Fecha_presentacion"]);
+
+            DateChecked(dtHora, chHoraDefensa, InfoDefensa["Hora"]);
+            
+            string aula = InfoDefensa["Aula"];
+            bool res = String.IsNullOrEmpty(aula);
+            if (res)
+            {
+                cmbAula.SelectedIndex = 0;
+
+            }
+            else
+            {
+
+                char[] charsToTrim = { 'N', 'S', 'O', 'E' };
+                string letra = aula[0].ToString();
+                switch (letra)
+                {
+                    case "N":
+                        cmbAula.SelectedIndex = 0;
+                        txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
+                        break;
+                    case "S":
+                        cmbAula.SelectedIndex = 1;
+                        txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
+                        break;
+                    case "E":
+                        cmbAula.SelectedIndex = 2;
+                        txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
+                        break;
+                    case "O":
+                        cmbAula.SelectedIndex = 3;
+                        txtAula.Text = InfoDefensa["Aula"].Trim(charsToTrim);
+                        break;
+                    default:
+                        break;
+
+                }
+
+            }
+
+
+            ComboBoxItem item = new ComboBoxItem();
+            
+            cmbTutor.Items.Clear();
+            item.Text = $"{InfoDefensa["NombreLicenciado"]} {InfoDefensa["ApellidoLicenciado"]}"; 
+            item.Value = Convert.ToInt32(InfoDefensa["Id_licenciado"]);
+            cmbTutor.Items.Add(item);
+            cmbTutor.SelectedIndex = 0;
+
+                    txtNota.Text = InfoDefensa["Calificacion"];
             txtTutorGral.Text = $"{InfoDefensa["NombreLicenciado"]} {InfoDefensa["ApellidoLicenciado"]}";
 
             getLicenciados();
@@ -208,21 +254,29 @@ namespace CapaPresentacion
             string text = (cmb.SelectedItem as ComboBoxItem).Value.ToString() == dic[key] ? dic[key] : (cmb.SelectedItem as ComboBoxItem).Value.ToString();
             return text;
         }
-        public string SetAndEvalDatetime(DateTimePicker dtp, string key, Dictionary<string, string> dic, string tipo = "F")
+        public string SetAndEvalDatetime(CheckBox check, DateTimePicker dtp, string key, Dictionary<string, string> dic, string tipo = "F")
         {
 
-            string text;
-            switch (tipo)
+            if (check.Checked)
             {
-                case "F":
-                    text = ((dtp.Value.ToString("dd-MM-yyyy") == dic[key])||(dtp.Value.ToString("dd-MM-yyyy")=="01-01-1970")) ? dic[key] : dtp.Value.ToString("dd-MM-yyyy");
-                    return text;
-                case "H":
-                    text = ((dtp.Value.ToString("HH:mm") == dic[key])|| (dtp.Value.ToString("HH:mm") == "00:00")) ? dic[key] : dtp.Value.ToString("HH:mm");
-                    return text;
-                default:
-                    throw new Exception("entrada de formato invalido");
+                string text;
+                switch (tipo)
+                {
+                    case "F":
+                        text = dtp.Value.ToString("dd-MM-yyyy") == dic[key] ? dic[key] : dtp.Value.ToString("dd-MM-yyyy");
+                        return text;
+                    case "H":
+                        text = dtp.Value.ToString("HH:mm") == dic[key] ? dic[key] : dtp.Value.ToString("HH:mm");
+                        return text;
+                    default:
+                        throw new Exception("entrada de formato invalido");
+                }
             }
+            else
+            {
+                return "";
+            }
+
 
 
         }
@@ -248,42 +302,63 @@ namespace CapaPresentacion
             }
             return estado;
         }
-        public void recolectData()
+        public bool recolectData()
         {
-            defensa_externa.Id = InfoDefensa["Id"];
-            defensa_externa.Fecha_presentacion = SetAndEvalDatetime(dtFechaDefensa, "Fecha_presentacion", InfoDefensa);
-            defensa_externa.Hora = SetAndEvalDatetime(dtHora, "Hora", InfoDefensa, "H");
-            defensa_externa.Aula = SetAndEval(txtAula, "Aula", InfoDefensa);
-            defensa_externa.Id_tesis = InfoDefensa["Id_tesis"];
-            estudiante.Id = InfoDefensa["Id_estudiante"];
-            estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
-            estudiante.Apellido = SetAndEval(txtApellidoAlum, "Apellido", InfoDefensa);
-            estudiante.Nombre = SetAndEval(txtNombreAlum, "Nombre", InfoDefensa);
-            estudiante.Email = SetAndEval(txtEmailAlum, "Email", InfoDefensa);
-            estudiante.Telefono = SetAndEval(txtTelefonoAlum, "Telefono", InfoDefensa);
-            estudiante.Celular = SetAndEval(txtCelularAlum, "Celular", InfoDefensa);
-            estudiante.Id_carrera = SetAndEvalCombo(cmbCarrera, "Id_carrera", InfoDefensa);
-            perfil_tesis.Id = InfoDefensa["Id_tesis"];
-            perfil_tesis.Estado_defensa = setAndEvalEstadoDefensa();
-            perfil_tesis.Tema = SetAndEval(txtTemaGral, "Tema", InfoDefensa);
-            perfil_tesis.Calificacion = SetAndEval(txtNota, "Calificacion", InfoDefensa);
-            perfil_tesis.Id_estudiante = InfoDefensa["Id_estudiante"];
-            perfil_tesis.Id_licenciado = InfoDefensa["Id_licenciado"];
-            perfil_tesis.Id_funcion_licenciado = InfoDefensa["Id_funcion_licenciado"];
-            perfil_tesis.Estado = InfoDefensa["Estado"];
-            perfil_tesis.Fecha_aprobacion_jefe_carrera = InfoDefensa["Fecha_aprobacion_jefe_carrera"];
-            perfil_tesis.Fecha_recepcion_titulacion = InfoDefensa["Fecha_recepcion_titulacion"];
-
-
-            if (!this.isEmpty)
+            bool res = String.IsNullOrEmpty(txtAula.Text);
+            if (res)
             {
-                ////recolecion y evaluacion de licenciados
-                recolectDataDetalleDefensa();
+
+                MessageBox.Show("El numero del aula no puede estar vacio");
+                return false;
             }
-            //else
-            //{
-            //    MessageBox.Show("no se ha asignado a ningun licenciado para esta defensa");
-            //}
+            else
+            {
+                defensa_externa.Id = InfoDefensa["Id"];
+                defensa_externa.Fecha_presentacion = SetAndEvalDatetime(chFechaDefensa, dtFechaDefensa, "Fecha_presentacion", InfoDefensa);
+                defensa_externa.Hora = SetAndEvalDatetime(chHoraDefensa, dtHora, "Hora", InfoDefensa, "H");
+                string aula = $"{((cmbAula.Text).ToUpper())}{txtAula.Text}";
+
+                //defensa_externa.Aula = SetAndEval(aula, "Aula", InfoDefensa);
+                defensa_externa.Aula = aula;
+                defensa_externa.Id_tesis = InfoDefensa["Id_tesis"];
+                estudiante.Id = InfoDefensa["Id_estudiante"];
+                estudiante.Registro = SetAndEval(txtRegistroAlum, "Registro", InfoDefensa);
+                estudiante.Apellido = SetAndEval(txtApellidoAlum, "Apellido", InfoDefensa);
+                estudiante.Nombre = SetAndEval(txtNombreAlum, "Nombre", InfoDefensa);
+                estudiante.Email = SetAndEval(txtEmailAlum, "Email", InfoDefensa);
+                estudiante.Telefono = SetAndEval(txtTelefonoAlum, "Telefono", InfoDefensa);
+                estudiante.Celular = SetAndEval(txtCelularAlum, "Celular", InfoDefensa);
+                estudiante.Id_carrera = SetAndEvalCombo(cmbCarrera, "Id_carrera", InfoDefensa);
+                perfil_tesis.Id = InfoDefensa["Id_tesis"];
+                perfil_tesis.Estado_defensa = setAndEvalEstadoDefensa();
+                perfil_tesis.Tema = SetAndEval(txtTemaGral, "Tema", InfoDefensa);
+                perfil_tesis.Calificacion = SetAndEval(txtNota, "Calificacion", InfoDefensa);
+                perfil_tesis.Id_estudiante = InfoDefensa["Id_estudiante"];
+
+                //
+                InfoDefensa["Id_licenciado"] = (cmbTutor.SelectedItem as ComboBoxItem).Value.ToString();
+
+                perfil_tesis.Id_licenciado = InfoDefensa["Id_licenciado"];
+                perfil_tesis.Id_funcion_licenciado = InfoDefensa["Id_funcion_licenciado"];
+
+                InfoDefensa["Estado"] = "En Defensa";
+                perfil_tesis.Estado = InfoDefensa["Estado"];
+                perfil_tesis.Fecha_aprobacion_jefe_carrera = InfoDefensa["Fecha_aprobacion_jefe_carrera"];
+                perfil_tesis.Fecha_recepcion_titulacion = InfoDefensa["Fecha_recepcion_titulacion"];
+
+
+                if (!this.isEmpty)
+                {
+                    ////recolecion y evaluacion de licenciados
+                    recolectDataDetalleDefensa();
+                }
+                //else
+                //{
+                //    MessageBox.Show("no se ha asignado a ningun licenciado para esta defensa");
+                //}
+                return true;
+            }
+
         }
         public void recolectDataDetalleDefensa()
         {
@@ -465,13 +540,58 @@ namespace CapaPresentacion
             addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
         }
 
+        int getCmb(ComboBox cmb,string nameCombo = "")
+        {
+            if (string.IsNullOrEmpty(cmb.Text))
+            {
+
+                throw new ArgumentException($"campo {nameCombo} vacio.");
+            }
+            else
+            {
+
+            return Convert.ToInt32((cmb.SelectedItem as ComboBoxItem).Value.ToString());
+            }
+        }
+        bool validatingLicenciados()
+        {
+            List<int> licenciados = new List<int>();
+            List<int> tmp = new List<int>();
+            licenciados.Add(getCmb(cmbPresidente,lbPresidente.Text));
+            licenciados.Add(getCmb(cmbSecretario,lbSecretario.Text));
+            licenciados.Add(getCmb(cmbTribunalInterno1,lbTribunal1.Text));
+            licenciados.Add(getCmb(cmbTribunalInterno2,lbTribunal2.Text)); 
+            licenciados.Add(getCmb(cmbRepresentanteMinisterio,lbRepresentanteMinisterio.Text));
+            licenciados.Add(getCmb(cmbRepresentanteUagrm1,lbUagrm1.Text));
+            licenciados.Add(getCmb(cmbRepresentanteUagrm2,lbUagrm2.Text));
+            licenciados.Add(getCmb(cmbTutor));
+
+
+            foreach(var n in licenciados)
+            {
+                bool res = tmp.Contains(n);
+                if (res)
+                {
+                    return false;
+                }
+                else
+                {
+                    tmp.Add(n);
+
+                }
+            }
+            return true;
+
+
+
+        }
 
         private void btnGuardarNuevaDefensa_Click(object sender, EventArgs e)
         {
             try
             {
-                bool validacion = validarLicenciado(cmbPresidente.Text.ToString(), cmbSecretario.Text.ToString(), cmbTribunalInterno1.Text.ToString(), cmbTribunalInterno2.Text.ToString(), cmbRepresentanteMinisterio.Text.ToString(), cmbRepresentanteUagrm1.Text.ToString(), cmbRepresentanteUagrm2.Text.ToString());
-
+                bool validacion = validatingLicenciados();
+                    
                 if (!validacion)
                 {
                     MessageBox.Show("Verifique que ingresó todos los datos correctamente.\n\n" +
@@ -479,28 +599,36 @@ namespace CapaPresentacion
                         "2. No puede repetir nombres.");
                     return;
                 }
-                recolectData();
-                ActualizarDefensa actualizar = new ActualizarDefensa();
-                if (this.isEmpty)
+                bool res = recolectData();
+                if (res)
                 {
+                    ActualizarDefensa actualizar = new ActualizarDefensa();
 
-                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
-                    insertLicenciados();
-                    MessageBox.Show("Datos guardados correctamente");
-                    MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
-                }
-                else
-                {
+                    CapaNegocio.revisionPerfil.Index obj = new CapaNegocio.revisionPerfil.Index();
 
-                    actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
-                    MessageBox.Show("Datos guardados correctamente");
-                    MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
+                   
+                    if (this.isEmpty)
+                    {
+
+                        actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
+                        insertLicenciados();
+                        MessageBox.Show("Datos guardados correctamente");
+                        validarCalificacion();
+                    }
+                    else
+                    {
+
+                        actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
+                        MessageBox.Show("Datos actualizados correctamente");
+                        validarCalificacion();
+                    }
                 }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                string msg = ex.Message;
+                MessageBox.Show(msg);
             }
             
         }
@@ -565,6 +693,13 @@ namespace CapaPresentacion
                         item.Value = id;
                         cmbRepresentanteUagrm2.Items.Add(item);
                         cmbRepresentanteUagrm2.SelectedIndex = 0;
+                        break;
+                    case 100:
+                        cmbTutor.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTutor.Items.Add(item);
+                        cmbTutor.SelectedIndex = 0;
                         break;
 
                     default:
@@ -695,6 +830,8 @@ namespace CapaPresentacion
             listaLicenciados.Clear();
             return true;
         }
+
+
         private void agregarALista(string valor)
         {
             if (valor != null)
@@ -703,5 +840,151 @@ namespace CapaPresentacion
             }
         }
         #endregion
+        void validatingNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCelularAlum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender,e);
+        }
+
+        private void txtTelefonoAlum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender, e);
+        }
+        void loadAula()
+        {
+            cmbAula.Items.Insert(0, "N");
+
+            cmbAula.Items.Insert(1, "S");
+
+            cmbAula.Items.Insert(2, "E");
+
+            cmbAula.Items.Insert(3, "O");
+
+            cmbAula.SelectedIndex = 0;
+        }
+
+        private void txtAula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender, e);
+        }
+
+        private void cambiarEstadoDateTimePicker(DateTimePicker dateTimePicker, object obj)
+        {
+            CheckBox checkBox = (CheckBox)obj;
+            if (!checkBox.Checked)
+            {
+                dateTimePicker.Enabled = false;
+            }
+            else
+            {
+                dateTimePicker.Enabled = true;
+            }
+        }
+        private void chHoraDefensa_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dtHora, sender);
+        }
+
+        private void chFechaDefensa_CheckedChanged(object sender, EventArgs e)
+        {
+            cambiarEstadoDateTimePicker(dtFechaDefensa, sender);
+        }
+
+        private void chCalificacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chCalificacion.Checked)
+            {
+                txtNota.Enabled = false;
+            }
+            else
+            {
+                txtNota.Enabled = true;
+            }
+        }
+
+       
+
+        public void DateChecked(DateTimePicker dtt, CheckBox check, string fec)
+        {
+            bool result = string.IsNullOrEmpty(fec);
+            if (result)
+            {
+
+                dtt.Value = DateTime.Now;
+                dtt.Enabled = false;
+                check.Checked = false;
+
+            }
+            else
+            {
+
+                dtt.Value = DateTime.Parse(fec, new CultureInfo("en-GB"));
+                dtt.Enabled = true;
+                check.Checked = true;
+            }
+        }
+
+        private void txtNota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender, e);
+        }
+
+        private void btnElegirTutor_Click(object sender, EventArgs e)
+        {
+            tipolicenciado = 100;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : "; //+ lblPresidente.Text;(falta nombrar los labels)
+            frm.BringToFront();
+        }
+   
+
+        private void FrmTesisAgenda_Load(object sender, EventArgs e)
+        {
+            validarCalificacion();
+           
+        }
+        void validarCalificacion()
+        {
+            string fec_defensa = InfoDefensa["Fecha_presentacion"];
+            if (string.IsNullOrEmpty(fec_defensa))
+            {
+                txtNota.Visible = false;
+                chCalificacion.Visible = false;
+                label19.Visible = false;
+            }
+            else
+            {
+                int res = DateTime.Compare(DateTime.Now, dtFechaDefensa.Value);
+                if (res > 0)
+                {
+                    txtNota.Visible = true;
+                    chCalificacion.Visible = true;
+                    label19.Visible = true;
+                }
+                else
+                {
+                    txtNota.Visible = false;
+                    chCalificacion.Visible = false;
+                    label19.Visible = false;
+
+                }
+            }
+        }
     }
 }

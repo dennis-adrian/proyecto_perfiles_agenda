@@ -94,7 +94,7 @@
             this.grbPerfilTesis.Controls.Add(this.label3);
             this.grbPerfilTesis.Controls.Add(this.label6);
             this.grbPerfilTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbPerfilTesis.Location = new System.Drawing.Point(20, 210);
+            this.grbPerfilTesis.Location = new System.Drawing.Point(20, 209);
             this.grbPerfilTesis.Name = "grbPerfilTesis";
             this.grbPerfilTesis.Size = new System.Drawing.Size(759, 201);
             this.grbPerfilTesis.TabIndex = 36;
@@ -262,7 +262,6 @@
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(220, 26);
             this.cmbCarrera.TabIndex = 5;
-            this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.cmbCarrera_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -278,18 +277,21 @@
             // 
             this.txtCelularAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelularAlum.Location = new System.Drawing.Point(511, 103);
+            this.txtCelularAlum.MaxLength = 8;
             this.txtCelularAlum.Name = "txtCelularAlum";
             this.txtCelularAlum.Size = new System.Drawing.Size(220, 24);
             this.txtCelularAlum.TabIndex = 7;
+            this.txtCelularAlum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelularAlum_KeyPress);
             // 
             // txtTelefonoAlum
             // 
             this.txtTelefonoAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoAlum.Location = new System.Drawing.Point(511, 77);
-            this.txtTelefonoAlum.MaxLength = 10;
+            this.txtTelefonoAlum.MaxLength = 8;
             this.txtTelefonoAlum.Name = "txtTelefonoAlum";
             this.txtTelefonoAlum.Size = new System.Drawing.Size(220, 24);
             this.txtTelefonoAlum.TabIndex = 6;
+            this.txtTelefonoAlum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlum_KeyPress);
             // 
             // label8
             // 
@@ -369,6 +371,7 @@
             // 
             this.txtRegistroAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistroAlum.Location = new System.Drawing.Point(130, 51);
+            this.txtRegistroAlum.MaxLength = 10;
             this.txtRegistroAlum.Name = "txtRegistroAlum";
             this.txtRegistroAlum.Size = new System.Drawing.Size(252, 24);
             this.txtRegistroAlum.TabIndex = 1;
@@ -399,7 +402,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(822, 470);
+            this.MinimumSize = new System.Drawing.Size(822, 465);
             this.Name = "FrmNuevoPerfil";
             this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

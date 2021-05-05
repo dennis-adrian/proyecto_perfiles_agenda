@@ -9,14 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.ContractForms;
 using CapaNegocio;
-
+using CapaPresentacion.Resources;
 
 namespace CapaPresentacion
 {
-    public partial class FrmRevisiones : Form
+    public partial class FrmRevisiones : Form, IContractLicenciado
     {
         int idperfil;
         Panel pnlContenedorGralBackup;
+
+        #region Variables
+
+
+        #endregion
 
         //SOMBREADO DE BORDES FORMULARIOS
         private const int CS_DROPSHADOW = 0x20000;
@@ -49,10 +54,12 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.idperfil = idperfil;
+            cargarCarreras();
             ShowPerfilGeneral(idperfil);
             //HiddenRevision();
             pnlSubMenus.Visible = false;
             DesactiveColors();
+            loadTribunales();
         }
         #endregion
 
@@ -121,6 +128,13 @@ namespace CapaPresentacion
             btnGeneralRev_Click(null, e);
         }
        
+        private void cargarCarreras()
+        {
+            cmbCarrera.Items.Clear();
+            cmbCarrera.DataSource = obj.cargarCarreras();
+            cmbCarrera.ValueMember = "id";
+            cmbCarrera.DisplayMember = "nombre";
+        }
        
         public void ShowPerfilGeneral(int id)
         {
@@ -135,22 +149,33 @@ namespace CapaPresentacion
             txtEmailGral.Text = item.Email.ToString();
             txtTelefonoGral.Text = item.Telefono.ToString();
             txtCelularGral.Text = item.Celular.ToString();
-            txtCarreraGral.Text = item.Carrera.ToString();
-            txtTutorGral.Text = item.Licenciado.ToString();
+            
+            cmbCarrera.SelectedValue = item.Id_carrera;
+
+            ComboBoxItem cmbitem = new ComboBoxItem();            
+            cmbTutor.Items.Clear();
+            cmbitem.Text = item.Licenciado;
+            cmbitem.Value = item.Id_licenciado;
+            cmbTutor.Items.Add(cmbitem);
+            cmbTutor.SelectedIndex = 0;
+            
+
 
             var fecha_aprobacion = item.Fecha_Aprobacion.ToString();
+
+
             var array_apr = fecha_aprobacion.Split('-');
             int d = Convert.ToInt32(array_apr[0]);
             int m = Convert.ToInt32(array_apr[1]);
             int y = Convert.ToInt32(array_apr[2]);
             dttFechaAprobacionGral.Value = new DateTime(y, m, d);
 
-            var fecha_recepcion = item.Fecha_Aprobacion.ToString();
-            var array_rec = fecha_aprobacion.Split('-');
+            var fecha_recepcion = item.Fecha_Recepcion.ToString();
+            var array_rec = fecha_recepcion.Split('-');
             int dd = Convert.ToInt32(array_rec[0]);
             int mm = Convert.ToInt32(array_rec[1]);
             int yy = Convert.ToInt32(array_rec[2]);
-            dttFechaAprobacionGral.Value = new DateTime(yy, mm, dd);
+            dttFechaRecepcionGral.Value = new DateTime(yy, mm, dd);
             
         }
        
@@ -159,7 +184,8 @@ namespace CapaPresentacion
         {
             if (this.pnlContenedorRev.Controls.Count > 0)
                 this.pnlContenedorRev.Controls.Clear();
-            Form fh = formhija as Form;
+          
+            FrmRevisionIndividual fh = formhija as FrmRevisionIndividual;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.pnlContenedorRev.Controls.Add(fh);
@@ -185,7 +211,6 @@ namespace CapaPresentacion
             pnlContenedorGral.Visible = true;
             ShowPerfilGeneral(this.idperfil);
         }
-
 
 
         private void btnPrimeraRev_Click(object sender, EventArgs e)
@@ -244,9 +269,18 @@ namespace CapaPresentacion
 
         private void btnRevisiones_Click(object sender, EventArgs e)
         {
-            int num = Convert.ToInt32(txtNumeroRevisiones.Text);
-            pnlSubMenus.Visible = true;
-            ShowRevisiones(num);
+            if (txtDatosTribunales.Text == "Sin Datos Asignados")
+            {
+                MessageBox.Show("Falta información de los tribunales");
+            }
+            else if (txtDatosTribunales.Text == "Datos Asignados")
+            {
+                int num = Convert.ToInt32(txtNumeroRevisiones.Text);
+                pnlSubMenus.Visible = true;
+                ShowRevisiones(num);
+            }
+      
+            
         }
                
         public void ShowRevisiones(int num)
@@ -477,6 +511,355 @@ namespace CapaPresentacion
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnElegirTribunal1_Click(object sender, EventArgs e)
+        {
+            
+            nro_tribunal = 1;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : "; 
+            frm.BringToFront();
+        }
+
+        private void btnElegirTribunal2_Click(object sender, EventArgs e)
+        {
+            nro_tribunal = 2;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : ";
+            frm.BringToFront();
+        }
+
+        #region Tribunales
+        private int nro_tribunal = 0;
+        private FrmTutor tribunal = null;
+        private FrmTutor FormInstance3
+        {
+            get
+            {
+                if (tribunal == null)
+                {
+                    tribunal = new FrmTutor();
+                    tribunal.Disposed += new EventHandler(form_Disposed3);
+                }
+
+                return tribunal;
+            }
+        }
+
+        void form_Disposed3(object sender, EventArgs e)
+        {
+            tribunal = null;
+
+        }
+
+        public void Ejecutar(int id, string nombre)
+        {
+            try
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                switch (nro_tribunal)
+                {
+                    case 1:
+                        cmbTribunal1.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunal1.Items.Add(item);
+                        cmbTribunal1.SelectedIndex = 0;
+
+                        break;
+                    case 2:
+                        cmbTribunal2.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTribunal2.Items.Add(item);
+                        cmbTribunal2.SelectedIndex = 0;
+                        break;
+                    case 100:
+                        cmbTutor.Items.Clear();
+                        item.Text = nombre;
+                        item.Value = id;
+                        cmbTutor.Items.Add(item);
+                        cmbTutor.SelectedIndex = 0;
+                        break;
+
+                    default:
+                        throw new ArgumentException();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+
+
+        #endregion
+
+
+        #region validacion_tribunales
+
+        void loadTribunales()
+        {
+            var cursor = rev.listTribunalByIdPerfil(idperfil);
+            if (cursor.Count <= 0)
+            {
+                //do nothing...
+                txtDatosTribunales.Text = "Sin Datos Asignados";
+            }
+            else
+            {
+
+                txtDatosTribunales.Text = "Datos Asignados";
+
+                foreach (var obj in cursor)
+                {
+                    ComboBoxItem item = new ComboBoxItem();
+                    if (obj.Nro_tribunal == 1)
+                    {
+                        cmbTribunal1.Items.Clear();
+                        item.Text = obj.Licenciado;
+                        item.Value = obj.Id_licenciado;
+                        cmbTribunal1.Items.Add(item);
+                        cmbTribunal1.SelectedIndex = 0;
+                    }
+                    else if (obj.Nro_tribunal == 2)
+                    {
+                        cmbTribunal2.Items.Clear();
+                        item.Text = obj.Licenciado;
+                        item.Value = obj.Id_licenciado;
+                        cmbTribunal2.Items.Add(item);
+                        cmbTribunal2.SelectedIndex = 0;
+                    }
+                }
+            }
+        }
+        void validatingTribunales()
+        {
+            //validar combos vacios 
+            bool tri1 = String.IsNullOrEmpty(cmbTribunal1.Text.ToString());
+            bool tri2 = String.IsNullOrEmpty(cmbTribunal2.Text.ToString());
+
+            if (tri1 == true || tri2 == true)
+            {
+                MessageBox.Show("esta sin asignar uno de los tribunales");
+                
+            }
+            else
+            {
+                int tribunal1 = Convert.ToInt32((cmbTribunal1.SelectedItem as ComboBoxItem).Value.ToString());
+                int tribunal2 = Convert.ToInt32((cmbTribunal2.SelectedItem as ComboBoxItem).Value.ToString());
+
+                int tutor = Convert.ToInt32((cmbTutor.SelectedItem as ComboBoxItem).Value.ToString());
+                if (tribunal1 == tribunal2 || tribunal1 == tutor || tribunal2 == tutor)
+                {
+                    MessageBox.Show("El tutor y los tribunales no pueden estar repetidos.");
+                    
+                }
+                else
+                {
+
+                    //MessageBox.Show(tribunal1 + "");
+                    //MessageBox.Show(tribunal2 + "");
+
+                    tribunales(idperfil, tribunal1, 1);
+                    tribunales(idperfil, tribunal2, 2);
+
+
+                    clearForms();
+                    loadTribunales();
+
+
+                }
+            }
+        }       
+        void clearForms()
+        {
+            txtDatosTribunales.Clear();
+
+        }
+       
+        void tribunales(int idperfil, int idlicenciado, int nrotribunal)
+        {
+            string datos = txtDatosTribunales.Text;
+            if (datos == "Datos Asignados")
+            {
+                rev.updateTribunalRevision(idlicenciado,idperfil,nrotribunal);
+                rev.actualizarTribunalesByRevision(idperfil, nrotribunal, idlicenciado);
+            }
+            else if(datos == "Sin Datos Asignados")
+            {
+                rev.createTribunalRevision(idperfil, idlicenciado, nrotribunal);
+                rev.actualizarTribunalesByRevision(idperfil, nrotribunal, idlicenciado);
+            }
+        
+        }
+
+
+        #endregion
+
+       
+        public bool savePerfilGeneral()
+        {
+            try
+            {
+
+
+                CapaNegocio.perfilTesis.Index.PerfilGeneral perfilStruct = new CapaNegocio.perfilTesis.Index.PerfilGeneral();
+
+                var item = obj.showPerfilGeneral(this.idperfil);
+
+                perfilStruct.Id_estudiante = item.Id_estudiante;
+                perfilStruct.Registro = txtRegistroGral.Text;
+                perfilStruct.Nombre = txtNombreGral.Text;
+                perfilStruct.Apellido = txtApellidoGral.Text;
+                perfilStruct.Email = txtEmailGral.Text;
+                perfilStruct.Telefono = txtTelefonoGral.Text;
+                perfilStruct.Celular = txtCelularGral.Text;
+                perfilStruct.Id_carrera = Convert.ToInt32(cmbCarrera.SelectedValue.ToString());
+
+                perfilStruct.Id = item.Id;
+                perfilStruct.Tema = txtTemaGral.Text;
+                perfilStruct.Estado_Proyecto = item.Estado_Proyecto;
+                perfilStruct.Fecha_Aprobacion = dttFechaAprobacionGral.Value.Date.ToString("dd-MM-yyyy");
+
+                perfilStruct.Fecha_Recepcion = dttFechaRecepcionGral.Value.Date.ToString("dd-MM-yyyy");
+
+                perfilStruct.Estado_Defensa = item.Estado_Defensa;
+
+                perfilStruct.Calificacion = item.Calificacion;
+
+                //int id_tutor = cmbTutor.SelectedItem != null ?
+                //    Convert.ToInt32((cmbTutor.SelectedItem as ComboBoxItem).Value.ToString()) : 1;
+
+                perfilStruct.Id_licenciado = Convert.ToInt32((cmbTutor.SelectedItem as ComboBoxItem).Value.ToString());
+                perfilStruct.Id_funcion_licenciado = item.Id_funcion_licenciado;
+                perfilStruct.Fecha_limite = item.Fecha_limite;
+
+
+                obj.updatePerfilGeneral(perfilStruct);
+
+
+
+                return true;
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Verifique que ingresó los datos correctamente");
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+
+        private void btnGuardarNuevoP_Click(object sender, EventArgs e)
+        {
+            string fecha_aprobacion = dttFechaAprobacionGral.Value.Date.ToString("dd-MM-yyyy");
+            string fecha_recepcion = dttFechaRecepcionGral.Value.Date.ToString("dd-MM-yyyy");
+            int id_tutor = cmbTutor.SelectedItem != null ?
+                Convert.ToInt32((cmbTutor.SelectedItem as ComboBoxItem).Value.ToString()) : 1;
+
+            if (Convert.ToDateTime(fecha_aprobacion) < Convert.ToDateTime(fecha_recepcion))
+            {
+                MessageBox.Show("La fecha de recepción del perfil no puede ser mayor a la fecha de aprobación");
+            }
+            else
+            {
+                validatingTribunales();
+
+                bool res = savePerfilGeneral();
+                if (res)
+                {
+                    MessageBox.Show("datos actualizados correctamente");
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar los datos");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            nro_tribunal = 100;
+            FrmTutor frm = this.FormInstance3;
+            frm.contrato = this;
+            frm.Show();
+            frm.lblLicen.Text = "Licenciado : ";
+            frm.BringToFront();
+        }
+
+        //metodo de evento para controlar solo numeros
+        void validatingNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void txtTelefonoGral_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender, e);
+        }
+
+        private void txtCelularGral_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validatingNumeric(sender, e);
+        }
+
+        private void txtRegistroGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtRegistroGral,lbRegistro);
+        }
+
+        void validateEmpty(TextBox txt, Label lb)
+        {
+
+            if (txt.Text.Trim() == string.Empty)
+            {
+                txt.Focus();
+                MessageBox.Show($"ingrese los datos en el campo {lb.Text}");
+                return; // return because we don't want to run normal code of buton click
+            }
+        }
+
+        private void txtTemaGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtTemaGral, lbTema);
+        }
+
+        private void txtNombreGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtNombreGral, lbNombre);
+        }
+
+        private void txtApellidoGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtApellidoGral, lbApellido);
+        }
+
+        private void txtEmailGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtEmailGral, lbEmail);
         }
     }
 }

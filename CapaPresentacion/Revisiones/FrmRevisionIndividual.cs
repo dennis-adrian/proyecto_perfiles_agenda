@@ -20,27 +20,86 @@ namespace CapaPresentacion
 
         #region atributos
 
-        //id del perfil de tesis
+
+        int tribunal_actual = 1;
         int id_perfil;
         string estadoSinDatos = "Sin Datos Asignados";
         string estadoConDatos = "Datos Asignados";
-        //id y numero de revision
         int num_revision;
         int id_revision = 0;
-
-        //?????
         private FrmTutor Tutor = null;
-
-
-        //instancia de la capa negocios
-        //NegocioRevisiones obj = new NegocioRevisiones();
         CapaNegocio.revisionPerfil.Index obj = new CapaNegocio.revisionPerfil.Index();
         AgregarDefensa nuevadefensa = new AgregarDefensa();
 
+        Dictionary<string, string> tribunal1 = new Dictionary<string, string>();
+        Dictionary<string, string> tribunal2 = new Dictionary<string, string>();
         #endregion
 
+        void loadTribunales()
+        {
+           var cursor = obj.listTribunalByIdPerfil(id_perfil);
+            if (cursor.Count <= 0)
+            {
+                btnTribunal1.Text = "Tribunal 1";
+                btnTribunal2.Text = "Tribunal 2";
+            }
+            else
+            {
+                foreach (var item in cursor)
+                {
+                    string idlicenciado = Convert.ToString(item.Id_licenciado);
+                    string iperfil = Convert.ToString(item.Id_perfil);
+                    string licenciado = item.Licenciado;
+                    string nrotribunal = Convert.ToString(item.Nro_tribunal);
 
-       //Constructor
+                   
+                    if (item.Nro_tribunal == 1)
+                    {
+                        btnTribunal1.Text = item.Licenciado;
+                        fillDictionary(tribunal1, idlicenciado, iperfil, licenciado, nrotribunal);
+                        
+                    }
+                    else if (item.Nro_tribunal == 2)
+                    {
+
+                        btnTribunal2.Text = item.Licenciado;
+                        fillDictionary(tribunal2, idlicenciado, iperfil, licenciado, nrotribunal);
+
+
+                    }
+
+                }
+            }
+            loadComboTribunalActual();
+
+            
+        }
+        bool fillDictionary(Dictionary<string, string> dic, string idlicenciado, string idperfil, string licenciado, string nrotribunal)
+        {
+            List<string> keys = new List<string>();
+            keys.Add("idlicenciado");
+            keys.Add("idperfil");
+            keys.Add("licenciado");
+            keys.Add("nrotribunal");
+
+            foreach(var k in keys)
+            {
+                bool res = dic.ContainsKey(k);
+                if (res)
+                {
+                    return false;
+                }
+                
+            }
+           
+            dic.Add("idlicenciado",idlicenciado);
+            dic.Add("idperfil", idperfil);
+            dic.Add("licenciado", licenciado);
+            dic.Add("nrotribunal", nrotribunal);
+            return true;
+        }
+       
+
         public FrmRevisionIndividual(int id, int nro)
         {
             InitializeComponent();
@@ -48,10 +107,11 @@ namespace CapaPresentacion
             this.num_revision = nro;
 
 
-            cargarNombreTribunales();
+            //cargarNombreTribunales();
             inicializarDateTimePickers();
             ShowData();
             setActionButtonDefensa();
+            loadTribunales();
 
             
         }
@@ -108,9 +168,7 @@ namespace CapaPresentacion
 
 
         }
-
-       
-
+      
 
         //controles del formulario licenciado
         void form_Disposed3(object sender, EventArgs e)
@@ -210,13 +268,13 @@ namespace CapaPresentacion
         }
      
         //button elegir licenciado
-        private void btnElegirTribunal_Click(object sender, EventArgs e)
-        {
-            FrmTutor frm = this.FormInstance3;
-            frm.contrato = this;
-            frm.Show();
-            frm.BringToFront();
-        }
+        //private void btnElegirTribunal_Click(object sender, EventArgs e)
+        //{
+        //    FrmTutor frm = this.FormInstance3;
+        //    frm.contrato = this;
+        //    frm.Show();
+        //    frm.BringToFront();
+        //}
         
         //button cancelar 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
@@ -225,6 +283,8 @@ namespace CapaPresentacion
             frm.Close();
         }
      
+
+        
         //button guardar revision
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -234,7 +294,7 @@ namespace CapaPresentacion
 
                 if (txtEstadoDatos.Text == estadoSinDatos && idrev > 0)
                 {
-                    MessageBox.Show("cargue previamente los datos");
+                    MessageBox.Show("cargue previamente los datos, seleccionando uno de los tribunales");
                 }else if(txtEstadoDatos.Text == estadoSinDatos && idrev<=0)
                 {
                     Insert();
@@ -245,8 +305,12 @@ namespace CapaPresentacion
                     rbTribunal1.Checked = false;
                     rbTribunal2.Checked = false;
                     ClearForms();
-                    cargarNombreTribunales();
+                    //cargarNombreTribunales();
+                    loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
+                    pnlResaltadoTrib1.Visible = false;
+                    pnlResaltadoTrib2.Visible = false;
+                    setTotalRevision();
 
 
                 }
@@ -261,18 +325,15 @@ namespace CapaPresentacion
                     rbTribunal2.Checked = false;
                     ClearForms();
 
-                    cargarNombreTribunales();
+                    //cargarNombreTribunales();
+                    loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
+
+                    pnlResaltadoTrib1.Visible = false;
+                    pnlResaltadoTrib2.Visible = false;
+                    setTotalRevision();
                 }
 
-
-                
-
-
-
-
-
-                
             }
             catch (Exception ex)
             {
@@ -280,48 +341,78 @@ namespace CapaPresentacion
             }
         }
 
-               
+          
+        //evento de los radiobuttons tribunales
         private void rbTribunal2_CheckedChanged(object sender, EventArgs e)
         {
+            this.tribunal_actual = 2;
             infoRevision(this.id_perfil, this.num_revision, 2);
         }
 
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
         {
+            this.tribunal_actual = 1;
            infoRevision(this.id_perfil, this.num_revision, 1);
         }
-
        
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
         }
 
+        void loadComboTribunalActual()
+        {
+            if (this.tribunal_actual == 1)
+            {
+                //if (tribunal1.Count <= 0)
+                //{
 
+                //}
+                cmbTribunalActual.Items.Clear();
+                ComboBoxItem cmbitem = new ComboBoxItem();
+                cmbitem.Text = tribunal1["licenciado"];
+                cmbitem.Value = Convert.ToInt32(tribunal1["idlicenciado"]);
+                cmbTribunalActual.Items.Add(cmbitem);
+                cmbTribunalActual.SelectedIndex = 0;
+            }
+            else if (this.tribunal_actual == 2)
+            {
+                cmbTribunalActual.Items.Clear();
+                ComboBoxItem cmbitem = new ComboBoxItem();
+                cmbitem.Text = tribunal2["licenciado"];
+                cmbitem.Value = Convert.ToInt32(tribunal2["idlicenciado"]);
+                cmbTribunalActual.Items.Add(cmbitem);
+                cmbTribunalActual.SelectedIndex = 0;
+            }
 
+        }
         private void btnTribunal1_Click(object sender, EventArgs e)
         {
+
+            //this.tribunal_actual = 1;
+            //infoRevision(this.id_perfil, this.num_revision, 1);
+
             rbTribunal2.Checked = false;
             rbTribunal1.Checked = true;
             pnlResaltadoTrib1.Visible = true;
             pnlResaltadoTrib2.Visible = false;
+            loadComboTribunalActual();
+           
         }
 
         private void btnTribunal2_Click(object sender, EventArgs e)
         {
+            //this.tribunal_actual = 2;
+            //infoRevision(this.id_perfil, this.num_revision, 2);
+
             rbTribunal1.Checked = false;
             rbTribunal2.Checked = true;
             pnlResaltadoTrib2.Visible = true;
             pnlResaltadoTrib1.Visible = false;
-            Console.WriteLine(btnTribunal2.Text);
+            loadComboTribunalActual();
+            
         }
-
-    
-
-       
-        /// <summary>
-        /// modificacion ultima
-        /// </summary>
+        
         void Insert()
         {
 
@@ -347,7 +438,7 @@ namespace CapaPresentacion
 
             int id_tesis = id_perfil;
 
-            int id_licenciado = Convert.ToInt32((cmbTribunal.SelectedItem as ComboBoxItem).Value.ToString());//input 10
+            int id_licenciado = Convert.ToInt32((cmbTribunalActual.SelectedItem as ComboBoxItem).Value.ToString());//input 10
 
             obj.createRevision(estado,
                fec_entrega_alumno,
@@ -363,10 +454,6 @@ namespace CapaPresentacion
                 id_licenciado);
         }
        
-        /// <summary>
-        /// modificacion ultima
-        /// </summary>
-        /// <param name="idrevision"></param>
         void Update(int idrevision)
         {
 
@@ -392,7 +479,7 @@ namespace CapaPresentacion
 
             int id_tesis = id_perfil;
 
-            int id_licenciado = Convert.ToInt32((cmbTribunal.SelectedItem as ComboBoxItem).Value.ToString());//input 10
+            int id_licenciado = Convert.ToInt32((cmbTribunalActual.SelectedItem as ComboBoxItem).Value.ToString());//input 10
             int idRevision = Convert.ToInt32(txtIdRevision.Text);
             int idDetalleRevision = Convert.ToInt32(txtIdDetalleRevision.Text);
 
@@ -412,21 +499,27 @@ namespace CapaPresentacion
            
         }
         
-        
-
-
-
-
-        
+               
         
         void InsertForNewDefensa()
         {
             if(btnDefensaExterna.Visible == true)
             {
+                string msg = "";
+                if(btnDefensaExterna.Text == "Agregar Defensa")
+                {
+                    msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
+
+                }
+                else if (btnDefensaExterna.Text == "Ir a Defensa")
+                {
+                    msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede ir a la defensa para este perfil";
+
+                }
                 bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
                 if (res == true)
                 {
-                    string msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
+                    
                     MessageBox.Show(msg);
                     //setActionButtonDefensa();
                     
@@ -458,7 +551,7 @@ namespace CapaPresentacion
             {
                 txtEstadoDatos.Text = estadoSinDatos;
                 this.id_revision = 0;
-                lbIdRevision.Text = Convert.ToString(0);
+                //lbIdRevision.Text = Convert.ToString(0);
                 txtIdRevision.Text = Convert.ToString(0);
                 txtIdDetalleRevision.Text = Convert.ToString(0);
                 ClearForms();
@@ -474,6 +567,7 @@ namespace CapaPresentacion
                 cmbTribunal.Items.Add(item);
                 cmbTribunal.SelectedIndex = 0;
 
+
                 DateChecked(dttEmpaste, chbEmpaste, info.Fecha_empaste);
                 DateChecked(dttEntregaAlumno, chbEntregaAlumno, info.Fecha_entrega_alumno);                
                 DateChecked(dttEntregaTribunal, chbEntregaTribunal, info.Fecha_entrega_tribunal);
@@ -487,7 +581,7 @@ namespace CapaPresentacion
                 txtEstadoDatos.Text =estadoConDatos;
 
 
-                lbIdRevision.Text = Convert.ToString(info.Id);
+                //lbIdRevision.Text = Convert.ToString(info.Id);
             }
             
         }
@@ -499,8 +593,6 @@ namespace CapaPresentacion
         {
             try
             {
-               
-
                 var trib1 = obj.infoRevision(id_perfil, num_revision, 1);
                 var trib2 = obj.infoRevision(id_perfil, num_revision, 2);
                 btnTribunal1.Text = trib1.Licenciado;
@@ -621,6 +713,8 @@ namespace CapaPresentacion
             if (btnDefensaExterna.Text == "Agregar Defensa")
             {
                 createDefensaExterna();
+                obj.updateStatus(this.id_perfil, "En Defensa");
+
                 setActionButtonDefensa();
                 MessageBox.Show("La defensa del perfil de tesis ha sido agregada exitosamente, ahora puede agregar la hora, aula y los respectivos licenciados");
             }
@@ -632,7 +726,47 @@ namespace CapaPresentacion
             }
 
         }
+        /// <summary>
+        /// Load de formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmRevisionIndividual_Load(object sender, EventArgs e)
+        {
+            setTotalRevision();
 
-        
+        }
+
+        void setTotalRevision()
+        {
+
+            txtTotalRevision.Text = obj.getTotalRevision(id_perfil).ToString();
+            int tot = Convert.ToInt32(txtTotalRevision.Text);
+            if (num_revision > tot)
+            {
+                dttEmpaste.Visible = true;
+                chbEmpaste.Visible = true;
+                lbEmpaste.Visible = true;
+                alertEmpaste.Visible = true;
+
+            }else if(num_revision == tot)
+            {
+                dttEmpaste.Visible = true;
+                chbEmpaste.Visible = true;
+                lbEmpaste.Visible = true;
+                alertEmpaste.Visible = true;
+
+            }
+            else
+            {
+
+                dttEmpaste.Visible = false;
+                chbEmpaste.Visible = false;
+                lbEmpaste.Visible = false;
+                alertEmpaste.Visible = false;
+
+            }
+
+        }
     }
 }

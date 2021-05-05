@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio.nuevoPerfil;
@@ -78,9 +79,10 @@ namespace CapaPresentacion
                     ClearForms();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Verifique que ingresó los datos correctamente");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -183,6 +185,7 @@ namespace CapaPresentacion
             catch (Exception e)
             {
                 MessageBox.Show("Verifique que ingresó los datos correctamente");
+                MessageBox.Show(e.Message);
                 Console.WriteLine(e);
                 return false;
             }
@@ -229,9 +232,34 @@ namespace CapaPresentacion
 
         }
 
-        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtTelefonoAlum_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCelularAlum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

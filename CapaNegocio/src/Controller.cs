@@ -104,7 +104,8 @@ namespace CapaNegocio.src
             }
             catch (Exception e)
             {
-                throw new ArgumentException(""+e.Message);
+                string msg = e.Message;
+                throw new ArgumentException(msg);
             }
 
         }

@@ -45,7 +45,7 @@ namespace CapaPresentacion
             this.lblMsg.ForeColor = System.Drawing.Color.White;
             this.lblMsg.Location = new System.Drawing.Point(91, 35);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(269, 37);
+            this.lblMsg.Size = new System.Drawing.Size(337, 55);
             this.lblMsg.TabIndex = 0;
             this.lblMsg.Text = "No tiene notificaciones en este momento";
             // 
@@ -67,7 +67,7 @@ namespace CapaPresentacion
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::CapaPresentacion.Properties.Resources.close_light;
-            this.btnClose.Location = new System.Drawing.Point(380, 0);
+            this.btnClose.Location = new System.Drawing.Point(440, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 90);
             this.btnClose.TabIndex = 1;
@@ -86,7 +86,7 @@ namespace CapaPresentacion
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(90, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(145, 18);
+            this.lblTitulo.Size = new System.Drawing.Size(177, 24);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Sin Notificaciones";
             // 
@@ -94,17 +94,17 @@ namespace CapaPresentacion
             // 
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(276, 73);
+            this.lblHora.Location = new System.Drawing.Point(324, 66);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(98, 13);
+            this.lblHora.Size = new System.Drawing.Size(104, 24);
             this.lblHora.TabIndex = 4;
-            this.lblHora.Text = "00:00 / 01-01";
+            this.lblHora.Text = "15 ene. 00:00";
             // 
             // FrmNotificaciones
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(450, 90);
+            this.ClientSize = new System.Drawing.Size(512, 90);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnVerPerfil);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,51 @@ namespace CapaPresentacion
                     break;
             }
         }
-
+        private string generarTituloNotificacion(string tipoNotificacion)
+        {
+            string title;
+            if (tipoNotificacion == "revision")
+                title = "Notificación de Revisión";
+            else
+                title = "Notificación de Perfil";
+            return title;
+        }
+        private void generarMensajeYBackground(string tipo, string prioridad, string nombre)
+        {
+            switch (prioridad)
+            {
+                case "low":
+                    this.BackColor = Color.FromArgb(245, 189, 31);
+                    this.lblMsg.Text = tipo == "revision"
+                        ? $"Al tribunal {nombre} le quedan 25 días para entregar el trabajo."
+                        : $"Al perfil de {nombre} le quedan 25 días para expirar.";
+                    break;
+                case "normal":
+                    this.BackColor = Color.FromArgb(250, 169, 51);
+                    this.lblMsg.Text = tipo == "revision"
+                        ? $"Al tribunal {nombre} le quedan 15 días para entregar el trabajo."
+                        : $"Al perfil de {nombre} le quedan 15 días para expirar.";
+                    break;
+                case "important":
+                    this.BackColor = Color.FromArgb(247, 147, 82);
+                    this.lblMsg.Text = tipo == "revision"
+                        ? $"Al tribunal {nombre} le quedan 10 días para entregar el trabajo."
+                        : $"Al perfil de {nombre} le quedan 10 días para expirar.";
+                    break;
+                case "critical":
+                    this.BackColor = Color.FromArgb(211, 89, 89);
+                    this.lblMsg.Text = tipo == "revision"
+                        ? $"Al tribunal {nombre} le quedan 5 días para entregar el trabajo."
+                        : $"Al perfil de {nombre} le quedan 5 días para expirar.";
+                    break;
+                case "time-out":
+                    this.BackColor = Color.FromArgb(147, 95, 95);
+                    this.lblMsg.Text = tipo == "revision"
+                        ? $"El tiempo de entrega para el tribunal {nombre} ya expiró."
+                        : $"El perfil de {nombre} ya expiró.";
+                    break;
+            }
+        }
         public void mostrarNotificaciones(int idNotficacion, string titulo, string mensaje, string prioridad, string tipo, string hora, string fecha, int idPerfil)
         {
             this.perfil = idPerfil;
@@ -94,18 +139,10 @@ namespace CapaPresentacion
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
-            switch (tipo)
-            {
-                case "perfil":
-                    this.BackColor = Color.FromArgb(102,102,102);
-                    break;
-                case "perfils":
-                    this.BackColor = Color.DarkRed;
-                    break;
-            }
-            this.lblTitulo.Text = $"{idNotficacion} {titulo}";
-            this.lblMsg.Text = mensaje;
-            this.lblHora.Text = $"{hora} / {fecha.Substring(0, fecha.Length - 5)}";
+            this.lblTitulo.Text = generarTituloNotificacion(tipo);
+            generarMensajeYBackground(tipo, prioridad, "dennis");
+            var fechaConvertida = DateTime.ParseExact(fecha, "dd-MM-yyyy", new CultureInfo("es-ES"));
+            this.lblHora.Text = $"{fechaConvertida.ToString("dd MMM", new CultureInfo("es-ES"))} {hora}";
 
             this.Show();
             this.accion = enmAcciones.empezar;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class PerfilTesis : Conexion, IMetodos
+    public class PerfilTesis : Conexion
     {
         public PerfilTesis()
         {
@@ -115,8 +115,9 @@ namespace CapaDatos.Models
 
         public void updateStatus(int id,string estado)
         {
-            string sql = $" UPDATE {table_name}  SET estado='{estado}'  WHERE id = {id} ; ";
-            execQuery(sql);
+            string sql = $" UPDATE {table_name}  SET estado ='{estado}'  WHERE id = @parametro0 ; ";
+            Object[] Parametros = new Object[] {  id };
+            QueryBuilder(sql, Parametros);
         }
         public DataTable Select()
         {
@@ -143,7 +144,7 @@ namespace CapaDatos.Models
         public DataTable perfilesAllByEstudiante(string criterio)
         {
 
-            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Nombre LIKE '%{criterio}%' or Apellido LIKE '%{criterio}%' ; ";
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Alumno LIKE '%{criterio}%' ; ";
             return SelectConexion(sql);
 
         }
@@ -158,9 +159,23 @@ namespace CapaDatos.Models
         public DataTable perfilesAllByCarreraAndEstudiante(string criterio,string estudiante)
         {
 
-            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' and  (Nombre LIKE '%{estudiante}%' or Apellido LIKE '%{estudiante}%') ;  ";
+            string sql = $" SELECT * FROM ViewPerfilGeneral  WHERE Carrera LIKE '%{criterio}%' and  (Alumno LIKE '%{estudiante}%') ;  ";
             return SelectConexion(sql);
 
+        }
+        public int perfilTotalRevision(int id)
+        {
+            string sql = $" SELECT * FROM ViewPerfilGeneral WHERE Id = {id} ; ";
+            var table = SelectConexion(sql);
+            int rev = 0;
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                rev = Convert.ToInt32(table.Rows[i]["Revisiones"].ToString());
+
+            }
+
+                return rev;
         }
         #endregion
     }

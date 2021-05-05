@@ -130,7 +130,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                throw new ArgumentException("Error en  QueryBuilder: " + e.Message);
+                throw new ArgumentException("Error en  ExecQuery: " + e.Message);
             }
             finally
             {
