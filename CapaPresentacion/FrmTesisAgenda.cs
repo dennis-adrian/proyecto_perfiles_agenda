@@ -540,22 +540,30 @@ namespace CapaPresentacion
             addLicenciadosDefensa.mainTesisDetalle(setListLicenciados);
         }
 
-        int getCmb(ComboBox cmb)
+        int getCmb(ComboBox cmb,string nameCombo = "")
         {
-            return Convert.ToInt32((cmb.SelectedItem as ComboBoxItem).Value.ToString());
+            if (string.IsNullOrEmpty(cmb.Text))
+            {
 
+                throw new ArgumentException($"campo {nameCombo} vacio.");
+            }
+            else
+            {
+
+            return Convert.ToInt32((cmb.SelectedItem as ComboBoxItem).Value.ToString());
+            }
         }
         bool validatingLicenciados()
         {
             List<int> licenciados = new List<int>();
             List<int> tmp = new List<int>();
-            licenciados.Add(getCmb(cmbPresidente));
-            licenciados.Add(getCmb(cmbSecretario));
-            licenciados.Add(getCmb(cmbTribunalInterno1));
-            licenciados.Add(getCmb(cmbTribunalInterno2)); 
-            licenciados.Add(getCmb(cmbRepresentanteMinisterio));
-            licenciados.Add(getCmb(cmbRepresentanteUagrm1));
-            licenciados.Add(getCmb(cmbRepresentanteUagrm2));
+            licenciados.Add(getCmb(cmbPresidente,lbPresidente.Text));
+            licenciados.Add(getCmb(cmbSecretario,lbSecretario.Text));
+            licenciados.Add(getCmb(cmbTribunalInterno1,lbTribunal1.Text));
+            licenciados.Add(getCmb(cmbTribunalInterno2,lbTribunal2.Text)); 
+            licenciados.Add(getCmb(cmbRepresentanteMinisterio,lbRepresentanteMinisterio.Text));
+            licenciados.Add(getCmb(cmbRepresentanteUagrm1,lbUagrm1.Text));
+            licenciados.Add(getCmb(cmbRepresentanteUagrm2,lbUagrm2.Text));
             licenciados.Add(getCmb(cmbTutor));
 
 
@@ -605,22 +613,22 @@ namespace CapaPresentacion
                         actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa);
                         insertLicenciados();
                         MessageBox.Show("Datos guardados correctamente");
-                        MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
+                        validarCalificacion();
                     }
                     else
                     {
 
                         actualizar.updateTesis(estudiante, perfil_tesis, defensa_externa, lista_detalle_defensa);
-                        MessageBox.Show("Datos guardados correctamente");
-                        MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
+                        MessageBox.Show("Datos actualizados correctamente");
+                        validarCalificacion();
                     }
                 }
                 
             }
             catch (Exception ex)
             {
-
-                throw new ArgumentException(ex+"");
+                string msg = ex.Message;
+                MessageBox.Show(msg);
             }
             
         }
@@ -943,6 +951,40 @@ namespace CapaPresentacion
             frm.Show();
             frm.lblLicen.Text = "Licenciado : "; //+ lblPresidente.Text;(falta nombrar los labels)
             frm.BringToFront();
+        }
+   
+
+        private void FrmTesisAgenda_Load(object sender, EventArgs e)
+        {
+            validarCalificacion();
+           
+        }
+        void validarCalificacion()
+        {
+            string fec_defensa = InfoDefensa["Fecha_presentacion"];
+            if (string.IsNullOrEmpty(fec_defensa))
+            {
+                txtNota.Visible = false;
+                chCalificacion.Visible = false;
+                label19.Visible = false;
+            }
+            else
+            {
+                int res = DateTime.Compare(DateTime.Now, dtFechaDefensa.Value);
+                if (res > 0)
+                {
+                    txtNota.Visible = true;
+                    chCalificacion.Visible = true;
+                    label19.Visible = true;
+                }
+                else
+                {
+                    txtNota.Visible = false;
+                    chCalificacion.Visible = false;
+                    label19.Visible = false;
+
+                }
+            }
         }
     }
 }

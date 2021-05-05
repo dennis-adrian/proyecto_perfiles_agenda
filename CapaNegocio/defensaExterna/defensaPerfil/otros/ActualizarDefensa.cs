@@ -22,15 +22,10 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
                 estudiante.Apellido = Convert.ToString(estudiante_obj.Apellido);
                 estudiante.Nombre = Convert.ToString(estudiante_obj.Nombre);
                 estudiante.Email = Convert.ToString(estudiante_obj.Email);
-
                 estudiante.Telefono = Convert.ToString(estudiante_obj.Telefono);
-
                 estudiante.Celular = Convert.ToString(estudiante_obj.Celular);
                 estudiante.Id_carrera = Convert.ToInt32(estudiante_obj.Id_carrera);
-
                 estudiante.Update(estudiante.Id);
-
-
                 titulacionOtros.Id = Convert.ToInt32(titulcion_otros_obj.Id);
                 titulacionOtros.Estado_defensa = Convert.ToString(titulcion_otros_obj.Estado_defensa);
                 titulacionOtros.Tema = Convert.ToString(titulcion_otros_obj.Tema);
@@ -90,15 +85,15 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
 
                 perfilTesis.Id = Convert.ToInt32(perfil_tesis_obj.Id);
 
-                perfilTesis.Estado_defensa = Convert.ToString(perfil_tesis_obj.Estado_defensa);
-                perfilTesis.Tema = Convert.ToString(perfil_tesis_obj.Tema);
                 perfilTesis.Calificacion = Convert.ToDouble(perfil_tesis_obj.Calificacion);
+                perfilTesis.Estado_defensa = perfilTesis.Calificacion > 0 ? "Defendido" : Convert.ToString(perfil_tesis_obj.Estado_defensa);
+                perfilTesis.Estado = perfilTesis.Calificacion > 0 ? "Defendido" : Convert.ToString(perfil_tesis_obj.Estado);
+                perfilTesis.Tema = Convert.ToString(perfil_tesis_obj.Tema);
                 perfilTesis.Id_estudiante = Convert.ToInt32(perfil_tesis_obj.Id_estudiante);
 
                 perfilTesis.Id_licenciado = Convert.ToInt32(perfil_tesis_obj.Id_licenciado);
 
                 perfilTesis.Id_funcion_licenciado = Convert.ToInt32(perfil_tesis_obj.Id_funcion_licenciado);
-                perfilTesis.Estado = Convert.ToString(perfil_tesis_obj.Estado);
                 perfilTesis.Fecha_aprobacion_jefe_carrera = Convert.ToString(perfil_tesis_obj.Fecha_aprobacion_jefe_carrera);
                 perfilTesis.Fecha_recepcion_titulacion = Convert.ToString(perfil_tesis_obj.Fecha_recepcion_titulacion);
 
@@ -123,7 +118,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
             catch (Exception e)
             {
-                throw new ArgumentException("" + e);
+                throw new ArgumentException(e.Message);
             }
 
         }
@@ -148,15 +143,15 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
 
                 perfilTesis.Id = Convert.ToInt32(perfil_tesis_obj.Id);
 
-                perfilTesis.Estado_defensa = Convert.ToString(perfil_tesis_obj.Estado_defensa);
-                perfilTesis.Tema = Convert.ToString(perfil_tesis_obj.Tema);
                 perfilTesis.Calificacion = Convert.ToDouble(perfil_tesis_obj.Calificacion);
+                perfilTesis.Estado_defensa = perfilTesis.Calificacion > 0 ? "Defendido" : Convert.ToString(perfil_tesis_obj.Estado_defensa);
+                perfilTesis.Estado = perfilTesis.Calificacion > 0 ? "Defendido" : Convert.ToString(perfil_tesis_obj.Estado);
+                perfilTesis.Tema = Convert.ToString(perfil_tesis_obj.Tema);
                 perfilTesis.Id_estudiante = Convert.ToInt32(perfil_tesis_obj.Id_estudiante);
 
                 perfilTesis.Id_licenciado= Convert.ToInt32(perfil_tesis_obj.Id_licenciado);
 
                 perfilTesis.Id_funcion_licenciado = Convert.ToInt32(perfil_tesis_obj.Id_funcion_licenciado);
-                perfilTesis.Estado = Convert.ToString(perfil_tesis_obj.Estado);
                 perfilTesis.Fecha_aprobacion_jefe_carrera = Convert.ToString(perfil_tesis_obj.Fecha_aprobacion_jefe_carrera);
                 perfilTesis.Fecha_recepcion_titulacion = Convert.ToString(perfil_tesis_obj.Fecha_recepcion_titulacion);
 
@@ -186,7 +181,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
             catch (Exception e)
             {
-                throw new ArgumentException("" + e);
+                throw new ArgumentException(e.Message);
             }
 
         }

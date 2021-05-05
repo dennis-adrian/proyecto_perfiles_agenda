@@ -237,27 +237,7 @@ namespace CapaPresentacion
                 throw new Exception("Entrada invalida");
             }
             return res;
-            //switch (funcion)
-            //{
-            //    case "Presidente":
-            //        string s = SetAndEvalComboLicenciado(cmbPresidente, "Id_licenciado", dic);
-            //        return s;
-            //    case "Secretario":
-            //        return SetAndEvalComboLicenciado(cmbSecretario, "Id_licenciado", dic);
-            //    case "Tribunal Interno 1":
-            //        return SetAndEvalComboLicenciado(cmbTribunalInterno1, "Id_licenciado", dic);
-            //    case "Tribunal Interno 2":
-            //        return SetAndEvalComboLicenciado(cmbTribunalInterno2, "Id_licenciado", dic);
-
-            //    case "Representante Uagrm 1":
-            //        return SetAndEvalComboLicenciado(cmbRepresentanteUagrm1, "Id_licenciado", dic);
-            //    case "Representante Uagrm ":
-            //        return SetAndEvalComboLicenciado(cmbRepresentanteUagrm2, "Id_licenciado", dic);
-            //    case "Representante del Ministerio de Educacion":
-            //        return SetAndEvalComboLicenciado(cmbRepresentanteMinisterio, "Id_licenciado", dic);
-            //    default:
-            //        throw new Exception("Entrad invalida de funcion licenciado");
-            //}
+        
 
 
         }
@@ -305,17 +285,6 @@ namespace CapaPresentacion
 
             DateChecked(dtHora, chHoraDefensa, InfoDefensa["Hora"]);
 
-
-            //string fec_defensa = (string.IsNullOrEmpty(InfoDefensa["Fecha_presentacion"])) ? "01/01/1970" : InfoDefensa["Fecha_presentacion"];
-            //dtFechaDefensa.Value = DateTime.Parse(fec_defensa, new CultureInfo("en-GB"));
-            //string hor_defensa = (string.IsNullOrEmpty(InfoDefensa["Hora"])) ? "00:00:00" : InfoDefensa["Hora"];
-
-            //dtHora.Value = DateTime.Parse(hor_defensa, new CultureInfo("en-GB"));
-
-            //DateChecked(dttEmpaste, chbEmpaste, info.Fecha_empaste);
-
-
-            ////
             string aula = InfoDefensa["Aula"];
             bool res = String.IsNullOrEmpty(aula);
             if (res)
@@ -470,8 +439,36 @@ namespace CapaPresentacion
         private void FrmEditarDefensaExterna_Load(object sender, EventArgs e)
         {
 
+            validarCalificacion();
 
 
+        }
+        void validarCalificacion()
+        {
+            string fec_defensa = InfoDefensa["Fecha_presentacion"];
+            if (string.IsNullOrEmpty(fec_defensa))
+            {
+                txtNota.Visible = false;
+                chCalificacion.Visible = false;
+                label19.Visible = false;
+            }
+            else
+            {
+                int res = DateTime.Compare(DateTime.Now, dtFechaDefensa.Value);
+                if (res > 0)
+                {
+                    txtNota.Visible = true;
+                    chCalificacion.Visible = true;
+                    label19.Visible = true;
+                }
+                else
+                {
+                    txtNota.Visible = false;
+                    chCalificacion.Visible = false;
+                    label19.Visible = false;
+
+                }
+            }
 
         }
         private void pnlBarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -505,10 +502,18 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-        int getCmb(ComboBox cmb)
+        int getCmb(ComboBox cmb, string nameCombo = "")
         {
-            return Convert.ToInt32((cmb.SelectedItem as ComboBoxItem).Value.ToString());
+            if (string.IsNullOrEmpty(cmb.Text))
+            {
 
+                throw new ArgumentException($"campo {nameCombo} vacio.");
+            }
+            else
+            {
+
+                return Convert.ToInt32((cmb.SelectedItem as ComboBoxItem).Value.ToString());
+            }
         }
         bool validatingLicenciados()
         {
@@ -565,7 +570,7 @@ namespace CapaPresentacion
                     if (actualizar.updateOtros(estudiante, titulacion_otros, defensa_externa, lista_detalle_defensa))
                     {
                         MessageBox.Show("Datos guardados correctamente");
-                        MessageBox.Show("Haga click dos veces en el botón 'Defensa Externa' para recargar los datos.");
+                        validarCalificacion();
                     }
                     else
                     {
@@ -828,7 +833,6 @@ namespace CapaPresentacion
         {
             validatingNumeric(sender, e);
         }
-
         //DateChecked(dttEmpaste, chbEmpaste, info.Fecha_empaste);
     }
 }

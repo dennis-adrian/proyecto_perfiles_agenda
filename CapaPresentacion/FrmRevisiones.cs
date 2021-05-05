@@ -18,6 +18,11 @@ namespace CapaPresentacion
         int idperfil;
         Panel pnlContenedorGralBackup;
 
+        #region Variables
+
+
+        #endregion
+
         //SOMBREADO DE BORDES FORMULARIOS
         private const int CS_DROPSHADOW = 0x20000;
 
@@ -179,7 +184,8 @@ namespace CapaPresentacion
         {
             if (this.pnlContenedorRev.Controls.Count > 0)
                 this.pnlContenedorRev.Controls.Clear();
-            Form fh = formhija as Form;
+          
+            FrmRevisionIndividual fh = formhija as FrmRevisionIndividual;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.pnlContenedorRev.Controls.Add(fh);
@@ -820,7 +826,40 @@ namespace CapaPresentacion
             validatingNumeric(sender, e);
         }
 
+        private void txtRegistroGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtRegistroGral,lbRegistro);
+        }
 
+        void validateEmpty(TextBox txt, Label lb)
+        {
 
+            if (txt.Text.Trim() == string.Empty)
+            {
+                txt.Focus();
+                MessageBox.Show($"ingrese los datos en el campo {lb.Text}");
+                return; // return because we don't want to run normal code of buton click
+            }
+        }
+
+        private void txtTemaGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtTemaGral, lbTema);
+        }
+
+        private void txtNombreGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtNombreGral, lbNombre);
+        }
+
+        private void txtApellidoGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtApellidoGral, lbApellido);
+        }
+
+        private void txtEmailGral_Validating(object sender, CancelEventArgs e)
+        {
+            validateEmpty(txtEmailGral, lbEmail);
+        }
     }
 }

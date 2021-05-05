@@ -217,7 +217,7 @@
             // 
             // ColumnaEstado_Proyecto
             // 
-            this.ColumnaEstado_Proyecto.HeaderText = "Estado_Proyecto";
+            this.ColumnaEstado_Proyecto.HeaderText = "Estado";
             this.ColumnaEstado_Proyecto.MinimumWidth = 6;
             this.ColumnaEstado_Proyecto.Name = "ColumnaEstado_Proyecto";
             this.ColumnaEstado_Proyecto.ReadOnly = true;
@@ -313,6 +313,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dtgPerfilesTesis;
         private System.Windows.Forms.Button btnEditarRevisiones;
+        private System.Windows.Forms.TextBox txtCarreraSeleccionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstado_Proyecto;
@@ -325,6 +326,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFecha_Recepcion;
-        private System.Windows.Forms.TextBox txtCarreraSeleccionada;
     }
 }

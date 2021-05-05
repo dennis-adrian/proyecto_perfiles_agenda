@@ -20,6 +20,7 @@ namespace CapaPresentacion
 
         #region atributos
 
+
         int tribunal_actual = 1;
         int id_perfil;
         string estadoSinDatos = "Sin Datos Asignados";
@@ -282,6 +283,8 @@ namespace CapaPresentacion
             frm.Close();
         }
      
+
+        
         //button guardar revision
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -291,7 +294,7 @@ namespace CapaPresentacion
 
                 if (txtEstadoDatos.Text == estadoSinDatos && idrev > 0)
                 {
-                    MessageBox.Show("cargue previamente los datos");
+                    MessageBox.Show("cargue previamente los datos, seleccionando uno de los tribunales");
                 }else if(txtEstadoDatos.Text == estadoSinDatos && idrev<=0)
                 {
                     Insert();
@@ -305,6 +308,9 @@ namespace CapaPresentacion
                     //cargarNombreTribunales();
                     loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
+                    pnlResaltadoTrib1.Visible = false;
+                    pnlResaltadoTrib2.Visible = false;
+                    setTotalRevision();
 
 
                 }
@@ -322,6 +328,10 @@ namespace CapaPresentacion
                     //cargarNombreTribunales();
                     loadTribunales();
                     txtEstadoDatos.Text = estadoSinDatos;
+
+                    pnlResaltadoTrib1.Visible = false;
+                    pnlResaltadoTrib2.Visible = false;
+                    setTotalRevision();
                 }
 
             }
@@ -716,7 +726,47 @@ namespace CapaPresentacion
             }
 
         }
+        /// <summary>
+        /// Load de formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmRevisionIndividual_Load(object sender, EventArgs e)
+        {
+            setTotalRevision();
 
-        
+        }
+
+        void setTotalRevision()
+        {
+
+            txtTotalRevision.Text = obj.getTotalRevision(id_perfil).ToString();
+            int tot = Convert.ToInt32(txtTotalRevision.Text);
+            if (num_revision > tot)
+            {
+                dttEmpaste.Visible = true;
+                chbEmpaste.Visible = true;
+                lbEmpaste.Visible = true;
+                alertEmpaste.Visible = true;
+
+            }else if(num_revision == tot)
+            {
+                dttEmpaste.Visible = true;
+                chbEmpaste.Visible = true;
+                lbEmpaste.Visible = true;
+                alertEmpaste.Visible = true;
+
+            }
+            else
+            {
+
+                dttEmpaste.Visible = false;
+                chbEmpaste.Visible = false;
+                lbEmpaste.Visible = false;
+                alertEmpaste.Visible = false;
+
+            }
+
+        }
     }
 }

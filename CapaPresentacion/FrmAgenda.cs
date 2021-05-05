@@ -357,14 +357,17 @@ namespace CapaPresentacion
                     case "Tesis":
                         FrmTesisAgenda formTesis = new FrmTesisAgenda(id_seleccionado,"","Tesis");
                         formTesis.ShowDialog();
+                        InitializeDefensas();
                         break;
                     case "Examen de Grado":
                         FrmEditarDefensaExterna formExamen = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
                         formExamen.ShowDialog();
+                        InitializeDefensas();
                         break;
                     case "Graduacion por Excelencia":
                         FrmEditarDefensaExterna formGraduacion = new FrmEditarDefensaExterna(id_seleccionado, "", tipo);
                         formGraduacion.ShowDialog();
+                        InitializeDefensas();
                         break;
                     default:
                         break;

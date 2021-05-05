@@ -24,6 +24,13 @@ namespace CapaNegocio.revisionPerfil
         TribunalPerfil tribunalPerfil = new TribunalPerfil();
         #endregion
 
+
+        public int getTotalRevision(int id)
+        {
+
+            var tot = perfilTesis.perfilTotalRevision(id);
+            return tot;
+        }
         public void updateStatus(int idtesis,string estado)
         {
             try

@@ -104,7 +104,7 @@ namespace CapaNegocio.defensaExterna.defensaPerfil.otros
             }
             catch (Exception e)
             {
-                throw new ArgumentException("" + e);
+                throw new ArgumentException(e.Message);
             }
         }
 

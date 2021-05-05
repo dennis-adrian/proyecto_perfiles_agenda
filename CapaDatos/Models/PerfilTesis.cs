@@ -163,6 +163,20 @@ namespace CapaDatos.Models
             return SelectConexion(sql);
 
         }
+        public int perfilTotalRevision(int id)
+        {
+            string sql = $" SELECT * FROM ViewPerfilGeneral WHERE Id = {id} ; ";
+            var table = SelectConexion(sql);
+            int rev = 0;
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                rev = Convert.ToInt32(table.Rows[i]["Revisiones"].ToString());
+
+            }
+
+                return rev;
+        }
         #endregion
     }
 }

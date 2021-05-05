@@ -78,7 +78,7 @@ namespace CapaNegocio.nuevoPerfil
             }
             catch (Exception e)
             {
-                throw new ArgumentException("" + e);
+                throw new ArgumentException("" + e.Message);
             }
         }
         public string dateLimit(string fecha)
