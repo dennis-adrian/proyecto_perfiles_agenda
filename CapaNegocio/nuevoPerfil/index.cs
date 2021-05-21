@@ -55,9 +55,15 @@ namespace CapaNegocio.nuevoPerfil
                 perfilTesis.Estado = "En Recepcion";
 
                 type.Fecha = Convert.ToString(Collection[8]);//input
+
+                Console.WriteLine("Fecha aprobacion");
+                Console.WriteLine(type.Fecha);
                 perfilTesis.Fecha_aprobacion_jefe_carrera = type.Fecha;
 
                 type.Fecha = Convert.ToString(Collection[9]);//input
+
+                Console.WriteLine("Fecha recepcion");
+                Console.WriteLine(type.Fecha);
                 perfilTesis.Fecha_recepcion_titulacion = type.Fecha;
 
                 perfilTesis.Estado_defensa = "Sin Asignar";
