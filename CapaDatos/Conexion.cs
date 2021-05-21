@@ -15,7 +15,7 @@ namespace CapaDatos
 
         private SQLiteConnection cnx;
         private string pathBd;
-        private string ENV = "prod";
+        private string ENV = "dev";
 
         #endregion
         #region Propiedades
