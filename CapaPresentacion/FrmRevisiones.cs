@@ -768,9 +768,13 @@ namespace CapaPresentacion
             int id_tutor = cmbTutor.SelectedItem != null ?
                 Convert.ToInt32((cmbTutor.SelectedItem as ComboBoxItem).Value.ToString()) : 1;
 
-            if (Convert.ToDateTime(fecha_aprobacion) < Convert.ToDateTime(fecha_recepcion))
+
+            int result = DateTime.Compare(dttFechaAprobacionGral.Value.Date, dttFechaRecepcionGral.Value.Date);
+            if (result < 0)
             {
+
                 MessageBox.Show("La fecha de recepción del perfil no puede ser mayor a la fecha de aprobación");
+
             }
             else
             {

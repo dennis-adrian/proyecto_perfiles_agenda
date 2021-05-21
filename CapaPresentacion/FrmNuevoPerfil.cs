@@ -172,8 +172,6 @@ namespace CapaPresentacion
                     return false;
 
                 }
-               
-
                 Object[] datos = new Object[]
                 {
                    registro,
