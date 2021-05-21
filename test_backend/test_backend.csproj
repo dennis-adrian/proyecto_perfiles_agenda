@@ -83,9 +83,9 @@
       <Project>{5bc5d4eb-2c89-47ce-8764-e71d297cdbcb}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
+    <ProjectReference Include="..\CapaPresentacion\Perfiles.csproj">
       <Project>{3fde5615-4e56-4139-b118-a2174d323968}</Project>
-      <Name>CapaPresentacion</Name>
+      <Name>Perfiles</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

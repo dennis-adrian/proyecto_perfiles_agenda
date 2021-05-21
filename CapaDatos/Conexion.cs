@@ -15,7 +15,7 @@ namespace CapaDatos
 
         private SQLiteConnection cnx;
         private string pathBd;
-        private string ENV = "dev";
+        private string ENV = "prod";
 
         #endregion
         #region Propiedades
@@ -42,7 +42,7 @@ namespace CapaDatos
             }
             if (ENV == "prod")
             {
-                pathBd = @"C:\Temp\";
+                pathBd = @"C:\Perfiles\";
                 cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
             }
 
