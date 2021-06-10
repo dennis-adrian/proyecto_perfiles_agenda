@@ -1,8 +1,7 @@
-BD PERFILES 
 
-==============================
 
-===========================
+
+===============================================
 ----CARRERA---------------
 
 CREATE TABLE "carrera" (
@@ -15,7 +14,6 @@ CREATE TABLE "carrera" (
 );
 
 ===============================================
-
 ----CARRERA_LICENCIADO-------
 
 CREATE TABLE "carrera_licenciado" (
@@ -25,8 +23,8 @@ CREATE TABLE "carrera_licenciado" (
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-=================================================
 
+===============================================
 ------DEFENSA EXTERNA-----------------
 
 CREATE TABLE "defensa_externa" (
@@ -43,8 +41,8 @@ CREATE TABLE "defensa_externa" (
 );
 
 
-========================================================
 
+===============================================
 ------DETALLE_DEFENSA------------------
 
 CREATE TABLE "detalle_defensa" (
@@ -60,9 +58,8 @@ CREATE TABLE "detalle_defensa" (
 );
 
 
-===========================================================
 
-
+===============================================
 -----DETALLE_REVISION----------------------
 
 CREATE TABLE "detalle_revision" (
@@ -78,9 +75,8 @@ CREATE TABLE "detalle_revision" (
 );
 
 
-=======================================================
 
-
+===============================================
 ------ESTUDIANTE-------------------------
 
 CREATE TABLE "estudiante" (
@@ -98,8 +94,8 @@ CREATE TABLE "estudiante" (
 );
 
 
-==========================================================
 
+===============================================
 ------FACULTAD-----------
 
 CREATE TABLE "facultad" (
@@ -110,8 +106,8 @@ CREATE TABLE "facultad" (
 );
 
 
-========================================================
 
+===============================================
 -----FUNCION_LICENCIADO----------
 
 CREATE TABLE "funcion_licenciado"(
@@ -122,8 +118,8 @@ CREATE TABLE "funcion_licenciado"(
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
     );
 
-==========================================================
 
+===============================================
 -------INSTITUCION-------------------
 
 CREATE TABLE "institucion" (
@@ -133,23 +129,23 @@ CREATE TABLE "institucion" (
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-====================================================
 
--------LICENCIADO----------------------
+===============================================
+----------LICENCIADO----------------------
 
 CREATE TABLE "licenciado" (
     "id" INTEGER PRIMARY KEY,
     "nombre" TEXT NOT NULL,
     "apellido" TEXT NOT NULL,
     "descripcion" TEXT,
-    "email" TEXT UNIQUE,
+    "email" TEXT ,
     "telefono" TEXT,
     "celular" TEXT,
     -- campo agregado
     "tipo" TEXT COMMENT 'interno o externo',
     "docente" NUMERIC COMMENT '0 = no, 1 = si',
-    "id_institucion_representada" INTEGER NOT NULL,
-    "id_carrera_licenciado" INTEGER NOT NULL,
+    "id_institucion_representada" INTEGER NULL,
+    "id_carrera_licenciado" INTEGER NULL,
     "creado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     "modificado_en" TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_institucion_licenciado FOREIGN KEY("id_institucion_representada") REFERENCES "institucion"("id"),
@@ -157,9 +153,8 @@ CREATE TABLE "licenciado" (
 );
 
 
-=============================================================
-
--------NOTIFICACION------------------------
+===============================================
+----------NOTIFICACION-------------------------
 
 CREATE TABLE "notificacion" (
     "id" INTEGER PRIMARY KEY,    
@@ -177,10 +172,7 @@ CREATE TABLE "notificacion" (
     CONSTRAINT fk_id_perfil_notificacion FOREIGN KEY ("id_perfil") REFERENCES "perfil_tesis"("id")
 );
 
-==============================================================
-
-NOTA: VERIFICAR LA COLUMNA FECHA_LIMITE
-
+===============================================
 ----------PERFIL_TESIS----------------------
 
 CREATE TABLE "perfil_tesis" (
@@ -202,9 +194,8 @@ CREATE TABLE "perfil_tesis" (
     FOREIGN key ("id_estudiante") REFERENCES "estudiante" ("id")
 );
 
-=================================================================
-
-------REVISION--------------------------
+===============================================
+----------REVISION--------------------------
 
 CREATE TABLE "revision" (
     "id" INTEGER PRIMARY KEY,
@@ -228,9 +219,9 @@ CREATE TABLE "revision" (
 );
 
 
-=============================================================
+===============================================
 
----------TIPO_TITULACION_OTROS----------------------
+---------TIPO_TITULACION_OTROS-----------------
 
 CREATE TABLE "tipo_titulacion_otros"(
     "id" INTEGER PRIMARY KEY,
@@ -238,9 +229,9 @@ CREATE TABLE "tipo_titulacion_otros"(
     "descripcion" TEXT
 );
 
-==============================================================
+===============================================
 
-----------TITULACION_OTROS-----------------------
+----------TITULACION_OTROS---------------------
 
 CREATE TABLE "titulacion_otros" (
     "id" INTEGER PRIMARY KEY,
@@ -255,12 +246,12 @@ CREATE TABLE "titulacion_otros" (
     FOREIGN KEY("id_tipo_titulacion") REFERENCES "tipo_titulacion_otros"("id")
 );
 
-===============================================================
 
 
-===============================================================
-=======================Vistas==================================
-===============================================================
+
+==============================================================
+=======================Vistas=================================
+==============================================================
 
 CREATE VIEW ViewDefensas 
     AS 

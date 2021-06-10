@@ -31,24 +31,22 @@ namespace CapaDatos.Models
         #region Metodos
         public void Insert()
         {
-            string sql = $" INSERT INTO {table_name} (nombre, id_facultad ) VALUES(@parametro0,@parametro1); ";
-            Object[] Parametros = new Object[] { Nombre, Id_facultad };
-            QueryBuilder(sql, Parametros);
+            string sql = $@" INSERT INTO {table_name} (nombre, id_facultad ) VALUES ('{Nombre}',{Id_facultad}); ";
+            execQuery(sql);
 
         }
         public void Delete(int id)
         {
-            string sql = $" DELETE FROM {table_name}  WHERE id = @parametro0 ; ";
-            Object[] Parametros = new Object[] { id };
-            QueryBuilder(sql, Parametros);
+            string sql = $" DELETE FROM {table_name}  WHERE id = {id} ; ";
+            execQuery(sql);
 
         }
         public void Update(int id)
         {
-            string sql = $" UPDATE {table_name}  SET nombre = @parametro0 , id_facultad = @parametro1 WHERE id = @parametro2 ; ";
-            Object[] Parametros = new Object[] {Nombre,Id_facultad, id };
-            QueryBuilder(sql, Parametros);
-
+            string sql = $@" UPDATE {table_name}  
+                            SET nombre = '{Nombre}' , id_facultad = {Id_facultad} 
+                            WHERE id = {id} ; ";
+            execQuery(sql);
         }
         public DataTable Select()
         {

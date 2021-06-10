@@ -37,7 +37,7 @@ namespace CapaDatos.Models
         private int docente;
         private int id_institucion_representada;
         private int id_carrera_licenciado;
-                private static string table_name = "licenciado";
+        private static string table_name = "licenciado";
         #endregion
         #region Propiedades
         public int Id { get => id; set => id = value; }
@@ -55,8 +55,10 @@ namespace CapaDatos.Models
         #region Metodos
         public void Insert()
         {
+            string idInstitucion = Id_institucion_representada == 0 ? null: Convert.ToString(id_institucion_representada);
+            string idCarrera = id_carrera_licenciado == 0 ? null : Convert.ToString(id_carrera_licenciado);
             string sql = $"  INSERT INTO " + table_name + " (  nombre,apellido,descripcion,email,telefono,celular,tipo,docente,id_institucion_representada,id_carrera_licenciado  ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3, @parametro4, @parametro5, @parametro6,@parametro7,@parametro8,@parametro9); ";
-            Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Tipo,Docente,Id_institucion_representada,Id_carrera_licenciado };
+            Object[] Parametros = new Object[] { Nombre,Apellido,Descripcion,Email,Telefono,Celular,Tipo,Docente, idInstitucion , idCarrera };
             QueryBuilder(sql, Parametros);
 
         }
@@ -69,8 +71,12 @@ namespace CapaDatos.Models
         }
         public void Update(int id)
         {
+
+            string idInstitucion = Id_institucion_representada == 0 ? null : Convert.ToString(id_institucion_representada);
+            string idCarrera = id_carrera_licenciado == 0 ? null : Convert.ToString(id_carrera_licenciado);
+
             string sql = $" UPDATE {table_name}  SET  nombre = @parametro0 ,apellido = @parametro1, descripcion = @parametro2 , email = @parametro3 , telefono = @parametro4 , celular = @parametro5, tipo = @parametro6, docente = @parametro7,id_institucion_representada = @parametro8  ,id_carrera_licenciado = @parametro9   WHERE id = @parametro10 ; ";
-            Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Tipo ,Docente, Id_institucion_representada, Id_carrera_licenciado, id };
+            Object[] Parametros = new Object[] { Nombre, Apellido, Descripcion, Email, Telefono, Celular, Tipo ,Docente, idInstitucion, idCarrera, id };
             QueryBuilder(sql, Parametros);
 
         }

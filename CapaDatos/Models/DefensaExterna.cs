@@ -45,26 +45,29 @@ namespace CapaDatos.Models
 
         public void Insert()
         {
-            if(Id_tesis == 0)
-            {
-                string sql = $"  INSERT INTO {table_name} ( fecha_presentacion, hora,aula, id_titulacion_otro ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3 ); ";
-                Object[] parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_titulacion_otro };
-                QueryBuilder(sql, parametros);
-            }
-            else if (Id_titulacion_otro == 0)
-            {
-                string sql = $"  INSERT INTO  {table_name}  ( fecha_presentacion, hora,aula,id_tesis ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3 ); ";
-                Object[] parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis };
-                QueryBuilder(sql, parametros);
-            }
+            string idCampoElegido = Id_tesis == 0 && Id_titulacion_otro > 0 ? "id_titulacion_otro" : "id_tesis";
+            string sql = $@" INSERT INTO {table_name} ( fecha_presentacion, hora,aula, {idCampoElegido} )
+                                VALUES ( '{Fecha_presentacion}', '{Hora}', '{Aula}', {Id_titulacion_otro} ); ";
+            execQuery(sql);
+            //if (Id_tesis == 0)
+            //{
+            //    string sql = $@" INSERT INTO {table_name} ( fecha_presentacion, hora,aula, id_titulacion_otro ) 
+            //                    VALUES ( '{Fecha_presentacion}', '{Hora}', '{Aula}', {Id_titulacion_otro} ); ";
+            //    execQuery(sql);
+            //}
+            //else if (Id_titulacion_otro == 0)
+            //{
+            //    string sql = $"  INSERT INTO  {table_name}  ( fecha_presentacion, hora,aula,id_tesis ) VALUES ( @parametro0, @parametro1, @parametro2, @parametro3 ); ";
+            //    Object[] parametros = new Object[] { Fecha_presentacion, Hora, Aula, Id_tesis };
+            //    QueryBuilder(sql, parametros);
+            //}
 
 
         }
         public void Delete(int id)
         {
-            string sql = $" DELETE FROM {table_name} WHERE id = @parametro0 ; ";
-            Object[] parametros = new Object[] { id };
-            QueryBuilder(sql, parametros);
+            string sql = $" DELETE FROM {table_name} WHERE id = {id} ; ";
+            execQuery(sql);
 
         }
         public void Update(int id)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class TribunalPerfil:Conexion, IMetodos
+    public class TribunalPerfil : Conexion, IMetodos
     {
         #region Constructor
         public TribunalPerfil()
@@ -45,37 +45,37 @@ namespace CapaDatos.Models
 
         public void Insert()
         {
-            string sql = $" INSERT INTO {table_name} (id_perfil, id_licenciado, nro_tribunal ) VALUES(@parametro0,@parametro1,@parametro2); ";
-            Object[] Parametros = new Object[] { Id_perfil, Id_licenciado, Nro_tribunal };
-            QueryBuilder(sql, Parametros);
+            string sql = $@" INSERT INTO {table_name} (id_perfil, id_licenciado, nro_tribunal ) 
+                            VALUES( {Id_perfil}, {Id_licenciado}, {Nro_tribunal}); ";
+            execQuery(sql);
         }
 
         public void Delete(int id)
         {
-            //string sql = $" DELETE FROM {table_name}  WHERE id = @parametro0 ; ";
-            //Object[] Parametros = new Object[] { id };
-            //QueryBuilder(sql, Parametros);
-
         }
         public void Update(int id)
         {
-            string sql = $" UPDATE {table_name}  SET  id_licenciado = @parametro0 WHERE id_perfil = @parametro1 AND nro_tribunal = @parametro2 ; ";
-            Object[] Parametros = new Object[] 
-            { 
-                Id_licenciado,  
-                id,
-                Nro_tribunal
-            };
-            QueryBuilder(sql, Parametros);
+            string sql = $@" UPDATE {table_name}  
+                            SET  id_licenciado = {Id_licenciado} 
+                            WHERE id_perfil = {id} AND nro_tribunal = {Nro_tribunal} ; ";
+            execQuery(sql);
 
         }
 
         public DataTable Select(int idperfil)
         {
-            string sql = $" select TP.id_perfil as Id_perfil,TP.id_licenciado as Id_licenciado,TP.nro_tribunal as Nro_tribunal,L.nombre||' '||L.apellido as  Licenciado from tribunal_perfil as TP inner join licenciado as L on TP.id_licenciado = L.id where id_perfil= {idperfil} ; ";
+            string sql = $@" SELECT 
+                            TP.id_perfil as Id_perfil,
+                            TP.id_licenciado as Id_licenciado,
+                            TP.nro_tribunal as Nro_tribunal,
+                            L.nombre||' '||L.apellido as  Licenciado 
+                        FROM tribunal_perfil as TP 
+                        INNER JOIN licenciado as L 
+                        ON TP.id_licenciado = L.id 
+                        HWERE id_perfil= {idperfil} ; ";
             return SelectConexion(sql);
         }
-        
+
         public int LastId()
         {
             return LastIdConexion(table_name);
@@ -90,7 +90,7 @@ namespace CapaDatos.Models
 
         }
 
-       
+
 
 
         #endregion
