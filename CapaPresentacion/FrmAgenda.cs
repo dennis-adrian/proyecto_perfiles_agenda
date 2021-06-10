@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio.defensaExterna.defensaGeneral;
+using CapaNegocio.defensaExterna;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
