@@ -36,8 +36,8 @@ namespace CapaDatos
         {
             string dev = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
             string prod = @"C:\Perfiles\";
-            string patBd = ENV == "dev" ? dev : prod;
-            cnx = new SQLiteConnection("data source=" + patBd + @"bd\perfiles.db;foreign keys=true;");
+            string pathBd = ENV == "dev" ? dev : prod;
+            cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
         }
         public SQLiteConnection AbrirConexion()
         {
