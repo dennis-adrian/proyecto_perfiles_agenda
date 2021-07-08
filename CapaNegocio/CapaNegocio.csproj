@@ -56,21 +56,16 @@
   <ItemGroup>
     <Compile Include="carreraExterna\Index.cs" />
     <Compile Include="carreraInterna\Index.cs" />
-    <Compile Include="defensaExterna\defensaGeneral\Main.cs" />
     <Compile Include="defensaExterna\defensaPerfil\Index.cs" />
     <Compile Include="defensaExterna\defensaPerfil\otros\ActualizarDefensa.cs" />
     <Compile Include="defensaExterna\defensaPerfil\otros\AgregarDefensa.cs" />
     <Compile Include="defensaExterna\defensaPerfil\otros\InfoDefensa.cs" />
+    <Compile Include="defensaExterna\Index.cs" />
     <Compile Include="facultad\Index.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="institucion\Index.cs" />
-    <Compile Include="licenciados\ActualizarLicenciado.cs" />
-    <Compile Include="licenciados\AgregarLicenciado.cs" />
     <Compile Include="licenciados\Index.cs" />
-    <Compile Include="licenciados\InfoLicenciado.cs" />
-    <Compile Include="licenciados\MostrarLicenciados.cs" />
     <Compile Include="notificaciones\Index.cs" />
-    <Compile Include="nuevaDefensa\Class1.cs" />
     <Compile Include="nuevoPerfil\index.cs" />
     <Compile Include="perfilTesis\Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

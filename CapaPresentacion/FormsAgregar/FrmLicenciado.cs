@@ -38,7 +38,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             InitialForms();
-            
+
         }
 
         #endregion
@@ -93,7 +93,6 @@ namespace CapaPresentacion
 
         #region Instancias
         Index obj = new Index();
-        //NegocioLicenciados obj = new NegocioLicenciados();
 
         #endregion
 
@@ -130,58 +129,31 @@ namespace CapaPresentacion
             try
             {
                 int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-
                 info(id_seleccionado);
                 id_parametro = id_seleccionado;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message);
             }
-            
+
 
         }
 
         private void btnSeleccionarLicenciado_Click(object sender, EventArgs e)
         {
             int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-            string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() +" "+ dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
+            string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
 
-          //usando el contrato interfaz
+            //usando el contrato interfaz
             contrato.Ejecutar(id_seleccionado, tutor);
             this.Close();
         }
-        //private void btnEliminarLicenciado_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult dialogo = MessageBox.Show("¿Quiere eliminar este registro?", "Eliminar Licenciado", MessageBoxButtons.YesNo);
-        //    if(dialogo == DialogResult.Yes)
-        //    {
-        //        try
-        //        {
-        //            int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-        //            delete(id_seleccionado);
-        //            ShowLicenciados();
-        //        }
-        //        catch(Exception ex)
-        //        {
-        //            MessageBox.Show(""+ex);
-        //            //mike :)
-
-        //        }
-
-        //    }
-        //    else if(dialogo == DialogResult.No)
-        //    {
-
-        //    }
-
-        //}
-
         private void btnGuardarLicenciado_Click(object sender, EventArgs e)
         {
             try
             {
-                if(dtgLicenciados.CurrentRow == null)
+                if (dtgLicenciados.CurrentRow == null)
                 {
                     if (id_parametro <= 0)
                     {
@@ -263,7 +235,7 @@ namespace CapaPresentacion
                 //}
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
@@ -300,96 +272,97 @@ namespace CapaPresentacion
         #endregion
 
         #region Metodos
-
-        public bool Insert()
+        CapaDatos.Models.Licenciado getData(int i = 0)
         {
+
+            CapaDatos.Models.Licenciado licenciado = new CapaDatos.Models.Licenciado();
+
             try
             {
-                string nombre = txtNombreLicenciado.Text; //input 0
-                string apellido = txtApellidoLicenciado.Text;//input 1
-                string descripcion = txtDescripcion.Text;//input 3
-                string email = txtEmailLicenciado.Text;// input 4
-                string telefono = txtTelefono.Text;// input 5
-                string celular = txtCelular.Text;// input 6
-                string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
-                int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
-                int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
-                int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
+                licenciado.Id = i == 0 ? 0 : i;
+                licenciado.Nombre = txtNombreLicenciado.Text; //input 0
+                licenciado.Apellido = txtApellidoLicenciado.Text;//input 1
+                licenciado.Descripcion = txtDescripcion.Text;//input 3
+                licenciado.Email = txtEmailLicenciado.Text;// input 4
+                licenciado.Telefono = txtTelefono.Text;
+                licenciado.Celular = txtCelular.Text;
+                licenciado.Tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo"
+                                                : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
+                licenciado.Docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);
+                licenciado.Id_institucion_representada = cmbInstitucion.SelectedValue == null ? 0
+                                                        : Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
+                licenciado.Id_carrera_licenciado = cmbCarreraLicenciado.SelectedValue == null ? 0
+                                                    : Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
 
-                Object[] datos = new Object[]
-                {
-                nombre,
-                apellido,
-                descripcion,
-                email,
-                telefono,
-                celular,
-                tipo,
-                docente,
-                id_institucion ,
-                id_carrera
-                };
-                AgregarLicenciado obj = new AgregarLicenciado();
-                obj.inputController(datos, obj.main);
-                return true;
+                return licenciado;
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return false;
+                MessageBox.Show(e.Message);
+                return null;
             }
 
+
         }
-        public void Update(int i)
+        public bool Insert()
         {
-            string nombre = txtNombreLicenciado.Text; //input 0
-            string apellido = txtApellidoLicenciado.Text;//input 1
-            string descripcion = txtDescripcion.Text;//input 3
-            string email = txtEmailLicenciado.Text;// input 4
-            string telefono = txtTelefono.Text;// input 5
-            string celular = txtCelular.Text;// input 6
-            string tipo = cmbTipo.Text == "Trabaja fuera de Utepsa" ? "externo" : cmbTipo.Text == "Trabaja en Utepsa" ? "interno" : " ";// input 7
-            int docente = (rbDocenteSi.Checked) ? 1 : ((rbDocenteNo.Checked) ? 2 : 0);// input 8
-            int id_institucion = Convert.ToInt32(cmbInstitucion.SelectedValue.ToString());// input 9
-            int id_carrera = Convert.ToInt32(cmbCarreraLicenciado.SelectedValue.ToString());// input 10
-
-            Object[] datos = new Object[]
+            var data = getData();
+            if (data != null)
             {
-                nombre,
-                apellido,
-                descripcion,
-                email,
-                telefono,
-                celular,
-                tipo,
-                docente,
-                id_institucion ,
-                id_carrera
-            };
+                obj.createNewLicenciado(data);
+                return true;
+            }
+            return false;
 
-            ActualizarLicenciado obj = new ActualizarLicenciado(i);
-            obj.inputController(datos, obj.main);
+        }
+        public bool Update(int i)
+        {
+            var data = getData(i);
+            if (data != null)
+            {
+                obj.updateLicenciado(data);
+                return true;
+            }
+            return false;
+
 
         }
         public void info(int i)
         {
 
-            InfoLicenciado obj = new InfoLicenciado(i);
-            var Collection = obj.main();
 
-            txtNombreLicenciado.Text = Convert.ToString(Collection[1]);
-            txtApellidoLicenciado.Text = Convert.ToString(Collection[2]);
-            txtDescripcion.Text = Convert.ToString(Collection[3]);
-            txtEmailLicenciado.Text = Convert.ToString(Collection[4]);
-            txtTelefono.Text = Convert.ToString(Collection[5]);
-            txtCelular.Text = Convert.ToString(Collection[6]);
-            cmbTipo.SelectedIndex = (Convert.ToString(Collection[7])== "externo") ? 0 : 1;
-            if (Convert.ToInt32(Collection[8]) == 1) { rbDocenteSi.Checked = true; } else { rbDocenteNo.Checked = true; }
-            cmbInstitucion.SelectedValue = Convert.ToInt32(Collection[9]);
-            cmbCarreraLicenciado.SelectedValue = Convert.ToInt32(Collection[10]);
+            try
+            {
+                CapaDatos.Models.Licenciado licenciado = new CapaDatos.Models.Licenciado();
+                licenciado.Id = i;
+                var data = obj.getLicenciado(licenciado);
+                if(data==null)
+                {
+                    throw new ArgumentException("data is null");
+                }
+                txtNombreLicenciado.Text = data.Nombre;
+                txtApellidoLicenciado.Text = data.Apellido;
+                txtDescripcion.Text = data.Descripcion;
+                txtEmailLicenciado.Text = data.Email;
+                txtTelefono.Text = data.Telefono;
+                txtCelular.Text = data.Celular;
+                cmbTipo.SelectedIndex = (data.Tipo == "externo") ? 0 : 1;
+                RadioButton rb = new RadioButton();
+                rb = data.Docente == 1 ? rbDocenteSi : rbDocenteNo;
+                rb.Checked = true;
+
+                // if (Convert.ToInt32(Collection[8]) == 1) { rbDocenteSi.Checked = true; } else { rbDocenteNo.Checked = true; }
+
+                cmbInstitucion.SelectedValue = data.Id_institucion_representada;
+                cmbCarreraLicenciado.SelectedValue = data.Id_carrera_licenciado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-        
-       
+
+
         public void ClearForms()
         {
             txtNombreLicenciado.Clear();
@@ -398,14 +371,11 @@ namespace CapaPresentacion
             txtEmailLicenciado.Clear();
             txtTelefono.Clear();
             txtCelular.Clear();
-
             cmbTipo.SelectedIndex = 0;
             //if (rbDocenteNo.Checked) { rbDocenteNo.Checked = false; } else { rbDocenteSi.Checked = false; }
         }
         public void InitialForms()
         {
-            
-            
             cmbTipo.Items.Clear();
             ShowCarrerasLicenciado();
             ShowInstituciones();
@@ -435,64 +405,27 @@ namespace CapaPresentacion
             cmbInstitucion.DisplayMember = "nombre";
 
         }
-        public void cargarLicenciados(string criterio=null)
+        public void cargarLicenciados(string criterio = null)
         {
-            bool pass = String.IsNullOrEmpty(criterio);
-            if (pass)
+            var data = String.IsNullOrEmpty(criterio) ?
+                        obj.getLicenciados() : obj.getLicenciados(criterio);
+            dtgLicenciados.Rows.Clear();
+            int campo1 = 1;
+            foreach (var item in data)
             {
+                string campo0 = Convert.ToString(item.Id);
+                string campo2 = item.Nombre;
+                string campo3 = item.Apellido;
+                string campo4 = item.Tipo;
+                string campo5 = item.Telefono;
+                string campo6 = item.Celular;
+                string campo7 = item.Email;
+                string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7 };
+                this.dtgLicenciados.Rows.Add(row);
+                campo1++;
 
-                dtgLicenciados.Rows.Clear();
-                MostrarLicenciados obj = new MostrarLicenciados();
-                var list = obj.showLicenciados();
-
-               
-                int campo1 = 1;
-                foreach (var item in list)
-                {
-
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Nombre;
-                    string campo3 = item.Apellido;
-                    string campo4 = item.Tipo;
-                    string campo5 = item.Telefono;
-                    string campo6 = item.Calular;
-                    string campo7 = item.Email;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7 };
-                    this.dtgLicenciados.Rows.Add(row);
-                    campo1++;
-
-                }
-
-                
-
-               
             }
-            else
-            {
-                dtgLicenciados.Rows.Clear();
-                MostrarLicenciados obj = new MostrarLicenciados();
-                var list = obj.showLicenciados(criterio);
 
-
-                int campo1 = 1;
-                foreach (var item in list)
-                {
-
-                    string campo0 = Convert.ToString(item.Id);
-                    string campo2 = item.Nombre;
-                    string campo3 = item.Apellido;
-                    string campo4 = item.Tipo;
-                    string campo5 = item.Telefono;
-                    string campo6 = item.Calular;
-                    string campo7 = item.Email;
-
-                    string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7 };
-                    this.dtgLicenciados.Rows.Add(row);
-                    campo1++;
-
-                }
-            }
 
         }
 
@@ -527,12 +460,7 @@ namespace CapaPresentacion
 
         private void dtgLicenciados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int id_seleccionado = Convert.ToInt32(dtgLicenciados.CurrentRow.Cells[0].Value.ToString());
-            //string tutor = (dtgLicenciados.CurrentRow.Cells[2].Value.ToString() + " " + dtgLicenciados.CurrentRow.Cells[3].Value.ToString());
 
-            ////usando el contrato interfaz
-            //contrato.Ejecutar(id_seleccionado, tutor);
-            //this.Close();
         }
 
         private void btnBuscarLicenciado_Click(object sender, EventArgs e)
@@ -541,8 +469,6 @@ namespace CapaPresentacion
             {
                 string criterio = txtBuscarLicenciado.Text;
                 cargarLicenciados(criterio);
-
-
             }
             catch (Exception ex)
             {
@@ -563,7 +489,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message);
             }
         }
         public void EjecutarCarreraExterna(int id, string nombre)
@@ -579,7 +505,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -34,18 +34,10 @@ namespace CapaDatos
 
         public void determinarConexion()
         {
-            if (ENV == "dev")
-            {
-                //correcion en conexion , se debe hacer un a conexion con llaaves foraneas activadas
-                pathBd = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
-                cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
-            }
-            if (ENV == "prod")
-            {
-                pathBd = @"C:\Perfiles\";
-                cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
-            }
-
+            string dev = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
+            string prod = @"C:\Perfiles\";
+            string pathBd = ENV == "dev" ? dev : prod;
+            cnx = new SQLiteConnection("data source=" + pathBd + @"bd\perfiles.db;foreign keys=true;");
         }
         public SQLiteConnection AbrirConexion()
         {
@@ -111,10 +103,8 @@ namespace CapaDatos
             {
                 SQLiteConnection cnx = AbrirConexion();
                 SQLiteTransaction sqlTransaction = cnx.BeginTransaction();
-                SQLiteCommand command = cnx.CreateCommand();
+                SQLiteCommand command = new SQLiteCommand(cnx);
                 command.CommandText = sql;
-
-
                 int filas = command.ExecuteNonQuery();
                 if (filas > 0)
                 {

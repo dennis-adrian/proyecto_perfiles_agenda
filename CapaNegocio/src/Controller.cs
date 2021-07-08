@@ -98,7 +98,7 @@ namespace CapaNegocio.src
             try
             {
 
-                validationController(collection);
+                //validationController(collection);
                 parameters = collection;
                 function(parameters);
             }

@@ -520,6 +520,5 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
-      
     }
 }
