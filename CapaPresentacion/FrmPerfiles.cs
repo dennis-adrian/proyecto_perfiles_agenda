@@ -25,12 +25,7 @@ namespace CapaPresentacion
             carrera = criterio;
         }
 
-        #region propiedades
-
-
-
-        #endregion
-
+        
 
         void generalPerfil()
         {
@@ -52,7 +47,7 @@ namespace CapaPresentacion
                 string campo11 = item.Fecha_Recepcion;
 
                 string[] row = new string[] { campo0, Convert.ToString(campo1), campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11 };
-                this.dtgPerfilesTesis.Rows.Add(row);
+                dtgPerfilesTesis.Rows.Add(row);
                 campo1++;
 
             }

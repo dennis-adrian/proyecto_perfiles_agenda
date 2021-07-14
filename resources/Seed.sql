@@ -1,3 +1,4 @@
+/*
 carreras
 
 FACULTAD DE CIENCIAS EMPRESARIALES
@@ -34,7 +35,7 @@ FACULTAD DE CIENCIAS JURÍDICAS Y SOCIALES
 Derecho
 Relaciones Internacionales
 Psicología
-
+*/
 
 
 insert into carrera (nombre, id_facultad) values ('Administración General',1);

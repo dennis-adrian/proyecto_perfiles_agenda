@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Models
 {
-    public class TribunalPerfil : Conexion, IMetodos
+    public class TribunalPerfil : Conexion
     {
         #region Constructor
         public TribunalPerfil()
@@ -50,9 +50,6 @@ namespace CapaDatos.Models
             execQuery(sql);
         }
 
-        public void Delete(int id)
-        {
-        }
         public void Update(int id)
         {
             string sql = $@" UPDATE {table_name}  
@@ -72,15 +69,9 @@ namespace CapaDatos.Models
                         FROM tribunal_perfil as TP 
                         INNER JOIN licenciado as L 
                         ON TP.id_licenciado = L.id 
-                        HWERE id_perfil= {idperfil} ; ";
+                        WHERE TP.id_perfil= {idperfil} ; ";
             return SelectConexion(sql);
         }
-
-        public int LastId()
-        {
-            return LastIdConexion(table_name);
-        }
-
 
         #endregion
 

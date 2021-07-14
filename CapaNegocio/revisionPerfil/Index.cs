@@ -497,7 +497,6 @@ namespace CapaNegocio.revisionPerfil
                 var cursor = tribunalPerfil.Select(idperfil);
                 for (int i = 0; i < cursor.Rows.Count; i++)
                 {
-
                     TribunalStruct tribunalStruct = new TribunalStruct();
                     tribunalStruct.Id_perfil = Convert.ToInt32(cursor.Rows[i]["Id_perfil"].ToString());
                     tribunalStruct.Id_licenciado = Convert.ToInt32(cursor.Rows[i]["Id_licenciado"].ToString());

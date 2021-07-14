@@ -91,8 +91,8 @@ namespace CapaNegocio.perfilTesis
             private string tipo;
             private int id_funcion_licenciado;
             private string funcion;
-            private string institucion;
-            private string carrera_Licenciado;
+            //private string institucion;
+            //private string carrera_Licenciado;
 
 
             public PerfilGeneral(
@@ -119,9 +119,10 @@ namespace CapaNegocio.perfilTesis
             string licenciado,
             string tipo,
             int id_funcion_licenciado,
-            string funcion,
-            string institucion,
-            string carrera_Licenciado)
+            string funcion
+            //string institucion,
+            //string carrera_Licenciado
+            )
             {
                 this.id = id;
 
@@ -152,8 +153,8 @@ namespace CapaNegocio.perfilTesis
                 this.id_funcion_licenciado = id_funcion_licenciado;
 
                 this.funcion = funcion;
-                this.institucion = institucion;
-                this.carrera_Licenciado = carrera_Licenciado;
+                //this.institucion = institucion;
+                //this.carrera_Licenciado = carrera_Licenciado;
             }
 
             public int Id { get => id; set => id = value; }
@@ -175,8 +176,8 @@ namespace CapaNegocio.perfilTesis
             
             public string Tipo { get => tipo; set => tipo = value; }
             public string Funcion { get => funcion; set => funcion = value; }
-            public string Institucion { get => institucion; set => institucion = value; }
-            public string Carrera_Licenciado { get => carrera_Licenciado; set => carrera_Licenciado = value; }
+            //public string Institucion { get => institucion; set => institucion = value; }
+            //public string Carrera_Licenciado { get => carrera_Licenciado; set => carrera_Licenciado = value; }
             public string Licenciado { get => licenciado; set => licenciado = value; }
             public int Id_carrera { get => id_carrera; set => id_carrera = value; }
             public int Id_licenciado { get => id_licenciado; set => id_licenciado = value; }
@@ -220,8 +221,8 @@ namespace CapaNegocio.perfilTesis
                 perfil.Licenciado = tabla.Rows[i]["Licenciado"].ToString();
                 perfil.Tipo = tabla.Rows[i]["Tipo"].ToString();
                 perfil.Funcion = tabla.Rows[i]["Funcion"].ToString();
-                perfil.Institucion = tabla.Rows[i]["Institucion"].ToString();
-                perfil.Carrera_Licenciado = tabla.Rows[i]["Carrera_Licenciado"].ToString();
+                //perfil.Institucion = tabla.Rows[i]["Institucion"].ToString();
+                //perfil.Carrera_Licenciado = tabla.Rows[i]["Carrera_Licenciado"].ToString();
 
 
                 perfil.Id_funcion_licenciado = Convert.ToInt32(tabla.Rows[i]["Id_funcion_licenciado"].ToString());
@@ -267,8 +268,8 @@ namespace CapaNegocio.perfilTesis
                 perfil.Licenciado = tabla.Rows[i]["Licenciado"].ToString();
                 perfil.Tipo = tabla.Rows[i]["Tipo"].ToString();
                 perfil.Funcion = tabla.Rows[i]["Funcion"].ToString();
-                perfil.Institucion = tabla.Rows[i]["Institucion"].ToString();
-                perfil.Carrera_Licenciado = tabla.Rows[i]["Carrera_Licenciado"].ToString();
+                //perfil.Institucion = tabla.Rows[i]["Institucion"].ToString();
+                //perfil.Carrera_Licenciado = tabla.Rows[i]["Carrera_Licenciado"].ToString();
 
                 perfil.Id_funcion_licenciado = Convert.ToInt32(tabla.Rows[i]["Id_funcion_licenciado"].ToString());
                 perfil.Fecha_limite = tabla.Rows[i]["Fecha_limite"].ToString();
