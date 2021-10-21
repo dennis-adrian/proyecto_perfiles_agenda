@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Models;
 using CapaNegocio.src;
+using CapaDatos.Structures;
 
 namespace CapaNegocio.revisionPerfil
 {
@@ -31,11 +32,11 @@ namespace CapaNegocio.revisionPerfil
             var tot = perfilTesis.perfilTotalRevision(id);
             return tot;
         }
-        public void updateStatus(int idtesis,string estado)
+        public void updateStatus(int idtesis, string estado)
         {
             try
             {
-            perfilTesis.updateStatus(idtesis,estado);
+                perfilTesis.updateStatus(idtesis, estado);
 
             }
             catch (Exception ex)
@@ -49,13 +50,13 @@ namespace CapaNegocio.revisionPerfil
             try
             {
 
-                revision.Estado = estado;              
+                revision.Estado = estado;
                 revision.Fecha_entrega_alumno = fec_entrega_alumno;
-                revision.Fecha_entrega_tribunal = fec_entrega_tribunal;              
+                revision.Fecha_entrega_tribunal = fec_entrega_tribunal;
                 revision.Fecha_limite_devolucion = fec_limite_devolucion;
                 revision.Fecha_devolucion_tribunal = fec_devolucion_tribunal;
                 revision.Fecha_devolucion_alumno = fec_devolucion_alumno;
-                revision.Observacion =observacion;
+                revision.Observacion = observacion;
                 revision.Nro_tribunal = nro_tribunal;
                 revision.Nro_revision = nro_revision;
                 revision.Fecha_empaste = fec_empaste;
@@ -77,7 +78,7 @@ namespace CapaNegocio.revisionPerfil
             }
         }
 
-        public void updateRevision(int idRevision,int idDetalleRevision, string estado, string fec_entrega_alumno, string fec_entrega_tribunal, string fec_limite_devolucion, string fec_devolucion_tribunal, string fec_devolucion_alumno, string observacion, int nro_tribunal, int nro_revision, string fec_empaste, int id_tesis, int id_licenciado)
+        public void updateRevision(int idRevision, int idDetalleRevision, string estado, string fec_entrega_alumno, string fec_entrega_tribunal, string fec_limite_devolucion, string fec_devolucion_tribunal, string fec_devolucion_alumno, string observacion, int nro_tribunal, int nro_revision, string fec_empaste, int id_tesis, int id_licenciado)
         {
             try
             {
@@ -110,13 +111,13 @@ namespace CapaNegocio.revisionPerfil
                 throw new ArgumentException("" + e);
             }
         }
-        public void actualizarTribunalesByRevision(int id_tesis,int nro_tribunal,int id_licenciado)
+        public void actualizarTribunalesByRevision(int id_tesis, int nro_tribunal, int id_licenciado)
         {
             try
             {
                 detalleRevision.updateTribunales(id_tesis, nro_tribunal, id_licenciado);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new ArgumentException("" + e);
             }
@@ -208,11 +209,11 @@ namespace CapaNegocio.revisionPerfil
             public string Funcion_licenciado { get => funcion_licenciado; set => funcion_licenciado = value; }
         }
 
-        public RevisionStruct infoRevision(int idtesis,int nrorevision,int nrotribunal)
+        public RevisionStruct infoRevision(int idtesis, int nrorevision, int nrotribunal)
         {
             RevisionStruct revisionStruct = new RevisionStruct();
 
-            var cursor = revision.infoRevisionByTribunal(idtesis,nrorevision,nrotribunal);
+            var cursor = revision.infoRevisionByTribunal(idtesis, nrorevision, nrotribunal);
 
             for (int i = 0; i < cursor.Rows.Count; i++)
             {
@@ -243,7 +244,7 @@ namespace CapaNegocio.revisionPerfil
 
                 revisionStruct.Id_licenciado = Convert.ToInt32(cursor.Rows[i]["Id_licenciado"].ToString());
 
-                revisionStruct.Licenciado= cursor.Rows[i]["Licenciado"].ToString();
+                revisionStruct.Licenciado = cursor.Rows[i]["Licenciado"].ToString();
 
                 revisionStruct.Tipo = cursor.Rows[i]["Tipo"].ToString();
 
@@ -419,18 +420,10 @@ namespace CapaNegocio.revisionPerfil
         }
 
 
-        
-        public Revision.byPassDefensa getDataForDefensaExterna(int idtesis)
-        {
-            //try
-            //{
-            //}
-            //catch(Exception ex)
-            //{
-            //    throw new ArgumentException(ex.Message);
-            //}
 
-            Revision.byPassDefensa bypass = revision.byPassDefensaExterna(idtesis);
+        public ByPassDefensa getDataForDefensaExterna(int idtesis)
+        {
+            var bypass = revision.byPassDefensaExterna(idtesis);
             return bypass;
 
         }
@@ -452,7 +445,7 @@ namespace CapaNegocio.revisionPerfil
 
         #region Tribunal
 
-        public void createTribunalRevision(int idperfil,int idlicenciado,int nrotribunal)
+        public void createTribunalRevision(int idperfil, int idlicenciado, int nrotribunal)
         {
             try
             {
@@ -466,16 +459,16 @@ namespace CapaNegocio.revisionPerfil
             {
                 throw new ArgumentException("" + e);
             }
-            
+
         }
-   
+
         public struct TribunalStruct
         {
             private int id_perfil;
             private int id_licenciado;
             private string licenciado;
             private int nro_tribunal;
-            public TribunalStruct(int id_perfil,int id_licenciado,string licenciado,int nro_tribunal)
+            public TribunalStruct(int id_perfil, int id_licenciado, string licenciado, int nro_tribunal)
             {
                 this.id_perfil = id_perfil;
                 this.id_licenciado = id_licenciado;
@@ -488,7 +481,7 @@ namespace CapaNegocio.revisionPerfil
             public string Licenciado { get => licenciado; set => licenciado = value; }
             public int Nro_tribunal { get => nro_tribunal; set => nro_tribunal = value; }
         }
-        
+
         public List<TribunalStruct> listTribunalByIdPerfil(int idperfil)
         {
             try

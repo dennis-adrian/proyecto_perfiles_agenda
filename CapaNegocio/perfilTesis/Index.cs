@@ -50,7 +50,7 @@ namespace CapaNegocio.perfilTesis
                 return true;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return false;
@@ -172,7 +172,7 @@ namespace CapaNegocio.perfilTesis
             public string Celular { get => celular; set => celular = value; }
             public string Carrera { get => carrera; set => carrera = value; }
             public string Facultad { get => facultad; set => facultad = value; }
-            
+
             public string Tipo { get => tipo; set => tipo = value; }
             public string Funcion { get => funcion; set => funcion = value; }
             public string Institucion { get => institucion; set => institucion = value; }
@@ -232,11 +232,13 @@ namespace CapaNegocio.perfilTesis
             return perfil;
         }
 
-        /// <summary>
-        /// Metodo extraido 
-        /// </summary>
-        /// <param name="tabla"></param>
-        /// <returns></returns>
+        private bool ContainColumn(string columnName, DataTable table)
+        {
+            DataColumnCollection columns = table.Columns;
+            if (columns.Contains(columnName)) return true;
+
+            return false;
+        }
         public List<PerfilGeneral> perfilesGenerales(DataTable tabla)
         {
             List<PerfilGeneral> list = new List<PerfilGeneral>();
@@ -251,7 +253,7 @@ namespace CapaNegocio.perfilTesis
                 perfil.Fecha_Recepcion = tabla.Rows[i]["Fecha_Recepcion"].ToString();
                 perfil.Estado_Defensa = tabla.Rows[i]["Estado_Defensa"].ToString();
                 perfil.Calificacion = Convert.ToDouble(tabla.Rows[i]["Calificacion"].ToString());
-                
+
                 perfil.Id_estudiante = Convert.ToInt32(tabla.Rows[i]["Id_estudiante"].ToString());
 
                 perfil.Registro = tabla.Rows[i]["Registro"].ToString();
@@ -267,8 +269,8 @@ namespace CapaNegocio.perfilTesis
                 perfil.Licenciado = tabla.Rows[i]["Licenciado"].ToString();
                 perfil.Tipo = tabla.Rows[i]["Tipo"].ToString();
                 perfil.Funcion = tabla.Rows[i]["Funcion"].ToString();
-                perfil.Institucion = tabla.Rows[i]["Institucion"].ToString();
-                perfil.Carrera_Licenciado = tabla.Rows[i]["Carrera_Licenciado"].ToString();
+                perfil.Institucion = ContainColumn("Institucion", tabla) ? tabla.Rows[i]["Institucion"].ToString() : null;
+                perfil.Carrera_Licenciado = ContainColumn("Carrera_Licenciado", tabla) ? tabla.Rows[i]["Carrera_Licenciado"].ToString() : null;
 
                 perfil.Id_funcion_licenciado = Convert.ToInt32(tabla.Rows[i]["Id_funcion_licenciado"].ToString());
                 perfil.Fecha_limite = tabla.Rows[i]["Fecha_limite"].ToString();
@@ -285,13 +287,13 @@ namespace CapaNegocio.perfilTesis
         }
 
         public List<PerfilGeneral> Perfiles()
-        {           
+        {
             var tabla = obj.perfilesAll();
             return perfilesGenerales(tabla);
         }
         public List<PerfilGeneral> PerfilesEstudiante(string estudiante)
         {
-            
+
             var tabla = obj.perfilesAllByEstudiante(estudiante);
             return perfilesGenerales(tabla);
 
@@ -304,9 +306,9 @@ namespace CapaNegocio.perfilTesis
         }
 
 
-        public List<PerfilGeneral> PerfilesCarreraEstudiante(string carrera,string estudiante)
+        public List<PerfilGeneral> PerfilesCarreraEstudiante(string carrera, string estudiante)
         {
-            var tabla = obj.perfilesAllByCarreraAndEstudiante(carrera,estudiante);
+            var tabla = obj.perfilesAllByCarreraAndEstudiante(carrera, estudiante);
             return perfilesGenerales(tabla);
         }
 
