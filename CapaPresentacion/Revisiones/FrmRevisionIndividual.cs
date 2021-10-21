@@ -37,7 +37,7 @@ namespace CapaPresentacion
 
         void loadTribunales()
         {
-           var cursor = obj.listTribunalByIdPerfil(id_perfil);
+            var cursor = obj.listTribunalByIdPerfil(id_perfil);
             if (cursor.Count <= 0)
             {
                 btnTribunal1.Text = "Tribunal 1";
@@ -52,12 +52,12 @@ namespace CapaPresentacion
                     string licenciado = item.Licenciado;
                     string nrotribunal = Convert.ToString(item.Nro_tribunal);
 
-                   
+
                     if (item.Nro_tribunal == 1)
                     {
                         btnTribunal1.Text = item.Licenciado;
                         fillDictionary(tribunal1, idlicenciado, iperfil, licenciado, nrotribunal);
-                        
+
                     }
                     else if (item.Nro_tribunal == 2)
                     {
@@ -72,7 +72,7 @@ namespace CapaPresentacion
             }
             loadComboTribunalActual();
 
-            
+
         }
         bool fillDictionary(Dictionary<string, string> dic, string idlicenciado, string idperfil, string licenciado, string nrotribunal)
         {
@@ -82,23 +82,23 @@ namespace CapaPresentacion
             keys.Add("licenciado");
             keys.Add("nrotribunal");
 
-            foreach(var k in keys)
+            foreach (var k in keys)
             {
                 bool res = dic.ContainsKey(k);
                 if (res)
                 {
                     return false;
                 }
-                
+
             }
-           
-            dic.Add("idlicenciado",idlicenciado);
+
+            dic.Add("idlicenciado", idlicenciado);
             dic.Add("idperfil", idperfil);
             dic.Add("licenciado", licenciado);
             dic.Add("nrotribunal", nrotribunal);
             return true;
         }
-       
+
 
         public FrmRevisionIndividual(int id, int nro)
         {
@@ -113,7 +113,7 @@ namespace CapaPresentacion
             setActionButtonDefensa();
             loadTribunales();
 
-            
+
         }
         public void setActionButtonDefensa()
         {
@@ -121,20 +121,20 @@ namespace CapaPresentacion
 
             if (data.Id_defensa == 0 && data.Id_tesis == 0)
             {
-               
+
                 btnDefensaExterna.Visible = false;
                 txtIdDefensa.Text = Convert.ToString(data.Id_defensa);
-                txtIdTesis.Text= Convert.ToString(this.id_perfil);
+                txtIdTesis.Text = Convert.ToString(this.id_perfil);
             }
             else
             {
-                if(data.Id_defensa ==0 && data.Id_tesis > 0)
+                if (data.Id_defensa == 0 && data.Id_tesis > 0)
                 {
                     //tesis sin defensa
-                    if(btnDefensaExterna.Visible == false)
+                    if (btnDefensaExterna.Visible == false)
                     {
                         btnDefensaExterna.Visible = true;
-                        
+
                     }
                     btnDefensaExterna.Text = "Agregar Defensa";
 
@@ -153,7 +153,7 @@ namespace CapaPresentacion
                     if (btnDefensaExterna.Visible == false)
                     {
                         btnDefensaExterna.Visible = true;
-                        
+
                     }
                     btnDefensaExterna.Text = "Ir a Defensa";
                     btnDefensaExterna.BackColor = Color.FromArgb(178, 8, 55);
@@ -168,7 +168,7 @@ namespace CapaPresentacion
 
 
         }
-      
+
 
         //controles del formulario licenciado
         void form_Disposed3(object sender, EventArgs e)
@@ -266,7 +266,7 @@ namespace CapaPresentacion
         {
             cambiarEstadoDateTimePicker(dttLimiteSugerido, sender);
         }
-     
+
         //button elegir licenciado
         //private void btnElegirTribunal_Click(object sender, EventArgs e)
         //{
@@ -275,16 +275,16 @@ namespace CapaPresentacion
         //    frm.Show();
         //    frm.BringToFront();
         //}
-        
+
         //button cancelar 
         private void btnCancelarNuevop_Click(object sender, EventArgs e)
         {
             FrmRevisiones frm = new FrmRevisiones();
             frm.Close();
         }
-     
 
-        
+
+
         //button guardar revision
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -295,7 +295,8 @@ namespace CapaPresentacion
                 if (txtEstadoDatos.Text == estadoSinDatos && idrev > 0)
                 {
                     MessageBox.Show("cargue previamente los datos, seleccionando uno de los tribunales");
-                }else if(txtEstadoDatos.Text == estadoSinDatos && idrev<=0)
+                }
+                else if (txtEstadoDatos.Text == estadoSinDatos && idrev <= 0)
                 {
                     Insert();
                     MessageBox.Show("Datos de la revision guardados correctamente");
@@ -314,7 +315,7 @@ namespace CapaPresentacion
 
 
                 }
-                else if(txtEstadoDatos.Text == estadoConDatos && idrev > 0)
+                else if (txtEstadoDatos.Text == estadoConDatos && idrev > 0)
                 {
                     Update(this.id_revision);
                     MessageBox.Show("Datos de la revision actualizados correctamente");
@@ -341,7 +342,7 @@ namespace CapaPresentacion
             }
         }
 
-          
+
         //evento de los radiobuttons tribunales
         private void rbTribunal2_CheckedChanged(object sender, EventArgs e)
         {
@@ -352,9 +353,9 @@ namespace CapaPresentacion
         private void rbTribunal1_CheckedChanged(object sender, EventArgs e)
         {
             this.tribunal_actual = 1;
-           infoRevision(this.id_perfil, this.num_revision, 1);
+            infoRevision(this.id_perfil, this.num_revision, 1);
         }
-       
+
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
@@ -397,7 +398,7 @@ namespace CapaPresentacion
             pnlResaltadoTrib1.Visible = true;
             pnlResaltadoTrib2.Visible = false;
             loadComboTribunalActual();
-           
+
         }
 
         private void btnTribunal2_Click(object sender, EventArgs e)
@@ -410,9 +411,9 @@ namespace CapaPresentacion
             pnlResaltadoTrib2.Visible = true;
             pnlResaltadoTrib1.Visible = false;
             loadComboTribunalActual();
-            
+
         }
-        
+
         void Insert()
         {
 
@@ -453,7 +454,7 @@ namespace CapaPresentacion
                 id_tesis,
                 id_licenciado);
         }
-       
+
         void Update(int idrevision)
         {
 
@@ -484,7 +485,7 @@ namespace CapaPresentacion
             int idDetalleRevision = Convert.ToInt32(txtIdDetalleRevision.Text);
 
 
-            obj.updateRevision(idRevision,idDetalleRevision, estado,
+            obj.updateRevision(idRevision, idDetalleRevision, estado,
                fec_entrega_alumno,
                 fec_entrega_tribunal,
                 fec_limite_devolucion,
@@ -496,17 +497,17 @@ namespace CapaPresentacion
                 fec_empaste,
                 id_tesis,
                 id_licenciado);
-           
+
         }
-        
-               
-        
+
+
+
         void InsertForNewDefensa()
         {
-            if(btnDefensaExterna.Visible == true)
+            if (btnDefensaExterna.Visible == true)
             {
                 string msg = "";
-                if(btnDefensaExterna.Text == "Agregar Defensa")
+                if (btnDefensaExterna.Text == "Agregar Defensa")
                 {
                     msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede agregar una defensa para este perfil";
 
@@ -516,18 +517,18 @@ namespace CapaPresentacion
                     msg = "Las Fechas de Empaste del tribunal 1 y tribunal 2 están asignandas, Ya puede ir a la defensa para este perfil";
 
                 }
-                bool res = obj.ValidarFechasEmpasteforNewInsert(this.id_perfil, 1, 2);
+                bool res = obj.ValidarFechasEmpasteForInsert(this.id_perfil, 1, 2);
                 if (res == true)
                 {
-                    
+
                     MessageBox.Show(msg);
                     //setActionButtonDefensa();
-                    
+
                 }
 
             }
-           
-           
+
+
         }
 
 
@@ -547,7 +548,7 @@ namespace CapaPresentacion
 
             var info = obj.infoRevision(idtesis, nrorevision, nrotribunal);
 
-            if(info.Id <= 0)
+            if (info.Id <= 0)
             {
                 txtEstadoDatos.Text = estadoSinDatos;
                 this.id_revision = 0;
@@ -569,7 +570,7 @@ namespace CapaPresentacion
 
 
                 DateChecked(dttEmpaste, chbEmpaste, info.Fecha_empaste);
-                DateChecked(dttEntregaAlumno, chbEntregaAlumno, info.Fecha_entrega_alumno);                
+                DateChecked(dttEntregaAlumno, chbEntregaAlumno, info.Fecha_entrega_alumno);
                 DateChecked(dttEntregaTribunal, chbEntregaTribunal, info.Fecha_entrega_tribunal);
                 DateChecked(dttLimiteSugerido, chbLimiteSugerido, info.Fecha_limite_devolucion);
                 DateChecked(dttDevolucionTribunal, chbDevolucionTribunal, info.Fecha_devolucion_tribunal);
@@ -577,13 +578,13 @@ namespace CapaPresentacion
                 txtObservaciones.Text = info.Observacion;
                 txtIdRevision.Text = Convert.ToString(info.Id);
                 this.id_revision = info.Id;
-                txtIdDetalleRevision.Text= Convert.ToString(info.Id_detalle_revision);
-                txtEstadoDatos.Text =estadoConDatos;
+                txtIdDetalleRevision.Text = Convert.ToString(info.Id_detalle_revision);
+                txtEstadoDatos.Text = estadoConDatos;
 
 
                 //lbIdRevision.Text = Convert.ToString(info.Id);
             }
-            
+
         }
 
         /// <summary>
@@ -612,14 +613,14 @@ namespace CapaPresentacion
                 throw (e);
             }
         }
-        
+
         /// <summary>
         /// carga los datos al inicio
         /// </summary>
         public void ShowData()
         {
             infoRevision(this.id_perfil, this.num_revision, 1);
-            
+
         }
 
 
@@ -688,7 +689,7 @@ namespace CapaPresentacion
 
 
 
-        
+
 
 
 
@@ -718,7 +719,7 @@ namespace CapaPresentacion
                 setActionButtonDefensa();
                 MessageBox.Show("La defensa del perfil de tesis ha sido agregada exitosamente, ahora puede agregar la hora, aula y los respectivos licenciados");
             }
-            else if(btnDefensaExterna.Text == "Ir a Defensa")
+            else if (btnDefensaExterna.Text == "Ir a Defensa")
             {
                 int iddefensa = Convert.ToInt32(txtIdDefensa.Text);
                 FrmTesisAgenda formTesis = new FrmTesisAgenda(iddefensa, "", "Tesis");
@@ -749,7 +750,8 @@ namespace CapaPresentacion
                 lbEmpaste.Visible = true;
                 alertEmpaste.Visible = true;
 
-            }else if(num_revision == tot)
+            }
+            else if (num_revision == tot)
             {
                 dttEmpaste.Visible = true;
                 chbEmpaste.Visible = true;
