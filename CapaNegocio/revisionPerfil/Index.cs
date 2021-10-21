@@ -311,58 +311,37 @@ namespace CapaNegocio.revisionPerfil
 
         public bool ValidateNextRevision(int it, int t1, int t2)
         {
-            bool result = false;
-            var rev1 = revision.MaxNumberOfRevsionesByTribunal(it, t1);
-            var rev2 = revision.MaxNumberOfRevsionesByTribunal(it, t2);
-
-            int max1 = 0;
-            int max2 = 0;
-            for (int i = 0; i < rev1.Rows.Count; i++)
-            {
-                max1 = Convert.ToInt32(rev1.Rows[i][0].ToString());
-
-            }
-            for (int i = 0; i < rev2.Rows.Count; i++)
-            {
-                max2 = Convert.ToInt32(rev2.Rows[i][0].ToString());
-
-            }
-
-            if (max1 == max2)
-            {
-                result = true;
-            }
-            return result;
-
-
+            var max1 = revision.getMaxRevisionByIdAndTribunal(it, t1);
+            var max2 = revision.getMaxRevisionByIdAndTribunal(it, t2);
+            return (max1 == max2);
         }
 
-        public bool ValidarFechasEmpasteforNewInsert(int it, int t1, int t2)
+        public bool ValidarFechasEmpasteForInsert(int it, int t1, int t2)
         {
             bool result = true;
             try
             {
 
-                string empastet1 = "";
-                string empastet2 = "";
+                string empasteTribunal1 = "";
+                string empasteTribunal2 = "";
                 bool res = ValidateNextRevision(it, t1, t2);
                 if (res == true)
                 {
-                    var revt1 = revision.LastRevisionByTribunal(it, t1);
-                    var revt2 = revision.LastRevisionByTribunal(it, t2);
+                    var revisionTribunal1 = revision.LastRevisionByTribunal(it, t1);
+                    var revisionTribunal2 = revision.LastRevisionByTribunal(it, t2);
 
-                    for (int i = 0; i < revt1.Rows.Count; i++)
+                    for (int i = 0; i < revisionTribunal1.Rows.Count; i++)
                     {
-                        empastet1 = revt1.Rows[i][10].ToString();
+                        empasteTribunal1 = revisionTribunal1.Rows[i][10].ToString();
                     }
-                    for (int i = 0; i < revt2.Rows.Count; i++)
+                    for (int i = 0; i < revisionTribunal2.Rows.Count; i++)
                     {
-                        empastet2 = revt2.Rows[i][10].ToString();
+                        empasteTribunal2 = revisionTribunal2.Rows[i][10].ToString();
 
                     }
 
 
-                    if ((empastet1 == "" || empastet1 == null) || (empastet2 == "" || empastet2 == null))
+                    if ((empasteTribunal1 == "" || empasteTribunal1 == null) || (empasteTribunal2 == "" || empasteTribunal2 == null))
                     {
                         result = false;
                     }
@@ -423,7 +402,7 @@ namespace CapaNegocio.revisionPerfil
 
         public ByPassDefensa getDataForDefensaExterna(int idtesis)
         {
-            var bypass = revision.byPassDefensaExterna(idtesis);
+            var bypass = revision.getByPassDefensa(idtesis);
             return bypass;
 
         }
