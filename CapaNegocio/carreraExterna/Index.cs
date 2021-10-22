@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.carreraExterna
 {
+    /// <summary>
+    /// Clase encargada de validar y traer datos para el usuario
+    /// </summary>
     public class Index
     {
         public Index()
@@ -15,7 +18,13 @@ namespace CapaNegocio.carreraExterna
 
 
         #region Atributos
+        /// <summary>
+        /// instanciamos un objeto de Carreralicenciado para la manipulacion y validacion de datos.
+        /// </summary>
         CapaDatos.Models.CarreraLicenciado obj = new CapaDatos.Models.CarreraLicenciado();
+        /// <summary>
+        /// Este constructor permite instanciar los atributos de la clase determinado
+        /// </summary>
         public struct carreraExterna
         {
 
@@ -35,6 +44,10 @@ namespace CapaNegocio.carreraExterna
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// metodo encargado para el registro de nuevas Carreras Externas
+        /// </summary>
+        /// <param name="nombre"></param>
         public void createCarreraExterna(string nombre)
         {
             try
@@ -47,6 +60,10 @@ namespace CapaNegocio.carreraExterna
                 throw new ArgumentException(ex.Message);
             }
         }
+        /// <summary>
+        /// Metodo encargado para la eliminacion de alguna carrera existente requiriendo el id de la carrera
+        /// </summary>
+        /// <param name="id"></param>
         public void deleteCarreraExterna(int id)
         {
             try
@@ -59,8 +76,11 @@ namespace CapaNegocio.carreraExterna
             }
 
         }
-
-
+        /// <summary>
+        /// Metodo encargado de la actualizacion de alguna carrera existente requiriendo como parametro el id y nombre que se actualizara
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
         public void updateCarreraExterna(int id, string nombre)
         {
             try
@@ -73,6 +93,10 @@ namespace CapaNegocio.carreraExterna
                 throw new ArgumentException(ex.Message);
             }
         }
+        /// <summary>
+        /// Metodo encargado de obtener una lista de carreras existente en la BD
+        /// </summary>
+        /// <returns></returns>
         public List<carreraExterna> showCarreraExterna()
         {
             List<carreraExterna> list = new List<carreraExterna>();
@@ -89,6 +113,11 @@ namespace CapaNegocio.carreraExterna
             }
             return list;
         }
+        /// <summary>
+        /// Metodo encargado de obtener una lista de carreras existentes con el requisito de alguna coincidencia dada por el usuario
+        /// </summary>
+        /// <param name="criterio"></param>
+        /// <returns></returns>
         public List<carreraExterna> showCarreraExterna(string criterio)
         {
             List<carreraExterna> list = new List<carreraExterna>();
