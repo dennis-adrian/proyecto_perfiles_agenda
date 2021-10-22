@@ -45,7 +45,7 @@ namespace CapaNegocio.carreraExterna
 
         #region Metodos
         /// <summary>
-        /// metodo encargado para el registro de nuevas Carreras Externas
+        /// metodo encargado para el registro de nuevas Carreras Externass
         /// </summary>
         /// <param name="nombre"></param>
         public void createCarreraExterna(string nombre)
